@@ -33,7 +33,7 @@ namespace Analogy
             };
 
             LoadStartupExtensions();
-            Application.Run(new MainForm());
+            Application.Run(new Form1());
 
         }
 

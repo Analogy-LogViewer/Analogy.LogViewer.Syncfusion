@@ -14,15 +14,16 @@ using Syncfusion.Windows.Forms.Tools.Navigation;
 
 namespace Analogy
 {
-    public partial class Form1 : Syncfusion.Windows.Forms.Tools.RibbonForm
+    public partial class Form1 : RibbonForm
     {
         TouchStyleColorTable touch = new TouchStyleColorTable();
         bool isPopupVisible = false;
 
         public Form1()
         {
+           
             InitializeComponent();
-            this.ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
+            ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
             touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
             touch.ActiveToolStripTabItemBackColor = ColorTranslator.FromHtml("#f5f6f7");
             touch.RibbonPanelBackColor = ColorTranslator.FromHtml("#f5f6f7");
@@ -38,58 +39,71 @@ namespace Analogy
             touch.MinimizeButtonForeColor = Color.Black;
             touch.MaximizeButtonForeColor = Color.Black;
 
-            this.ribbonControlAdv1.ApplyTouchStyleColorTable(touch);
-            this.treeViewAdv1.FullRowSelect = true;
-            this.treeViewAdv1.HideSelection = false;
-            this.treeViewAdv1.SelectedNode = null;
-            this.popupControlContainer1.Visible = false;
-            this.Load += new EventHandler(Form1_Load);
-            this.ribbonControlAdv1.MenuButtonClick += new EventHandler(ribbonControlAdv1_MenuButtonClick);
-            this.treeViewAdv1.SelectedNodeBackground = new Syncfusion.Drawing.BrushInfo(ColorTranslator.FromHtml("#d1e8ff"));
-            this.treeViewAdv1.SelectedNodeForeColor = Color.Black;
-            this.treeViewAdv1.MouseMove += new MouseEventHandler(treeViewAdv1_MouseMove);
-            this.treeViewAdv1.MouseLeave += new EventHandler(treeViewAdv1_MouseLeave);
-            this.popupControlContainer1.VisibleChanged += new EventHandler(popupControlContainer1_VisibleChanged);
-            this.popupControlContainer1.BeforeCloseUp += new CancelEventHandler(popupControlContainer1_BeforeCloseUp);
-            this.buttonEdit1.TextBox.Text = "";
-            this.buttonEditChildButton1.Image = this.imageList3.Images[0];
-            this.buttonEditChildButton1.FlatStyle = FlatStyle.Flat;
-            this.buttonEdit1.FlatStyle = FlatStyle.Flat;
-            this.buttonEditChildButton1.Text = "";
-            this.listView2.BorderStyle = BorderStyle.None;
-            this.treeViewAdv1.BorderStyle = BorderStyle.None;
+            ribbonControlAdv1.ApplyTouchStyleColorTable(touch);
+            treeViewAdv1.FullRowSelect = true;
+            treeViewAdv1.HideSelection = false;
+            treeViewAdv1.SelectedNode = null;
+            popupControlContainer1.Visible = false;
+            Load += new EventHandler(Form1_Load);
+            ribbonControlAdv1.MenuButtonClick += new EventHandler(ribbonControlAdv1_MenuButtonClick);
+            treeViewAdv1.SelectedNodeBackground = new Syncfusion.Drawing.BrushInfo(ColorTranslator.FromHtml("#d1e8ff"));
+            treeViewAdv1.SelectedNodeForeColor = Color.Black;
+            treeViewAdv1.MouseMove += new MouseEventHandler(treeViewAdv1_MouseMove);
+            treeViewAdv1.MouseLeave += new EventHandler(treeViewAdv1_MouseLeave);
+            popupControlContainer1.VisibleChanged += new EventHandler(popupControlContainer1_VisibleChanged);
+            popupControlContainer1.BeforeCloseUp += new CancelEventHandler(popupControlContainer1_BeforeCloseUp);
+            buttonEdit1.TextBox.Text = "";
+            buttonEditChildButton1.Image = imageList3.Images[0];
+            buttonEditChildButton1.FlatStyle = FlatStyle.Flat;
+            buttonEdit1.FlatStyle = FlatStyle.Flat;
+            buttonEditChildButton1.Text = "";
+            listView2.BorderStyle = BorderStyle.None;
+            treeViewAdv1.BorderStyle = BorderStyle.None;
 
-            this.panel2.Width = 2;
-            this.panel2.BorderStyle = BorderStyle.None;
-            this.panel2.BackColor = ColorTranslator.FromHtml("#f7f7f7");
+            panel2.Width = 2;
+            panel2.BorderStyle = BorderStyle.None;
+            panel2.BackColor = ColorTranslator.FromHtml("#f7f7f7");
             listView2.Groups[0].HeaderAlignment = HorizontalAlignment.Right;
             int i = 6;
-            foreach (Control ctrl in this.popupControlContainer1.Controls)
+            foreach (Control ctrl in popupControlContainer1.Controls)
             {
                 if (ctrl is ButtonAdv)
                 {
                     ctrl.Height = 45;
                     ctrl.Text = "     " + ctrl.Text;
                     (ctrl as ButtonAdv).ImageAlign = ContentAlignment.MiddleLeft;
-                    (ctrl as ButtonAdv).Image = this.imageList3.Images[i];
-                    (ctrl as ButtonAdv).BeforeTouchSize = new System.Drawing.Size(297, 38);
-                    (ctrl as ButtonAdv).Dock = System.Windows.Forms.DockStyle.Top;
+                    (ctrl as ButtonAdv).Image = imageList3.Images[i];
+                    (ctrl as ButtonAdv).BeforeTouchSize = new Size(297, 38);
+                    (ctrl as ButtonAdv).Dock = DockStyle.Top;
                     (ctrl as ButtonAdv).FlatAppearance.BorderSize = 0;
-                    (ctrl as ButtonAdv).FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                    (ctrl as ButtonAdv).ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    (ctrl as ButtonAdv).FlatStyle = FlatStyle.Flat;
+                    (ctrl as ButtonAdv).ImageAlign = ContentAlignment.MiddleLeft;
                     (ctrl as ButtonAdv).IsBackStageButton = false;
-                    (ctrl as ButtonAdv).Location = new System.Drawing.Point(0, 0);
+                    (ctrl as ButtonAdv).Location = new Point(0, 0);
                     (ctrl as ButtonAdv).Name = "buttonAdv1";
-                    (ctrl as ButtonAdv).Size = new System.Drawing.Size(297, 38);
+                    (ctrl as ButtonAdv).Size = new Size(297, 38);
 
-                    (ctrl as ButtonAdv).TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                    (ctrl as ButtonAdv).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+                    (ctrl as ButtonAdv).TextAlign = ContentAlignment.MiddleLeft;
+                    (ctrl as ButtonAdv).TextImageRelation = TextImageRelation.ImageBeforeText;
                     i--;
                 }
 
             }
-            this.buttonAdv6.Click += new EventHandler(buttonAdv6_Click);
+            buttonAdv6.Click += new EventHandler(buttonAdv6_Click);
             ribbonControlAdv1.SelectedTab = toolStripTabItem1;
+            dockingManager1.SetDockLabel(panel3, "Top");
+            dockingManager1.SetDockLabel(panel1, "Buttom");
+            dockingManager1.SetEnableDocking(panel1, true);
+            dockingManager1.SetEnableDocking(panel3, true);
+            var ccbgradientPanel1 = new CaptionButtonsCollection();
+            ccbgradientPanel1.MergeWith(dockingManager1.CaptionButtons, false);
+            var ccbgradientPanel3 = new CaptionButtonsCollection();
+            ccbgradientPanel3.MergeWith(dockingManager1.CaptionButtons, false);
+            this.dockingManager1.EnableDocumentMode = true;
+            dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
+            dockingManager1.SetCustomCaptionButtons(this.panel3, ccbgradientPanel1);
+            dockingManager1.DockAsDocument(panel3);
+            dockingManager1.DockAsDocument(panel1);
         }
 
         protected override void WndProc(ref Message m)
@@ -97,43 +111,53 @@ namespace Analogy
             switch (m.Msg)
             {
                 case 0x001C:
-                    this.popupControlContainer1.HidePopup();
+                    popupControlContainer1.HidePopup();
                     break;
             }
             base.WndProc(ref m);
         }
 
+        private void DockingManager1_NewDockStateEndLoad(object sender, EventArgs e)
+        {
+
+            dockingManager1.DockControl(panel1, this, DockingStyle.Bottom, 250);
+            dockingManager1.DockControl(panel3, this, DockingStyle.Top, 250);
+          //  dockingManager1.DockControl(gradientPanel1,this,DockingStyle.Left,250);
+            //dockingManager1.DockControl(gradientPanel2, this, DockingStyle.Right, 250);
+        }
+
+
         void buttonAdv6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void Form1_Resize(object sender, EventArgs e)
         {
-            this.navigationView2.Width = this.buttonEdit1.Left;
+            navigationView2.Width = buttonEdit1.Left;
         }
 
         void popupControlContainer1_BeforeCloseUp(object sender, CancelEventArgs e)
         {
-            this.superAccelerator1.Active = true;
+            superAccelerator1.Active = true;
         }
 
         void popupControlContainer1_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.popupControlContainer1.Visible)
-                this.superAccelerator1.Active = false;
+            if (popupControlContainer1.Visible)
+                superAccelerator1.Active = false;
             else
-                this.superAccelerator1.Active = true;
+                superAccelerator1.Active = true;
         }
 
         void treeViewAdv1_MouseLeave(object sender, EventArgs e)
         {
-            if ((sender as TreeViewAdv) == this.treeViewAdv1)
+            if ((sender as TreeViewAdv) == treeViewAdv1)
             {
                 //this.treeViewAdv1.Nodes[0].Background = new Syncfusion.Drawing.BrushInfo(Color.FromArgb(0, 255, 255, 255));
-                for (int i = 0; i < this.treeViewAdv1.Nodes.Count; i++)
+                for (int i = 0; i < treeViewAdv1.Nodes.Count; i++)
                 {
-                    foreach (TreeNodeAdv item in this.treeViewAdv1.Nodes[i].Nodes)
+                    foreach (TreeNodeAdv item in treeViewAdv1.Nodes[i].Nodes)
                     {
                         item.Background = new Syncfusion.Drawing.BrushInfo(Color.White);
 
@@ -149,19 +173,19 @@ namespace Analogy
 
         void treeViewAdv1_MouseMove(object sender, MouseEventArgs e)
         {
-            if ((sender as TreeViewAdv) == this.treeViewAdv1)
+            if ((sender as TreeViewAdv) == treeViewAdv1)
             {
-                for (int i = 0; i < this.treeViewAdv1.Nodes.Count; i++)
+                for (int i = 0; i < treeViewAdv1.Nodes.Count; i++)
                 {
-                    this.treeViewAdv1.Nodes[i].Background = new Syncfusion.Drawing.BrushInfo(Color.FromArgb(0, 255, 255, 255));
-                    foreach (TreeNodeAdv item in this.treeViewAdv1.Nodes[i].Nodes)
+                    treeViewAdv1.Nodes[i].Background = new Syncfusion.Drawing.BrushInfo(Color.FromArgb(0, 255, 255, 255));
+                    foreach (TreeNodeAdv item in treeViewAdv1.Nodes[i].Nodes)
                     {
                         item.Background = new Syncfusion.Drawing.BrushInfo(Color.FromArgb(0, 255, 255, 255));
                     }
                 }
-                if (this.treeViewAdv1.GetNodeAtPoint(new Point(e.X, e.Y)) != null)
+                if (treeViewAdv1.GetNodeAtPoint(new Point(e.X, e.Y)) != null)
                 {
-                    TreeNodeAdv node = this.treeViewAdv1.GetNodeAtPoint(new Point(e.X, e.Y));
+                    TreeNodeAdv node = treeViewAdv1.GetNodeAtPoint(new Point(e.X, e.Y));
                     node.Background = new Syncfusion.Drawing.BrushInfo(ColorTranslator.FromHtml("#e5f3fb"));
                 }
             }
@@ -175,33 +199,33 @@ namespace Analogy
                 if (sender is ToolStripDropDownButton)
                 {
                     isPopupVisible = true;
-                    this.popupControlContainer1.ShowPopup(PointToScreen(new Point((int)((sender as ToolStripDropDownButton).Bounds.X), (int)((sender as ToolStripDropDownButton).Bounds.Y + (sender as ToolStripDropDownButton).Bounds.Height))));
+                    popupControlContainer1.ShowPopup(PointToScreen(new Point((int)((sender as ToolStripDropDownButton).Bounds.X), (int)((sender as ToolStripDropDownButton).Bounds.Y + (sender as ToolStripDropDownButton).Bounds.Height))));
                 }
             }
             else
             {
                 isPopupVisible = false;
-                this.popupControlContainer1.HidePopup();
+                popupControlContainer1.HidePopup();
             }
         }
         string substringDirectory;
         void Form1_Load(object sender, EventArgs e)
         {
-            this.ribbonControlAdv1.MenuButtonText = "FILE";
-            this.ribbonControlAdv1.BackStageNavigationButtonStyle = BackStageNavigationButtonStyles.Office2013;
-            this.ribbonControlAdv1.QuickPanelAlignment = QuickPanelAlignment.Top;
+            ribbonControlAdv1.MenuButtonText = "FILE";
+            ribbonControlAdv1.BackStageNavigationButtonStyle = BackStageNavigationButtonStyles.Office2013;
+            ribbonControlAdv1.QuickPanelAlignment = QuickPanelAlignment.Top;
             touch.CloseButtonForeColor = Color.Black;
             touch.RestoreButtonForeColor = Color.Black;
             touch.BottomToolStripBackColor = ColorTranslator.FromHtml("#ffffff");
             touch.QATDownArrowColor = Color.Black;
             touch.ToolStripSpliterColor = ColorTranslator.FromHtml("#e2e3e4");
-            this.superAccelerator1.BackColor = ColorTranslator.FromHtml("#eaf0f8");
-            this.popupControlContainer1.BorderStyle = BorderStyle.FixedSingle;
-            this.popupControlContainer1.BackColor = ColorTranslator.FromHtml("#fbfcfd");
-            this.treeViewAdv1.BorderStyle = BorderStyle.None;
-            this.superAccelerator1.SetMenuButtonAccelerator(this.ribbonControlAdv1, "F");
-            this.navigationView2.Focus();
-            this.treeViewAdv1.AfterSelect += new EventHandler(treeViewAdv1_AfterSelect);
+            superAccelerator1.BackColor = ColorTranslator.FromHtml("#eaf0f8");
+            popupControlContainer1.BorderStyle = BorderStyle.FixedSingle;
+            popupControlContainer1.BackColor = ColorTranslator.FromHtml("#fbfcfd");
+            treeViewAdv1.BorderStyle = BorderStyle.None;
+            superAccelerator1.SetMenuButtonAccelerator(ribbonControlAdv1, "F");
+            navigationView2.Focus();
+            treeViewAdv1.AfterSelect += new EventHandler(treeViewAdv1_AfterSelect);
 
 
         }
@@ -213,15 +237,15 @@ namespace Analogy
             {
                 listView2.Items.Clear();
 
-                TreeNodeAdv selectednode = this.treeViewAdv1.SelectedNode;
+                TreeNodeAdv selectednode = treeViewAdv1.SelectedNode;
                 selectednode.Expand();
-                this.treeViewAdv1.Text = selectednode.FullPath;
+                treeViewAdv1.Text = selectednode.FullPath;
                 navigationView2.Refresh();
                 Bar bar = new Bar(selectednode.Text);
                 //bar.ImageIndex = selectednode.image;
-                this.navigationView2.Bars.Add(bar);
-                this.navigationView2.SelectedBar = bar;
-                string[] splitedText = this.treeViewAdv1.Text.Split('\\');
+                navigationView2.Bars.Add(bar);
+                navigationView2.SelectedBar = bar;
+                string[] splitedText = treeViewAdv1.Text.Split('\\');
                 int count = 0;
                 if (selectednode.Nodes.Count == 0)
                     count = 1;
@@ -321,11 +345,11 @@ namespace Analogy
             } // end catch
         }
 
-        private void navigationView2_BarSelectionChanging(object sender, Syncfusion.Windows.Forms.Tools.Navigation.BarSelectionChangingEventArgs e)
+        private void navigationView2_BarSelectionChanging(object sender, BarSelectionChangingEventArgs e)
         {
-            this.listView2.Items.Clear();
+            listView2.Items.Clear();
             bool needToAdd = true;
-            Syncfusion.Windows.Forms.Tools.Navigation.Bar parent = e.Bar;
+            Bar parent = e.Bar;
             if (parent == null) return;
             if (parent.Bars.Count > 0)
             {
@@ -350,17 +374,17 @@ namespace Analogy
                     FileInfo[] files = dirInfo.GetFiles();
                     foreach (DirectoryInfo directoryInfo in subDirectories)
                     {
-                        Syncfusion.Windows.Forms.Tools.Navigation.Bar node = new Syncfusion.Windows.Forms.Tools.Navigation.Bar();
+                        Bar node = new Bar();
                         node.Tag = directoryInfo;
                         node.Text = directoryInfo.FullName;
                         node.ImageIndex = 8;
                         if (needToAdd)
                             parent.Bars.Add(node);
-                        this.listView2.Items.Add(node.Text, 5);
+                        listView2.Items.Add(node.Text, 5);
                     }
                     foreach (FileInfo file in files)
                     {
-                        this.listView2.Items.Add(file.FullName, 5);
+                        listView2.Items.Add(file.FullName, 5);
                     }
                 }
                 catch (Exception ex)
@@ -370,7 +394,7 @@ namespace Analogy
             }
             else if (parent.Text == "MyComputer")
             {
-                this.listView1.Items.Add("Local Disk(C:)", 8);
+                listView1.Items.Add("Local Disk(C:)", 8);
             }
         }
 

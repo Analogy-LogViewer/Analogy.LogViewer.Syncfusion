@@ -145,6 +145,7 @@ namespace Analogy
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
+            this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -160,6 +161,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1)).BeginInit();
             this.buttonEdit1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
@@ -178,8 +180,9 @@ namespace Analogy
             this.ribbonControlAdv1.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ribbonControlAdv1.MenuButtonText = "FILE";
             this.ribbonControlAdv1.MenuButtonWidth = 56;
-            this.ribbonControlAdv1.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
+            this.ribbonControlAdv1.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ribbonControlAdv1.Name = "ribbonControlAdv1";
+            this.ribbonControlAdv1.Office2013ColorScheme = Syncfusion.Windows.Forms.Tools.Office2013ColorScheme.DarkGray;
             this.ribbonControlAdv1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
             // 
             // ribbonControlAdv1.OfficeMenu
@@ -197,7 +200,7 @@ namespace Analogy
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.ribbonControlAdv1.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.ribbonControlAdv1.TabIndex = 0;
-            this.ribbonControlAdv1.Text = "Windows Explorer Demo";
+            this.ribbonControlAdv1.Text = "Analogy";
             this.ribbonControlAdv1.ThemeName = "Office2013";
             this.ribbonControlAdv1.TitleColor = System.Drawing.Color.Black;
             // 
@@ -546,7 +549,7 @@ namespace Analogy
             this.toolStripEx4.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx4.Name = "toolStripEx4";
             this.toolStripEx4.Office12Mode = false;
-            this.toolStripEx4.Size = new System.Drawing.Size(68, 122);
+            this.toolStripEx4.Size = new System.Drawing.Size(51, 122);
             this.toolStripEx4.TabIndex = 0;
             this.toolStripEx4.Text = "Panes";
             // 
@@ -562,7 +565,7 @@ namespace Analogy
             this.toolStripEx5.Location = new System.Drawing.Point(53, 1);
             this.toolStripEx5.Name = "toolStripEx5";
             this.toolStripEx5.Office12Mode = false;
-            this.toolStripEx5.Size = new System.Drawing.Size(84, 122);
+            this.toolStripEx5.Size = new System.Drawing.Size(63, 122);
             this.toolStripEx5.TabIndex = 1;
             this.toolStripEx5.Text = "Layout";
             // 
@@ -809,7 +812,7 @@ namespace Analogy
             this.treeViewAdv1.HelpTextControl.Text = "help text";
             this.treeViewAdv1.InactiveSelectedNodeForeColor = System.Drawing.Color.Transparent;
             this.treeViewAdv1.LeftImageList = this.TreeViewImageList;
-            this.treeViewAdv1.Location = new System.Drawing.Point(3, 0);
+            this.treeViewAdv1.Location = new System.Drawing.Point(48, 0);
             this.treeViewAdv1.Margin = new System.Windows.Forms.Padding(4);
             this.treeViewAdv1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.treeViewAdv1.Name = "treeViewAdv1";
@@ -1021,7 +1024,7 @@ namespace Analogy
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.popupControlContainer1);
             this.panel1.Controls.Add(this.listView2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(1, 238);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -1034,7 +1037,7 @@ namespace Analogy
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3, 290);
+            this.panel2.Size = new System.Drawing.Size(48, 290);
             this.panel2.TabIndex = 7;
             // 
             // popupControlContainer1
@@ -1268,6 +1271,24 @@ namespace Analogy
             this.superToolTip1.MaxWidth = 200;
             this.superToolTip1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
             // 
+            // dockingManager1
+            // 
+            this.dockingManager1.AnimateAutoHiddenWindow = true;
+            this.dockingManager1.AutoHideTabForeColor = System.Drawing.Color.Empty;
+            this.dockingManager1.CloseTabOnMiddleClick = false;
+            this.dockingManager1.DockLayoutStream = ((System.IO.MemoryStream)(resources.GetObject("dockingManager1.DockLayoutStream")));
+            this.dockingManager1.HostControl = this;
+            this.dockingManager1.MetroButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dockingManager1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
+            this.dockingManager1.MetroSplitterBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(183)))));
+            this.dockingManager1.ReduceFlickeringInRtl = false;
+            this.dockingManager1.NewDockStateEndLoad += new System.EventHandler(this.DockingManager1_NewDockStateEndLoad);
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Close, "CloseButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Pin, "PinButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Maximize, "MaximizeButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Restore, "RestoreButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Menu, "MenuButton"));
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1306,6 +1327,7 @@ namespace Analogy
             this.buttonEdit1.ResumeLayout(false);
             this.buttonEdit1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1368,5 +1390,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem expandToOpenFoldersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showAllFoldersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
+        private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
     }
 }
