@@ -206,6 +206,7 @@
     <Reference Include="Syncfusion.Shared.Windows, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Tools.Base, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Tools.Windows, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.TreeMap.Windows, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -268,6 +269,18 @@
     </Compile>
     <Compile Include="Forms\AnalogyOTAClient.Designer.cs">
       <DependentUpon>AnalogyOTAClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RibbonFormMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RibbonFormMainForm.Designer.cs">
+      <DependentUpon>RibbonFormMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserSettingsDataProvidersForm.cs">
       <SubType>Form</SubType>
@@ -556,6 +569,12 @@
     <None Include="Resources\nlog.png" />
     <None Include="Resources\FilePooling_32x32.png" />
     <None Include="Resources\FilePooling_16x16.png" />
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RibbonFormMainForm.resx">
+      <DependentUpon>RibbonFormMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSettingsDataProvidersForm.resx">
       <DependentUpon>UserSettingsDataProvidersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -861,6 +880,28 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\Search1.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Rename.png" />
+    <None Include="Resources\Quick Access.png" />
+    <None Include="Resources\Properties.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Open Settings.png" />
+    <None Include="Resources\NavigationPane.png" />
+    <None Include="Resources\Map Network Drive.png" />
+    <None Include="Resources\Icon-9.png" />
+    <None Include="Resources\Icon-6.png" />
+    <None Include="Resources\Add a network location.png" />
+    <None Include="Resources\Accessmedia.png" />
+    <None Include="Resources\__Video.png" />
+    <None Include="Resources\__Pictures.png" />
+    <None Include="Resources\__Music.png" />
+    <None Include="Resources\__Local Disk%28d%29.png" />
+    <None Include="Resources\__Local Disk%28c%29.png" />
+    <None Include="Resources\__DVD RW drive.png" />
+    <None Include="Resources\__Download.png" />
+    <None Include="Resources\__Document.png" />
+    <None Include="Resources\__Desktop.png" />
     <None Include="Resources\SingleMasterFilter_32x32.png" />
     <None Include="Resources\SingleMasterFilter_16x16.png" />
     <None Include="Resources\KamaMedical.jpg" />

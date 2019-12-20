@@ -1,0 +1,45 @@
+
+
+Date:2019-12-20 21:54:26,928
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.TemplateWizard.Base.IWizardImplementation                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8004D745): A reference to the component 'Syncfusion.Shared.Base' already exists in the project.
+   at VSLangProj.References.Add(String bstrPath)
+   at Syncfusion.TemplateWizard.Base.IWizardImplementation.AddReferenceToProject(Version LatestSyncfusionVersion, String refDetails, String selVersion, String frameWorkver, VSProject vsProj, ServiceProvider _nugetService)
+
+
+Date:2019-12-20 21:54:26,943
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.TemplateWizard.Base.IWizardImplementation                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8004D745): A reference to the component 'Syncfusion.Tools.Base' already exists in the project.
+   at VSLangProj.References.Add(String bstrPath)
+   at Syncfusion.TemplateWizard.Base.IWizardImplementation.AddReferenceToProject(Version LatestSyncfusionVersion, String refDetails, String selVersion, String frameWorkver, VSProject vsProj, ServiceProvider _nugetService)
+
+
+Date:2019-12-20 21:54:26,966
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.TemplateWizard.Base.IWizardImplementation                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8004D745): A reference to the component 'Syncfusion.Grid.Windows' already exists in the project.
+   at VSLangProj.References.Add(String bstrPath)
+   at Syncfusion.TemplateWizard.Base.IWizardImplementation.AddReferenceToProject(Version LatestSyncfusionVersion, String refDetails, String selVersion, String frameWorkver, VSProject vsProj, ServiceProvider _nugetService)
+
+
+Date:2019-12-20 21:54:26,966
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.TemplateWizard.Base.IWizardImplementation                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8004D745): A reference to the component 'Syncfusion.Shared.Windows' already exists in the project.
+   at VSLangProj.References.Add(String bstrPath)
+   at Syncfusion.TemplateWizard.Base.IWizardImplementation.AddReferenceToProject(Version LatestSyncfusionVersion, String refDetails, String selVersion, String frameWorkver, VSProject vsProj, ServiceProvider _nugetService)
+
+
+Date:2019-12-20 21:54:26,981
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.TemplateWizard.Base.IWizardImplementation                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8004D745): A reference to the component 'Syncfusion.Tools.Windows' already exists in the project.
+   at VSLangProj.References.Add(String bstrPath)
+   at Syncfusion.TemplateWizard.Base.IWizardImplementation.AddReferenceToProject(Version LatestSyncfusionVersion, String refDetails, String selVersion, String frameWorkver, VSProject vsProj, ServiceProvider _nugetService)
