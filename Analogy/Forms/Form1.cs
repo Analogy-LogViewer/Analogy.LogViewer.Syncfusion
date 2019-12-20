@@ -21,7 +21,7 @@ namespace Analogy
 
         public Form1()
         {
-           
+
             InitializeComponent();
             ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
             touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
@@ -91,19 +91,36 @@ namespace Analogy
             }
             buttonAdv6.Click += new EventHandler(buttonAdv6_Click);
             ribbonControlAdv1.SelectedTab = toolStripTabItem1;
-            dockingManager1.SetDockLabel(panel3, "Top");
-            dockingManager1.SetDockLabel(panel1, "Buttom");
-            dockingManager1.SetEnableDocking(panel1, true);
-            dockingManager1.SetEnableDocking(panel3, true);
-            var ccbgradientPanel1 = new CaptionButtonsCollection();
-            ccbgradientPanel1.MergeWith(dockingManager1.CaptionButtons, false);
-            var ccbgradientPanel3 = new CaptionButtonsCollection();
-            ccbgradientPanel3.MergeWith(dockingManager1.CaptionButtons, false);
-            this.dockingManager1.EnableDocumentMode = true;
+
+            UCLogs log1 = new UCLogs();
+            dockingManager1.SetDockLabel(log1, "logs");
+            var ccbcLog1 = new CaptionButtonsCollection();
+            dockingManager1.SetCustomCaptionButtons(log1, ccbcLog1);
+
+
+            UCLogs log2 = new UCLogs();
+            dockingManager1.SetDockLabel(log2, "logs");
+            var ccbcLog2 = new CaptionButtonsCollection();
+            dockingManager1.SetCustomCaptionButtons(log2, ccbcLog2);
+
+            dockingManager1.EnableDocumentMode = true;
             dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
-            dockingManager1.SetCustomCaptionButtons(this.panel3, ccbgradientPanel1);
-            dockingManager1.DockAsDocument(panel3);
-            dockingManager1.DockAsDocument(panel1);
+            dockingManager1.DockAsDocument(log1);
+            dockingManager1.DockAsDocument(log2);
+
+            //dockingManager1.SetDockLabel(panel3, "Top");
+            //dockingManager1.SetDockLabel(panel1, "Buttom");
+            //dockingManager1.SetEnableDocking(panel1, true);
+            //dockingManager1.SetEnableDocking(panel3, true);
+            //var ccbgradientPanel1 = new CaptionButtonsCollection();
+            //ccbgradientPanel1.MergeWith(dockingManager1.CaptionButtons, false);
+            //var ccbgradientPanel3 = new CaptionButtonsCollection();
+            //ccbgradientPanel3.MergeWith(dockingManager1.CaptionButtons, false);
+            //this.dockingManager1.EnableDocumentMode = true;
+            //dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
+            //dockingManager1.SetCustomCaptionButtons(this.panel3, ccbgradientPanel1);
+            //dockingManager1.DockAsDocument(panel3);
+            //dockingManager1.DockAsDocument(panel1);
         }
 
         protected override void WndProc(ref Message m)
@@ -122,7 +139,7 @@ namespace Analogy
 
             dockingManager1.DockControl(panel1, this, DockingStyle.Bottom, 250);
             dockingManager1.DockControl(panel3, this, DockingStyle.Top, 250);
-          //  dockingManager1.DockControl(gradientPanel1,this,DockingStyle.Left,250);
+            //  dockingManager1.DockControl(gradientPanel1,this,DockingStyle.Left,250);
             //dockingManager1.DockControl(gradientPanel2, this, DockingStyle.Right, 250);
         }
 

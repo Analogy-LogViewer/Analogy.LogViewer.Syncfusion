@@ -795,7 +795,7 @@ namespace Analogy
             treeNodeAdvStyleInfo1.SelectedOptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.treeViewAdv1.BaseStylePairs.AddRange(new Syncfusion.Windows.Forms.Tools.StyleNamePair[] {
             new Syncfusion.Windows.Forms.Tools.StyleNamePair("Standard", treeNodeAdvStyleInfo1)});
-            this.treeViewAdv1.BeforeTouchSize = new System.Drawing.Size(291, 290);
+            this.treeViewAdv1.BeforeTouchSize = new System.Drawing.Size(291, 202);
             this.treeViewAdv1.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.treeViewAdv1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.treeViewAdv1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -978,7 +978,7 @@ namespace Analogy
             this.treeViewAdv1.SelectedNodeForeColor = System.Drawing.SystemColors.HighlightText;
             this.treeViewAdv1.ShowFocusRect = false;
             this.treeViewAdv1.ShowLines = false;
-            this.treeViewAdv1.Size = new System.Drawing.Size(291, 290);
+            this.treeViewAdv1.Size = new System.Drawing.Size(291, 202);
             this.treeViewAdv1.Style = Syncfusion.Windows.Forms.Tools.TreeStyle.Metro;
             this.treeViewAdv1.TabIndex = 3;
             this.treeViewAdv1.Text = "treeViewAdv1";
@@ -1024,12 +1024,12 @@ namespace Analogy
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.popupControlContainer1);
             this.panel1.Controls.Add(this.listView2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(1, 238);
+            this.panel1.Location = new System.Drawing.Point(36, 269);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1151, 290);
+            this.panel1.Size = new System.Drawing.Size(982, 202);
             this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
             // 
             // panel2
             // 
@@ -1037,7 +1037,7 @@ namespace Analogy
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(48, 290);
+            this.panel2.Size = new System.Drawing.Size(48, 202);
             this.panel2.TabIndex = 7;
             // 
             // popupControlContainer1
@@ -1204,13 +1204,13 @@ namespace Analogy
             // 
             this.panel3.Controls.Add(this.buttonEdit1);
             this.panel3.Controls.Add(this.navigationView2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(1, 200);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 6, 7, 0);
             this.panel3.Size = new System.Drawing.Size(1151, 38);
             this.panel3.TabIndex = 5;
+            this.panel3.Visible = false;
             // 
             // buttonEdit1
             // 
