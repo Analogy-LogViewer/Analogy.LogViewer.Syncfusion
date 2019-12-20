@@ -93,10 +93,14 @@ namespace Analogy
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.fsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fsfToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,15 +108,11 @@ namespace Analogy
             this.mapNetworkDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discconectNetworkDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripPanelItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripPanelItem();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
-            this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.navigationPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expandToOpenFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,12 +147,12 @@ namespace Analogy
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
             this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
             this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStripLabel1 = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
-            this.toolStripEx1.SuspendLayout();
-            this.toolStripEx2.SuspendLayout();
-            this.toolStripEx3.SuspendLayout();
             this.toolStripTabItem2.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeViewAdv1)).BeginInit();
@@ -163,6 +163,7 @@ namespace Analogy
             this.buttonEdit1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
+            this.statusStripEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
@@ -195,7 +196,7 @@ namespace Analogy
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = false;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(1155, 197);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -234,80 +235,13 @@ namespace Analogy
             this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx1.Image = null;
             this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
             this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx1.Size = new System.Drawing.Size(193, 113);
+            this.toolStripEx1.Size = new System.Drawing.Size(56, 113);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Lcation";
-            // 
-            // toolStripButton1
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton1, "P");
-            this.toolStripButton1.AutoToolTip = false;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(75, 91);
-            this.toolStripButton1.Text = "Properties";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo1.BackColor = System.Drawing.Color.White;
-            toolTipInfo1.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo1.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Body.Text = "\r\nShow the properties of the selected item.\r\n";
-            toolTipInfo1.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo1.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Header.Text = "Properties (Alt + Enter)";
-            this.superToolTip1.SetToolTip(this.toolStripButton1, toolTipInfo1);
-            // 
-            // toolStripButton2
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton2, "O");
-            this.toolStripButton2.AutoToolTip = false;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(47, 91);
-            this.toolStripButton2.Text = "Open";
-            this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo2.BackColor = System.Drawing.Color.White;
-            toolTipInfo2.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo2.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Body.Text = "\r\nOpen the selected file with default program.";
-            toolTipInfo2.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo2.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Header.Text = "Open";
-            this.superToolTip1.SetToolTip(this.toolStripButton2, toolTipInfo2);
-            // 
-            // toolStripButton3
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton3, "R");
-            this.toolStripButton3.AutoToolTip = false;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(62, 91);
-            this.toolStripButton3.Text = "Rename";
-            this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo3.BackColor = System.Drawing.Color.White;
-            toolTipInfo3.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo3.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Body.Text = "\r\nRename the selected item.\r\n";
-            toolTipInfo3.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo3.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Header.Text = "Rename (F2)";
-            this.superToolTip1.SetToolTip(this.toolStripButton3, toolTipInfo3);
             // 
             // toolStripEx2
             // 
@@ -318,93 +252,13 @@ namespace Analogy
             this.toolStripEx2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx2.Image = null;
             this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1,
-            this.toolStripSplitButtonEx1,
-            this.toolStripButton10});
-            this.toolStripEx2.Location = new System.Drawing.Point(195, 1);
+            this.toolStripEx2.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx2.Size = new System.Drawing.Size(297, 113);
+            this.toolStripEx2.Size = new System.Drawing.Size(56, 113);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "Network";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripDropDownButton1, "A");
-            this.toolStripDropDownButton1.AutoToolTip = false;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fsfToolStripMenuItem,
-            this.fsfToolStripMenuItem1});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(67, 91);
-            this.toolStripDropDownButton1.Text = "Access \r\nMedia";
-            this.toolStripDropDownButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo4.BackColor = System.Drawing.Color.White;
-            toolTipInfo4.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo4.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Body.Text = "\r\nConnect to or disconnect from media server.\r\n";
-            toolTipInfo4.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo4.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Header.Text = "Access Media\r\n";
-            this.superToolTip1.SetToolTip(this.toolStripDropDownButton1, toolTipInfo4);
-            // 
-            // fsfToolStripMenuItem
-            // 
-            this.fsfToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem.Image")));
-            this.fsfToolStripMenuItem.Name = "fsfToolStripMenuItem";
-            this.fsfToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
-            this.fsfToolStripMenuItem.Text = "Connect to a media server";
-            // 
-            // fsfToolStripMenuItem1
-            // 
-            this.fsfToolStripMenuItem1.Enabled = false;
-            this.fsfToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem1.Image")));
-            this.fsfToolStripMenuItem1.Name = "fsfToolStripMenuItem1";
-            this.fsfToolStripMenuItem1.Size = new System.Drawing.Size(283, 26);
-            this.fsfToolStripMenuItem1.Text = "Discconect from a media server";
-            // 
-            // toolStripSplitButtonEx1
-            // 
-            this.toolStripSplitButtonEx1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripSplitButtonEx1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapNetworkDriveToolStripMenuItem,
-            this.discconectNetworkDriveToolStripMenuItem});
-            this.toolStripSplitButtonEx1.Image = global::Analogy.Properties.Resources.Map_Network_Drive;
-            this.toolStripSplitButtonEx1.Name = "toolStripSplitButtonEx1";
-            this.toolStripSplitButtonEx1.Size = new System.Drawing.Size(118, 91);
-            this.toolStripSplitButtonEx1.Text = " Map network \r\n     drive";
-            this.toolStripSplitButtonEx1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripSplitButtonEx1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // mapNetworkDriveToolStripMenuItem
-            // 
-            this.mapNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapNetworkDriveToolStripMenuItem.Image")));
-            this.mapNetworkDriveToolStripMenuItem.Name = "mapNetworkDriveToolStripMenuItem";
-            this.mapNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.mapNetworkDriveToolStripMenuItem.Text = "Map network drive";
-            // 
-            // discconectNetworkDriveToolStripMenuItem
-            // 
-            this.discconectNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("discconectNetworkDriveToolStripMenuItem.Image")));
-            this.discconectNetworkDriveToolStripMenuItem.Name = "discconectNetworkDriveToolStripMenuItem";
-            this.discconectNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.discconectNetworkDriveToolStripMenuItem.Text = "Disconnect network drive";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(103, 91);
-            this.toolStripButton10.Text = "Add a network\r\n drive";
-            this.toolStripButton10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripEx3
             // 
@@ -415,112 +269,13 @@ namespace Analogy
             this.toolStripEx3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx3.Image = null;
             this.toolStripEx3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton4,
-            this.toolStripPanelItem1});
-            this.toolStripEx3.Location = new System.Drawing.Point(494, 1);
+            this.toolStripEx3.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx3.Name = "toolStripEx3";
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx3.Size = new System.Drawing.Size(315, 113);
+            this.toolStripEx3.Size = new System.Drawing.Size(56, 113);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "System";
-            // 
-            // toolStripButton4
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton4, "CP");
-            this.toolStripButton4.AutoToolTip = false;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(62, 91);
-            this.toolStripButton4.Text = "Open \r\nSettings";
-            this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo5.BackColor = System.Drawing.Color.White;
-            toolTipInfo5.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo5.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Body.Text = "\r\nChange settings and customized the functionality of your computer.\r\n";
-            toolTipInfo5.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo5.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Header.Text = "Open Settings\r\n";
-            this.superToolTip1.SetToolTip(this.toolStripButton4, toolTipInfo5);
-            // 
-            // toolStripPanelItem1
-            // 
-            this.toolStripPanelItem1.CausesValidation = false;
-            this.toolStripPanelItem1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.toolStripPanelItem1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripButton7});
-            this.toolStripPanelItem1.Name = "toolStripPanelItem1";
-            this.toolStripPanelItem1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.toolStripPanelItem1.Size = new System.Drawing.Size(242, 94);
-            this.toolStripPanelItem1.Text = "toolStripPanelItem1";
-            this.toolStripPanelItem1.Transparent = true;
-            // 
-            // toolStripButton5
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton5, "U");
-            this.toolStripButton5.AutoToolTip = false;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(236, 28);
-            this.toolStripButton5.Text = "Uninstall or change a program";
-            toolTipInfo6.BackColor = System.Drawing.Color.White;
-            toolTipInfo6.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo6.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Body.Text = "\r\nUninstalled a program, change installed features or repair an installation.";
-            toolTipInfo6.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo6.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Header.Text = "Uninstall or change a program";
-            this.superToolTip1.SetToolTip(this.toolStripButton5, toolTipInfo6);
-            // 
-            // toolStripButton6
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton6, "S");
-            this.toolStripButton6.AutoToolTip = false;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(153, 28);
-            this.toolStripButton6.Text = "System Properties";
-            toolTipInfo7.BackColor = System.Drawing.Color.White;
-            toolTipInfo7.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo7.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Body.Text = "\r\nShow information about your computer, such as processor speed or amount of inst" +
-    "alled memory.\r\n";
-            toolTipInfo7.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo7.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Header.Text = "System Properties";
-            this.superToolTip1.SetToolTip(this.toolStripButton6, toolTipInfo7);
-            // 
-            // toolStripButton7
-            // 
-            this.superAccelerator1.SetAccelerator(this.toolStripButton7, "FC");
-            this.toolStripButton7.AutoToolTip = false;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(89, 28);
-            this.toolStripButton7.Text = "Manage";
-            toolTipInfo8.BackColor = System.Drawing.Color.White;
-            toolTipInfo8.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo8.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Body.Text = "\r\nManage storage,events, Task scheduling, services and more..";
-            toolTipInfo8.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo8.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Header.Text = "Manage";
-            this.superToolTip1.SetToolTip(this.toolStripButton7, toolTipInfo8);
             // 
             // toolStripTabItem2
             // 
@@ -554,7 +309,7 @@ namespace Analogy
             this.toolStripEx4.Name = "toolStripEx4";
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx4.Size = new System.Drawing.Size(106, 114);
+            this.toolStripEx4.Size = new System.Drawing.Size(106, 113);
             this.toolStripEx4.TabIndex = 0;
             this.toolStripEx4.Text = "Panes";
             // 
@@ -567,13 +322,248 @@ namespace Analogy
             this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx5.Image = null;
             this.toolStripEx5.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.toolStripEx5.Location = new System.Drawing.Point(55, 1);
+            this.toolStripEx5.Location = new System.Drawing.Point(108, 1);
             this.toolStripEx5.Name = "toolStripEx5";
             this.toolStripEx5.Office12Mode = false;
             this.toolStripEx5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx5.Size = new System.Drawing.Size(106, 114);
+            this.toolStripEx5.Size = new System.Drawing.Size(106, 113);
             this.toolStripEx5.TabIndex = 1;
             this.toolStripEx5.Text = "Layout";
+            // 
+            // toolStripButton1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton1, "P");
+            this.toolStripButton1.AutoToolTip = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(80, 44);
+            this.toolStripButton1.Text = "Properties";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo1.BackColor = System.Drawing.Color.White;
+            toolTipInfo1.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo1.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Body.Text = "\r\nShow the properties of the selected item.\r\n";
+            toolTipInfo1.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo1.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Header.Text = "Properties (Alt + Enter)";
+            this.superToolTip1.SetToolTip(this.toolStripButton1, toolTipInfo1);
+            // 
+            // toolStripButton2
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton2, "O");
+            this.toolStripButton2.AutoToolTip = false;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(49, 44);
+            this.toolStripButton2.Text = "Open";
+            this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo2.BackColor = System.Drawing.Color.White;
+            toolTipInfo2.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo2.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Body.Text = "\r\nOpen the selected file with default program.";
+            toolTipInfo2.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo2.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Header.Text = "Open";
+            this.superToolTip1.SetToolTip(this.toolStripButton2, toolTipInfo2);
+            // 
+            // toolStripButton3
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton3, "R");
+            this.toolStripButton3.AutoToolTip = false;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(67, 44);
+            this.toolStripButton3.Text = "Rename";
+            this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo3.BackColor = System.Drawing.Color.White;
+            toolTipInfo3.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo3.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Body.Text = "\r\nRename the selected item.\r\n";
+            toolTipInfo3.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo3.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Header.Text = "Rename (F2)";
+            this.superToolTip1.SetToolTip(this.toolStripButton3, toolTipInfo3);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripDropDownButton1, "A");
+            this.toolStripDropDownButton1.AutoToolTip = false;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fsfToolStripMenuItem,
+            this.fsfToolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(71, 22);
+            this.toolStripDropDownButton1.Text = "Access \r\nMedia";
+            this.toolStripDropDownButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo4.BackColor = System.Drawing.Color.White;
+            toolTipInfo4.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo4.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Body.Text = "\r\nConnect to or disconnect from media server.\r\n";
+            toolTipInfo4.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo4.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Header.Text = "Access Media\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripDropDownButton1, toolTipInfo4);
+            // 
+            // fsfToolStripMenuItem
+            // 
+            this.fsfToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem.Image")));
+            this.fsfToolStripMenuItem.Name = "fsfToolStripMenuItem";
+            this.fsfToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
+            this.fsfToolStripMenuItem.Text = "Connect to a media server";
+            // 
+            // fsfToolStripMenuItem1
+            // 
+            this.fsfToolStripMenuItem1.Enabled = false;
+            this.fsfToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem1.Image")));
+            this.fsfToolStripMenuItem1.Name = "fsfToolStripMenuItem1";
+            this.fsfToolStripMenuItem1.Size = new System.Drawing.Size(301, 26);
+            this.fsfToolStripMenuItem1.Text = "Discconect from a media server";
+            // 
+            // toolStripSplitButtonEx1
+            // 
+            this.toolStripSplitButtonEx1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripSplitButtonEx1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapNetworkDriveToolStripMenuItem,
+            this.discconectNetworkDriveToolStripMenuItem});
+            this.toolStripSplitButtonEx1.Image = global::Analogy.Properties.Resources.Map_Network_Drive;
+            this.toolStripSplitButtonEx1.Name = "toolStripSplitButtonEx1";
+            this.toolStripSplitButtonEx1.Size = new System.Drawing.Size(123, 64);
+            this.toolStripSplitButtonEx1.Text = " Map network \r\n     drive";
+            this.toolStripSplitButtonEx1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripSplitButtonEx1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // mapNetworkDriveToolStripMenuItem
+            // 
+            this.mapNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapNetworkDriveToolStripMenuItem.Image")));
+            this.mapNetworkDriveToolStripMenuItem.Name = "mapNetworkDriveToolStripMenuItem";
+            this.mapNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.mapNetworkDriveToolStripMenuItem.Text = "Map network drive";
+            // 
+            // discconectNetworkDriveToolStripMenuItem
+            // 
+            this.discconectNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("discconectNetworkDriveToolStripMenuItem.Image")));
+            this.discconectNetworkDriveToolStripMenuItem.Name = "discconectNetworkDriveToolStripMenuItem";
+            this.discconectNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.discconectNetworkDriveToolStripMenuItem.Text = "Disconnect network drive";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(110, 64);
+            this.toolStripButton10.Text = "Add a network\r\n drive";
+            this.toolStripButton10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton4
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton4, "CP");
+            this.toolStripButton4.AutoToolTip = false;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton4.Text = "Open \r\nSettings";
+            this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo5.BackColor = System.Drawing.Color.White;
+            toolTipInfo5.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo5.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Body.Text = "\r\nChange settings and customized the functionality of your computer.\r\n";
+            toolTipInfo5.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo5.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Header.Text = "Open Settings\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripButton4, toolTipInfo5);
+            // 
+            // toolStripPanelItem1
+            // 
+            this.toolStripPanelItem1.CausesValidation = false;
+            this.toolStripPanelItem1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripPanelItem1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton7});
+            this.toolStripPanelItem1.Name = "toolStripPanelItem1";
+            this.toolStripPanelItem1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.toolStripPanelItem1.Size = new System.Drawing.Size(242, 91);
+            this.toolStripPanelItem1.Text = "toolStripPanelItem1";
+            this.toolStripPanelItem1.Transparent = true;
+            // 
+            // toolStripButton5
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton5, "U");
+            this.toolStripButton5.AutoToolTip = false;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(234, 24);
+            this.toolStripButton5.Text = "Uninstall or change a program";
+            toolTipInfo6.BackColor = System.Drawing.Color.White;
+            toolTipInfo6.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo6.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Body.Text = "\r\nUninstalled a program, change installed features or repair an installation.";
+            toolTipInfo6.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo6.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Header.Text = "Uninstall or change a program";
+            this.superToolTip1.SetToolTip(this.toolStripButton5, toolTipInfo6);
+            // 
+            // toolStripButton6
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton6, "S");
+            this.toolStripButton6.AutoToolTip = false;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(151, 24);
+            this.toolStripButton6.Text = "System Properties";
+            toolTipInfo7.BackColor = System.Drawing.Color.White;
+            toolTipInfo7.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo7.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Body.Text = "\r\nShow information about your computer, such as processor speed or amount of inst" +
+    "alled memory.\r\n";
+            toolTipInfo7.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo7.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Header.Text = "System Properties";
+            this.superToolTip1.SetToolTip(this.toolStripButton6, toolTipInfo7);
+            // 
+            // toolStripButton7
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton7, "FC");
+            this.toolStripButton7.AutoToolTip = false;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButton7.Text = "Manage";
+            toolTipInfo8.BackColor = System.Drawing.Color.White;
+            toolTipInfo8.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo8.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Body.Text = "\r\nManage storage,events, Task scheduling, services and more..";
+            toolTipInfo8.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo8.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Header.Text = "Manage";
+            this.superToolTip1.SetToolTip(this.toolStripButton7, toolTipInfo8);
             // 
             // toolStripDropDownButton4
             // 
@@ -1301,16 +1291,39 @@ namespace Analogy
             // statusStripEx1
             // 
             this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
-            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(1151, 22);
+            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(1151, 26);
             this.statusStripEx1.CanOverrideStyle = true;
             this.statusStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStripEx1.Location = new System.Drawing.Point(1, 506);
+            this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.statusStripLabel1});
+            this.statusStripEx1.Location = new System.Drawing.Point(1, 502);
             this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
             this.statusStripEx1.Name = "statusStripEx1";
             this.statusStripEx1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
-            this.statusStripEx1.Size = new System.Drawing.Size(1151, 22);
+            this.statusStripEx1.Size = new System.Drawing.Size(1151, 26);
             this.statusStripEx1.TabIndex = 6;
             this.statusStripEx1.Text = "statusStripEx1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(36, 20);
+            this.toolStripStatusLabel1.Text = "N/A";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
+            // statusStripLabel1
+            // 
+            this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
+            this.statusStripLabel1.Name = "statusStripLabel1";
+            this.statusStripLabel1.Size = new System.Drawing.Size(122, 20);
+            this.statusStripLabel1.Text = "statusStripLabel1";
             // 
             // Form1
             // 
@@ -1335,12 +1348,6 @@ namespace Analogy
             this.ribbonControlAdv1.PerformLayout();
             this.toolStripTabItem1.Panel.ResumeLayout(false);
             this.toolStripTabItem1.Panel.PerformLayout();
-            this.toolStripEx1.ResumeLayout(false);
-            this.toolStripEx1.PerformLayout();
-            this.toolStripEx2.ResumeLayout(false);
-            this.toolStripEx2.PerformLayout();
-            this.toolStripEx3.ResumeLayout(false);
-            this.toolStripEx3.PerformLayout();
             this.toolStripTabItem2.Panel.ResumeLayout(false);
             this.toolStripTabItem2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationView2)).EndInit();
@@ -1353,6 +1360,7 @@ namespace Analogy
             this.buttonEdit1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
+            this.statusStripEx1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1418,5 +1426,8 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
         private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
         private Syncfusion.Windows.Forms.Tools.StatusStripEx statusStripEx1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private Syncfusion.Windows.Forms.Tools.StatusStripLabel statusStripLabel1;
     }
 }

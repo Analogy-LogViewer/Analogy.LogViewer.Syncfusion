@@ -10,20 +10,45 @@ using System.Runtime.InteropServices;
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.Windows.Forms;
 using System.IO;
+using System.Threading.Tasks;
+using Analogy.Interfaces;
+using Analogy.Managers;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraTab;
 using Syncfusion.Windows.Forms.Tools.Navigation;
+using Bar = Syncfusion.Windows.Forms.Tools.Navigation.Bar;
+using RibbonForm = Syncfusion.Windows.Forms.Tools.RibbonForm;
 
 namespace Analogy
 {
     public partial class Form1 : RibbonForm
     {
+        private string filePoolingTitle = "File Pooling";
+        private string offlineTitle = "Offline log";
+        private string onlineTitle = "Online log";
+        private Dictionary<Guid, RibbonPage> Mapping = new Dictionary<Guid, RibbonPage>();
+
+        private Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider> onlineDataSourcesMapping =
+            new Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider>();
+
+        private List<Task<bool>> OnlineSources = new List<Task<bool>>();
+        private int offline;
+        private int online;
+        private int filePooling;
+        private bool disableOnlineDueToFileOpen;
+        private XtraTabPage currentContextPage;
+        private UserSettingsManager settings => UserSettingsManager.UserSettings;
+        private bool Initialized { get; set; }
+
         TouchStyleColorTable touch = new TouchStyleColorTable();
         bool isPopupVisible = false;
 
         public Form1()
         {
-
             InitializeComponent();
-          //  ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
+            //AnalogyLogManager.Instance.OnNewError += (s, e) => btnErrors.Visibility = BarItemVisibility.Always;
+            //  ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
             touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
             touch.ActiveToolStripTabItemBackColor = ColorTranslator.FromHtml("#f5f6f7");
             touch.RibbonPanelBackColor = ColorTranslator.FromHtml("#f5f6f7");
