@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using Syncfusion.Licensing;
 
 namespace Analogy
 {
@@ -16,7 +17,7 @@ namespace Analogy
         [STAThread]
         static void Main()
         {
-            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg1NzE0QDMxMzcyZTM0MmUzMElnQ0R2RllBVjRXOU9BMmZ5M2xKQmRXVmtya3FBbjJ1bDByUTIvL3dMdWc9");
+            SyncfusionLicenseProvider.RegisterLicense("MTg1NzE0QDMxMzcyZTM0MmUzMElnQ0R2RllBVjRXOU9BMmZ5M2xKQmRXVmtya3FBbjJ1bDByUTIvL3dMdWc9");
             WindowsFormsSettings.LoadApplicationSettings();
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
