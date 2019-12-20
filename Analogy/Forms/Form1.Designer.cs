@@ -146,6 +146,7 @@ namespace Analogy
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
             this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
+            this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -193,15 +194,15 @@ namespace Analogy
             this.ribbonControlAdv1.OfficeMenu.Size = new System.Drawing.Size(12, 65);
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
-            this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2013;
+            this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
             this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = false;
-            this.ribbonControlAdv1.Size = new System.Drawing.Size(1155, 194);
+            this.ribbonControlAdv1.Size = new System.Drawing.Size(1155, 197);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.ribbonControlAdv1.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.ribbonControlAdv1.TabIndex = 0;
             this.ribbonControlAdv1.Text = "Analogy";
-            this.ribbonControlAdv1.ThemeName = "Office2013";
+            this.ribbonControlAdv1.ThemeName = "Office2016";
             this.ribbonControlAdv1.TitleColor = System.Drawing.Color.Black;
             // 
             // toolStripTabItem1
@@ -220,7 +221,7 @@ namespace Analogy
             this.toolStripTabItem1.Panel.TabIndex = 2;
             this.toolStripTabItem1.Panel.Text = "Computer";
             this.toolStripTabItem1.Position = 0;
-            this.toolStripTabItem1.Size = new System.Drawing.Size(95, 39);
+            this.toolStripTabItem1.Size = new System.Drawing.Size(97, 38);
             this.toolStripTabItem1.Tag = "1";
             this.toolStripTabItem1.Text = "Computer";
             // 
@@ -240,7 +241,8 @@ namespace Analogy
             this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
-            this.toolStripEx1.Size = new System.Drawing.Size(191, 109);
+            this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx1.Size = new System.Drawing.Size(193, 113);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Lcation";
             // 
@@ -251,7 +253,7 @@ namespace Analogy
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(75, 87);
+            this.toolStripButton1.Size = new System.Drawing.Size(75, 91);
             this.toolStripButton1.Text = "Properties";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -272,7 +274,7 @@ namespace Analogy
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(47, 87);
+            this.toolStripButton2.Size = new System.Drawing.Size(47, 91);
             this.toolStripButton2.Text = "Open";
             this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -293,7 +295,7 @@ namespace Analogy
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(62, 87);
+            this.toolStripButton3.Size = new System.Drawing.Size(62, 91);
             this.toolStripButton3.Text = "Rename";
             this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -320,10 +322,11 @@ namespace Analogy
             this.toolStripDropDownButton1,
             this.toolStripSplitButtonEx1,
             this.toolStripButton10});
-            this.toolStripEx2.Location = new System.Drawing.Point(193, 1);
+            this.toolStripEx2.Location = new System.Drawing.Point(195, 1);
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.Office12Mode = false;
-            this.toolStripEx2.Size = new System.Drawing.Size(295, 109);
+            this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx2.Size = new System.Drawing.Size(297, 113);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "Network";
             // 
@@ -337,7 +340,7 @@ namespace Analogy
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(67, 87);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(67, 91);
             this.toolStripDropDownButton1.Text = "Access \r\nMedia";
             this.toolStripDropDownButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -374,7 +377,7 @@ namespace Analogy
             this.discconectNetworkDriveToolStripMenuItem});
             this.toolStripSplitButtonEx1.Image = global::Analogy.Properties.Resources.Map_Network_Drive;
             this.toolStripSplitButtonEx1.Name = "toolStripSplitButtonEx1";
-            this.toolStripSplitButtonEx1.Size = new System.Drawing.Size(118, 87);
+            this.toolStripSplitButtonEx1.Size = new System.Drawing.Size(118, 91);
             this.toolStripSplitButtonEx1.Text = " Map network \r\n     drive";
             this.toolStripSplitButtonEx1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripSplitButtonEx1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -398,7 +401,7 @@ namespace Analogy
             this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(103, 87);
+            this.toolStripButton10.Size = new System.Drawing.Size(103, 91);
             this.toolStripButton10.Text = "Add a network\r\n drive";
             this.toolStripButton10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -415,10 +418,11 @@ namespace Analogy
             this.toolStripEx3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton4,
             this.toolStripPanelItem1});
-            this.toolStripEx3.Location = new System.Drawing.Point(490, 1);
+            this.toolStripEx3.Location = new System.Drawing.Point(494, 1);
             this.toolStripEx3.Name = "toolStripEx3";
             this.toolStripEx3.Office12Mode = false;
-            this.toolStripEx3.Size = new System.Drawing.Size(323, 109);
+            this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx3.Size = new System.Drawing.Size(315, 113);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "System";
             // 
@@ -429,7 +433,7 @@ namespace Analogy
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(62, 87);
+            this.toolStripButton4.Size = new System.Drawing.Size(62, 91);
             this.toolStripButton4.Text = "Open \r\nSettings";
             this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -453,7 +457,7 @@ namespace Analogy
             this.toolStripButton7});
             this.toolStripPanelItem1.Name = "toolStripPanelItem1";
             this.toolStripPanelItem1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.toolStripPanelItem1.Size = new System.Drawing.Size(252, 90);
+            this.toolStripPanelItem1.Size = new System.Drawing.Size(242, 94);
             this.toolStripPanelItem1.Text = "toolStripPanelItem1";
             this.toolStripPanelItem1.Transparent = true;
             // 
@@ -465,7 +469,7 @@ namespace Analogy
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(246, 26);
+            this.toolStripButton5.Size = new System.Drawing.Size(236, 28);
             this.toolStripButton5.Text = "Uninstall or change a program";
             toolTipInfo6.BackColor = System.Drawing.Color.White;
             toolTipInfo6.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -485,7 +489,7 @@ namespace Analogy
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(163, 26);
+            this.toolStripButton6.Size = new System.Drawing.Size(153, 28);
             this.toolStripButton6.Text = "System Properties";
             toolTipInfo7.BackColor = System.Drawing.Color.White;
             toolTipInfo7.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,7 +510,7 @@ namespace Analogy
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(99, 26);
+            this.toolStripButton7.Size = new System.Drawing.Size(89, 28);
             this.toolStripButton7.Text = "Manage";
             toolTipInfo8.BackColor = System.Drawing.Color.White;
             toolTipInfo8.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -533,7 +537,7 @@ namespace Analogy
             this.toolStripTabItem2.Panel.TabIndex = 3;
             this.toolStripTabItem2.Panel.Text = "View";
             this.toolStripTabItem2.Position = 1;
-            this.toolStripTabItem2.Size = new System.Drawing.Size(62, 39);
+            this.toolStripTabItem2.Size = new System.Drawing.Size(64, 38);
             this.toolStripTabItem2.Tag = "2";
             this.toolStripTabItem2.Text = "View";
             // 
@@ -549,7 +553,8 @@ namespace Analogy
             this.toolStripEx4.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx4.Name = "toolStripEx4";
             this.toolStripEx4.Office12Mode = false;
-            this.toolStripEx4.Size = new System.Drawing.Size(51, 122);
+            this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx4.Size = new System.Drawing.Size(106, 114);
             this.toolStripEx4.TabIndex = 0;
             this.toolStripEx4.Text = "Panes";
             // 
@@ -562,10 +567,11 @@ namespace Analogy
             this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx5.Image = null;
             this.toolStripEx5.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.toolStripEx5.Location = new System.Drawing.Point(53, 1);
+            this.toolStripEx5.Location = new System.Drawing.Point(55, 1);
             this.toolStripEx5.Name = "toolStripEx5";
             this.toolStripEx5.Office12Mode = false;
-            this.toolStripEx5.Size = new System.Drawing.Size(63, 122);
+            this.toolStripEx5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx5.Size = new System.Drawing.Size(106, 114);
             this.toolStripEx5.TabIndex = 1;
             this.toolStripEx5.Text = "Layout";
             // 
@@ -1277,11 +1283,14 @@ namespace Analogy
             this.dockingManager1.AutoHideTabForeColor = System.Drawing.Color.Empty;
             this.dockingManager1.CloseTabOnMiddleClick = false;
             this.dockingManager1.DockLayoutStream = ((System.IO.MemoryStream)(resources.GetObject("dockingManager1.DockLayoutStream")));
+            this.dockingManager1.DragProviderStyle = Syncfusion.Windows.Forms.Tools.DragProviderStyle.Office2016Colorful;
             this.dockingManager1.HostControl = this;
             this.dockingManager1.MetroButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dockingManager1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
             this.dockingManager1.MetroSplitterBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(183)))));
             this.dockingManager1.ReduceFlickeringInRtl = false;
+            this.dockingManager1.ThemeName = "Office2016Colorful";
+            this.dockingManager1.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Office2016Colorful;
             this.dockingManager1.NewDockStateEndLoad += new System.EventHandler(this.DockingManager1_NewDockStateEndLoad);
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Close, "CloseButton"));
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Pin, "PinButton"));
@@ -1289,19 +1298,35 @@ namespace Analogy
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Restore, "RestoreButton"));
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Menu, "MenuButton"));
             // 
+            // statusStripEx1
+            // 
+            this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
+            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(1151, 22);
+            this.statusStripEx1.CanOverrideStyle = true;
+            this.statusStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStripEx1.Location = new System.Drawing.Point(1, 506);
+            this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.statusStripEx1.Name = "statusStripEx1";
+            this.statusStripEx1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            this.statusStripEx1.Size = new System.Drawing.Size(1151, 22);
+            this.statusStripEx1.TabIndex = 6;
+            this.statusStripEx1.Text = "statusStripEx1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1153, 529);
+            this.Controls.Add(this.statusStripEx1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControlAdv1);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(1, 6, 1, 1);
+            this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 1);
+            this.ShowApplicationIcon = false;
             this.Text = "Windows Explorer Demo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Resize += new System.EventHandler(this.Form1_Resize);
@@ -1329,6 +1354,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1391,5 +1417,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem showAllFoldersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
         private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
+        private Syncfusion.Windows.Forms.Tools.StatusStripEx statusStripEx1;
     }
 }

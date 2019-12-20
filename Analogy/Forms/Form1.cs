@@ -23,7 +23,7 @@ namespace Analogy
         {
 
             InitializeComponent();
-            ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
+          //  ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
             touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
             touch.ActiveToolStripTabItemBackColor = ColorTranslator.FromHtml("#f5f6f7");
             touch.RibbonPanelBackColor = ColorTranslator.FromHtml("#f5f6f7");
