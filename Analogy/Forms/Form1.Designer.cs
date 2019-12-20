@@ -57,39 +57,7 @@ namespace Analogy
             Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem7 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
             Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem8 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
             Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo12 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.Navigation.Bar bar1 = new Syncfusion.Windows.Forms.Tools.Navigation.Bar();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv1 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv2 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv3 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv4 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv5 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv6 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv7 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv8 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv9 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv10 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv11 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv12 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv13 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv14 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv15 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdv treeNodeAdv16 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdv();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Folders (6)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Devices and Drivers (3)", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Desktop",
-            "asdas"}, 3);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Documents", 4);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Downloads", 5);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Music", 6);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Pictures", 7);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Videos", 8);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("DVD RW Drive(E:)", 0);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Local Disc (C:)", 1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Local Disk(D:)", 2);
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -123,25 +91,9 @@ namespace Analogy
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripGallery1 = new Syncfusion.Windows.Forms.Tools.ToolStripGallery();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.navigationView2 = new Syncfusion.Windows.Forms.Tools.NavigationView();
-            this.treeViewAdv1 = new Syncfusion.Windows.Forms.Tools.TreeViewAdv();
             this.TreeViewImageList = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.popupControlContainer1 = new Syncfusion.Windows.Forms.PopupControlContainer();
-            this.buttonAdv6 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.buttonAdv5 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.buttonAdv4 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.buttonAdv3 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.buttonAdv2 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.buttonAdv1 = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.superAccelerator1 = new Syncfusion.Windows.Forms.Tools.SuperAccelerator(this);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonEdit1 = new Syncfusion.Windows.Forms.Tools.ButtonEdit();
-            this.buttonEditChildButton1 = new Syncfusion.Windows.Forms.Tools.ButtonEditChildButton();
-            this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
@@ -154,14 +106,6 @@ namespace Analogy
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
             this.toolStripTabItem2.Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeViewAdv1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.popupControlContainer1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1)).BeginInit();
-            this.buttonEdit1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
             this.statusStripEx1.SuspendLayout();
             this.SuspendLayout();
@@ -754,245 +698,6 @@ namespace Analogy
             this.imageList1.Images.SetKeyName(6, "Icon-9.png");
             this.imageList1.Images.SetKeyName(7, "Icon-10.png");
             // 
-            // navigationView2
-            // 
-            bar1.ImageIndex = 2;
-            bar1.Text = "My Computer";
-            this.navigationView2.Bars.AddRange(new Syncfusion.Windows.Forms.Tools.Navigation.Bar[] {
-            bar1});
-            this.navigationView2.BeforeTouchSize = new System.Drawing.Size(689, 21);
-            this.navigationView2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navigationView2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navigationView2.Location = new System.Drawing.Point(0, 6);
-            this.navigationView2.Margin = new System.Windows.Forms.Padding(4);
-            this.navigationView2.Name = "navigationView2";
-            this.navigationView2.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Silver;
-            this.navigationView2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.navigationView2.SelectedBar = bar1;
-            this.navigationView2.ShowHistoryButtons = true;
-            this.navigationView2.ShowRootBarText = true;
-            this.navigationView2.Size = new System.Drawing.Size(689, 21);
-            this.navigationView2.TabIndex = 2;
-            this.navigationView2.Text = "navigationView2";
-            this.navigationView2.ThemeName = "Custom";
-            this.navigationView2.VisualStyle = Syncfusion.Windows.Forms.Tools.Navigation.VisualStyles.Custom;
-            this.navigationView2.BarSelectionChanging += new System.EventHandler<Syncfusion.Windows.Forms.Tools.Navigation.BarSelectionChangingEventArgs>(this.navigationView2_BarSelectionChanging);
-            // 
-            // treeViewAdv1
-            // 
-            this.treeViewAdv1.AccelerateScrolling = Syncfusion.Windows.Forms.AccelerateScrollingBehavior.Immediate;
-            this.treeViewAdv1.BackColor = System.Drawing.Color.White;
-            treeNodeAdvStyleInfo1.CheckBoxTickThickness = 1;
-            treeNodeAdvStyleInfo1.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.EnsureDefaultOptionedChild = true;
-            treeNodeAdvStyleInfo1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNodeAdvStyleInfo1.IntermediateCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.OptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.SelectedOptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.treeViewAdv1.BaseStylePairs.AddRange(new Syncfusion.Windows.Forms.Tools.StyleNamePair[] {
-            new Syncfusion.Windows.Forms.Tools.StyleNamePair("Standard", treeNodeAdvStyleInfo1)});
-            this.treeViewAdv1.BeforeTouchSize = new System.Drawing.Size(291, 202);
-            this.treeViewAdv1.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.treeViewAdv1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeViewAdv1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeViewAdv1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // 
-            // 
-            this.treeViewAdv1.HelpTextControl.BaseThemeName = null;
-            this.treeViewAdv1.HelpTextControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeViewAdv1.HelpTextControl.Location = new System.Drawing.Point(0, 0);
-            this.treeViewAdv1.HelpTextControl.Name = "helpText";
-            this.treeViewAdv1.HelpTextControl.Size = new System.Drawing.Size(63, 19);
-            this.treeViewAdv1.HelpTextControl.TabIndex = 0;
-            this.treeViewAdv1.HelpTextControl.Text = "help text";
-            this.treeViewAdv1.InactiveSelectedNodeForeColor = System.Drawing.Color.Transparent;
-            this.treeViewAdv1.LeftImageList = this.TreeViewImageList;
-            this.treeViewAdv1.Location = new System.Drawing.Point(48, 0);
-            this.treeViewAdv1.Margin = new System.Windows.Forms.Padding(4);
-            this.treeViewAdv1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.treeViewAdv1.Name = "treeViewAdv1";
-            treeNodeAdv1.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv1.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv1.EnsureDefaultOptionedChild = true;
-            treeNodeAdv1.Expanded = true;
-            treeNodeAdv1.LeftImageIndices = new int[] {
-        14};
-            treeNodeAdv1.MultiLine = true;
-            treeNodeAdv2.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv2.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv2.EnsureDefaultOptionedChild = true;
-            treeNodeAdv2.LeftImageIndices = new int[] {
-        8};
-            treeNodeAdv2.MultiLine = true;
-            treeNodeAdv2.Optioned = true;
-            treeNodeAdv2.ShowLine = true;
-            treeNodeAdv2.Text = "Desktop";
-            treeNodeAdv3.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv3.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv3.EnsureDefaultOptionedChild = true;
-            treeNodeAdv3.Expanded = true;
-            treeNodeAdv3.LeftImageIndices = new int[] {
-        10};
-            treeNodeAdv3.MultiLine = true;
-            treeNodeAdv3.ShowLine = true;
-            treeNodeAdv3.Text = "Downloads";
-            treeNodeAdv4.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv4.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv4.EnsureDefaultOptionedChild = true;
-            treeNodeAdv4.LeftImageIndices = new int[] {
-        9};
-            treeNodeAdv4.MultiLine = true;
-            treeNodeAdv4.ShowLine = true;
-            treeNodeAdv4.Text = "Documents";
-            treeNodeAdv5.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv5.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv5.EnsureDefaultOptionedChild = true;
-            treeNodeAdv5.LeftImageIndices = new int[] {
-        12};
-            treeNodeAdv5.MultiLine = true;
-            treeNodeAdv5.ShowLine = true;
-            treeNodeAdv5.Text = "Pictures";
-            treeNodeAdv1.Nodes.AddRange(new Syncfusion.Windows.Forms.Tools.TreeNodeAdv[] {
-            treeNodeAdv2,
-            treeNodeAdv3,
-            treeNodeAdv4,
-            treeNodeAdv5});
-            treeNodeAdv1.ShowLine = true;
-            treeNodeAdv1.Text = "Quick access";
-            treeNodeAdv6.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv6.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv6.EnsureDefaultOptionedChild = true;
-            treeNodeAdv6.Expanded = true;
-            treeNodeAdv6.LeftImageIndices = new int[] {
-        3};
-            treeNodeAdv6.MultiLine = true;
-            treeNodeAdv6.ShowLine = true;
-            treeNodeAdv6.Text = "OneDrive";
-            treeNodeAdv7.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv7.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv7.EnsureDefaultOptionedChild = true;
-            treeNodeAdv7.Expanded = true;
-            treeNodeAdv7.LeftImageIndices = new int[] {
-        4};
-            treeNodeAdv7.MultiLine = true;
-            treeNodeAdv8.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv8.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv8.EnsureDefaultOptionedChild = true;
-            treeNodeAdv8.Expanded = true;
-            treeNodeAdv8.LeftImageIndices = new int[] {
-        1};
-            treeNodeAdv8.MultiLine = true;
-            treeNodeAdv8.Optioned = true;
-            treeNodeAdv8.ShowLine = true;
-            treeNodeAdv8.Text = "Desktop";
-            treeNodeAdv9.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv9.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv9.EnsureDefaultOptionedChild = true;
-            treeNodeAdv9.LeftImageIndices = new int[] {
-        9};
-            treeNodeAdv9.MultiLine = true;
-            treeNodeAdv9.ShowLine = true;
-            treeNodeAdv9.Text = "Documents";
-            treeNodeAdv10.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv10.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv10.EnsureDefaultOptionedChild = true;
-            treeNodeAdv10.LeftImageIndices = new int[] {
-        2};
-            treeNodeAdv10.MultiLine = true;
-            treeNodeAdv10.ShowLine = true;
-            treeNodeAdv10.Text = "Downloads";
-            treeNodeAdv11.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv11.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv11.EnsureDefaultOptionedChild = true;
-            treeNodeAdv11.LeftImageIndices = new int[] {
-        5};
-            treeNodeAdv11.MultiLine = true;
-            treeNodeAdv11.ShowLine = true;
-            treeNodeAdv11.Text = "Music";
-            treeNodeAdv12.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv12.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv12.EnsureDefaultOptionedChild = true;
-            treeNodeAdv12.LeftImageIndices = new int[] {
-        4};
-            treeNodeAdv12.MultiLine = true;
-            treeNodeAdv12.ShowLine = true;
-            treeNodeAdv12.Text = "Pictures";
-            treeNodeAdv13.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv13.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv13.EnsureDefaultOptionedChild = true;
-            treeNodeAdv13.LeftImageIndices = new int[] {
-        6};
-            treeNodeAdv13.MultiLine = true;
-            treeNodeAdv13.ShowLine = true;
-            treeNodeAdv13.Text = "Videos";
-            treeNodeAdv14.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv14.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv14.EnsureDefaultOptionedChild = true;
-            treeNodeAdv14.LeftImageIndices = new int[] {
-        13};
-            treeNodeAdv14.MultiLine = true;
-            treeNodeAdv14.ShowLine = true;
-            treeNodeAdv14.Text = "Local Disk (C:)";
-            treeNodeAdv15.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv15.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv15.EnsureDefaultOptionedChild = true;
-            treeNodeAdv15.LeftImageIndices = new int[] {
-        13};
-            treeNodeAdv15.MultiLine = true;
-            treeNodeAdv15.ShowLine = true;
-            treeNodeAdv15.Text = "Local Disk (D:)";
-            treeNodeAdv7.Nodes.AddRange(new Syncfusion.Windows.Forms.Tools.TreeNodeAdv[] {
-            treeNodeAdv8,
-            treeNodeAdv9,
-            treeNodeAdv10,
-            treeNodeAdv11,
-            treeNodeAdv12,
-            treeNodeAdv13,
-            treeNodeAdv14,
-            treeNodeAdv15});
-            treeNodeAdv7.ShowLine = true;
-            treeNodeAdv7.Text = "This PC";
-            treeNodeAdv16.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdv16.ChildStyle.CheckBoxTickThickness = 0;
-            treeNodeAdv16.ChildStyle.EnsureDefaultOptionedChild = true;
-            treeNodeAdv16.EnsureDefaultOptionedChild = true;
-            treeNodeAdv16.IntermediateCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdv16.LeftImageIndices = new int[] {
-        7};
-            treeNodeAdv16.MultiLine = true;
-            treeNodeAdv16.OptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdv16.SelectedOptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            treeNodeAdv16.ShowLine = true;
-            treeNodeAdv16.Text = "Network";
-            this.treeViewAdv1.Nodes.AddRange(new Syncfusion.Windows.Forms.Tools.TreeNodeAdv[] {
-            treeNodeAdv1,
-            treeNodeAdv6,
-            treeNodeAdv7,
-            treeNodeAdv16});
-            this.treeViewAdv1.SelectedNodeBackground = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220))))));
-            this.treeViewAdv1.SelectedNodeForeColor = System.Drawing.SystemColors.HighlightText;
-            this.treeViewAdv1.ShowFocusRect = false;
-            this.treeViewAdv1.ShowLines = false;
-            this.treeViewAdv1.Size = new System.Drawing.Size(291, 202);
-            this.treeViewAdv1.Style = Syncfusion.Windows.Forms.Tools.TreeStyle.Metro;
-            this.treeViewAdv1.TabIndex = 3;
-            this.treeViewAdv1.Text = "treeViewAdv1";
-            this.treeViewAdv1.ThemeName = "Metro";
-            this.treeViewAdv1.ThemeStyle.TreeNodeAdvStyle.CheckBoxTickThickness = 0;
-            this.treeViewAdv1.ThemeStyle.TreeNodeAdvStyle.EnsureDefaultOptionedChild = true;
-            // 
-            // 
-            // 
-            this.treeViewAdv1.ToolTipControl.BackColor = System.Drawing.SystemColors.Info;
-            this.treeViewAdv1.ToolTipControl.BaseThemeName = null;
-            this.treeViewAdv1.ToolTipControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeViewAdv1.ToolTipControl.Location = new System.Drawing.Point(0, 0);
-            this.treeViewAdv1.ToolTipControl.Name = "toolTip";
-            this.treeViewAdv1.ToolTipControl.Size = new System.Drawing.Size(53, 19);
-            this.treeViewAdv1.ToolTipControl.TabIndex = 1;
-            this.treeViewAdv1.ToolTipControl.Text = "toolTip";
-            // 
             // TreeViewImageList
             // 
             this.TreeViewImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("TreeViewImageList.ImageStream")));
@@ -1013,175 +718,6 @@ namespace Analogy
             this.TreeViewImageList.Images.SetKeyName(13, "Local Disk(c).png");
             this.TreeViewImageList.Images.SetKeyName(14, "Quick Access.png");
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.treeViewAdv1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.popupControlContainer1);
-            this.panel1.Controls.Add(this.listView2);
-            this.panel1.Location = new System.Drawing.Point(36, 269);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 202);
-            this.panel1.TabIndex = 4;
-            this.panel1.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(48, 202);
-            this.panel2.TabIndex = 7;
-            // 
-            // popupControlContainer1
-            // 
-            this.popupControlContainer1.Controls.Add(this.buttonAdv6);
-            this.popupControlContainer1.Controls.Add(this.buttonAdv5);
-            this.popupControlContainer1.Controls.Add(this.buttonAdv4);
-            this.popupControlContainer1.Controls.Add(this.buttonAdv3);
-            this.popupControlContainer1.Controls.Add(this.buttonAdv2);
-            this.popupControlContainer1.Controls.Add(this.buttonAdv1);
-            this.popupControlContainer1.Location = new System.Drawing.Point(552, 292);
-            this.popupControlContainer1.Name = "popupControlContainer1";
-            this.popupControlContainer1.Size = new System.Drawing.Size(267, 286);
-            this.popupControlContainer1.TabIndex = 6;
-            // 
-            // buttonAdv6
-            // 
-            this.buttonAdv6.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv6.FlatAppearance.BorderSize = 0;
-            this.buttonAdv6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv6.Location = new System.Drawing.Point(0, 185);
-            this.buttonAdv6.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv6.Name = "buttonAdv6";
-            this.buttonAdv6.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv6.TabIndex = 5;
-            this.buttonAdv6.Text = "Close";
-            this.buttonAdv6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // buttonAdv5
-            // 
-            this.buttonAdv5.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv5.FlatAppearance.BorderSize = 0;
-            this.buttonAdv5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv5.Location = new System.Drawing.Point(0, 148);
-            this.buttonAdv5.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv5.Name = "buttonAdv5";
-            this.buttonAdv5.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv5.TabIndex = 4;
-            this.buttonAdv5.Text = "Help";
-            this.buttonAdv5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // buttonAdv4
-            // 
-            this.buttonAdv4.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv4.FlatAppearance.BorderSize = 0;
-            this.buttonAdv4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv4.Location = new System.Drawing.Point(0, 111);
-            this.buttonAdv4.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv4.Name = "buttonAdv4";
-            this.buttonAdv4.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv4.TabIndex = 3;
-            this.buttonAdv4.Text = "DeleteHistory";
-            this.buttonAdv4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // buttonAdv3
-            // 
-            this.buttonAdv3.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv3.FlatAppearance.BorderSize = 0;
-            this.buttonAdv3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv3.Location = new System.Drawing.Point(0, 74);
-            this.buttonAdv3.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv3.Name = "buttonAdv3";
-            this.buttonAdv3.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv3.TabIndex = 2;
-            this.buttonAdv3.Text = "Open Window Powershell";
-            this.buttonAdv3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // buttonAdv2
-            // 
-            this.buttonAdv2.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv2.FlatAppearance.BorderSize = 0;
-            this.buttonAdv2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv2.Location = new System.Drawing.Point(0, 37);
-            this.buttonAdv2.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv2.Name = "buttonAdv2";
-            this.buttonAdv2.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv2.TabIndex = 1;
-            this.buttonAdv2.Text = "Open Command Prompt";
-            this.buttonAdv2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // buttonAdv1
-            // 
-            this.buttonAdv1.BeforeTouchSize = new System.Drawing.Size(267, 37);
-            this.buttonAdv1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAdv1.FlatAppearance.BorderSize = 0;
-            this.buttonAdv1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdv1.Image = global::Analogy.Properties.Resources.NavigationPane;
-            this.buttonAdv1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv1.Location = new System.Drawing.Point(0, 0);
-            this.buttonAdv1.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdv1.Name = "buttonAdv1";
-            this.buttonAdv1.Size = new System.Drawing.Size(267, 37);
-            this.buttonAdv1.TabIndex = 0;
-            this.buttonAdv1.Text = "Open &new Window";
-            this.buttonAdv1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdv1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            // 
-            // listView2
-            // 
-            this.listView2.BackgroundImageTiled = true;
-            listViewGroup1.Header = "Folders (6)";
-            listViewGroup1.Name = "Folders (6)";
-            listViewGroup2.Header = "Devices and Drivers (3)";
-            listViewGroup2.Name = "Devices and Drivers (3)";
-            this.listView2.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
-            this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView2.HideSelection = false;
-            this.listView2.ImeMode = System.Windows.Forms.ImeMode.On;
-            listViewItem1.Group = listViewGroup1;
-            listViewItem2.Group = listViewGroup1;
-            listViewItem3.Group = listViewGroup1;
-            listViewItem4.Group = listViewGroup1;
-            listViewItem5.Group = listViewGroup1;
-            listViewItem6.Group = listViewGroup1;
-            listViewItem7.Group = listViewGroup2;
-            listViewItem8.Group = listViewGroup2;
-            listViewItem9.Group = listViewGroup2;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
-            this.listView2.LargeImageList = this.imageList2;
-            this.listView2.Location = new System.Drawing.Point(303, 0);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(841, 299);
-            this.listView2.TabIndex = 5;
-            this.listView2.TileSize = new System.Drawing.Size(20, 30);
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // imageList2
             // 
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
@@ -1195,60 +731,6 @@ namespace Analogy
             this.imageList2.Images.SetKeyName(6, "__Music.png");
             this.imageList2.Images.SetKeyName(7, "__Pictures.png");
             this.imageList2.Images.SetKeyName(8, "__Video.png");
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.buttonEdit1);
-            this.panel3.Controls.Add(this.navigationView2);
-            this.panel3.Location = new System.Drawing.Point(1, 200);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 6, 7, 0);
-            this.panel3.Size = new System.Drawing.Size(1151, 38);
-            this.panel3.TabIndex = 5;
-            this.panel3.Visible = false;
-            // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.BeforeTouchSize = new System.Drawing.Size(161, 23);
-            this.buttonEdit1.Buttons.Add(this.buttonEditChildButton1);
-            this.buttonEdit1.Controls.Add(this.buttonEditChildButton1);
-            this.buttonEdit1.Controls.Add(this.textBoxExt1);
-            this.buttonEdit1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonEdit1.Location = new System.Drawing.Point(983, 6);
-            this.buttonEdit1.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Size = new System.Drawing.Size(161, 23);
-            this.buttonEdit1.TabIndex = 3;
-            this.buttonEdit1.TextBox = this.textBoxExt1;
-            // 
-            // buttonEditChildButton1
-            // 
-            this.buttonEditChildButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonEditChildButton1.BeforeTouchSize = new System.Drawing.Size(22, 19);
-            this.buttonEditChildButton1.FlatAppearance.BorderSize = 0;
-            this.buttonEditChildButton1.Image = null;
-            this.buttonEditChildButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonEditChildButton1.Name = "buttonEditChildButton1";
-            this.buttonEditChildButton1.PreferredWidth = 22;
-            this.buttonEditChildButton1.TabIndex = 1;
-            this.buttonEditChildButton1.Text = "buttonEditChildButton1";
-            this.buttonEditChildButton1.ThemeName = "WindowsXP";
-            // 
-            // textBoxExt1
-            // 
-            bannerTextInfo1.Text = "Search";
-            bannerTextInfo1.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.textBoxExt1, bannerTextInfo1);
-            this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(133, 15);
-            this.textBoxExt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxExt1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxExt1.Location = new System.Drawing.Point(3, 4);
-            this.textBoxExt1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxExt1.Name = "textBoxExt1";
-            this.textBoxExt1.Size = new System.Drawing.Size(133, 15);
-            this.textBoxExt1.TabIndex = 0;
-            this.textBoxExt1.Text = "buttonEdit1";
             // 
             // imageList3
             // 
@@ -1332,9 +814,7 @@ namespace Analogy
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1153, 529);
             this.Controls.Add(this.statusStripEx1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControlAdv1);
-            this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -1350,15 +830,6 @@ namespace Analogy
             this.toolStripTabItem1.Panel.PerformLayout();
             this.toolStripTabItem2.Panel.ResumeLayout(false);
             this.toolStripTabItem2.Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeViewAdv1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.popupControlContainer1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1)).EndInit();
-            this.buttonEdit1.ResumeLayout(false);
-            this.buttonEdit1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
             this.statusStripEx1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1389,30 +860,14 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx5;
-        private Syncfusion.Windows.Forms.Tools.NavigationView navigationView2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView listView1;
-        private Syncfusion.Windows.Forms.Tools.TreeViewAdv treeViewAdv1;
         private System.Windows.Forms.ImageList TreeViewImageList;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ImageList imageList2;
         private Syncfusion.Windows.Forms.Tools.SuperAccelerator superAccelerator1;
-        private Syncfusion.Windows.Forms.PopupControlContainer popupControlContainer1;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv6;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv5;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv4;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private Syncfusion.Windows.Forms.Tools.ButtonEdit buttonEdit1;
-        private Syncfusion.Windows.Forms.Tools.ButtonEditChildButton buttonEditChildButton1;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
         private System.Windows.Forms.ImageList imageList3;
         private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
         private Syncfusion.Windows.Forms.Tools.SuperToolTip superToolTip1;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv2;
-        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv1;
         private Syncfusion.Windows.Forms.Tools.ToolStripGallery toolStripGallery1;
         private System.Windows.Forms.ToolStripMenuItem fsfToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fsfToolStripMenuItem1;
