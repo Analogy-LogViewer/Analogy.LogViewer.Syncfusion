@@ -189,7 +189,7 @@ namespace Analogy
             {
                 ribbonControlMain.SelectedTab = Mapping[UserSettingsManager.UserSettings.LastOpenedDataProvider];
             }
-            ribbonControlMain.SelectedTabItemChanged += (s,arg)=>
+            ribbonControlMain.SelectedTabItemChanged += (s, arg) =>
             {
                 if (Mapping.ContainsValue(arg.NewSelectedTab))
                 {
@@ -264,7 +264,8 @@ namespace Analogy
                 ToolStripEx groupActionSource = new ToolStripEx
                 {
                     Text = actionFactory.Title,
-                    AllowMenuTextAlignment = true
+                    AllowMenuTextAlignment = true,
+                    AutoSize = true
                 };
                 ribbonPage.Panel.AddToolStrip(groupActionSource);
                 foreach (IAnalogyCustomAction action in actionFactory.Items)
@@ -279,7 +280,11 @@ namespace Analogy
                 }
             }
 
-            ToolStripEx groupInfoSource = new ToolStripEx { Text = "About" };
+            ToolStripEx groupInfoSource = new ToolStripEx
+            {
+                Text = "About",
+                AutoSize = true
+            };
             ribbonPage.Panel.AddToolStrip(groupInfoSource);
             ToolStripButton aboutBtn = new ToolStripButton("Data Source Information", Resources.About_16x16)
             {
@@ -293,7 +298,7 @@ namespace Analogy
 
         private void CreateDataSourceRibbonGroup(IAnalogyDataProvidersFactory dataSourceFactory, ToolStripTabItem ribbonPage)
         {
-            ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title };
+            ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title , AutoSize = true };
             ribbonPage.Panel.AddToolStrip(ribbonPageGroup);
 
             AddRealTimeDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
@@ -304,7 +309,8 @@ namespace Analogy
             ToolStripButton bookmarkBtn = new ToolStripButton("Bookmarks", Resources.RichEditBookmark_32x32)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
-                TextImageRelation = TextImageRelation.ImageAboveText
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize =true,
             };
 
             ribbonPageGroup.Items.Add(bookmarkBtn);
@@ -466,7 +472,7 @@ namespace Analogy
                 string optionalText = !string.IsNullOrEmpty(offlineAnalogy.OptionalTitle)
                     ? " for" + offlineAnalogy.OptionalTitle
                     : string.Empty;
-                ToolStripEx groupOfflineFileTools = new ToolStripEx { Text = $"Tools{optionalText}" };
+                ToolStripEx groupOfflineFileTools = new ToolStripEx { Text = $"Tools{optionalText}", AutoSize = true };
 
                 ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
                 AddSingleOfflineDataSource(ribbonPage, offlineAnalogy, factory.Title, group, groupOfflineFileTools);
@@ -695,7 +701,8 @@ namespace Analogy
 
             ToolStripEx groupOfflineFileTools = new ToolStripEx()
             {
-                Text = $"Tools for {factoryTitle}"
+                Text = $"Tools for {factoryTitle}",
+                AutoSize = true
             };
             ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
 
@@ -968,7 +975,8 @@ namespace Analogy
             var realTimeBtn = new ToolStripButton(text, Resources.Database_off)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
-                TextImageRelation = TextImageRelation.ImageAboveText
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize = true,
             };
             group.Items.Add(realTimeBtn);
             async Task<bool> OpenRealTime()
