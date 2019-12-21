@@ -298,7 +298,7 @@ namespace Analogy
 
         private void CreateDataSourceRibbonGroup(IAnalogyDataProvidersFactory dataSourceFactory, ToolStripTabItem ribbonPage)
         {
-            ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title , AutoSize = true };
+            ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title, AutoSize = true };
             ribbonPage.Panel.AddToolStrip(ribbonPageGroup);
 
             AddRealTimeDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
@@ -310,7 +310,7 @@ namespace Analogy
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
                 TextImageRelation = TextImageRelation.ImageAboveText,
-                AutoSize =true,
+                AutoSize = true,
             };
 
             ribbonPageGroup.Items.Add(bookmarkBtn);
@@ -473,9 +473,17 @@ namespace Analogy
                     ? " for" + offlineAnalogy.OptionalTitle
                     : string.Empty;
                 ToolStripEx groupOfflineFileTools = new ToolStripEx { Text = $"Tools{optionalText}", AutoSize = true };
-
-                ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
                 AddSingleOfflineDataSource(ribbonPage, offlineAnalogy, factory.Title, group, groupOfflineFileTools);
+                groupOfflineFileTools.AllowMenuTextAlignment = true;
+                ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
+
+                int width = 0;
+
+                foreach (ToolStripItem control in groupOfflineFileTools.Items)
+                {
+                    width += control.Size.Width;
+                }
+                groupOfflineFileTools.Size = new Size(width + 70, groupOfflineFileTools.Size.Height);
             }
             else
             {
@@ -567,7 +575,6 @@ namespace Analogy
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
                 TextImageRelation = TextImageRelation.ImageAboveText
             };
-
             //local folder
             if (offlineProviders.Any(i => !string.IsNullOrEmpty(i.InitialFolderFullPath) &&
                                           Directory.Exists(i.InitialFolderFullPath)))
@@ -846,7 +853,8 @@ namespace Analogy
                 var localfolder = new ToolStripButton("Open Folder", Resources.Open2_32x32)
                 {
                     DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
-                    TextImageRelation = TextImageRelation.ImageAboveText
+                    TextImageRelation = TextImageRelation.ImageAboveText,
+                    AutoSize = true
                 };
                 group.Items.Add(localfolder);
                 localfolder.Click += (sender, e) => { OpenOffline(title, offlineAnalogy.InitialFolderFullPath); };
@@ -856,7 +864,8 @@ namespace Analogy
             var recentBar = new ToolStripDropDownButton("Recently Used Files", Resources.RecentlyUse_32x32)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
-                TextImageRelation = TextImageRelation.ImageAboveText
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize = true
             };
 
             //add Files open buttons
@@ -866,7 +875,8 @@ namespace Analogy
                 var openFiles = new ToolStripButton("Open Files", Resources.Article_32x32)
                 {
                     DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
-                    TextImageRelation = TextImageRelation.ImageAboveText
+                    TextImageRelation = TextImageRelation.ImageAboveText,
+                    AutoSize = true
                 };
                 group.Items.Add(openFiles);
                 openFiles.Click += (sender, e) =>
@@ -904,7 +914,7 @@ namespace Analogy
                     {
                         OpenFilePooling(title, offlineAnalogy.InitialFolderFullPath, openFileDialog1.FileName);
                         AddRecentFiles(ribbonPage, recentBar, offlineAnalogy, title,
-                            new List<string> { openFileDialog1.FileName });
+                                                    new List<string> { openFileDialog1.FileName });
                     }
 
                 };
