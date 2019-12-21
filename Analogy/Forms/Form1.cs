@@ -304,7 +304,12 @@ namespace Analogy
             bookmarkBtn.Click += (sender, e) => { OpenBookmarkLog(); };
         }
 
+        private void AddToDockingManager(Control control, string title)
+        {
+            dockingManager1.SetDockLabel(control, title);
+            dockingManager1.SetCustomCaptionButtons(control, new CaptionButtonsCollection());
 
+        }
         private void AddRealTimeDataSource(ToolStripTabItem ribbonPage, IAnalogyDataProvidersFactory dataSourceFactory, ToolStripEx group)
         {
             var realtimes = dataSourceFactory.Items.Where(f => f is IAnalogyRealTimeDataProvider)
@@ -370,15 +375,17 @@ namespace Analogy
                             ribbonControlMain.SelectedTab = ribbonPage;
                             onlineUC.Dock = DockStyle.Fill;
                             page.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
-                            xtcLogs.TabPages.Add(page);
+                            AddToDockingManager(page, page.Text);
+                            //xtcLogs.TabPages.Add(page);
                             realTime.OnMessageReady += OnRealTimeOnMessageReady;
                             realTime.OnManyMessagesReady += OnRealTimeOnOnManyMessagesReady;
                             realTime.OnDisconnected += OnRealTimeDisconnected;
                             realTime.StartReceiving();
                             onlineDataSourcesMapping.Add(page, realTime);
-                            xtcLogs.SelectedTabPage = page;
+                            dockingManager1.ActivateControl(page);
+                            //xtcLogs.SelectedTabPage = page;
 
-                            void OnXtcLogsOnControlRemoved(object sender, ControlEventArgs arg)
+                            void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                             {
                                 if (arg.Control == page)
                                 {
@@ -398,12 +405,12 @@ namespace Analogy
                                     }
                                     finally
                                     {
-                                        xtcLogs.ControlRemoved -= OnXtcLogsOnControlRemoved;
+                                        dockingManager1.DockVisibilityChanged -= OnXtcLogsOnControlRemoved;
                                     }
                                 }
                             }
-
-                            xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
+                            dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
+                            //xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
                             realTimeBtn.Enabled = true;
                             return true;
                         }
@@ -412,7 +419,7 @@ namespace Analogy
                         return false;
                     }
 
-                    realTimeBtn.ItemClick += async (s, be) => await OpenRealTime();
+                    realTimeBtn.Click += async (s, be) => await OpenRealTime();
                     if (settings.AutoStartDataProviders.Contains(realTime.ID)
                         && !disableOnlineDueToFileOpen)
                     {
@@ -430,7 +437,6 @@ namespace Analogy
 
                     }
 
-                    /// 
                 }
             }
         }
