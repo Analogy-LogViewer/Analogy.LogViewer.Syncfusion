@@ -58,7 +58,7 @@ namespace Analogy
             Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem8 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
             Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo12 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
+            this.ribbonControlMain = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -98,57 +98,64 @@ namespace Analogy
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
             this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
-            this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStripLabel1 = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
-            this.ribbonControlAdv1.SuspendLayout();
+            this.MainStatusStrip = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
+            this.bbiFileCaching = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bsiIdleMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bsiMemoryUsage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslblError = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tseAnalogyBuiltInProviders = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbtnAnalogyOpenFolder = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAnalogyOpenFiles = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAnalogyRecentlyOpenFiles = new System.Windows.Forms.ToolStripDropDownButton();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
+            this.ribbonControlMain.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
             this.toolStripTabItem2.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
-            this.statusStripEx1.SuspendLayout();
+            this.MainStatusStrip.SuspendLayout();
+            this.toolStripTabItem3.Panel.SuspendLayout();
+            this.tseAnalogyBuiltInProviders.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ribbonControlAdv1
+            // ribbonControlMain
             // 
-            this.ribbonControlAdv1.ActivateOnFirstClick = true;
-            this.ribbonControlAdv1.AutoLayoutToolStrip = true;
-            this.ribbonControlAdv1.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonControlAdv1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ribbonControlAdv1.Header.AddMainItem(toolStripTabItem1);
-            this.ribbonControlAdv1.Header.AddMainItem(toolStripTabItem2);
-            this.ribbonControlAdv1.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton1));
-            this.ribbonControlAdv1.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton2));
-            this.ribbonControlAdv1.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton3));
-            this.ribbonControlAdv1.Location = new System.Drawing.Point(1, 0);
-            this.ribbonControlAdv1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControlAdv1.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ribbonControlAdv1.MenuButtonText = "FILE";
-            this.ribbonControlAdv1.MenuButtonWidth = 56;
-            this.ribbonControlAdv1.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ribbonControlAdv1.Name = "ribbonControlAdv1";
-            this.ribbonControlAdv1.Office2013ColorScheme = Syncfusion.Windows.Forms.Tools.Office2013ColorScheme.DarkGray;
-            this.ribbonControlAdv1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            this.ribbonControlMain.ActivateOnFirstClick = true;
+            this.ribbonControlMain.AutoLayoutToolStrip = true;
+            this.ribbonControlMain.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonControlMain.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ribbonControlMain.Header.AddMainItem(toolStripTabItem3);
+            this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton1));
+            this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton2));
+            this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton3));
+            this.ribbonControlMain.Location = new System.Drawing.Point(1, 0);
+            this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControlMain.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ribbonControlMain.MenuButtonText = "FILE";
+            this.ribbonControlMain.MenuButtonWidth = 56;
+            this.ribbonControlMain.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.ribbonControlMain.Name = "ribbonControlMain";
+            this.ribbonControlMain.Office2013ColorScheme = Syncfusion.Windows.Forms.Tools.Office2013ColorScheme.DarkGray;
+            this.ribbonControlMain.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
             // 
-            // ribbonControlAdv1.OfficeMenu
+            // ribbonControlMain.OfficeMenu
             // 
-            this.ribbonControlAdv1.OfficeMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ribbonControlAdv1.OfficeMenu.Name = "OfficeMenu";
-            this.ribbonControlAdv1.OfficeMenu.ShowItemToolTips = true;
-            this.ribbonControlAdv1.OfficeMenu.Size = new System.Drawing.Size(12, 65);
-            this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
-            this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
-            this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = false;
-            this.ribbonControlAdv1.Size = new System.Drawing.Size(1155, 197);
-            this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
-            this.ribbonControlAdv1.SystemText.RenameDisplayLabelText = "&Display Name:";
-            this.ribbonControlAdv1.TabIndex = 0;
-            this.ribbonControlAdv1.Text = "Analogy";
-            this.ribbonControlAdv1.ThemeName = "Office2016";
-            this.ribbonControlAdv1.TitleColor = System.Drawing.Color.Black;
+            this.ribbonControlMain.OfficeMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ribbonControlMain.OfficeMenu.Name = "OfficeMenu";
+            this.ribbonControlMain.OfficeMenu.ShowItemToolTips = true;
+            this.ribbonControlMain.OfficeMenu.Size = new System.Drawing.Size(12, 65);
+            this.ribbonControlMain.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ribbonControlMain.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
+            this.ribbonControlMain.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
+            this.ribbonControlMain.SelectedTab = this.toolStripTabItem3;
+            this.ribbonControlMain.ShowRibbonDisplayOptionButton = false;
+            this.ribbonControlMain.Size = new System.Drawing.Size(1155, 197);
+            this.ribbonControlMain.SystemText.QuickAccessDialogDropDownName = "Start menu";
+            this.ribbonControlMain.SystemText.RenameDisplayLabelText = "&Display Name:";
+            this.ribbonControlMain.TabIndex = 0;
+            this.ribbonControlMain.Text = "Analogy";
+            this.ribbonControlMain.ThemeName = "Office2016";
+            this.ribbonControlMain.TitleColor = System.Drawing.Color.Black;
             // 
             // toolStripTabItem1
             // 
@@ -156,7 +163,7 @@ namespace Analogy
             this.toolStripTabItem1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripTabItem1.Name = "toolStripTabItem1";
             // 
-            // ribbonControlAdv1.ribbonPanel1
+            // 
             // 
             this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx1);
             this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx2);
@@ -165,7 +172,7 @@ namespace Analogy
             this.toolStripTabItem1.Panel.ScrollPosition = 0;
             this.toolStripTabItem1.Panel.TabIndex = 2;
             this.toolStripTabItem1.Panel.Text = "Computer";
-            this.toolStripTabItem1.Position = 0;
+            this.toolStripTabItem1.Position = -1;
             this.toolStripTabItem1.Size = new System.Drawing.Size(97, 38);
             this.toolStripTabItem1.Tag = "1";
             this.toolStripTabItem1.Text = "Computer";
@@ -183,7 +190,7 @@ namespace Analogy
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx1.Size = new System.Drawing.Size(56, 113);
+            this.toolStripEx1.Size = new System.Drawing.Size(106, 113);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Lcation";
             // 
@@ -196,11 +203,11 @@ namespace Analogy
             this.toolStripEx2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx2.Image = null;
             this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx2.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx2.Location = new System.Drawing.Point(108, 1);
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx2.Size = new System.Drawing.Size(56, 113);
+            this.toolStripEx2.Size = new System.Drawing.Size(106, 113);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "Network";
             // 
@@ -213,11 +220,11 @@ namespace Analogy
             this.toolStripEx3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx3.Image = null;
             this.toolStripEx3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx3.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx3.Location = new System.Drawing.Point(216, 1);
             this.toolStripEx3.Name = "toolStripEx3";
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx3.Size = new System.Drawing.Size(56, 113);
+            this.toolStripEx3.Size = new System.Drawing.Size(106, 113);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "System";
             // 
@@ -227,7 +234,7 @@ namespace Analogy
             this.toolStripTabItem2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripTabItem2.Name = "toolStripTabItem2";
             // 
-            // ribbonControlAdv1.ribbonPanel2
+            // 
             // 
             this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx4);
             this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx5);
@@ -235,7 +242,7 @@ namespace Analogy
             this.toolStripTabItem2.Panel.ScrollPosition = 0;
             this.toolStripTabItem2.Panel.TabIndex = 3;
             this.toolStripTabItem2.Panel.Text = "View";
-            this.toolStripTabItem2.Position = 1;
+            this.toolStripTabItem2.Position = -1;
             this.toolStripTabItem2.Size = new System.Drawing.Size(64, 38);
             this.toolStripTabItem2.Tag = "2";
             this.toolStripTabItem2.Text = "View";
@@ -770,42 +777,118 @@ namespace Analogy
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Restore, "RestoreButton"));
             this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Menu, "MenuButton"));
             // 
-            // statusStripEx1
+            // MainStatusStrip
             // 
-            this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
-            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(1151, 26);
-            this.statusStripEx1.CanOverrideStyle = true;
-            this.statusStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.statusStripLabel1});
-            this.statusStripEx1.Location = new System.Drawing.Point(1, 502);
-            this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.statusStripEx1.Name = "statusStripEx1";
-            this.statusStripEx1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
-            this.statusStripEx1.Size = new System.Drawing.Size(1151, 26);
-            this.statusStripEx1.TabIndex = 6;
-            this.statusStripEx1.Text = "statusStripEx1";
+            this.MainStatusStrip.BackColor = System.Drawing.Color.White;
+            this.MainStatusStrip.BeforeTouchSize = new System.Drawing.Size(1151, 26);
+            this.MainStatusStrip.CanOverrideStyle = true;
+            this.MainStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bbiFileCaching,
+            this.bsiIdleMessage,
+            this.bsiMemoryUsage,
+            this.tsslblError});
+            this.MainStatusStrip.Location = new System.Drawing.Point(1, 502);
+            this.MainStatusStrip.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.MainStatusStrip.Name = "MainStatusStrip";
+            this.MainStatusStrip.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            this.MainStatusStrip.Size = new System.Drawing.Size(1151, 26);
+            this.MainStatusStrip.TabIndex = 6;
             // 
-            // toolStripStatusLabel1
+            // bbiFileCaching
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(36, 20);
-            this.toolStripStatusLabel1.Text = "N/A";
+            this.bbiFileCaching.Name = "bbiFileCaching";
+            this.bbiFileCaching.Size = new System.Drawing.Size(101, 20);
+            this.bbiFileCaching.Text = "File caching is";
             // 
-            // toolStripStatusLabel2
+            // bsiIdleMessage
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.bsiIdleMessage.Name = "bsiIdleMessage";
+            this.bsiIdleMessage.Size = new System.Drawing.Size(36, 20);
+            this.bsiIdleMessage.Text = "N/A";
             // 
-            // statusStripLabel1
+            // bsiMemoryUsage
             // 
-            this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.statusStripLabel1.Name = "statusStripLabel1";
-            this.statusStripLabel1.Size = new System.Drawing.Size(122, 20);
-            this.statusStripLabel1.Text = "statusStripLabel1";
+            this.bsiMemoryUsage.Name = "bsiMemoryUsage";
+            this.bsiMemoryUsage.Size = new System.Drawing.Size(36, 20);
+            this.bsiMemoryUsage.Text = "N/A";
+            // 
+            // tsslblError
+            // 
+            this.tsslblError.Image = global::Analogy.Properties.Resources.Warning_16x16;
+            this.tsslblError.Name = "tsslblError";
+            this.tsslblError.Size = new System.Drawing.Size(67, 20);
+            this.tsslblError.Text = "Errors";
+            this.tsslblError.Visible = false;
+            this.tsslblError.Click += new System.EventHandler(this.tsslblError_Click);
+            // 
+            // toolStripTabItem3
+            // 
+            this.toolStripTabItem3.Name = "toolStripTabItem3";
+            // 
+            // ribbonControlMain.ribbonPanelAnalogy
+            // 
+            this.toolStripTabItem3.Panel.Controls.Add(this.tseAnalogyBuiltInProviders);
+            this.toolStripTabItem3.Panel.Name = "ribbonPanelAnalogy";
+            this.toolStripTabItem3.Panel.ScrollPosition = 0;
+            this.toolStripTabItem3.Panel.TabIndex = 4;
+            this.toolStripTabItem3.Panel.Text = "Analogy Main Tab";
+            this.toolStripTabItem3.Position = 0;
+            this.toolStripTabItem3.Size = new System.Drawing.Size(146, 38);
+            this.toolStripTabItem3.Tag = "1";
+            this.toolStripTabItem3.Text = "Analogy Main Tab";
+            // 
+            // tseAnalogyBuiltInProviders
+            // 
+            this.tseAnalogyBuiltInProviders.AutoSize = false;
+            this.superAccelerator1.SetCollapsedDropDownAccelerator(this.tseAnalogyBuiltInProviders, null);
+            this.tseAnalogyBuiltInProviders.Dock = System.Windows.Forms.DockStyle.None;
+            this.tseAnalogyBuiltInProviders.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.tseAnalogyBuiltInProviders.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tseAnalogyBuiltInProviders.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tseAnalogyBuiltInProviders.Image = null;
+            this.tseAnalogyBuiltInProviders.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tseAnalogyBuiltInProviders.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnAnalogyOpenFolder,
+            this.tsbtnAnalogyOpenFiles,
+            this.tsbtnAnalogyRecentlyOpenFiles});
+            this.tseAnalogyBuiltInProviders.Location = new System.Drawing.Point(0, 1);
+            this.tseAnalogyBuiltInProviders.Name = "tseAnalogyBuiltInProviders";
+            this.tseAnalogyBuiltInProviders.Office12Mode = false;
+            this.tseAnalogyBuiltInProviders.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.tseAnalogyBuiltInProviders.Size = new System.Drawing.Size(378, 113);
+            this.tseAnalogyBuiltInProviders.TabIndex = 0;
+            this.tseAnalogyBuiltInProviders.Text = "Analogy Built-in Data Provider";
+            // 
+            // tsbtnAnalogyOpenFolder
+            // 
+            this.tsbtnAnalogyOpenFolder.Image = global::Analogy.Properties.Resources.Open2_32x32;
+            this.tsbtnAnalogyOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyOpenFolder.Name = "tsbtnAnalogyOpenFolder";
+            this.tsbtnAnalogyOpenFolder.Size = new System.Drawing.Size(89, 91);
+            this.tsbtnAnalogyOpenFolder.Text = "Open Folder";
+            this.tsbtnAnalogyOpenFolder.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnAnalogyOpenFiles
+            // 
+            this.tsbtnAnalogyOpenFiles.Image = global::Analogy.Properties.Resources.Article_32x32;
+            this.tsbtnAnalogyOpenFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyOpenFiles.Name = "tsbtnAnalogyOpenFiles";
+            this.tsbtnAnalogyOpenFiles.Size = new System.Drawing.Size(77, 91);
+            this.tsbtnAnalogyOpenFiles.Text = "Open Files";
+            this.tsbtnAnalogyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnAnalogyRecentlyOpenFiles
+            // 
+            this.tsbtnAnalogyRecentlyOpenFiles.Image = global::Analogy.Properties.Resources.RecentlyUse_32x32;
+            this.tsbtnAnalogyRecentlyOpenFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyRecentlyOpenFiles.Name = "tsbtnAnalogyRecentlyOpenFiles";
+            this.tsbtnAnalogyRecentlyOpenFiles.Size = new System.Drawing.Size(157, 91);
+            this.tsbtnAnalogyRecentlyOpenFiles.Text = "Recently Opened Files";
+            this.tsbtnAnalogyRecentlyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyRecentlyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // Form1
             // 
@@ -813,25 +896,28 @@ namespace Analogy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1153, 529);
-            this.Controls.Add(this.statusStripEx1);
-            this.Controls.Add(this.ribbonControlAdv1);
+            this.Controls.Add(this.MainStatusStrip);
+            this.Controls.Add(this.ribbonControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 1);
             this.ShowApplicationIcon = false;
-            this.Text = "Windows Explorer Demo";
+            this.Text = "Analogy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Resize += new System.EventHandler(this.Form1_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).EndInit();
-            this.ribbonControlAdv1.ResumeLayout(false);
-            this.ribbonControlAdv1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
+            this.ribbonControlMain.ResumeLayout(false);
+            this.ribbonControlMain.PerformLayout();
             this.toolStripTabItem1.Panel.ResumeLayout(false);
             this.toolStripTabItem1.Panel.PerformLayout();
             this.toolStripTabItem2.Panel.ResumeLayout(false);
             this.toolStripTabItem2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
-            this.statusStripEx1.ResumeLayout(false);
+            this.MainStatusStrip.ResumeLayout(false);
+            this.toolStripTabItem3.Panel.ResumeLayout(false);
+            this.tseAnalogyBuiltInProviders.ResumeLayout(false);
+            this.tseAnalogyBuiltInProviders.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -839,7 +925,7 @@ namespace Analogy
 
         #endregion
 
-        private Syncfusion.Windows.Forms.Tools.RibbonControlAdv ribbonControlAdv1;
+        private Syncfusion.Windows.Forms.Tools.RibbonControlAdv ribbonControlMain;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem1;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem2;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
@@ -880,9 +966,15 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem showAllFoldersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
         private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
-        private Syncfusion.Windows.Forms.Tools.StatusStripEx statusStripEx1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private Syncfusion.Windows.Forms.Tools.StatusStripLabel statusStripLabel1;
+        private Syncfusion.Windows.Forms.Tools.StatusStripEx MainStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel bsiMemoryUsage;
+        private System.Windows.Forms.ToolStripStatusLabel tsslblError;
+        private System.Windows.Forms.ToolStripStatusLabel bsiIdleMessage;
+        private System.Windows.Forms.ToolStripStatusLabel bbiFileCaching;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx tseAnalogyBuiltInProviders;
+        private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFolder;
+        private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFiles;
+        private System.Windows.Forms.ToolStripDropDownButton tsbtnAnalogyRecentlyOpenFiles;
     }
 }

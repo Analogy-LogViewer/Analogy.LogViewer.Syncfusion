@@ -880,6 +880,10 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\Warning_32x32.png" />
+    <None Include="Resources\Warning_16x16.png" />
+    <None Include="Resources\Error_32x32.png" />
+    <None Include="Resources\Error_16x16.png" />
     <None Include="Resources\Search1.png" />
     <None Include="Resources\Search.png" />
     <None Include="Resources\Rename.png" />

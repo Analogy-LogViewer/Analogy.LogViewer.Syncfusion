@@ -561,6 +561,26 @@ namespace Analogy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Error_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Error_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Feature is disabled.
         /// </summary>
         internal static string FeatureDisable {
@@ -1375,6 +1395,26 @@ namespace Analogy.Properties {
         internal static System.Drawing.Bitmap upload1 {
             get {
                 object obj = ResourceManager.GetObject("upload1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Warning_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Warning_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -43,7 +43,7 @@ namespace Analogy.Managers
         {
             messages.Add(new AnalogyLogMessage(data, AnalogyLogLevel.Critical, AnalogyLogClass.General, source));
         }
-        public void Show(MainForm mainForm)
+        public void Show(Form mainForm)
         {
             XtraFormLogGrid msg = new XtraFormLogGrid(messages, "Analogy", "Analogy");
             msg.Show(mainForm);
