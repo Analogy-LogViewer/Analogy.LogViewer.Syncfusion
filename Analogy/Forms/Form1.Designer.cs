@@ -103,6 +103,7 @@ namespace Analogy
             this.tsbtnAnalogyOpenFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbtnAnalogyOpenFiles = new System.Windows.Forms.ToolStripButton();
             this.tsbtnAnalogyRecentlyOpenFiles = new System.Windows.Forms.ToolStripDropDownButton();
+            this.TmrAutoConnect = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             this.ribbonControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
@@ -793,6 +794,11 @@ namespace Analogy
             this.tsbtnAnalogyRecentlyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnAnalogyRecentlyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // TmrAutoConnect
+            // 
+            this.TmrAutoConnect.Interval = 1000;
+            this.TmrAutoConnect.Tick += new System.EventHandler(this.TmrAutoConnect_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -870,5 +876,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFolder;
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFiles;
         private System.Windows.Forms.ToolStripDropDownButton tsbtnAnalogyRecentlyOpenFiles;
+        private System.Windows.Forms.Timer TmrAutoConnect;
     }
 }

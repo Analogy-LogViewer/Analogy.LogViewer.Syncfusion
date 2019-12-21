@@ -189,7 +189,14 @@ namespace Analogy
             {
                 ribbonControlMain.SelectedTab = Mapping[UserSettingsManager.UserSettings.LastOpenedDataProvider];
             }
-            ribbonControlMain.SelectedPageChanging += ribbonControlMain_SelectedPageChanging;
+            ribbonControlMain.SelectedTabItemChanged += (s,arg)=>
+            {
+                if (Mapping.ContainsValue(arg.NewSelectedTab))
+                {
+                    Guid id = Mapping.Single(kv => kv.Value == arg.NewSelectedTab).Key;
+                    UserSettingsManager.UserSettings.LastOpenedDataProvider = id;
+                }
+            };
             if (AnalogyLogManager.Instance.HasErrorMessages || AnalogyLogManager.Instance.HasWarningMessages)
                 tsslblError.Visible = true;
 
@@ -1317,6 +1324,23 @@ namespace Analogy
         private void tsslblError_Click(object sender, EventArgs e)
         {
             AnalogyLogManager.Instance.Show(this);
+        }
+
+        private async void TmrAutoConnect_Tick(object sender, EventArgs e)
+        {
+            TmrAutoConnect.Enabled = false;
+            if (!OnlineSources.Any())
+                return;
+            var onlines = OnlineSources.ToList();
+            foreach (var onlineSource in onlines)
+            {
+                if (await onlineSource)
+                {
+                    OnlineSources.Remove(onlineSource);
+                }
+            }
+
+            TmrAutoConnect.Enabled = true;
         }
     }
 }
