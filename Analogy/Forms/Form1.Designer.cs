@@ -103,7 +103,7 @@ namespace Analogy
             this.bsiIdleMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.bsiMemoryUsage = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslblError = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tstitmAnalogy = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.tseAnalogyBuiltInProviders = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsbtnAnalogyOpenFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbtnAnalogyOpenFiles = new System.Windows.Forms.ToolStripButton();
@@ -114,7 +114,7 @@ namespace Analogy
             this.toolStripTabItem2.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
             this.MainStatusStrip.SuspendLayout();
-            this.toolStripTabItem3.Panel.SuspendLayout();
+            this.tstitmAnalogy.Panel.SuspendLayout();
             this.tseAnalogyBuiltInProviders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +124,7 @@ namespace Analogy
             this.ribbonControlMain.AutoLayoutToolStrip = true;
             this.ribbonControlMain.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControlMain.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ribbonControlMain.Header.AddMainItem(toolStripTabItem3);
+            this.ribbonControlMain.Header.AddMainItem(tstitmAnalogy);
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton1));
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton2));
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton3));
@@ -147,7 +147,7 @@ namespace Analogy
             this.ribbonControlMain.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlMain.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlMain.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlMain.SelectedTab = this.toolStripTabItem3;
+            this.ribbonControlMain.SelectedTab = this.tstitmAnalogy;
             this.ribbonControlMain.ShowRibbonDisplayOptionButton = false;
             this.ribbonControlMain.Size = new System.Drawing.Size(1155, 197);
             this.ribbonControlMain.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -260,7 +260,7 @@ namespace Analogy
             this.toolStripEx4.Name = "toolStripEx4";
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx4.Size = new System.Drawing.Size(106, 113);
+            this.toolStripEx4.Size = new System.Drawing.Size(102, 113);
             this.toolStripEx4.TabIndex = 0;
             this.toolStripEx4.Text = "Panes";
             // 
@@ -273,11 +273,11 @@ namespace Analogy
             this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx5.Image = null;
             this.toolStripEx5.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.toolStripEx5.Location = new System.Drawing.Point(108, 1);
+            this.toolStripEx5.Location = new System.Drawing.Point(104, 1);
             this.toolStripEx5.Name = "toolStripEx5";
             this.toolStripEx5.Office12Mode = false;
             this.toolStripEx5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx5.Size = new System.Drawing.Size(106, 113);
+            this.toolStripEx5.Size = new System.Drawing.Size(44, 113);
             this.toolStripEx5.TabIndex = 1;
             this.toolStripEx5.Text = "Layout";
             // 
@@ -822,21 +822,21 @@ namespace Analogy
             this.tsslblError.Visible = false;
             this.tsslblError.Click += new System.EventHandler(this.tsslblError_Click);
             // 
-            // toolStripTabItem3
+            // tstitmAnalogy
             // 
-            this.toolStripTabItem3.Name = "toolStripTabItem3";
+            this.tstitmAnalogy.Name = "tstitmAnalogy";
             // 
             // ribbonControlMain.ribbonPanelAnalogy
             // 
-            this.toolStripTabItem3.Panel.Controls.Add(this.tseAnalogyBuiltInProviders);
-            this.toolStripTabItem3.Panel.Name = "ribbonPanelAnalogy";
-            this.toolStripTabItem3.Panel.ScrollPosition = 0;
-            this.toolStripTabItem3.Panel.TabIndex = 4;
-            this.toolStripTabItem3.Panel.Text = "Analogy Main Tab";
-            this.toolStripTabItem3.Position = 0;
-            this.toolStripTabItem3.Size = new System.Drawing.Size(146, 38);
-            this.toolStripTabItem3.Tag = "1";
-            this.toolStripTabItem3.Text = "Analogy Main Tab";
+            this.tstitmAnalogy.Panel.Controls.Add(this.tseAnalogyBuiltInProviders);
+            this.tstitmAnalogy.Panel.Name = "ribbonPanelAnalogy";
+            this.tstitmAnalogy.Panel.ScrollPosition = 0;
+            this.tstitmAnalogy.Panel.TabIndex = 4;
+            this.tstitmAnalogy.Panel.Text = "Analogy Main Tab";
+            this.tstitmAnalogy.Position = 0;
+            this.tstitmAnalogy.Size = new System.Drawing.Size(146, 38);
+            this.tstitmAnalogy.Tag = "1";
+            this.tstitmAnalogy.Text = "Analogy Main Tab";
             // 
             // tseAnalogyBuiltInProviders
             // 
@@ -915,7 +915,7 @@ namespace Analogy
             this.toolStripTabItem2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
             this.MainStatusStrip.ResumeLayout(false);
-            this.toolStripTabItem3.Panel.ResumeLayout(false);
+            this.tstitmAnalogy.Panel.ResumeLayout(false);
             this.tseAnalogyBuiltInProviders.ResumeLayout(false);
             this.tseAnalogyBuiltInProviders.PerformLayout();
             this.ResumeLayout(false);
@@ -971,7 +971,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripStatusLabel tsslblError;
         private System.Windows.Forms.ToolStripStatusLabel bsiIdleMessage;
         private System.Windows.Forms.ToolStripStatusLabel bbiFileCaching;
-        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstitmAnalogy;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx tseAnalogyBuiltInProviders;
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFolder;
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFiles;
