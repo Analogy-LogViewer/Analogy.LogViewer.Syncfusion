@@ -1,28 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using Syncfusion.Windows.Forms.Tools;
-using Syncfusion.Windows.Forms;
 using System.IO;
 using System.Threading.Tasks;
-using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.Managers;
 using Analogy.Properties;
 using Analogy.Tools;
 using Analogy.Types;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraTab;
-using Syncfusion.Windows.Forms.Tools.Navigation;
-using Bar = Syncfusion.Windows.Forms.Tools.Navigation.Bar;
 using RibbonForm = Syncfusion.Windows.Forms.Tools.RibbonForm;
 
 namespace Analogy
@@ -34,15 +23,14 @@ namespace Analogy
         private string onlineTitle = "Online log";
         private Dictionary<Guid, ToolStripTabItem> Mapping = new Dictionary<Guid, ToolStripTabItem>();
 
-        private Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider> onlineDataSourcesMapping =
-            new Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider>();
+        private Dictionary<OnlineUCLogs, IAnalogyRealTimeDataProvider> onlineDataSourcesMapping =
+            new Dictionary<OnlineUCLogs, IAnalogyRealTimeDataProvider>();
 
         private List<Task<bool>> OnlineSources = new List<Task<bool>>();
         private int offline;
         private int online;
         private int filePooling;
         private bool disableOnlineDueToFileOpen;
-        private XtraTabPage currentContextPage;
         private UserSettingsManager settings => UserSettingsManager.UserSettings;
         private bool Initialized { get; set; }
 
@@ -72,22 +60,6 @@ namespace Analogy
 
 
             ribbonControlMain.SelectedTab = toolStripTabItem1;
-
-            UCLogs log1 = new UCLogs();
-            dockingManager1.SetDockLabel(log1, "logs");
-            var ccbcLog1 = new CaptionButtonsCollection();
-            dockingManager1.SetCustomCaptionButtons(log1, ccbcLog1);
-
-
-            UCLogs log2 = new UCLogs();
-            dockingManager1.SetDockLabel(log2, "logs");
-            var ccbcLog2 = new CaptionButtonsCollection();
-            dockingManager1.SetCustomCaptionButtons(log2, ccbcLog2);
-
-            dockingManager1.EnableDocumentMode = true;
-            dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
-            dockingManager1.DockAsDocument(log1);
-            dockingManager1.DockAsDocument(log2);
 
             //dockingManager1.SetDockLabel(panel3, "Top");
             //dockingManager1.SetDockLabel(panel1, "Buttom");
@@ -267,7 +239,7 @@ namespace Analogy
                     AllowMenuTextAlignment = true,
                     AutoSize = true
                 };
-                ribbonPage.Panel.AddToolStrip(groupActionSource);
+                ribbonPage.Panel.Controls.Add(groupActionSource);
                 foreach (IAnalogyCustomAction action in actionFactory.Items)
                 {
                     ToolStripButton actionBtn = new ToolStripButton(action.Title, Resources.PageSetup_32x32)
@@ -285,8 +257,8 @@ namespace Analogy
                 Text = "About",
                 AutoSize = true
             };
-            ribbonPage.Panel.AddToolStrip(groupInfoSource);
-            ToolStripButton aboutBtn = new ToolStripButton("Data Source Information", Resources.About_16x16)
+            ribbonPage.Panel.Controls.Add(groupInfoSource);
+            ToolStripButton aboutBtn = new ToolStripButton("Data Source Information", Resources.About_32x32)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
                 TextImageRelation = TextImageRelation.ImageAboveText
@@ -299,7 +271,7 @@ namespace Analogy
         private void CreateDataSourceRibbonGroup(IAnalogyDataProvidersFactory dataSourceFactory, ToolStripTabItem ribbonPage)
         {
             ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title, AutoSize = true };
-            ribbonPage.Panel.AddToolStrip(ribbonPageGroup);
+            ribbonPage.Panel.Controls.Add(ribbonPageGroup);
 
             AddRealTimeDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
             AddOfflineDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
@@ -386,26 +358,24 @@ namespace Analogy
                                 realTimeBtn.Image = Resources.Database_off;
                             }
 
-                            XtraTabPage page = new XtraTabPage();
-                            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                            page.Tag = ribbonPage;
-                            page.Controls.Add(onlineUC);
+                            onlineUC.Tag = ribbonPage;
+                            onlineUC.Controls.Add(onlineUC);
                             ribbonControlMain.SelectedTab = ribbonPage;
                             onlineUC.Dock = DockStyle.Fill;
-                            page.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
-                            AddToDockingManager(page, page.Text);
+                            onlineUC.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
+                            AddToDockingManager(onlineUC, onlineUC.Text);
                             //xtcLogs.TabPages.Add(page);
                             realTime.OnMessageReady += OnRealTimeOnMessageReady;
                             realTime.OnManyMessagesReady += OnRealTimeOnOnManyMessagesReady;
                             realTime.OnDisconnected += OnRealTimeDisconnected;
                             realTime.StartReceiving();
-                            onlineDataSourcesMapping.Add(page, realTime);
-                            dockingManager1.ActivateControl(page);
+                            onlineDataSourcesMapping.Add(onlineUC, realTime);
+                            dockingManager1.ActivateControl(onlineUC);
                             //xtcLogs.SelectedTabPage = page;
 
                             void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                             {
-                                if (arg.Control == page)
+                                if (arg.Control == onlineUC)
                                 {
                                     try
                                     {
@@ -475,15 +445,15 @@ namespace Analogy
                 ToolStripEx groupOfflineFileTools = new ToolStripEx { Text = $"Tools{optionalText}", AutoSize = true };
                 AddSingleOfflineDataSource(ribbonPage, offlineAnalogy, factory.Title, group, groupOfflineFileTools);
                 groupOfflineFileTools.AllowMenuTextAlignment = true;
-                ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
+                ribbonPage.Panel.Controls.Add(groupOfflineFileTools);
 
-                int width = 0;
+                //int width = 0;
 
-                foreach (ToolStripItem control in groupOfflineFileTools.Items)
-                {
-                    width += control.Size.Width;
-                }
-                groupOfflineFileTools.Size = new Size(width + 70, groupOfflineFileTools.Size.Height);
+                //foreach (ToolStripItem control in groupOfflineFileTools.Items)
+                //{
+                //    width += control.Size.Width;
+                //}
+                //groupOfflineFileTools.Size = new Size(width + 70, groupOfflineFileTools.Size.Height);
             }
             else
             {
@@ -499,16 +469,16 @@ namespace Analogy
                 string[] files = null)
             {
                 offline++;
-                UserControl offlineUC = new OfflineUCLogs(dataProvider, files, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(offlineUC);
+                UserControl offlineUC = new OfflineUCLogs(dataProvider, files, initialFolder)
+                {
+                    Tag = ribbonPage
+                };
+                offlineUC.Controls.Add(offlineUC);
                 offlineUC.Dock = DockStyle.Fill;
-                page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
+                offlineUC.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
 
-                AddToDockingManager(page, page.Text);
-                dockingManager1.ActivateControl(page);
+                AddToDockingManager(offlineUC, offlineUC.Text);
+                dockingManager1.ActivateControl(offlineUC);
                 //xtcLogs.TabPages.Add(page);
                 //xtcLogs.SelectedTabPage = page;
             }
@@ -517,14 +487,14 @@ namespace Analogy
             {
                 offline++;
                 var ClientServerUCLog = new ClientServerUCLog(analogy);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(ClientServerUCLog);
+
+
+                ClientServerUCLog.Tag = ribbonPage;
+                ClientServerUCLog.Controls.Add(ClientServerUCLog);
                 ClientServerUCLog.Dock = DockStyle.Fill;
-                page.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
-                AddToDockingManager(page, page.Text);
-                dockingManager1.ActivateControl(page);
+                ClientServerUCLog.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
+                AddToDockingManager(ClientServerUCLog, ClientServerUCLog.Text);
+                dockingManager1.ActivateControl(ClientServerUCLog);
                 //xtcLogs.TabPages.Add(page);
                 //xtcLogs.SelectedTabPage = page;
             }
@@ -535,11 +505,10 @@ namespace Analogy
 
                 offline++;
                 UserControl filepoolingUC = new FilePoolingUCLogs(dataProvider, file, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-
+         
                 void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                 {
-                    if (arg.Control == page)
+                    if (arg.Control == filepoolingUC)
                     {
                         try
                         {
@@ -556,13 +525,12 @@ namespace Analogy
                     }
                 }
 
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(filepoolingUC);
+                filepoolingUC.Tag = ribbonPage;
+                filepoolingUC.Controls.Add(filepoolingUC);
                 filepoolingUC.Dock = DockStyle.Fill;
-                page.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
-                AddToDockingManager(page, page.Text);
-                dockingManager1.ActivateControl(page);
+                filepoolingUC.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
+                AddToDockingManager(filepoolingUC, filepoolingUC.Text);
+                dockingManager1.ActivateControl(filepoolingUC);
                 //xtcLogs.TabPages.Add(page);
                 //xtcLogs.SelectedTabPage = page;
                 dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
@@ -570,7 +538,7 @@ namespace Analogy
 
 
             //recent bar
-            var recentBar = new ToolStripDropDownButton("Recently Used Files", Resources.RecentlyUse_16x16)
+            var recentBar = new ToolStripDropDownButton("Recently Used Files", Resources.RecentlyUse_32x32)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
                 TextImageRelation = TextImageRelation.ImageAboveText
@@ -711,7 +679,7 @@ namespace Analogy
                 Text = $"Tools for {factoryTitle}",
                 AutoSize = true
             };
-            ribbonPage.Panel.AddToolStrip(groupOfflineFileTools);
+            ribbonPage.Panel.Controls.Add(groupOfflineFileTools);
 
 
             var searchFiles = new ToolStripDropDownButton("Search in Files", Resources.Lookup_Reference_32x32)
@@ -777,12 +745,8 @@ namespace Analogy
             void OpenOffline(string titleOfDataSource, string initialFolder, string[] files = null)
             {
                 offline++;
-                UserControl offlineUC = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+                UserControl page = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
                 page.Tag = ribbonPage;
-                page.Controls.Add(offlineUC);
-                offlineUC.Dock = DockStyle.Fill;
                 page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
                 AddToDockingManager(page, page.Text);
                 dockingManager1.ActivateControl(page);
@@ -793,12 +757,8 @@ namespace Analogy
             void OpenExternalDataSource(string titleOfDataSource, IAnalogyOfflineDataProvider analogy)
             {
                 offline++;
-                var ClientServerUCLog = new ClientServerUCLog(analogy);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+                var page = new ClientServerUCLog(analogy);
                 page.Tag = ribbonPage;
-                page.Controls.Add(ClientServerUCLog);
-                ClientServerUCLog.Dock = DockStyle.Fill;
                 page.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
 
                 AddToDockingManager(page, page.Text);
@@ -811,16 +771,14 @@ namespace Analogy
             {
 
                 offline++;
-                UserControl filepoolingUC = new FilePoolingUCLogs(offlineAnalogy, file, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-
+                UserControl page = new FilePoolingUCLogs(offlineAnalogy, file, initialFolder);
                 void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                 {
                     if (arg.Control == page)
                     {
                         try
                         {
-                            filepoolingUC.Dispose();
+                            page.Dispose();
                         }
                         catch (Exception e)
                         {
@@ -833,10 +791,7 @@ namespace Analogy
                     }
                 }
 
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
                 page.Tag = ribbonPage;
-                page.Controls.Add(filepoolingUC);
-                filepoolingUC.Dock = DockStyle.Fill;
                 page.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
                 AddToDockingManager(page, page.Text);
                 dockingManager1.ActivateControl(page);
@@ -927,7 +882,7 @@ namespace Analogy
             AddRecentFiles(ribbonPage, recentBar, offlineAnalogy, title, recents);
 
             //add client/server  button:
-            var externalSources = new ToolStripButton("Known Locations", Resources.ServerMode_16x16)
+            var externalSources = new ToolStripButton("Known Locations", Resources.ServerMode_32x32)
             {
                 DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
                 TextImageRelation = TextImageRelation.ImageAboveText
@@ -1023,26 +978,24 @@ namespace Analogy
                         realTimeBtn.Image = Resources.Database_off;
                     }
 
-                    XtraTabPage page = new XtraTabPage();
-                    page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                    page.Tag = ribbonPage;
-                    page.Controls.Add(onlineUC);
+
+                    onlineUC.Tag = ribbonPage;
                     ribbonControlMain.SelectedTab = ribbonPage;
                     onlineUC.Dock = DockStyle.Fill;
-                    page.Text = $"{onlineTitle} #{online} ({title})";
+                    onlineUC.Text = $"{onlineTitle} #{online} ({title})";
 
-                    AddToDockingManager(page, page.Text);
-                    dockingManager1.ActivateControl(page);
+                    AddToDockingManager(onlineUC, onlineUC.Text);
+                    dockingManager1.ActivateControl(onlineUC);
                     realTime.OnMessageReady += OnRealTimeOnMessageReady;
                     realTime.OnManyMessagesReady += OnRealTimeOnOnManyMessagesReady;
                     realTime.OnDisconnected += OnRealTimeDisconnected;
                     realTime.StartReceiving();
-                    onlineDataSourcesMapping.Add(page, realTime);
+                    onlineDataSourcesMapping.Add(onlineUC, realTime);
 
 
                     void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                     {
-                        if (arg.Control == page)
+                        if (arg.Control == onlineUC)
                         {
                             try
                             {
@@ -1097,13 +1050,11 @@ namespace Analogy
         {
             offline++;
             var bookmarkLog = new BookmarkLog();
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Controls.Add(bookmarkLog);
+            bookmarkLog.Controls.Add(bookmarkLog);
             bookmarkLog.Dock = DockStyle.Fill;
-            page.Text = $"Analogy Bookmarked logs #{offline}";
-            AddToDockingManager(page, page.Text);
-            dockingManager1.ActivateControl(page);
+            bookmarkLog.Text = $"Analogy Bookmarked logs #{offline}";
+            AddToDockingManager(bookmarkLog, bookmarkLog.Text);
+            dockingManager1.ActivateControl(bookmarkLog);
         }
 
         private async Task OpenOfflineFileWithSpecificDataProvider(string[] files)
@@ -1166,14 +1117,14 @@ namespace Analogy
         {
             offline++;
             UserControl offlineUC = new OfflineUCLogs(dataProvider, filenames);
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Tag = ribbonPage;
-            page.Controls.Add(offlineUC);
+
+
+            offlineUC.Tag = ribbonPage;
+            offlineUC.Controls.Add(offlineUC);
             offlineUC.Dock = DockStyle.Fill;
-            page.Text = $"{offlineTitle} #{offline}{(title == null ? "" : $" ({title})")}";
-            AddToDockingManager(page, page.Text);
-            dockingManager1.ActivateControl(page);
+            offlineUC.Text = $"{offlineTitle} #{offline}{(title == null ? "" : $" ({title})")}";
+            AddToDockingManager(offlineUC, offlineUC.Text);
+            dockingManager1.ActivateControl(offlineUC);
         }
 
 
