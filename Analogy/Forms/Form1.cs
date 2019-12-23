@@ -351,7 +351,6 @@ namespace Analogy
                             }
 
                             onlineUC.Tag = ribbonPage;
-                            onlineUC.Controls.Add(onlineUC);
                             ribbonControlMain.SelectedTab = ribbonPage;
                             onlineUC.Dock = DockStyle.Fill;
                             onlineUC.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
