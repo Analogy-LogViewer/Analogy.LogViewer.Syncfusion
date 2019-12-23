@@ -25,6 +25,7 @@ using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Types;
 using DevExpress.Data.Filtering;
+using Syncfusion.WinForms.DataGrid.Serialization;
 using static System.Enum;
 using Message = System.Windows.Forms.Message;
 
@@ -33,6 +34,8 @@ namespace Analogy
 
     public partial class UCLogs : XtraUserControl, ILogMessageCreatedHandler
     {
+
+        
         public bool ForceNoFileCaching { get; set; } = false;
         public bool DoNotAddToRecentHistory { get; set; } = false;
         private PagingManager PagingManager { get; set; }
@@ -101,6 +104,7 @@ namespace Analogy
         private bool hasAnyUserControlExtensions;
         private DateTime diffStartTime = DateTime.MinValue;
         private string LayoutFileName;
+        private string LayoutFileNameMain;
         private bool BookmarkView;
         private int pageNumber = 1;
         private CancellationTokenSource filterTokenSource;
@@ -125,9 +129,17 @@ namespace Analogy
             //splitContainerMain.FixedPanel = SplitFixedPanel.None;
             //ClientSizeChanged += (s, e) => { splitContainerMain.SplitterPosition = (int)0.8 * splitContainerMain.Height; };
             LayoutFileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, "layout.xml");
+            LayoutFileNameMain = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, "layoutMain.xml");
             PagingManager = new PagingManager(this);
             lockSlim = PagingManager.lockSlim;
             _messageData = PagingManager.CurrentPage();
+            sfDataGridMain.DataSource = _messageData;
+            sfDataGridMain.RowValidating += SfDataGridMain_RowValidating;
+        }
+
+        private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
+        {
+            
         }
 
         private void UCLogs_Load(object sender, EventArgs e)
@@ -274,6 +286,13 @@ namespace Analogy
             {
                 gridControl.MainView.RestoreLayoutFromXml(LayoutFileName);
                 gridControlBookmarkedMessages.MainView.RestoreLayoutFromXml(LayoutFileName);
+            }
+            if (File.Exists(LayoutFileNameMain))
+            {
+                using (FileStream fileStream = File.OpenRead(LayoutFileNameMain))
+                {
+                    sfDataGridMain.Deserialize(fileStream, Deserialization());
+                }
             }
             if (Settings.SaveSearchFilters)
             {
@@ -690,7 +709,7 @@ namespace Analogy
             }
         }
 
-        private (int total, int error, int warning, int critical,int alerts) GetRowsCount()
+        private (int total, int error, int warning, int critical, int alerts) GetRowsCount()
         {
 
             // Create a data view by applying the grid view row filter
@@ -949,6 +968,7 @@ namespace Analogy
             try
             {
                 gridControl.DataSource = _messageData.DefaultView;
+                sfDataGridMain.DataSource = _messageData;
                 //NewDataExist = true;
                 //FilterHasChanged = true;
                 lblPageNumber.Text = $"Page {pageNumber} / {TotalPages}";
@@ -979,7 +999,7 @@ namespace Analogy
             Settings.IncludeText = Settings.SaveSearchFilters ? _filterCriteria.TextInclude : string.Empty;
             Settings.ExcludedText = Settings.SaveSearchFilters ? _filterCriteria.TextExclude : string.Empty;
 
-            
+
             _filterCriteria.Levels = null;
             if (chkLstLogLevel.Items[0].CheckState == CheckState.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Trace, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
@@ -1665,6 +1685,10 @@ namespace Analogy
             try
             {
                 gridControl.MainView.SaveLayoutToXml(LayoutFileName);
+                using (FileStream fileStream = File.Create(LayoutFileNameMain))
+                {
+                    sfDataGridMain.Serialize(fileStream, Serialization());
+                }
             }
             catch (Exception exception)
             {
@@ -2270,6 +2294,64 @@ namespace Analogy
             }
 
             contextMenuStripFilters.Show(sbtnPreDefinedFilters.PointToScreen(sbtnPreDefinedFilters.Location));
+        }
+
+        private void sfDataGrid1_QueryRowStyle(object sender, Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventArgs e)
+        {
+
+            if (e.RowIndex >= 0 && (e.RowData is DataRowView drv) && drv.Row.ItemArray[9] is AnalogyLogMessage message)
+            {
+                var data = e.RowData;
+                e.Style.BackColor = Settings.ColorSettings.GetColorForLogLevel(message.Level);
+                string text = message.Text;
+                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, txtbHighlight.Text, PreDefinedQueryType.Contains))
+                {
+                    e.Style.BackColor = Settings.ColorSettings.GetHighlightColor();
+                }
+
+                foreach (PreDefineHighlight preDefineHighlight in Settings.PreDefinedQueries.Highlights)
+                {
+                    if (FilterCriteriaObject.Match(text, preDefineHighlight.Text, preDefineHighlight.PreDefinedQueryType))
+                    {
+                        e.Style.BackColor = preDefineHighlight.Color;
+                    }
+                }
+            }
+        }
+        private SerializationOptions Serialization()
+        {
+            SerializationOptions serializationOptions = new SerializationOptions
+            {
+                SerializeStyle = true,
+                SerializeCaptionSummaries = true,
+                SerializeColumns = true,
+                SerializeFiltering = true,
+                SerializeGrouping = true,
+                SerializeGroupSummaries = true,
+                SerializeSorting = true,
+                SerializeStackedHeaders = true,
+                SerializeTableSummaries = true,
+                SerializeUnboundRows = true
+            };
+            return serializationOptions;
+        }
+        private DeserializationOptions Deserialization()
+        {
+            DeserializationOptions deserializationOptions = new DeserializationOptions
+            {
+                DeserializeCaptionSummary = true,
+                DeserializeColumns = true,
+                DeserializeFiltering = true,
+                DeserializeGrouping = true,
+                DeserializeGroupSummaries = true,
+                DeserializeSorting = true,
+                DeserializeStackedHeaders = true,
+                DeserializeStyle = true,
+                DeserializeTableSummaries = true,
+                DeserializeUnboundRows = true
+            };
+
+            return deserializationOptions;
         }
     }
 }

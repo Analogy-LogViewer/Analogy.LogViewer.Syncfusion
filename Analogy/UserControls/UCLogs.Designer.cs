@@ -206,6 +206,8 @@ namespace Analogy
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMain = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.splitContainerAdv1 = new Syncfusion.Windows.Forms.Tools.SplitContainerAdv();
+            this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new DevExpress.XtraEditors.LabelControl();
             this.sBtnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -257,8 +259,6 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sfDataGrid1 = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            this.splitContainerAdv1 = new Syncfusion.Windows.Forms.Tools.SplitContainerAdv();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             this.cmsMessageOperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logGrid)).BeginInit();
@@ -312,6 +312,11 @@ namespace Analogy
             this.xtpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).BeginInit();
+            this.splitContainerAdv1.Panel1.SuspendLayout();
+            this.splitContainerAdv1.Panel2.SuspendLayout();
+            this.splitContainerAdv1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
             this.pnlBottom.SuspendLayout();
             this.xtCounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).BeginInit();
@@ -326,11 +331,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sfDataGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).BeginInit();
-            this.splitContainerAdv1.Panel1.SuspendLayout();
-            this.splitContainerAdv1.Panel2.SuspendLayout();
-            this.splitContainerAdv1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl
@@ -2386,6 +2386,124 @@ namespace Analogy
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
             // 
+            // splitContainerAdv1
+            // 
+            this.splitContainerAdv1.BeforeTouchSize = 7;
+            this.splitContainerAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerAdv1.Location = new System.Drawing.Point(0, 153);
+            this.splitContainerAdv1.Name = "splitContainerAdv1";
+            // 
+            // splitContainerAdv1.Panel1
+            // 
+            this.splitContainerAdv1.Panel1.Controls.Add(this.sfDataGridMain);
+            // 
+            // splitContainerAdv1.Panel2
+            // 
+            this.splitContainerAdv1.Panel2.Controls.Add(this.gridControl);
+            this.splitContainerAdv1.Size = new System.Drawing.Size(2124, 248);
+            this.splitContainerAdv1.SplitterDistance = 1069;
+            this.splitContainerAdv1.TabIndex = 6;
+            this.splitContainerAdv1.Text = "splitContainerAdv1";
+            this.splitContainerAdv1.ThemeName = "None";
+            // 
+            // sfDataGridMain
+            // 
+            this.sfDataGridMain.AccessibleName = "Table";
+            this.sfDataGridMain.AllowDraggingColumns = true;
+            this.sfDataGridMain.AllowEditing = false;
+            this.sfDataGridMain.AllowResizingColumns = true;
+            this.sfDataGridMain.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
+            gridTextColumn1.AllowDragging = true;
+            gridTextColumn1.AllowEditing = false;
+            gridTextColumn1.AllowResizing = true;
+            gridTextColumn1.HeaderText = "Data Source/File Name";
+            gridTextColumn1.MappingName = "DataProvider";
+            gridDateTimeColumn1.AllowDragging = true;
+            gridDateTimeColumn1.AllowEditing = false;
+            gridDateTimeColumn1.AllowResizing = true;
+            gridDateTimeColumn1.HeaderText = "Date";
+            gridDateTimeColumn1.MappingName = "Date";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridTextColumn2.AllowDragging = true;
+            gridTextColumn2.AllowEditing = false;
+            gridTextColumn2.AllowResizing = true;
+            gridTextColumn2.HeaderText = "Time Differenace";
+            gridTextColumn2.MappingName = "TimeDiff";
+            gridTextColumn2.Visible = false;
+            gridTextColumn3.AllowDragging = true;
+            gridTextColumn3.AllowEditing = false;
+            gridTextColumn3.AllowResizing = true;
+            gridTextColumn3.HeaderText = "Text";
+            gridTextColumn3.MappingName = "Text";
+            gridTextColumn4.AllowDragging = true;
+            gridTextColumn4.AllowEditing = false;
+            gridTextColumn4.AllowResizing = true;
+            gridTextColumn4.HeaderText = "Source";
+            gridTextColumn4.MappingName = "Source";
+            gridTextColumn5.AllowDragging = true;
+            gridTextColumn5.AllowEditing = false;
+            gridTextColumn5.AllowResizing = true;
+            gridTextColumn5.HeaderText = "Level";
+            gridTextColumn5.MappingName = "Level";
+            gridTextColumn6.AllowDragging = true;
+            gridTextColumn6.AllowEditing = false;
+            gridTextColumn6.AllowResizing = true;
+            gridTextColumn6.HeaderText = "Class";
+            gridTextColumn6.MappingName = "Class";
+            gridTextColumn7.AllowDragging = true;
+            gridTextColumn7.AllowEditing = false;
+            gridTextColumn7.AllowResizing = true;
+            gridTextColumn7.HeaderText = "Category";
+            gridTextColumn7.MappingName = "Category";
+            gridTextColumn8.AllowDragging = true;
+            gridTextColumn8.AllowEditing = false;
+            gridTextColumn8.AllowResizing = true;
+            gridTextColumn8.HeaderText = "User";
+            gridTextColumn8.MappingName = "User";
+            gridTextColumn9.AllowDragging = true;
+            gridTextColumn9.AllowEditing = false;
+            gridTextColumn9.AllowResizing = true;
+            gridTextColumn9.HeaderText = "Module";
+            gridTextColumn9.MappingName = "Module";
+            gridTextColumn10.AllowDragging = true;
+            gridTextColumn10.AllowEditing = false;
+            gridTextColumn10.AllowResizing = true;
+            gridTextColumn10.HeaderText = "Object";
+            gridTextColumn10.MappingName = "Object";
+            gridTextColumn10.Visible = false;
+            gridTextColumn11.AllowDragging = true;
+            gridTextColumn11.AllowEditing = false;
+            gridTextColumn11.AllowResizing = true;
+            gridTextColumn11.HeaderText = "Process id";
+            gridTextColumn11.MappingName = "ProcessId";
+            gridTextColumn12.AllowDragging = true;
+            gridTextColumn12.AllowEditing = false;
+            gridTextColumn12.AllowResizing = true;
+            gridTextColumn12.HeaderText = "Thread id";
+            gridTextColumn12.MappingName = "ThreadId";
+            this.sfDataGridMain.Columns.Add(gridTextColumn1);
+            this.sfDataGridMain.Columns.Add(gridDateTimeColumn1);
+            this.sfDataGridMain.Columns.Add(gridTextColumn2);
+            this.sfDataGridMain.Columns.Add(gridTextColumn3);
+            this.sfDataGridMain.Columns.Add(gridTextColumn4);
+            this.sfDataGridMain.Columns.Add(gridTextColumn5);
+            this.sfDataGridMain.Columns.Add(gridTextColumn6);
+            this.sfDataGridMain.Columns.Add(gridTextColumn7);
+            this.sfDataGridMain.Columns.Add(gridTextColumn8);
+            this.sfDataGridMain.Columns.Add(gridTextColumn9);
+            this.sfDataGridMain.Columns.Add(gridTextColumn10);
+            this.sfDataGridMain.Columns.Add(gridTextColumn11);
+            this.sfDataGridMain.Columns.Add(gridTextColumn12);
+            this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
+            this.sfDataGridMain.Name = "sfDataGridMain";
+            this.sfDataGridMain.PreviewRowHeight = 35;
+            this.sfDataGridMain.ShowRowHeader = true;
+            this.sfDataGridMain.Size = new System.Drawing.Size(1069, 248);
+            this.sfDataGridMain.TabIndex = 5;
+            this.sfDataGridMain.Text = "sfDataGridMain";
+            this.sfDataGridMain.QueryRowStyle += new Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventHandler(this.sfDataGrid1_QueryRowStyle);
+            // 
             // pnlBottom
             // 
             this.pnlBottom.Controls.Add(this.progressBar1);
@@ -3049,80 +3167,6 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // sfDataGrid1
-            // 
-            this.sfDataGrid1.AccessibleName = "Table";
-            this.sfDataGrid1.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn1.HeaderText = "Data Source/File Name";
-            gridTextColumn1.MappingName = "DataSource";
-            gridDateTimeColumn1.HeaderText = "Date";
-            gridDateTimeColumn1.MappingName = "Date";
-            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridTextColumn2.HeaderText = "Time Differenace";
-            gridTextColumn2.MappingName = "TimeDiff";
-            gridTextColumn2.Visible = false;
-            gridTextColumn3.HeaderText = "Text";
-            gridTextColumn3.MappingName = "Text";
-            gridTextColumn4.HeaderText = "Sourece";
-            gridTextColumn4.MappingName = "Source";
-            gridTextColumn5.HeaderText = "Level";
-            gridTextColumn5.MappingName = "Level";
-            gridTextColumn6.HeaderText = "Class";
-            gridTextColumn6.MappingName = "Class";
-            gridTextColumn7.HeaderText = "Category";
-            gridTextColumn7.MappingName = "Category";
-            gridTextColumn8.HeaderText = "User";
-            gridTextColumn8.MappingName = "User";
-            gridTextColumn9.HeaderText = "Module";
-            gridTextColumn9.MappingName = "Module";
-            gridTextColumn10.HeaderText = "Object";
-            gridTextColumn10.MappingName = "Object";
-            gridTextColumn10.Visible = false;
-            gridTextColumn11.HeaderText = "Process id";
-            gridTextColumn11.MappingName = "ProcessId";
-            gridTextColumn12.HeaderText = "Thread id";
-            gridTextColumn12.MappingName = "ThreadId";
-            this.sfDataGrid1.Columns.Add(gridTextColumn1);
-            this.sfDataGrid1.Columns.Add(gridDateTimeColumn1);
-            this.sfDataGrid1.Columns.Add(gridTextColumn2);
-            this.sfDataGrid1.Columns.Add(gridTextColumn3);
-            this.sfDataGrid1.Columns.Add(gridTextColumn4);
-            this.sfDataGrid1.Columns.Add(gridTextColumn5);
-            this.sfDataGrid1.Columns.Add(gridTextColumn6);
-            this.sfDataGrid1.Columns.Add(gridTextColumn7);
-            this.sfDataGrid1.Columns.Add(gridTextColumn8);
-            this.sfDataGrid1.Columns.Add(gridTextColumn9);
-            this.sfDataGrid1.Columns.Add(gridTextColumn10);
-            this.sfDataGrid1.Columns.Add(gridTextColumn11);
-            this.sfDataGrid1.Columns.Add(gridTextColumn12);
-            this.sfDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sfDataGrid1.Location = new System.Drawing.Point(0, 0);
-            this.sfDataGrid1.Name = "sfDataGrid1";
-            this.sfDataGrid1.PreviewRowHeight = 35;
-            this.sfDataGrid1.Size = new System.Drawing.Size(1069, 248);
-            this.sfDataGrid1.TabIndex = 5;
-            this.sfDataGrid1.Text = "sfDataGrid1";
-            // 
-            // splitContainerAdv1
-            // 
-            this.splitContainerAdv1.BeforeTouchSize = 7;
-            this.splitContainerAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerAdv1.Location = new System.Drawing.Point(0, 153);
-            this.splitContainerAdv1.Name = "splitContainerAdv1";
-            // 
-            // splitContainerAdv1.Panel1
-            // 
-            this.splitContainerAdv1.Panel1.Controls.Add(this.sfDataGrid1);
-            // 
-            // splitContainerAdv1.Panel2
-            // 
-            this.splitContainerAdv1.Panel2.Controls.Add(this.gridControl);
-            this.splitContainerAdv1.Size = new System.Drawing.Size(2124, 248);
-            this.splitContainerAdv1.SplitterDistance = 1069;
-            this.splitContainerAdv1.TabIndex = 6;
-            this.splitContainerAdv1.Text = "splitContainerAdv1";
-            this.splitContainerAdv1.ThemeName = "None";
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -3196,6 +3240,11 @@ namespace Analogy
             this.xtpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
             this.splitContainerMain.ResumeLayout(false);
+            this.splitContainerAdv1.Panel1.ResumeLayout(false);
+            this.splitContainerAdv1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).EndInit();
+            this.splitContainerAdv1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             this.xtCounts.ResumeLayout(false);
@@ -3212,11 +3261,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sfDataGrid1)).EndInit();
-            this.splitContainerAdv1.Panel1.ResumeLayout(false);
-            this.splitContainerAdv1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).EndInit();
-            this.splitContainerAdv1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3426,7 +3470,7 @@ namespace Analogy
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private DevExpress.XtraEditors.LabelControl lblTotalMessagesAlert;
-        private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGrid1;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridMain;
         private Syncfusion.Windows.Forms.Tools.SplitContainerAdv splitContainerAdv1;
     }
 }
