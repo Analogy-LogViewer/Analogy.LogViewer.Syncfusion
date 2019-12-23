@@ -2421,9 +2421,11 @@ namespace Analogy
             gridDateTimeColumn1.AllowDragging = true;
             gridDateTimeColumn1.AllowEditing = false;
             gridDateTimeColumn1.AllowResizing = true;
+            gridDateTimeColumn1.Format = "\"yyyy.MM.dd HH:mm:ss.ff\"";
             gridDateTimeColumn1.HeaderText = "Date";
             gridDateTimeColumn1.MappingName = "Date";
             gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             gridTextColumn2.AllowDragging = true;
             gridTextColumn2.AllowEditing = false;
             gridTextColumn2.AllowResizing = true;
