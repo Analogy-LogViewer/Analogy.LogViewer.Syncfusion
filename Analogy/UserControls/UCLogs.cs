@@ -35,7 +35,7 @@ namespace Analogy
     public partial class UCLogs : XtraUserControl, ILogMessageCreatedHandler
     {
 
-        
+
         public bool ForceNoFileCaching { get; set; } = false;
         public bool DoNotAddToRecentHistory { get; set; } = false;
         private PagingManager PagingManager { get; set; }
@@ -139,7 +139,7 @@ namespace Analogy
 
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
         {
-            
+
         }
 
         private void UCLogs_Load(object sender, EventArgs e)
@@ -1692,7 +1692,7 @@ namespace Analogy
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                AnalogyLogger.Intance.LogException(exception, nameof(UCLogs), "Error saving layout");
                 throw;
             }
         }
@@ -2352,6 +2352,22 @@ namespace Analogy
             };
 
             return deserializationOptions;
+        }
+
+        private void sfDataGridMain_StyleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FileStream fileStream = File.Create(LayoutFileNameMain))
+                {
+                    sfDataGridMain.Serialize(fileStream, Serialization());
+                }
+            }
+            catch (Exception exception)
+            {
+                AnalogyLogger.Intance.LogException(exception, nameof(UCLogs), "Error saving layout");
+
+            }
         }
     }
 }
