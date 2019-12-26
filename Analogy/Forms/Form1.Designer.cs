@@ -185,7 +185,7 @@ namespace Analogy
             this.tseAnalogyBuiltInProviders.Name = "tseAnalogyBuiltInProviders";
             this.tseAnalogyBuiltInProviders.Office12Mode = false;
             this.tseAnalogyBuiltInProviders.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.tseAnalogyBuiltInProviders.Size = new System.Drawing.Size(371, 117);
+            this.tseAnalogyBuiltInProviders.Size = new System.Drawing.Size(332, 117);
             this.tseAnalogyBuiltInProviders.TabIndex = 0;
             this.tseAnalogyBuiltInProviders.Text = "Analogy Built-in Data Provider";
             // 
@@ -814,7 +814,8 @@ namespace Analogy
             this.ShowApplicationIcon = false;
             this.Text = "Analogy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
             this.ribbonControlMain.ResumeLayout(false);
             this.ribbonControlMain.PerformLayout();

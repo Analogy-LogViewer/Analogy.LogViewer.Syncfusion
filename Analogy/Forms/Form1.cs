@@ -64,7 +64,7 @@ namespace Analogy
             dockingManager1.EnableDocumentMode = true;
             dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
 
-       
+
         }
 
         private void DockingManager1_NewDockStateEndLoad(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace Analogy
             //  dockingManager1.DockControl(gradientPanel1,this,DockingStyle.Left,250);
             //dockingManager1.DockControl(gradientPanel2, this, DockingStyle.Right, 250);
         }
-        private async void Form1_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
             string[] arguments = Environment.GetCommandLineArgs();
             disableOnlineDueToFileOpen = arguments.Length == 2;
@@ -162,23 +162,7 @@ namespace Analogy
             };
             if (AnalogyLogManager.Instance.HasErrorMessages || AnalogyLogManager.Instance.HasWarningMessages)
                 tsslblError.Visible = true;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
             ribbonControlMain.MenuButtonText = "FILE";
@@ -1300,6 +1284,13 @@ namespace Analogy
             }
 
             TmrAutoConnect.Enabled = true;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            settings.UpdateRunningTime();
+            settings.Save();
+            BookmarkPersistManager.Instance.SaveFile();
         }
     }
 }
