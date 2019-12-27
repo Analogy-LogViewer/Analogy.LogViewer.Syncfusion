@@ -34,8 +34,6 @@ namespace Analogy
 
     public partial class UCLogs : XtraUserControl, ILogMessageCreatedHandler
     {
-
-
         public bool ForceNoFileCaching { get; set; } = false;
         public bool DoNotAddToRecentHistory { get; set; } = false;
         private PagingManager PagingManager { get; set; }
@@ -121,6 +119,7 @@ namespace Analogy
         public UCLogs()
         {
             InitializeComponent();
+            SetupControlEvents();
             filterTokenSource = new CancellationTokenSource();
             filterToken = filterTokenSource.Token;
             fileProcessor = new FileProcessor(this);
@@ -137,11 +136,36 @@ namespace Analogy
             sfDataGridMain.RowValidating += SfDataGridMain_RowValidating;
         }
 
+        private void SetupControlEvents()
+        {
+            cbInclude.TextChanged+= async (s, e) =>
+            {
+                if (OldTextInclude.Equals(cbInclude.Text)) return;
+                OldTextInclude = cbInclude.Text;
+                txtbHighlight.Text = cbInclude.Text;
+                if (string.IsNullOrEmpty(cbInclude.Text))
+                {
+                    chkbIncludeText.Checked = false;
+                    return;
+                }
+
+                chkbHighlight.Checked = false;
+                chkbIncludeText.Checked = true;
+                await FilterHasChanged();
+            };
+
+            sfDataGridMain.CellDoubleClick += (s, e) =>
+            {
+              OpenMessageDetails(); 
+            };
+        }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
         {
 
         }
 
+        private static AnalogyLogMessage GetMessageFormRow(DataRow row)=>row[9] as AnalogyLogMessage;
+       
         private void UCLogs_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
@@ -1788,11 +1812,11 @@ namespace Analogy
 
         private (AnalogyLogMessage, string) GetMessageFromSelectedRowInGrid()
         {
-            int[] selRows = LogGrid.GetSelectedRows();
-            if (selRows == null || !selRows.Any()) return (null, string.Empty);
-            var row = selRows.First();
-            string datasource = (string)LogGrid.GetRowCellValue(row, "DataProvider");
-            AnalogyLogMessage message = (AnalogyLogMessage)LogGrid.GetRowCellValue(selRows.First(), "Object");
+            if (sfDataGridMain.SelectedItems==null) return (null, string.Empty);
+            var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>();
+            DataRow dataRow = selectedItems.First().Row;
+            AnalogyLogMessage message = GetMessageFormRow(dataRow);
+            string datasource = (string)dataRow["DataProvider"].ToString();
             return (message, datasource);
 
         }

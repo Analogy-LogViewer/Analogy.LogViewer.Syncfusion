@@ -41,11 +41,6 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
-            DevExpress.XtraEditors.Controls.CheckedListBoxItem checkedListBoxItem1 = new DevExpress.XtraEditors.Controls.CheckedListBoxItem();
-            DevExpress.XtraEditors.Controls.CheckedListBoxItem checkedListBoxItem2 = new DevExpress.XtraEditors.Controls.CheckedListBoxItem();
-            DevExpress.XtraEditors.Controls.CheckedListBoxItem checkedListBoxItem3 = new DevExpress.XtraEditors.Controls.CheckedListBoxItem();
-            DevExpress.XtraEditors.Controls.CheckedListBoxItem checkedListBoxItem4 = new DevExpress.XtraEditors.Controls.CheckedListBoxItem();
-            DevExpress.XtraEditors.Controls.CheckedListBoxItem checkedListBoxItem5 = new DevExpress.XtraEditors.Controls.CheckedListBoxItem();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
@@ -264,6 +259,7 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             this.cmsMessageOperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logGrid)).BeginInit();
@@ -281,10 +277,10 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.spltcDateFiltering)).BeginInit();
             this.spltcDateFiltering.Panel1.SuspendLayout();
             this.spltcDateFiltering.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).BeginInit();
             this.spltcProcessesModule.Panel1.SuspendLayout();
@@ -307,20 +303,23 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
             this.tcBottom.SuspendLayout();
+            this.xtpMessageInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContent.Properties)).BeginInit();
+            this.xtpBookmarks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBookmarkedMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBookmarkedMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            this.xtpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain.Panel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain.Panel2)).BeginInit();
+            this.splitContainerMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).BeginInit();
             this.splitContainerAdv1.Panel1.SuspendLayout();
             this.splitContainerAdv1.Panel2.SuspendLayout();
             this.splitContainerAdv1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
             this.pnlBottom.SuspendLayout();
+            this.xtCounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltGroupByChars)).BeginInit();
@@ -333,21 +332,19 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl
             // 
             this.gridControl.ContextMenuStrip = this.cmsMessageOperation;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // 
-            // 
             this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl.Location = new System.Drawing.Point(0, 0);
             this.gridControl.MainView = this.logGrid;
             this.gridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1049, 268);
+            this.gridControl.Size = new System.Drawing.Size(1049, 248);
             this.gridControl.TabIndex = 0;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.logGrid,
@@ -901,7 +898,7 @@ namespace Analogy
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 421);
+            this.panel1.Location = new System.Drawing.Point(0, 401);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2124, 26);
@@ -1352,7 +1349,7 @@ namespace Analogy
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(2131, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(2131, 20);
             // 
             // barDockControlBottom
             // 
@@ -1367,19 +1364,19 @@ namespace Analogy
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 759);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 739);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2131, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(2131, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 759);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 739);
             // 
             // barButtonItem1
             // 
@@ -1620,14 +1617,8 @@ namespace Analogy
             this.deOlderThanFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deOlderThanFilter.MenuManager = this.barManager1;
             this.deOlderThanFilter.Name = "deOlderThanFilter";
-            // 
-            // 
-            // 
             this.deOlderThanFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.deOlderThanFilter.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deOlderThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatString = "dd.MM.yyyy hh:mm:ss.fff";
@@ -1664,14 +1655,8 @@ namespace Analogy
             this.deNewerThanFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deNewerThanFilter.MenuManager = this.barManager1;
             this.deNewerThanFilter.Name = "deNewerThanFilter";
-            // 
-            // 
-            // 
             this.deNewerThanFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.deNewerThanFilter.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deNewerThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatString = "dd.MM.yyyy hh:mm:ss.fff";
@@ -1798,6 +1783,7 @@ namespace Analogy
             // 
             // spltcSources.Panel1
             // 
+            this.spltcSources.Panel1.Controls.Add(this.cbInclude);
             this.spltcSources.Panel1.Controls.Add(this.txtbSource);
             this.spltcSources.Panel1.Controls.Add(this.sbtnIncludeSources);
             this.spltcSources.Panel1.Controls.Add(this.chkbSources);
@@ -2011,17 +1997,12 @@ namespace Analogy
             this.chkLstLogLevel.CheckOnClick = true;
             this.chkLstLogLevel.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.chkLstLogLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-            checkedListBoxItem1.Description = "Trace";
-            checkedListBoxItem2.Description = "Error + Critical";
-            checkedListBoxItem3.Description = "Warning";
-            checkedListBoxItem4.Description = "Debug";
-            checkedListBoxItem5.Description = "Verbose";
             this.chkLstLogLevel.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            checkedListBoxItem1,
-            checkedListBoxItem2,
-            checkedListBoxItem3,
-            checkedListBoxItem4,
-            checkedListBoxItem5});
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Trace"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Error + Critical"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Warning"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Debug"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Verbose")});
             this.chkLstLogLevel.Location = new System.Drawing.Point(0, 0);
             this.chkLstLogLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkLstLogLevel.Name = "chkLstLogLevel";
@@ -2047,7 +2028,6 @@ namespace Analogy
             // 
             this.xtpMessageInfo.Controls.Add(this.rtxtContent);
             this.xtpMessageInfo.Controls.Add(this.bdcMessageBottom);
-            this.xtpMessageInfo.Enabled = true;
             this.xtpMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpMessageInfo.Name = "xtpMessageInfo";
             this.xtpMessageInfo.Size = new System.Drawing.Size(2117, 170);
@@ -2067,7 +2047,6 @@ namespace Analogy
             // 
             this.xtpBookmarks.Controls.Add(this.gridControlBookmarkedMessages);
             this.xtpBookmarks.Controls.Add(this.bdcBookmarks);
-            this.xtpBookmarks.Enabled = true;
             this.xtpBookmarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpBookmarks.Name = "xtpBookmarks";
             this.xtpBookmarks.Size = new System.Drawing.Size(2117, 170);
@@ -2076,9 +2055,6 @@ namespace Analogy
             // gridControlBookmarkedMessages
             // 
             this.gridControlBookmarkedMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // 
-            // 
             this.gridControlBookmarkedMessages.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlBookmarkedMessages.Location = new System.Drawing.Point(0, 32);
             this.gridControlBookmarkedMessages.MainView = this.gridViewBookmarkedMessages;
@@ -2380,11 +2356,11 @@ namespace Analogy
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBar1.Location = new System.Drawing.Point(183, 0);
+            this.progressBar1.Location = new System.Drawing.Point(345, 0);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.MarqueeAnimationSpeed = 1;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1941, 30);
+            this.progressBar1.Size = new System.Drawing.Size(1580, 30);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             this.progressBar1.Visible = false;
@@ -2398,11 +2374,11 @@ namespace Analogy
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 20);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtpMain;
-            this.xtraTabControl1.Size = new System.Drawing.Size(2131, 759);
+            this.xtraTabControl1.Size = new System.Drawing.Size(2131, 739);
             this.xtraTabControl1.TabIndex = 7;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpMain,
@@ -2413,10 +2389,9 @@ namespace Analogy
             this.xtpMain.Controls.Add(this.splitContainerMain);
             this.xtpMain.Controls.Add(this.bdcTopFiltering);
             this.xtpMain.Controls.Add(this.pnlBottom);
-            this.xtpMain.Enabled = true;
             this.xtpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpMain.Name = "xtpMain";
-            this.xtpMain.Size = new System.Drawing.Size(2124, 725);
+            this.xtpMain.Size = new System.Drawing.Size(2124, 705);
             this.xtpMain.Text = "Logs";
             // 
             // splitContainerMain
@@ -2428,29 +2403,13 @@ namespace Analogy
             this.splitContainerMain.Location = new System.Drawing.Point(0, 38);
             this.splitContainerMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerMain.Name = "splitContainerMain";
-            // 
-            // 
-            // 
             this.splitContainerMain.Panel1.Controls.Add(this.splitContainerAdv1);
             this.splitContainerMain.Panel1.Controls.Add(this.panel1);
             this.splitContainerMain.Panel1.Controls.Add(this.pnlTopFiltering);
-            this.splitContainerMain.Panel1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerMain.Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainerMain.Panel1.Name = "";
-            this.splitContainerMain.Panel1.Size = new System.Drawing.Size(2124, 447);
-            this.splitContainerMain.Panel1.TabIndex = 0;
             this.splitContainerMain.Panel1.Text = "Panel1";
-            // 
-            // 
-            // 
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
-            this.splitContainerMain.Panel2.Location = new System.Drawing.Point(0, 453);
-            this.splitContainerMain.Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainerMain.Panel2.Name = "";
-            this.splitContainerMain.Panel2.Size = new System.Drawing.Size(2124, 204);
-            this.splitContainerMain.Panel2.TabIndex = 1;
             this.splitContainerMain.Panel2.Text = "Panel2";
-            this.splitContainerMain.Size = new System.Drawing.Size(2124, 657);
+            this.splitContainerMain.Size = new System.Drawing.Size(2124, 637);
             this.splitContainerMain.SplitterPosition = 204;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
@@ -2472,7 +2431,7 @@ namespace Analogy
             // 
             this.splitContainerAdv1.Panel2.Controls.Add(this.gridControl);
             this.splitContainerAdv1.Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainerAdv1.Size = new System.Drawing.Size(2124, 268);
+            this.splitContainerAdv1.Size = new System.Drawing.Size(2124, 248);
             this.splitContainerAdv1.SplitterDistance = 1068;
             this.splitContainerAdv1.TabIndex = 6;
             this.splitContainerAdv1.Text = "splitContainerAdv1";
@@ -2568,6 +2527,7 @@ namespace Analogy
             this.sfDataGridMain.Columns.Add(gridTextColumn10);
             this.sfDataGridMain.Columns.Add(gridTextColumn11);
             this.sfDataGridMain.Columns.Add(gridTextColumn12);
+            this.sfDataGridMain.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
             this.sfDataGridMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2575,7 +2535,7 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(1068, 268);
+            this.sfDataGridMain.Size = new System.Drawing.Size(1068, 248);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
@@ -2589,7 +2549,7 @@ namespace Analogy
             this.pnlBottom.Controls.Add(this.sBtnCancel);
             this.pnlBottom.Controls.Add(this.lblTotalMessages);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 695);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 675);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(2124, 30);
@@ -2652,7 +2612,6 @@ namespace Analogy
             this.xtCounts.Controls.Add(this.lblGroupByCharsLimit);
             this.xtCounts.Controls.Add(this.spltGroupByChars);
             this.xtCounts.Controls.Add(this.lblGroupByChars);
-            this.xtCounts.Enabled = true;
             this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtCounts.Name = "xtCounts";
             this.xtCounts.Size = new System.Drawing.Size(2124, 725);
@@ -2669,9 +2628,6 @@ namespace Analogy
             this.nudGroupBychars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudGroupBychars.MenuManager = this.barManager1;
             this.nudGroupBychars.Name = "nudGroupBychars";
-            // 
-            // 
-            // 
             this.nudGroupBychars.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nudGroupBychars.Properties.IsFloatValue = false;
@@ -2744,23 +2700,20 @@ namespace Analogy
             // spltGroupByChars.Panel2
             // 
             this.spltGroupByChars.Panel2.Controls.Add(this.gridControlMessageGrouping);
-            this.spltGroupByChars.Size = new System.Drawing.Size(14749, 4962);
-            this.spltGroupByChars.SplitterDistance = 2533;
+            this.spltGroupByChars.Size = new System.Drawing.Size(16873, 5687);
+            this.spltGroupByChars.SplitterDistance = 2903;
             this.spltGroupByChars.TabIndex = 4;
             // 
             // gCtrlGrouping
             // 
             this.gCtrlGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // 
-            // 
             this.gCtrlGrouping.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gCtrlGrouping.Location = new System.Drawing.Point(0, 0);
             this.gCtrlGrouping.MainView = this.gridViewGrouping;
             this.gCtrlGrouping.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gCtrlGrouping.MenuManager = this.barManager1;
             this.gCtrlGrouping.Name = "gCtrlGrouping";
-            this.gCtrlGrouping.Size = new System.Drawing.Size(14749, 2533);
+            this.gCtrlGrouping.Size = new System.Drawing.Size(16873, 2903);
             this.gCtrlGrouping.TabIndex = 0;
             this.gCtrlGrouping.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGrouping});
@@ -2778,15 +2731,12 @@ namespace Analogy
             // gridControlMessageGrouping
             // 
             this.gridControlMessageGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // 
-            // 
             this.gridControlMessageGrouping.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlMessageGrouping.Location = new System.Drawing.Point(0, 0);
             this.gridControlMessageGrouping.MainView = this.gridView1;
             this.gridControlMessageGrouping.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlMessageGrouping.Name = "gridControlMessageGrouping";
-            this.gridControlMessageGrouping.Size = new System.Drawing.Size(14749, 2425);
+            this.gridControlMessageGrouping.Size = new System.Drawing.Size(16873, 2780);
             this.gridControlMessageGrouping.TabIndex = 4;
             this.gridControlMessageGrouping.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -3257,6 +3207,19 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // cbInclude
+            // 
+            this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Location = new System.Drawing.Point(667, 0);
+            this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
+            this.cbInclude.Name = "cbInclude";
+            this.cbInclude.Size = new System.Drawing.Size(291, 22);
+            this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.TabIndex = 26;
+            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -3319,14 +3282,17 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
             this.tcBottom.ResumeLayout(false);
+            this.xtpMessageInfo.ResumeLayout(false);
+            this.xtpMessageInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtContent.Properties)).EndInit();
+            this.xtpBookmarks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBookmarkedMessages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBookmarkedMessages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain.Panel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain.Panel2)).EndInit();
+            this.xtpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
+            this.splitContainerMain.ResumeLayout(false);
             this.splitContainerAdv1.Panel1.ResumeLayout(false);
             this.splitContainerAdv1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdv1)).EndInit();
@@ -3334,6 +3300,8 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
+            this.xtCounts.ResumeLayout(false);
+            this.xtCounts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).EndInit();
             this.spltGroupByChars.Panel1.ResumeLayout(false);
@@ -3346,6 +3314,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3557,5 +3526,6 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.SplitContainerAdv splitContainerAdv1;
         public DevExpress.XtraBars.BarToggleSwitchItem btswitchRefreshLog;
         public DevExpress.XtraBars.BarToggleSwitchItem btsAutoScrollToBottom;
+        private Syncfusion.WinForms.ListView.SfComboBox cbInclude;
     }
 }
