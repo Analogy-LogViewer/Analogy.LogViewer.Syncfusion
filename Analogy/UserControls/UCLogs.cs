@@ -154,9 +154,21 @@ namespace Analogy
                 await FilterHasChanged();
             };
 
+            sfDataGridMain.CellClick += (s, e) =>
+            {
+                if (btsAutoScrollToBottom.Checked)
+                    btsAutoScrollToBottom.Checked = false;
+            };
             sfDataGridMain.CellDoubleClick += (s, e) =>
             {
               OpenMessageDetails(); 
+            };
+            sfDataGridMain.KeyPress += (s, e) =>
+            {
+                if (e.KeyChar == (char) 13)
+                {
+                    OpenMessageDetails();
+                }
             };
         }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
@@ -1318,7 +1330,7 @@ namespace Analogy
             if (!(e is DXMouseEventArgs args))
                 return;
             OpenMessageDetails();
-            //CreateBookmark();
+      
 
         }
 
