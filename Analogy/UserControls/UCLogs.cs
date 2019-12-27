@@ -25,6 +25,7 @@ using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Types;
 using DevExpress.Data.Filtering;
+using Syncfusion.WinForms.DataGrid.Interactivity;
 using Syncfusion.WinForms.DataGrid.Serialization;
 using static System.Enum;
 using Message = System.Windows.Forms.Message;
@@ -111,11 +112,7 @@ namespace Analogy
         private int TotalPages => PagingManager.TotalPages;
         private IAnalogyOfflineDataProvider FileDataProvider { get; set; }
         private IAnalogyOfflineDataProvider AnalogyOfflineDataProvider { get; } = new AnalogyOfflineDataProvider();
-        public GridView LogGrid
-        {
-            get => logGrid;
-            set => logGrid = value;
-        }
+
         public UCLogs()
         {
             InitializeComponent();
@@ -138,34 +135,65 @@ namespace Analogy
 
         private void SetupControlEvents()
         {
-            cbInclude.TextChanged+= async (s, e) =>
-            {
-                if (OldTextInclude.Equals(cbInclude.Text)) return;
-                OldTextInclude = cbInclude.Text;
-                txtbHighlight.Text = cbInclude.Text;
-                if (string.IsNullOrEmpty(cbInclude.Text))
-                {
-                    chkbIncludeText.Checked = false;
-                    return;
-                }
+            cbInclude.TextChanged += async (s, e) =>
+             {
+                 if (OldTextInclude.Equals(cbInclude.Text)) return;
+                 OldTextInclude = cbInclude.Text;
+                 txtbHighlight.Text = cbInclude.Text;
+                 if (string.IsNullOrEmpty(cbInclude.Text))
+                 {
+                     chkbIncludeText.Checked = false;
+                     return;
+                 }
 
-                chkbHighlight.Checked = false;
-                chkbIncludeText.Checked = true;
-                await FilterHasChanged();
-            };
+                 chkbHighlight.Checked = false;
+                 chkbIncludeText.Checked = true;
+                 await FilterHasChanged();
+             };
 
+            sfDataGridMain.QueryRowStyle += sfDataGrid_QueryRowStyle;
             sfDataGridMain.CellClick += (s, e) =>
             {
                 if (btsAutoScrollToBottom.Checked)
                     btsAutoScrollToBottom.Checked = false;
+
+                var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>();
+                DataRow dataRow = selectedItems.First().Row;
+                _currentMassage = GetMessageFromRow(dataRow);
+                LoadTextBoxes(_currentMassage);
+                if (hasAnyInPlaceExtensions)
+                {
+                    var column = sfDataGridMain.Columns[e.DataColumn.ColumnIndex];
+                    if (column == null) return;
+                    foreach (IAnalogyExtension extension in InPlaceRegisteredExtensions)
+                    {
+                        var columns = extension.GetColumnsInfo();
+                        foreach (AnalogyColumnInfo exColumn in columns)
+                        {
+                            if (column.MappingName.Equals(exColumn.ColumnName) &&
+                                column.HeaderText.Equals(exColumn.ColumnCaption))
+                            {
+
+                                var cellValue = sfDataGridMain.GetSelectedCells().First().ToString();
+                                AnalogyCellClickedEventArgs argsForEx =
+                                    new AnalogyCellClickedEventArgs(exColumn.ColumnName, cellValue, _currentMassage);
+                                extension.CellClicked(s, argsForEx);
+                            }
+
+                        }
+                    }
+
+
+                }
+
             };
             sfDataGridMain.CellDoubleClick += (s, e) =>
             {
-              OpenMessageDetails(); 
+                OpenMessageDetails();
             };
             sfDataGridMain.KeyPress += (s, e) =>
             {
-                if (e.KeyChar == (char) 13)
+                if (e.KeyChar == (char)13)
                 {
                     OpenMessageDetails();
                 }
@@ -176,8 +204,8 @@ namespace Analogy
 
         }
 
-        private static AnalogyLogMessage GetMessageFormRow(DataRow row)=>row[9] as AnalogyLogMessage;
-       
+        private static AnalogyLogMessage GetMessageFromRow(DataRow row) => row[9] as AnalogyLogMessage;
+
         private void UCLogs_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
@@ -206,24 +234,23 @@ namespace Analogy
                     progressBar1.Visible = false;
             });
 
-            LogGrid.RowCountChanged += (s, arg) =>
-            {
-                if (Settings.AutoScrollToLastMessage && !IsDisposed)
-                {
-                    BeginInvoke(new MethodInvoker(() =>
-                    {
-                        LogGrid.MoveLast();
-                        LogGrid.MakeRowVisible(LogGrid.FocusedRowHandle);
-                    }));
+            //todo: auto scroll to last
+            //LogGrid.RowCountChanged += (s, arg) =>
+            //{
+            //    if (Settings.AutoScrollToLastMessage && !IsDisposed)
+            //    {
+            //        BeginInvoke(new MethodInvoker(() =>
+            //        {
+            //            LogGrid.MoveLast();
+            //            LogGrid.MakeRowVisible(LogGrid.FocusedRowHandle);
+            //        }));
 
-                }
-            };
+            //    }
+            //};
 
-            gridControl.DataSource = _messageData.DefaultView;
             _bookmarkedMessages = Utils.DataTableConstructor();
             gridControlBookmarkedMessages.DataSource = _bookmarkedMessages;
 
-            gridControl.Focus();
         }
 
         public void SetFileDataSource(IAnalogyOfflineDataProvider fileDataProvider)
@@ -317,12 +344,6 @@ namespace Analogy
             txtbExclude.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtbExclude.MaskBox.AutoCompleteCustomSource = autoCompleteExclude;
 
-            gridControl.ForceInitialize();
-            if (File.Exists(LayoutFileName))
-            {
-                gridControl.MainView.RestoreLayoutFromXml(LayoutFileName);
-                gridControlBookmarkedMessages.MainView.RestoreLayoutFromXml(LayoutFileName);
-            }
             if (File.Exists(LayoutFileNameMain))
             {
                 using (FileStream fileStream = File.OpenRead(LayoutFileNameMain))
@@ -338,13 +359,15 @@ namespace Analogy
                 txtbModule.Text = Settings.ModuleText;
             }
             btswitchRefreshLog.Checked = true;
-            gridColumnCategory.Visible = false;
-            LogGrid.BestFitColumns();
+
             btswitchExpand.Checked = true;
             splitContainerMain.Collapsed = true;
             if (Settings.StartupErrorLogLevel)
                 chkLstLogLevel.Items[1].CheckState = CheckState.Checked;
-            LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
+
+            //todo:font
+            //LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
+
             btsAutoScrollToBottom.Checked = Settings.AutoScrollToLastMessage;
         }
 
@@ -352,7 +375,7 @@ namespace Analogy
         {
             if (BookmarkView)
             {
-                gridControl.ContextMenuStrip = cmsBookmarked;
+                sfDataGridMain.ContextMenuStrip = cmsBookmarked;
                 bBtnRemoveBoomark.Visibility = BarItemVisibility.Always;
                 bBtnImport.Visibility = BarItemVisibility.Never;
             }
@@ -365,12 +388,12 @@ namespace Analogy
                 var columns = extension.GetColumnsInfo();
                 foreach (AnalogyColumnInfo column in columns)
                 {
-                    var gridColumn = new GridColumn();
-                    gridColumn.Caption = column.ColumnCaption;
-                    gridColumn.FieldName = column.ColumnName;
-                    gridColumn.OptionsFilter.FilterPopupMode = FilterPopupMode.CheckedList;
-                    gridColumn.VisibleIndex = ExtensionManager.GetIndexForExtension(extension);
-                    LogGrid.Columns.Add(gridColumn);
+                    var gridColumn = new Syncfusion.WinForms.DataGrid.GridColumn();
+                    gridColumn.HeaderText = column.ColumnCaption;
+                    gridColumn.MappingName = column.ColumnName;
+                    //todo:index?
+                    //gridColumn.index = ExtensionManager.GetIndexForExtension(extension);
+                    sfDataGridMain.Columns.Add(gridColumn);
                     gridColumn.Visible = true;
                 }
 
@@ -390,47 +413,6 @@ namespace Analogy
         }
 
         #region UI events
-
-        private void logGrid_Click(object sender, EventArgs e)
-        {
-            if (!(e is DXMouseEventArgs args))
-                return;
-            GridHitInfo hi = LogGrid.CalcHitInfo(new Point(args.X, args.Y));
-
-            if (hi.RowHandle < 0) return;
-            int[] selRows = LogGrid.GetSelectedRows();
-
-            if (selRows == null || selRows.Length != 1) return;
-
-            int rownum = selRows.First();
-            _currentMassage = (AnalogyLogMessage)LogGrid.GetRowCellValue(rownum, "Object");
-            LoadTextBoxes(_currentMassage);
-            if (hasAnyInPlaceExtensions)
-            {
-                var rowHandle = hi.RowHandle;
-                var column = hi.Column;
-                if (column == null) return;
-                foreach (IAnalogyExtension extension in InPlaceRegisteredExtensions)
-                {
-                    var columns = extension.GetColumnsInfo();
-                    foreach (AnalogyColumnInfo exColumn in columns)
-                    {
-                        if (column.FieldName.Equals(exColumn.ColumnName) &&
-                            column.Caption.Equals(exColumn.ColumnCaption))
-                        {
-                            var cellValue = LogGrid.GetRowCellValue(rowHandle, exColumn.ColumnName);
-                            AnalogyCellClickedEventArgs argsForEx =
-                                new AnalogyCellClickedEventArgs(exColumn.ColumnName, cellValue, _currentMassage);
-                            extension.CellClicked(sender, argsForEx);
-                        }
-
-                    }
-                }
-
-
-            }
-
-        }
 
         private void PmsGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -596,23 +578,11 @@ namespace Analogy
 
         private async void chkbInclude_CheckedChanged(object sender, EventArgs e)
         {
-            if (!chkbIncludeText.Checked && !chkExclude.Checked)
-            {
-                LogGrid.ClearColumnsFilter();
-                gridColumnText.FilterInfo = null;
-            }
-
             await FilterHasChanged();
         }
 
         private async void chkbExclude_CheckedChanged(object sender, EventArgs e)
         {
-            if (!chkbIncludeText.Checked && !chkExclude.Checked)
-            {
-                LogGrid.ClearColumnsFilter();
-                gridColumnText.FilterInfo = null;
-            }
-
             await FilterHasChanged();
         }
         private async void txtbInclude_TextChanged(object sender, EventArgs e)
@@ -725,18 +695,6 @@ namespace Analogy
             {
                 lockSlim.EnterReadLock();
                 string filter = _messageData.DefaultView.RowFilter;
-                if (LogGrid.ActiveFilterEnabled && !string.IsNullOrEmpty(LogGrid.ActiveFilterString))
-                {
-                    CriteriaOperator op = LogGrid.ActiveFilterCriteria; //filterControl1.FilterCriteria  
-                    string filterString = CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                    filter = $"{filter} and {filterString}";
-                }
-                //todo
-                //todo:replace for performance
-                //var rows = _messageData.Select(filter);
-                //var filteredDataTable = _messageData.Clone();
-                //filteredDataTable.Rows.Add(rows);
-                //return filteredDataTable;
                 return new DataView(_messageData, filter, null, DataViewRowState.CurrentRows).ToTable();
             }
             finally
@@ -754,28 +712,21 @@ namespace Analogy
                 lockSlim.EnterReadLock();
 
                 string filter = _messageData.DefaultView.RowFilter;
-                if (LogGrid.ActiveFilterEnabled && !string.IsNullOrEmpty(LogGrid.ActiveFilterString))
-                {
-                    CriteriaOperator op = LogGrid.ActiveFilterCriteria; //filterControl1.FilterCriteria  
-                    string filterString = CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                    filter = $"{filter} and {filterString}";
-                }
-
                 var rows = _messageData.Select(filter);
                 var total = rows.Length;
                 var error = rows.Count(r => r["Level"].ToString() == AnalogyLogLevel.Error.ToString());
                 var warning = rows.Count(r => r["Level"].ToString() == AnalogyLogLevel.Warning.ToString());
                 var critical = rows.Count(r => r["Level"].ToString() == AnalogyLogLevel.Critical.ToString());
-                var AlertCount = 0;
+                var alertCount = 0;
                 if (Settings.PreDefinedQueries.Alerts.Any())
                 {
                     var messages = rows.Select(r => (AnalogyLogMessage)r["Object"]).ToList();
-                    AlertCount = messages.Count(m =>
+                    alertCount = messages.Count(m =>
                         Settings.PreDefinedQueries.Alerts.Any(a => FilterCriteriaObject.MatchAlert(m, a)));
 
                 }
 
-                return (total, error, warning, critical, AlertCount);
+                return (total, error, warning, critical, alertCount);
             }
             finally
             {
@@ -983,10 +934,10 @@ namespace Analogy
                     lockSlim.EnterWriteLock();
                     try
                     {
-                        LogGrid.BeginDataUpdate();
+                        sfDataGridMain.BeginUpdate();
                         _messageData.AcceptChanges();
-                        LogGrid.EndDataUpdate();
                         RefreshUIMessagesCount();
+                        sfDataGridMain.EndUpdate();
                     }
                     finally
                     {
@@ -1003,7 +954,6 @@ namespace Analogy
             lockSlim.EnterWriteLock();
             try
             {
-                gridControl.DataSource = _messageData.DefaultView;
                 sfDataGridMain.DataSource = _messageData;
                 //NewDataExist = true;
                 //FilterHasChanged = true;
@@ -1088,12 +1038,6 @@ namespace Analogy
             }
             Settings.ModuleText = Settings.SaveSearchFilters ? txtbModule.Text : string.Empty;
             string filter = _filterCriteria.GetSqlExpression();
-            if (LogGrid.ActiveFilterEnabled && !string.IsNullOrEmpty(LogGrid.ActiveFilterString))
-            {
-                CriteriaOperator op = LogGrid.ActiveFilterCriteria;
-                string filterString = CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                filter = $"{filter} and {filterString}";
-            }
             lockSlim.EnterWriteLock();
             try
             {
@@ -1112,38 +1056,41 @@ namespace Analogy
                 lockSlim.ExitWriteLock();
             }
 
-            var location = LocateByValue(0, gridColumnObject, _currentMassage);
-            if (location >= 0)
-                LogGrid.FocusedRowHandle = location;
-            LogGrid.RefreshData();
+            //todo: selectin of current message
+            //var location = LocateByValue(0, gridColumnObject, _currentMassage);
+            //if (location >= 0)
+            //    LogGrid.FocusedRowHandle = location;
+            
             RefreshUIMessagesCount();
 
         }
         public virtual int LocateByValue(int startRowHandle, GridColumn column, AnalogyLogMessage val)
         {
-            if (!LogGrid.DataController.IsReady || val == null)
-                return int.MinValue;
-            startRowHandle = Math.Max(0, startRowHandle);
-            if (LogGrid.IsServerMode)
-            {
-                if (startRowHandle != 0)
-                    throw new ArgumentException("Argument must be '0' in server mode.", nameof(startRowHandle));
-            }
-            try
-            {
-                if (LogGrid.IsServerMode)
-                    return LogGrid.DataController.FindRowByValue(column.FieldName, val, null);
-                for (int rowHandle = startRowHandle; rowHandle < LogGrid.DataController.VisibleListSourceRowCount; ++rowHandle)
-                {
-                    object rowCellValue = LogGrid.GetRowCellValue(rowHandle, column.Caption);
-                    if (Equals(val, rowCellValue))
-                        return rowHandle;
-                }
-            }
-            catch
-            {
-            }
-            return int.MinValue;
+            return 0;
+            //todo: fix this
+            //if (!LogGrid.DataController.IsReady || val == null)
+            //    return int.MinValue;
+            //startRowHandle = Math.Max(0, startRowHandle);
+            //if (LogGrid.IsServerMode)
+            //{
+            //    if (startRowHandle != 0)
+            //        throw new ArgumentException("Argument must be '0' in server mode.", nameof(startRowHandle));
+            //}
+            //try
+            //{
+            //    if (LogGrid.IsServerMode)
+            //        return LogGrid.DataController.FindRowByValue(column.FieldName, val, null);
+            //    for (int rowHandle = startRowHandle; rowHandle < LogGrid.DataController.VisibleListSourceRowCount; ++rowHandle)
+            //    {
+            //        object rowCellValue = LogGrid.GetRowCellValue(rowHandle, column.Caption);
+            //        if (Equals(val, rowCellValue))
+            //            return rowHandle;
+            //    }
+            //}
+            //catch
+            //{
+            //}
+            //return int.MinValue;
         }
         private void RefreshUIMessagesCount()
         {
@@ -1330,7 +1277,7 @@ namespace Analogy
             if (!(e is DXMouseEventArgs args))
                 return;
             OpenMessageDetails();
-      
+
 
         }
 
@@ -1350,11 +1297,10 @@ namespace Analogy
         private void CreateBookmark(bool persists)
         {
 
-            (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            int[] selRows = LogGrid.GetSelectedRows();
+            (AnalogyLogMessage message, string dataprovider) = GetMessageFromSelectedRowInGrid();
             if (message == null) return;
+          
             lockSlim.EnterWriteLock();
-
             DataRow dtr = _bookmarkedMessages.NewRow();
             dtr["Date"] = message.Date;
             dtr["Text"] = message.Text ?? "";
@@ -1366,8 +1312,7 @@ namespace Analogy
             dtr["Module"] = message.Module ?? "";
             dtr["Object"] = message;
             dtr["ProcessID"] = message.ProcessID;
-            string dataSource = (string)LogGrid.GetRowCellValue(selRows.First(), "DataProvider");
-            dtr["DataProvider"] = dataSource;
+            dtr["DataProvider"] = dataprovider;
             if (diffStartTime > DateTime.MinValue)
             {
                 dtr["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString();
@@ -1379,32 +1324,32 @@ namespace Analogy
             splitContainerMain.Collapsed = false;
             tcBottom.SelectedTabPage = xtpBookmarks;
             if (persists)
-                BookmarkPersistManager.Instance.AddBookmarkedMessage(message, dataSource);
+                BookmarkPersistManager.Instance.AddBookmarkedMessage(message, dataprovider);
             lockSlim.ExitWriteLock();
         }
 
         private void GoToMessage()
         {
-            int[] selRows = gridViewBookmarkedMessages.GetSelectedRows();
-            if (selRows == null || selRows.Length != 1) return;
-            int rownum = selRows.First();
-            var currentRow = (DataRowView)gridViewBookmarkedMessages.GetRow(rownum);
-            try
-            {
-                var LogMessage = currentRow["Object"] as AnalogyLogMessage;
-                var location = LocateByValue(0, gridColumnObject, LogMessage);
-                if (location >= 0)
-                    LogGrid.FocusedRowHandle = location;
-                else
-                    XtraMessageBox.Show("Cannot go to message", "Message not found", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-            }
-            catch (Exception)
-            {
+            //int[] selRows = gridViewBookmarkedMessages.GetSelectedRows();
+            //if (selRows == null || selRows.Length != 1) return;
+            //int rownum = selRows.First();
+            //var currentRow = (DataRowView)gridViewBookmarkedMessages.GetRow(rownum);
+            //try
+            //{
+            //    var LogMessage = currentRow["Object"] as AnalogyLogMessage;
+            //    var location = LocateByValue(0, gridColumnObject, LogMessage);
+            //    if (location >= 0)
+            //        LogGrid.FocusedRowHandle = location;
+            //    else
+            //        XtraMessageBox.Show("Cannot go to message", "Message not found", MessageBoxButtons.OK,
+            //            MessageBoxIcon.Error);
+            //}
+            //catch (Exception)
+            //{
 
-                XtraMessageBox.Show("Cannot go to message", "Message not found", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            //    XtraMessageBox.Show("Cannot go to message", "Message not found", MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error);
+            //}
         }
 
 
@@ -1824,10 +1769,10 @@ namespace Analogy
 
         private (AnalogyLogMessage, string) GetMessageFromSelectedRowInGrid()
         {
-            if (sfDataGridMain.SelectedItems==null) return (null, string.Empty);
+            if (sfDataGridMain.SelectedItems == null) return (null, string.Empty);
             var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>();
             DataRow dataRow = selectedItems.First().Row;
-            AnalogyLogMessage message = GetMessageFormRow(dataRow);
+            AnalogyLogMessage message = GetMessageFromRow(dataRow);
             string datasource = (string)dataRow["DataProvider"].ToString();
             return (message, datasource);
 
@@ -2332,7 +2277,7 @@ namespace Analogy
             contextMenuStripFilters.Show(sbtnPreDefinedFilters.PointToScreen(sbtnPreDefinedFilters.Location));
         }
 
-        private void sfDataGrid1_QueryRowStyle(object sender, Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventArgs e)
+        private void sfDataGrid_QueryRowStyle(object sender, Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventArgs e)
         {
 
             if (e.RowIndex >= 0 && (e.RowData is DataRowView drv) && drv.Row.ItemArray[9] is AnalogyLogMessage message)
