@@ -11,6 +11,7 @@ namespace Analogy.DataProviders
     {
         public static IEnumerable<AnalogyChangeLog> GetChangeLog()
         {
+            yield return new AnalogyChangeLog("Syncfusion - Default user settings are invalid (Issue #9)", AnalogChangeLogType.Defect, "Lior Banai", new DateTime(2019, 12, 27));
             yield return new AnalogyChangeLog("Syncfusion - User settings are not saved upon exit (Issue #8)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 26));
             yield return new AnalogyChangeLog("Syncfusion - DataGrid: set datetime as 'yyyy.MM.dd HH: mm:ss.ff' (Issue #7)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 25));
             yield return new AnalogyChangeLog("Syncfusion - Convert Ribbon Control (Issue #2)", AnalogChangeLogType.Improvement, "Lior Banai", new DateTime(2019, 12, 23));
