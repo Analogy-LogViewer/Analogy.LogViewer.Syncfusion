@@ -180,11 +180,8 @@ namespace Analogy
                                     new AnalogyCellClickedEventArgs(exColumn.ColumnName, cellValue, _currentMassage);
                                 extension.CellClicked(s, argsForEx);
                             }
-
                         }
                     }
-
-
                 }
 
             };
@@ -2025,13 +2022,13 @@ namespace Analogy
             SaveMessagesToLog(FileDataProvider, messages);
         }
 
-       
+
 
         private void tsmiIncreaseFont_Click(object sender, EventArgs e)
         {
             Settings.FontSize = sfDataGridMain.Font.Size + 2;
             sfDataGridMain.Font = new Font(sfDataGridMain.Font.Name, Settings.FontSize);
-           //todo:
+            //todo:
             /// gridViewBookmarkedMessages.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
             SaveGridLayout();
         }
