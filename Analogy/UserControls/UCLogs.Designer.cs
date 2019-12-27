@@ -150,6 +150,7 @@ namespace Analogy
             this.sbtnUndockPerProcess = new DevExpress.XtraEditors.SimpleButton();
             this.chkbModules = new System.Windows.Forms.CheckBox();
             this.spltcSources = new System.Windows.Forms.SplitContainer();
+            this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
             this.txtbSource = new DevExpress.XtraEditors.TextEdit();
             this.sbtnIncludeSources = new DevExpress.XtraEditors.SimpleButton();
             this.chkbSources = new System.Windows.Forms.CheckBox();
@@ -190,6 +191,7 @@ namespace Analogy
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMain = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new DevExpress.XtraEditors.LabelControl();
@@ -242,8 +244,6 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.pnlMessages = new System.Windows.Forms.Panel();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).BeginInit();
@@ -270,6 +270,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).BeginInit();
             this.spltcSources.Panel1.SuspendLayout();
             this.spltcSources.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbSource.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltTextExclude)).BeginInit();
@@ -294,6 +295,7 @@ namespace Analogy
             this.xtpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.SuspendLayout();
+            this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
             this.pnlBottom.SuspendLayout();
             this.xtCounts.SuspendLayout();
@@ -309,8 +311,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
-            this.pnlMessages.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1428,6 +1428,19 @@ namespace Analogy
             this.spltcSources.SplitterWidth = 3;
             this.spltcSources.TabIndex = 25;
             // 
+            // cbInclude
+            // 
+            this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Location = new System.Drawing.Point(667, 0);
+            this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
+            this.cbInclude.Name = "cbInclude";
+            this.cbInclude.Size = new System.Drawing.Size(291, 22);
+            this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.TabIndex = 26;
+            // 
             // txtbSource
             // 
             this.txtbSource.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2048,6 +2061,15 @@ namespace Analogy
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
             // 
+            // pnlMessages
+            // 
+            this.pnlMessages.Controls.Add(this.sfDataGridMain);
+            this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMessages.Location = new System.Drawing.Point(0, 153);
+            this.pnlMessages.Name = "pnlMessages";
+            this.pnlMessages.Size = new System.Drawing.Size(2124, 248);
+            this.pnlMessages.TabIndex = 7;
+            // 
             // sfDataGridMain
             // 
             this.sfDataGridMain.AccessibleName = "Table";
@@ -2224,7 +2246,7 @@ namespace Analogy
             this.xtCounts.Controls.Add(this.lblGroupByChars);
             this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtCounts.Name = "xtCounts";
-            this.xtCounts.Size = new System.Drawing.Size(2124, 725);
+            this.xtCounts.Size = new System.Drawing.Size(2124, 705);
             this.xtCounts.Text = "Messages Grouping";
             // 
             // nudGroupBychars
@@ -2817,28 +2839,6 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cbInclude
-            // 
-            this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Location = new System.Drawing.Point(667, 0);
-            this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
-            this.cbInclude.Name = "cbInclude";
-            this.cbInclude.Size = new System.Drawing.Size(291, 22);
-            this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.TabIndex = 26;
-            // 
-            // pnlMessages
-            // 
-            this.pnlMessages.Controls.Add(this.sfDataGridMain);
-            this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMessages.Location = new System.Drawing.Point(0, 153);
-            this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(2124, 248);
-            this.pnlMessages.TabIndex = 7;
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2882,6 +2882,7 @@ namespace Analogy
             this.spltcSources.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).EndInit();
             this.spltcSources.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbSource.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).EndInit();
             this.spltTextExclude.Panel1.ResumeLayout(false);
@@ -2909,6 +2910,7 @@ namespace Analogy
             this.xtpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
             this.splitContainerMain.ResumeLayout(false);
+            this.pnlMessages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
@@ -2926,8 +2928,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
-            this.pnlMessages.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
-﻿using DevExpress.Data;
+﻿using Syncfusion.WinForms.DataGridConverter;
+using DevExpress.Data;
 using DevExpress.LookAndFeel;
 using DevExpress.Utils;
 using DevExpress.XtraBars;
@@ -35,6 +36,7 @@ namespace Analogy
 
     public partial class UCLogs : XtraUserControl, ILogMessageCreatedHandler
     {
+        private string timeDiffColumnName = "TimeDiff";
         public bool ForceNoFileCaching { get; set; } = false;
         public bool DoNotAddToRecentHistory { get; set; } = false;
         private PagingManager PagingManager { get; set; }
@@ -102,7 +104,6 @@ namespace Analogy
         private bool hasAnyInPlaceExtensions;
         private bool hasAnyUserControlExtensions;
         private DateTime diffStartTime = DateTime.MinValue;
-        private string LayoutFileName;
         private string LayoutFileNameMain;
         private bool BookmarkView;
         private int pageNumber = 1;
@@ -124,7 +125,6 @@ namespace Analogy
             //splitContainerMain.IsSplitterFixed = false;
             //splitContainerMain.FixedPanel = SplitFixedPanel.None;
             //ClientSizeChanged += (s, e) => { splitContainerMain.SplitterPosition = (int)0.8 * splitContainerMain.Height; };
-            LayoutFileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, "layout.xml");
             LayoutFileNameMain = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, "layoutMain.xml");
             PagingManager = new PagingManager(this);
             lockSlim = PagingManager.lockSlim;
@@ -157,7 +157,8 @@ namespace Analogy
                 if (btsAutoScrollToBottom.Checked)
                     btsAutoScrollToBottom.Checked = false;
 
-                var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>();
+                var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>().ToList();
+                if (!selectedItems.Any()) return;
                 DataRow dataRow = selectedItems.First().Row;
                 _currentMassage = GetMessageFromRow(dataRow);
                 LoadTextBoxes(_currentMassage);
@@ -198,6 +199,19 @@ namespace Analogy
                     OpenMessageDetails();
                 }
             };
+
+            sfDataGridMain.SelectionChanged += (s, e) =>
+            {
+                //int row = e.FocusedRowHandle;
+                //if (row < 0) return;
+                //AnalogyLogMessage m = (AnalogyLogMessage)LogGrid.GetRowCellValue(e.FocusedRowHandle, "Object");
+                //LoadTextBoxes(m);
+                //string dataProvider = (string)LogGrid.GetRowCellValue(e.FocusedRowHandle, "DataProvider");
+                //if (!LoadingInProgress)
+                //{
+                //    OnFocusedRowChanged?.Invoke(this, (dataProvider, m));
+                //}
+            };
         }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
         {
@@ -209,7 +223,7 @@ namespace Analogy
         private void UCLogs_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-
+            sfDataGridMain.Columns[timeDiffColumnName].Visible = false;
             PagingManager.OnPageChanged += (s, arg) =>
             {
                 if (IsDisposed) return;
@@ -1060,7 +1074,7 @@ namespace Analogy
             //var location = LocateByValue(0, gridColumnObject, _currentMassage);
             //if (location >= 0)
             //    LogGrid.FocusedRowHandle = location;
-            
+
             RefreshUIMessagesCount();
 
         }
@@ -1299,7 +1313,7 @@ namespace Analogy
 
             (AnalogyLogMessage message, string dataprovider) = GetMessageFromSelectedRowInGrid();
             if (message == null) return;
-          
+
             lockSlim.EnterWriteLock();
             DataRow dtr = _bookmarkedMessages.NewRow();
             dtr["Date"] = message.Date;
@@ -1409,22 +1423,29 @@ namespace Analogy
 
         private void UpdateTimes()
         {
-            gridColumnTimeDiff.Visible = true;
-            gridColumnTimeDiff.VisibleIndex = 2;
-
-            lockSlim.EnterWriteLock();
-            _messageData.BeginLoadData();
-            foreach (DataRow row in _messageData.Rows)
+            sfDataGridMain.Columns[timeDiffColumnName].Visible = false;
+            try
             {
-                AnalogyLogMessage message = (AnalogyLogMessage)row["Object"];
-                //row["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString("d\\.hh\\:mm\\:ss\\.fff");
-                row["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString();
+
+
+                lockSlim.EnterWriteLock();
+                sfDataGridMain.BeginUpdate();
+                foreach (DataRow row in _messageData.Rows)
+                {
+                    AnalogyLogMessage message = (AnalogyLogMessage)row["Object"];
+                    //row["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString("d\\.hh\\:mm\\:ss\\.fff");
+                    row["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString();
+                }
+
+                sfDataGridMain.EndUpdate();
+                AcceptChanges(true);
+            }
+            finally
+            {
+                lockSlim.ExitWriteLock();
             }
 
-            _messageData.EndLoadData();
-            AcceptChanges(true);
-            gridControl.RefreshDataSource();
-            lockSlim.ExitWriteLock();
+
         }
 
         private async void tsbtnImport_Click(object sender, EventArgs e)
@@ -1453,26 +1474,26 @@ namespace Analogy
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
-            {
-                int selected = LogGrid.GetSelectedRows().First();
-                if (HighlightRows.All(r => r >= selected))
-                    LogGrid.SelectRow(HighlightRows.Last());
-                else
-                    LogGrid.SelectRow(HighlightRows.First(r => r < selected));
-            }
+            //if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
+            //{
+            //    int selected = LogGrid.GetSelectedRows().First();
+            //    if (HighlightRows.All(r => r >= selected))
+            //        LogGrid.SelectRow(HighlightRows.Last());
+            //    else
+            //        LogGrid.SelectRow(HighlightRows.First(r => r < selected));
+            //}
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
-            {
-                int selected = LogGrid.GetSelectedRows().First();
-                if (HighlightRows.All(r => r <= selected))
-                    LogGrid.SelectRow(HighlightRows.First());
-                else
-                    LogGrid.SelectRow(HighlightRows.First(r => r > selected));
-            }
+            //if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
+            //{
+            //    int selected = LogGrid.GetSelectedRows().First();
+            //    if (HighlightRows.All(r => r <= selected))
+            //        LogGrid.SelectRow(HighlightRows.First());
+            //    else
+            //        LogGrid.SelectRow(HighlightRows.First(r => r > selected));
+            //}
         }
 
         private void btswitchExpand_CheckedChanged(object sender, ItemClickEventArgs e)
@@ -1665,7 +1686,6 @@ namespace Analogy
         {
             try
             {
-                gridControl.MainView.SaveLayoutToXml(LayoutFileName);
                 using (FileStream fileStream = File.Create(LayoutFileNameMain))
                 {
                     sfDataGridMain.Serialize(fileStream, Serialization());
@@ -1897,10 +1917,7 @@ namespace Analogy
 
         private void bBtnExportExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-
-            var count = LogGrid.RowCount;
-
+            var count = sfDataGridMain.RowCount;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel file XLSX (*.xlsx)|*.xlsx|Excel file XLS (*.XLS)|*.xls";
 
@@ -1914,7 +1931,10 @@ namespace Analogy
                     }
                     else
                     {
-                        LogGrid.ExportToXlsx(saveFileDialog.FileName);
+                        var options = new ExcelExportingOptions();
+                        var excelEngine = sfDataGridMain.ExportToExcel(sfDataGridMain.View, options);
+                        var workBook = excelEngine.Excel.Workbooks[0];
+                        workBook.SaveAs(saveFileDialog.FileName);
                         OpenFolder(saveFileDialog.FileName);
                     }
                 }
@@ -1926,7 +1946,10 @@ namespace Analogy
                     }
                     else
                     {
-                        LogGrid.ExportToXls(saveFileDialog.FileName);
+                        var options = new ExcelExportingOptions();
+                        var excelEngine = sfDataGridMain.ExportToExcel(sfDataGridMain.View, options);
+                        var workBook = excelEngine.Excel.Workbooks[0];
+                        workBook.SaveAs(saveFileDialog.FileName);
                         OpenFolder(saveFileDialog.FileName);
                     }
                 }
@@ -1935,28 +1958,33 @@ namespace Analogy
 
         private void bBtnExportCSV_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Comma Separated File (*.csv)|*.csv";
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Filter = "Comma Separated File (*.csv)|*.csv";
 
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                LogGrid.ExportToCsv(saveFileDialog.FileName);
-                OpenFolder(saveFileDialog.FileName);
-            }
+            //if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            //{
+
+            //    var excelEngine = sfDataGridMain.export(sfDataGridMain.View, options);
+            //    var workBook = excelEngine.Excel.Workbooks[0];
+            //    workBook.SaveAs(saveFileDialog.FileName);
+
+            //    LogGrid.ExportToCsv(saveFileDialog.FileName);
+            //    OpenFolder(saveFileDialog.FileName);
+            //}
         }
 
         private void bBtnExportHtml_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "HTML File (*.html)|*.html";
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Filter = "HTML File (*.html)|*.html";
 
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                HtmlExportOptions op = new HtmlExportOptions();
-                op.ExportMode = HtmlExportMode.SingleFile;
-                LogGrid.ExportToHtml(saveFileDialog.FileName, op);
-                OpenFolder(saveFileDialog.FileName);
-            }
+            //if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            //{
+            //    HtmlExportOptions op = new HtmlExportOptions();
+            //    op.ExportMode = HtmlExportMode.SingleFile;
+            //    LogGrid.ExportToHtml(saveFileDialog.FileName, op);
+            //    OpenFolder(saveFileDialog.FileName);
+            //}
         }
         private void OpenFolder(string filename)
         {
@@ -1997,34 +2025,25 @@ namespace Analogy
             SaveMessagesToLog(FileDataProvider, messages);
         }
 
-        private void logGrid_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            int row = e.FocusedRowHandle;
-            if (row < 0) return;
-            AnalogyLogMessage m = (AnalogyLogMessage)LogGrid.GetRowCellValue(e.FocusedRowHandle, "Object");
-            LoadTextBoxes(m);
-            string dataProvider = (string)LogGrid.GetRowCellValue(e.FocusedRowHandle, "DataProvider");
-            if (!LoadingInProgress)
-            {
-                OnFocusedRowChanged?.Invoke(this, (dataProvider, m));
-            }
-        }
+       
 
         private void tsmiIncreaseFont_Click(object sender, EventArgs e)
         {
-            Settings.FontSize = LogGrid.Appearance.Row.Font.Size + 2;
-            LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
-            gridViewBookmarkedMessages.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
+            Settings.FontSize = sfDataGridMain.Font.Size + 2;
+            sfDataGridMain.Font = new Font(sfDataGridMain.Font.Name, Settings.FontSize);
+           //todo:
+            /// gridViewBookmarkedMessages.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
             SaveGridLayout();
         }
 
         private void tsmiDecreaseFont_Click(object sender, EventArgs e)
         {
-            if (LogGrid.Appearance.Row.Font.Size < 5) return;
+            if (sfDataGridMain.Font.Size < 5) return;
             {
-                Settings.FontSize = LogGrid.Appearance.Row.Font.Size - 2;
-                LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
-                gridViewBookmarkedMessages.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
+                Settings.FontSize = sfDataGridMain.Font.Size - 2;
+                sfDataGridMain.Font = new Font(sfDataGridMain.Font.Name, Settings.FontSize);
+                //todo:
+                //gridViewBookmarkedMessages.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
                 SaveGridLayout();
             }
         }
@@ -2063,7 +2082,7 @@ namespace Analogy
 
         private void bbiScreenshot_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Bitmap image = takeComponentScreenShot(gridControl);
+            Bitmap image = takeComponentScreenShot(sfDataGridMain);
             Clipboard.SetImage(image);
             MessageBox.Show("Screenshot of messages was copied to clipboard.", "Image was taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
