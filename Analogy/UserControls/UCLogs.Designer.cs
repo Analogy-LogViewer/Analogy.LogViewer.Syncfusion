@@ -41,19 +41,6 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn15 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn16 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn17 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn18 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn19 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn20 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn21 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
@@ -67,6 +54,19 @@ namespace Analogy
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn15 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn16 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn17 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn18 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn19 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn20 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn21 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cmsMessageOperation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiClearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiREmoveAllPreviousMessages = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,28 +101,6 @@ namespace Analogy
             this.btnPageNext = new Syncfusion.WinForms.Controls.SfButton();
             this.btnLastPage = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bdcMessageBottom = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnSaveLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExpand = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnButtomExpand = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnCopyButtom = new DevExpress.XtraBars.BarButtonItem();
-            this.btSwitchExpandButtomMessage = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.bBtnExportExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExportCSV = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExportHtml = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnUndockView = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnSaveEntireLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnSaveViewAgnostic = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemSaveEntireInAnalogy = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnUndockViewPerProcess = new DevExpress.XtraBars.BarButtonItem();
             this.pnlTopFiltering = new System.Windows.Forms.Panel();
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
             this.pnlFilteringLeft = new System.Windows.Forms.Panel();
@@ -159,12 +137,9 @@ namespace Analogy
             this.rbErrorCritical = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.rbTrace = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.rbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.tcBottom = new DevExpress.XtraTab.XtraTabControl();
-            this.xtpMessageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.tbMessageInfo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tsMessageInfo = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsBtnMessageInfoCopy = new System.Windows.Forms.ToolStripButton();
-            this.xtpBookmarks = new DevExpress.XtraTab.XtraTabPage();
             this.sfDataGridBookmarks = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.tsBookmark = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsBtnBookmarkCopySingle = new System.Windows.Forms.ToolStripButton();
@@ -181,7 +156,6 @@ namespace Analogy
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.cmsBookmarked = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCalcDiffBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBookmarkDateFilterNewer = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,9 +177,6 @@ namespace Analogy
             this.tsmiIncreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tabControlMain = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageLogs = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.tsTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -226,11 +197,13 @@ namespace Analogy
             this.tsddbExport = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiExportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBDataVisualizer = new System.Windows.Forms.ToolStripButton();
+            this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+            this.tabPageMessageInfo = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabPageBookmarks = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
             this.pnlButtonsHighlight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.pnlTopFiltering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltFilteringBoth)).BeginInit();
             this.spltFilteringBoth.Panel1.SuspendLayout();
@@ -265,12 +238,8 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbAllLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
-            this.tcBottom.SuspendLayout();
-            this.xtpMessageInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).BeginInit();
             this.tsMessageInfo.SuspendLayout();
-            this.xtpBookmarks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).BeginInit();
             this.tsBookmark.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -278,13 +247,15 @@ namespace Analogy
             this.splitContainerMain.SuspendLayout();
             this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            this.toolStripEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabPageLogs.SuspendLayout();
             this.tsTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
+            this.tabControlAdv1.SuspendLayout();
+            this.tabPageMessageInfo.SuspendLayout();
+            this.tabPageBookmarks.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -634,212 +605,6 @@ namespace Analogy
             this.chkbHighlight.Text = "Highlight lines that contains:";
             this.chkbHighlight.UseVisualStyleBackColor = true;
             this.chkbHighlight.CheckedChanged += new System.EventHandler(this.chkbHighlight_CheckedChanged);
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.DockControls.Add(this.bdcMessageBottom);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.bBtnSaveLog,
-            this.bBtnExpand,
-            this.barButtonItem3,
-            this.bBtnButtomExpand,
-            this.bBtnCopyButtom,
-            this.btSwitchExpandButtomMessage,
-            this.bBtnExportExcel,
-            this.bBtnExportCSV,
-            this.bBtnExportHtml,
-            this.bBtnUndockView,
-            this.bBtnSaveEntireLog,
-            this.bbtnSaveViewAgnostic,
-            this.barButtonItemSaveEntireInAnalogy,
-            this.bBtnUndockViewPerProcess});
-            this.barManager1.MaxItemId = 36;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1277, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 618);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1277, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 618);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1277, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 618);
-            // 
-            // bdcMessageBottom
-            // 
-            this.bdcMessageBottom.AutoSize = true;
-            this.bdcMessageBottom.CausesValidation = false;
-            this.bdcMessageBottom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bdcMessageBottom.Location = new System.Drawing.Point(0, 0);
-            this.bdcMessageBottom.Manager = this.barManager1;
-            this.bdcMessageBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bdcMessageBottom.Name = "bdcMessageBottom";
-            this.bdcMessageBottom.Size = new System.Drawing.Size(1263, 0);
-            this.bdcMessageBottom.Text = "standaloneBarDockControl2";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // bBtnSaveLog
-            // 
-            this.bBtnSaveLog.Caption = "Save Current View (custom Format)";
-            this.bBtnSaveLog.Id = 4;
-            this.bBtnSaveLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.Image")));
-            this.bBtnSaveLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.LargeImage")));
-            this.bBtnSaveLog.Name = "bBtnSaveLog";
-            this.bBtnSaveLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // bBtnExpand
-            // 
-            this.bBtnExpand.Caption = "Expand";
-            this.bBtnExpand.Id = 7;
-            this.bBtnExpand.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExpand.ImageOptions.Image")));
-            this.bBtnExpand.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExpand.ImageOptions.LargeImage")));
-            this.bBtnExpand.Name = "bBtnExpand";
-            this.bBtnExpand.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Copy";
-            this.barButtonItem3.Id = 8;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // bBtnButtomExpand
-            // 
-            this.bBtnButtomExpand.Caption = "Expand";
-            this.bBtnButtomExpand.Id = 9;
-            this.bBtnButtomExpand.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnButtomExpand.ImageOptions.Image")));
-            this.bBtnButtomExpand.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnButtomExpand.ImageOptions.LargeImage")));
-            this.bBtnButtomExpand.Name = "bBtnButtomExpand";
-            this.bBtnButtomExpand.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // bBtnCopyButtom
-            // 
-            this.bBtnCopyButtom.Caption = "Copy";
-            this.bBtnCopyButtom.Id = 10;
-            this.bBtnCopyButtom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.Image")));
-            this.bBtnCopyButtom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.LargeImage")));
-            this.bBtnCopyButtom.Name = "bBtnCopyButtom";
-            this.bBtnCopyButtom.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btSwitchExpandButtomMessage
-            // 
-            this.btSwitchExpandButtomMessage.Caption = "Expand";
-            this.btSwitchExpandButtomMessage.Id = 11;
-            this.btSwitchExpandButtomMessage.Name = "btSwitchExpandButtomMessage";
-            // 
-            // bBtnExportExcel
-            // 
-            this.bBtnExportExcel.Caption = "Export To Excel";
-            this.bBtnExportExcel.Id = 21;
-            this.bBtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.Image")));
-            this.bBtnExportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.LargeImage")));
-            this.bBtnExportExcel.Name = "bBtnExportExcel";
-            // 
-            // bBtnExportCSV
-            // 
-            this.bBtnExportCSV.Caption = "Export To CSV";
-            this.bBtnExportCSV.Id = 22;
-            this.bBtnExportCSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.Image")));
-            this.bBtnExportCSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.LargeImage")));
-            this.bBtnExportCSV.Name = "bBtnExportCSV";
-            // 
-            // bBtnExportHtml
-            // 
-            this.bBtnExportHtml.Caption = "Export To Html";
-            this.bBtnExportHtml.Id = 23;
-            this.bBtnExportHtml.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.Image")));
-            this.bBtnExportHtml.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.LargeImage")));
-            this.bBtnExportHtml.Name = "bBtnExportHtml";
-            this.bBtnExportHtml.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnExportHtml.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bBtnUndockView
-            // 
-            this.bBtnUndockView.Caption = "Undock View (No Filtering)";
-            this.bBtnUndockView.Id = 24;
-            this.bBtnUndockView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.Image")));
-            this.bBtnUndockView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.LargeImage")));
-            this.bBtnUndockView.Name = "bBtnUndockView";
-            this.bBtnUndockView.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // bBtnSaveEntireLog
-            // 
-            this.bBtnSaveEntireLog.Caption = "Save Entire Log (custom Format)";
-            this.bBtnSaveEntireLog.Id = 25;
-            this.bBtnSaveEntireLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.Image")));
-            this.bBtnSaveEntireLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.LargeImage")));
-            this.bBtnSaveEntireLog.Name = "bBtnSaveEntireLog";
-            this.bBtnSaveEntireLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // bbtnSaveViewAgnostic
-            // 
-            this.bbtnSaveViewAgnostic.Caption = "Save Current View in Analogy Format (agnostic to Specific implementation)";
-            this.bbtnSaveViewAgnostic.Id = 30;
-            this.bbtnSaveViewAgnostic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.Image")));
-            this.bbtnSaveViewAgnostic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.LargeImage")));
-            this.bbtnSaveViewAgnostic.Name = "bbtnSaveViewAgnostic";
-            // 
-            // barButtonItemSaveEntireInAnalogy
-            // 
-            this.barButtonItemSaveEntireInAnalogy.Caption = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
-            this.barButtonItemSaveEntireInAnalogy.Id = 32;
-            this.barButtonItemSaveEntireInAnalogy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.Image")));
-            this.barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage")));
-            this.barButtonItemSaveEntireInAnalogy.Name = "barButtonItemSaveEntireInAnalogy";
-            // 
-            // bBtnUndockViewPerProcess
-            // 
-            this.bBtnUndockViewPerProcess.Caption = "Undock View per process/Module";
-            this.bBtnUndockViewPerProcess.Id = 35;
-            this.bBtnUndockViewPerProcess.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.Image")));
-            this.bBtnUndockViewPerProcess.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.LargeImage")));
-            this.bBtnUndockViewPerProcess.Name = "bBtnUndockViewPerProcess";
             // 
             // pnlTopFiltering
             // 
@@ -1350,33 +1115,10 @@ namespace Analogy
             this.rbAllLevel.TabIndex = 23;
             this.rbAllLevel.Text = "All";
             // 
-            // tcBottom
-            // 
-            this.tcBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcBottom.Location = new System.Drawing.Point(0, 0);
-            this.tcBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tcBottom.Name = "tcBottom";
-            this.tcBottom.SelectedTabPage = this.xtpMessageInfo;
-            this.tcBottom.Size = new System.Drawing.Size(1270, 204);
-            this.tcBottom.TabIndex = 6;
-            this.tcBottom.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtpMessageInfo,
-            this.xtpBookmarks});
-            // 
-            // xtpMessageInfo
-            // 
-            this.xtpMessageInfo.Controls.Add(this.tbMessageInfo);
-            this.xtpMessageInfo.Controls.Add(this.tsMessageInfo);
-            this.xtpMessageInfo.Controls.Add(this.bdcMessageBottom);
-            this.xtpMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtpMessageInfo.Name = "xtpMessageInfo";
-            this.xtpMessageInfo.Size = new System.Drawing.Size(1263, 170);
-            this.xtpMessageInfo.Text = "Message Info";
-            // 
             // tbMessageInfo
             // 
             this.tbMessageInfo.BackColor = System.Drawing.Color.White;
-            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(1263, 143);
+            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(1267, 146);
             this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -1386,7 +1128,7 @@ namespace Analogy
             this.tbMessageInfo.Multiline = true;
             this.tbMessageInfo.Name = "tbMessageInfo";
             this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMessageInfo.Size = new System.Drawing.Size(1263, 143);
+            this.tbMessageInfo.Size = new System.Drawing.Size(1267, 146);
             this.tbMessageInfo.TabIndex = 14;
             this.tbMessageInfo.ThemeName = "";
             // 
@@ -1401,7 +1143,7 @@ namespace Analogy
             this.tsMessageInfo.Name = "tsMessageInfo";
             this.tsMessageInfo.ShowCaption = false;
             this.tsMessageInfo.ShowLauncher = false;
-            this.tsMessageInfo.Size = new System.Drawing.Size(1263, 27);
+            this.tsMessageInfo.Size = new System.Drawing.Size(1267, 27);
             this.tsMessageInfo.TabIndex = 4;
             this.tsMessageInfo.ThemeName = "Default";
             // 
@@ -1413,15 +1155,6 @@ namespace Analogy
             this.tsBtnMessageInfoCopy.Size = new System.Drawing.Size(67, 24);
             this.tsBtnMessageInfoCopy.Text = "Copy";
             // 
-            // xtpBookmarks
-            // 
-            this.xtpBookmarks.Controls.Add(this.sfDataGridBookmarks);
-            this.xtpBookmarks.Controls.Add(this.tsBookmark);
-            this.xtpBookmarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtpBookmarks.Name = "xtpBookmarks";
-            this.xtpBookmarks.Size = new System.Drawing.Size(1263, 170);
-            this.xtpBookmarks.Text = "Bookmarks";
-            // 
             // sfDataGridBookmarks
             // 
             this.sfDataGridBookmarks.AccessibleName = "Table";
@@ -1429,89 +1162,89 @@ namespace Analogy
             this.sfDataGridBookmarks.AllowEditing = false;
             this.sfDataGridBookmarks.AllowResizingColumns = true;
             this.sfDataGridBookmarks.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn13.AllowDragging = true;
-            gridTextColumn13.AllowEditing = false;
-            gridTextColumn13.AllowResizing = true;
-            gridTextColumn13.HeaderText = "Data Source/File Name";
-            gridTextColumn13.MappingName = "DataProvider";
-            gridDateTimeColumn2.AllowDragging = true;
-            gridDateTimeColumn2.AllowEditing = false;
-            gridDateTimeColumn2.AllowResizing = true;
-            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn2.HeaderText = "Date";
-            gridDateTimeColumn2.MappingName = "Date";
-            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn14.AllowDragging = true;
-            gridTextColumn14.AllowEditing = false;
-            gridTextColumn14.AllowResizing = true;
-            gridTextColumn14.HeaderText = "Time Differenace";
-            gridTextColumn14.MappingName = "TimeDiff";
-            gridTextColumn14.Visible = false;
-            gridTextColumn15.AllowDragging = true;
-            gridTextColumn15.AllowEditing = false;
-            gridTextColumn15.AllowResizing = true;
-            gridTextColumn15.HeaderText = "Text";
-            gridTextColumn15.MappingName = "Text";
-            gridTextColumn16.AllowDragging = true;
-            gridTextColumn16.AllowEditing = false;
-            gridTextColumn16.AllowResizing = true;
-            gridTextColumn16.HeaderText = "Source";
-            gridTextColumn16.MappingName = "Source";
-            gridTextColumn17.AllowDragging = true;
-            gridTextColumn17.AllowEditing = false;
-            gridTextColumn17.AllowResizing = true;
-            gridTextColumn17.HeaderText = "Level";
-            gridTextColumn17.MappingName = "Level";
-            gridTextColumn18.AllowDragging = true;
-            gridTextColumn18.AllowEditing = false;
-            gridTextColumn18.AllowResizing = true;
-            gridTextColumn18.HeaderText = "Class";
-            gridTextColumn18.MappingName = "Class";
-            gridTextColumn19.AllowDragging = true;
-            gridTextColumn19.AllowEditing = false;
-            gridTextColumn19.AllowResizing = true;
-            gridTextColumn19.HeaderText = "Category";
-            gridTextColumn19.MappingName = "Category";
-            gridTextColumn20.AllowDragging = true;
-            gridTextColumn20.AllowEditing = false;
-            gridTextColumn20.AllowResizing = true;
-            gridTextColumn20.HeaderText = "User";
-            gridTextColumn20.MappingName = "User";
-            gridTextColumn21.AllowDragging = true;
-            gridTextColumn21.AllowEditing = false;
-            gridTextColumn21.AllowResizing = true;
-            gridTextColumn21.HeaderText = "Module";
-            gridTextColumn21.MappingName = "Module";
-            gridTextColumn22.AllowDragging = true;
-            gridTextColumn22.AllowEditing = false;
-            gridTextColumn22.AllowResizing = true;
-            gridTextColumn22.HeaderText = "Object";
-            gridTextColumn22.MappingName = "Object";
-            gridTextColumn22.Visible = false;
-            gridTextColumn23.AllowDragging = true;
-            gridTextColumn23.AllowEditing = false;
-            gridTextColumn23.AllowResizing = true;
-            gridTextColumn23.HeaderText = "Process ID";
-            gridTextColumn23.MappingName = "ProcessID";
-            gridTextColumn24.AllowDragging = true;
-            gridTextColumn24.AllowEditing = false;
-            gridTextColumn24.AllowResizing = true;
-            gridTextColumn24.HeaderText = "Thread id";
-            gridTextColumn24.MappingName = "ThreadID";
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn13);
-            this.sfDataGridBookmarks.Columns.Add(gridDateTimeColumn2);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn14);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn15);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn16);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn17);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn18);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn19);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn20);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn21);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn22);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn23);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn24);
+            gridTextColumn1.AllowDragging = true;
+            gridTextColumn1.AllowEditing = false;
+            gridTextColumn1.AllowResizing = true;
+            gridTextColumn1.HeaderText = "Data Source/File Name";
+            gridTextColumn1.MappingName = "DataProvider";
+            gridDateTimeColumn1.AllowDragging = true;
+            gridDateTimeColumn1.AllowEditing = false;
+            gridDateTimeColumn1.AllowResizing = true;
+            gridDateTimeColumn1.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn1.HeaderText = "Date";
+            gridDateTimeColumn1.MappingName = "Date";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn2.AllowDragging = true;
+            gridTextColumn2.AllowEditing = false;
+            gridTextColumn2.AllowResizing = true;
+            gridTextColumn2.HeaderText = "Time Differenace";
+            gridTextColumn2.MappingName = "TimeDiff";
+            gridTextColumn2.Visible = false;
+            gridTextColumn3.AllowDragging = true;
+            gridTextColumn3.AllowEditing = false;
+            gridTextColumn3.AllowResizing = true;
+            gridTextColumn3.HeaderText = "Text";
+            gridTextColumn3.MappingName = "Text";
+            gridTextColumn4.AllowDragging = true;
+            gridTextColumn4.AllowEditing = false;
+            gridTextColumn4.AllowResizing = true;
+            gridTextColumn4.HeaderText = "Source";
+            gridTextColumn4.MappingName = "Source";
+            gridTextColumn5.AllowDragging = true;
+            gridTextColumn5.AllowEditing = false;
+            gridTextColumn5.AllowResizing = true;
+            gridTextColumn5.HeaderText = "Level";
+            gridTextColumn5.MappingName = "Level";
+            gridTextColumn6.AllowDragging = true;
+            gridTextColumn6.AllowEditing = false;
+            gridTextColumn6.AllowResizing = true;
+            gridTextColumn6.HeaderText = "Class";
+            gridTextColumn6.MappingName = "Class";
+            gridTextColumn7.AllowDragging = true;
+            gridTextColumn7.AllowEditing = false;
+            gridTextColumn7.AllowResizing = true;
+            gridTextColumn7.HeaderText = "Category";
+            gridTextColumn7.MappingName = "Category";
+            gridTextColumn8.AllowDragging = true;
+            gridTextColumn8.AllowEditing = false;
+            gridTextColumn8.AllowResizing = true;
+            gridTextColumn8.HeaderText = "User";
+            gridTextColumn8.MappingName = "User";
+            gridTextColumn9.AllowDragging = true;
+            gridTextColumn9.AllowEditing = false;
+            gridTextColumn9.AllowResizing = true;
+            gridTextColumn9.HeaderText = "Module";
+            gridTextColumn9.MappingName = "Module";
+            gridTextColumn10.AllowDragging = true;
+            gridTextColumn10.AllowEditing = false;
+            gridTextColumn10.AllowResizing = true;
+            gridTextColumn10.HeaderText = "Object";
+            gridTextColumn10.MappingName = "Object";
+            gridTextColumn10.Visible = false;
+            gridTextColumn11.AllowDragging = true;
+            gridTextColumn11.AllowEditing = false;
+            gridTextColumn11.AllowResizing = true;
+            gridTextColumn11.HeaderText = "Process ID";
+            gridTextColumn11.MappingName = "ProcessID";
+            gridTextColumn12.AllowDragging = true;
+            gridTextColumn12.AllowEditing = false;
+            gridTextColumn12.AllowResizing = true;
+            gridTextColumn12.HeaderText = "Thread id";
+            gridTextColumn12.MappingName = "ThreadID";
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn1);
+            this.sfDataGridBookmarks.Columns.Add(gridDateTimeColumn1);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn2);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn3);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn4);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn5);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn6);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn7);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn8);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn9);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn10);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn11);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn12);
             this.sfDataGridBookmarks.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridBookmarks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridBookmarks.Location = new System.Drawing.Point(0, 27);
@@ -1520,7 +1253,7 @@ namespace Analogy
             this.sfDataGridBookmarks.PreviewRowHeight = 35;
             this.sfDataGridBookmarks.RowHeight = 20;
             this.sfDataGridBookmarks.ShowRowHeader = true;
-            this.sfDataGridBookmarks.Size = new System.Drawing.Size(1263, 143);
+            this.sfDataGridBookmarks.Size = new System.Drawing.Size(1267, 146);
             this.sfDataGridBookmarks.TabIndex = 6;
             this.sfDataGridBookmarks.Text = "Bookmarks";
             this.sfDataGridBookmarks.UsePLINQ = true;
@@ -1539,7 +1272,7 @@ namespace Analogy
             this.tsBookmark.Name = "tsBookmark";
             this.tsBookmark.ShowCaption = false;
             this.tsBookmark.ShowLauncher = false;
-            this.tsBookmark.Size = new System.Drawing.Size(1263, 27);
+            this.tsBookmark.Size = new System.Drawing.Size(1267, 27);
             this.tsBookmark.TabIndex = 5;
             this.tsBookmark.ThemeName = "Default";
             // 
@@ -1678,7 +1411,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Controls.Add(this.panel1);
             this.splitContainerMain.Panel1.Controls.Add(this.pnlTopFiltering);
             this.splitContainerMain.Panel1.Text = "Panel1";
-            this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
+            this.splitContainerMain.Panel2.Controls.Add(this.tabControlAdv1);
             this.splitContainerMain.Panel2.Text = "Panel2";
             this.splitContainerMain.Size = new System.Drawing.Size(1270, 533);
             this.splitContainerMain.SplitterPosition = 204;
@@ -1701,89 +1434,89 @@ namespace Analogy
             this.sfDataGridMain.AllowEditing = false;
             this.sfDataGridMain.AllowResizingColumns = true;
             this.sfDataGridMain.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn1.AllowDragging = true;
-            gridTextColumn1.AllowEditing = false;
-            gridTextColumn1.AllowResizing = true;
-            gridTextColumn1.HeaderText = "Data Source/File Name";
-            gridTextColumn1.MappingName = "DataProvider";
-            gridDateTimeColumn1.AllowDragging = true;
-            gridDateTimeColumn1.AllowEditing = false;
-            gridDateTimeColumn1.AllowResizing = true;
-            gridDateTimeColumn1.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn1.HeaderText = "Date";
-            gridDateTimeColumn1.MappingName = "Date";
-            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn2.AllowDragging = true;
-            gridTextColumn2.AllowEditing = false;
-            gridTextColumn2.AllowResizing = true;
-            gridTextColumn2.HeaderText = "Time Differenace";
-            gridTextColumn2.MappingName = "TimeDiff";
-            gridTextColumn2.Visible = false;
-            gridTextColumn3.AllowDragging = true;
-            gridTextColumn3.AllowEditing = false;
-            gridTextColumn3.AllowResizing = true;
-            gridTextColumn3.HeaderText = "Text";
-            gridTextColumn3.MappingName = "Text";
-            gridTextColumn4.AllowDragging = true;
-            gridTextColumn4.AllowEditing = false;
-            gridTextColumn4.AllowResizing = true;
-            gridTextColumn4.HeaderText = "Source";
-            gridTextColumn4.MappingName = "Source";
-            gridTextColumn5.AllowDragging = true;
-            gridTextColumn5.AllowEditing = false;
-            gridTextColumn5.AllowResizing = true;
-            gridTextColumn5.HeaderText = "Level";
-            gridTextColumn5.MappingName = "Level";
-            gridTextColumn6.AllowDragging = true;
-            gridTextColumn6.AllowEditing = false;
-            gridTextColumn6.AllowResizing = true;
-            gridTextColumn6.HeaderText = "Class";
-            gridTextColumn6.MappingName = "Class";
-            gridTextColumn7.AllowDragging = true;
-            gridTextColumn7.AllowEditing = false;
-            gridTextColumn7.AllowResizing = true;
-            gridTextColumn7.HeaderText = "Category";
-            gridTextColumn7.MappingName = "Category";
-            gridTextColumn8.AllowDragging = true;
-            gridTextColumn8.AllowEditing = false;
-            gridTextColumn8.AllowResizing = true;
-            gridTextColumn8.HeaderText = "User";
-            gridTextColumn8.MappingName = "User";
-            gridTextColumn9.AllowDragging = true;
-            gridTextColumn9.AllowEditing = false;
-            gridTextColumn9.AllowResizing = true;
-            gridTextColumn9.HeaderText = "Module";
-            gridTextColumn9.MappingName = "Module";
-            gridTextColumn10.AllowDragging = true;
-            gridTextColumn10.AllowEditing = false;
-            gridTextColumn10.AllowResizing = true;
-            gridTextColumn10.HeaderText = "Object";
-            gridTextColumn10.MappingName = "Object";
-            gridTextColumn10.Visible = false;
-            gridTextColumn11.AllowDragging = true;
-            gridTextColumn11.AllowEditing = false;
-            gridTextColumn11.AllowResizing = true;
-            gridTextColumn11.HeaderText = "Process ID";
-            gridTextColumn11.MappingName = "ProcessID";
-            gridTextColumn12.AllowDragging = true;
-            gridTextColumn12.AllowEditing = false;
-            gridTextColumn12.AllowResizing = true;
-            gridTextColumn12.HeaderText = "Thread id";
-            gridTextColumn12.MappingName = "ThreadID";
-            this.sfDataGridMain.Columns.Add(gridTextColumn1);
-            this.sfDataGridMain.Columns.Add(gridDateTimeColumn1);
-            this.sfDataGridMain.Columns.Add(gridTextColumn2);
-            this.sfDataGridMain.Columns.Add(gridTextColumn3);
-            this.sfDataGridMain.Columns.Add(gridTextColumn4);
-            this.sfDataGridMain.Columns.Add(gridTextColumn5);
-            this.sfDataGridMain.Columns.Add(gridTextColumn6);
-            this.sfDataGridMain.Columns.Add(gridTextColumn7);
-            this.sfDataGridMain.Columns.Add(gridTextColumn8);
-            this.sfDataGridMain.Columns.Add(gridTextColumn9);
-            this.sfDataGridMain.Columns.Add(gridTextColumn10);
-            this.sfDataGridMain.Columns.Add(gridTextColumn11);
-            this.sfDataGridMain.Columns.Add(gridTextColumn12);
+            gridTextColumn13.AllowDragging = true;
+            gridTextColumn13.AllowEditing = false;
+            gridTextColumn13.AllowResizing = true;
+            gridTextColumn13.HeaderText = "Data Source/File Name";
+            gridTextColumn13.MappingName = "DataProvider";
+            gridDateTimeColumn2.AllowDragging = true;
+            gridDateTimeColumn2.AllowEditing = false;
+            gridDateTimeColumn2.AllowResizing = true;
+            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn2.HeaderText = "Date";
+            gridDateTimeColumn2.MappingName = "Date";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn14.AllowDragging = true;
+            gridTextColumn14.AllowEditing = false;
+            gridTextColumn14.AllowResizing = true;
+            gridTextColumn14.HeaderText = "Time Differenace";
+            gridTextColumn14.MappingName = "TimeDiff";
+            gridTextColumn14.Visible = false;
+            gridTextColumn15.AllowDragging = true;
+            gridTextColumn15.AllowEditing = false;
+            gridTextColumn15.AllowResizing = true;
+            gridTextColumn15.HeaderText = "Text";
+            gridTextColumn15.MappingName = "Text";
+            gridTextColumn16.AllowDragging = true;
+            gridTextColumn16.AllowEditing = false;
+            gridTextColumn16.AllowResizing = true;
+            gridTextColumn16.HeaderText = "Source";
+            gridTextColumn16.MappingName = "Source";
+            gridTextColumn17.AllowDragging = true;
+            gridTextColumn17.AllowEditing = false;
+            gridTextColumn17.AllowResizing = true;
+            gridTextColumn17.HeaderText = "Level";
+            gridTextColumn17.MappingName = "Level";
+            gridTextColumn18.AllowDragging = true;
+            gridTextColumn18.AllowEditing = false;
+            gridTextColumn18.AllowResizing = true;
+            gridTextColumn18.HeaderText = "Class";
+            gridTextColumn18.MappingName = "Class";
+            gridTextColumn19.AllowDragging = true;
+            gridTextColumn19.AllowEditing = false;
+            gridTextColumn19.AllowResizing = true;
+            gridTextColumn19.HeaderText = "Category";
+            gridTextColumn19.MappingName = "Category";
+            gridTextColumn20.AllowDragging = true;
+            gridTextColumn20.AllowEditing = false;
+            gridTextColumn20.AllowResizing = true;
+            gridTextColumn20.HeaderText = "User";
+            gridTextColumn20.MappingName = "User";
+            gridTextColumn21.AllowDragging = true;
+            gridTextColumn21.AllowEditing = false;
+            gridTextColumn21.AllowResizing = true;
+            gridTextColumn21.HeaderText = "Module";
+            gridTextColumn21.MappingName = "Module";
+            gridTextColumn22.AllowDragging = true;
+            gridTextColumn22.AllowEditing = false;
+            gridTextColumn22.AllowResizing = true;
+            gridTextColumn22.HeaderText = "Object";
+            gridTextColumn22.MappingName = "Object";
+            gridTextColumn22.Visible = false;
+            gridTextColumn23.AllowDragging = true;
+            gridTextColumn23.AllowEditing = false;
+            gridTextColumn23.AllowResizing = true;
+            gridTextColumn23.HeaderText = "Process ID";
+            gridTextColumn23.MappingName = "ProcessID";
+            gridTextColumn24.AllowDragging = true;
+            gridTextColumn24.AllowEditing = false;
+            gridTextColumn24.AllowResizing = true;
+            gridTextColumn24.HeaderText = "Thread id";
+            gridTextColumn24.MappingName = "ThreadID";
+            this.sfDataGridMain.Columns.Add(gridTextColumn13);
+            this.sfDataGridMain.Columns.Add(gridDateTimeColumn2);
+            this.sfDataGridMain.Columns.Add(gridTextColumn14);
+            this.sfDataGridMain.Columns.Add(gridTextColumn15);
+            this.sfDataGridMain.Columns.Add(gridTextColumn16);
+            this.sfDataGridMain.Columns.Add(gridTextColumn17);
+            this.sfDataGridMain.Columns.Add(gridTextColumn18);
+            this.sfDataGridMain.Columns.Add(gridTextColumn19);
+            this.sfDataGridMain.Columns.Add(gridTextColumn20);
+            this.sfDataGridMain.Columns.Add(gridTextColumn21);
+            this.sfDataGridMain.Columns.Add(gridTextColumn22);
+            this.sfDataGridMain.Columns.Add(gridTextColumn23);
+            this.sfDataGridMain.Columns.Add(gridTextColumn24);
             this.sfDataGridMain.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
@@ -1972,35 +1705,6 @@ namespace Analogy
             this.contextMenuStripFilters.Name = "contextMenuStripFilters";
             this.contextMenuStripFilters.Size = new System.Drawing.Size(61, 4);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::Analogy.Properties.Resources.Copy_16x16;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(67, 24);
-            this.toolStripButton1.Text = "Copy";
-            // 
-            // toolStripEx1
-            // 
-            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.toolStripEx1.Image = null;
-            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStripEx1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripEx1.Name = "toolStripEx1";
-            this.toolStripEx1.ShowCaption = false;
-            this.toolStripEx1.ShowLauncher = false;
-            this.toolStripEx1.Size = new System.Drawing.Size(2117, 27);
-            this.toolStripEx1.TabIndex = 4;
-            this.toolStripEx1.ThemeName = "Default";
-            // 
             // tabControlMain
             // 
             this.tabControlMain.BeforeTouchSize = new System.Drawing.Size(1277, 618);
@@ -2183,15 +1887,50 @@ namespace Analogy
             this.tsBDataVisualizer.Text = "Data Visualizer";
             this.tsBDataVisualizer.Visible = false;
             // 
+            // tabControlAdv1
+            // 
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(1270, 204);
+            this.tabControlAdv1.Controls.Add(this.tabPageMessageInfo);
+            this.tabControlAdv1.Controls.Add(this.tabPageBookmarks);
+            this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlAdv1.Location = new System.Drawing.Point(0, 0);
+            this.tabControlAdv1.Name = "tabControlAdv1";
+            this.tabControlAdv1.Size = new System.Drawing.Size(1270, 204);
+            this.tabControlAdv1.TabIndex = 7;
+            // 
+            // tabPageMessageInfo
+            // 
+            this.tabPageMessageInfo.Controls.Add(this.tbMessageInfo);
+            this.tabPageMessageInfo.Controls.Add(this.tsMessageInfo);
+            this.tabPageMessageInfo.Image = null;
+            this.tabPageMessageInfo.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageMessageInfo.Location = new System.Drawing.Point(1, 29);
+            this.tabPageMessageInfo.Name = "tabPageMessageInfo";
+            this.tabPageMessageInfo.ShowCloseButton = true;
+            this.tabPageMessageInfo.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageMessageInfo.TabIndex = 1;
+            this.tabPageMessageInfo.Text = "Message Info";
+            this.tabPageMessageInfo.ThemesEnabled = false;
+            // 
+            // tabPageBookmarks
+            // 
+            this.tabPageBookmarks.Controls.Add(this.sfDataGridBookmarks);
+            this.tabPageBookmarks.Controls.Add(this.tsBookmark);
+            this.tabPageBookmarks.Image = null;
+            this.tabPageBookmarks.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageBookmarks.Location = new System.Drawing.Point(1, 29);
+            this.tabPageBookmarks.Name = "tabPageBookmarks";
+            this.tabPageBookmarks.ShowCloseButton = true;
+            this.tabPageBookmarks.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageBookmarks.TabIndex = 2;
+            this.tabPageBookmarks.Text = "Bookmarks";
+            this.tabPageBookmarks.ThemesEnabled = false;
+            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControlMain);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCLogs";
             this.Size = new System.Drawing.Size(1277, 618);
@@ -2203,7 +1942,6 @@ namespace Analogy
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).EndInit();
             this.pnlButtonsHighlight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.pnlTopFiltering.ResumeLayout(false);
             this.spltFilteringBoth.Panel1.ResumeLayout(false);
             this.spltFilteringBoth.Panel2.ResumeLayout(false);
@@ -2241,15 +1979,9 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbAllLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
-            this.tcBottom.ResumeLayout(false);
-            this.xtpMessageInfo.ResumeLayout(false);
-            this.xtpMessageInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).EndInit();
             this.tsMessageInfo.ResumeLayout(false);
             this.tsMessageInfo.PerformLayout();
-            this.xtpBookmarks.ResumeLayout(false);
-            this.xtpBookmarks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).EndInit();
             this.tsBookmark.ResumeLayout(false);
             this.tsBookmark.PerformLayout();
@@ -2259,18 +1991,20 @@ namespace Analogy
             this.splitContainerMain.ResumeLayout(false);
             this.pnlMessages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            this.toolStripEx1.ResumeLayout(false);
-            this.toolStripEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).EndInit();
             this.tabControlMain.ResumeLayout(false);
             this.tabPageLogs.ResumeLayout(false);
             this.tabPageLogs.PerformLayout();
             this.tsTop.ResumeLayout(false);
             this.tsTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
+            this.tabControlAdv1.ResumeLayout(false);
+            this.tabPageMessageInfo.ResumeLayout(false);
+            this.tabPageMessageInfo.PerformLayout();
+            this.tabPageBookmarks.ResumeLayout(false);
+            this.tabPageBookmarks.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2303,25 +2037,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.SplitContainer spltFilteringBoth;
         private System.Windows.Forms.Panel pnlFilteringLeft;
-        private DevExpress.XtraTab.XtraTabControl tcBottom;
-        private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
-        private DevExpress.XtraTab.XtraTabPage xtpBookmarks;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem bBtnSaveLog;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private SfButton sBtnMostCommon;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private DevExpress.XtraBars.StandaloneBarDockControl bdcMessageBottom;
-        private DevExpress.XtraBars.BarButtonItem bBtnExpand;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem bBtnButtomExpand;
-        private DevExpress.XtraBars.BarButtonItem bBtnCopyButtom;
-        private DevExpress.XtraBars.BarToggleSwitchItem btSwitchExpandButtomMessage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayout;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkPersist;
@@ -2348,20 +2064,12 @@ namespace Analogy
         private SfButton btnPageNext;
         private SfButton btnLastPage;
         private SfButton btnPagePrevious;
-        private DevExpress.XtraBars.BarButtonItem bBtnExportExcel;
-        private DevExpress.XtraBars.BarButtonItem bBtnExportCSV;
-        private DevExpress.XtraBars.BarButtonItem bBtnExportHtml;
-        private DevExpress.XtraBars.BarButtonItem bBtnUndockView;
-        private DevExpress.XtraBars.BarButtonItem bBtnSaveEntireLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiIncreaseFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiDecreaseFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiIncreaseFontBookmark;
         private System.Windows.Forms.ToolStripMenuItem tsmiDecreaseFontBookmark;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiREmoveAllPreviousMessages;
-        private DevExpress.XtraBars.BarButtonItem bbtnSaveViewAgnostic;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemSaveEntireInAnalogy;
-        private DevExpress.XtraBars.BarButtonItem bBtnUndockViewPerProcess;
         private System.Windows.Forms.SplitContainer spltText;
         private SfButton btnTextInclude;
         private System.Windows.Forms.SplitContainer spltTextExclude;
@@ -2384,7 +2092,6 @@ namespace Analogy
         private SfButton sbtnMoreHighlight;
         private SfButton sbtnPreDefinedFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridMain;
         private Syncfusion.WinForms.ListView.SfComboBox cbInclude;
         private System.Windows.Forms.Panel pnlMessages;
@@ -2412,8 +2119,6 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.TextBoxExt tbMessageInfo;
         private Syncfusion.WinForms.Input.SfDateTimeEdit deOlderThanFilter;
         private Syncfusion.WinForms.Input.SfDateTimeEdit deNewerThanFilter;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlMain;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageLogs;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx tsTop;
@@ -2434,5 +2139,8 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBDataVisualizer;
         public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopPauseRefresh;
         public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopAutoScrollToLast;
+        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageMessageInfo;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageBookmarks;
     }
 }
