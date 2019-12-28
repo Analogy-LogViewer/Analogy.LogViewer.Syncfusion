@@ -182,12 +182,6 @@ namespace Analogy
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            this.nudGroupBychars = new DevExpress.XtraEditors.SpinEdit();
-            this.txtbGroupByCharsLimit = new DevExpress.XtraEditors.TextEdit();
-            this.sBtnGroup = new Syncfusion.WinForms.Controls.SfButton();
-            this.sBtnLength = new Syncfusion.WinForms.Controls.SfButton();
-            this.lblGroupByCharsLimit = new System.Windows.Forms.Label();
-            this.lblGroupByChars = new System.Windows.Forms.Label();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.cmsBookmarked = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCalcDiffBookmark = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,8 +207,8 @@ namespace Analogy
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
-            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabControlMain = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+            this.tabPageLogs = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.tsTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
             this.tsTopPauseRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
@@ -233,7 +227,6 @@ namespace Analogy
             this.tsddbExport = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiExportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBDataVisualizer = new System.Windows.Forms.ToolStripButton();
-            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -286,16 +279,13 @@ namespace Analogy
             this.splitContainerMain.SuspendLayout();
             this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
-            this.tabControlAdv1.SuspendLayout();
-            this.tabPageAdv1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
+            this.tabControlMain.SuspendLayout();
+            this.tabPageLogs.SuspendLayout();
             this.tsTop.SuspendLayout();
-            this.tabPageAdv2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -517,10 +507,10 @@ namespace Analogy
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 439);
+            this.panel1.Location = new System.Drawing.Point(0, 297);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2124, 26);
+            this.panel1.Size = new System.Drawing.Size(1110, 26);
             this.panel1.TabIndex = 4;
             // 
             // cbHighlights
@@ -530,7 +520,7 @@ namespace Analogy
             this.cbHighlights.Location = new System.Drawing.Point(200, 0);
             this.cbHighlights.Margin = new System.Windows.Forms.Padding(4);
             this.cbHighlights.Name = "cbHighlights";
-            this.cbHighlights.Size = new System.Drawing.Size(1330, 26);
+            this.cbHighlights.Size = new System.Drawing.Size(316, 26);
             this.cbHighlights.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHighlights.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHighlights.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -542,7 +532,7 @@ namespace Analogy
             this.sbtnMoreHighlight.AccessibleName = "Button";
             this.sbtnMoreHighlight.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnMoreHighlight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnMoreHighlight.Location = new System.Drawing.Point(1530, 0);
+            this.sbtnMoreHighlight.Location = new System.Drawing.Point(516, 0);
             this.sbtnMoreHighlight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnMoreHighlight.Name = "sbtnMoreHighlight";
             this.sbtnMoreHighlight.Size = new System.Drawing.Size(83, 26);
@@ -558,7 +548,7 @@ namespace Analogy
             this.pnlButtonsHighlight.Controls.Add(this.btnPageNext);
             this.pnlButtonsHighlight.Controls.Add(this.btnLastPage);
             this.pnlButtonsHighlight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlButtonsHighlight.Location = new System.Drawing.Point(1613, 0);
+            this.pnlButtonsHighlight.Location = new System.Drawing.Point(599, 0);
             this.pnlButtonsHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlButtonsHighlight.Name = "pnlButtonsHighlight";
             this.pnlButtonsHighlight.Size = new System.Drawing.Size(511, 26);
@@ -679,16 +669,16 @@ namespace Analogy
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(2131, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1117, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 759);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 618);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(2131, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1117, 0);
             // 
             // barDockControlLeft
             // 
@@ -697,16 +687,16 @@ namespace Analogy
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 759);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 618);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2131, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1117, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 759);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 618);
             // 
             // bdcMessageBottom
             // 
@@ -717,7 +707,7 @@ namespace Analogy
             this.bdcMessageBottom.Manager = this.barManager1;
             this.bdcMessageBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bdcMessageBottom.Name = "bdcMessageBottom";
-            this.bdcMessageBottom.Size = new System.Drawing.Size(2117, 0);
+            this.bdcMessageBottom.Size = new System.Drawing.Size(1103, 0);
             this.bdcMessageBottom.Text = "standaloneBarDockControl2";
             // 
             // barButtonItem1
@@ -868,7 +858,7 @@ namespace Analogy
             this.pnlTopFiltering.Location = new System.Drawing.Point(0, 0);
             this.pnlTopFiltering.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTopFiltering.Name = "pnlTopFiltering";
-            this.pnlTopFiltering.Size = new System.Drawing.Size(2124, 153);
+            this.pnlTopFiltering.Size = new System.Drawing.Size(1110, 153);
             this.pnlTopFiltering.TabIndex = 3;
             // 
             // spltFilteringBoth
@@ -891,8 +881,8 @@ namespace Analogy
             this.spltFilteringBoth.Panel2.Controls.Add(this.rbTrace);
             this.spltFilteringBoth.Panel2.Controls.Add(this.rbAllLevel);
             this.spltFilteringBoth.Panel2MinSize = 150;
-            this.spltFilteringBoth.Size = new System.Drawing.Size(2124, 153);
-            this.spltFilteringBoth.SplitterDistance = 1881;
+            this.spltFilteringBoth.Size = new System.Drawing.Size(1110, 153);
+            this.spltFilteringBoth.SplitterDistance = 957;
             this.spltFilteringBoth.SplitterWidth = 3;
             this.spltFilteringBoth.TabIndex = 19;
             // 
@@ -907,7 +897,7 @@ namespace Analogy
             this.pnlFilteringLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlFilteringLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFilteringLeft.Name = "pnlFilteringLeft";
-            this.pnlFilteringLeft.Size = new System.Drawing.Size(1881, 153);
+            this.pnlFilteringLeft.Size = new System.Drawing.Size(957, 153);
             this.pnlFilteringLeft.TabIndex = 20;
             // 
             // spltcDateFiltering
@@ -926,7 +916,7 @@ namespace Analogy
             this.spltcDateFiltering.Panel1.Controls.Add(this.chkDateNewerThan);
             this.spltcDateFiltering.Panel1.Controls.Add(this.pictureBox1);
             this.spltcDateFiltering.Panel2Collapsed = true;
-            this.spltcDateFiltering.Size = new System.Drawing.Size(1871, 25);
+            this.spltcDateFiltering.Size = new System.Drawing.Size(947, 25);
             this.spltcDateFiltering.SplitterDistance = 683;
             this.spltcDateFiltering.SplitterWidth = 3;
             this.spltcDateFiltering.TabIndex = 27;
@@ -1006,7 +996,7 @@ namespace Analogy
             this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnUndockPerProcess);
             this.spltcProcessesModule.Panel1.Controls.Add(this.chkbModules);
             this.spltcProcessesModule.Panel2Collapsed = true;
-            this.spltcProcessesModule.Size = new System.Drawing.Size(1871, 25);
+            this.spltcProcessesModule.Size = new System.Drawing.Size(947, 25);
             this.spltcProcessesModule.SplitterDistance = 574;
             this.spltcProcessesModule.SplitterWidth = 3;
             this.spltcProcessesModule.TabIndex = 26;
@@ -1018,7 +1008,7 @@ namespace Analogy
             this.cbModule.Location = new System.Drawing.Point(275, 0);
             this.cbModule.Margin = new System.Windows.Forms.Padding(4);
             this.cbModule.Name = "cbModule";
-            this.cbModule.Size = new System.Drawing.Size(1331, 25);
+            this.cbModule.Size = new System.Drawing.Size(407, 25);
             this.cbModule.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModule.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModule.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1030,7 +1020,7 @@ namespace Analogy
             this.btnModules.AccessibleName = "Button";
             this.btnModules.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnModules.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnModules.Location = new System.Drawing.Point(1606, 0);
+            this.btnModules.Location = new System.Drawing.Point(682, 0);
             this.btnModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModules.Name = "btnModules";
             this.btnModules.Size = new System.Drawing.Size(23, 25);
@@ -1043,7 +1033,7 @@ namespace Analogy
             this.sbtnUndockPerProcess.AutoSize = true;
             this.sbtnUndockPerProcess.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnUndockPerProcess.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnUndockPerProcess.Location = new System.Drawing.Point(1629, 0);
+            this.sbtnUndockPerProcess.Location = new System.Drawing.Point(705, 0);
             this.sbtnUndockPerProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnUndockPerProcess.Name = "sbtnUndockPerProcess";
             this.sbtnUndockPerProcess.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
@@ -1078,7 +1068,7 @@ namespace Analogy
             this.spltcSources.Panel1.Controls.Add(this.chkbSources);
             this.spltcSources.Panel1.Controls.Add(this.pboxInfoExclude);
             this.spltcSources.Panel2Collapsed = true;
-            this.spltcSources.Size = new System.Drawing.Size(1871, 25);
+            this.spltcSources.Size = new System.Drawing.Size(947, 25);
             this.spltcSources.SplitterDistance = 683;
             this.spltcSources.SplitterWidth = 3;
             this.spltcSources.TabIndex = 25;
@@ -1090,7 +1080,7 @@ namespace Analogy
             this.cbSource.Location = new System.Drawing.Point(228, 0);
             this.cbSource.Margin = new System.Windows.Forms.Padding(4);
             this.cbSource.Name = "cbSource";
-            this.cbSource.Size = new System.Drawing.Size(1620, 25);
+            this.cbSource.Size = new System.Drawing.Size(696, 25);
             this.cbSource.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSource.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSource.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1102,7 +1092,7 @@ namespace Analogy
             this.btnSources.AccessibleName = "Button";
             this.btnSources.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSources.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnSources.Location = new System.Drawing.Point(1848, 0);
+            this.btnSources.Location = new System.Drawing.Point(924, 0);
             this.btnSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSources.Name = "btnSources";
             this.btnSources.Size = new System.Drawing.Size(23, 25);
@@ -1146,7 +1136,7 @@ namespace Analogy
             this.spltTextExclude.Panel1.Controls.Add(this.sBtnMostCommon);
             this.spltTextExclude.Panel1.Controls.Add(this.chkExclude);
             this.spltTextExclude.Panel2Collapsed = true;
-            this.spltTextExclude.Size = new System.Drawing.Size(1871, 25);
+            this.spltTextExclude.Size = new System.Drawing.Size(947, 25);
             this.spltTextExclude.SplitterDistance = 998;
             this.spltTextExclude.SplitterWidth = 3;
             this.spltTextExclude.TabIndex = 24;
@@ -1158,7 +1148,7 @@ namespace Analogy
             this.cbExclude.Location = new System.Drawing.Point(127, 0);
             this.cbExclude.Margin = new System.Windows.Forms.Padding(4);
             this.cbExclude.Name = "cbExclude";
-            this.cbExclude.Size = new System.Drawing.Size(1601, 25);
+            this.cbExclude.Size = new System.Drawing.Size(677, 25);
             this.cbExclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1170,7 +1160,7 @@ namespace Analogy
             this.btnTextExclude.AccessibleName = "Button";
             this.btnTextExclude.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTextExclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnTextExclude.Location = new System.Drawing.Point(1728, 0);
+            this.btnTextExclude.Location = new System.Drawing.Point(804, 0);
             this.btnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextExclude.Name = "btnTextExclude";
             this.btnTextExclude.Size = new System.Drawing.Size(23, 25);
@@ -1182,7 +1172,7 @@ namespace Analogy
             this.sBtnMostCommon.AccessibleName = "Button";
             this.sBtnMostCommon.Dock = System.Windows.Forms.DockStyle.Right;
             this.sBtnMostCommon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnMostCommon.Location = new System.Drawing.Point(1751, 0);
+            this.sBtnMostCommon.Location = new System.Drawing.Point(827, 0);
             this.sBtnMostCommon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMostCommon.Name = "sBtnMostCommon";
             this.sBtnMostCommon.Size = new System.Drawing.Size(120, 25);
@@ -1219,7 +1209,7 @@ namespace Analogy
             this.spltText.Panel1.Controls.Add(this.pboxInfo);
             this.spltText.Panel1.Controls.Add(this.sbtnPreDefinedFilters);
             this.spltText.Panel2Collapsed = true;
-            this.spltText.Size = new System.Drawing.Size(1871, 25);
+            this.spltText.Size = new System.Drawing.Size(947, 25);
             this.spltText.SplitterDistance = 998;
             this.spltText.SplitterWidth = 3;
             this.spltText.TabIndex = 22;
@@ -1231,7 +1221,7 @@ namespace Analogy
             this.cbInclude.Location = new System.Drawing.Point(127, 0);
             this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
             this.cbInclude.Name = "cbInclude";
-            this.cbInclude.Size = new System.Drawing.Size(1698, 25);
+            this.cbInclude.Size = new System.Drawing.Size(774, 25);
             this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1243,7 +1233,7 @@ namespace Analogy
             this.btnTextInclude.AccessibleName = "Button";
             this.btnTextInclude.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTextInclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnTextInclude.Location = new System.Drawing.Point(1825, 0);
+            this.btnTextInclude.Location = new System.Drawing.Point(901, 0);
             this.btnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextInclude.Name = "btnTextInclude";
             this.btnTextInclude.Size = new System.Drawing.Size(23, 25);
@@ -1280,7 +1270,7 @@ namespace Analogy
             this.sbtnPreDefinedFilters.AccessibleName = "Button";
             this.sbtnPreDefinedFilters.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnPreDefinedFilters.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPreDefinedFilters.Location = new System.Drawing.Point(1848, 0);
+            this.sbtnPreDefinedFilters.Location = new System.Drawing.Point(924, 0);
             this.sbtnPreDefinedFilters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnPreDefinedFilters.Name = "sbtnPreDefinedFilters";
             this.sbtnPreDefinedFilters.Size = new System.Drawing.Size(23, 25);
@@ -1290,79 +1280,79 @@ namespace Analogy
             // 
             // rbVerbose
             // 
-            this.rbVerbose.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbVerbose.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbVerbose.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbVerbose.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbVerbose.Location = new System.Drawing.Point(0, 100);
             this.rbVerbose.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbVerbose.Name = "rbVerbose";
-            this.rbVerbose.Size = new System.Drawing.Size(240, 20);
+            this.rbVerbose.Size = new System.Drawing.Size(150, 20);
             this.rbVerbose.TabIndex = 28;
             this.rbVerbose.TabStop = false;
             this.rbVerbose.Text = "Verbose";
             // 
             // rbDebug
             // 
-            this.rbDebug.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbDebug.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbDebug.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbDebug.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbDebug.Location = new System.Drawing.Point(0, 80);
             this.rbDebug.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbDebug.Name = "rbDebug";
-            this.rbDebug.Size = new System.Drawing.Size(240, 20);
+            this.rbDebug.Size = new System.Drawing.Size(150, 20);
             this.rbDebug.TabIndex = 27;
             this.rbDebug.TabStop = false;
             this.rbDebug.Text = "Debug";
             // 
             // rbWarning
             // 
-            this.rbWarning.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbWarning.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbWarning.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbWarning.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbWarning.Location = new System.Drawing.Point(0, 60);
             this.rbWarning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbWarning.Name = "rbWarning";
-            this.rbWarning.Size = new System.Drawing.Size(240, 20);
+            this.rbWarning.Size = new System.Drawing.Size(150, 20);
             this.rbWarning.TabIndex = 26;
             this.rbWarning.TabStop = false;
             this.rbWarning.Text = "Warning";
             // 
             // rbErrorCritical
             // 
-            this.rbErrorCritical.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbErrorCritical.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbErrorCritical.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbErrorCritical.Location = new System.Drawing.Point(0, 40);
             this.rbErrorCritical.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbErrorCritical.Name = "rbErrorCritical";
-            this.rbErrorCritical.Size = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.Size = new System.Drawing.Size(150, 20);
             this.rbErrorCritical.TabIndex = 25;
             this.rbErrorCritical.TabStop = false;
             this.rbErrorCritical.Text = "Errors + Critical";
             // 
             // rbTrace
             // 
-            this.rbTrace.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbTrace.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbTrace.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbTrace.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbTrace.Location = new System.Drawing.Point(0, 20);
             this.rbTrace.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbTrace.Name = "rbTrace";
-            this.rbTrace.Size = new System.Drawing.Size(240, 20);
+            this.rbTrace.Size = new System.Drawing.Size(150, 20);
             this.rbTrace.TabIndex = 24;
             this.rbTrace.TabStop = false;
             this.rbTrace.Text = "Trace";
             // 
             // rbAllLevel
             // 
-            this.rbAllLevel.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbAllLevel.BeforeTouchSize = new System.Drawing.Size(150, 20);
             this.rbAllLevel.Checked = true;
             this.rbAllLevel.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbAllLevel.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
             this.rbAllLevel.Location = new System.Drawing.Point(0, 0);
             this.rbAllLevel.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
             this.rbAllLevel.Name = "rbAllLevel";
-            this.rbAllLevel.Size = new System.Drawing.Size(240, 20);
+            this.rbAllLevel.Size = new System.Drawing.Size(150, 20);
             this.rbAllLevel.TabIndex = 23;
             this.rbAllLevel.Text = "All";
             // 
@@ -1373,7 +1363,7 @@ namespace Analogy
             this.tcBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tcBottom.Name = "tcBottom";
             this.tcBottom.SelectedTabPage = this.xtpMessageInfo;
-            this.tcBottom.Size = new System.Drawing.Size(2124, 204);
+            this.tcBottom.Size = new System.Drawing.Size(1110, 204);
             this.tcBottom.TabIndex = 6;
             this.tcBottom.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpMessageInfo,
@@ -1386,13 +1376,13 @@ namespace Analogy
             this.xtpMessageInfo.Controls.Add(this.bdcMessageBottom);
             this.xtpMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpMessageInfo.Name = "xtpMessageInfo";
-            this.xtpMessageInfo.Size = new System.Drawing.Size(2117, 170);
+            this.xtpMessageInfo.Size = new System.Drawing.Size(1103, 170);
             this.xtpMessageInfo.Text = "Message Info";
             // 
             // tbMessageInfo
             // 
             this.tbMessageInfo.BackColor = System.Drawing.Color.White;
-            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(1103, 143);
             this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -1402,7 +1392,7 @@ namespace Analogy
             this.tbMessageInfo.Multiline = true;
             this.tbMessageInfo.Name = "tbMessageInfo";
             this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMessageInfo.Size = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.Size = new System.Drawing.Size(1103, 143);
             this.tbMessageInfo.TabIndex = 14;
             this.tbMessageInfo.ThemeName = "";
             // 
@@ -1417,7 +1407,7 @@ namespace Analogy
             this.tsMessageInfo.Name = "tsMessageInfo";
             this.tsMessageInfo.ShowCaption = false;
             this.tsMessageInfo.ShowLauncher = false;
-            this.tsMessageInfo.Size = new System.Drawing.Size(2117, 27);
+            this.tsMessageInfo.Size = new System.Drawing.Size(1103, 27);
             this.tsMessageInfo.TabIndex = 4;
             this.tsMessageInfo.ThemeName = "Default";
             // 
@@ -1606,7 +1596,7 @@ namespace Analogy
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.MarqueeAnimationSpeed = 1;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1660, 23);
+            this.progressBar1.Size = new System.Drawing.Size(646, 23);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             this.progressBar1.Visible = false;
@@ -1624,10 +1614,10 @@ namespace Analogy
             this.pnlBottom.Controls.Add(this.lblTotalMessages);
             this.pnlBottom.Controls.Add(this.btnCancel);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 702);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 560);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
+            this.pnlBottom.Size = new System.Drawing.Size(1110, 23);
             this.pnlBottom.TabIndex = 3;
             // 
             // lblTotalMessagesAlert
@@ -1671,7 +1661,7 @@ namespace Analogy
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(1931, 0);
+            this.btnCancel.Location = new System.Drawing.Point(917, 0);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
@@ -1696,7 +1686,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Text = "Panel1";
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
-            this.splitContainerMain.Size = new System.Drawing.Size(2124, 675);
+            this.splitContainerMain.Size = new System.Drawing.Size(1110, 533);
             this.splitContainerMain.SplitterPosition = 204;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
@@ -1707,7 +1697,7 @@ namespace Analogy
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
             this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(2124, 286);
+            this.pnlMessages.Size = new System.Drawing.Size(1110, 144);
             this.pnlMessages.TabIndex = 7;
             // 
             // sfDataGridMain
@@ -1808,90 +1798,11 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 286);
+            this.sfDataGridMain.Size = new System.Drawing.Size(1110, 144);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
             this.sfDataGridMain.StyleChanged += new System.EventHandler(this.sfDataGridMain_StyleChanged);
-            // 
-            // nudGroupBychars
-            // 
-            this.nudGroupBychars.EditValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudGroupBychars.Location = new System.Drawing.Point(749, 20);
-            this.nudGroupBychars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudGroupBychars.MenuManager = this.barManager1;
-            this.nudGroupBychars.Name = "nudGroupBychars";
-            this.nudGroupBychars.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nudGroupBychars.Properties.IsFloatValue = false;
-            this.nudGroupBychars.Properties.Mask.EditMask = "N00";
-            this.nudGroupBychars.Properties.MaxValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudGroupBychars.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudGroupBychars.Size = new System.Drawing.Size(98, 22);
-            this.nudGroupBychars.TabIndex = 15;
-            // 
-            // txtbGroupByCharsLimit
-            // 
-            this.txtbGroupByCharsLimit.Location = new System.Drawing.Point(150, 20);
-            this.txtbGroupByCharsLimit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbGroupByCharsLimit.MenuManager = this.barManager1;
-            this.txtbGroupByCharsLimit.Name = "txtbGroupByCharsLimit";
-            this.txtbGroupByCharsLimit.Size = new System.Drawing.Size(250, 22);
-            this.txtbGroupByCharsLimit.TabIndex = 14;
-            // 
-            // sBtnGroup
-            // 
-            this.sBtnGroup.AccessibleName = "Button";
-            this.sBtnGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnGroup.Location = new System.Drawing.Point(863, 17);
-            this.sBtnGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sBtnGroup.Name = "sBtnGroup";
-            this.sBtnGroup.Size = new System.Drawing.Size(83, 25);
-            this.sBtnGroup.TabIndex = 13;
-            this.sBtnGroup.Text = "Group";
-            this.sBtnGroup.Click += new System.EventHandler(this.sBtnGroup_Click);
-            // 
-            // sBtnLength
-            // 
-            this.sBtnLength.AccessibleName = "Button";
-            this.sBtnLength.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnLength.Location = new System.Drawing.Point(406, 18);
-            this.sBtnLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sBtnLength.Name = "sBtnLength";
-            this.sBtnLength.Size = new System.Drawing.Size(83, 25);
-            this.sBtnLength.TabIndex = 12;
-            this.sBtnLength.Text = "Set Length";
-            this.sBtnLength.Click += new System.EventHandler(this.sBtnLength_Click);
-            // 
-            // lblGroupByCharsLimit
-            // 
-            this.lblGroupByCharsLimit.AutoSize = true;
-            this.lblGroupByCharsLimit.Location = new System.Drawing.Point(3, 25);
-            this.lblGroupByCharsLimit.Name = "lblGroupByCharsLimit";
-            this.lblGroupByCharsLimit.Size = new System.Drawing.Size(141, 17);
-            this.lblGroupByCharsLimit.TabIndex = 7;
-            this.lblGroupByCharsLimit.Text = "group by text length:";
-            // 
-            // lblGroupByChars
-            // 
-            this.lblGroupByChars.AutoSize = true;
-            this.lblGroupByChars.Location = new System.Drawing.Point(518, 25);
-            this.lblGroupByChars.Name = "lblGroupByChars";
-            this.lblGroupByChars.Size = new System.Drawing.Size(225, 17);
-            this.lblGroupByChars.TabIndex = 2;
-            this.lblGroupByChars.Text = "Or group by number of characters:";
             // 
             // cmsBookmarked
             // 
@@ -2096,32 +2007,31 @@ namespace Analogy
             this.toolStripEx1.TabIndex = 4;
             this.toolStripEx1.ThemeName = "Default";
             // 
-            // tabControlAdv1
+            // tabControlMain
             // 
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(2131, 759);
-            this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
-            this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
-            this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlAdv1.Location = new System.Drawing.Point(0, 0);
-            this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(2131, 759);
-            this.tabControlAdv1.TabIndex = 27;
-            this.tabControlAdv1.ThemesEnabled = true;
+            this.tabControlMain.BeforeTouchSize = new System.Drawing.Size(1117, 618);
+            this.tabControlMain.Controls.Add(this.tabPageLogs);
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.Size = new System.Drawing.Size(1117, 618);
+            this.tabControlMain.TabIndex = 27;
+            this.tabControlMain.ThemesEnabled = true;
             // 
-            // tabPageAdv1
+            // tabPageLogs
             // 
-            this.tabPageAdv1.Controls.Add(this.splitContainerMain);
-            this.tabPageAdv1.Controls.Add(this.pnlBottom);
-            this.tabPageAdv1.Controls.Add(this.tsTop);
-            this.tabPageAdv1.Image = null;
-            this.tabPageAdv1.ImageSize = new System.Drawing.Size(20, 20);
-            this.tabPageAdv1.Location = new System.Drawing.Point(3, 31);
-            this.tabPageAdv1.Name = "tabPageAdv1";
-            this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(2124, 725);
-            this.tabPageAdv1.TabIndex = 1;
-            this.tabPageAdv1.Text = "tabPageAdv1";
-            this.tabPageAdv1.ThemesEnabled = true;
+            this.tabPageLogs.Controls.Add(this.splitContainerMain);
+            this.tabPageLogs.Controls.Add(this.pnlBottom);
+            this.tabPageLogs.Controls.Add(this.tsTop);
+            this.tabPageLogs.Image = null;
+            this.tabPageLogs.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageLogs.Location = new System.Drawing.Point(3, 31);
+            this.tabPageLogs.Name = "tabPageLogs";
+            this.tabPageLogs.ShowCloseButton = true;
+            this.tabPageLogs.Size = new System.Drawing.Size(1110, 583);
+            this.tabPageLogs.TabIndex = 1;
+            this.tabPageLogs.Text = "Logs";
+            this.tabPageLogs.ThemesEnabled = true;
             // 
             // tsTop
             // 
@@ -2137,11 +2047,12 @@ namespace Analogy
             this.tsbScreenshot,
             this.tsddbExport,
             this.tsBDataVisualizer});
+            this.tsTop.LauncherStyle = Syncfusion.Windows.Forms.Tools.LauncherStyle.Office12;
             this.tsTop.Location = new System.Drawing.Point(0, 0);
             this.tsTop.Name = "tsTop";
             this.tsTop.ShowCaption = false;
             this.tsTop.ShowLauncher = false;
-            this.tsTop.Size = new System.Drawing.Size(2124, 27);
+            this.tsTop.Size = new System.Drawing.Size(1110, 27);
             this.tsTop.TabIndex = 5;
             this.tsTop.ThemeName = "Default";
             // 
@@ -2278,36 +2189,18 @@ namespace Analogy
             this.tsBDataVisualizer.Text = "Data Visualizer";
             this.tsBDataVisualizer.Visible = false;
             // 
-            // tabPageAdv2
-            // 
-            this.tabPageAdv2.Controls.Add(this.sBtnGroup);
-            this.tabPageAdv2.Controls.Add(this.nudGroupBychars);
-            this.tabPageAdv2.Controls.Add(this.lblGroupByCharsLimit);
-            this.tabPageAdv2.Controls.Add(this.txtbGroupByCharsLimit);
-            this.tabPageAdv2.Controls.Add(this.lblGroupByChars);
-            this.tabPageAdv2.Controls.Add(this.sBtnLength);
-            this.tabPageAdv2.Image = null;
-            this.tabPageAdv2.ImageSize = new System.Drawing.Size(20, 20);
-            this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
-            this.tabPageAdv2.Name = "tabPageAdv2";
-            this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(2124, 725);
-            this.tabPageAdv2.TabIndex = 2;
-            this.tabPageAdv2.Text = "tabPageAdv2";
-            this.tabPageAdv2.ThemesEnabled = true;
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControlAdv1);
+            this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCLogs";
-            this.Size = new System.Drawing.Size(2131, 759);
+            this.Size = new System.Drawing.Size(1117, 618);
             this.Load += new System.EventHandler(this.UCLogs_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.UCLogs_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.UCLogs_DragEnter);
@@ -2372,20 +2265,16 @@ namespace Analogy
             this.splitContainerMain.ResumeLayout(false);
             this.pnlMessages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
-            this.tabControlAdv1.ResumeLayout(false);
-            this.tabPageAdv1.ResumeLayout(false);
-            this.tabPageAdv1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).EndInit();
+            this.tabControlMain.ResumeLayout(false);
+            this.tabPageLogs.ResumeLayout(false);
+            this.tabPageLogs.PerformLayout();
             this.tsTop.ResumeLayout(false);
             this.tsTop.PerformLayout();
-            this.tabPageAdv2.ResumeLayout(false);
-            this.tabPageAdv2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2420,8 +2309,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.SplitContainer spltFilteringBoth;
         private System.Windows.Forms.Panel pnlFilteringLeft;
-        private System.Windows.Forms.Label lblGroupByChars;
-        private System.Windows.Forms.Label lblGroupByCharsLimit;
         private DevExpress.XtraTab.XtraTabControl tcBottom;
         private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
         private DevExpress.XtraTab.XtraTabPage xtpBookmarks;
@@ -2435,8 +2322,6 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private SfButton sBtnMostCommon;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private SfButton sBtnLength;
-        private SfButton sBtnGroup;
         private DevExpress.XtraBars.StandaloneBarDockControl bdcMessageBottom;
         private DevExpress.XtraBars.BarButtonItem bBtnExpand;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -2482,8 +2367,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiREmoveAllPreviousMessages;
         private DevExpress.XtraBars.BarButtonItem bbtnSaveViewAgnostic;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSaveEntireInAnalogy;
-        private DevExpress.XtraEditors.TextEdit txtbGroupByCharsLimit;
-        private DevExpress.XtraEditors.SpinEdit nudGroupBychars;
         private DevExpress.XtraBars.BarButtonItem bBtnUndockViewPerProcess;
         private System.Windows.Forms.SplitContainer spltText;
         private SfButton btnTextInclude;
@@ -2537,11 +2420,10 @@ namespace Analogy
         private Syncfusion.WinForms.Input.SfDateTimeEdit deNewerThanFilter;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
-        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlMain;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageLogs;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx tsTop;
         private System.Windows.Forms.ToolStripButton tsTopClear;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
         private System.Windows.Forms.ToolStripDropDownButton tsddbSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLogDataProvider;

@@ -351,6 +351,9 @@ namespace Analogy
                 //todo:complete this
                 Settings.AutoScrollToLastMessage = tsTopAutoScrollToLast.Checked;
             };
+            tsTopClear.Click += (s, e) => ClearLogs(true);
+            
+            
             #endregion
             #region Toolstrip Buttons
 
@@ -1708,38 +1711,8 @@ namespace Analogy
             }
         }
 
-        private async void chkLstLogLevel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            await FilterHasChanged();
-        }
 
-
-        private async void chkLstLogLevel_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
-        {
-            await FilterHasChanged();
-        }
-
-        private void sBtnLength_Click(object sender, EventArgs e)
-        {
-            nudGroupBychars.Value = Math.Max(txtbGroupByCharsLimit.Text.Length, nudGroupBychars.Value);
-            ApplyGrouping();
-        }
-
-        private void sBtnGroup_Click(object sender, EventArgs e)
-        {
-            ApplyGrouping();
-
-        }
-
-        private void ApplyGrouping()
-        {
-            List<IGrouping<string, AnalogyLogMessage>> grouped = Messages
-                .GroupBy(s => s.Text.Substring(0, Math.Min(s.Text.Length, (int)nudGroupBychars.Value)))
-                .OrderByDescending(i => i.Count()).ToList();
-            groupingByChars = grouped.ToDictionary(g => g.Key, g => g.ToList());
-            //todo
-            //gCtrlGrouping.DataSource = groupingByChars.Keys;
-        }
+        
         private void bBtnCopyButtom_ItemClick(object sender, ItemClickEventArgs e)
         {
             Clipboard.SetText(tbMessageInfo.Text);
