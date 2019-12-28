@@ -896,6 +896,12 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\ExportToXLS_32x32.png" />
+    <None Include="Resources\ExportToXLS_16x16.png" />
+    <None Include="Resources\ExportToCSV_32x32.png" />
+    <None Include="Resources\ExportToCSV_16x16.png" />
+    <None Include="Resources\Export_32x32.png" />
+    <None Include="Resources\Export_16x16.png" />
     <None Include="Resources\Stop_32x32.png" />
     <None Include="Resources\Stop_16x16.png" />
     <None Include="Resources\Record_32x32.png" />

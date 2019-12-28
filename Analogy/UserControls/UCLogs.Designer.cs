@@ -103,30 +103,15 @@ namespace Analogy
             this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barTopFiltering = new DevExpress.XtraBars.Bar();
-            this.bBtnClearLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnRemoveBoomark = new DevExpress.XtraBars.BarButtonItem();
-            this.btswitchExpand = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.btswitchRefreshLog = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.btsAutoScrollToBottom = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.barSubItemSaveEntireLog = new DevExpress.XtraBars.BarSubItem();
             this.bBtnSaveEntireLog = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemSaveEntireInAnalogy = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItemSaveView = new DevExpress.XtraBars.BarSubItem();
             this.bBtnSaveLog = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnSaveViewAgnostic = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.bBtnUndockView = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnUndockViewPerProcess = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiScreenshot = new DevExpress.XtraBars.BarButtonItem();
-            this.bSMExports = new DevExpress.XtraBars.BarSubItem();
             this.bBtnExportExcel = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnExportCSV = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnExportHtml = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnImport = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnDataVisualizer = new DevExpress.XtraBars.BarButtonItem();
-            this.bdcTopFiltering = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.BbarMainMenu = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -190,9 +175,6 @@ namespace Analogy
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tmrNewData = new System.Windows.Forms.Timer(this.components);
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtpMain = new DevExpress.XtraTab.XtraTabPage();
-            this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
@@ -237,14 +219,21 @@ namespace Analogy
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
             this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.toolStripCheckBox1 = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
-            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsddbSave = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiSaveFullLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCurrentViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveFullLogDataProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveFullLogAnalogy = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveCurrentViewDataProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveCurrentViewAnalogy = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbUndock = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiUndockView = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUndockPerModule = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbScreenshot = new System.Windows.Forms.ToolStripButton();
+            this.tsddbExport = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiExportExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tsBDataVisualizer = new System.Windows.Forms.ToolStripButton();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -292,9 +281,6 @@ namespace Analogy
             this.xtpBookmarks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).BeginInit();
             this.tsBookmark.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtpMain.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.SuspendLayout();
@@ -531,7 +517,7 @@ namespace Analogy
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 329);
+            this.panel1.Location = new System.Drawing.Point(0, 439);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2124, 26);
@@ -661,129 +647,30 @@ namespace Analogy
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.barTopFiltering,
-            this.BbarMainMenu});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.DockControls.Add(this.bdcTopFiltering);
             this.barManager1.DockControls.Add(this.bdcMessageBottom);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
             this.barButtonItem2,
-            this.btswitchExpand,
-            this.btswitchRefreshLog,
             this.bBtnSaveLog,
-            this.bBtnImport,
-            this.bBtnClearLog,
             this.bBtnExpand,
             this.barButtonItem3,
             this.bBtnButtomExpand,
             this.bBtnCopyButtom,
             this.btSwitchExpandButtomMessage,
-            this.bBtnRemoveBoomark,
-            this.btsAutoScrollToBottom,
-            this.bSMExports,
             this.bBtnExportExcel,
             this.bBtnExportCSV,
             this.bBtnExportHtml,
             this.bBtnUndockView,
             this.bBtnSaveEntireLog,
-            this.bBtnDataVisualizer,
-            this.bbiScreenshot,
-            this.barSubItemSaveView,
             this.bbtnSaveViewAgnostic,
-            this.barSubItemSaveEntireLog,
             this.barButtonItemSaveEntireInAnalogy,
-            this.barSubItem1,
             this.bBtnUndockViewPerProcess});
-            this.barManager1.MainMenu = this.BbarMainMenu;
             this.barManager1.MaxItemId = 36;
-            // 
-            // barTopFiltering
-            // 
-            this.barTopFiltering.BarName = "Log Operations";
-            this.barTopFiltering.DockCol = 0;
-            this.barTopFiltering.DockRow = 0;
-            this.barTopFiltering.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.barTopFiltering.FloatLocation = new System.Drawing.Point(192, 279);
-            this.barTopFiltering.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnClearLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnRemoveBoomark),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btswitchExpand),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btswitchRefreshLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btsAutoScrollToBottom),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemSaveEntireLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemSaveView),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiScreenshot),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bSMExports),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnImport),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnDataVisualizer)});
-            this.barTopFiltering.OptionsBar.AllowQuickCustomization = false;
-            this.barTopFiltering.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
-            this.barTopFiltering.OptionsBar.DisableClose = true;
-            this.barTopFiltering.OptionsBar.DisableCustomization = true;
-            this.barTopFiltering.OptionsBar.UseWholeRow = true;
-            this.barTopFiltering.StandaloneBarDockControl = this.bdcTopFiltering;
-            this.barTopFiltering.Text = "Operations";
-            // 
-            // bBtnClearLog
-            // 
-            this.bBtnClearLog.Caption = "Clear Log";
-            this.bBtnClearLog.Id = 6;
-            this.bBtnClearLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnClearLog.ImageOptions.Image")));
-            this.bBtnClearLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnClearLog.ImageOptions.LargeImage")));
-            this.bBtnClearLog.Name = "bBtnClearLog";
-            this.bBtnClearLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnClearLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnClearLog_ItemClick);
-            // 
-            // bBtnRemoveBoomark
-            // 
-            this.bBtnRemoveBoomark.Caption = "Delete message";
-            this.bBtnRemoveBoomark.Id = 15;
-            this.bBtnRemoveBoomark.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnRemoveBoomark.ImageOptions.Image")));
-            this.bBtnRemoveBoomark.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnRemoveBoomark.ImageOptions.LargeImage")));
-            this.bBtnRemoveBoomark.Name = "bBtnRemoveBoomark";
-            this.bBtnRemoveBoomark.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnRemoveBoomark.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnRemoveBoomark.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnRemoveBoomark_ItemClick);
-            // 
-            // btswitchExpand
-            // 
-            this.btswitchExpand.Caption = "Expand";
-            this.btswitchExpand.Id = 2;
-            this.btswitchExpand.Name = "btswitchExpand";
-            this.btswitchExpand.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btswitchExpand_CheckedChanged);
-            // 
-            // btswitchRefreshLog
-            // 
-            this.btswitchRefreshLog.Caption = "Refresh log:";
-            this.btswitchRefreshLog.Id = 3;
-            this.btswitchRefreshLog.Name = "btswitchRefreshLog";
-            this.btswitchRefreshLog.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btswitchRefreshLog_CheckedChanged);
-            // 
-            // btsAutoScrollToBottom
-            // 
-            this.btsAutoScrollToBottom.Caption = "Auto Scroll to bottom:";
-            this.btsAutoScrollToBottom.Id = 18;
-            this.btsAutoScrollToBottom.Name = "btsAutoScrollToBottom";
-            this.btsAutoScrollToBottom.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btsAutoScrollToBottom_CheckedChanged);
-            // 
-            // barSubItemSaveEntireLog
-            // 
-            this.barSubItemSaveEntireLog.Caption = "Save Entire Log";
-            this.barSubItemSaveEntireLog.Id = 31;
-            this.barSubItemSaveEntireLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItemSaveEntireLog.ImageOptions.Image")));
-            this.barSubItemSaveEntireLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemSaveEntireLog.ImageOptions.LargeImage")));
-            this.barSubItemSaveEntireLog.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnSaveEntireLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemSaveEntireInAnalogy)});
-            this.barSubItemSaveEntireLog.Name = "barSubItemSaveEntireLog";
-            this.barSubItemSaveEntireLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bBtnSaveEntireLog
             // 
@@ -804,18 +691,6 @@ namespace Analogy
             this.barButtonItemSaveEntireInAnalogy.Name = "barButtonItemSaveEntireInAnalogy";
             this.barButtonItemSaveEntireInAnalogy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemSaveEntireInAnalogy_ItemClick);
             // 
-            // barSubItemSaveView
-            // 
-            this.barSubItemSaveView.Caption = "Save Current View";
-            this.barSubItemSaveView.Id = 29;
-            this.barSubItemSaveView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItemSaveView.ImageOptions.Image")));
-            this.barSubItemSaveView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemSaveView.ImageOptions.LargeImage")));
-            this.barSubItemSaveView.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnSaveLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnSaveViewAgnostic)});
-            this.barSubItemSaveView.Name = "barSubItemSaveView";
-            this.barSubItemSaveView.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // bBtnSaveLog
             // 
             this.bBtnSaveLog.Caption = "Save Current View (custom Format)";
@@ -835,18 +710,6 @@ namespace Analogy
             this.bbtnSaveViewAgnostic.Name = "bbtnSaveViewAgnostic";
             this.bbtnSaveViewAgnostic.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbtnSaveViewAgnostic_ItemClick);
             // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "Undock View";
-            this.barSubItem1.Id = 34;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnUndockView),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnUndockViewPerProcess)});
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // bBtnUndockView
             // 
             this.bBtnUndockView.Caption = "Undock View (No Filtering)";
@@ -865,30 +728,6 @@ namespace Analogy
             this.bBtnUndockViewPerProcess.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.LargeImage")));
             this.bBtnUndockViewPerProcess.Name = "bBtnUndockViewPerProcess";
             this.bBtnUndockViewPerProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockViewPerProcess_ItemClick);
-            // 
-            // bbiScreenshot
-            // 
-            this.bbiScreenshot.Caption = "Take screenshot";
-            this.bbiScreenshot.Hint = "Take screenshot of the messages control";
-            this.bbiScreenshot.Id = 27;
-            this.bbiScreenshot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiScreenshot.ImageOptions.Image")));
-            this.bbiScreenshot.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiScreenshot.ImageOptions.LargeImage")));
-            this.bbiScreenshot.Name = "bbiScreenshot";
-            this.bbiScreenshot.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiScreenshot_ItemClick);
-            // 
-            // bSMExports
-            // 
-            this.bSMExports.Caption = "Export";
-            this.bSMExports.Id = 20;
-            this.bSMExports.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bSMExports.ImageOptions.Image")));
-            this.bSMExports.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bSMExports.ImageOptions.LargeImage")));
-            this.bSMExports.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bBtnExportExcel, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnExportCSV),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnExportHtml)});
-            this.bSMExports.Name = "bSMExports";
-            this.bSMExports.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bBtnExportExcel
             // 
@@ -919,51 +758,6 @@ namespace Analogy
             this.bBtnExportHtml.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bBtnExportHtml.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportHtml_ItemClick);
             // 
-            // bBtnImport
-            // 
-            this.bBtnImport.Caption = "Import Log";
-            this.bBtnImport.Id = 5;
-            this.bBtnImport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnImport.ImageOptions.Image")));
-            this.bBtnImport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnImport.ImageOptions.LargeImage")));
-            this.bBtnImport.Name = "bBtnImport";
-            this.bBtnImport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnImport.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnImport_ItemClick);
-            // 
-            // bBtnDataVisualizer
-            // 
-            this.bBtnDataVisualizer.Caption = "Data Visualizer";
-            this.bBtnDataVisualizer.Id = 26;
-            this.bBtnDataVisualizer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnDataVisualizer.ImageOptions.Image")));
-            this.bBtnDataVisualizer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnDataVisualizer.ImageOptions.LargeImage")));
-            this.bBtnDataVisualizer.Name = "bBtnDataVisualizer";
-            this.bBtnDataVisualizer.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnDataVisualizer.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnDataVisualizer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnDataVisualizer_ItemClick);
-            // 
-            // bdcTopFiltering
-            // 
-            this.bdcTopFiltering.CausesValidation = false;
-            this.bdcTopFiltering.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bdcTopFiltering.Location = new System.Drawing.Point(0, 0);
-            this.bdcTopFiltering.Manager = this.barManager1;
-            this.bdcTopFiltering.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bdcTopFiltering.Name = "bdcTopFiltering";
-            this.bdcTopFiltering.Size = new System.Drawing.Size(2124, 38);
-            this.bdcTopFiltering.Text = "standaloneBarDockControl1";
-            // 
-            // BbarMainMenu
-            // 
-            this.BbarMainMenu.BarName = "Main menu";
-            this.BbarMainMenu.DockCol = 0;
-            this.BbarMainMenu.DockRow = 0;
-            this.BbarMainMenu.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.BbarMainMenu.FloatLocation = new System.Drawing.Point(258, 133);
-            this.BbarMainMenu.OptionsBar.MultiLine = true;
-            this.BbarMainMenu.OptionsBar.UseWholeRow = true;
-            this.BbarMainMenu.Text = "Main menu";
-            this.BbarMainMenu.Visible = false;
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -971,7 +765,7 @@ namespace Analogy
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(2131, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(2131, 0);
             // 
             // barDockControlBottom
             // 
@@ -986,19 +780,19 @@ namespace Analogy
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 759);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2131, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(2131, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 759);
             // 
             // bdcMessageBottom
             // 
@@ -1825,34 +1619,6 @@ namespace Analogy
             this.tmrNewData.Interval = 1000;
             this.tmrNewData.Tick += new System.EventHandler(this.tmrNewData_Tick);
             // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 20);
-            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtpMain;
-            this.xtraTabControl1.Size = new System.Drawing.Size(2131, 90);
-            this.xtraTabControl1.TabIndex = 7;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtpMain,
-            this.xtCounts});
-            // 
-            // xtpMain
-            // 
-            this.xtpMain.Controls.Add(this.bdcTopFiltering);
-            this.xtpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtpMain.Name = "xtpMain";
-            this.xtpMain.Size = new System.Drawing.Size(2124, 56);
-            this.xtpMain.Text = "Logs";
-            // 
-            // xtCounts
-            // 
-            this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtCounts.Name = "xtCounts";
-            this.xtCounts.Size = new System.Drawing.Size(2124, 56);
-            this.xtCounts.Text = "Messages Grouping";
-            // 
             // pnlBottom
             // 
             this.pnlBottom.Controls.Add(this.progressBar1);
@@ -1860,7 +1626,7 @@ namespace Analogy
             this.pnlBottom.Controls.Add(this.lblTotalMessages);
             this.pnlBottom.Controls.Add(this.btnCancel);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 592);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 702);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
@@ -1932,7 +1698,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Text = "Panel1";
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
-            this.splitContainerMain.Size = new System.Drawing.Size(2124, 565);
+            this.splitContainerMain.Size = new System.Drawing.Size(2124, 675);
             this.splitContainerMain.SplitterPosition = 204;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
@@ -1943,7 +1709,7 @@ namespace Analogy
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
             this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(2124, 176);
+            this.pnlMessages.Size = new System.Drawing.Size(2124, 286);
             this.pnlMessages.TabIndex = 7;
             // 
             // sfDataGridMain
@@ -2044,7 +1810,7 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 176);
+            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 286);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
@@ -2334,13 +2100,13 @@ namespace Analogy
             // 
             // tabControlAdv1
             // 
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(2131, 649);
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(2131, 759);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
             this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlAdv1.Location = new System.Drawing.Point(0, 110);
+            this.tabControlAdv1.Location = new System.Drawing.Point(0, 0);
             this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(2131, 649);
+            this.tabControlAdv1.Size = new System.Drawing.Size(2131, 759);
             this.tabControlAdv1.TabIndex = 27;
             this.tabControlAdv1.ThemesEnabled = true;
             // 
@@ -2354,7 +2120,7 @@ namespace Analogy
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 31);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(2124, 615);
+            this.tabPageAdv1.Size = new System.Drawing.Size(2124, 725);
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "tabPageAdv1";
             this.tabPageAdv1.ThemesEnabled = true;
@@ -2368,7 +2134,11 @@ namespace Analogy
             this.tsTopClear,
             this.tsTopRefresh,
             this.toolStripCheckBox1,
-            this.toolStripDropDownButton1});
+            this.tsddbSave,
+            this.tsddbUndock,
+            this.tsbScreenshot,
+            this.tsddbExport,
+            this.tsBDataVisualizer});
             this.tsTop.Location = new System.Drawing.Point(0, 0);
             this.tsTop.Name = "tsTop";
             this.tsTop.ShowCaption = false;
@@ -2390,7 +2160,7 @@ namespace Analogy
             this.tsTopRefresh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tsTopRefresh.Name = "tsTopRefresh";
             this.tsTopRefresh.Size = new System.Drawing.Size(146, 24);
-            this.tsTopRefresh.Text = "Pause Refershing:";
+            this.tsTopRefresh.Text = "Pause Refreshing:";
             // 
             // toolStripCheckBox1
             // 
@@ -2398,6 +2168,107 @@ namespace Analogy
             this.toolStripCheckBox1.Name = "toolStripCheckBox1";
             this.toolStripCheckBox1.Size = new System.Drawing.Size(179, 24);
             this.toolStripCheckBox1.Text = "Auto scroll to last row:";
+            // 
+            // tsddbSave
+            // 
+            this.tsddbSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveFullLog,
+            this.saveCurrentViewToolStripMenuItem});
+            this.tsddbSave.Image = global::Analogy.Properties.Resources.Save_16x16;
+            this.tsddbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbSave.Name = "tsddbSave";
+            this.tsddbSave.Size = new System.Drawing.Size(103, 24);
+            this.tsddbSave.Text = "Save Log";
+            // 
+            // tsmiSaveFullLog
+            // 
+            this.tsmiSaveFullLog.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveFullLogDataProvider,
+            this.tsmiSaveFullLogAnalogy});
+            this.tsmiSaveFullLog.Name = "tsmiSaveFullLog";
+            this.tsmiSaveFullLog.Size = new System.Drawing.Size(211, 26);
+            this.tsmiSaveFullLog.Text = "Save Entire Log";
+            // 
+            // tsmiSaveFullLogDataProvider
+            // 
+            this.tsmiSaveFullLogDataProvider.Name = "tsmiSaveFullLogDataProvider";
+            this.tsmiSaveFullLogDataProvider.Size = new System.Drawing.Size(572, 26);
+            this.tsmiSaveFullLogDataProvider.Text = "Save Entire Log (Data Provider Format)";
+            // 
+            // tsmiSaveFullLogAnalogy
+            // 
+            this.tsmiSaveFullLogAnalogy.Name = "tsmiSaveFullLogAnalogy";
+            this.tsmiSaveFullLogAnalogy.Size = new System.Drawing.Size(572, 26);
+            this.tsmiSaveFullLogAnalogy.Text = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
+            // 
+            // saveCurrentViewToolStripMenuItem
+            // 
+            this.saveCurrentViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveCurrentViewDataProvider,
+            this.tsmiSaveCurrentViewAnalogy});
+            this.saveCurrentViewToolStripMenuItem.Name = "saveCurrentViewToolStripMenuItem";
+            this.saveCurrentViewToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.saveCurrentViewToolStripMenuItem.Text = "Save Current View";
+            // 
+            // tsmiSaveCurrentViewDataProvider
+            // 
+            this.tsmiSaveCurrentViewDataProvider.Name = "tsmiSaveCurrentViewDataProvider";
+            this.tsmiSaveCurrentViewDataProvider.Size = new System.Drawing.Size(589, 26);
+            this.tsmiSaveCurrentViewDataProvider.Text = "Save Current View (Data Provider Format)";
+            // 
+            // tsmiSaveCurrentViewAnalogy
+            // 
+            this.tsmiSaveCurrentViewAnalogy.Name = "tsmiSaveCurrentViewAnalogy";
+            this.tsmiSaveCurrentViewAnalogy.Size = new System.Drawing.Size(589, 26);
+            this.tsmiSaveCurrentViewAnalogy.Text = "Save Current View in Analogy Format (agnostic to specific implementation)";
+            // 
+            // tsddbUndock
+            // 
+            this.tsddbUndock.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiUndockView,
+            this.tsmiUndockPerModule});
+            this.tsddbUndock.Image = global::Analogy.Properties.Resources.FullscreenBlue16;
+            this.tsddbUndock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbUndock.Name = "tsddbUndock";
+            this.tsddbUndock.Size = new System.Drawing.Size(129, 24);
+            this.tsddbUndock.Text = "Undock View";
+            // 
+            // tsmiUndockView
+            // 
+            this.tsmiUndockView.Name = "tsmiUndockView";
+            this.tsmiUndockView.Size = new System.Drawing.Size(313, 26);
+            this.tsmiUndockView.Text = "Undock View (No filtering)";
+            // 
+            // tsmiUndockPerModule
+            // 
+            this.tsmiUndockPerModule.Name = "tsmiUndockPerModule";
+            this.tsmiUndockPerModule.Size = new System.Drawing.Size(313, 26);
+            this.tsmiUndockPerModule.Text = "Undock View Per Process/Module";
+            // 
+            // tsbScreenshot
+            // 
+            this.tsbScreenshot.Image = global::Analogy.Properties.Resources.Icon_6;
+            this.tsbScreenshot.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbScreenshot.Name = "tsbScreenshot";
+            this.tsbScreenshot.Size = new System.Drawing.Size(140, 24);
+            this.tsbScreenshot.Text = "Take Screenshot";
+            // 
+            // tsddbExport
+            // 
+            this.tsddbExport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiExportExcel});
+            this.tsddbExport.Image = global::Analogy.Properties.Resources.Export_16x16;
+            this.tsddbExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbExport.Name = "tsddbExport";
+            this.tsddbExport.Size = new System.Drawing.Size(86, 24);
+            this.tsddbExport.Text = "Export";
+            // 
+            // tsmiExportExcel
+            // 
+            this.tsmiExportExcel.Image = global::Analogy.Properties.Resources.ExportToXLS_16x16;
+            this.tsmiExportExcel.Name = "tsmiExportExcel";
+            this.tsmiExportExcel.Size = new System.Drawing.Size(224, 26);
+            this.tsmiExportExcel.Text = "Export To Excel";
             // 
             // tabPageAdv2
             // 
@@ -2412,70 +2283,26 @@ namespace Analogy
             this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
             this.tabPageAdv2.Name = "tabPageAdv2";
             this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(2124, 615);
+            this.tabPageAdv2.Size = new System.Drawing.Size(2124, 725);
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "tabPageAdv2";
             this.tabPageAdv2.ThemesEnabled = true;
             // 
-            // toolStripDropDownButton1
+            // tsBDataVisualizer
             // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSaveFullLog,
-            this.saveCurrentViewToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(103, 24);
-            this.toolStripDropDownButton1.Text = "Save Log";
-            // 
-            // tsmiSaveFullLog
-            // 
-            this.tsmiSaveFullLog.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSaveFullLogDataProvider,
-            this.tsmiSaveFullLogAnalogy});
-            this.tsmiSaveFullLog.Name = "tsmiSaveFullLog";
-            this.tsmiSaveFullLog.Size = new System.Drawing.Size(224, 26);
-            this.tsmiSaveFullLog.Text = "Save Entire Log";
-            // 
-            // saveCurrentViewToolStripMenuItem
-            // 
-            this.saveCurrentViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSaveCurrentViewDataProvider,
-            this.tsmiSaveCurrentViewAnalogy});
-            this.saveCurrentViewToolStripMenuItem.Name = "saveCurrentViewToolStripMenuItem";
-            this.saveCurrentViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveCurrentViewToolStripMenuItem.Text = "Save Current View";
-            // 
-            // tsmiSaveFullLogDataProvider
-            // 
-            this.tsmiSaveFullLogDataProvider.Name = "tsmiSaveFullLogDataProvider";
-            this.tsmiSaveFullLogDataProvider.Size = new System.Drawing.Size(572, 26);
-            this.tsmiSaveFullLogDataProvider.Text = "Save Entire Log (Data Provider Format)";
-            // 
-            // tsmiSaveFullLogAnalogy
-            // 
-            this.tsmiSaveFullLogAnalogy.Name = "tsmiSaveFullLogAnalogy";
-            this.tsmiSaveFullLogAnalogy.Size = new System.Drawing.Size(572, 26);
-            this.tsmiSaveFullLogAnalogy.Text = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
-            // 
-            // tsmiSaveCurrentViewDataProvider
-            // 
-            this.tsmiSaveCurrentViewDataProvider.Name = "tsmiSaveCurrentViewDataProvider";
-            this.tsmiSaveCurrentViewDataProvider.Size = new System.Drawing.Size(589, 26);
-            this.tsmiSaveCurrentViewDataProvider.Text = "Save Current View (Data Provider Format)";
-            // 
-            // tsmiSaveCurrentViewAnalogy
-            // 
-            this.tsmiSaveCurrentViewAnalogy.Name = "tsmiSaveCurrentViewAnalogy";
-            this.tsmiSaveCurrentViewAnalogy.Size = new System.Drawing.Size(589, 26);
-            this.tsmiSaveCurrentViewAnalogy.Text = "Save Current View in Analogy Format (agnostic to specific implementation)";
+            this.tsBDataVisualizer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBDataVisualizer.Image = ((System.Drawing.Image)(resources.GetObject("tsBDataVisualizer.Image")));
+            this.tsBDataVisualizer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBDataVisualizer.Name = "tsBDataVisualizer";
+            this.tsBDataVisualizer.Size = new System.Drawing.Size(29, 24);
+            this.tsBDataVisualizer.Text = "Data Visualizer";
+            this.tsBDataVisualizer.Visible = false;
             // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControlAdv1);
-            this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -2541,9 +2368,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).EndInit();
             this.tsBookmark.ResumeLayout(false);
             this.tsBookmark.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtpMain.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
@@ -2593,31 +2417,22 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiExcludeSource;
         private System.Windows.Forms.ToolStripMenuItem tsmiExcludeModule;
         private System.Windows.Forms.Panel pnlButtonsHighlight;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtpMain;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiTimeDiff;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.SplitContainer spltFilteringBoth;
         private System.Windows.Forms.Panel pnlFilteringLeft;
-        private DevExpress.XtraTab.XtraTabPage xtCounts;
         private System.Windows.Forms.Label lblGroupByChars;
         private System.Windows.Forms.Label lblGroupByCharsLimit;
         private DevExpress.XtraTab.XtraTabControl tcBottom;
         private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
         private DevExpress.XtraTab.XtraTabPage xtpBookmarks;
-        private DevExpress.XtraBars.StandaloneBarDockControl bdcTopFiltering;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar barTopFiltering;
-        private DevExpress.XtraBars.Bar BbarMainMenu;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarToggleSwitchItem btswitchExpand;
         private DevExpress.XtraBars.BarButtonItem bBtnSaveLog;
-        private DevExpress.XtraBars.BarButtonItem bBtnImport;
-        private DevExpress.XtraBars.BarButtonItem bBtnClearLog;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private SfButton sBtnMostCommon;
@@ -2648,7 +2463,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiOTAFullBookmark;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayoutBookmark;
-        private DevExpress.XtraBars.BarButtonItem bBtnRemoveBoomark;
         private SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
@@ -2657,7 +2471,6 @@ namespace Analogy
         private SfButton sBtnPageNext;
         private SfButton sBtnLastPage;
         private SfButton sbtnPagePrevious;
-        private DevExpress.XtraBars.BarSubItem bSMExports;
         private DevExpress.XtraBars.BarButtonItem bBtnExportExcel;
         private DevExpress.XtraBars.BarButtonItem bBtnExportCSV;
         private DevExpress.XtraBars.BarButtonItem bBtnExportHtml;
@@ -2669,15 +2482,10 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiDecreaseFontBookmark;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiREmoveAllPreviousMessages;
-        private DevExpress.XtraBars.BarButtonItem bBtnDataVisualizer;
-        private DevExpress.XtraBars.BarButtonItem bbiScreenshot;
-        private DevExpress.XtraBars.BarSubItem barSubItemSaveView;
         private DevExpress.XtraBars.BarButtonItem bbtnSaveViewAgnostic;
-        private DevExpress.XtraBars.BarSubItem barSubItemSaveEntireLog;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSaveEntireInAnalogy;
         private DevExpress.XtraEditors.TextEdit txtbGroupByCharsLimit;
         private DevExpress.XtraEditors.SpinEdit nudGroupBychars;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem bBtnUndockViewPerProcess;
         private System.Windows.Forms.SplitContainer spltText;
         private SfButton btnTextInclude;
@@ -2703,8 +2511,6 @@ namespace Analogy
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridMain;
-        public DevExpress.XtraBars.BarToggleSwitchItem btswitchRefreshLog;
-        public DevExpress.XtraBars.BarToggleSwitchItem btsAutoScrollToBottom;
         private Syncfusion.WinForms.ListView.SfComboBox cbInclude;
         private System.Windows.Forms.Panel pnlMessages;
         private Syncfusion.WinForms.ListView.SfComboBox cbExclude;
@@ -2740,12 +2546,19 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
         private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox toolStripCheckBox1;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLogDataProvider;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLogAnalogy;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveCurrentViewDataProvider;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveCurrentViewAnalogy;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbUndock;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUndockView;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUndockPerModule;
+        private System.Windows.Forms.ToolStripButton tsbScreenshot;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbExport;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExportExcel;
+        private System.Windows.Forms.ToolStripButton tsBDataVisualizer;
     }
 }

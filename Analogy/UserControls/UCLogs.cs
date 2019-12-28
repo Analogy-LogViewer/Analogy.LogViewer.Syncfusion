@@ -338,9 +338,22 @@ namespace Analogy
                 var messages = Messages;
                 SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
             };
+            tsmiUndockView.Click += (s, e) => UndockView();
 
+            tsmiUndockPerModule.Click += (s, e) => UndockViewPerProcess();
+
+            tsmiExportExcel.Click += (s, e) => ExportToExcel();
             #endregion
             #region Toolstrip Buttons
+
+            tsBookmark.Click += (s, e) =>
+            {
+                Bitmap image = takeComponentScreenShot(sfDataGridMain);
+                Clipboard.SetImage(image);
+                MessageBox.Show("Screenshot of messages was copied to clipboard.", "Image was taken",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            };
             tsBtnMessageInfoCopy.Click += (s, e) => Clipboard.SetText(tbMessageInfo.Text);
             tsBtnBookmarkCopySingle.Click += (s, e) =>
             {
@@ -1983,6 +1996,11 @@ namespace Analogy
 
         private void bBtnExportExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+        }
+
+        private void ExportToExcel()
+        {
             var count = sfDataGridMain.RowCount;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel file XLSX (*.xlsx)|*.xlsx|Excel file XLS (*.XLS)|*.xls";
@@ -1993,7 +2011,7 @@ namespace Analogy
                 {
                     if (count > 1048576)
                     {
-                        XtraMessageBox.Show($"XLSX files are limited to 1,048,576 rows (and 16,384 columns). You have {count} rows", "Export Aborted");
+                        MessageBox.Show($"XLSX files are limited to 1,048,576 rows (and 16,384 columns). You have {count} rows", "Export Aborted");
                     }
                     else
                     {
@@ -2008,7 +2026,7 @@ namespace Analogy
                 {
                     if (count > 65536)
                     {
-                        XtraMessageBox.Show($"XLS files are limited to 65,536 rows (and 256 columns). You have {count} rows", "Export Aborted");
+                        MessageBox.Show($"XLS files are limited to 65,536 rows (and 256 columns). You have {count} rows", "Export Aborted");
                     }
                     else
                     {
@@ -2021,7 +2039,6 @@ namespace Analogy
                 }
             }
         }
-
         private void bBtnExportCSV_ItemClick(object sender, ItemClickEventArgs e)
         {
             //SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -2091,6 +2108,26 @@ namespace Analogy
             SaveMessagesToLog(FileDataProvider, messages);
         }
 
+        private void UndockView()
+        {
+            var msg = Messages;
+            if (!msg.Any()) return;
+            var source = GetFilteredDataTable().Rows[0]?["DataProvider"]?.ToString();
+            if (source == null) return;
+            XtraFormLogGrid grid = new XtraFormLogGrid(msg, source);
+            lockExternalWindowsObject.EnterWriteLock();
+            _externalWindows.Add(grid);
+            Interlocked.Increment(ref ExternalWindowsCount);
+            lockExternalWindowsObject.ExitWriteLock();
+            grid.FormClosing += (s, arg) =>
+            {
+                lockExternalWindowsObject.EnterWriteLock();
+                Interlocked.Decrement(ref ExternalWindowsCount);
+                _externalWindows.Remove(grid);
+                lockExternalWindowsObject.ExitWriteLock();
+            };
+            grid.Show(this);
+        }
 
 
         private void tsmiIncreaseFont_Click(object sender, EventArgs e)
