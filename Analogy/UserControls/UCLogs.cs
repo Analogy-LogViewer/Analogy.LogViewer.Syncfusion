@@ -17,6 +17,7 @@ using Analogy.Interfaces;
 using Analogy.Types;
 using DevExpress.Data.Filtering;
 using DevExpress.XtraBars.Navigation.Accessible;
+using Syncfusion.Windows.Forms.Tools.Enums;
 using Syncfusion.WinForms.DataGrid.Interactivity;
 using Syncfusion.WinForms.DataGrid.Serialization;
 using Syncfusion.WinForms.DataPager;
@@ -534,7 +535,7 @@ namespace Analogy
                 cbExclude.Text = Settings.ExcludedText;
             }
 
-            splitContainerMain.Collapsed = true;
+            splitContainerMain.CollapsedPanel = CollapsedPanel.Panel2;
             if (Settings.StartupErrorLogLevel)
                 rbErrorCritical.Checked = true;
 
@@ -657,7 +658,7 @@ namespace Analogy
         {
             await FilterHasChanged();
         }
-        
+
         #endregion
 
         #region Messages logic
@@ -1223,8 +1224,7 @@ namespace Analogy
 
             _bookmarkedMessages.Rows.Add(dtr);
             _bookmarkedMessages.AcceptChanges();
-            splitContainerMain.Collapsed = false;
-            splitContainerMain.Collapsed = false;
+            splitContainerMain.CollapsedPanel = CollapsedPanel.None;
             tcBottom.SelectedTab = tabPageBookmarks;
             if (persists)
                 BookmarkPersistManager.Instance.AddBookmarkedMessage(message, dataprovider);
@@ -1314,7 +1314,7 @@ namespace Analogy
 
 
         }
-  
+
         private async void SaveMessagesToLog(IAnalogyOfflineDataProvider fileHandler, List<AnalogyLogMessage> messages)
         {
 
@@ -1365,7 +1365,7 @@ namespace Analogy
             }
 
         }
-    private async void sBtnMostCommon_Click(object sender, EventArgs e)
+        private async void sBtnMostCommon_Click(object sender, EventArgs e)
         {
             List<string> items;
 
@@ -1592,7 +1592,7 @@ namespace Analogy
                 }
             }
         }
-      private void OpenFolder(string filename)
+        private void OpenFolder(string filename)
         {
             try
             {
@@ -1604,7 +1604,7 @@ namespace Analogy
                     MessageBoxIcon.Error);
             }
         }
-    
+
 
         private void UndockView()
         {
@@ -1673,7 +1673,7 @@ namespace Analogy
             RefreshUIMessagesCount();
 
         }
-    private static Bitmap takeComponentScreenShot(Control control)
+        private static Bitmap takeComponentScreenShot(Control control)
         {
             // find absolute position of the control in the screen.
             Control ctrl = control;

@@ -1,4 +1,7 @@
-﻿using Syncfusion.WinForms.Controls;
+﻿using System.Windows.Forms;
+using Syncfusion.Windows.Forms.Tools.Enums;
+using Syncfusion.WinForms.Controls;
+using FixedPanel = Syncfusion.Windows.Forms.Tools.Enums.FixedPanel;
 
 namespace Analogy
 {
@@ -153,7 +156,7 @@ namespace Analogy
             this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.splitContainerMain = new Syncfusion.Windows.Forms.Tools.SplitContainerAdv();
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.tcBottom = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
@@ -244,6 +247,8 @@ namespace Analogy
             this.tsBookmark.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
+            this.splitContainerMain.Panel1.SuspendLayout();
+            this.splitContainerMain.Panel2.SuspendLayout();
             this.splitContainerMain.SuspendLayout();
             this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
@@ -477,7 +482,7 @@ namespace Analogy
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 297);
+            this.panel1.Location = new System.Drawing.Point(0, 283);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1270, 26);
@@ -487,11 +492,11 @@ namespace Analogy
             // 
             this.cbHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbHighlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHighlights.Location = new System.Drawing.Point(200, 0);
+            this.cbHighlights.Location = new System.Drawing.Point(207, 0);
             this.cbHighlights.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbHighlights.Name = "cbHighlights";
             this.cbHighlights.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.cbHighlights.Size = new System.Drawing.Size(391, 26);
+            this.cbHighlights.Size = new System.Drawing.Size(384, 26);
             this.cbHighlights.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHighlights.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHighlights.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -600,7 +605,7 @@ namespace Analogy
             this.chkbHighlight.Location = new System.Drawing.Point(0, 0);
             this.chkbHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkbHighlight.Name = "chkbHighlight";
-            this.chkbHighlight.Size = new System.Drawing.Size(200, 26);
+            this.chkbHighlight.Size = new System.Drawing.Size(207, 26);
             this.chkbHighlight.TabIndex = 11;
             this.chkbHighlight.Text = "Highlight lines that contains:";
             this.chkbHighlight.UseVisualStyleBackColor = true;
@@ -902,11 +907,11 @@ namespace Analogy
             // 
             this.cbExclude.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbExclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExclude.Location = new System.Drawing.Point(127, 0);
+            this.cbExclude.Location = new System.Drawing.Point(126, 0);
             this.cbExclude.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbExclude.Name = "cbExclude";
             this.cbExclude.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.cbExclude.Size = new System.Drawing.Size(769, 25);
+            this.cbExclude.Size = new System.Drawing.Size(770, 25);
             this.cbExclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -945,7 +950,7 @@ namespace Analogy
             this.chkExclude.Location = new System.Drawing.Point(0, 0);
             this.chkExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkExclude.Name = "chkExclude";
-            this.chkExclude.Size = new System.Drawing.Size(127, 25);
+            this.chkExclude.Size = new System.Drawing.Size(126, 25);
             this.chkExclude.TabIndex = 10;
             this.chkExclude.Text = "Exclude Text:   ";
             this.chkExclude.UseVisualStyleBackColor = true;
@@ -976,11 +981,11 @@ namespace Analogy
             // 
             this.cbInclude.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Location = new System.Drawing.Point(129, 0);
+            this.cbInclude.Location = new System.Drawing.Point(128, 0);
             this.cbInclude.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbInclude.Name = "cbInclude";
             this.cbInclude.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.cbInclude.Size = new System.Drawing.Size(878, 25);
+            this.cbInclude.Size = new System.Drawing.Size(879, 25);
             this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1006,7 +1011,7 @@ namespace Analogy
             this.chkbIncludeText.Location = new System.Drawing.Point(18, 0);
             this.chkbIncludeText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkbIncludeText.Name = "chkbIncludeText";
-            this.chkbIncludeText.Size = new System.Drawing.Size(111, 25);
+            this.chkbIncludeText.Size = new System.Drawing.Size(110, 25);
             this.chkbIncludeText.TabIndex = 9;
             this.chkbIncludeText.Text = "Include Text:";
             this.chkbIncludeText.UseVisualStyleBackColor = true;
@@ -1118,7 +1123,7 @@ namespace Analogy
             // tbMessageInfo
             // 
             this.tbMessageInfo.BackColor = System.Drawing.Color.White;
-            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(1267, 146);
+            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(1267, 154);
             this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -1128,7 +1133,7 @@ namespace Analogy
             this.tbMessageInfo.Multiline = true;
             this.tbMessageInfo.Name = "tbMessageInfo";
             this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMessageInfo.Size = new System.Drawing.Size(1267, 146);
+            this.tbMessageInfo.Size = new System.Drawing.Size(1267, 154);
             this.tbMessageInfo.TabIndex = 14;
             this.tbMessageInfo.ThemeName = "";
             // 
@@ -1253,7 +1258,7 @@ namespace Analogy
             this.sfDataGridBookmarks.PreviewRowHeight = 35;
             this.sfDataGridBookmarks.RowHeight = 20;
             this.sfDataGridBookmarks.ShowRowHeader = true;
-            this.sfDataGridBookmarks.Size = new System.Drawing.Size(1267, 146);
+            this.sfDataGridBookmarks.Size = new System.Drawing.Size(1267, 154);
             this.sfDataGridBookmarks.TabIndex = 6;
             this.sfDataGridBookmarks.Text = "Bookmarks";
             this.sfDataGridBookmarks.UsePLINQ = true;
@@ -1400,23 +1405,35 @@ namespace Analogy
             // 
             // splitContainerMain
             // 
-            this.splitContainerMain.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
+            this.splitContainerMain.BeforeTouchSize = 13;
             this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerMain.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.splitContainerMain.Horizontal = false;
+            this.splitContainerMain.FixedPanel = Syncfusion.Windows.Forms.Tools.Enums.FixedPanel.Panel2;
+            this.splitContainerMain.HotExpandLine = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainerMain.Location = new System.Drawing.Point(0, 27);
             this.splitContainerMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerMain.Name = "splitContainerMain";
+            this.splitContainerMain.Orientation = System.Windows.Forms.Orientation.Vertical;
+            // 
+            // splitContainerMain.Panel1
+            // 
+            this.splitContainerMain.Panel1.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.White, System.Drawing.Color.White);
             this.splitContainerMain.Panel1.Controls.Add(this.pnlMessages);
             this.splitContainerMain.Panel1.Controls.Add(this.panel1);
             this.splitContainerMain.Panel1.Controls.Add(this.pnlTopFiltering);
             this.splitContainerMain.Panel1.Text = "Panel1";
+            // 
+            // splitContainerMain.Panel2
+            // 
+            this.splitContainerMain.Panel2.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.White, System.Drawing.Color.White);
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
             this.splitContainerMain.Size = new System.Drawing.Size(1270, 533);
-            this.splitContainerMain.SplitterPosition = 204;
+            this.splitContainerMain.SplitterDistance = 309;
+            this.splitContainerMain.SplitterWidth = 13;
+            this.splitContainerMain.Style = Syncfusion.Windows.Forms.Tools.Enums.Style.Metro;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
+            this.splitContainerMain.ThemeName = "Metro";
             // 
             // pnlMessages
             // 
@@ -1424,7 +1441,7 @@ namespace Analogy
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
             this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(1270, 144);
+            this.pnlMessages.Size = new System.Drawing.Size(1270, 130);
             this.pnlMessages.TabIndex = 7;
             // 
             // sfDataGridMain
@@ -1525,7 +1542,7 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(1270, 144);
+            this.sfDataGridMain.Size = new System.Drawing.Size(1270, 130);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
@@ -1533,13 +1550,13 @@ namespace Analogy
             // 
             // tcBottom
             // 
-            this.tcBottom.BeforeTouchSize = new System.Drawing.Size(1270, 204);
+            this.tcBottom.BeforeTouchSize = new System.Drawing.Size(1270, 211);
             this.tcBottom.Controls.Add(this.tabPageMessageInfo);
             this.tcBottom.Controls.Add(this.tabPageBookmarks);
             this.tcBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcBottom.Location = new System.Drawing.Point(0, 0);
             this.tcBottom.Name = "tcBottom";
-            this.tcBottom.Size = new System.Drawing.Size(1270, 204);
+            this.tcBottom.Size = new System.Drawing.Size(1270, 211);
             this.tcBottom.TabIndex = 7;
             // 
             // tabPageMessageInfo
@@ -1551,7 +1568,7 @@ namespace Analogy
             this.tabPageMessageInfo.Location = new System.Drawing.Point(1, 29);
             this.tabPageMessageInfo.Name = "tabPageMessageInfo";
             this.tabPageMessageInfo.ShowCloseButton = true;
-            this.tabPageMessageInfo.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageMessageInfo.Size = new System.Drawing.Size(1267, 181);
             this.tabPageMessageInfo.TabIndex = 1;
             this.tabPageMessageInfo.Text = "Message Info";
             this.tabPageMessageInfo.ThemesEnabled = false;
@@ -1565,7 +1582,7 @@ namespace Analogy
             this.tabPageBookmarks.Location = new System.Drawing.Point(1, 29);
             this.tabPageBookmarks.Name = "tabPageBookmarks";
             this.tabPageBookmarks.ShowCloseButton = true;
-            this.tabPageBookmarks.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageBookmarks.Size = new System.Drawing.Size(1267, 181);
             this.tabPageBookmarks.TabIndex = 2;
             this.tabPageBookmarks.Text = "Bookmarks";
             this.tabPageBookmarks.ThemesEnabled = false;
@@ -1987,6 +2004,8 @@ namespace Analogy
             this.tsBookmark.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
+            this.splitContainerMain.Panel1.ResumeLayout(false);
+            this.splitContainerMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
             this.splitContainerMain.ResumeLayout(false);
             this.pnlMessages.ResumeLayout(false);
@@ -2059,7 +2078,7 @@ namespace Analogy
         private SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerMain;
+        private Syncfusion.Windows.Forms.Tools.SplitContainerAdv splitContainerMain;
         private SfButton btnPageFirst;
         private SfButton btnPageNext;
         private SfButton btnLastPage;
