@@ -282,6 +282,11 @@ namespace Analogy
             rbWarning.CheckChanged += async (s, e) => { await FilterHasChanged(); };
             rbTrace.CheckChanged += async (s, e) => { await FilterHasChanged(); };
             #endregion
+
+            btnTextInclude.Click += (s, e) => cbInclude.TextBox.Text = "";
+            btnTextExclude.Click += (s, e) => cbExclude.TextBox.Text = "";
+            btnSources.Click += (s, e) => cbSource.TextBox.Text = "";
+            btnModules.Click += (s, e) => cbModule.TextBox.Text = "";
         }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
         {

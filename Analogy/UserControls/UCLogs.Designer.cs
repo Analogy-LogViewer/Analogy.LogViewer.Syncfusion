@@ -142,22 +142,21 @@ namespace Analogy
             this.deOlderThanFilter = new DevExpress.XtraEditors.DateEdit();
             this.chkDateOlderThan = new System.Windows.Forms.CheckBox();
             this.deNewerThanFilter = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.chkDateNewerThan = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spltcProcessesModule = new System.Windows.Forms.SplitContainer();
             this.cbModule = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.sbtnIncludeModules = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnModules = new Syncfusion.WinForms.Controls.SfButton();
             this.sbtnUndockPerProcess = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbModules = new System.Windows.Forms.CheckBox();
             this.spltcSources = new System.Windows.Forms.SplitContainer();
             this.cbSource = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.sbtnIncludeSources = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnSources = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbSources = new System.Windows.Forms.CheckBox();
             this.pboxInfoExclude = new System.Windows.Forms.PictureBox();
             this.spltTextExclude = new System.Windows.Forms.SplitContainer();
             this.cbExclude = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.sbtnTextExclude = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnTextExclude = new Syncfusion.WinForms.Controls.SfButton();
             this.sBtnMostCommon = new Syncfusion.WinForms.Controls.SfButton();
             this.chkExclude = new System.Windows.Forms.CheckBox();
             this.spltText = new System.Windows.Forms.SplitContainer();
@@ -1169,7 +1168,7 @@ namespace Analogy
             this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(21, 26);
-            this.btnUp.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnUp.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnUp.TabIndex = 41;
             this.btnUp.Visible = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
@@ -1182,7 +1181,7 @@ namespace Analogy
             this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(21, 26);
-            this.btnDown.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnDown.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnDown.TabIndex = 40;
             this.btnDown.Visible = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
@@ -1262,7 +1261,6 @@ namespace Analogy
             this.spltcDateFiltering.Panel1.Controls.Add(this.deOlderThanFilter);
             this.spltcDateFiltering.Panel1.Controls.Add(this.chkDateOlderThan);
             this.spltcDateFiltering.Panel1.Controls.Add(this.deNewerThanFilter);
-            this.spltcDateFiltering.Panel1.Controls.Add(this.simpleButton1);
             this.spltcDateFiltering.Panel1.Controls.Add(this.chkDateNewerThan);
             this.spltcDateFiltering.Panel1.Controls.Add(this.pictureBox1);
             this.spltcDateFiltering.Panel2Collapsed = true;
@@ -1335,18 +1333,6 @@ namespace Analogy
             this.deNewerThanFilter.TabIndex = 25;
             this.deNewerThanFilter.EditValueChanged += new System.EventHandler(this.deNewerThanFilter_EditValueChanged);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.AccessibleName = "Button";
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.simpleButton1.Location = new System.Drawing.Point(1848, 0);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(23, 25);
-            this.simpleButton1.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.simpleButton1.TabIndex = 24;
-            // 
             // chkDateNewerThan
             // 
             this.chkDateNewerThan.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1381,7 +1367,7 @@ namespace Analogy
             // spltcProcessesModule.Panel1
             // 
             this.spltcProcessesModule.Panel1.Controls.Add(this.cbModule);
-            this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnIncludeModules);
+            this.spltcProcessesModule.Panel1.Controls.Add(this.btnModules);
             this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnUndockPerProcess);
             this.spltcProcessesModule.Panel1.Controls.Add(this.chkbModules);
             this.spltcProcessesModule.Panel2Collapsed = true;
@@ -1404,18 +1390,17 @@ namespace Analogy
             this.cbModule.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModule.TabIndex = 27;
             // 
-            // sbtnIncludeModules
+            // btnModules
             // 
-            this.sbtnIncludeModules.AccessibleName = "Button";
-            this.sbtnIncludeModules.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnIncludeModules.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnIncludeModules.Location = new System.Drawing.Point(1606, 0);
-            this.sbtnIncludeModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sbtnIncludeModules.Name = "sbtnIncludeModules";
-            this.sbtnIncludeModules.Size = new System.Drawing.Size(23, 25);
-            this.sbtnIncludeModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.sbtnIncludeModules.TabIndex = 24;
-            this.sbtnIncludeModules.Click += new System.EventHandler(this.sbtnIncludeModules_Click);
+            this.btnModules.AccessibleName = "Button";
+            this.btnModules.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnModules.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnModules.Location = new System.Drawing.Point(1606, 0);
+            this.btnModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModules.Name = "btnModules";
+            this.btnModules.Size = new System.Drawing.Size(23, 25);
+            this.btnModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnModules.TabIndex = 24;
             // 
             // sbtnUndockPerProcess
             // 
@@ -1454,7 +1439,7 @@ namespace Analogy
             // spltcSources.Panel1
             // 
             this.spltcSources.Panel1.Controls.Add(this.cbSource);
-            this.spltcSources.Panel1.Controls.Add(this.sbtnIncludeSources);
+            this.spltcSources.Panel1.Controls.Add(this.btnSources);
             this.spltcSources.Panel1.Controls.Add(this.chkbSources);
             this.spltcSources.Panel1.Controls.Add(this.pboxInfoExclude);
             this.spltcSources.Panel2Collapsed = true;
@@ -1477,18 +1462,17 @@ namespace Analogy
             this.cbSource.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSource.TabIndex = 27;
             // 
-            // sbtnIncludeSources
+            // btnSources
             // 
-            this.sbtnIncludeSources.AccessibleName = "Button";
-            this.sbtnIncludeSources.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnIncludeSources.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnIncludeSources.Location = new System.Drawing.Point(1848, 0);
-            this.sbtnIncludeSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sbtnIncludeSources.Name = "sbtnIncludeSources";
-            this.sbtnIncludeSources.Size = new System.Drawing.Size(23, 25);
-            this.sbtnIncludeSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.sbtnIncludeSources.TabIndex = 24;
-            this.sbtnIncludeSources.Click += new System.EventHandler(this.sbtnIncludeSources_Click);
+            this.btnSources.AccessibleName = "Button";
+            this.btnSources.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSources.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnSources.Location = new System.Drawing.Point(1848, 0);
+            this.btnSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSources.Name = "btnSources";
+            this.btnSources.Size = new System.Drawing.Size(23, 25);
+            this.btnSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnSources.TabIndex = 24;
             // 
             // chkbSources
             // 
@@ -1523,7 +1507,7 @@ namespace Analogy
             // spltTextExclude.Panel1
             // 
             this.spltTextExclude.Panel1.Controls.Add(this.cbExclude);
-            this.spltTextExclude.Panel1.Controls.Add(this.sbtnTextExclude);
+            this.spltTextExclude.Panel1.Controls.Add(this.btnTextExclude);
             this.spltTextExclude.Panel1.Controls.Add(this.sBtnMostCommon);
             this.spltTextExclude.Panel1.Controls.Add(this.chkExclude);
             this.spltTextExclude.Panel2Collapsed = true;
@@ -1546,18 +1530,17 @@ namespace Analogy
             this.cbExclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.TabIndex = 27;
             // 
-            // sbtnTextExclude
+            // btnTextExclude
             // 
-            this.sbtnTextExclude.AccessibleName = "Button";
-            this.sbtnTextExclude.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnTextExclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnTextExclude.Location = new System.Drawing.Point(1728, 0);
-            this.sbtnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sbtnTextExclude.Name = "sbtnTextExclude";
-            this.sbtnTextExclude.Size = new System.Drawing.Size(23, 25);
-            this.sbtnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.sbtnTextExclude.TabIndex = 20;
-            this.sbtnTextExclude.Click += new System.EventHandler(this.sbtnTextExclude_Click);
+            this.btnTextExclude.AccessibleName = "Button";
+            this.btnTextExclude.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnTextExclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnTextExclude.Location = new System.Drawing.Point(1728, 0);
+            this.btnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTextExclude.Name = "btnTextExclude";
+            this.btnTextExclude.Size = new System.Drawing.Size(23, 25);
+            this.btnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnTextExclude.TabIndex = 20;
             // 
             // sBtnMostCommon
             // 
@@ -1629,9 +1612,8 @@ namespace Analogy
             this.btnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextInclude.Name = "btnTextInclude";
             this.btnTextInclude.Size = new System.Drawing.Size(23, 25);
-            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnTextInclude.TabIndex = 20;
-            this.btnTextInclude.Click += new System.EventHandler(this.sbtnTextInclude_Click);
             // 
             // chkbIncludeText
             // 
@@ -2305,7 +2287,7 @@ namespace Analogy
             this.sBtnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnCancel.Name = "sBtnCancel";
             this.sBtnCancel.Size = new System.Drawing.Size(199, 30);
-            this.sBtnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.sBtnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.sBtnCancel.TabIndex = 5;
             this.sBtnCancel.Text = "Cancel Processing";
             this.sBtnCancel.Visible = false;
@@ -3189,17 +3171,16 @@ namespace Analogy
         private System.Windows.Forms.SplitContainer spltText;
         private SfButton btnTextInclude;
         private System.Windows.Forms.SplitContainer spltTextExclude;
-        private SfButton sbtnTextExclude;
+        private SfButton btnTextExclude;
         private System.Windows.Forms.SplitContainer spltcSources;
-        private SfButton sbtnIncludeSources;
+        private SfButton btnSources;
         private System.Windows.Forms.CheckBox chkbSources;
         private System.Windows.Forms.SplitContainer spltcProcessesModule;
         private System.Windows.Forms.CheckBox chkbModules;
-        private SfButton sbtnIncludeModules;
+        private SfButton btnModules;
         private SfButton sbtnUndockPerProcess;
         private System.Windows.Forms.SplitContainer spltcDateFiltering;
         private DevExpress.XtraEditors.DateEdit deNewerThanFilter;
-        private SfButton simpleButton1;
         private System.Windows.Forms.CheckBox chkDateNewerThan;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.DateEdit deOlderThanFilter;
