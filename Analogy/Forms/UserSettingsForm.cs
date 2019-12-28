@@ -52,16 +52,32 @@ namespace Analogy
         }
         private void LoadSettings()
         {
-            tsHistory.IsOn = Settings.ShowHistoryOfClearedMessages;
-            tsFilteringExclude.IsOn = Settings.SaveSearchFilters;
+            //Filter tab
+            tbFilteringLastEntries.ToggleState =
+                Settings.SaveSearchFilters ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+            tbDataTimeAscendDescend.ToggleState =
+                Settings.DefaultDescendOrder ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+            tbErrorLevelAsDefault.ToggleState=
+                Settings.StartupErrorLogLevel ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+
+            tbAutoComplete.ToggleState =
+                Settings.RememberLastSearches ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+
+            tbHistory.ToggleState =
+                Settings.ShowHistoryOfClearedMessages ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+
+
+            cbPaging.Checked = Settings.PagingEnabled;
+            nudPageLength.Enabled = Settings.PagingEnabled;
+
+            tbFileCaching.ToggleState =
+                Settings.EnableFileCaching ? ToggleButtonState.Active : ToggleButtonState.Inactive;
+
             nudRecent.Value = Settings.RecentFilesCount;
             tsUserStatistics.IsOn = Settings.EnableUserStatistics;
             //tsSimpleMode.IsOn = Settings.SimpleMode;
-            tsFileCaching.IsOn = Settings.EnableFileCaching;
             tswitchExtensionsStartup.IsOn = Settings.LoadExtensionsOnStartup;
             tsStartupRibbonMinimized.IsOn = Settings.StartupRibbonMinimized;
-            tsErrorLevelAsDefault.IsOn = Settings.StartupErrorLogLevel;
-            chkEditPaging.Checked = Settings.PagingEnabled;
             if (Settings.PagingEnabled)
             {
                 nudPageLength.Value = Settings.PagingSize;
@@ -71,10 +87,8 @@ namespace Analogy
                 nudPageLength.Enabled = false;
             }
 
-            checkEditSearchAlsoInSourceAndModule.Checked = Settings.SearchAlsoInSourceAndModule;
             toggleSwitchIdleMode.IsOn = Settings.IdleMode;
             nudIdleTime.Value = Settings.IdleTimeMinutes;
-            tsDataTimeAscendDescend.IsOn = Settings.DefaultDescendOrder;
             var manager = ExtensionsManager.Instance;
             var extensions = manager.GetExtensions().ToList();
             foreach (var extension in extensions)
@@ -147,7 +161,7 @@ namespace Analogy
                         : DataProviderFactoryStatus.Disabled;
                 }
             }
-            Settings.RememberLastOpenedDataProvider = tbRememberLastOpenedDataProvider.ToggleState==ToggleButtonState.Active;
+            Settings.RememberLastOpenedDataProvider = tbRememberLastOpenedDataProvider.ToggleState == ToggleButtonState.Active;
             Settings.UpdateOrder(order);
             Settings.Save();
         }
@@ -167,25 +181,50 @@ namespace Analogy
                 Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.AnalogyInformation);
             cpeHighlightColor.Color = Settings.ColorSettings.GetHighlightColor();
         }
-
-
-        private void tsFilteringExclude_Toggled(object sender, EventArgs e)
+        
+        private void UserSettingsForm_Load(object sender, EventArgs e)
         {
-            Settings.SaveSearchFilters = tsFilteringExclude.IsOn;
-
-        }
-
-        private void tsHistory_Toggled(object sender, EventArgs e)
-        {
-            Settings.ShowHistoryOfClearedMessages = tsHistory.IsOn;
-        }
-
-        private async void UserSettingsForm_Load(object sender, EventArgs e)
-        {
+            SetupEventsHandlers();
             LoadSettings();
             if (InitialSelection >= 0)
                 tabControlMain.SelectedIndex = InitialSelection;
 
+        }
+
+        private void SetupEventsHandlers()
+        {
+            tbFilteringLastEntries.ToggleStateChanged += (s, e) =>
+                {
+                    Settings.SaveSearchFilters = e.ToggleState == ToggleButtonState.Active;
+                };
+            tbDataTimeAscendDescend.ToggleStateChanged += (s, e) =>
+            {
+                Settings.DefaultDescendOrder = e.ToggleState == ToggleButtonState.Active;
+            };
+            tbErrorLevelAsDefault.ToggleStateChanged += (s, e) =>
+            {
+                Settings.StartupErrorLogLevel = tbErrorLevelAsDefault.ToggleState == ToggleButtonState.Active;
+            };
+            tbAutoComplete.ToggleStateChanged += (s, e) =>
+            {
+                Settings.RememberLastSearches = e.ToggleState == ToggleButtonState.Active;
+            };
+            tbHistory.ToggleStateChanged += (s, e) =>
+            {
+                Settings.ShowHistoryOfClearedMessages = e.ToggleState == ToggleButtonState.Active; 
+            };
+
+            cbPaging.CheckedChanged += (s, e) =>
+            {
+                Settings.PagingEnabled = cbPaging.Checked;
+                nudPageLength.Enabled = Settings.PagingEnabled;
+            };
+
+            nudPageLength.ValueChanged += (s, e) => { Settings.PagingSize = (int) nudPageLength.Value; };
+            tbFileCaching.ToggleStateChanged += (s, e) =>
+            {
+                Settings.EnableFileCaching = e.ToggleState == ToggleButtonState.Active;
+            };
         }
 
         private void nudRecent_ValueChanged(object sender, EventArgs e)
@@ -227,16 +266,6 @@ namespace Analogy
 
         }
 
-        private void tsSimpleMode_Toggled(object sender, EventArgs e)
-        {
-            //Settings.SimpleMode = tsSimpleMode.IsOn;
-        }
-
-        private void tsFileCaching_Toggled(object sender, EventArgs e)
-        {
-            Settings.EnableFileCaching = tsFileCaching.IsOn;
-        }
-
         private void tswitchExtensionsStartup_Toggled(object sender, EventArgs e)
         {
             Settings.LoadExtensionsOnStartup = tswitchExtensionsStartup.IsOn;
@@ -254,27 +283,6 @@ namespace Analogy
         private void tsStartupRibbonMinimized_Toggled(object sender, EventArgs e)
         {
             Settings.StartupRibbonMinimized = tsStartupRibbonMinimized.IsOn;
-        }
-
-        private void tsErrorLevelAsDefault_Toggled(object sender, EventArgs e)
-        {
-            Settings.StartupErrorLogLevel = tsErrorLevelAsDefault.IsOn;
-        }
-
-        private void chkEditPaging_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.PagingEnabled = chkEditPaging.Checked;
-            nudPageLength.Enabled = Settings.PagingEnabled;
-        }
-
-        private void nudPageLength_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.PagingSize = (int)nudPageLength.Value;
-        }
-
-        private void checkEditSearchAlsoInSourceAndModule_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.SearchAlsoInSourceAndModule = checkEditSearchAlsoInSourceAndModule.Checked;
         }
 
         private void ToggleSwitchIdleMode_Toggled(object sender, EventArgs e)
@@ -298,14 +306,6 @@ namespace Analogy
         private void UserSettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSetting();
-        }
-
-
-
-        private void tsDataTimeAscendDescend_Toggled(object sender, EventArgs e)
-        {
-            Settings.DefaultDescendOrder = tsDataTimeAscendDescend.IsOn;
-
         }
 
         private void sBtnExportColors_Click(object sender, EventArgs e)
@@ -421,7 +421,7 @@ namespace Analogy
         {
             if (rbtnHighlightContains.Checked)
             {
-                Settings.PreDefinedQueries.AddHighlight(teHighlightContains.Text,PreDefinedQueryType.Contains,cpeHighlightPreDefined.Color);
+                Settings.PreDefinedQueries.AddHighlight(teHighlightContains.Text, PreDefinedQueryType.Contains, cpeHighlightPreDefined.Color);
                 lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
                 lboxHighlightItems.Refresh();
             }
