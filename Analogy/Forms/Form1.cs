@@ -76,6 +76,7 @@ namespace Analogy
         }
         private async void MainForm_Load(object sender, EventArgs e)
         {
+            SetupEventHandlers();
             string[] arguments = Environment.GetCommandLineArgs();
             disableOnlineDueToFileOpen = arguments.Length == 2;
             if (DesignMode) return;
@@ -175,6 +176,60 @@ namespace Analogy
             superAccelerator1.BackColor = ColorTranslator.FromHtml("#eaf0f8");
             superAccelerator1.SetMenuButtonAccelerator(ribbonControlMain, "F");
 
+        }
+
+        private void SetupEventHandlers()
+        {
+            tsbSettingsFiltering.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(0);
+                user.ShowDialog(this);
+            };
+            tsbSettingsPreDefined.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(1);
+                user.ShowDialog(this);
+            };
+            tsbSettingsLookAndFeel.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(2);
+                user.ShowDialog(this);
+            };
+            tsbSettingsUserStatistics.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(3);
+                user.ShowDialog(this);
+            };
+            tsbSettingsExtension.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(4);
+                user.ShowDialog(this);
+            };
+            tsbSettingsShortcuts.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(5);
+                user.ShowDialog(this);
+            };
+            tsbSettingsMRU.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(6);
+                user.ShowDialog(this);
+            };
+            tsbSettingsResources.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(7);
+                user.ShowDialog(this);
+            };
+            tsbSettingsDataProviders.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(8);
+                user.ShowDialog(this);
+            };
+            tsbSettingsCustomDataProviders.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(9);
+                user.ShowDialog(this);
+            };
         }
 
         private void CreateDataSources()

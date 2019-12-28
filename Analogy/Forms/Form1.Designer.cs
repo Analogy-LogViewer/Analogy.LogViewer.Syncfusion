@@ -37,26 +37,26 @@ namespace Analogy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo1 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo2 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo3 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo4 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo5 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo6 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo7 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo8 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo9 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo10 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo11 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem5 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem6 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem7 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem8 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
-            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo12 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo13 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo14 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo15 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo16 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo17 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo18 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo19 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo20 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo21 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo22 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo23 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem9 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem10 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem11 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem12 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem13 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem14 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem15 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem16 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo24 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControlMain = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.tstitmAnalogy = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
@@ -67,15 +67,15 @@ namespace Analogy
             this.tstiSettings = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsbSettingsFiltering = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsPreDefined = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsLookAndFeel = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsUserStatistics = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsExtension = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsShortcuts = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsMRU = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsResources = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsDataProviders = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsCustomDataProviders = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -263,19 +263,19 @@ namespace Analogy
             this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbSettingsFiltering,
-            this.toolStripButton12,
-            this.toolStripButton13,
-            this.toolStripButton14,
-            this.toolStripButton15,
-            this.toolStripButton16,
-            this.toolStripButton17,
-            this.toolStripButton18,
-            this.toolStripButton19,
-            this.toolStripButton20});
+            this.tsbSettingsPreDefined,
+            this.tsbSettingsLookAndFeel,
+            this.tsbSettingsUserStatistics,
+            this.tsbSettingsExtension,
+            this.tsbSettingsShortcuts,
+            this.tsbSettingsMRU,
+            this.tsbSettingsResources,
+            this.tsbSettingsDataProviders,
+            this.tsbSettingsCustomDataProviders});
             this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
-            this.toolStripEx1.Size = new System.Drawing.Size(1116, 117);
+            this.toolStripEx1.Size = new System.Drawing.Size(1001, 117);
             this.toolStripEx1.TabIndex = 0;
             // 
             // tsbSettingsFiltering
@@ -288,93 +288,95 @@ namespace Analogy
             this.tsbSettingsFiltering.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbSettingsFiltering.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton12
+            // tsbSettingsPreDefined
             // 
-            this.toolStripButton12.Image = global::Analogy.Properties.Resources.FilterByArgument_Chart_32x32;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(137, 95);
-            this.toolStripButton12.Text = "Pre-Defined Queries";
-            this.toolStripButton12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsPreDefined.Image = global::Analogy.Properties.Resources.FilterByArgument_Chart_32x32;
+            this.tsbSettingsPreDefined.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsPreDefined.Name = "tsbSettingsPreDefined";
+            this.tsbSettingsPreDefined.Size = new System.Drawing.Size(137, 95);
+            this.tsbSettingsPreDefined.Text = "Pre-Defined Queries";
+            this.tsbSettingsPreDefined.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsPreDefined.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton13
+            // tsbSettingsLookAndFeel
             // 
-            this.toolStripButton13.Image = global::Analogy.Properties.Resources.Palette_32x32;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(98, 95);
-            this.toolStripButton13.Text = "Look and Feel";
-            this.toolStripButton13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsLookAndFeel.Image = global::Analogy.Properties.Resources.Palette_32x32;
+            this.tsbSettingsLookAndFeel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsLookAndFeel.Name = "tsbSettingsLookAndFeel";
+            this.tsbSettingsLookAndFeel.Size = new System.Drawing.Size(98, 95);
+            this.tsbSettingsLookAndFeel.Text = "Look and Feel";
+            this.tsbSettingsLookAndFeel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsLookAndFeel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton14
+            // tsbSettingsUserStatistics
             // 
-            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(98, 95);
-            this.toolStripButton14.Text = "User Statistics";
-            this.toolStripButton14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsUserStatistics.Image = global::Analogy.Properties.Resources.Statistical_32x32;
+            this.tsbSettingsUserStatistics.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsUserStatistics.Name = "tsbSettingsUserStatistics";
+            this.tsbSettingsUserStatistics.Size = new System.Drawing.Size(98, 95);
+            this.tsbSettingsUserStatistics.Text = "User Statistics";
+            this.tsbSettingsUserStatistics.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsUserStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton15
+            // tsbSettingsExtension
             // 
-            this.toolStripButton15.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton15.Image")));
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(123, 95);
-            this.toolStripButton15.Text = "toolStripButton15";
-            this.toolStripButton15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsExtension.Image = global::Analogy.Properties.Resources.Wizard_32x32;
+            this.tsbSettingsExtension.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsExtension.Name = "tsbSettingsExtension";
+            this.tsbSettingsExtension.Size = new System.Drawing.Size(77, 95);
+            this.tsbSettingsExtension.Text = "Extensions";
+            this.tsbSettingsExtension.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsExtension.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton16
+            // tsbSettingsShortcuts
             // 
-            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(123, 95);
-            this.toolStripButton16.Text = "toolStripButton16";
-            this.toolStripButton16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsShortcuts.Image = global::Analogy.Properties.Resources.FlowLayout_32x32;
+            this.tsbSettingsShortcuts.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsShortcuts.Name = "tsbSettingsShortcuts";
+            this.tsbSettingsShortcuts.Size = new System.Drawing.Size(71, 95);
+            this.tsbSettingsShortcuts.Text = "Shortcuts";
+            this.tsbSettingsShortcuts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsShortcuts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton17
+            // tsbSettingsMRU
             // 
-            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
-            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(123, 95);
-            this.toolStripButton17.Text = "toolStripButton17";
-            this.toolStripButton17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsMRU.Image = global::Analogy.Properties.Resources.RecentlyUse_32x32;
+            this.tsbSettingsMRU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsMRU.Name = "tsbSettingsMRU";
+            this.tsbSettingsMRU.Size = new System.Drawing.Size(44, 95);
+            this.tsbSettingsMRU.Text = "MRU";
+            this.tsbSettingsMRU.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsMRU.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton18
+            // tsbSettingsResources
             // 
-            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(123, 95);
-            this.toolStripButton18.Text = "toolStripButton18";
-            this.toolStripButton18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsResources.Image = global::Analogy.Properties.Resources.StackedLine_32x32;
+            this.tsbSettingsResources.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsResources.Name = "tsbSettingsResources";
+            this.tsbSettingsResources.Size = new System.Drawing.Size(110, 95);
+            this.tsbSettingsResources.Text = "Resource Usage";
+            this.tsbSettingsResources.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsResources.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton19
+            // tsbSettingsDataProviders
             // 
-            this.toolStripButton19.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton19.Image")));
-            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(123, 95);
-            this.toolStripButton19.Text = "toolStripButton19";
-            this.toolStripButton19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSettingsDataProviders.Image = global::Analogy.Properties.Resources.Database_on;
+            this.tsbSettingsDataProviders.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsDataProviders.Name = "tsbSettingsDataProviders";
+            this.tsbSettingsDataProviders.Size = new System.Drawing.Size(103, 95);
+            this.tsbSettingsDataProviders.Text = "Data Providers";
+            this.tsbSettingsDataProviders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsDataProviders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton20
+            // tsbSettingsCustomDataProviders
             // 
-            this.toolStripButton20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton20.Image")));
-            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton20.Name = "toolStripButton20";
-            this.toolStripButton20.Size = new System.Drawing.Size(143, 24);
-            this.toolStripButton20.Text = "toolStripButton20";
+            this.tsbSettingsCustomDataProviders.Image = global::Analogy.Properties.Resources.Analogy_Icon2;
+            this.tsbSettingsCustomDataProviders.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsCustomDataProviders.Name = "tsbSettingsCustomDataProviders";
+            this.tsbSettingsCustomDataProviders.Size = new System.Drawing.Size(155, 95);
+            this.tsbSettingsCustomDataProviders.Text = "Custom Data providers";
+            this.tsbSettingsCustomDataProviders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsCustomDataProviders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton1
             // 
@@ -387,15 +389,15 @@ namespace Analogy
             this.toolStripButton1.Text = "Properties";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo1.BackColor = System.Drawing.Color.White;
-            toolTipInfo1.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo1.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Body.Text = "\r\nShow the properties of the selected item.\r\n";
-            toolTipInfo1.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo1.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo1.Header.Text = "Properties (Alt + Enter)";
-            this.superToolTip1.SetToolTip(this.toolStripButton1, toolTipInfo1);
+            toolTipInfo13.BackColor = System.Drawing.Color.White;
+            toolTipInfo13.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo13.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo13.Body.Text = "\r\nShow the properties of the selected item.\r\n";
+            toolTipInfo13.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo13.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo13.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo13.Header.Text = "Properties (Alt + Enter)";
+            this.superToolTip1.SetToolTip(this.toolStripButton1, toolTipInfo13);
             // 
             // toolStripButton2
             // 
@@ -408,15 +410,15 @@ namespace Analogy
             this.toolStripButton2.Text = "Open";
             this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo2.BackColor = System.Drawing.Color.White;
-            toolTipInfo2.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo2.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Body.Text = "\r\nOpen the selected file with default program.";
-            toolTipInfo2.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo2.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo2.Header.Text = "Open";
-            this.superToolTip1.SetToolTip(this.toolStripButton2, toolTipInfo2);
+            toolTipInfo14.BackColor = System.Drawing.Color.White;
+            toolTipInfo14.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo14.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo14.Body.Text = "\r\nOpen the selected file with default program.";
+            toolTipInfo14.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo14.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo14.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo14.Header.Text = "Open";
+            this.superToolTip1.SetToolTip(this.toolStripButton2, toolTipInfo14);
             // 
             // toolStripButton3
             // 
@@ -429,15 +431,15 @@ namespace Analogy
             this.toolStripButton3.Text = "Rename";
             this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo3.BackColor = System.Drawing.Color.White;
-            toolTipInfo3.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo3.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Body.Text = "\r\nRename the selected item.\r\n";
-            toolTipInfo3.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo3.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo3.Header.Text = "Rename (F2)";
-            this.superToolTip1.SetToolTip(this.toolStripButton3, toolTipInfo3);
+            toolTipInfo15.BackColor = System.Drawing.Color.White;
+            toolTipInfo15.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo15.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo15.Body.Text = "\r\nRename the selected item.\r\n";
+            toolTipInfo15.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo15.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo15.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo15.Header.Text = "Rename (F2)";
+            this.superToolTip1.SetToolTip(this.toolStripButton3, toolTipInfo15);
             // 
             // toolStripTabItem1
             // 
@@ -487,15 +489,15 @@ namespace Analogy
             this.toolStripDropDownButton1.Text = "Access \r\nMedia";
             this.toolStripDropDownButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo4.BackColor = System.Drawing.Color.White;
-            toolTipInfo4.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo4.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Body.Text = "\r\nConnect to or disconnect from media server.\r\n";
-            toolTipInfo4.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo4.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo4.Header.Text = "Access Media\r\n";
-            this.superToolTip1.SetToolTip(this.toolStripDropDownButton1, toolTipInfo4);
+            toolTipInfo16.BackColor = System.Drawing.Color.White;
+            toolTipInfo16.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo16.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo16.Body.Text = "\r\nConnect to or disconnect from media server.\r\n";
+            toolTipInfo16.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo16.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo16.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo16.Header.Text = "Access Media\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripDropDownButton1, toolTipInfo16);
             // 
             // fsfToolStripMenuItem
             // 
@@ -560,15 +562,15 @@ namespace Analogy
             this.toolStripButton4.Text = "Open \r\nSettings";
             this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo5.BackColor = System.Drawing.Color.White;
-            toolTipInfo5.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo5.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Body.Text = "\r\nChange settings and customized the functionality of your computer.\r\n";
-            toolTipInfo5.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo5.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo5.Header.Text = "Open Settings\r\n";
-            this.superToolTip1.SetToolTip(this.toolStripButton4, toolTipInfo5);
+            toolTipInfo17.BackColor = System.Drawing.Color.White;
+            toolTipInfo17.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo17.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo17.Body.Text = "\r\nChange settings and customized the functionality of your computer.\r\n";
+            toolTipInfo17.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo17.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo17.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo17.Header.Text = "Open Settings\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripButton4, toolTipInfo17);
             // 
             // toolStripPanelItem1
             // 
@@ -594,15 +596,15 @@ namespace Analogy
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(234, 24);
             this.toolStripButton5.Text = "Uninstall or change a program";
-            toolTipInfo6.BackColor = System.Drawing.Color.White;
-            toolTipInfo6.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo6.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Body.Text = "\r\nUninstalled a program, change installed features or repair an installation.";
-            toolTipInfo6.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo6.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo6.Header.Text = "Uninstall or change a program";
-            this.superToolTip1.SetToolTip(this.toolStripButton5, toolTipInfo6);
+            toolTipInfo18.BackColor = System.Drawing.Color.White;
+            toolTipInfo18.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo18.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo18.Body.Text = "\r\nUninstalled a program, change installed features or repair an installation.";
+            toolTipInfo18.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo18.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo18.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo18.Header.Text = "Uninstall or change a program";
+            this.superToolTip1.SetToolTip(this.toolStripButton5, toolTipInfo18);
             // 
             // toolStripButton6
             // 
@@ -614,16 +616,16 @@ namespace Analogy
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(151, 24);
             this.toolStripButton6.Text = "System Properties";
-            toolTipInfo7.BackColor = System.Drawing.Color.White;
-            toolTipInfo7.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo7.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Body.Text = "\r\nShow information about your computer, such as processor speed or amount of inst" +
+            toolTipInfo19.BackColor = System.Drawing.Color.White;
+            toolTipInfo19.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo19.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo19.Body.Text = "\r\nShow information about your computer, such as processor speed or amount of inst" +
     "alled memory.\r\n";
-            toolTipInfo7.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo7.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo7.Header.Text = "System Properties";
-            this.superToolTip1.SetToolTip(this.toolStripButton6, toolTipInfo7);
+            toolTipInfo19.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo19.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo19.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo19.Header.Text = "System Properties";
+            this.superToolTip1.SetToolTip(this.toolStripButton6, toolTipInfo19);
             // 
             // toolStripButton7
             // 
@@ -635,15 +637,15 @@ namespace Analogy
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(87, 24);
             this.toolStripButton7.Text = "Manage";
-            toolTipInfo8.BackColor = System.Drawing.Color.White;
-            toolTipInfo8.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo8.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Body.Text = "\r\nManage storage,events, Task scheduling, services and more..";
-            toolTipInfo8.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo8.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo8.Header.Text = "Manage";
-            this.superToolTip1.SetToolTip(this.toolStripButton7, toolTipInfo8);
+            toolTipInfo20.BackColor = System.Drawing.Color.White;
+            toolTipInfo20.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo20.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo20.Body.Text = "\r\nManage storage,events, Task scheduling, services and more..";
+            toolTipInfo20.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo20.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo20.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo20.Header.Text = "Manage";
+            this.superToolTip1.SetToolTip(this.toolStripButton7, toolTipInfo20);
             // 
             // toolStripDropDownButton4
             // 
@@ -662,15 +664,15 @@ namespace Analogy
             this.toolStripDropDownButton4.Text = "Navigation\r\nPane";
             this.toolStripDropDownButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripDropDownButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            toolTipInfo9.BackColor = System.Drawing.Color.White;
-            toolTipInfo9.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo9.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo9.Body.Text = "\r\nChoose what to display in the navigation pane.\r\n";
-            toolTipInfo9.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo9.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo9.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo9.Header.Text = "Navigation Pane";
-            this.superToolTip1.SetToolTip(this.toolStripDropDownButton4, toolTipInfo9);
+            toolTipInfo21.BackColor = System.Drawing.Color.White;
+            toolTipInfo21.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo21.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo21.Body.Text = "\r\nChoose what to display in the navigation pane.\r\n";
+            toolTipInfo21.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo21.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo21.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo21.Header.Text = "Navigation Pane";
+            this.superToolTip1.SetToolTip(this.toolStripDropDownButton4, toolTipInfo21);
             // 
             // navigationPaneToolStripMenuItem
             // 
@@ -723,15 +725,15 @@ namespace Analogy
             this.toolStripButton8.Padding = new System.Windows.Forms.Padding(4);
             this.toolStripButton8.Size = new System.Drawing.Size(129, 32);
             this.toolStripButton8.Text = "Preview pane";
-            toolTipInfo10.BackColor = System.Drawing.Color.White;
-            toolTipInfo10.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo10.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo10.Body.Text = "\r\nShow or hide the preview pane.\r\n";
-            toolTipInfo10.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo10.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo10.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo10.Header.Text = "Preview Pane(Alt + P)";
-            this.superToolTip1.SetToolTip(this.toolStripButton8, toolTipInfo10);
+            toolTipInfo22.BackColor = System.Drawing.Color.White;
+            toolTipInfo22.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo22.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo22.Body.Text = "\r\nShow or hide the preview pane.\r\n";
+            toolTipInfo22.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo22.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo22.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo22.Header.Text = "Preview Pane(Alt + P)";
+            this.superToolTip1.SetToolTip(this.toolStripButton8, toolTipInfo22);
             // 
             // toolStripButton9
             // 
@@ -744,15 +746,15 @@ namespace Analogy
             this.toolStripButton9.Padding = new System.Windows.Forms.Padding(6);
             this.toolStripButton9.Size = new System.Drawing.Size(128, 36);
             this.toolStripButton9.Text = "Details pane";
-            toolTipInfo11.BackColor = System.Drawing.Color.White;
-            toolTipInfo11.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo11.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo11.Body.Text = "\r\nShow or hide the details pane.\r\n";
-            toolTipInfo11.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo11.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo11.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo11.Header.Text = "Details Pane (Alt + Shift + P)";
-            this.superToolTip1.SetToolTip(this.toolStripButton9, toolTipInfo11);
+            toolTipInfo23.BackColor = System.Drawing.Color.White;
+            toolTipInfo23.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo23.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo23.Body.Text = "\r\nShow or hide the details pane.\r\n";
+            toolTipInfo23.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo23.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo23.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo23.Header.Text = "Details Pane (Alt + Shift + P)";
+            this.superToolTip1.SetToolTip(this.toolStripButton9, toolTipInfo23);
             // 
             // toolStripGallery1
             // 
@@ -770,38 +772,38 @@ namespace Analogy
             this.toolStripGallery1.ItemBackColor = System.Drawing.Color.Empty;
             this.toolStripGallery1.ItemImageSize = new System.Drawing.Size(10, 10);
             this.toolStripGallery1.ItemPadding = new System.Windows.Forms.Padding(0);
-            toolStripGalleryItem1.ImageIndex = 0;
-            toolStripGalleryItem1.Text = "Extra large icons";
-            toolStripGalleryItem1.ToolTipText = "";
-            toolStripGalleryItem2.ImageIndex = 3;
-            toolStripGalleryItem2.Text = "Large icons";
-            toolStripGalleryItem2.ToolTipText = "";
-            toolStripGalleryItem3.ImageIndex = 6;
-            toolStripGalleryItem3.Text = "Medium icons";
-            toolStripGalleryItem3.ToolTipText = "";
-            toolStripGalleryItem4.ImageIndex = 1;
-            toolStripGalleryItem4.Text = "Small icons";
-            toolStripGalleryItem4.ToolTipText = "";
-            toolStripGalleryItem5.ImageIndex = 4;
-            toolStripGalleryItem5.Text = "List";
-            toolStripGalleryItem5.ToolTipText = "";
-            toolStripGalleryItem6.ImageIndex = 7;
-            toolStripGalleryItem6.Text = "Details";
-            toolStripGalleryItem6.ToolTipText = "";
-            toolStripGalleryItem7.ImageIndex = 2;
-            toolStripGalleryItem7.Text = "Tiles";
-            toolStripGalleryItem7.ToolTipText = "";
-            toolStripGalleryItem8.ImageIndex = 5;
-            toolStripGalleryItem8.Text = "Content";
-            toolStripGalleryItem8.ToolTipText = "";
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem1);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem2);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem3);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem4);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem5);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem6);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem7);
-            this.toolStripGallery1.Items.Add(toolStripGalleryItem8);
+            toolStripGalleryItem9.ImageIndex = 0;
+            toolStripGalleryItem9.Text = "Extra large icons";
+            toolStripGalleryItem9.ToolTipText = "";
+            toolStripGalleryItem10.ImageIndex = 3;
+            toolStripGalleryItem10.Text = "Large icons";
+            toolStripGalleryItem10.ToolTipText = "";
+            toolStripGalleryItem11.ImageIndex = 6;
+            toolStripGalleryItem11.Text = "Medium icons";
+            toolStripGalleryItem11.ToolTipText = "";
+            toolStripGalleryItem12.ImageIndex = 1;
+            toolStripGalleryItem12.Text = "Small icons";
+            toolStripGalleryItem12.ToolTipText = "";
+            toolStripGalleryItem13.ImageIndex = 4;
+            toolStripGalleryItem13.Text = "List";
+            toolStripGalleryItem13.ToolTipText = "";
+            toolStripGalleryItem14.ImageIndex = 7;
+            toolStripGalleryItem14.Text = "Details";
+            toolStripGalleryItem14.ToolTipText = "";
+            toolStripGalleryItem15.ImageIndex = 2;
+            toolStripGalleryItem15.Text = "Tiles";
+            toolStripGalleryItem15.ToolTipText = "";
+            toolStripGalleryItem16.ImageIndex = 5;
+            toolStripGalleryItem16.Text = "Content";
+            toolStripGalleryItem16.ToolTipText = "";
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem9);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem10);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem11);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem12);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem13);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem14);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem15);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem16);
             this.toolStripGallery1.ItemSize = new System.Drawing.Size(100, 17);
             this.toolStripGallery1.ItemTextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolStripGallery1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 1);
@@ -811,15 +813,15 @@ namespace Analogy
             this.toolStripGallery1.Size = new System.Drawing.Size(321, 64);
             this.toolStripGallery1.Text = "toolStripGallery1";
             this.toolStripGallery1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            toolTipInfo12.BackColor = System.Drawing.Color.White;
-            toolTipInfo12.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo12.Body.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo12.Body.Text = "\r\nChange your view.\r\n";
-            toolTipInfo12.Footer.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo12.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            toolTipInfo12.Header.Size = new System.Drawing.Size(20, 20);
-            toolTipInfo12.Header.Text = "More";
-            this.superToolTip1.SetToolTip(this.toolStripGallery1, toolTipInfo12);
+            toolTipInfo24.BackColor = System.Drawing.Color.White;
+            toolTipInfo24.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo24.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo24.Body.Text = "\r\nChange your view.\r\n";
+            toolTipInfo24.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo24.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo24.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo24.Header.Text = "More";
+            this.superToolTip1.SetToolTip(this.toolStripGallery1, toolTipInfo24);
             // 
             // imageList1
             // 
@@ -1042,14 +1044,14 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstiSettings;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private System.Windows.Forms.ToolStripButton tsbSettingsFiltering;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
-        private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
-        private System.Windows.Forms.ToolStripButton toolStripButton18;
-        private System.Windows.Forms.ToolStripButton toolStripButton19;
-        private System.Windows.Forms.ToolStripButton toolStripButton20;
+        private System.Windows.Forms.ToolStripButton tsbSettingsPreDefined;
+        private System.Windows.Forms.ToolStripButton tsbSettingsLookAndFeel;
+        private System.Windows.Forms.ToolStripButton tsbSettingsUserStatistics;
+        private System.Windows.Forms.ToolStripButton tsbSettingsExtension;
+        private System.Windows.Forms.ToolStripButton tsbSettingsShortcuts;
+        private System.Windows.Forms.ToolStripButton tsbSettingsMRU;
+        private System.Windows.Forms.ToolStripButton tsbSettingsResources;
+        private System.Windows.Forms.ToolStripButton tsbSettingsDataProviders;
+        private System.Windows.Forms.ToolStripButton tsbSettingsCustomDataProviders;
     }
 }
