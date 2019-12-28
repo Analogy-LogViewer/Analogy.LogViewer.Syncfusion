@@ -1,9 +1,4 @@
-﻿using System.Windows.Forms;
-using Syncfusion.Windows.Forms.Tools.Enums;
-using Syncfusion.WinForms.Controls;
-using FixedPanel = Syncfusion.Windows.Forms.Tools.Enums.FixedPanel;
-
-namespace Analogy
+﻿namespace Analogy
 {
     partial class UCLogs
     {
@@ -2056,7 +2051,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.SplitContainer spltFilteringBoth;
         private System.Windows.Forms.Panel pnlFilteringLeft;
-        private SfButton sBtnMostCommon;
+        private Syncfusion.WinForms.Controls.SfButton sBtnMostCommon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayout;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkPersist;
@@ -2075,14 +2070,14 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiOTAFullBookmark;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayoutBookmark;
-        private SfButton btnCancel;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
         private Syncfusion.Windows.Forms.Tools.SplitContainerAdv splitContainerMain;
-        private SfButton btnPageFirst;
-        private SfButton btnPageNext;
-        private SfButton btnLastPage;
-        private SfButton btnPagePrevious;
+        private Syncfusion.WinForms.Controls.SfButton btnPageFirst;
+        private Syncfusion.WinForms.Controls.SfButton btnPageNext;
+        private Syncfusion.WinForms.Controls.SfButton btnLastPage;
+        private Syncfusion.WinForms.Controls.SfButton btnPagePrevious;
         private System.Windows.Forms.ToolStripMenuItem tsmiIncreaseFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiDecreaseFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiIncreaseFontBookmark;
@@ -2090,16 +2085,16 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiClearLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiREmoveAllPreviousMessages;
         private System.Windows.Forms.SplitContainer spltText;
-        private SfButton btnTextInclude;
+        private Syncfusion.WinForms.Controls.SfButton btnTextInclude;
         private System.Windows.Forms.SplitContainer spltTextExclude;
-        private SfButton btnTextExclude;
+        private Syncfusion.WinForms.Controls.SfButton btnTextExclude;
         private System.Windows.Forms.SplitContainer spltcSources;
-        private SfButton btnSources;
+        private Syncfusion.WinForms.Controls.SfButton btnSources;
         private System.Windows.Forms.CheckBox chkbSources;
         private System.Windows.Forms.SplitContainer spltcProcessesModule;
         private System.Windows.Forms.CheckBox chkbModules;
-        private SfButton btnModules;
-        private SfButton sbtnUndockPerProcess;
+        private Syncfusion.WinForms.Controls.SfButton btnModules;
+        private Syncfusion.WinForms.Controls.SfButton sbtnUndockPerProcess;
         private System.Windows.Forms.SplitContainer spltcDateFiltering;
         private System.Windows.Forms.CheckBox chkDateNewerThan;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -2108,8 +2103,8 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiDateFilterOlder;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkDateFilterNewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkDateFilterOlder;
-        private SfButton sbtnMoreHighlight;
-        private SfButton sbtnPreDefinedFilters;
+        private Syncfusion.WinForms.Controls.SfButton sbtnMoreHighlight;
+        private Syncfusion.WinForms.Controls.SfButton sbtnPreDefinedFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
         private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridMain;
         private Syncfusion.WinForms.ListView.SfComboBox cbInclude;
