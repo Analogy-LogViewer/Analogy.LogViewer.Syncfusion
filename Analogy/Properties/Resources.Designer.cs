@@ -752,6 +752,46 @@ namespace Analogy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Filter_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Filter_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filter_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Filter_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FilterByArgument_Chart_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("FilterByArgument_Chart_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FilterByArgument_Chart_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("FilterByArgument_Chart_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap First_16x16 {
             get {
                 object obj = ResourceManager.GetObject("First_16x16", resourceCulture);
@@ -1235,6 +1275,26 @@ namespace Analogy.Properties {
         internal static System.Drawing.Bitmap PageSetup_32x32 {
             get {
                 object obj = ResourceManager.GetObject("PageSetup_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palette_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Palette_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palette_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Palette_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

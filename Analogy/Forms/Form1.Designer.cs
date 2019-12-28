@@ -64,6 +64,18 @@ namespace Analogy
             this.tsbtnAnalogyOpenFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbtnAnalogyOpenFiles = new System.Windows.Forms.ToolStripButton();
             this.tsbtnAnalogyRecentlyOpenFiles = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tstiSettings = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbSettingsFiltering = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -108,6 +120,8 @@ namespace Analogy
             this.ribbonControlMain.SuspendLayout();
             this.tstitmAnalogy.Panel.SuspendLayout();
             this.tseAnalogyBuiltInProviders.SuspendLayout();
+            this.tstiSettings.Panel.SuspendLayout();
+            this.toolStripEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
             this.MainStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +133,7 @@ namespace Analogy
             this.ribbonControlMain.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControlMain.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ribbonControlMain.Header.AddMainItem(tstitmAnalogy);
+            this.ribbonControlMain.Header.AddMainItem(tstiSettings);
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton1));
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton2));
             this.ribbonControlMain.Header.AddQuickItem(new Syncfusion.Windows.Forms.Tools.QuickButtonReflectable(toolStripButton3));
@@ -142,7 +157,7 @@ namespace Analogy
             this.ribbonControlMain.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlMain.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlMain.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2013;
-            this.ribbonControlMain.SelectedTab = this.tstitmAnalogy;
+            this.ribbonControlMain.SelectedTab = this.tstiSettings;
             this.ribbonControlMain.ShowRibbonDisplayOptionButton = false;
             this.ribbonControlMain.Size = new System.Drawing.Size(1155, 197);
             this.ribbonControlMain.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -218,6 +233,148 @@ namespace Analogy
             this.tsbtnAnalogyRecentlyOpenFiles.Text = "Recently Opened Files";
             this.tsbtnAnalogyRecentlyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnAnalogyRecentlyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tstiSettings
+            // 
+            this.tstiSettings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tstiSettings.Name = "tstiSettings";
+            // 
+            // ribbonControlMain.ribbonPanel2
+            // 
+            this.tstiSettings.Panel.Controls.Add(this.toolStripEx1);
+            this.tstiSettings.Panel.Name = "ribbonPanel2";
+            this.tstiSettings.Panel.ScrollPosition = 0;
+            this.tstiSettings.Panel.TabIndex = 5;
+            this.tstiSettings.Panel.Text = "Settings";
+            this.tstiSettings.Position = 1;
+            this.tstiSettings.Size = new System.Drawing.Size(82, 39);
+            this.tstiSettings.Tag = "3";
+            this.tstiSettings.Text = "Settings";
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.AutoSize = false;
+            this.superAccelerator1.SetCollapsedDropDownAccelerator(this.toolStripEx1, null);
+            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbSettingsFiltering,
+            this.toolStripButton12,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripButton15,
+            this.toolStripButton16,
+            this.toolStripButton17,
+            this.toolStripButton18,
+            this.toolStripButton19,
+            this.toolStripButton20});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.Size = new System.Drawing.Size(1116, 117);
+            this.toolStripEx1.TabIndex = 0;
+            // 
+            // tsbSettingsFiltering
+            // 
+            this.tsbSettingsFiltering.Image = global::Analogy.Properties.Resources.Filter_32x32;
+            this.tsbSettingsFiltering.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsFiltering.Name = "tsbSettingsFiltering";
+            this.tsbSettingsFiltering.Size = new System.Drawing.Size(62, 95);
+            this.tsbSettingsFiltering.Text = "Filtering";
+            this.tsbSettingsFiltering.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsFiltering.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Image = global::Analogy.Properties.Resources.FilterByArgument_Chart_32x32;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(137, 95);
+            this.toolStripButton12.Text = "Pre-Defined Queries";
+            this.toolStripButton12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.Image = global::Analogy.Properties.Resources.Palette_32x32;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(98, 95);
+            this.toolStripButton13.Text = "Look and Feel";
+            this.toolStripButton13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(98, 95);
+            this.toolStripButton14.Text = "User Statistics";
+            this.toolStripButton14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton15.Image")));
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(123, 95);
+            this.toolStripButton15.Text = "toolStripButton15";
+            this.toolStripButton15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton16
+            // 
+            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(123, 95);
+            this.toolStripButton16.Text = "toolStripButton16";
+            this.toolStripButton16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton17
+            // 
+            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(123, 95);
+            this.toolStripButton17.Text = "toolStripButton17";
+            this.toolStripButton17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(123, 95);
+            this.toolStripButton18.Text = "toolStripButton18";
+            this.toolStripButton18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton19
+            // 
+            this.toolStripButton19.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton19.Image")));
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(123, 95);
+            this.toolStripButton19.Text = "toolStripButton19";
+            this.toolStripButton19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton20
+            // 
+            this.toolStripButton20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton20.Image")));
+            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton20.Name = "toolStripButton20";
+            this.toolStripButton20.Size = new System.Drawing.Size(143, 24);
+            this.toolStripButton20.Text = "toolStripButton20";
             // 
             // toolStripButton1
             // 
@@ -823,6 +980,9 @@ namespace Analogy
             this.tstitmAnalogy.Panel.PerformLayout();
             this.tseAnalogyBuiltInProviders.ResumeLayout(false);
             this.tseAnalogyBuiltInProviders.PerformLayout();
+            this.tstiSettings.Panel.ResumeLayout(false);
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
             this.MainStatusStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -879,5 +1039,17 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFiles;
         private System.Windows.Forms.ToolStripDropDownButton tsbtnAnalogyRecentlyOpenFiles;
         private System.Windows.Forms.Timer TmrAutoConnect;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstiSettings;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton tsbSettingsFiltering;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripButton toolStripButton19;
+        private System.Windows.Forms.ToolStripButton toolStripButton20;
     }
 }
