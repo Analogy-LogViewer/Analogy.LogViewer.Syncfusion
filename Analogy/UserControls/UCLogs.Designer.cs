@@ -42,19 +42,19 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn15 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn16 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn17 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn18 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn19 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn20 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn21 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cmsMessageOperation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiClearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiREmoveAllPreviousMessages = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +166,12 @@ namespace Analogy
             this.chkbIncludeText = new System.Windows.Forms.CheckBox();
             this.pboxInfo = new System.Windows.Forms.PictureBox();
             this.sbtnPreDefinedFilters = new Syncfusion.WinForms.Controls.SfButton();
+            this.rbVerbose = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbDebug = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbWarning = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbErrorCritical = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbTrace = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.tcBottom = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMessageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.rtxtContent = new DevExpress.XtraEditors.MemoEdit();
@@ -243,12 +249,6 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.rbTrace = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.rbErrorCritical = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.rbWarning = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.rbDebug = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
-            this.rbVerbose = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).BeginInit();
@@ -286,6 +286,12 @@ namespace Analogy
             this.spltText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbAllLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
             this.tcBottom.SuspendLayout();
             this.xtpMessageInfo.SuspendLayout();
@@ -314,12 +320,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAllLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1228,7 +1228,7 @@ namespace Analogy
             this.spltFilteringBoth.Panel2.Controls.Add(this.rbWarning);
             this.spltFilteringBoth.Panel2.Controls.Add(this.rbErrorCritical);
             this.spltFilteringBoth.Panel2.Controls.Add(this.rbTrace);
-            this.spltFilteringBoth.Panel2.Controls.Add(this.tbAllLevel);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbAllLevel);
             this.spltFilteringBoth.Panel2MinSize = 150;
             this.spltFilteringBoth.Size = new System.Drawing.Size(2124, 153);
             this.spltFilteringBoth.SplitterDistance = 1881;
@@ -1671,6 +1671,84 @@ namespace Analogy
             this.sbtnPreDefinedFilters.TabIndex = 21;
             this.sbtnPreDefinedFilters.Click += new System.EventHandler(this.sbtnPreDefinedFilters_Click);
             // 
+            // rbVerbose
+            // 
+            this.rbVerbose.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbVerbose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbVerbose.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbVerbose.Location = new System.Drawing.Point(0, 100);
+            this.rbVerbose.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbVerbose.Name = "rbVerbose";
+            this.rbVerbose.Size = new System.Drawing.Size(240, 20);
+            this.rbVerbose.TabIndex = 28;
+            this.rbVerbose.TabStop = false;
+            this.rbVerbose.Text = "Verbose";
+            // 
+            // rbDebug
+            // 
+            this.rbDebug.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbDebug.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbDebug.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbDebug.Location = new System.Drawing.Point(0, 80);
+            this.rbDebug.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbDebug.Name = "rbDebug";
+            this.rbDebug.Size = new System.Drawing.Size(240, 20);
+            this.rbDebug.TabIndex = 27;
+            this.rbDebug.TabStop = false;
+            this.rbDebug.Text = "Debug";
+            // 
+            // rbWarning
+            // 
+            this.rbWarning.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbWarning.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbWarning.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbWarning.Location = new System.Drawing.Point(0, 60);
+            this.rbWarning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbWarning.Name = "rbWarning";
+            this.rbWarning.Size = new System.Drawing.Size(240, 20);
+            this.rbWarning.TabIndex = 26;
+            this.rbWarning.TabStop = false;
+            this.rbWarning.Text = "Warning";
+            // 
+            // rbErrorCritical
+            // 
+            this.rbErrorCritical.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbErrorCritical.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbErrorCritical.Location = new System.Drawing.Point(0, 40);
+            this.rbErrorCritical.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbErrorCritical.Name = "rbErrorCritical";
+            this.rbErrorCritical.Size = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.TabIndex = 25;
+            this.rbErrorCritical.TabStop = false;
+            this.rbErrorCritical.Text = "Errors + Critical";
+            // 
+            // rbTrace
+            // 
+            this.rbTrace.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbTrace.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbTrace.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbTrace.Location = new System.Drawing.Point(0, 20);
+            this.rbTrace.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbTrace.Name = "rbTrace";
+            this.rbTrace.Size = new System.Drawing.Size(240, 20);
+            this.rbTrace.TabIndex = 24;
+            this.rbTrace.TabStop = false;
+            this.rbTrace.Text = "Trace";
+            // 
+            // rbAllLevel
+            // 
+            this.rbAllLevel.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbAllLevel.Checked = true;
+            this.rbAllLevel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbAllLevel.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbAllLevel.Location = new System.Drawing.Point(0, 0);
+            this.rbAllLevel.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbAllLevel.Name = "rbAllLevel";
+            this.rbAllLevel.Size = new System.Drawing.Size(240, 20);
+            this.rbAllLevel.TabIndex = 23;
+            this.rbAllLevel.Text = "All";
+            // 
             // tcBottom
             // 
             this.tcBottom.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2090,89 +2168,89 @@ namespace Analogy
             this.sfDataGridMain.AllowEditing = false;
             this.sfDataGridMain.AllowResizingColumns = true;
             this.sfDataGridMain.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn13.AllowDragging = true;
-            gridTextColumn13.AllowEditing = false;
-            gridTextColumn13.AllowResizing = true;
-            gridTextColumn13.HeaderText = "Data Source/File Name";
-            gridTextColumn13.MappingName = "DataProvider";
-            gridDateTimeColumn2.AllowDragging = true;
-            gridDateTimeColumn2.AllowEditing = false;
-            gridDateTimeColumn2.AllowResizing = true;
-            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn2.HeaderText = "Date";
-            gridDateTimeColumn2.MappingName = "Date";
-            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn14.AllowDragging = true;
-            gridTextColumn14.AllowEditing = false;
-            gridTextColumn14.AllowResizing = true;
-            gridTextColumn14.HeaderText = "Time Differenace";
-            gridTextColumn14.MappingName = "TimeDiff";
-            gridTextColumn14.Visible = false;
-            gridTextColumn15.AllowDragging = true;
-            gridTextColumn15.AllowEditing = false;
-            gridTextColumn15.AllowResizing = true;
-            gridTextColumn15.HeaderText = "Text";
-            gridTextColumn15.MappingName = "Text";
-            gridTextColumn16.AllowDragging = true;
-            gridTextColumn16.AllowEditing = false;
-            gridTextColumn16.AllowResizing = true;
-            gridTextColumn16.HeaderText = "Source";
-            gridTextColumn16.MappingName = "Source";
-            gridTextColumn17.AllowDragging = true;
-            gridTextColumn17.AllowEditing = false;
-            gridTextColumn17.AllowResizing = true;
-            gridTextColumn17.HeaderText = "Level";
-            gridTextColumn17.MappingName = "Level";
-            gridTextColumn18.AllowDragging = true;
-            gridTextColumn18.AllowEditing = false;
-            gridTextColumn18.AllowResizing = true;
-            gridTextColumn18.HeaderText = "Class";
-            gridTextColumn18.MappingName = "Class";
-            gridTextColumn19.AllowDragging = true;
-            gridTextColumn19.AllowEditing = false;
-            gridTextColumn19.AllowResizing = true;
-            gridTextColumn19.HeaderText = "Category";
-            gridTextColumn19.MappingName = "Category";
-            gridTextColumn20.AllowDragging = true;
-            gridTextColumn20.AllowEditing = false;
-            gridTextColumn20.AllowResizing = true;
-            gridTextColumn20.HeaderText = "User";
-            gridTextColumn20.MappingName = "User";
-            gridTextColumn21.AllowDragging = true;
-            gridTextColumn21.AllowEditing = false;
-            gridTextColumn21.AllowResizing = true;
-            gridTextColumn21.HeaderText = "Module";
-            gridTextColumn21.MappingName = "Module";
-            gridTextColumn22.AllowDragging = true;
-            gridTextColumn22.AllowEditing = false;
-            gridTextColumn22.AllowResizing = true;
-            gridTextColumn22.HeaderText = "Object";
-            gridTextColumn22.MappingName = "Object";
-            gridTextColumn22.Visible = false;
-            gridTextColumn23.AllowDragging = true;
-            gridTextColumn23.AllowEditing = false;
-            gridTextColumn23.AllowResizing = true;
-            gridTextColumn23.HeaderText = "Process ID";
-            gridTextColumn23.MappingName = "ProcessID";
-            gridTextColumn24.AllowDragging = true;
-            gridTextColumn24.AllowEditing = false;
-            gridTextColumn24.AllowResizing = true;
-            gridTextColumn24.HeaderText = "Thread id";
-            gridTextColumn24.MappingName = "ThreadID";
-            this.sfDataGridMain.Columns.Add(gridTextColumn13);
-            this.sfDataGridMain.Columns.Add(gridDateTimeColumn2);
-            this.sfDataGridMain.Columns.Add(gridTextColumn14);
-            this.sfDataGridMain.Columns.Add(gridTextColumn15);
-            this.sfDataGridMain.Columns.Add(gridTextColumn16);
-            this.sfDataGridMain.Columns.Add(gridTextColumn17);
-            this.sfDataGridMain.Columns.Add(gridTextColumn18);
-            this.sfDataGridMain.Columns.Add(gridTextColumn19);
-            this.sfDataGridMain.Columns.Add(gridTextColumn20);
-            this.sfDataGridMain.Columns.Add(gridTextColumn21);
-            this.sfDataGridMain.Columns.Add(gridTextColumn22);
-            this.sfDataGridMain.Columns.Add(gridTextColumn23);
-            this.sfDataGridMain.Columns.Add(gridTextColumn24);
+            gridTextColumn1.AllowDragging = true;
+            gridTextColumn1.AllowEditing = false;
+            gridTextColumn1.AllowResizing = true;
+            gridTextColumn1.HeaderText = "Data Source/File Name";
+            gridTextColumn1.MappingName = "DataProvider";
+            gridDateTimeColumn1.AllowDragging = true;
+            gridDateTimeColumn1.AllowEditing = false;
+            gridDateTimeColumn1.AllowResizing = true;
+            gridDateTimeColumn1.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn1.HeaderText = "Date";
+            gridDateTimeColumn1.MappingName = "Date";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn2.AllowDragging = true;
+            gridTextColumn2.AllowEditing = false;
+            gridTextColumn2.AllowResizing = true;
+            gridTextColumn2.HeaderText = "Time Differenace";
+            gridTextColumn2.MappingName = "TimeDiff";
+            gridTextColumn2.Visible = false;
+            gridTextColumn3.AllowDragging = true;
+            gridTextColumn3.AllowEditing = false;
+            gridTextColumn3.AllowResizing = true;
+            gridTextColumn3.HeaderText = "Text";
+            gridTextColumn3.MappingName = "Text";
+            gridTextColumn4.AllowDragging = true;
+            gridTextColumn4.AllowEditing = false;
+            gridTextColumn4.AllowResizing = true;
+            gridTextColumn4.HeaderText = "Source";
+            gridTextColumn4.MappingName = "Source";
+            gridTextColumn5.AllowDragging = true;
+            gridTextColumn5.AllowEditing = false;
+            gridTextColumn5.AllowResizing = true;
+            gridTextColumn5.HeaderText = "Level";
+            gridTextColumn5.MappingName = "Level";
+            gridTextColumn6.AllowDragging = true;
+            gridTextColumn6.AllowEditing = false;
+            gridTextColumn6.AllowResizing = true;
+            gridTextColumn6.HeaderText = "Class";
+            gridTextColumn6.MappingName = "Class";
+            gridTextColumn7.AllowDragging = true;
+            gridTextColumn7.AllowEditing = false;
+            gridTextColumn7.AllowResizing = true;
+            gridTextColumn7.HeaderText = "Category";
+            gridTextColumn7.MappingName = "Category";
+            gridTextColumn8.AllowDragging = true;
+            gridTextColumn8.AllowEditing = false;
+            gridTextColumn8.AllowResizing = true;
+            gridTextColumn8.HeaderText = "User";
+            gridTextColumn8.MappingName = "User";
+            gridTextColumn9.AllowDragging = true;
+            gridTextColumn9.AllowEditing = false;
+            gridTextColumn9.AllowResizing = true;
+            gridTextColumn9.HeaderText = "Module";
+            gridTextColumn9.MappingName = "Module";
+            gridTextColumn10.AllowDragging = true;
+            gridTextColumn10.AllowEditing = false;
+            gridTextColumn10.AllowResizing = true;
+            gridTextColumn10.HeaderText = "Object";
+            gridTextColumn10.MappingName = "Object";
+            gridTextColumn10.Visible = false;
+            gridTextColumn11.AllowDragging = true;
+            gridTextColumn11.AllowEditing = false;
+            gridTextColumn11.AllowResizing = true;
+            gridTextColumn11.HeaderText = "Process ID";
+            gridTextColumn11.MappingName = "ProcessID";
+            gridTextColumn12.AllowDragging = true;
+            gridTextColumn12.AllowEditing = false;
+            gridTextColumn12.AllowResizing = true;
+            gridTextColumn12.HeaderText = "Thread id";
+            gridTextColumn12.MappingName = "ThreadID";
+            this.sfDataGridMain.Columns.Add(gridTextColumn1);
+            this.sfDataGridMain.Columns.Add(gridDateTimeColumn1);
+            this.sfDataGridMain.Columns.Add(gridTextColumn2);
+            this.sfDataGridMain.Columns.Add(gridTextColumn3);
+            this.sfDataGridMain.Columns.Add(gridTextColumn4);
+            this.sfDataGridMain.Columns.Add(gridTextColumn5);
+            this.sfDataGridMain.Columns.Add(gridTextColumn6);
+            this.sfDataGridMain.Columns.Add(gridTextColumn7);
+            this.sfDataGridMain.Columns.Add(gridTextColumn8);
+            this.sfDataGridMain.Columns.Add(gridTextColumn9);
+            this.sfDataGridMain.Columns.Add(gridTextColumn10);
+            this.sfDataGridMain.Columns.Add(gridTextColumn11);
+            this.sfDataGridMain.Columns.Add(gridTextColumn12);
             this.sfDataGridMain.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
@@ -2856,84 +2934,6 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tbAllLevel
-            // 
-            this.tbAllLevel.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.tbAllLevel.Checked = true;
-            this.tbAllLevel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbAllLevel.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.tbAllLevel.Location = new System.Drawing.Point(0, 0);
-            this.tbAllLevel.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.tbAllLevel.Name = "tbAllLevel";
-            this.tbAllLevel.Size = new System.Drawing.Size(240, 20);
-            this.tbAllLevel.TabIndex = 23;
-            this.tbAllLevel.Text = "All";
-            // 
-            // rbTrace
-            // 
-            this.rbTrace.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.rbTrace.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbTrace.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.rbTrace.Location = new System.Drawing.Point(0, 20);
-            this.rbTrace.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.rbTrace.Name = "rbTrace";
-            this.rbTrace.Size = new System.Drawing.Size(240, 20);
-            this.rbTrace.TabIndex = 24;
-            this.rbTrace.TabStop = false;
-            this.rbTrace.Text = "Trace";
-            // 
-            // rbErrorCritical
-            // 
-            this.rbErrorCritical.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.rbErrorCritical.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbErrorCritical.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.rbErrorCritical.Location = new System.Drawing.Point(0, 40);
-            this.rbErrorCritical.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.rbErrorCritical.Name = "rbErrorCritical";
-            this.rbErrorCritical.Size = new System.Drawing.Size(240, 20);
-            this.rbErrorCritical.TabIndex = 25;
-            this.rbErrorCritical.TabStop = false;
-            this.rbErrorCritical.Text = "Errors + Critical";
-            // 
-            // rbWarning
-            // 
-            this.rbWarning.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.rbWarning.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbWarning.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.rbWarning.Location = new System.Drawing.Point(0, 60);
-            this.rbWarning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.rbWarning.Name = "rbWarning";
-            this.rbWarning.Size = new System.Drawing.Size(240, 20);
-            this.rbWarning.TabIndex = 26;
-            this.rbWarning.TabStop = false;
-            this.rbWarning.Text = "Warning";
-            // 
-            // rbDebug
-            // 
-            this.rbDebug.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.rbDebug.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbDebug.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.rbDebug.Location = new System.Drawing.Point(0, 80);
-            this.rbDebug.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.rbDebug.Name = "rbDebug";
-            this.rbDebug.Size = new System.Drawing.Size(240, 20);
-            this.rbDebug.TabIndex = 27;
-            this.rbDebug.TabStop = false;
-            this.rbDebug.Text = "Debug";
-            // 
-            // rbVerbose
-            // 
-            this.rbVerbose.BeforeTouchSize = new System.Drawing.Size(240, 20);
-            this.rbVerbose.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbVerbose.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.rbVerbose.Location = new System.Drawing.Point(0, 100);
-            this.rbVerbose.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
-            this.rbVerbose.Name = "rbVerbose";
-            this.rbVerbose.Size = new System.Drawing.Size(240, 20);
-            this.rbVerbose.TabIndex = 28;
-            this.rbVerbose.TabStop = false;
-            this.rbVerbose.Text = "Verbose";
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2990,6 +2990,12 @@ namespace Analogy
             this.spltText.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbAllLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
             this.tcBottom.ResumeLayout(false);
             this.xtpMessageInfo.ResumeLayout(false);
@@ -3021,12 +3027,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tbAllLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3221,7 +3221,7 @@ namespace Analogy
         private Syncfusion.WinForms.ListView.SfComboBox cbExclude;
         private Syncfusion.WinForms.ListView.SfComboBox cbModule;
         private Syncfusion.WinForms.ListView.SfComboBox cbSource;
-        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv tbAllLevel;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbAllLevel;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbVerbose;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbDebug;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbWarning;

@@ -7,8 +7,6 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraPrinting;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -135,7 +133,7 @@ namespace Analogy
         {
             //include combobox
             //cbInclude. txtbInclude.SelectAll();
-            cbInclude.TextChanged += async (s, e) =>
+            cbInclude.TextBox.TextChanged += async (s, e) =>
              {
                  if (OldTextInclude.Equals(cbInclude.Text)) return;
                  OldTextInclude = cbInclude.Text;
@@ -154,13 +152,13 @@ namespace Analogy
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                 var added= Settings.AddNewSearchesEntryToLists(cbInclude.Text,true);
-                 if (added)
-                     cbInclude.DataSource = Settings.LastSearchesInclude;
+                    var added = Settings.AddNewSearchesEntryToLists(cbInclude.Text, true);
+                    if (added)
+                        cbInclude.DataSource = Settings.LastSearchesInclude;
                 }
             };
 
-            cbExclude.TextChanged += async (s, e) =>
+            cbExclude.TextBox.TextChanged += async (s, e) =>
             {
                 if (OldTextExclude.Equals(cbExclude.Text)) return;
                 Settings.ExcludedText = cbExclude.Text;
@@ -184,7 +182,7 @@ namespace Analogy
                 }
             };
 
-            cbSource.TextChanged += async (s, e) =>
+            cbSource.TextBox.TextChanged += async (s, e) =>
             {
                 if (string.IsNullOrEmpty(cbSource.Text))
                 {
@@ -200,7 +198,7 @@ namespace Analogy
                 Settings.SourceText = cbSource.Text;
             };
 
-            cbModule.TextChanged += async (s, e) =>
+            cbModule.TextBox.TextChanged += async (s, e) =>
             {
                 if (string.IsNullOrEmpty(cbModule.Text))
                 {
@@ -273,6 +271,16 @@ namespace Analogy
                 //    OnFocusedRowChanged?.Invoke(this, (dataProvider, m));
                 //}
             };
+            #endregion
+
+            #region Radio buttons log level
+
+            rbAllLevel.CheckChanged += async (s, e) => { await FilterHasChanged(); };
+            rbErrorCritical.CheckChanged += async (s, e) => { await FilterHasChanged(); };
+            rbDebug.CheckChanged += async (s, e) => { await FilterHasChanged(); };
+            rbVerbose.CheckChanged += async (s, e) => { await FilterHasChanged(); };
+            rbWarning.CheckChanged += async (s, e) => { await FilterHasChanged(); };
+            rbTrace.CheckChanged += async (s, e) => { await FilterHasChanged(); };
             #endregion
         }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
@@ -1447,7 +1455,7 @@ namespace Analogy
                 cbModule.Text = cbModule.Text + ",-" + message.Module;
         }
 
-  
+
         private void tsmiTimeDiff_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
@@ -1826,7 +1834,7 @@ namespace Analogy
 
         private (AnalogyLogMessage, string) GetMessageFromSelectedRowInGrid()
         {
-            if (sfDataGridMain.SelectedItems == null) return (null, string.Empty);
+            if (!sfDataGridMain.SelectedItems.Any()) return (null, string.Empty);
             var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>();
             DataRow dataRow = selectedItems.First().Row;
             AnalogyLogMessage message = GetMessageFromRow(dataRow);
@@ -2194,7 +2202,7 @@ namespace Analogy
 
         private void sbtnTextExclude_Click(object sender, EventArgs e)
         {
-           // txtbExclude.Text = "";
+            // txtbExclude.Text = "";
         }
 
         private void sbtnIncludeSources_Click(object sender, EventArgs e)
@@ -2406,7 +2414,7 @@ namespace Analogy
 
             }
         }
-        }
+    }
 }
 
 
