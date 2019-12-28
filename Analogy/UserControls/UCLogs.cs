@@ -341,9 +341,9 @@ namespace Analogy
             tsmiUndockView.Click += (s, e) => UndockView();
             tsmiUndockPerModule.Click += (s, e) => UndockViewPerProcess();
             tsmiExportExcel.Click += (s, e) => ExportToExcel();
-            tsTopRefresh.CheckedChanged += (s, e) =>
+            tsTopPauseRefresh.CheckedChanged += (s, e) =>
             {
-                _realtimeUpdate = tsTopRefresh.Checked;
+                _realtimeUpdate = !tsTopPauseRefresh.Checked;
                 AcceptChanges(false);
             };
             tsTopAutoScrollToLast.CheckedChanged += (s, e) =>
@@ -531,8 +531,7 @@ namespace Analogy
                 cbInclude.Text = Settings.IncludeText;
                 cbExclude.Text = Settings.ExcludedText;
             }
-            tsTopRefresh.Checked = true;
-
+         
             splitContainerMain.Collapsed = true; 
             if (Settings.StartupErrorLogLevel)
                 rbErrorCritical.Checked = true;

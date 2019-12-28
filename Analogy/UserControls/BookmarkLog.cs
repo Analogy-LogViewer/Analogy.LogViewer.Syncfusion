@@ -21,7 +21,7 @@ namespace Analogy
         private async void BookmarkLog_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-            ucLogs1.tsTopRefresh.Visible = false;
+            ucLogs1.tsTopPauseRefresh.Visible = false;
             ucLogs1.tsTopAutoScrollToLast.Visible = false;
             ucLogs1.SetBookmarkMode();
             var messages = await BookmarkPersistManager.Instance.GetMessages();

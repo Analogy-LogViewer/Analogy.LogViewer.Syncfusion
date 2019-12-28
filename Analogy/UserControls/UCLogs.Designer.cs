@@ -42,6 +42,19 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn25 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn3 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn26 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn27 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn28 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn29 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn30 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn31 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn32 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn33 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn34 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn35 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn36 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
@@ -55,19 +68,6 @@ namespace Analogy
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cmsMessageOperation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiClearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiREmoveAllPreviousMessages = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,15 +103,6 @@ namespace Analogy
             this.btnLastPage = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bBtnSaveEntireLog = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemSaveEntireInAnalogy = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnSaveLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnSaveViewAgnostic = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnUndockView = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnUndockViewPerProcess = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExportExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExportCSV = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExportHtml = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -119,11 +110,20 @@ namespace Analogy
             this.bdcMessageBottom = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnSaveLog = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnExpand = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnButtomExpand = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnCopyButtom = new DevExpress.XtraBars.BarButtonItem();
             this.btSwitchExpandButtomMessage = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.bBtnExportExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnExportCSV = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnExportHtml = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnUndockView = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnSaveEntireLog = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnSaveViewAgnostic = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemSaveEntireInAnalogy = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnUndockViewPerProcess = new DevExpress.XtraBars.BarButtonItem();
             this.pnlTopFiltering = new System.Windows.Forms.Panel();
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
             this.pnlFilteringLeft = new System.Windows.Forms.Panel();
@@ -217,7 +217,7 @@ namespace Analogy
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.tsTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
-            this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
+            this.tsTopPauseRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.tsTopAutoScrollToLast = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.tsddbSave = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiSaveFullLog = new System.Windows.Forms.ToolStripMenuItem();
@@ -232,8 +232,8 @@ namespace Analogy
             this.tsbScreenshot = new System.Windows.Forms.ToolStripButton();
             this.tsddbExport = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiExportExcel = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.tsBDataVisualizer = new System.Windows.Forms.ToolStripButton();
+            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -672,90 +672,6 @@ namespace Analogy
             this.bBtnUndockViewPerProcess});
             this.barManager1.MaxItemId = 36;
             // 
-            // bBtnSaveEntireLog
-            // 
-            this.bBtnSaveEntireLog.Caption = "Save Entire Log (custom Format)";
-            this.bBtnSaveEntireLog.Id = 25;
-            this.bBtnSaveEntireLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.Image")));
-            this.bBtnSaveEntireLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.LargeImage")));
-            this.bBtnSaveEntireLog.Name = "bBtnSaveEntireLog";
-            this.bBtnSaveEntireLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnSaveEntireLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveEntireLog_ItemClick);
-            // 
-            // barButtonItemSaveEntireInAnalogy
-            // 
-            this.barButtonItemSaveEntireInAnalogy.Caption = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
-            this.barButtonItemSaveEntireInAnalogy.Id = 32;
-            this.barButtonItemSaveEntireInAnalogy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.Image")));
-            this.barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage")));
-            this.barButtonItemSaveEntireInAnalogy.Name = "barButtonItemSaveEntireInAnalogy";
-            this.barButtonItemSaveEntireInAnalogy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemSaveEntireInAnalogy_ItemClick);
-            // 
-            // bBtnSaveLog
-            // 
-            this.bBtnSaveLog.Caption = "Save Current View (custom Format)";
-            this.bBtnSaveLog.Id = 4;
-            this.bBtnSaveLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.Image")));
-            this.bBtnSaveLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.LargeImage")));
-            this.bBtnSaveLog.Name = "bBtnSaveLog";
-            this.bBtnSaveLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnSaveLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveLog_ItemClick);
-            // 
-            // bbtnSaveViewAgnostic
-            // 
-            this.bbtnSaveViewAgnostic.Caption = "Save Current View in Analogy Format (agnostic to Specific implementation)";
-            this.bbtnSaveViewAgnostic.Id = 30;
-            this.bbtnSaveViewAgnostic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.Image")));
-            this.bbtnSaveViewAgnostic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.LargeImage")));
-            this.bbtnSaveViewAgnostic.Name = "bbtnSaveViewAgnostic";
-            this.bbtnSaveViewAgnostic.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbtnSaveViewAgnostic_ItemClick);
-            // 
-            // bBtnUndockView
-            // 
-            this.bBtnUndockView.Caption = "Undock View (No Filtering)";
-            this.bBtnUndockView.Id = 24;
-            this.bBtnUndockView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.Image")));
-            this.bBtnUndockView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.LargeImage")));
-            this.bBtnUndockView.Name = "bBtnUndockView";
-            this.bBtnUndockView.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnUndockView.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockView_ItemClick);
-            // 
-            // bBtnUndockViewPerProcess
-            // 
-            this.bBtnUndockViewPerProcess.Caption = "Undock View per process/Module";
-            this.bBtnUndockViewPerProcess.Id = 35;
-            this.bBtnUndockViewPerProcess.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.Image")));
-            this.bBtnUndockViewPerProcess.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.LargeImage")));
-            this.bBtnUndockViewPerProcess.Name = "bBtnUndockViewPerProcess";
-            this.bBtnUndockViewPerProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockViewPerProcess_ItemClick);
-            // 
-            // bBtnExportExcel
-            // 
-            this.bBtnExportExcel.Caption = "Export To Excel";
-            this.bBtnExportExcel.Id = 21;
-            this.bBtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.Image")));
-            this.bBtnExportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.LargeImage")));
-            this.bBtnExportExcel.Name = "bBtnExportExcel";
-            // 
-            // bBtnExportCSV
-            // 
-            this.bBtnExportCSV.Caption = "Export To CSV";
-            this.bBtnExportCSV.Id = 22;
-            this.bBtnExportCSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.Image")));
-            this.bBtnExportCSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.LargeImage")));
-            this.bBtnExportCSV.Name = "bBtnExportCSV";
-            // 
-            // bBtnExportHtml
-            // 
-            this.bBtnExportHtml.Caption = "Export To Html";
-            this.bBtnExportHtml.Id = 23;
-            this.bBtnExportHtml.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.Image")));
-            this.bBtnExportHtml.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.LargeImage")));
-            this.bBtnExportHtml.Name = "bBtnExportHtml";
-            this.bBtnExportHtml.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnExportHtml.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnExportHtml.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportHtml_ItemClick);
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -816,6 +732,16 @@ namespace Analogy
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // bBtnSaveLog
+            // 
+            this.bBtnSaveLog.Caption = "Save Current View (custom Format)";
+            this.bBtnSaveLog.Id = 4;
+            this.bBtnSaveLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.Image")));
+            this.bBtnSaveLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.LargeImage")));
+            this.bBtnSaveLog.Name = "bBtnSaveLog";
+            this.bBtnSaveLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bBtnSaveLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveLog_ItemClick);
+            // 
             // bBtnExpand
             // 
             this.bBtnExpand.Caption = "Expand";
@@ -860,6 +786,80 @@ namespace Analogy
             this.btSwitchExpandButtomMessage.Id = 11;
             this.btSwitchExpandButtomMessage.Name = "btSwitchExpandButtomMessage";
             this.btSwitchExpandButtomMessage.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barToggleSwitchItem1_CheckedChanged);
+            // 
+            // bBtnExportExcel
+            // 
+            this.bBtnExportExcel.Caption = "Export To Excel";
+            this.bBtnExportExcel.Id = 21;
+            this.bBtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.Image")));
+            this.bBtnExportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.LargeImage")));
+            this.bBtnExportExcel.Name = "bBtnExportExcel";
+            // 
+            // bBtnExportCSV
+            // 
+            this.bBtnExportCSV.Caption = "Export To CSV";
+            this.bBtnExportCSV.Id = 22;
+            this.bBtnExportCSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.Image")));
+            this.bBtnExportCSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.LargeImage")));
+            this.bBtnExportCSV.Name = "bBtnExportCSV";
+            // 
+            // bBtnExportHtml
+            // 
+            this.bBtnExportHtml.Caption = "Export To Html";
+            this.bBtnExportHtml.Id = 23;
+            this.bBtnExportHtml.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.Image")));
+            this.bBtnExportHtml.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportHtml.ImageOptions.LargeImage")));
+            this.bBtnExportHtml.Name = "bBtnExportHtml";
+            this.bBtnExportHtml.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bBtnExportHtml.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bBtnExportHtml.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportHtml_ItemClick);
+            // 
+            // bBtnUndockView
+            // 
+            this.bBtnUndockView.Caption = "Undock View (No Filtering)";
+            this.bBtnUndockView.Id = 24;
+            this.bBtnUndockView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.Image")));
+            this.bBtnUndockView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.LargeImage")));
+            this.bBtnUndockView.Name = "bBtnUndockView";
+            this.bBtnUndockView.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bBtnUndockView.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockView_ItemClick);
+            // 
+            // bBtnSaveEntireLog
+            // 
+            this.bBtnSaveEntireLog.Caption = "Save Entire Log (custom Format)";
+            this.bBtnSaveEntireLog.Id = 25;
+            this.bBtnSaveEntireLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.Image")));
+            this.bBtnSaveEntireLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.LargeImage")));
+            this.bBtnSaveEntireLog.Name = "bBtnSaveEntireLog";
+            this.bBtnSaveEntireLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bBtnSaveEntireLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveEntireLog_ItemClick);
+            // 
+            // bbtnSaveViewAgnostic
+            // 
+            this.bbtnSaveViewAgnostic.Caption = "Save Current View in Analogy Format (agnostic to Specific implementation)";
+            this.bbtnSaveViewAgnostic.Id = 30;
+            this.bbtnSaveViewAgnostic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.Image")));
+            this.bbtnSaveViewAgnostic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.LargeImage")));
+            this.bbtnSaveViewAgnostic.Name = "bbtnSaveViewAgnostic";
+            this.bbtnSaveViewAgnostic.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbtnSaveViewAgnostic_ItemClick);
+            // 
+            // barButtonItemSaveEntireInAnalogy
+            // 
+            this.barButtonItemSaveEntireInAnalogy.Caption = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
+            this.barButtonItemSaveEntireInAnalogy.Id = 32;
+            this.barButtonItemSaveEntireInAnalogy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.Image")));
+            this.barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage")));
+            this.barButtonItemSaveEntireInAnalogy.Name = "barButtonItemSaveEntireInAnalogy";
+            this.barButtonItemSaveEntireInAnalogy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemSaveEntireInAnalogy_ItemClick);
+            // 
+            // bBtnUndockViewPerProcess
+            // 
+            this.bBtnUndockViewPerProcess.Caption = "Undock View per process/Module";
+            this.bBtnUndockViewPerProcess.Id = 35;
+            this.bBtnUndockViewPerProcess.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.Image")));
+            this.bBtnUndockViewPerProcess.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.LargeImage")));
+            this.bBtnUndockViewPerProcess.Name = "bBtnUndockViewPerProcess";
+            this.bBtnUndockViewPerProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockViewPerProcess_ItemClick);
             // 
             // pnlTopFiltering
             // 
@@ -937,7 +937,7 @@ namespace Analogy
             this.deOlderThanFilter.DateTimeEditingMode = Syncfusion.WinForms.Input.Enums.DateTimeEditingMode.Mask;
             this.deOlderThanFilter.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.deOlderThanFilter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deOlderThanFilter.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            this.deOlderThanFilter.Format = "yyyy.MM.dd HH:mm:ss";
             this.deOlderThanFilter.Location = new System.Drawing.Point(579, 0);
             this.deOlderThanFilter.Name = "deOlderThanFilter";
             this.deOlderThanFilter.Size = new System.Drawing.Size(235, 25);
@@ -962,7 +962,7 @@ namespace Analogy
             this.deNewerThanFilter.DateTimeEditingMode = Syncfusion.WinForms.Input.Enums.DateTimeEditingMode.Mask;
             this.deNewerThanFilter.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.deNewerThanFilter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deNewerThanFilter.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            this.deNewerThanFilter.Format = "yyyy.MM.dd HH:mm:ss";
             this.deNewerThanFilter.Location = new System.Drawing.Point(232, 0);
             this.deNewerThanFilter.Name = "deNewerThanFilter";
             this.deNewerThanFilter.Size = new System.Drawing.Size(235, 25);
@@ -1445,89 +1445,89 @@ namespace Analogy
             this.sfDataGridBookmarks.AllowEditing = false;
             this.sfDataGridBookmarks.AllowResizingColumns = true;
             this.sfDataGridBookmarks.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn13.AllowDragging = true;
-            gridTextColumn13.AllowEditing = false;
-            gridTextColumn13.AllowResizing = true;
-            gridTextColumn13.HeaderText = "Data Source/File Name";
-            gridTextColumn13.MappingName = "DataProvider";
-            gridDateTimeColumn2.AllowDragging = true;
-            gridDateTimeColumn2.AllowEditing = false;
-            gridDateTimeColumn2.AllowResizing = true;
-            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn2.HeaderText = "Date";
-            gridDateTimeColumn2.MappingName = "Date";
-            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn14.AllowDragging = true;
-            gridTextColumn14.AllowEditing = false;
-            gridTextColumn14.AllowResizing = true;
-            gridTextColumn14.HeaderText = "Time Differenace";
-            gridTextColumn14.MappingName = "TimeDiff";
-            gridTextColumn14.Visible = false;
-            gridTextColumn15.AllowDragging = true;
-            gridTextColumn15.AllowEditing = false;
-            gridTextColumn15.AllowResizing = true;
-            gridTextColumn15.HeaderText = "Text";
-            gridTextColumn15.MappingName = "Text";
-            gridTextColumn16.AllowDragging = true;
-            gridTextColumn16.AllowEditing = false;
-            gridTextColumn16.AllowResizing = true;
-            gridTextColumn16.HeaderText = "Source";
-            gridTextColumn16.MappingName = "Source";
-            gridTextColumn17.AllowDragging = true;
-            gridTextColumn17.AllowEditing = false;
-            gridTextColumn17.AllowResizing = true;
-            gridTextColumn17.HeaderText = "Level";
-            gridTextColumn17.MappingName = "Level";
-            gridTextColumn18.AllowDragging = true;
-            gridTextColumn18.AllowEditing = false;
-            gridTextColumn18.AllowResizing = true;
-            gridTextColumn18.HeaderText = "Class";
-            gridTextColumn18.MappingName = "Class";
-            gridTextColumn19.AllowDragging = true;
-            gridTextColumn19.AllowEditing = false;
-            gridTextColumn19.AllowResizing = true;
-            gridTextColumn19.HeaderText = "Category";
-            gridTextColumn19.MappingName = "Category";
-            gridTextColumn20.AllowDragging = true;
-            gridTextColumn20.AllowEditing = false;
-            gridTextColumn20.AllowResizing = true;
-            gridTextColumn20.HeaderText = "User";
-            gridTextColumn20.MappingName = "User";
-            gridTextColumn21.AllowDragging = true;
-            gridTextColumn21.AllowEditing = false;
-            gridTextColumn21.AllowResizing = true;
-            gridTextColumn21.HeaderText = "Module";
-            gridTextColumn21.MappingName = "Module";
-            gridTextColumn22.AllowDragging = true;
-            gridTextColumn22.AllowEditing = false;
-            gridTextColumn22.AllowResizing = true;
-            gridTextColumn22.HeaderText = "Object";
-            gridTextColumn22.MappingName = "Object";
-            gridTextColumn22.Visible = false;
-            gridTextColumn23.AllowDragging = true;
-            gridTextColumn23.AllowEditing = false;
-            gridTextColumn23.AllowResizing = true;
-            gridTextColumn23.HeaderText = "Process ID";
-            gridTextColumn23.MappingName = "ProcessID";
-            gridTextColumn24.AllowDragging = true;
-            gridTextColumn24.AllowEditing = false;
-            gridTextColumn24.AllowResizing = true;
-            gridTextColumn24.HeaderText = "Thread id";
-            gridTextColumn24.MappingName = "ThreadID";
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn13);
-            this.sfDataGridBookmarks.Columns.Add(gridDateTimeColumn2);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn14);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn15);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn16);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn17);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn18);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn19);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn20);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn21);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn22);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn23);
-            this.sfDataGridBookmarks.Columns.Add(gridTextColumn24);
+            gridTextColumn25.AllowDragging = true;
+            gridTextColumn25.AllowEditing = false;
+            gridTextColumn25.AllowResizing = true;
+            gridTextColumn25.HeaderText = "Data Source/File Name";
+            gridTextColumn25.MappingName = "DataProvider";
+            gridDateTimeColumn3.AllowDragging = true;
+            gridDateTimeColumn3.AllowEditing = false;
+            gridDateTimeColumn3.AllowResizing = true;
+            gridDateTimeColumn3.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn3.HeaderText = "Date";
+            gridDateTimeColumn3.MappingName = "Date";
+            gridDateTimeColumn3.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn3.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn26.AllowDragging = true;
+            gridTextColumn26.AllowEditing = false;
+            gridTextColumn26.AllowResizing = true;
+            gridTextColumn26.HeaderText = "Time Differenace";
+            gridTextColumn26.MappingName = "TimeDiff";
+            gridTextColumn26.Visible = false;
+            gridTextColumn27.AllowDragging = true;
+            gridTextColumn27.AllowEditing = false;
+            gridTextColumn27.AllowResizing = true;
+            gridTextColumn27.HeaderText = "Text";
+            gridTextColumn27.MappingName = "Text";
+            gridTextColumn28.AllowDragging = true;
+            gridTextColumn28.AllowEditing = false;
+            gridTextColumn28.AllowResizing = true;
+            gridTextColumn28.HeaderText = "Source";
+            gridTextColumn28.MappingName = "Source";
+            gridTextColumn29.AllowDragging = true;
+            gridTextColumn29.AllowEditing = false;
+            gridTextColumn29.AllowResizing = true;
+            gridTextColumn29.HeaderText = "Level";
+            gridTextColumn29.MappingName = "Level";
+            gridTextColumn30.AllowDragging = true;
+            gridTextColumn30.AllowEditing = false;
+            gridTextColumn30.AllowResizing = true;
+            gridTextColumn30.HeaderText = "Class";
+            gridTextColumn30.MappingName = "Class";
+            gridTextColumn31.AllowDragging = true;
+            gridTextColumn31.AllowEditing = false;
+            gridTextColumn31.AllowResizing = true;
+            gridTextColumn31.HeaderText = "Category";
+            gridTextColumn31.MappingName = "Category";
+            gridTextColumn32.AllowDragging = true;
+            gridTextColumn32.AllowEditing = false;
+            gridTextColumn32.AllowResizing = true;
+            gridTextColumn32.HeaderText = "User";
+            gridTextColumn32.MappingName = "User";
+            gridTextColumn33.AllowDragging = true;
+            gridTextColumn33.AllowEditing = false;
+            gridTextColumn33.AllowResizing = true;
+            gridTextColumn33.HeaderText = "Module";
+            gridTextColumn33.MappingName = "Module";
+            gridTextColumn34.AllowDragging = true;
+            gridTextColumn34.AllowEditing = false;
+            gridTextColumn34.AllowResizing = true;
+            gridTextColumn34.HeaderText = "Object";
+            gridTextColumn34.MappingName = "Object";
+            gridTextColumn34.Visible = false;
+            gridTextColumn35.AllowDragging = true;
+            gridTextColumn35.AllowEditing = false;
+            gridTextColumn35.AllowResizing = true;
+            gridTextColumn35.HeaderText = "Process ID";
+            gridTextColumn35.MappingName = "ProcessID";
+            gridTextColumn36.AllowDragging = true;
+            gridTextColumn36.AllowEditing = false;
+            gridTextColumn36.AllowResizing = true;
+            gridTextColumn36.HeaderText = "Thread id";
+            gridTextColumn36.MappingName = "ThreadID";
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn25);
+            this.sfDataGridBookmarks.Columns.Add(gridDateTimeColumn3);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn26);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn27);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn28);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn29);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn30);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn31);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn32);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn33);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn34);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn35);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn36);
             this.sfDataGridBookmarks.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridBookmarks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridBookmarks.Location = new System.Drawing.Point(0, 27);
@@ -1717,89 +1717,89 @@ namespace Analogy
             this.sfDataGridMain.AllowEditing = false;
             this.sfDataGridMain.AllowResizingColumns = true;
             this.sfDataGridMain.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn1.AllowDragging = true;
-            gridTextColumn1.AllowEditing = false;
-            gridTextColumn1.AllowResizing = true;
-            gridTextColumn1.HeaderText = "Data Source/File Name";
-            gridTextColumn1.MappingName = "DataProvider";
-            gridDateTimeColumn1.AllowDragging = true;
-            gridDateTimeColumn1.AllowEditing = false;
-            gridDateTimeColumn1.AllowResizing = true;
-            gridDateTimeColumn1.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn1.HeaderText = "Date";
-            gridDateTimeColumn1.MappingName = "Date";
-            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn2.AllowDragging = true;
-            gridTextColumn2.AllowEditing = false;
-            gridTextColumn2.AllowResizing = true;
-            gridTextColumn2.HeaderText = "Time Differenace";
-            gridTextColumn2.MappingName = "TimeDiff";
-            gridTextColumn2.Visible = false;
-            gridTextColumn3.AllowDragging = true;
-            gridTextColumn3.AllowEditing = false;
-            gridTextColumn3.AllowResizing = true;
-            gridTextColumn3.HeaderText = "Text";
-            gridTextColumn3.MappingName = "Text";
-            gridTextColumn4.AllowDragging = true;
-            gridTextColumn4.AllowEditing = false;
-            gridTextColumn4.AllowResizing = true;
-            gridTextColumn4.HeaderText = "Source";
-            gridTextColumn4.MappingName = "Source";
-            gridTextColumn5.AllowDragging = true;
-            gridTextColumn5.AllowEditing = false;
-            gridTextColumn5.AllowResizing = true;
-            gridTextColumn5.HeaderText = "Level";
-            gridTextColumn5.MappingName = "Level";
-            gridTextColumn6.AllowDragging = true;
-            gridTextColumn6.AllowEditing = false;
-            gridTextColumn6.AllowResizing = true;
-            gridTextColumn6.HeaderText = "Class";
-            gridTextColumn6.MappingName = "Class";
-            gridTextColumn7.AllowDragging = true;
-            gridTextColumn7.AllowEditing = false;
-            gridTextColumn7.AllowResizing = true;
-            gridTextColumn7.HeaderText = "Category";
-            gridTextColumn7.MappingName = "Category";
-            gridTextColumn8.AllowDragging = true;
-            gridTextColumn8.AllowEditing = false;
-            gridTextColumn8.AllowResizing = true;
-            gridTextColumn8.HeaderText = "User";
-            gridTextColumn8.MappingName = "User";
-            gridTextColumn9.AllowDragging = true;
-            gridTextColumn9.AllowEditing = false;
-            gridTextColumn9.AllowResizing = true;
-            gridTextColumn9.HeaderText = "Module";
-            gridTextColumn9.MappingName = "Module";
-            gridTextColumn10.AllowDragging = true;
-            gridTextColumn10.AllowEditing = false;
-            gridTextColumn10.AllowResizing = true;
-            gridTextColumn10.HeaderText = "Object";
-            gridTextColumn10.MappingName = "Object";
-            gridTextColumn10.Visible = false;
-            gridTextColumn11.AllowDragging = true;
-            gridTextColumn11.AllowEditing = false;
-            gridTextColumn11.AllowResizing = true;
-            gridTextColumn11.HeaderText = "Process ID";
-            gridTextColumn11.MappingName = "ProcessID";
-            gridTextColumn12.AllowDragging = true;
-            gridTextColumn12.AllowEditing = false;
-            gridTextColumn12.AllowResizing = true;
-            gridTextColumn12.HeaderText = "Thread id";
-            gridTextColumn12.MappingName = "ThreadID";
-            this.sfDataGridMain.Columns.Add(gridTextColumn1);
-            this.sfDataGridMain.Columns.Add(gridDateTimeColumn1);
-            this.sfDataGridMain.Columns.Add(gridTextColumn2);
-            this.sfDataGridMain.Columns.Add(gridTextColumn3);
-            this.sfDataGridMain.Columns.Add(gridTextColumn4);
-            this.sfDataGridMain.Columns.Add(gridTextColumn5);
-            this.sfDataGridMain.Columns.Add(gridTextColumn6);
-            this.sfDataGridMain.Columns.Add(gridTextColumn7);
-            this.sfDataGridMain.Columns.Add(gridTextColumn8);
-            this.sfDataGridMain.Columns.Add(gridTextColumn9);
-            this.sfDataGridMain.Columns.Add(gridTextColumn10);
-            this.sfDataGridMain.Columns.Add(gridTextColumn11);
-            this.sfDataGridMain.Columns.Add(gridTextColumn12);
+            gridTextColumn13.AllowDragging = true;
+            gridTextColumn13.AllowEditing = false;
+            gridTextColumn13.AllowResizing = true;
+            gridTextColumn13.HeaderText = "Data Source/File Name";
+            gridTextColumn13.MappingName = "DataProvider";
+            gridDateTimeColumn2.AllowDragging = true;
+            gridDateTimeColumn2.AllowEditing = false;
+            gridDateTimeColumn2.AllowResizing = true;
+            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn2.HeaderText = "Date";
+            gridDateTimeColumn2.MappingName = "Date";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn14.AllowDragging = true;
+            gridTextColumn14.AllowEditing = false;
+            gridTextColumn14.AllowResizing = true;
+            gridTextColumn14.HeaderText = "Time Differenace";
+            gridTextColumn14.MappingName = "TimeDiff";
+            gridTextColumn14.Visible = false;
+            gridTextColumn15.AllowDragging = true;
+            gridTextColumn15.AllowEditing = false;
+            gridTextColumn15.AllowResizing = true;
+            gridTextColumn15.HeaderText = "Text";
+            gridTextColumn15.MappingName = "Text";
+            gridTextColumn16.AllowDragging = true;
+            gridTextColumn16.AllowEditing = false;
+            gridTextColumn16.AllowResizing = true;
+            gridTextColumn16.HeaderText = "Source";
+            gridTextColumn16.MappingName = "Source";
+            gridTextColumn17.AllowDragging = true;
+            gridTextColumn17.AllowEditing = false;
+            gridTextColumn17.AllowResizing = true;
+            gridTextColumn17.HeaderText = "Level";
+            gridTextColumn17.MappingName = "Level";
+            gridTextColumn18.AllowDragging = true;
+            gridTextColumn18.AllowEditing = false;
+            gridTextColumn18.AllowResizing = true;
+            gridTextColumn18.HeaderText = "Class";
+            gridTextColumn18.MappingName = "Class";
+            gridTextColumn19.AllowDragging = true;
+            gridTextColumn19.AllowEditing = false;
+            gridTextColumn19.AllowResizing = true;
+            gridTextColumn19.HeaderText = "Category";
+            gridTextColumn19.MappingName = "Category";
+            gridTextColumn20.AllowDragging = true;
+            gridTextColumn20.AllowEditing = false;
+            gridTextColumn20.AllowResizing = true;
+            gridTextColumn20.HeaderText = "User";
+            gridTextColumn20.MappingName = "User";
+            gridTextColumn21.AllowDragging = true;
+            gridTextColumn21.AllowEditing = false;
+            gridTextColumn21.AllowResizing = true;
+            gridTextColumn21.HeaderText = "Module";
+            gridTextColumn21.MappingName = "Module";
+            gridTextColumn22.AllowDragging = true;
+            gridTextColumn22.AllowEditing = false;
+            gridTextColumn22.AllowResizing = true;
+            gridTextColumn22.HeaderText = "Object";
+            gridTextColumn22.MappingName = "Object";
+            gridTextColumn22.Visible = false;
+            gridTextColumn23.AllowDragging = true;
+            gridTextColumn23.AllowEditing = false;
+            gridTextColumn23.AllowResizing = true;
+            gridTextColumn23.HeaderText = "Process ID";
+            gridTextColumn23.MappingName = "ProcessID";
+            gridTextColumn24.AllowDragging = true;
+            gridTextColumn24.AllowEditing = false;
+            gridTextColumn24.AllowResizing = true;
+            gridTextColumn24.HeaderText = "Thread id";
+            gridTextColumn24.MappingName = "ThreadID";
+            this.sfDataGridMain.Columns.Add(gridTextColumn13);
+            this.sfDataGridMain.Columns.Add(gridDateTimeColumn2);
+            this.sfDataGridMain.Columns.Add(gridTextColumn14);
+            this.sfDataGridMain.Columns.Add(gridTextColumn15);
+            this.sfDataGridMain.Columns.Add(gridTextColumn16);
+            this.sfDataGridMain.Columns.Add(gridTextColumn17);
+            this.sfDataGridMain.Columns.Add(gridTextColumn18);
+            this.sfDataGridMain.Columns.Add(gridTextColumn19);
+            this.sfDataGridMain.Columns.Add(gridTextColumn20);
+            this.sfDataGridMain.Columns.Add(gridTextColumn21);
+            this.sfDataGridMain.Columns.Add(gridTextColumn22);
+            this.sfDataGridMain.Columns.Add(gridTextColumn23);
+            this.sfDataGridMain.Columns.Add(gridTextColumn24);
             this.sfDataGridMain.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
@@ -2130,7 +2130,7 @@ namespace Analogy
             this.tsTop.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsTopClear,
-            this.tsTopRefresh,
+            this.tsTopPauseRefresh,
             this.tsTopAutoScrollToLast,
             this.tsddbSave,
             this.tsddbUndock,
@@ -2153,12 +2153,12 @@ namespace Analogy
             this.tsTopClear.Size = new System.Drawing.Size(96, 24);
             this.tsTopClear.Text = "Clear Log";
             // 
-            // tsTopRefresh
+            // tsTopPauseRefresh
             // 
-            this.tsTopRefresh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tsTopRefresh.Name = "tsTopRefresh";
-            this.tsTopRefresh.Size = new System.Drawing.Size(146, 24);
-            this.tsTopRefresh.Text = "Pause Refreshing:";
+            this.tsTopPauseRefresh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsTopPauseRefresh.Name = "tsTopPauseRefresh";
+            this.tsTopPauseRefresh.Size = new System.Drawing.Size(146, 24);
+            this.tsTopPauseRefresh.Text = "Pause Refreshing:";
             // 
             // tsTopAutoScrollToLast
             // 
@@ -2265,8 +2265,18 @@ namespace Analogy
             // 
             this.tsmiExportExcel.Image = global::Analogy.Properties.Resources.ExportToXLS_16x16;
             this.tsmiExportExcel.Name = "tsmiExportExcel";
-            this.tsmiExportExcel.Size = new System.Drawing.Size(224, 26);
+            this.tsmiExportExcel.Size = new System.Drawing.Size(194, 26);
             this.tsmiExportExcel.Text = "Export To Excel";
+            // 
+            // tsBDataVisualizer
+            // 
+            this.tsBDataVisualizer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBDataVisualizer.Image = ((System.Drawing.Image)(resources.GetObject("tsBDataVisualizer.Image")));
+            this.tsBDataVisualizer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBDataVisualizer.Name = "tsBDataVisualizer";
+            this.tsBDataVisualizer.Size = new System.Drawing.Size(29, 24);
+            this.tsBDataVisualizer.Text = "Data Visualizer";
+            this.tsBDataVisualizer.Visible = false;
             // 
             // tabPageAdv2
             // 
@@ -2285,16 +2295,6 @@ namespace Analogy
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "tabPageAdv2";
             this.tabPageAdv2.ThemesEnabled = true;
-            // 
-            // tsBDataVisualizer
-            // 
-            this.tsBDataVisualizer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBDataVisualizer.Image = ((System.Drawing.Image)(resources.GetObject("tsBDataVisualizer.Image")));
-            this.tsBDataVisualizer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBDataVisualizer.Name = "tsBDataVisualizer";
-            this.tsBDataVisualizer.Size = new System.Drawing.Size(29, 24);
-            this.tsBDataVisualizer.Text = "Data Visualizer";
-            this.tsBDataVisualizer.Visible = false;
             // 
             // UCLogs
             // 
@@ -2556,7 +2556,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripDropDownButton tsddbExport;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportExcel;
         private System.Windows.Forms.ToolStripButton tsBDataVisualizer;
-        public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
+        public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopPauseRefresh;
         public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopAutoScrollToLast;
     }
 }

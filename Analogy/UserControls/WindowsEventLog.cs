@@ -28,7 +28,7 @@ namespace Analogy
         private void WindowsEventLog_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-            ucLogs1.tsTopRefresh.Visible = false;
+            ucLogs1.tsTopPauseRefresh.Visible = false;
             ucLogs1.tsTopAutoScrollToLast.Visible = false;
             SetupLogs();
         }
