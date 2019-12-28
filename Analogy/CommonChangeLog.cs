@@ -12,7 +12,7 @@ namespace Analogy.DataProviders
         public static IEnumerable<AnalogyChangeLog> GetChangeLog()
         {
             yield return new AnalogyChangeLog("Syncfusion - Upgrade .net framework to 4.8 from 4.7.2 (Issue #15)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
-            yield return new AnalogyChangeLog("Syncfusion - Convert User Settings Form (Issue #8)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
+            yield return new AnalogyChangeLog("Syncfusion - Convert User Settings Form (Issue #4)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
             yield return new AnalogyChangeLog("Syncfusion - Replace Devexpress about forms with Syncfusion (Issue #13)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 28));
             yield return new AnalogyChangeLog("Syncfusion - Replace DevExpress Messages Grid Control with Syncfusion data Grid (Issue #01)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 28));
             yield return new AnalogyChangeLog("Syncfusion - Replace all Devexpress Buttons with Syncfusion Buttons (Issue #11)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 28));
