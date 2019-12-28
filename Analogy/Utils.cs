@@ -1,5 +1,3 @@
-using DevExpress.LookAndFeel;
-using DevExpress.XtraBars.Ribbon;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -173,47 +171,6 @@ namespace Analogy
             return dtb;
         }
 
-        public static void SetSkin(Control control, string skinName)
-        {
-            if (control is RibbonControl ribbonControl)
-            {
-                SetLookAndFellSkin(ribbonControl.GetController().LookAndFeel, skinName);
-                return;
-            }
-            if (control is ISupportLookAndFeel feel)
-            {
-                SetLookAndFellSkin(feel.LookAndFeel, skinName);
-            }
-            foreach (Control c in control.Controls)
-                SetSkin(c, skinName);
-        }
-        private static void SetLookAndFellSkin(UserLookAndFeel lookAndFeel, string skinName)
-        {
-            lookAndFeel.UseDefaultLookAndFeel = false;
-            lookAndFeel.SkinName = skinName;
-        }
-
-        //public static List<FileInfo> GetSupportedFiles(DirectoryInfo dirInfo, bool recursive)
-        //{
-        //    List<FileInfo> files = dirInfo.GetFiles("*.etl").Concat(dirInfo.GetFiles("*.log"))
-        //        .Concat(dirInfo.GetFiles("*.nlog")).Concat(dirInfo.GetFiles("*.json"))
-        //        .Concat(dirInfo.GetFiles("defaultFile_*.xml")).Concat(dirInfo.GetFiles("*.evtx")).ToList();
-        //    if (!recursive)
-        //        return files;
-        //    try
-        //    {
-        //        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
-        //        {
-        //            files.AddRange(GetSupportedFiles(dir, true));
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return files;
-        //    }
-
-        //    return files;
-        //}
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AnalogyLogMessage CreateMessageFromEvent(EventLogEntry eEntry)
         {
