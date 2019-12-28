@@ -111,11 +111,12 @@ namespace Analogy
             this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
             this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
             this.MainStatusStrip = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
-            this.bbiFileCaching = new System.Windows.Forms.ToolStripStatusLabel();
-            this.bsiIdleMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.bsiMemoryUsage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslFileCaching = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslIdleMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslMemoryUsage = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslblError = new System.Windows.Forms.ToolStripStatusLabel();
             this.TmrAutoConnect = new System.Windows.Forms.Timer(this.components);
+            this.tmrStatusUpdates = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             this.ribbonControlMain.SuspendLayout();
             this.tstitmAnalogy.Panel.SuspendLayout();
@@ -913,9 +914,9 @@ namespace Analogy
             this.MainStatusStrip.CanOverrideStyle = true;
             this.MainStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bbiFileCaching,
-            this.bsiIdleMessage,
-            this.bsiMemoryUsage,
+            this.tsslFileCaching,
+            this.tsslIdleMessage,
+            this.tsslMemoryUsage,
             this.tsslblError});
             this.MainStatusStrip.Location = new System.Drawing.Point(1, 502);
             this.MainStatusStrip.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
@@ -924,23 +925,24 @@ namespace Analogy
             this.MainStatusStrip.Size = new System.Drawing.Size(1151, 26);
             this.MainStatusStrip.TabIndex = 6;
             // 
-            // bbiFileCaching
+            // tsslFileCaching
             // 
-            this.bbiFileCaching.Name = "bbiFileCaching";
-            this.bbiFileCaching.Size = new System.Drawing.Size(101, 20);
-            this.bbiFileCaching.Text = "File caching is";
+            this.tsslFileCaching.IsLink = true;
+            this.tsslFileCaching.Name = "tsslFileCaching";
+            this.tsslFileCaching.Size = new System.Drawing.Size(101, 20);
+            this.tsslFileCaching.Text = "File caching is";
             // 
-            // bsiIdleMessage
+            // tsslIdleMessage
             // 
-            this.bsiIdleMessage.Name = "bsiIdleMessage";
-            this.bsiIdleMessage.Size = new System.Drawing.Size(36, 20);
-            this.bsiIdleMessage.Text = "N/A";
+            this.tsslIdleMessage.Name = "tsslIdleMessage";
+            this.tsslIdleMessage.Size = new System.Drawing.Size(36, 20);
+            this.tsslIdleMessage.Text = "N/A";
             // 
-            // bsiMemoryUsage
+            // tsslMemoryUsage
             // 
-            this.bsiMemoryUsage.Name = "bsiMemoryUsage";
-            this.bsiMemoryUsage.Size = new System.Drawing.Size(36, 20);
-            this.bsiMemoryUsage.Text = "N/A";
+            this.tsslMemoryUsage.Name = "tsslMemoryUsage";
+            this.tsslMemoryUsage.Size = new System.Drawing.Size(36, 20);
+            this.tsslMemoryUsage.Text = "N/A";
             // 
             // tsslblError
             // 
@@ -949,12 +951,16 @@ namespace Analogy
             this.tsslblError.Size = new System.Drawing.Size(67, 20);
             this.tsslblError.Text = "Errors";
             this.tsslblError.Visible = false;
-            this.tsslblError.Click += new System.EventHandler(this.tsslblError_Click);
             // 
             // TmrAutoConnect
             // 
             this.TmrAutoConnect.Interval = 1000;
             this.TmrAutoConnect.Tick += new System.EventHandler(this.TmrAutoConnect_Tick);
+            // 
+            // tmrStatusUpdates
+            // 
+            this.tmrStatusUpdates.Enabled = true;
+            this.tmrStatusUpdates.Interval = 1000;
             // 
             // Form1
             // 
@@ -1029,10 +1035,10 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
         private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
         private Syncfusion.Windows.Forms.Tools.StatusStripEx MainStatusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel bsiMemoryUsage;
+        private System.Windows.Forms.ToolStripStatusLabel tsslMemoryUsage;
         private System.Windows.Forms.ToolStripStatusLabel tsslblError;
-        private System.Windows.Forms.ToolStripStatusLabel bsiIdleMessage;
-        private System.Windows.Forms.ToolStripStatusLabel bbiFileCaching;
+        private System.Windows.Forms.ToolStripStatusLabel tsslIdleMessage;
+        private System.Windows.Forms.ToolStripStatusLabel tsslFileCaching;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstitmAnalogy;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx tseAnalogyBuiltInProviders;
         private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFolder;
@@ -1051,5 +1057,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsbSettingsResources;
         private System.Windows.Forms.ToolStripButton tsbSettingsDataProviders;
         private System.Windows.Forms.ToolStripButton tsbSettingsCustomDataProviders;
+        private System.Windows.Forms.Timer tmrStatusUpdates;
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -76,6 +77,7 @@ namespace Analogy
         }
         private async void MainForm_Load(object sender, EventArgs e)
         {
+            tsslFileCaching.Text = $@"File caching is {(settings.EnableFileCaching ? "on" : "off")}";
             SetupEventHandlers();
             string[] arguments = Environment.GetCommandLineArgs();
             disableOnlineDueToFileOpen = arguments.Length == 2;
@@ -180,6 +182,13 @@ namespace Analogy
 
         private void SetupEventHandlers()
         {
+            tsslblError.Click += (s,e) => AnalogyLogManager.Instance.Show(this);
+            tmrStatusUpdates.Tick += TmrStatusUpdates_Tick;
+            tsslFileCaching.Click += (s, e) =>
+            {
+                settings.EnableFileCaching = !settings.EnableFileCaching;
+                tsslFileCaching.Text = $@"File caching is {(settings.EnableFileCaching ? "on" : "off")}";
+            };
             tsbSettingsFiltering.Click += (s, e) =>
             {
                 UserSettingsForm user = new UserSettingsForm(0);
@@ -232,6 +241,19 @@ namespace Analogy
             };
         }
 
+        private void TmrStatusUpdates_Tick(object sender, EventArgs e)
+        {
+            tmrStatusUpdates.Stop();
+            tsslMemoryUsage.Text = Process.GetCurrentProcess().PrivateMemorySize64 / 1024 / 1024 + " [MB]";
+            if (settings.IdleMode)
+            {
+                tsslIdleMessage.Text = $@"Idle mode is on. User idle: {Utils.IdleTime():hh\:mm\:ss}. Missed messages: {PagingManager.TotalMissedMessages}";
+            }
+            else
+                tsslIdleMessage.Text = "Idle mode is off";
+
+            tmrStatusUpdates.Start();
+        }
         private void CreateDataSources()
         {
             foreach (IAnalogyFactory factory in FactoriesManager.Instance.GetFactories()
@@ -1316,12 +1338,7 @@ namespace Analogy
         //    group.ItemLinks.Add(btnFolder);
         //    CreateEventLogsMenu(ribbonPage);
         //}
-
-
-        private void tsslblError_Click(object sender, EventArgs e)
-        {
-            AnalogyLogManager.Instance.Show(this);
-        }
+        
 
         private async void TmrAutoConnect_Tick(object sender, EventArgs e)
         {
