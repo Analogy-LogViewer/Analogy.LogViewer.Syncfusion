@@ -293,12 +293,6 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RibbonFormMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RibbonFormMainForm.Designer.cs">
-      <DependentUpon>RibbonFormMainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UserSettingsDataProvidersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,18 +322,6 @@
       <DependentUpon>FilePoolingLog.cs</DependentUpon>
     </Compile>
     <Compile Include="LogLoaders\AnalogyJSonLoader.cs" />
-    <Compile Include="UserControls\DataVisualizerUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\DataVisualizerUC.Designer.cs">
-      <DependentUpon>DataVisualizerUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DataVisualizerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DataVisualizerForm.Designer.cs">
-      <DependentUpon>DataVisualizerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GeneralExtensionMethods.cs" />
     <Compile Include="LogLoaders\EventViewerLogLoader.cs" />
     <Compile Include="LogLoaders\AnalogyXmlLogFile.cs" />
@@ -482,12 +464,6 @@
       <DependentUpon>SearchInFilesUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
-    <Compile Include="Forms\ToolbarFormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ToolbarFormMain.Designer.cs">
-      <DependentUpon>ToolbarFormMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FileComparerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -535,23 +511,23 @@
     <Compile Include="UserControls\WindowsEventLog.designer.cs">
       <DependentUpon>WindowsEventLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XtraFormClientServer.cs">
+    <Compile Include="Forms\ClientServerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\XtraFormClientServer.Designer.cs">
-      <DependentUpon>XtraFormClientServer.cs</DependentUpon>
+    <Compile Include="Forms\ClientServerForm.Designer.cs">
+      <DependentUpon>ClientServerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XtraFormLogGrid.cs">
+    <Compile Include="Forms\LogGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\XtraFormLogGrid.Designer.cs">
-      <DependentUpon>XtraFormLogGrid.cs</DependentUpon>
+    <Compile Include="Forms\LogGridForm.Designer.cs">
+      <DependentUpon>LogGridForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XtraFormWindowsEventlogsManager.cs">
+    <Compile Include="Forms\WindowsEventLogsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\XtraFormWindowsEventlogsManager.Designer.cs">
-      <DependentUpon>XtraFormWindowsEventlogsManager.cs</DependentUpon>
+    <Compile Include="Forms\WindowsEventLogsForm.Designer.cs">
+      <DependentUpon>WindowsEventLogsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\XtraUCDirectoryListing.cs">
       <SubType>UserControl</SubType>
@@ -587,9 +563,6 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RibbonFormMainForm.resx">
-      <DependentUpon>RibbonFormMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSettingsDataProvidersForm.resx">
       <DependentUpon>UserSettingsDataProvidersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -599,8 +572,8 @@
     <EmbeddedResource Include="UserControls\FilePoolingLog.resx">
       <DependentUpon>FilePoolingLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XtraFormWindowsEventlogsManager.resx">
-      <DependentUpon>XtraFormWindowsEventlogsManager.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\WindowsEventLogsForm.resx">
+      <DependentUpon>WindowsEventLogsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\WindowsEventLogsUC.resx">
       <DependentUpon>WindowsEventLogsUC.cs</DependentUpon>
@@ -626,12 +599,6 @@
     <None Include="Resources\iqon.png" />
     <EmbeddedResource Include="Forms\AboutDataSourceBox.resx">
       <DependentUpon>AboutDataSourceBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\DataVisualizerUC.resx">
-      <DependentUpon>DataVisualizerUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataVisualizerForm.resx">
-      <DependentUpon>DataVisualizerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Copy_16x16.png" />
     <None Include="Resources\Database_on.png" />
@@ -722,9 +689,6 @@
     <EmbeddedResource Include="UserControls\SearchInFilesUC.resx">
       <DependentUpon>SearchInFilesUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ToolbarFormMain.resx">
-      <DependentUpon>ToolbarFormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileComparerForm.resx">
       <DependentUpon>FileComparerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -746,11 +710,11 @@
     <EmbeddedResource Include="UserControls\WindowsEventLog.resx">
       <DependentUpon>WindowsEventLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XtraFormClientServer.resx">
-      <DependentUpon>XtraFormClientServer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ClientServerForm.resx">
+      <DependentUpon>ClientServerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XtraFormLogGrid.resx">
-      <DependentUpon>XtraFormLogGrid.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LogGridForm.resx">
+      <DependentUpon>LogGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\XtraUCDirectoryListing.resx">
       <DependentUpon>XtraUCDirectoryListing.cs</DependentUpon>

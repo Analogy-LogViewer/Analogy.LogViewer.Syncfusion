@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 using Analogy.Types;
 
 namespace Analogy
 {
-    public partial class XtraFormClientServer : DevExpress.XtraEditors.XtraForm
+    public partial class ClientServerForm : Form
     {
-        public XtraFormClientServer()
+        public ClientServerForm()
         {
             InitializeComponent();
         }

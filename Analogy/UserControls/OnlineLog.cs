@@ -102,7 +102,7 @@ namespace Analogy
         {
             if (listBoxClearHistory.SelectedItem == null) return;
             var messages = FileProcessingManager.Instance.GetMessages((string)listBoxClearHistory.SelectedItem);
-            XtraFormLogGrid grid = new XtraFormLogGrid(messages, Environment.MachineName);
+            LogGridForm grid = new LogGridForm(messages, Environment.MachineName);
             grid.Show(this);
         }
     }

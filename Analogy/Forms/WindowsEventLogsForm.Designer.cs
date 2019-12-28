@@ -1,6 +1,6 @@
 ﻿namespace Analogy
 {
-    partial class XtraFormWindowsEventlogsManager
+    partial class WindowsEventLogsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormWindowsEventlogsManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowsEventLogsForm));
             this._windowsEventLogsUcWindowsEventLogs1 = new Analogy.WindowsEventLogsUC();
             this.SuspendLayout();
             // 
@@ -40,14 +40,14 @@
             this._windowsEventLogsUcWindowsEventLogs1.Size = new System.Drawing.Size(739, 466);
             this._windowsEventLogsUcWindowsEventLogs1.TabIndex = 0;
             // 
-            // XtraFormWindowsEventlogsManager
+            // WindowsEventLogsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 466);
             this.Controls.Add(this._windowsEventLogsUcWindowsEventLogs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "XtraFormWindowsEventlogsManager";
+            this.Name = "WindowsEventLogsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Windows event logs";
             this.ResumeLayout(false);

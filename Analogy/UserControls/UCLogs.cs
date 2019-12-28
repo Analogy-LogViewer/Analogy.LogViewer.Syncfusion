@@ -57,8 +57,8 @@ namespace Analogy
         private DataTable _messageData;
         private DataTable _bookmarkedMessages;
         private IProgress<AnalogyProgressReport> ProgressReporter { get; set; }
-        private readonly List<XtraFormLogGrid> _externalWindows = new List<XtraFormLogGrid>();
-        private List<XtraFormLogGrid> ExternalWindows
+        private readonly List<LogGridForm> _externalWindows = new List<LogGridForm>();
+        private List<LogGridForm> ExternalWindows
         {
             get
             {
@@ -814,7 +814,7 @@ namespace Analogy
             lockSlim.EnterWriteLock();
             if (ExternalWindowsCount > 0)
             {
-                foreach (XtraFormLogGrid grid in ExternalWindows)
+                foreach (LogGridForm grid in ExternalWindows)
                 {
                     grid.AppendMessage(message, dataSource);
                 }
@@ -861,7 +861,7 @@ namespace Analogy
             lockSlim.EnterWriteLock();
             if (ExternalWindowsCount > 0)
             {
-                foreach (XtraFormLogGrid grid in ExternalWindows)
+                foreach (LogGridForm grid in ExternalWindows)
                 {
                     grid.AppendMessages(messages, dataSource);
                 }
@@ -1612,7 +1612,7 @@ namespace Analogy
             if (!msg.Any()) return;
             var source = GetFilteredDataTable().Rows[0]?["DataProvider"]?.ToString();
             if (source == null) return;
-            XtraFormLogGrid grid = new XtraFormLogGrid(msg, source);
+            LogGridForm grid = new LogGridForm(msg, source);
             lockExternalWindowsObject.EnterWriteLock();
             _externalWindows.Add(grid);
             Interlocked.Increment(ref ExternalWindowsCount);
@@ -1703,7 +1703,7 @@ namespace Analogy
             var processes = msg.Select(m => m.Module).Distinct().ToList();
             foreach (string process in processes)
             {
-                XtraFormLogGrid grid = new XtraFormLogGrid(msg, source, process);
+                LogGridForm grid = new LogGridForm(msg, source, process);
                 lockExternalWindowsObject.EnterWriteLock();
                 _externalWindows.Add(grid);
                 Interlocked.Increment(ref ExternalWindowsCount);

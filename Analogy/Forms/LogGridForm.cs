@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class XtraFormLogGrid : DevExpress.XtraEditors.XtraForm
+    public partial class LogGridForm :Form
     {
         private readonly List<AnalogyLogMessage> _messages;
         private readonly string _dataSource;
-        public XtraFormLogGrid()
+        public LogGridForm()
         {
             InitializeComponent();
         }
 
-        public XtraFormLogGrid(List<AnalogyLogMessage> messages, string dataSource,string processOrModule=null) : this()
+        public LogGridForm(List<AnalogyLogMessage> messages, string dataSource,string processOrModule=null) : this()
         {
             _messages = messages;
             _dataSource = dataSource;

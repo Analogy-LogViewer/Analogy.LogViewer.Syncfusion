@@ -80,7 +80,7 @@ namespace Analogy
 
         private void bBtnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraFormClientServer f = new XtraFormClientServer();
+            ClientServerForm f = new ClientServerForm();
             f.ShowDialog(this);
             lBoxSources.DataSource = ClientServerDataSourceManager.Instance.DataSources;
         }

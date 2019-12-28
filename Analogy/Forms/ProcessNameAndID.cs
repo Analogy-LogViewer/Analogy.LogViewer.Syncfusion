@@ -1,12 +1,11 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class ProcessNameAndID : XtraForm
+    public partial class ProcessNameAndID : Form
     {
         private IOrderedEnumerable<ProcessName> processes;
         public ProcessNameAndID()
@@ -18,7 +17,7 @@ namespace Analogy
         private void ProcessNameAndID_Load(object sender, EventArgs e)
         {
             processes = Process.GetProcesses().Select(p => new ProcessName(p.ProcessName, p.Id)).OrderByDescending(p => p.ID);
-            gridControl1.DataSource = processes;
+            //gridControl1.DataSource = processes;
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)

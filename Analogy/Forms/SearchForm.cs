@@ -1,9 +1,9 @@
-﻿using Analogy.Interfaces;
-using DevExpress.XtraEditors;
+﻿using System.Windows.Forms;
+using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class SearchForm : XtraForm
+    public partial class SearchForm : Form
     {
         private IAnalogyOfflineDataProvider offlineAnalogy;
 

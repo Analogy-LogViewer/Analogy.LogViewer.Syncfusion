@@ -163,6 +163,11 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="lblExplaination.Text" xml:space="preserve">
+    <value>All texts are using the same rules are the search window:
+For text (include/exclue) use + for "and" and | for "Or" operations.
+For source/modules use , as seperator and - for exclusion. for example: "test, -test2" wll exclude test 2 and wil show all that has text in them.</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>All texts are using the same rules are the search window:
 For text (include/exclue) use + for "and" and | for "Or" operations.
@@ -470,12 +475,7 @@ For source/modules use , as seperator and - for exclusion. for example: "test, -
         wVuvgLcZeIbF/cb+A1eugfS5pzkpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="lblExplaination.Text" xml:space="preserve">
-    <value>All texts are using the same rules are the search window:
-For text (include/exclue) use + for "and" and | for "Or" operations.
-For source/modules use , as seperator and - for exclusion. for example: "test, -test2" wll exclude test 2 and wil show all that has text in them.</value>
-  </data>
-  <data name="sBtnMoveUp.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAPdEVYdFRpdGxlAFVwO0Fycm93O8heKBQAAAbMSURBVFhHxZZ5UFVVHMcvmEs1amlq00x/WP80
@@ -510,7 +510,7 @@ For source/modules use , as seperator and - for exclusion. for example: "test, -
         TeZhpn7Un7/7ByXnMVMRPFyU8FH9r5LzmPngiydrEP4Cb9clzDE2bbcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="sBtnMoveDown.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAARdEVYdFRpdGxlAERvd247QXJyb3c7vfyCWAAABxZJREFUWEfFlmlQFFcQxx/eB1HRivGLpZXk

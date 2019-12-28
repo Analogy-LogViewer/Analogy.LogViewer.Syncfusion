@@ -66,7 +66,7 @@
             this.tabControlMain.MinimumSize = new System.Drawing.Size(814, 382);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedTabPage = this.xtraTabPageWindowsEventLogs;
-            this.tabControlMain.Size = new System.Drawing.Size(904, 624);
+            this.tabControlMain.Size = new System.Drawing.Size(904, 626);
             this.tabControlMain.TabIndex = 0;
             this.tabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageWindowsEventLogs,
@@ -85,7 +85,7 @@
             this.xtraTabPageWindowsEventLogs.Controls.Add(this.lblWindowsEventLogs);
             this.xtraTabPageWindowsEventLogs.ImageOptions.Image = global::Analogy.Properties.Resources.OperatingSystem_32x32;
             this.xtraTabPageWindowsEventLogs.Name = "xtraTabPageWindowsEventLogs";
-            this.xtraTabPageWindowsEventLogs.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageWindowsEventLogs.Size = new System.Drawing.Size(731, 619);
             this.xtraTabPageWindowsEventLogs.Text = "Windows Event logs";
             // 
             // _windowsEventLogsUcWindowsEventLogs1
@@ -93,7 +93,7 @@
             this._windowsEventLogsUcWindowsEventLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._windowsEventLogsUcWindowsEventLogs1.Location = new System.Drawing.Point(0, 22);
             this._windowsEventLogsUcWindowsEventLogs1.Name = "_windowsEventLogsUcWindowsEventLogs1";
-            this._windowsEventLogsUcWindowsEventLogs1.Size = new System.Drawing.Size(731, 595);
+            this._windowsEventLogsUcWindowsEventLogs1.Size = new System.Drawing.Size(731, 597);
             this._windowsEventLogsUcWindowsEventLogs1.TabIndex = 0;
             // 
             // lblWindowsEventLogs
@@ -111,7 +111,7 @@
             this.xtraTabPageIIS.Controls.Add(this.labelControl10);
             this.xtraTabPageIIS.ImageOptions.Image = global::Analogy.Properties.Resources.iis;
             this.xtraTabPageIIS.Name = "xtraTabPageIIS";
-            this.xtraTabPageIIS.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageIIS.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPageIIS.Text = "IIS Logs";
             // 
             // labelControl10
@@ -128,7 +128,7 @@
             this.xtraTabPageSerilog.Controls.Add(this.labelControl6);
             this.xtraTabPageSerilog.ImageOptions.Image = global::Analogy.Properties.Resources.serilog32x32;
             this.xtraTabPageSerilog.Name = "xtraTabPageSerilog";
-            this.xtraTabPageSerilog.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageSerilog.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPageSerilog.Text = "Serilog parser";
             // 
             // labelControl6
@@ -145,7 +145,7 @@
             this.xtraTabPageLog4Net.Controls.Add(this.labelControl11);
             this.xtraTabPageLog4Net.ImageOptions.Image = global::Analogy.Properties.Resources.log4net32x32;
             this.xtraTabPageLog4Net.Name = "xtraTabPageLog4Net";
-            this.xtraTabPageLog4Net.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageLog4Net.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPageLog4Net.Text = "Log4Net Parser";
             // 
             // labelControl11
@@ -162,7 +162,7 @@
             this.xtraTabPageJson.Controls.Add(this.labelControl12);
             this.xtraTabPageJson.ImageOptions.Image = global::Analogy.Properties.Resources.jsonfile32x32;
             this.xtraTabPageJson.Name = "xtraTabPageJson";
-            this.xtraTabPageJson.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageJson.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPageJson.Text = "Json Parser";
             // 
             // labelControl12
@@ -179,7 +179,7 @@
             this.xtraTabPageXML.Controls.Add(this.labelControl13);
             this.xtraTabPageXML.ImageOptions.Image = global::Analogy.Properties.Resources.xml32x32;
             this.xtraTabPageXML.Name = "xtraTabPageXML";
-            this.xtraTabPageXML.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPageXML.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPageXML.Text = "XML Parser";
             // 
             // labelControl13
@@ -196,7 +196,7 @@
             this.xtraTabPage1.ImageOptions.Image = global::Analogy.Properties.Resources.Mirada_Icon;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.Size = new System.Drawing.Size(731, 616);
+            this.xtraTabPage1.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPage1.Text = "Mirada logs Parser";
             // 
             // xtraTabPage2
@@ -204,7 +204,7 @@
             this.xtraTabPage2.ImageOptions.Image = global::Analogy.Properties.Resources.iqon;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.PageVisible = false;
-            this.xtraTabPage2.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPage2.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPage2.Text = "ICAP BU Logs";
             // 
             // xtraTabPage3
@@ -212,14 +212,14 @@
             this.xtraTabPage3.ImageOptions.Image = global::Analogy.Properties.Resources.kama;
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.PageVisible = false;
-            this.xtraTabPage3.Size = new System.Drawing.Size(731, 617);
+            this.xtraTabPage3.Size = new System.Drawing.Size(731, 618);
             this.xtraTabPage3.Text = "Kama Research";
             // 
             // UserSettingsDataProvidersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 624);
+            this.ClientSize = new System.Drawing.Size(904, 626);
             this.Controls.Add(this.tabControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
