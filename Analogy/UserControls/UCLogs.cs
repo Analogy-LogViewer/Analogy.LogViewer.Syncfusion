@@ -236,8 +236,8 @@ namespace Analogy
             sfDataGridMain.QueryRowStyle += sfDataGrid_QueryRowStyle;
             sfDataGridMain.CellClick += (s, e) =>
             {
-                if (btsAutoScrollToBottom.Checked)
-                    btsAutoScrollToBottom.Checked = false;
+                if (tsTopAutoScrollToLast.Checked)
+                    tsTopAutoScrollToLast.Checked = false;
 
                 var selectedItems = sfDataGridMain.SelectedItems.Cast<DataRowView>().ToList();
                 if (!selectedItems.Any()) return;
@@ -339,10 +339,18 @@ namespace Analogy
                 SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
             };
             tsmiUndockView.Click += (s, e) => UndockView();
-
             tsmiUndockPerModule.Click += (s, e) => UndockViewPerProcess();
-
             tsmiExportExcel.Click += (s, e) => ExportToExcel();
+            tsTopRefresh.CheckedChanged += (s, e) =>
+            {
+                _realtimeUpdate = tsTopRefresh.Checked;
+                AcceptChanges(false);
+            };
+            tsTopAutoScrollToLast.CheckedChanged += (s, e) =>
+            {
+                //todo:complete this
+                Settings.AutoScrollToLastMessage = tsTopAutoScrollToLast.Checked;
+            };
             #endregion
             #region Toolstrip Buttons
 
@@ -523,17 +531,16 @@ namespace Analogy
                 cbInclude.Text = Settings.IncludeText;
                 cbExclude.Text = Settings.ExcludedText;
             }
-            btswitchRefreshLog.Checked = true;
+            tsTopRefresh.Checked = true;
 
-            btswitchExpand.Checked = true;
-            splitContainerMain.Collapsed = true;
+            splitContainerMain.Collapsed = true; 
             if (Settings.StartupErrorLogLevel)
                 rbErrorCritical.Checked = true;
 
             //todo:font
             //LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
 
-            btsAutoScrollToBottom.Checked = Settings.AutoScrollToLastMessage;
+            tsTopAutoScrollToLast.Checked = Settings.AutoScrollToLastMessage;
         }
 
         private void BookmarkModeUI()
@@ -541,8 +548,6 @@ namespace Analogy
             if (BookmarkView)
             {
                 sfDataGridMain.ContextMenuStrip = cmsBookmarked;
-                bBtnRemoveBoomark.Visibility = BarItemVisibility.Always;
-                bBtnImport.Visibility = BarItemVisibility.Never;
             }
         }
 
@@ -1485,7 +1490,7 @@ namespace Analogy
 
             _bookmarkedMessages.Rows.Add(dtr);
             _bookmarkedMessages.AcceptChanges();
-            btswitchExpand.Checked = true;
+            splitContainerMain.Collapsed = false;
             splitContainerMain.Collapsed = false;
             tcBottom.SelectedTabPage = xtpBookmarks;
             if (persists)
@@ -1600,42 +1605,8 @@ namespace Analogy
             }
 
         }
-
-        private void btnUp_Click(object sender, EventArgs e)
-        {
-            //if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
-            //{
-            //    int selected = LogGrid.GetSelectedRows().First();
-            //    if (HighlightRows.All(r => r >= selected))
-            //        LogGrid.SelectRow(HighlightRows.Last());
-            //    else
-            //        LogGrid.SelectRow(HighlightRows.First(r => r < selected));
-            //}
-        }
-
-        private void btnDown_Click(object sender, EventArgs e)
-        {
-            //if (HighlightRows.Any() && LogGrid.GetSelectedRows().Any())
-            //{
-            //    int selected = LogGrid.GetSelectedRows().First();
-            //    if (HighlightRows.All(r => r <= selected))
-            //        LogGrid.SelectRow(HighlightRows.First());
-            //    else
-            //        LogGrid.SelectRow(HighlightRows.First(r => r > selected));
-            //}
-        }
-
-        private void btswitchExpand_CheckedChanged(object sender, ItemClickEventArgs e)
-        {
-            splitContainerMain.Collapsed = btswitchExpand.Checked;
-        }
-
-        private void btswitchRefreshLog_CheckedChanged(object sender, ItemClickEventArgs e)
-        {
-            _realtimeUpdate = btswitchRefreshLog.Checked;
-            AcceptChanges(false);
-            //btswitchRefreshLog.Caption = _realtimeUpdate ? "Refresh log:" : "Paused:";
-        }
+  
+    
 
         private void bBtnSaveLog_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1949,54 +1920,32 @@ namespace Analogy
             Clipboard.SetText(all);
         }
 
-        private void bBtnCopyAllBookmarks_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = BookmarkedMessages;
-            if (!messages.Any()) return;
-            string all = string.Join(Environment.NewLine, messages.Select(m => $"{m.Date.ToString()}: {m.Text}"));
-            Clipboard.SetText(all);
-        }
-
-        private void btsAutoScrollToBottom_CheckedChanged(object sender, ItemClickEventArgs e)
-        {
-            Settings.AutoScrollToLastMessage = btsAutoScrollToBottom.Checked;
-        }
-
-        private void pmsGrid_Click(object sender, EventArgs e)
-        {
-            if (btsAutoScrollToBottom.Checked)
-                btsAutoScrollToBottom.Checked = false;
-        }
-
-        private void sbtnPageFirst_Click(object sender, EventArgs e)
+     
+    
+        private void btnPageFirst_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             UpdatePage(PagingManager.FirstPage());
         }
 
-        private void sbtnPagePrevious_Click(object sender, EventArgs e)
+        private void btnPagePrevious_Click(object sender, EventArgs e)
         {
             if (pageNumber == 1) return;
             pageNumber--;
             UpdatePage(PagingManager.PrevPage().Data);
         }
 
-        private void sBtnPageNext_Click(object sender, EventArgs e)
+        private void btnPageNext_Click(object sender, EventArgs e)
         {
             if (pageNumber == TotalPages) return;
             pageNumber++;
             UpdatePage(PagingManager.NextPage().Data);
         }
 
-        private void sBtnLastPage_Click(object sender, EventArgs e)
+        private void btnLastPage_Click(object sender, EventArgs e)
         {
             pageNumber = TotalPages;
             UpdatePage(PagingManager.LastPage());
-        }
-
-        private void bBtnExportExcel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
         }
 
         private void ExportToExcel()

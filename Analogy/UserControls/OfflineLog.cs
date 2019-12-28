@@ -47,8 +47,8 @@ namespace Analogy
             if (DesignMode) return;
             folderTreeViewUC1.FolderChanged += FolderTreeViewUC1_FolderChanged;
             spltMain.Panel1Collapsed = false;
-            ucLogs1.btswitchRefreshLog.Visibility = BarItemVisibility.Never;
-            ucLogs1.btsAutoScrollToBottom.Visibility = BarItemVisibility.Never;
+            ucLogs1.tsTopRefresh.Visible = false;
+            ucLogs1.tsTopAutoScrollToLast.Visible = false;
             if (extrenalFiles.Any())
             {
                 if (File.Exists(extrenalFiles.First()))

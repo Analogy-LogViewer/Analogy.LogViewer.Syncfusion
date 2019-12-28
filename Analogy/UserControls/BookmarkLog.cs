@@ -21,8 +21,8 @@ namespace Analogy
         private async void BookmarkLog_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-            ucLogs1.btswitchRefreshLog.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            ucLogs1.btsAutoScrollToBottom.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            ucLogs1.tsTopRefresh.Visible = false;
+            ucLogs1.tsTopAutoScrollToLast.Visible = false;
             ucLogs1.SetBookmarkMode();
             var messages = await BookmarkPersistManager.Instance.GetMessages();
             AppendMessages(messages, "Analogy bookmarks");

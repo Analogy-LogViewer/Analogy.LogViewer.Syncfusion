@@ -96,11 +96,11 @@ namespace Analogy
             this.cbHighlights = new Syncfusion.WinForms.ListView.SfComboBox();
             this.sbtnMoreHighlight = new Syncfusion.WinForms.Controls.SfButton();
             this.pnlButtonsHighlight = new System.Windows.Forms.Panel();
-            this.sbtnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
-            this.sbtnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
             this.lblPageNumber = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.sBtnPageNext = new Syncfusion.WinForms.Controls.SfButton();
-            this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnPageNext = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnLastPage = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bBtnSaveEntireLog = new DevExpress.XtraBars.BarButtonItem();
@@ -218,7 +218,7 @@ namespace Analogy
             this.tsTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
             this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
-            this.toolStripCheckBox1 = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
+            this.tsTopAutoScrollToLast = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.tsddbSave = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiSaveFullLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveFullLogDataProvider = new System.Windows.Forms.ToolStripMenuItem();
@@ -552,11 +552,11 @@ namespace Analogy
             // 
             // pnlButtonsHighlight
             // 
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPageFirst);
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPagePrevious);
+            this.pnlButtonsHighlight.Controls.Add(this.btnPageFirst);
+            this.pnlButtonsHighlight.Controls.Add(this.btnPagePrevious);
             this.pnlButtonsHighlight.Controls.Add(this.lblPageNumber);
-            this.pnlButtonsHighlight.Controls.Add(this.sBtnPageNext);
-            this.pnlButtonsHighlight.Controls.Add(this.sBtnLastPage);
+            this.pnlButtonsHighlight.Controls.Add(this.btnPageNext);
+            this.pnlButtonsHighlight.Controls.Add(this.btnLastPage);
             this.pnlButtonsHighlight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlButtonsHighlight.Location = new System.Drawing.Point(1613, 0);
             this.pnlButtonsHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -564,32 +564,32 @@ namespace Analogy
             this.pnlButtonsHighlight.Size = new System.Drawing.Size(511, 26);
             this.pnlButtonsHighlight.TabIndex = 12;
             // 
-            // sbtnPageFirst
+            // btnPageFirst
             // 
-            this.sbtnPageFirst.AccessibleName = "Button";
-            this.sbtnPageFirst.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPageFirst.Location = new System.Drawing.Point(23, 0);
-            this.sbtnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sbtnPageFirst.Name = "sbtnPageFirst";
-            this.sbtnPageFirst.Size = new System.Drawing.Size(87, 26);
-            this.sbtnPageFirst.TabIndex = 42;
-            this.sbtnPageFirst.Text = "First Page ";
-            this.sbtnPageFirst.Click += new System.EventHandler(this.sbtnPageFirst_Click);
+            this.btnPageFirst.AccessibleName = "Button";
+            this.btnPageFirst.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnPageFirst.Location = new System.Drawing.Point(23, 0);
+            this.btnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPageFirst.Name = "btnPageFirst";
+            this.btnPageFirst.Size = new System.Drawing.Size(87, 26);
+            this.btnPageFirst.TabIndex = 42;
+            this.btnPageFirst.Text = "First Page ";
+            this.btnPageFirst.Click += new System.EventHandler(this.btnPageFirst_Click);
             // 
-            // sbtnPagePrevious
+            // btnPagePrevious
             // 
-            this.sbtnPagePrevious.AccessibleName = "Button";
-            this.sbtnPagePrevious.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPagePrevious.Location = new System.Drawing.Point(110, 0);
-            this.sbtnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sbtnPagePrevious.Name = "sbtnPagePrevious";
-            this.sbtnPagePrevious.Size = new System.Drawing.Size(128, 26);
-            this.sbtnPagePrevious.TabIndex = 43;
-            this.sbtnPagePrevious.Text = "previous page";
-            this.sbtnPagePrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.sbtnPagePrevious.Click += new System.EventHandler(this.sbtnPagePrevious_Click);
+            this.btnPagePrevious.AccessibleName = "Button";
+            this.btnPagePrevious.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnPagePrevious.Location = new System.Drawing.Point(110, 0);
+            this.btnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPagePrevious.Name = "btnPagePrevious";
+            this.btnPagePrevious.Size = new System.Drawing.Size(128, 26);
+            this.btnPagePrevious.TabIndex = 43;
+            this.btnPagePrevious.Text = "previous page";
+            this.btnPagePrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnPagePrevious.Click += new System.EventHandler(this.btnPagePrevious_Click);
             // 
             // lblPageNumber
             // 
@@ -606,31 +606,31 @@ namespace Analogy
             this.lblPageNumber.Text = "Page 1 / 1";
             this.lblPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sBtnPageNext
+            // btnPageNext
             // 
-            this.sBtnPageNext.AccessibleName = "Button";
-            this.sBtnPageNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnPageNext.Location = new System.Drawing.Point(341, 0);
-            this.sBtnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sBtnPageNext.Name = "sBtnPageNext";
-            this.sBtnPageNext.Size = new System.Drawing.Size(87, 26);
-            this.sBtnPageNext.TabIndex = 45;
-            this.sBtnPageNext.Text = "Next Page";
-            this.sBtnPageNext.Click += new System.EventHandler(this.sBtnPageNext_Click);
+            this.btnPageNext.AccessibleName = "Button";
+            this.btnPageNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnPageNext.Location = new System.Drawing.Point(341, 0);
+            this.btnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPageNext.Name = "btnPageNext";
+            this.btnPageNext.Size = new System.Drawing.Size(87, 26);
+            this.btnPageNext.TabIndex = 45;
+            this.btnPageNext.Text = "Next Page";
+            this.btnPageNext.Click += new System.EventHandler(this.btnPageNext_Click);
             // 
-            // sBtnLastPage
+            // btnLastPage
             // 
-            this.sBtnLastPage.AccessibleName = "Button";
-            this.sBtnLastPage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnLastPage.Location = new System.Drawing.Point(428, 0);
-            this.sBtnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sBtnLastPage.Name = "sBtnLastPage";
-            this.sBtnLastPage.Size = new System.Drawing.Size(83, 26);
-            this.sBtnLastPage.TabIndex = 44;
-            this.sBtnLastPage.Text = "Last Page";
-            this.sBtnLastPage.Click += new System.EventHandler(this.sBtnLastPage_Click);
+            this.btnLastPage.AccessibleName = "Button";
+            this.btnLastPage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnLastPage.Location = new System.Drawing.Point(428, 0);
+            this.btnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(83, 26);
+            this.btnLastPage.TabIndex = 44;
+            this.btnLastPage.Text = "Last Page";
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // chkbHighlight
             // 
@@ -736,7 +736,6 @@ namespace Analogy
             this.bBtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.Image")));
             this.bBtnExportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportExcel.ImageOptions.LargeImage")));
             this.bBtnExportExcel.Name = "bBtnExportExcel";
-            this.bBtnExportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportExcel_ItemClick);
             // 
             // bBtnExportCSV
             // 
@@ -745,7 +744,6 @@ namespace Analogy
             this.bBtnExportCSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.Image")));
             this.bBtnExportCSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExportCSV.ImageOptions.LargeImage")));
             this.bBtnExportCSV.Name = "bBtnExportCSV";
-            this.bBtnExportCSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportCSV_ItemClick);
             // 
             // bBtnExportHtml
             // 
@@ -2133,7 +2131,7 @@ namespace Analogy
             this.tsTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsTopClear,
             this.tsTopRefresh,
-            this.toolStripCheckBox1,
+            this.tsTopAutoScrollToLast,
             this.tsddbSave,
             this.tsddbUndock,
             this.tsbScreenshot,
@@ -2162,12 +2160,12 @@ namespace Analogy
             this.tsTopRefresh.Size = new System.Drawing.Size(146, 24);
             this.tsTopRefresh.Text = "Pause Refreshing:";
             // 
-            // toolStripCheckBox1
+            // tsTopAutoScrollToLast
             // 
-            this.toolStripCheckBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripCheckBox1.Name = "toolStripCheckBox1";
-            this.toolStripCheckBox1.Size = new System.Drawing.Size(179, 24);
-            this.toolStripCheckBox1.Text = "Auto scroll to last row:";
+            this.tsTopAutoScrollToLast.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsTopAutoScrollToLast.Name = "tsTopAutoScrollToLast";
+            this.tsTopAutoScrollToLast.Size = new System.Drawing.Size(179, 24);
+            this.tsTopAutoScrollToLast.Text = "Auto scroll to last row:";
             // 
             // tsddbSave
             // 
@@ -2467,10 +2465,10 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerMain;
-        private SfButton sbtnPageFirst;
-        private SfButton sBtnPageNext;
-        private SfButton sBtnLastPage;
-        private SfButton sbtnPagePrevious;
+        private SfButton btnPageFirst;
+        private SfButton btnPageNext;
+        private SfButton btnLastPage;
+        private SfButton btnPagePrevious;
         private DevExpress.XtraBars.BarButtonItem bBtnExportExcel;
         private DevExpress.XtraBars.BarButtonItem bBtnExportCSV;
         private DevExpress.XtraBars.BarButtonItem bBtnExportHtml;
@@ -2543,8 +2541,6 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx tsTop;
         private System.Windows.Forms.ToolStripButton tsTopClear;
-        private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
-        private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox toolStripCheckBox1;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
         private System.Windows.Forms.ToolStripDropDownButton tsddbSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLog;
@@ -2560,5 +2556,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripDropDownButton tsddbExport;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportExcel;
         private System.Windows.Forms.ToolStripButton tsBDataVisualizer;
+        public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
+        public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopAutoScrollToLast;
     }
 }

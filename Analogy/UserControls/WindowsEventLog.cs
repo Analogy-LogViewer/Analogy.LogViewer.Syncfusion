@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Managers;
-using DevExpress.XtraBars;
 
 namespace Analogy
 {
@@ -29,8 +28,8 @@ namespace Analogy
         private void WindowsEventLog_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-            ucLogs1.btswitchRefreshLog.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            ucLogs1.btsAutoScrollToBottom.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            ucLogs1.tsTopRefresh.Visible = false;
+            ucLogs1.tsTopAutoScrollToLast.Visible = false;
             SetupLogs();
         }
 
