@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
-using Syncfusion.WinForms.Controls;
+﻿using Syncfusion.WinForms.Controls;
 
 namespace Analogy
 {
@@ -731,7 +730,6 @@ namespace Analogy
             this.bBtnSaveLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveLog.ImageOptions.LargeImage")));
             this.bBtnSaveLog.Name = "bBtnSaveLog";
             this.bBtnSaveLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnSaveLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveLog_ItemClick);
             // 
             // bBtnExpand
             // 
@@ -759,7 +757,6 @@ namespace Analogy
             this.bBtnButtomExpand.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnButtomExpand.ImageOptions.LargeImage")));
             this.bBtnButtomExpand.Name = "bBtnButtomExpand";
             this.bBtnButtomExpand.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnButtomExpand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnButtomExpand_ItemClick);
             // 
             // bBtnCopyButtom
             // 
@@ -769,14 +766,12 @@ namespace Analogy
             this.bBtnCopyButtom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.LargeImage")));
             this.bBtnCopyButtom.Name = "bBtnCopyButtom";
             this.bBtnCopyButtom.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnCopyButtom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnCopyButtom_ItemClick);
             // 
             // btSwitchExpandButtomMessage
             // 
             this.btSwitchExpandButtomMessage.Caption = "Expand";
             this.btSwitchExpandButtomMessage.Id = 11;
             this.btSwitchExpandButtomMessage.Name = "btSwitchExpandButtomMessage";
-            this.btSwitchExpandButtomMessage.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barToggleSwitchItem1_CheckedChanged);
             // 
             // bBtnExportExcel
             // 
@@ -803,7 +798,6 @@ namespace Analogy
             this.bBtnExportHtml.Name = "bBtnExportHtml";
             this.bBtnExportHtml.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bBtnExportHtml.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnExportHtml.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExportHtml_ItemClick);
             // 
             // bBtnUndockView
             // 
@@ -813,7 +807,6 @@ namespace Analogy
             this.bBtnUndockView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockView.ImageOptions.LargeImage")));
             this.bBtnUndockView.Name = "bBtnUndockView";
             this.bBtnUndockView.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnUndockView.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockView_ItemClick);
             // 
             // bBtnSaveEntireLog
             // 
@@ -823,7 +816,6 @@ namespace Analogy
             this.bBtnSaveEntireLog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSaveEntireLog.ImageOptions.LargeImage")));
             this.bBtnSaveEntireLog.Name = "bBtnSaveEntireLog";
             this.bBtnSaveEntireLog.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnSaveEntireLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSaveEntireLog_ItemClick);
             // 
             // bbtnSaveViewAgnostic
             // 
@@ -832,7 +824,6 @@ namespace Analogy
             this.bbtnSaveViewAgnostic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.Image")));
             this.bbtnSaveViewAgnostic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnSaveViewAgnostic.ImageOptions.LargeImage")));
             this.bbtnSaveViewAgnostic.Name = "bbtnSaveViewAgnostic";
-            this.bbtnSaveViewAgnostic.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbtnSaveViewAgnostic_ItemClick);
             // 
             // barButtonItemSaveEntireInAnalogy
             // 
@@ -841,7 +832,6 @@ namespace Analogy
             this.barButtonItemSaveEntireInAnalogy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.Image")));
             this.barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSaveEntireInAnalogy.ImageOptions.LargeImage")));
             this.barButtonItemSaveEntireInAnalogy.Name = "barButtonItemSaveEntireInAnalogy";
-            this.barButtonItemSaveEntireInAnalogy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItemSaveEntireInAnalogy_ItemClick);
             // 
             // bBtnUndockViewPerProcess
             // 
@@ -850,7 +840,6 @@ namespace Analogy
             this.bBtnUndockViewPerProcess.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.Image")));
             this.bBtnUndockViewPerProcess.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnUndockViewPerProcess.ImageOptions.LargeImage")));
             this.bBtnUndockViewPerProcess.Name = "bBtnUndockViewPerProcess";
-            this.bBtnUndockViewPerProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnUndockViewPerProcess_ItemClick);
             // 
             // pnlTopFiltering
             // 

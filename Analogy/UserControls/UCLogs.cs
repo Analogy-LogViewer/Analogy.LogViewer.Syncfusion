@@ -1,12 +1,4 @@
 ﻿using Syncfusion.WinForms.DataGridConverter;
-using DevExpress.Data;
-using DevExpress.LookAndFeel;
-using DevExpress.Utils;
-using DevExpress.XtraBars;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -243,7 +235,6 @@ namespace Analogy
                 if (!selectedItems.Any()) return;
                 DataRow dataRow = selectedItems.First().Row;
                 _currentMassage = GetMessageFromRow(dataRow);
-                LoadTextBoxes(_currentMassage);
                 if (hasAnyInPlaceExtensions)
                 {
                     var column = sfDataGridMain.Columns[e.DataColumn.ColumnIndex];
@@ -267,6 +258,14 @@ namespace Analogy
                 }
 
             };
+            sfDataGridMain.SelectionChanged += (s, e) =>
+            {
+
+                (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
+                if (message == null) return;
+                LoadTextBoxes(message);
+            };
+
             sfDataGridMain.CellDoubleClick += (s, e) =>
             {
                 OpenMessageDetails();
@@ -352,8 +351,8 @@ namespace Analogy
                 Settings.AutoScrollToLastMessage = tsTopAutoScrollToLast.Checked;
             };
             tsTopClear.Click += (s, e) => ClearLogs(true);
-            
-            
+
+
             #endregion
             #region Toolstrip Buttons
 
@@ -447,8 +446,8 @@ namespace Analogy
             if (FileDataProvider == null)
             {
                 //disable specific saving
-                bBtnSaveLog.Visibility = BarItemVisibility.Never;
-                bBtnSaveEntireLog.Visibility = BarItemVisibility.Never;
+                tsmiSaveCurrentViewDataProvider.Visible = false;
+                tsmiSaveFullLogDataProvider.Visible = false;
             }
         }
 
@@ -534,8 +533,8 @@ namespace Analogy
                 cbInclude.Text = Settings.IncludeText;
                 cbExclude.Text = Settings.ExcludedText;
             }
-         
-            splitContainerMain.Collapsed = true; 
+
+            splitContainerMain.Collapsed = true;
             if (Settings.StartupErrorLogLevel)
                 rbErrorCritical.Checked = true;
 
@@ -586,111 +585,12 @@ namespace Analogy
 
         #region UI events
 
-        private void PmsGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-
-            (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            if (message == null) return;
-            LoadTextBoxes(message);
-
-        }
-
         private void LogGrid_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
                 OpenMessageDetails();
             }
-        }
-
-        private void pmsGridView_RowStyle(object sender, RowStyleEventArgs e)
-        {
-            if (sender is GridView view && e.RowHandle >= 0)
-            {
-                string level = view.GetRowCellDisplayText(e.RowHandle, view.Columns["Level"]);
-                var parsed = TryParse(level, true, out AnalogyLogLevel enumLevel);
-                if (parsed)
-                {
-                    e.Appearance.BackColor = Settings.ColorSettings.GetColorForLogLevel(enumLevel);
-                    switch (enumLevel)
-                    {
-                        case AnalogyLogLevel.Warning:
-                        case AnalogyLogLevel.Error:
-                        case AnalogyLogLevel.Critical:
-                            if (UserLookAndFeel.Default.ActiveLookAndFeel.ActiveSkinName.Contains("Dark"))
-                                e.Appearance.ForeColor = Color.Black;
-                            break;
-                        case AnalogyLogLevel.Event:
-                        case AnalogyLogLevel.Verbose:
-                        case AnalogyLogLevel.Debug:
-                        case AnalogyLogLevel.Disabled:
-                        case AnalogyLogLevel.Trace:
-                        case AnalogyLogLevel.Unknown:
-                        case AnalogyLogLevel.AnalogyInformation:
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-
-                string text = view.GetRowCellDisplayText(e.RowHandle, view.Columns["Text"]);
-                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, cbHighlights.TextBox.Text, PreDefinedQueryType.Contains))
-                {
-                    e.Appearance.BackColor = Settings.ColorSettings.GetHighlightColor();
-                }
-
-                foreach (PreDefineHighlight preDefineHighlight in Settings.PreDefinedQueries.Highlights)
-                {
-                    if (FilterCriteriaObject.Match(text, preDefineHighlight.Text, preDefineHighlight.PreDefinedQueryType))
-                    {
-                        e.Appearance.BackColor = preDefineHighlight.Color;
-                    }
-                }
-            }
-        }
-
-        private void pmsGridView_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            if (!(e.RowHandle >= 0) || !e.Info.IsRowIndicator || !(sender is GridView view)) return;
-            AnalogyLogMessage msg = (AnalogyLogMessage)view.GetRowCellValue(e.RowHandle, "Object");
-            Image img = imageList.Images[7];
-            switch (msg.Level)
-            {
-                case AnalogyLogLevel.Critical:
-                case AnalogyLogLevel.Error:
-                    img = imageList.Images[0];
-                    break;
-                case AnalogyLogLevel.Warning:
-                    img = imageList.Images[1];
-                    break;
-                case AnalogyLogLevel.Trace:
-                case AnalogyLogLevel.Event:
-                    img = imageList.Images[7];
-                    break;
-                case AnalogyLogLevel.Verbose:
-                    img = imageList.Images[2];
-                    break;
-                case AnalogyLogLevel.Debug:
-                    img = imageList.Images[6];
-                    break;
-                case AnalogyLogLevel.Disabled:
-                    break;
-                case AnalogyLogLevel.AnalogyInformation:
-                    img = imageList.Images[8];
-                    break;
-                case AnalogyLogLevel.Unknown:
-                    img = imageList.Images[9];
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            Rectangle r = e.Bounds;
-            int x = r.X + (r.Width - imageList.ImageSize.Width) / 2;
-            int y = r.Y + (r.Height - imageList.ImageSize.Height) / 2;
-            e.Cache.DrawImage(img, x, y);
-            e.Handled = true;
         }
 
         private void tsmiCopy_Click(object sender, EventArgs e)
@@ -711,7 +611,7 @@ namespace Analogy
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message, @"Error opening mail client", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Message, @"Error opening mail client", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
 
@@ -757,102 +657,7 @@ namespace Analogy
         {
             await FilterHasChanged();
         }
-        //private async void txtbInclude_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (OldTextInclude.Equals(txtbInclude.Text)) return;
-        //    OldTextInclude = txtbInclude.Text;
-        //    txtbHighlight.Text = txtbInclude.Text;
-        //    if (string.IsNullOrEmpty(txtbInclude.Text))
-        //    {
-        //        chkbIncludeText.Checked = false;
-        //        return;
-        //    }
-
-        //    chkbHighlight.Checked = false;
-        //    chkbIncludeText.Checked = true;
-        //    await FilterHasChanged();
-        //}
-
-        //private async void txtbExclude_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (OldTextExclude.Equals(txtbExclude.Text)) return;
-        //    Settings.ExcludedText = txtbExclude.Text;
-        //    OldTextExclude = txtbExclude.Text;
-        //    if (string.IsNullOrEmpty(txtbExclude.Text))
-        //    {
-        //        chkExclude.Checked = false;
-        //        return;
-        //    }
-
-        //    chkExclude.Checked = true;
-        //    await FilterHasChanged();
-        //}
-
-        /// <summary>
-        /// Set custom column display text
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GridViewCustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
-        {
-            if (e.GroupRowHandle == BaseListSourceDataController.FilterRow &&
-                e.Column.FieldName == DataGridDateColumnName)
-            {
-                e.DisplayText = e.Column.FilterInfo.DisplayText;
-            }
-        }
-
-        /// <summary>
-        /// Called when column filter button is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GridViewShowFilterPopupListBox(object sender, FilterPopupListBoxEventArgs e)
-        {
-            if (e.Column.FieldName != DataGridDateColumnName)
-            {
-                return;
-            }
-
-            e.ComboBox.Items.Clear();
-
-            int index = 0;
-
-            #region Create and add custom filter criteria to select the records which refer to the current date.
-
-            // ALL
-            ColumnFilterInfo fInfo = new ColumnFilterInfo();
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterNone, fInfo));
-
-            // Today
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.Today),
-                GetFilterDisplayText(DateRangeFilter.Today));
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterToday, fInfo));
-
-            // Last 2 days
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.Last2Days),
-                GetFilterDisplayText(DateRangeFilter.Last2Days));
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterLast2Days, fInfo));
-            // Last 3 days
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.Last3Days),
-                GetFilterDisplayText(DateRangeFilter.Last3Days));
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterLast3Days, fInfo));
-            // Last week
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.LastWeek),
-                GetFilterDisplayText(DateRangeFilter.LastWeek));
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterLastWeek, fInfo));
-            // Last 2 weeks
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.Last2Weeks),
-                GetFilterDisplayText(DateRangeFilter.Last2Weeks));
-            e.ComboBox.Items.Insert(index++, new FilterItem(Utils.DateFilterLast2Weeks, fInfo));
-            // Last month.
-            fInfo = new ColumnFilterInfo(GetFilterString(DataGridDateColumnName, DateRangeFilter.LastMonth),
-                GetFilterDisplayText(DateRangeFilter.LastMonth));
-            e.ComboBox.Items.Insert(index, new FilterItem(Utils.DateFilterLastMonth, fInfo));
-
-            #endregion Create and add custom filter criteria to select the records which refer to the current date.
-        }
-
+        
         #endregion
 
         #region Messages logic
@@ -1236,34 +1041,6 @@ namespace Analogy
             RefreshUIMessagesCount();
 
         }
-        public virtual int LocateByValue(int startRowHandle, GridColumn column, AnalogyLogMessage val)
-        {
-            return 0;
-            //todo: fix this
-            //if (!LogGrid.DataController.IsReady || val == null)
-            //    return int.MinValue;
-            //startRowHandle = Math.Max(0, startRowHandle);
-            //if (LogGrid.IsServerMode)
-            //{
-            //    if (startRowHandle != 0)
-            //        throw new ArgumentException("Argument must be '0' in server mode.", nameof(startRowHandle));
-            //}
-            //try
-            //{
-            //    if (LogGrid.IsServerMode)
-            //        return LogGrid.DataController.FindRowByValue(column.FieldName, val, null);
-            //    for (int rowHandle = startRowHandle; rowHandle < LogGrid.DataController.VisibleListSourceRowCount; ++rowHandle)
-            //    {
-            //        object rowCellValue = LogGrid.GetRowCellValue(rowHandle, column.Caption);
-            //        if (Equals(val, rowCellValue))
-            //            return rowHandle;
-            //    }
-            //}
-            //catch
-            //{
-            //}
-            //return int.MinValue;
-        }
         private void RefreshUIMessagesCount()
         {
             if (!IsHandleCreated) return;
@@ -1392,7 +1169,7 @@ namespace Analogy
             }
             else
             {
-                XtraMessageBox.Show("Sharing logs feature has been disabled", "Operation Is Not allowed",
+                MessageBox.Show("Sharing logs feature has been disabled", "Operation Is Not allowed",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1405,52 +1182,6 @@ namespace Analogy
                 NewDataExist = false;
                 AcceptChanges(false);
             }
-
-        }
-
-        //private void txtbInclude_MouseEnter(object sender, EventArgs e)
-        //{
-        //    txtbInclude.Focus();
-        //    txtbInclude.SelectAll();
-        //}
-
-        //private void txtbInclude_Enter(object sender, EventArgs e)
-        //{
-        //    txtbInclude.SelectAll();
-        //}
-
-        private void txtbExcludeSource_TextChanged(object sender, EventArgs e)
-        {
-            //if (string.IsNullOrEmpty(txtbExcludeSource.Text))
-            //{
-            //    chkbExcludeSources.Checked = false;
-            //}
-            //else
-            //{
-            //    if (!chkbExcludeSources.Checked)
-            //        chkbExcludeSources.Checked = true;
-            //}
-
-            //RefreshUserFilter();
-            //Settings.ExcludedSource = txtbExcludeSource.Text;
-
-        }
-
-        private void gridControlBookmarkedMessages_DoubleClick(object sender, EventArgs e)
-        {
-            if (!(e is DXMouseEventArgs args))
-                return;
-            GoToMessage();
-
-        }
-
-        private void pmsGrid_DoubleClick(object sender, EventArgs e)
-        {
-            if (!(e is DXMouseEventArgs args))
-                return;
-            OpenMessageDetails();
-
-
         }
 
         private void OpenMessageDetails()
@@ -1583,39 +1314,7 @@ namespace Analogy
 
 
         }
-
-        private async void tsbtnImport_Click(object sender, EventArgs e)
-        {
-
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter =
-                "Plain XML log file (*.log)|*.log|JSON file (*.json)|*.json|NLOG file (*.nlog)|*.nlog|Zipped XML log file (*.zip)|*.zip|ETW log file (*.etl)|*.etl";
-            openFileDialog1.Title = @"Import file to current view";
-            openFileDialog1.Multiselect = false;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    await LoadFilesAsync(new List<string> { openFileDialog1.FileName }, false);
-                }
-                catch (Exception exception)
-                {
-                    XtraMessageBox.Show(exception.Message, @"Error Opening file", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-
-            }
-
-        }
   
-    
-
-        private void bBtnSaveLog_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = Messages;
-            SaveMessagesToLog(FileDataProvider, messages);
-        }
-
         private async void SaveMessagesToLog(IAnalogyOfflineDataProvider fileHandler, List<AnalogyLogMessage> messages)
         {
 
@@ -1632,14 +1331,14 @@ namespace Analogy
                     }
                     catch (Exception e)
                     {
-                        XtraMessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
             else
             {
-                if (XtraMessageBox.Show("Current Data Source does not support Save Operation" + Environment.NewLine + "Do you want to Save in Analogy XML Format?", @"Save not Supported", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                if (MessageBox.Show("Current Data Source does not support Save Operation" + Environment.NewLine + "Do you want to Save in Analogy XML Format?", @"Save not Supported", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
                     SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
                     //SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -1661,40 +1360,12 @@ namespace Analogy
                 }
                 else
                 {
-                    XtraMessageBox.Show("Operation Aborted", @"Save file", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Operation Aborted", @"Save file", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
         }
-        private async void bBtnImport_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter =
-                "Plain XML log file (*.log)|*.log|JSON file (*.json)|*.json|NLOG file (*.nlog)|*.nlog|Zipped XML log file (*.zip)|*.zip|ETW log file (*.etl)|*.etl";
-            openFileDialog1.Title = @"Import file to current view";
-            openFileDialog1.Multiselect = false;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    await LoadFilesAsync(new List<string> { openFileDialog1.FileName }, false);
-                }
-                catch (Exception exception)
-                {
-                    XtraMessageBox.Show(exception.Message, @"Error Opening file", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-
-            }
-        }
-
-        private void bBtnClearLog_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ClearLogs(true);
-        }
-
-        private async void sBtnMostCommon_Click(object sender, EventArgs e)
+    private async void sBtnMostCommon_Click(object sender, EventArgs e)
         {
             List<string> items;
 
@@ -1709,39 +1380,6 @@ namespace Analogy
                 chkExclude.Checked = true;
                 await FilterHasChanged();
             }
-        }
-
-
-        
-        private void bBtnCopyButtom_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Clipboard.SetText(tbMessageInfo.Text);
-        }
-
-        private void bBtnButtomExpand_ItemClick(object sender, ItemClickEventArgs e)
-        {
-        }
-
-        private void barToggleSwitchItem1_CheckedChanged(object sender, ItemClickEventArgs e)
-        {
-
-            splitContainerMain.Collapsed = !btSwitchExpandButtomMessage.Checked;
-
-        }
-
-        private void bBtnGoToMessage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            GoToMessage();
-        }
-
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            _bookmarkedMessages.Clear();
-        }
-
-        private void bBtnopyBookmarked_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
         }
 
         private void tsmiSaveLayout_Click(object sender, EventArgs e)
@@ -1773,12 +1411,6 @@ namespace Analogy
         {
             RemoveBookmark();
         }
-
-        private void bBtnRemoveBoomark_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            RemoveBookmark();
-        }
-
         private void RemoveBookmark()
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
@@ -1892,8 +1524,8 @@ namespace Analogy
             Clipboard.SetText(all);
         }
 
-     
-    
+
+
         private void btnPageFirst_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
@@ -1960,37 +1592,7 @@ namespace Analogy
                 }
             }
         }
-        private void bBtnExportCSV_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //saveFileDialog.Filter = "Comma Separated File (*.csv)|*.csv";
-
-            //if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            //{
-
-            //    var excelEngine = sfDataGridMain.export(sfDataGridMain.View, options);
-            //    var workBook = excelEngine.Excel.Workbooks[0];
-            //    workBook.SaveAs(saveFileDialog.FileName);
-
-            //    LogGrid.ExportToCsv(saveFileDialog.FileName);
-            //    OpenFolder(saveFileDialog.FileName);
-            //}
-        }
-
-        private void bBtnExportHtml_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //saveFileDialog.Filter = "HTML File (*.html)|*.html";
-
-            //if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            //{
-            //    HtmlExportOptions op = new HtmlExportOptions();
-            //    op.ExportMode = HtmlExportMode.SingleFile;
-            //    LogGrid.ExportToHtml(saveFileDialog.FileName, op);
-            //    OpenFolder(saveFileDialog.FileName);
-            //}
-        }
-        private void OpenFolder(string filename)
+      private void OpenFolder(string filename)
         {
             try
             {
@@ -2002,32 +1604,7 @@ namespace Analogy
                     MessageBoxIcon.Error);
             }
         }
-        private void bBtnUndockView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var msg = Messages;
-            if (!msg.Any()) return;
-            var source = GetFilteredDataTable().Rows[0]?["DataProvider"]?.ToString();
-            if (source == null) return;
-            XtraFormLogGrid grid = new XtraFormLogGrid(msg, source);
-            lockExternalWindowsObject.EnterWriteLock();
-            _externalWindows.Add(grid);
-            Interlocked.Increment(ref ExternalWindowsCount);
-            lockExternalWindowsObject.ExitWriteLock();
-            grid.FormClosing += (s, arg) =>
-            {
-                lockExternalWindowsObject.EnterWriteLock();
-                Interlocked.Decrement(ref ExternalWindowsCount);
-                _externalWindows.Remove(grid);
-                lockExternalWindowsObject.ExitWriteLock();
-            };
-            grid.Show(this);
-        }
-
-        private void bBtnSaveEntireLog_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = PagingManager.GetAllMessages();
-            SaveMessagesToLog(FileDataProvider, messages);
-        }
+    
 
         private void UndockView()
         {
@@ -2096,22 +1673,7 @@ namespace Analogy
             RefreshUIMessagesCount();
 
         }
-
-        private void bBtnDataVisualizer_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = Messages;
-            DataVisualizerForm sv = new DataVisualizerForm(messages);
-            sv.Show(this);
-        }
-
-        private void bbiScreenshot_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Bitmap image = takeComponentScreenShot(sfDataGridMain);
-            Clipboard.SetImage(image);
-            MessageBox.Show("Screenshot of messages was copied to clipboard.", "Image was taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-        private static Bitmap takeComponentScreenShot(Control control)
+    private static Bitmap takeComponentScreenShot(Control control)
         {
             // find absolute position of the control in the screen.
             Control ctrl = control;
@@ -2129,23 +1691,6 @@ namespace Analogy
             g.CopyFromScreen(rect.Left, rect.Top, 0, 0, bmp.Size, CopyPixelOperation.SourceCopy);
 
             return bmp;
-        }
-
-        private void BbtnSaveViewAgnostic_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = Messages;
-            SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
-        }
-
-        private void BarButtonItemSaveEntireInAnalogy_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var messages = PagingManager.GetAllMessages();
-            SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
-        }
-
-        private void bBtnUndockViewPerProcess_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UndockViewPerProcess();
         }
 
         private void UndockViewPerProcess()
