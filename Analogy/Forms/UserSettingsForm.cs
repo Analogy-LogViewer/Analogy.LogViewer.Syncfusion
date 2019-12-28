@@ -1,16 +1,15 @@
-﻿using DevExpress.XtraEditors;
+﻿
 using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Managers;
 using Analogy.Types;
-using DevExpress.Data.Helpers;
-using DevExpress.Utils;
 using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.WinForms.Controls;
 
 namespace Analogy
 {
@@ -57,7 +56,7 @@ namespace Analogy
                 Settings.SaveSearchFilters ? ToggleButtonState.Active : ToggleButtonState.Inactive;
             tbDataTimeAscendDescend.ToggleState =
                 Settings.DefaultDescendOrder ? ToggleButtonState.Active : ToggleButtonState.Inactive;
-            tbErrorLevelAsDefault.ToggleState=
+            tbErrorLevelAsDefault.ToggleState =
                 Settings.StartupErrorLogLevel ? ToggleButtonState.Active : ToggleButtonState.Inactive;
 
             tbAutoComplete.ToggleState =
@@ -137,17 +136,17 @@ namespace Analogy
         }
         private void SaveSetting()
         {
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Unknown, cpeLogLevelUnknown.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Disabled, cpeLogLevelDisabled.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Trace, cpeLogLevelTrace.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Verbose, cpeLogLevelVerbose.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Debug, cpeLogLevelDebug.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Event, cpeLogLevelEvent.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Warning, cpeLogLevelWarning.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Error, cpeLogLevelError.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Critical, cpeLogLevelCritical.Color);
-            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.AnalogyInformation, cpeLogLevelAnalogyInformation.Color);
-            Settings.ColorSettings.SetHighlightColor(cpeHighlightColor.Color);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Unknown, tbLogLevelUnknown.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Disabled, tbLogLevelDisabled.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Trace, tbLogLevelTrace.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Verbose, tbLogLevelVerbose.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Debug, tbLogLevelDebug.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Event, tbLogLevelEvent.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Warning, tbLogLevelWarning.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Error, tbLogLevelError.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.Critical, tbLogLevelCritical.BackColor);
+            Settings.ColorSettings.SetColorForLogLevel(AnalogyLogLevel.AnalogyInformation, tbLogLevelAnalogyInformation.BackColor);
+            Settings.ColorSettings.SetHighlightColor(tbHighlightColor.BackColor);
 
             List<Guid> order = (from FactoryCheckItem itm in chkLstDataProviderStatus.Items select (itm.ID)).ToList();
             var checkedItem = chkLstDataProviderStatus.CheckedItems.Cast<FactoryCheckItem>().ToList();
@@ -168,20 +167,19 @@ namespace Analogy
 
         private void LoadColorSettings()
         {
-            cpeLogLevelUnknown.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Unknown);
-            cpeLogLevelDisabled.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Disabled);
-            cpeLogLevelTrace.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Trace);
-            cpeLogLevelVerbose.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Verbose);
-            cpeLogLevelDebug.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Debug);
-            cpeLogLevelEvent.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Event);
-            cpeLogLevelWarning.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Warning);
-            cpeLogLevelError.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Error);
-            cpeLogLevelCritical.Color = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Critical);
-            cpeLogLevelAnalogyInformation.Color =
-                Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.AnalogyInformation);
-            cpeHighlightColor.Color = Settings.ColorSettings.GetHighlightColor();
+            tbLogLevelUnknown.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Unknown);
+            tbLogLevelDisabled.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Disabled);
+            tbLogLevelTrace.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Trace);
+            tbLogLevelVerbose.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Verbose);
+            tbLogLevelDebug.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Debug);
+            tbLogLevelEvent.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Event);
+            tbLogLevelWarning.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Warning);
+            tbLogLevelError.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Error);
+            tbLogLevelCritical.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.Critical);
+            tbLogLevelAnalogyInformation.BackColor = Settings.ColorSettings.GetColorForLogLevel(AnalogyLogLevel.AnalogyInformation);
+            tbHighlightColor.BackColor = Settings.ColorSettings.GetHighlightColor();
         }
-        
+
         private void UserSettingsForm_Load(object sender, EventArgs e)
         {
             SetupEventsHandlers();
@@ -193,10 +191,11 @@ namespace Analogy
 
         private void SetupEventsHandlers()
         {
+            #region filter tab
             tbFilteringLastEntries.ToggleStateChanged += (s, e) =>
-                {
-                    Settings.SaveSearchFilters = e.ToggleState == ToggleButtonState.Active;
-                };
+                 {
+                     Settings.SaveSearchFilters = e.ToggleState == ToggleButtonState.Active;
+                 };
             tbDataTimeAscendDescend.ToggleStateChanged += (s, e) =>
             {
                 Settings.DefaultDescendOrder = e.ToggleState == ToggleButtonState.Active;
@@ -211,7 +210,7 @@ namespace Analogy
             };
             tbHistory.ToggleStateChanged += (s, e) =>
             {
-                Settings.ShowHistoryOfClearedMessages = e.ToggleState == ToggleButtonState.Active; 
+                Settings.ShowHistoryOfClearedMessages = e.ToggleState == ToggleButtonState.Active;
             };
 
             cbPaging.CheckedChanged += (s, e) =>
@@ -220,12 +219,147 @@ namespace Analogy
                 nudPageLength.Enabled = Settings.PagingEnabled;
             };
 
-            nudPageLength.ValueChanged += (s, e) => { Settings.PagingSize = (int) nudPageLength.Value; };
+            nudPageLength.ValueChanged += (s, e) => { Settings.PagingSize = (int)nudPageLength.Value; };
             tbFileCaching.ToggleStateChanged += (s, e) =>
             {
                 Settings.EnableFileCaching = e.ToggleState == ToggleButtonState.Active;
             };
+            #endregion
+
+            #region Pre-Defined Query
+
+            sfBtnPreDefinedSelectColor.Click += (s, e) =>
+            {
+                if (colorDialog1.ShowDialog(this) == DialogResult.OK)
+                {
+                    tbHighlighColor.BackColor = colorDialog1.Color;
+                }
+            };
+            btnDeleteHighlight.Click += (s, e) =>
+            {
+                if (lboxHighlightItems.SelectedItem is PreDefineHighlight highlight)
+                {
+                    lboxHighlightItems.DataSource = null;
+                    lboxHighlightItems.Items.Clear();
+                    Settings.PreDefinedQueries.RemoveHighlight(highlight);
+                    lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
+                }
+            };
+
+            btnAddFilter.Click += (s, e) =>
+            {
+                lboxFilters.DataSource = null;
+                Settings.PreDefinedQueries.AddFilter(tbIncludeTextFilter.Text, tbExcludeFilter.Text, tbSourcesFilter.Text, tbModulesFilter.Text);
+                lboxFilters.DataSource = Settings.PreDefinedQueries.Filters;
+            };
+            btnDeleteFilter.Click += (s, e) =>
+            {
+                if (lboxFilters.SelectedItem is PreDefineFilter filter)
+                {
+                    lboxFilters.DataSource = null;
+                    Settings.PreDefinedQueries.RemoveFilter(filter);
+                    lboxFilters.DataSource = Settings.PreDefinedQueries.Filters;
+                }
+            };
+            btnAddAlerts.Click += (s, e) =>
+            {
+                lboxAlerts.DataSource = null;
+                Settings.PreDefinedQueries.AddAlert(tbIncludeTextAlert.Text, tbExcludeAlert.Text,
+                    tbSourcesAlert.Text, tbModulesAlert.Text);
+                lboxAlerts.DataSource = Settings.PreDefinedQueries.Alerts;
+                lboxAlerts.Refresh();
+            };
+            btnDeleteAlerts.Click += (s, e) =>
+            {
+                if (lboxAlerts.SelectedItem is PreDefineAlert alert)
+                {
+                    lboxAlerts.DataSource = null;
+                    Settings.PreDefinedQueries.RemoveAlert(alert);
+                    lboxAlerts.DataSource = Settings.PreDefinedQueries.Alerts;
+                    lboxAlerts.Refresh();
+                }
+            };
+
+            #endregion
+
+            #region Look and feel tab
+
+            btnExportColors.Click += (s, e) =>
+            {
+                SaveSetting();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Analogy Color Settings (*.json)|*.json";
+                saveFileDialog.Title = @"Export Analogy Color settings";
+
+                if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+                {
+
+                    try
+                    {
+                        File.WriteAllText(saveFileDialog.FileName, Settings.ColorSettings.AsJson());
+                        MessageBox.Show("File Saved", @"Export settings", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        AnalogyLogManager.Instance.LogError("Error during save to file: " + e);
+                        MessageBox.Show("Error Export: " + ex.Message, @"Error Saving file", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+
+                }
+            };
+            btnImportColors.Click += (s, e) =>
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "Analogy Color Settings (*.json)|*.json";
+                openFileDialog1.Title = @"Import NLog settings";
+                openFileDialog1.Multiselect = true;
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var json = File.ReadAllText(openFileDialog1.FileName);
+                        ColorSettings color = ColorSettings.FromJson(json);
+                        Settings.ColorSettings = color;
+                        LoadColorSettings();
+                        MessageBox.Show("File Imported. Save settings if desired", @"Import settings",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        AnalogyLogManager.Instance.LogError("Error during import data: " + e);
+                        MessageBox.Show("Error Import: " + ex.Message, @"Error Import file", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+            };
+
+            void SelectColor(TextBoxExt targetTextBox)
+            {
+                if (colorDialog1.ShowDialog(this) == DialogResult.OK)
+                {
+                    targetTextBox.BackColor = colorDialog1.Color;
+                }
+            }
+
+            sfBtnLogLevelUnknown.Click += (s, e) => SelectColor(tbLogLevelUnknown);
+            sfBtnLogLevelDisabled.Click += (s, e) => SelectColor(tbLogLevelDisabled);
+            sfBtnLogLevelTrace.Click += (s, e) => SelectColor(tbLogLevelTrace);
+            sfBtnLogLevelVerbose.Click += (s, e) => SelectColor(tbLogLevelVerbose);
+            sfBtnLogLevelDebug.Click += (s, e) => SelectColor(tbLogLevelDebug);
+            sfBtnLogLevelEvent.Click += (s, e) => SelectColor(tbLogLevelEvent);
+            sfBtnLogLevelWarning.Click += (s, e) => SelectColor(tbLogLevelWarning);
+            sfBtnLogLevelError.Click += (s, e) => SelectColor(tbLogLevelError);
+            sfBtnLogLevelCritical.Click += (s, e) => SelectColor(tbLogLevelCritical);
+            sfBtnLogLevelAnalogyInformation.Click += (s, e) => SelectColor(tbLogLevelAnalogyInformation);
+            sfBtnHighlightColor.Click += (s, e) => SelectColor(tbHighlightColor);
+            #endregion
         }
+
 
         private void nudRecent_ValueChanged(object sender, EventArgs e)
         {
@@ -257,8 +391,7 @@ namespace Analogy
 
         private void btnClearStatistics_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.AllowCustomLookAndFeel = true;
-            var result = XtraMessageBox.Show("Clear statistics?", "Confirmation Required", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Clear statistics?", "Confirmation Required", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 Settings.ClearStatistics();
@@ -308,59 +441,11 @@ namespace Analogy
             SaveSetting();
         }
 
-        private void sBtnExportColors_Click(object sender, EventArgs e)
-        {
-            SaveSetting();
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Analogy Color Settings (*.json)|*.json";
-            saveFileDialog.Title = @"Export Analogy Color settings";
 
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-
-                try
-                {
-                    File.WriteAllText(saveFileDialog.FileName, Settings.ColorSettings.AsJson());
-                    XtraMessageBox.Show("File Saved", @"Export settings", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    AnalogyLogManager.Instance.LogError("Error during save to file: " + e);
-                    XtraMessageBox.Show("Error Export: " + ex.Message, @"Error Saving file", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-
-            }
-        }
 
         private void sBtnImportColors_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Analogy Color Settings (*.json)|*.json";
-            openFileDialog1.Title = @"Import NLog settings";
-            openFileDialog1.Multiselect = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    var json = File.ReadAllText(openFileDialog1.FileName);
-                    ColorSettings color = ColorSettings.FromJson(json);
-                    Settings.ColorSettings = color;
-                    LoadColorSettings();
-                    XtraMessageBox.Show("File Imported. Save settings if desired", @"Import settings",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
 
-                }
-                catch (Exception ex)
-                {
-                    AnalogyLogManager.Instance.LogError("Error during import data: " + e);
-                    XtraMessageBox.Show("Error Import: " + ex.Message, @"Error Import file", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void btnDataProviderCustomSettings_Click(object sender, EventArgs e)
@@ -407,49 +492,41 @@ namespace Analogy
 
         private void rbtnHighlightContains_CheckedChanged(object sender, EventArgs e)
         {
-            teHighlightContains.Enabled = rbtnHighlightContains.Checked;
-            teHighlightEquals.Enabled = rbtnHighlightEquals.Checked;
+            tbHighlightContains.Enabled = rbtnHighlightContains.Checked;
+            tbHighlightEquals.Enabled = rbtnHighlightEquals.Checked;
         }
 
         private void rbtnHighlightEquals_CheckedChanged(object sender, EventArgs e)
         {
-            teHighlightContains.Enabled = rbtnHighlightContains.Checked;
-            teHighlightEquals.Enabled = rbtnHighlightEquals.Checked;
+            tbHighlightContains.Enabled = rbtnHighlightContains.Checked;
+            tbHighlightEquals.Enabled = rbtnHighlightEquals.Checked;
         }
 
         private void sbtnAddHighlight_Click(object sender, EventArgs e)
         {
             if (rbtnHighlightContains.Checked)
             {
-                Settings.PreDefinedQueries.AddHighlight(teHighlightContains.Text, PreDefinedQueryType.Contains, cpeHighlightPreDefined.Color);
+                lboxHighlightItems.DataSource = null;
+                lboxHighlightItems.BeginUpdate();
+                Settings.PreDefinedQueries.AddHighlight(tbHighlightContains.Text, PreDefinedQueryType.Contains, tbHighlighColor.BackColor);
                 lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
+                lboxHighlightItems.EndUpdate();
                 lboxHighlightItems.Refresh();
             }
 
             if (rbtnHighlightEquals.Checked)
             {
-                Settings.PreDefinedQueries.AddHighlight(teHighlightEquals.Text, PreDefinedQueryType.Equals, cpeHighlightPreDefined.Color);
+                lboxHighlightItems.DataSource = null;
+                lboxHighlightItems.BeginUpdate();
+                Settings.PreDefinedQueries.AddHighlight(tbHighlightEquals.Text, PreDefinedQueryType.Equals, tbHighlighColor.BackColor);
                 lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
+                lboxHighlightItems.EndUpdate();
                 lboxHighlightItems.Refresh();
+
             }
         }
 
-        private void sbtnDeleteHighlight_Click(object sender, EventArgs e)
-        {
-            if (lboxHighlightItems.SelectedItem is PreDefineHighlight highlight)
-            {
-                Settings.PreDefinedQueries.RemoveHighlight(highlight);
-                lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
-                lboxHighlightItems.Refresh();
-            }
-        }
 
-        private void sbtnAddFilter_Click(object sender, EventArgs e)
-        {
-            Settings.PreDefinedQueries.AddFilter(txtbIncludeTextFilter.Text, txtbExcludeFilter.Text, txtbSourcesFilter.Text, txtbModulesFilter.Text);
-            lboxFilters.DataSource = Settings.PreDefinedQueries.Filters;
-            lboxFilters.Refresh();
-        }
 
         private void sbtnDeleteFilter_Click(object sender, EventArgs e)
         {
@@ -458,23 +535,6 @@ namespace Analogy
                 Settings.PreDefinedQueries.RemoveFilter(filter);
                 lboxFilters.DataSource = Settings.PreDefinedQueries.Filters;
                 lboxFilters.Refresh();
-            }
-        }
-
-        private void sbtnAddAlerts_Click(object sender, EventArgs e)
-        {
-            Settings.PreDefinedQueries.AddAlert(txtbIncludeTextAlert.Text, txtbExcludeAlert.Text, txtbSourcesAlert.Text, txtbModulesAlert.Text);
-            lboxAlerts.DataSource = Settings.PreDefinedQueries.Alerts;
-            lboxAlerts.Refresh();
-        }
-
-        private void sbtnDeleteAlerts_Click(object sender, EventArgs e)
-        {
-            if (lboxAlerts.SelectedItem is PreDefineAlert alert)
-            {
-                Settings.PreDefinedQueries.RemoveAlert(alert);
-                lboxAlerts.DataSource = Settings.PreDefinedQueries.Alerts;
-                lboxAlerts.Refresh();
             }
         }
     }

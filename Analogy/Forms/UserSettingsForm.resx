@@ -127,6 +127,9 @@ For source/modules use , as seperator and - for exclusion. for example: "test, -
 For text (include/exclue) use + for "and" and | for "Or" operations.
 For source/modules use , as seperator and - for exclusion. for example: "test, -test2" wll exclude test 2 and wil show all that has text in them.</value>
   </data>
+  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
