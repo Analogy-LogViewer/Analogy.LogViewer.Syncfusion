@@ -130,6 +130,8 @@ namespace Analogy
             //sfDataPager1.DataSource = _messageData.AsEnumerable();
             //sfDataPager1.PageSize = 1000;
             sfDataGridMain.DataSource = _messageData;
+            _bookmarkedMessages = Utils.DataTableConstructor();
+            sfDataGridBookmarks.DataSource = _bookmarkedMessages;
         }
 
         private void SetupControlEvents()
@@ -303,8 +305,36 @@ namespace Analogy
                 cancellationTokenSource = new CancellationTokenSource();
                 btnCancel.Visible = false;
             };
+
+
+            #region Toolstrip Buttons
+            tsBtnMessageInfoCopy.Click += (s, e) => Clipboard.SetText(tbMessageInfo.Text);
+            tsBtnBookmarkCopySingle.Click += (s, e) =>
+            {
+                //todo: check this
+                if (!sfDataGridBookmarks.SelectedItems.Any()) return;
+                var selectedItems = sfDataGridBookmarks.SelectedItems.Cast<DataRowView>();
+                DataRow dataRow = selectedItems.First().Row;
+                AnalogyLogMessage message = GetMessageFromRow(dataRow);
+                Clipboard.SetText(message.Text);
+
+            };
+            tsBtnBookmarkCopyAll.Click += (s, e) =>
+            {
+                var messages = BookmarkedMessages;
+                if (!messages.Any()) return;
+                string all = string.Join(Environment.NewLine, messages.Select(m => $"{m.Date.ToString()}: {m.Text}"));
+                Clipboard.SetText(all);
+            };
+            tsBtnBookmarkClear.Click += (s, e) =>
+            {
+                _bookmarkedMessages.Clear();
+            };
+            tsBtnBookmarkGoToOriginal.Click += (s, e) => { GoToMessage(); };
+
+            #endregion
         }
-        
+
 
         private static AnalogyLogMessage GetMessageFromRow(DataRow row) => row[9] as AnalogyLogMessage;
 
@@ -350,10 +380,7 @@ namespace Analogy
             //    }
             //};
 
-            _bookmarkedMessages = Utils.DataTableConstructor();
-            gridControlBookmarkedMessages.DataSource = _bookmarkedMessages;
-
-        }
+     }
 
         public void SetFileDataSource(IAnalogyOfflineDataProvider fileDataProvider)
         {
@@ -1270,7 +1297,7 @@ namespace Analogy
             pageNumber = 1;
             UpdatePage(PagingManager.FirstPage());
             AcceptChanges(true);
-            rtxtContent.Text = string.Empty;
+            tbMessageInfo.Text = string.Empty;
             if (BookmarkView)
                 BookmarkPersistManager.Instance.ClearBookmarks();
             lockSlim.ExitWriteLock();
@@ -1281,10 +1308,10 @@ namespace Analogy
         private void LoadTextBoxes(AnalogyLogMessage m)
         {
             if (InvokeRequired)
-                BeginInvoke(new MethodInvoker(() => rtxtContent.Text = m.Text));
+                BeginInvoke(new MethodInvoker(() => tbMessageInfo.Text = m.Text));
             else
             {
-                rtxtContent.Text = m.Text;
+                tbMessageInfo.Text = m.Text;
             }
 
         }
@@ -1698,7 +1725,7 @@ namespace Analogy
         }
         private void bBtnCopyButtom_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Clipboard.SetText(rtxtContent.Text);
+            Clipboard.SetText(tbMessageInfo.Text);
         }
 
         private void bBtnButtomExpand_ItemClick(object sender, ItemClickEventArgs e)
@@ -1724,13 +1751,7 @@ namespace Analogy
 
         private void bBtnopyBookmarked_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int[] selRows = gridViewBookmarkedMessages.GetSelectedRows();
 
-            if (selRows != null && selRows.Length == 1)
-            {
-                var message = (AnalogyLogMessage)gridViewBookmarkedMessages.GetRowCellValue(selRows.First(), "Object");
-                Clipboard.SetText(message.Text);
-            }
         }
 
         private void tsmiSaveLayout_Click(object sender, EventArgs e)

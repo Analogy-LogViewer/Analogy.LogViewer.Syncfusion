@@ -42,6 +42,19 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn15 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn16 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn17 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn18 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn19 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn20 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn21 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
@@ -80,6 +93,15 @@ namespace Analogy
             this.tsmiDecreaseFont = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbHighlights = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.sbtnMoreHighlight = new Syncfusion.WinForms.Controls.SfButton();
+            this.pnlButtonsHighlight = new System.Windows.Forms.Panel();
+            this.sbtnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
+            this.sbtnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
+            this.lblPageNumber = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.sBtnPageNext = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
+            this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barTopFiltering = new DevExpress.XtraBars.Bar();
             this.bBtnClearLog = new DevExpress.XtraBars.BarButtonItem();
@@ -105,32 +127,18 @@ namespace Analogy
             this.bBtnDataVisualizer = new DevExpress.XtraBars.BarButtonItem();
             this.bdcTopFiltering = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.BbarMainMenu = new DevExpress.XtraBars.Bar();
-            this.barMessage = new DevExpress.XtraBars.Bar();
-            this.bBtnCopyButtom = new DevExpress.XtraBars.BarButtonItem();
-            this.bdcMessageBottom = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barBookmark = new DevExpress.XtraBars.Bar();
-            this.bBtnopyBookmarked = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnCopyAllBookmarks = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnGoToMessage = new DevExpress.XtraBars.BarButtonItem();
-            this.bdcBookmarks = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bdcMessageBottom = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnExpand = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnButtomExpand = new DevExpress.XtraBars.BarButtonItem();
+            this.bBtnCopyButtom = new DevExpress.XtraBars.BarButtonItem();
             this.btSwitchExpandButtomMessage = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.sbtnMoreHighlight = new Syncfusion.WinForms.Controls.SfButton();
-            this.pnlButtonsHighlight = new System.Windows.Forms.Panel();
-            this.sBtnPageNext = new Syncfusion.WinForms.Controls.SfButton();
-            this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
-            this.sbtnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
-            this.sbtnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
-            this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.pnlTopFiltering = new System.Windows.Forms.Panel();
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
             this.pnlFilteringLeft = new System.Windows.Forms.Panel();
@@ -169,22 +177,15 @@ namespace Analogy
             this.rbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.tcBottom = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMessageInfo = new DevExpress.XtraTab.XtraTabPage();
-            this.rtxtContent = new DevExpress.XtraEditors.MemoEdit();
+            this.tsMessageInfo = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsBtnMessageInfoCopy = new System.Windows.Forms.ToolStripButton();
             this.xtpBookmarks = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControlBookmarkedMessages = new DevExpress.XtraGrid.GridControl();
-            this.gridViewBookmarkedMessages = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sfDataGridBookmarks = new Syncfusion.WinForms.DataGrid.SfDataGrid();
+            this.tsBookmark = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsBtnBookmarkCopySingle = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnBookmarkCopyAll = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnBookmarkClear = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnBookmarkGoToOriginal = new System.Windows.Forms.ToolStripButton();
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tmrNewData = new System.Windows.Forms.Timer(this.components);
@@ -194,6 +195,8 @@ namespace Analogy
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.nudGroupBychars = new DevExpress.XtraEditors.SpinEdit();
@@ -242,14 +245,12 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblPageNumber = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.cbHighlights = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.tbMessageInfo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
             this.pnlButtonsHighlight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.pnlTopFiltering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltFilteringBoth)).BeginInit();
             this.spltFilteringBoth.Panel1.SuspendLayout();
@@ -291,10 +292,10 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
             this.tcBottom.SuspendLayout();
             this.xtpMessageInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtContent.Properties)).BeginInit();
+            this.tsMessageInfo.SuspendLayout();
             this.xtpBookmarks.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBookmarkedMessages)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewBookmarkedMessages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).BeginInit();
+            this.tsBookmark.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtpMain.SuspendLayout();
@@ -316,7 +317,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -544,20 +545,139 @@ namespace Analogy
             this.panel1.Size = new System.Drawing.Size(2124, 26);
             this.panel1.TabIndex = 4;
             // 
+            // cbHighlights
+            // 
+            this.cbHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbHighlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Location = new System.Drawing.Point(200, 0);
+            this.cbHighlights.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHighlights.Name = "cbHighlights";
+            this.cbHighlights.Size = new System.Drawing.Size(1330, 26);
+            this.cbHighlights.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbHighlights.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.TabIndex = 44;
+            // 
+            // sbtnMoreHighlight
+            // 
+            this.sbtnMoreHighlight.AccessibleName = "Button";
+            this.sbtnMoreHighlight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sbtnMoreHighlight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnMoreHighlight.Location = new System.Drawing.Point(1530, 0);
+            this.sbtnMoreHighlight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sbtnMoreHighlight.Name = "sbtnMoreHighlight";
+            this.sbtnMoreHighlight.Size = new System.Drawing.Size(83, 26);
+            this.sbtnMoreHighlight.TabIndex = 43;
+            this.sbtnMoreHighlight.Text = "More ...";
+            this.sbtnMoreHighlight.Click += new System.EventHandler(this.sbtnMoreHighlight_Click);
+            // 
+            // pnlButtonsHighlight
+            // 
+            this.pnlButtonsHighlight.Controls.Add(this.sbtnPageFirst);
+            this.pnlButtonsHighlight.Controls.Add(this.sbtnPagePrevious);
+            this.pnlButtonsHighlight.Controls.Add(this.lblPageNumber);
+            this.pnlButtonsHighlight.Controls.Add(this.sBtnPageNext);
+            this.pnlButtonsHighlight.Controls.Add(this.sBtnLastPage);
+            this.pnlButtonsHighlight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlButtonsHighlight.Location = new System.Drawing.Point(1613, 0);
+            this.pnlButtonsHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlButtonsHighlight.Name = "pnlButtonsHighlight";
+            this.pnlButtonsHighlight.Size = new System.Drawing.Size(511, 26);
+            this.pnlButtonsHighlight.TabIndex = 12;
+            // 
+            // sbtnPageFirst
+            // 
+            this.sbtnPageFirst.AccessibleName = "Button";
+            this.sbtnPageFirst.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sbtnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnPageFirst.Location = new System.Drawing.Point(23, 0);
+            this.sbtnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sbtnPageFirst.Name = "sbtnPageFirst";
+            this.sbtnPageFirst.Size = new System.Drawing.Size(87, 26);
+            this.sbtnPageFirst.TabIndex = 42;
+            this.sbtnPageFirst.Text = "First Page ";
+            this.sbtnPageFirst.Click += new System.EventHandler(this.sbtnPageFirst_Click);
+            // 
+            // sbtnPagePrevious
+            // 
+            this.sbtnPagePrevious.AccessibleName = "Button";
+            this.sbtnPagePrevious.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sbtnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnPagePrevious.Location = new System.Drawing.Point(110, 0);
+            this.sbtnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sbtnPagePrevious.Name = "sbtnPagePrevious";
+            this.sbtnPagePrevious.Size = new System.Drawing.Size(128, 26);
+            this.sbtnPagePrevious.TabIndex = 43;
+            this.sbtnPagePrevious.Text = "previous page";
+            this.sbtnPagePrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.sbtnPagePrevious.Click += new System.EventHandler(this.sbtnPagePrevious_Click);
+            // 
+            // lblPageNumber
+            // 
+            this.lblPageNumber.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lblPageNumber.BeforeTouchSize = new System.Drawing.Size(103, 26);
+            this.lblPageNumber.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblPageNumber.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblPageNumber.Location = new System.Drawing.Point(238, 0);
+            this.lblPageNumber.Name = "lblPageNumber";
+            this.lblPageNumber.Size = new System.Drawing.Size(103, 26);
+            this.lblPageNumber.TabIndex = 6;
+            this.lblPageNumber.Text = "Page 1 / 1";
+            this.lblPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sBtnPageNext
+            // 
+            this.sBtnPageNext.AccessibleName = "Button";
+            this.sBtnPageNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sBtnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sBtnPageNext.Location = new System.Drawing.Point(341, 0);
+            this.sBtnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sBtnPageNext.Name = "sBtnPageNext";
+            this.sBtnPageNext.Size = new System.Drawing.Size(87, 26);
+            this.sBtnPageNext.TabIndex = 45;
+            this.sBtnPageNext.Text = "Next Page";
+            this.sBtnPageNext.Click += new System.EventHandler(this.sBtnPageNext_Click);
+            // 
+            // sBtnLastPage
+            // 
+            this.sBtnLastPage.AccessibleName = "Button";
+            this.sBtnLastPage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sBtnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sBtnLastPage.Location = new System.Drawing.Point(428, 0);
+            this.sBtnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sBtnLastPage.Name = "sBtnLastPage";
+            this.sBtnLastPage.Size = new System.Drawing.Size(83, 26);
+            this.sBtnLastPage.TabIndex = 44;
+            this.sBtnLastPage.Text = "Last Page";
+            this.sBtnLastPage.Click += new System.EventHandler(this.sBtnLastPage_Click);
+            // 
+            // chkbHighlight
+            // 
+            this.chkbHighlight.AutoSize = true;
+            this.chkbHighlight.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chkbHighlight.Location = new System.Drawing.Point(0, 0);
+            this.chkbHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkbHighlight.Name = "chkbHighlight";
+            this.chkbHighlight.Size = new System.Drawing.Size(200, 26);
+            this.chkbHighlight.TabIndex = 11;
+            this.chkbHighlight.Text = "Highlight lines that contains:";
+            this.chkbHighlight.UseVisualStyleBackColor = true;
+            this.chkbHighlight.CheckedChanged += new System.EventHandler(this.chkbHighlight_CheckedChanged);
+            // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.barTopFiltering,
-            this.BbarMainMenu,
-            this.barMessage,
-            this.barBookmark});
+            this.BbarMainMenu});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.DockControls.Add(this.bdcTopFiltering);
             this.barManager1.DockControls.Add(this.bdcMessageBottom);
-            this.barManager1.DockControls.Add(this.bdcBookmarks);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
@@ -572,11 +692,7 @@ namespace Analogy
             this.bBtnButtomExpand,
             this.bBtnCopyButtom,
             this.btSwitchExpandButtomMessage,
-            this.bBtnopyBookmarked,
-            this.barButtonItem4,
-            this.bBtnGoToMessage,
             this.bBtnRemoveBoomark,
-            this.bBtnCopyAllBookmarks,
             this.btsAutoScrollToBottom,
             this.bSMExports,
             this.bBtnExportExcel,
@@ -856,121 +972,6 @@ namespace Analogy
             this.BbarMainMenu.Text = "Main menu";
             this.BbarMainMenu.Visible = false;
             // 
-            // barMessage
-            // 
-            this.barMessage.BarName = "Message";
-            this.barMessage.DockCol = 0;
-            this.barMessage.DockRow = 0;
-            this.barMessage.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.barMessage.FloatLocation = new System.Drawing.Point(104, 295);
-            this.barMessage.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnCopyButtom)});
-            this.barMessage.OptionsBar.AllowCollapse = true;
-            this.barMessage.OptionsBar.AllowDelete = true;
-            this.barMessage.OptionsBar.AllowQuickCustomization = false;
-            this.barMessage.OptionsBar.AllowRename = true;
-            this.barMessage.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
-            this.barMessage.OptionsBar.DisableClose = true;
-            this.barMessage.OptionsBar.DisableCustomization = true;
-            this.barMessage.OptionsBar.UseWholeRow = true;
-            this.barMessage.StandaloneBarDockControl = this.bdcMessageBottom;
-            this.barMessage.Text = "Message Info";
-            // 
-            // bBtnCopyButtom
-            // 
-            this.bBtnCopyButtom.Caption = "Copy";
-            this.bBtnCopyButtom.Id = 10;
-            this.bBtnCopyButtom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.Image")));
-            this.bBtnCopyButtom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.LargeImage")));
-            this.bBtnCopyButtom.Name = "bBtnCopyButtom";
-            this.bBtnCopyButtom.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnCopyButtom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnCopyButtom_ItemClick);
-            // 
-            // bdcMessageBottom
-            // 
-            this.bdcMessageBottom.AutoSize = true;
-            this.bdcMessageBottom.CausesValidation = false;
-            this.bdcMessageBottom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bdcMessageBottom.Location = new System.Drawing.Point(0, 0);
-            this.bdcMessageBottom.Manager = this.barManager1;
-            this.bdcMessageBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bdcMessageBottom.Name = "bdcMessageBottom";
-            this.bdcMessageBottom.Size = new System.Drawing.Size(2117, 37);
-            this.bdcMessageBottom.Text = "standaloneBarDockControl2";
-            // 
-            // barBookmark
-            // 
-            this.barBookmark.BarName = "Boommarks";
-            this.barBookmark.DockCol = 0;
-            this.barBookmark.DockRow = 0;
-            this.barBookmark.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.barBookmark.FloatLocation = new System.Drawing.Point(566, 323);
-            this.barBookmark.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnopyBookmarked),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnCopyAllBookmarks),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnGoToMessage)});
-            this.barBookmark.OptionsBar.AllowCollapse = true;
-            this.barBookmark.OptionsBar.AllowDelete = true;
-            this.barBookmark.OptionsBar.AllowQuickCustomization = false;
-            this.barBookmark.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
-            this.barBookmark.OptionsBar.DisableClose = true;
-            this.barBookmark.OptionsBar.DisableCustomization = true;
-            this.barBookmark.OptionsBar.UseWholeRow = true;
-            this.barBookmark.StandaloneBarDockControl = this.bdcBookmarks;
-            this.barBookmark.Text = "Custom 5";
-            // 
-            // bBtnopyBookmarked
-            // 
-            this.bBtnopyBookmarked.Caption = "Copy Selected Message";
-            this.bBtnopyBookmarked.Id = 12;
-            this.bBtnopyBookmarked.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnopyBookmarked.ImageOptions.Image")));
-            this.bBtnopyBookmarked.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnopyBookmarked.ImageOptions.LargeImage")));
-            this.bBtnopyBookmarked.Name = "bBtnopyBookmarked";
-            this.bBtnopyBookmarked.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnopyBookmarked.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnopyBookmarked_ItemClick);
-            // 
-            // bBtnCopyAllBookmarks
-            // 
-            this.bBtnCopyAllBookmarks.Caption = "Copy all messages in grid";
-            this.bBtnCopyAllBookmarks.Id = 16;
-            this.bBtnCopyAllBookmarks.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnCopyAllBookmarks.ImageOptions.Image")));
-            this.bBtnCopyAllBookmarks.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCopyAllBookmarks.ImageOptions.LargeImage")));
-            this.bBtnCopyAllBookmarks.Name = "bBtnCopyAllBookmarks";
-            this.bBtnCopyAllBookmarks.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnCopyAllBookmarks.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnCopyAllBookmarks_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Clear Bookmarks";
-            this.barButtonItem4.Id = 13;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // bBtnGoToMessage
-            // 
-            this.bBtnGoToMessage.Caption = "Go To Message";
-            this.bBtnGoToMessage.Id = 14;
-            this.bBtnGoToMessage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnGoToMessage.ImageOptions.Image")));
-            this.bBtnGoToMessage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnGoToMessage.ImageOptions.LargeImage")));
-            this.bBtnGoToMessage.Name = "bBtnGoToMessage";
-            this.bBtnGoToMessage.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnGoToMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnGoToMessage_ItemClick);
-            // 
-            // bdcBookmarks
-            // 
-            this.bdcBookmarks.CausesValidation = false;
-            this.bdcBookmarks.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bdcBookmarks.Location = new System.Drawing.Point(0, 0);
-            this.bdcBookmarks.Manager = this.barManager1;
-            this.bdcBookmarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bdcBookmarks.Name = "bdcBookmarks";
-            this.bdcBookmarks.Size = new System.Drawing.Size(2117, 32);
-            this.bdcBookmarks.Text = "standaloneBarDockControl1";
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -1006,6 +1007,18 @@ namespace Analogy
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 739);
+            // 
+            // bdcMessageBottom
+            // 
+            this.bdcMessageBottom.AutoSize = true;
+            this.bdcMessageBottom.CausesValidation = false;
+            this.bdcMessageBottom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bdcMessageBottom.Location = new System.Drawing.Point(0, 0);
+            this.bdcMessageBottom.Manager = this.barManager1;
+            this.bdcMessageBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bdcMessageBottom.Name = "bdcMessageBottom";
+            this.bdcMessageBottom.Size = new System.Drawing.Size(2117, 0);
+            this.bdcMessageBottom.Text = "standaloneBarDockControl2";
             // 
             // barButtonItem1
             // 
@@ -1047,104 +1060,22 @@ namespace Analogy
             this.bBtnButtomExpand.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bBtnButtomExpand.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnButtomExpand_ItemClick);
             // 
+            // bBtnCopyButtom
+            // 
+            this.bBtnCopyButtom.Caption = "Copy";
+            this.bBtnCopyButtom.Id = 10;
+            this.bBtnCopyButtom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.Image")));
+            this.bBtnCopyButtom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCopyButtom.ImageOptions.LargeImage")));
+            this.bBtnCopyButtom.Name = "bBtnCopyButtom";
+            this.bBtnCopyButtom.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bBtnCopyButtom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnCopyButtom_ItemClick);
+            // 
             // btSwitchExpandButtomMessage
             // 
             this.btSwitchExpandButtomMessage.Caption = "Expand";
             this.btSwitchExpandButtomMessage.Id = 11;
             this.btSwitchExpandButtomMessage.Name = "btSwitchExpandButtomMessage";
             this.btSwitchExpandButtomMessage.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barToggleSwitchItem1_CheckedChanged);
-            // 
-            // sbtnMoreHighlight
-            // 
-            this.sbtnMoreHighlight.AccessibleName = "Button";
-            this.sbtnMoreHighlight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnMoreHighlight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnMoreHighlight.Location = new System.Drawing.Point(1530, 0);
-            this.sbtnMoreHighlight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sbtnMoreHighlight.Name = "sbtnMoreHighlight";
-            this.sbtnMoreHighlight.Size = new System.Drawing.Size(83, 26);
-            this.sbtnMoreHighlight.TabIndex = 43;
-            this.sbtnMoreHighlight.Text = "More ...";
-            this.sbtnMoreHighlight.Click += new System.EventHandler(this.sbtnMoreHighlight_Click);
-            // 
-            // pnlButtonsHighlight
-            // 
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPageFirst);
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPagePrevious);
-            this.pnlButtonsHighlight.Controls.Add(this.lblPageNumber);
-            this.pnlButtonsHighlight.Controls.Add(this.sBtnPageNext);
-            this.pnlButtonsHighlight.Controls.Add(this.sBtnLastPage);
-            this.pnlButtonsHighlight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlButtonsHighlight.Location = new System.Drawing.Point(1613, 0);
-            this.pnlButtonsHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlButtonsHighlight.Name = "pnlButtonsHighlight";
-            this.pnlButtonsHighlight.Size = new System.Drawing.Size(511, 26);
-            this.pnlButtonsHighlight.TabIndex = 12;
-            // 
-            // sBtnPageNext
-            // 
-            this.sBtnPageNext.AccessibleName = "Button";
-            this.sBtnPageNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnPageNext.Location = new System.Drawing.Point(341, 0);
-            this.sBtnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sBtnPageNext.Name = "sBtnPageNext";
-            this.sBtnPageNext.Size = new System.Drawing.Size(87, 26);
-            this.sBtnPageNext.TabIndex = 45;
-            this.sBtnPageNext.Text = "Next Page";
-            this.sBtnPageNext.Click += new System.EventHandler(this.sBtnPageNext_Click);
-            // 
-            // sBtnLastPage
-            // 
-            this.sBtnLastPage.AccessibleName = "Button";
-            this.sBtnLastPage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnLastPage.Location = new System.Drawing.Point(428, 0);
-            this.sBtnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sBtnLastPage.Name = "sBtnLastPage";
-            this.sBtnLastPage.Size = new System.Drawing.Size(83, 26);
-            this.sBtnLastPage.TabIndex = 44;
-            this.sBtnLastPage.Text = "Last Page";
-            this.sBtnLastPage.Click += new System.EventHandler(this.sBtnLastPage_Click);
-            // 
-            // sbtnPagePrevious
-            // 
-            this.sbtnPagePrevious.AccessibleName = "Button";
-            this.sbtnPagePrevious.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPagePrevious.Location = new System.Drawing.Point(122, 0);
-            this.sbtnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sbtnPagePrevious.Name = "sbtnPagePrevious";
-            this.sbtnPagePrevious.Size = new System.Drawing.Size(116, 26);
-            this.sbtnPagePrevious.TabIndex = 43;
-            this.sbtnPagePrevious.Text = "Previous Page";
-            this.sbtnPagePrevious.Click += new System.EventHandler(this.sbtnPagePrevious_Click);
-            // 
-            // sbtnPageFirst
-            // 
-            this.sbtnPageFirst.AccessibleName = "Button";
-            this.sbtnPageFirst.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPageFirst.Location = new System.Drawing.Point(20, 0);
-            this.sbtnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sbtnPageFirst.Name = "sbtnPageFirst";
-            this.sbtnPageFirst.Size = new System.Drawing.Size(102, 26);
-            this.sbtnPageFirst.TabIndex = 42;
-            this.sbtnPageFirst.Text = "first Page";
-            this.sbtnPageFirst.Click += new System.EventHandler(this.sbtnPageFirst_Click);
-            // 
-            // chkbHighlight
-            // 
-            this.chkbHighlight.AutoSize = true;
-            this.chkbHighlight.Dock = System.Windows.Forms.DockStyle.Left;
-            this.chkbHighlight.Location = new System.Drawing.Point(0, 0);
-            this.chkbHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkbHighlight.Name = "chkbHighlight";
-            this.chkbHighlight.Size = new System.Drawing.Size(200, 26);
-            this.chkbHighlight.TabIndex = 11;
-            this.chkbHighlight.Text = "Highlight lines that contains:";
-            this.chkbHighlight.UseVisualStyleBackColor = true;
-            this.chkbHighlight.CheckedChanged += new System.EventHandler(this.chkbHighlight_CheckedChanged);
             // 
             // pnlTopFiltering
             // 
@@ -1693,324 +1624,198 @@ namespace Analogy
             // 
             // xtpMessageInfo
             // 
-            this.xtpMessageInfo.Controls.Add(this.rtxtContent);
+            this.xtpMessageInfo.Controls.Add(this.tbMessageInfo);
+            this.xtpMessageInfo.Controls.Add(this.tsMessageInfo);
             this.xtpMessageInfo.Controls.Add(this.bdcMessageBottom);
             this.xtpMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpMessageInfo.Name = "xtpMessageInfo";
             this.xtpMessageInfo.Size = new System.Drawing.Size(2117, 170);
             this.xtpMessageInfo.Text = "Message Info";
             // 
-            // rtxtContent
+            // tsMessageInfo
             // 
-            this.rtxtContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxtContent.Location = new System.Drawing.Point(0, 37);
-            this.rtxtContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rtxtContent.MenuManager = this.barManager1;
-            this.rtxtContent.Name = "rtxtContent";
-            this.rtxtContent.Size = new System.Drawing.Size(2117, 133);
-            this.rtxtContent.TabIndex = 2;
+            this.tsMessageInfo.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tsMessageInfo.Image = null;
+            this.tsMessageInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsMessageInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnMessageInfoCopy});
+            this.tsMessageInfo.Location = new System.Drawing.Point(0, 0);
+            this.tsMessageInfo.Name = "tsMessageInfo";
+            this.tsMessageInfo.ShowCaption = false;
+            this.tsMessageInfo.ShowLauncher = false;
+            this.tsMessageInfo.Size = new System.Drawing.Size(2117, 27);
+            this.tsMessageInfo.TabIndex = 4;
+            this.tsMessageInfo.ThemeName = "Default";
+            // 
+            // tsBtnMessageInfoCopy
+            // 
+            this.tsBtnMessageInfoCopy.Image = global::Analogy.Properties.Resources.Copy_16x16;
+            this.tsBtnMessageInfoCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnMessageInfoCopy.Name = "tsBtnMessageInfoCopy";
+            this.tsBtnMessageInfoCopy.Size = new System.Drawing.Size(67, 24);
+            this.tsBtnMessageInfoCopy.Text = "Copy";
             // 
             // xtpBookmarks
             // 
-            this.xtpBookmarks.Controls.Add(this.gridControlBookmarkedMessages);
-            this.xtpBookmarks.Controls.Add(this.bdcBookmarks);
+            this.xtpBookmarks.Controls.Add(this.sfDataGridBookmarks);
+            this.xtpBookmarks.Controls.Add(this.tsBookmark);
             this.xtpBookmarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpBookmarks.Name = "xtpBookmarks";
             this.xtpBookmarks.Size = new System.Drawing.Size(2117, 170);
             this.xtpBookmarks.Text = "Bookmarks";
             // 
-            // gridControlBookmarkedMessages
+            // sfDataGridBookmarks
             // 
-            this.gridControlBookmarkedMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlBookmarkedMessages.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControlBookmarkedMessages.Location = new System.Drawing.Point(0, 32);
-            this.gridControlBookmarkedMessages.MainView = this.gridViewBookmarkedMessages;
-            this.gridControlBookmarkedMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControlBookmarkedMessages.Name = "gridControlBookmarkedMessages";
-            this.gridControlBookmarkedMessages.Size = new System.Drawing.Size(2117, 138);
-            this.gridControlBookmarkedMessages.TabIndex = 3;
-            this.gridControlBookmarkedMessages.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewBookmarkedMessages});
-            this.gridControlBookmarkedMessages.DoubleClick += new System.EventHandler(this.gridControlBookmarkedMessages_DoubleClick);
+            this.sfDataGridBookmarks.AccessibleName = "Table";
+            this.sfDataGridBookmarks.AllowDraggingColumns = true;
+            this.sfDataGridBookmarks.AllowEditing = false;
+            this.sfDataGridBookmarks.AllowResizingColumns = true;
+            this.sfDataGridBookmarks.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
+            gridTextColumn13.AllowDragging = true;
+            gridTextColumn13.AllowEditing = false;
+            gridTextColumn13.AllowResizing = true;
+            gridTextColumn13.HeaderText = "Data Source/File Name";
+            gridTextColumn13.MappingName = "DataProvider";
+            gridDateTimeColumn2.AllowDragging = true;
+            gridDateTimeColumn2.AllowEditing = false;
+            gridDateTimeColumn2.AllowResizing = true;
+            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn2.HeaderText = "Date";
+            gridDateTimeColumn2.MappingName = "Date";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn14.AllowDragging = true;
+            gridTextColumn14.AllowEditing = false;
+            gridTextColumn14.AllowResizing = true;
+            gridTextColumn14.HeaderText = "Time Differenace";
+            gridTextColumn14.MappingName = "TimeDiff";
+            gridTextColumn14.Visible = false;
+            gridTextColumn15.AllowDragging = true;
+            gridTextColumn15.AllowEditing = false;
+            gridTextColumn15.AllowResizing = true;
+            gridTextColumn15.HeaderText = "Text";
+            gridTextColumn15.MappingName = "Text";
+            gridTextColumn16.AllowDragging = true;
+            gridTextColumn16.AllowEditing = false;
+            gridTextColumn16.AllowResizing = true;
+            gridTextColumn16.HeaderText = "Source";
+            gridTextColumn16.MappingName = "Source";
+            gridTextColumn17.AllowDragging = true;
+            gridTextColumn17.AllowEditing = false;
+            gridTextColumn17.AllowResizing = true;
+            gridTextColumn17.HeaderText = "Level";
+            gridTextColumn17.MappingName = "Level";
+            gridTextColumn18.AllowDragging = true;
+            gridTextColumn18.AllowEditing = false;
+            gridTextColumn18.AllowResizing = true;
+            gridTextColumn18.HeaderText = "Class";
+            gridTextColumn18.MappingName = "Class";
+            gridTextColumn19.AllowDragging = true;
+            gridTextColumn19.AllowEditing = false;
+            gridTextColumn19.AllowResizing = true;
+            gridTextColumn19.HeaderText = "Category";
+            gridTextColumn19.MappingName = "Category";
+            gridTextColumn20.AllowDragging = true;
+            gridTextColumn20.AllowEditing = false;
+            gridTextColumn20.AllowResizing = true;
+            gridTextColumn20.HeaderText = "User";
+            gridTextColumn20.MappingName = "User";
+            gridTextColumn21.AllowDragging = true;
+            gridTextColumn21.AllowEditing = false;
+            gridTextColumn21.AllowResizing = true;
+            gridTextColumn21.HeaderText = "Module";
+            gridTextColumn21.MappingName = "Module";
+            gridTextColumn22.AllowDragging = true;
+            gridTextColumn22.AllowEditing = false;
+            gridTextColumn22.AllowResizing = true;
+            gridTextColumn22.HeaderText = "Object";
+            gridTextColumn22.MappingName = "Object";
+            gridTextColumn22.Visible = false;
+            gridTextColumn23.AllowDragging = true;
+            gridTextColumn23.AllowEditing = false;
+            gridTextColumn23.AllowResizing = true;
+            gridTextColumn23.HeaderText = "Process ID";
+            gridTextColumn23.MappingName = "ProcessID";
+            gridTextColumn24.AllowDragging = true;
+            gridTextColumn24.AllowEditing = false;
+            gridTextColumn24.AllowResizing = true;
+            gridTextColumn24.HeaderText = "Thread id";
+            gridTextColumn24.MappingName = "ThreadID";
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn13);
+            this.sfDataGridBookmarks.Columns.Add(gridDateTimeColumn2);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn14);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn15);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn16);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn17);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn18);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn19);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn20);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn21);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn22);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn23);
+            this.sfDataGridBookmarks.Columns.Add(gridTextColumn24);
+            this.sfDataGridBookmarks.ContextMenuStrip = this.cmsMessageOperation;
+            this.sfDataGridBookmarks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sfDataGridBookmarks.Location = new System.Drawing.Point(0, 27);
+            this.sfDataGridBookmarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sfDataGridBookmarks.Name = "sfDataGridBookmarks";
+            this.sfDataGridBookmarks.PreviewRowHeight = 35;
+            this.sfDataGridBookmarks.RowHeight = 20;
+            this.sfDataGridBookmarks.ShowRowHeader = true;
+            this.sfDataGridBookmarks.Size = new System.Drawing.Size(2117, 143);
+            this.sfDataGridBookmarks.TabIndex = 6;
+            this.sfDataGridBookmarks.Text = "Bookmarks";
+            this.sfDataGridBookmarks.UsePLINQ = true;
             // 
-            // gridViewBookmarkedMessages
+            // tsBookmark
             // 
-            this.gridViewBookmarkedMessages.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridViewBookmarkedMessages.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridViewBookmarkedMessages.Appearance.Row.Options.UseTextOptions = true;
-            this.gridViewBookmarkedMessages.Appearance.Row.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridViewBookmarkedMessages.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridViewBookmarkedMessages.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridViewBookmarkedMessages.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12});
-            this.gridViewBookmarkedMessages.DetailHeight = 431;
-            this.gridViewBookmarkedMessages.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridViewBookmarkedMessages.GridControl = this.gridControlBookmarkedMessages;
-            this.gridViewBookmarkedMessages.Images = this.imageList;
-            this.gridViewBookmarkedMessages.IndicatorWidth = 24;
-            this.gridViewBookmarkedMessages.Name = "gridViewBookmarkedMessages";
-            this.gridViewBookmarkedMessages.OptionsBehavior.Editable = false;
-            this.gridViewBookmarkedMessages.OptionsCustomization.AllowGroup = false;
-            this.gridViewBookmarkedMessages.OptionsFilter.AllowColumnMRUFilterList = false;
-            this.gridViewBookmarkedMessages.OptionsFilter.AllowMRUFilterList = false;
-            this.gridViewBookmarkedMessages.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridViewBookmarkedMessages.OptionsView.AutoCalcPreviewLineCount = true;
-            this.gridViewBookmarkedMessages.OptionsView.ColumnAutoWidth = false;
-            this.gridViewBookmarkedMessages.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewBookmarkedMessages.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewBookmarkedMessages.OptionsView.RowAutoHeight = true;
-            this.gridViewBookmarkedMessages.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewBookmarkedMessages.OptionsView.ShowGroupPanel = false;
-            this.gridViewBookmarkedMessages.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.pmsGridView_CustomDrawRowIndicator);
-            this.gridViewBookmarkedMessages.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.pmsGridView_RowStyle);
+            this.tsBookmark.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tsBookmark.Image = null;
+            this.tsBookmark.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsBookmark.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnBookmarkCopySingle,
+            this.tsBtnBookmarkCopyAll,
+            this.tsBtnBookmarkClear,
+            this.tsBtnBookmarkGoToOriginal});
+            this.tsBookmark.Location = new System.Drawing.Point(0, 0);
+            this.tsBookmark.Name = "tsBookmark";
+            this.tsBookmark.ShowCaption = false;
+            this.tsBookmark.ShowLauncher = false;
+            this.tsBookmark.Size = new System.Drawing.Size(2117, 27);
+            this.tsBookmark.TabIndex = 5;
+            this.tsBookmark.ThemeName = "Default";
             // 
-            // gridColumn1
+            // tsBtnBookmarkCopySingle
             // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn1.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn1.Caption = "Data Source";
-            this.gridColumn1.FieldName = "DataProvider";
-            this.gridColumn1.MinWidth = 24;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            this.gridColumn1.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 175;
+            this.tsBtnBookmarkCopySingle.Image = global::Analogy.Properties.Resources.Copy_16x16;
+            this.tsBtnBookmarkCopySingle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBookmarkCopySingle.Name = "tsBtnBookmarkCopySingle";
+            this.tsBtnBookmarkCopySingle.Size = new System.Drawing.Size(190, 24);
+            this.tsBtnBookmarkCopySingle.Text = "Copy Selected Message";
             // 
-            // gridColumn2
+            // tsBtnBookmarkCopyAll
             // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn2.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn2.Caption = "Date";
-            this.gridColumn2.DisplayFormat.FormatString = "yyyy.MM.dd HH:mm:ss.ff";
-            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn2.FieldName = "Date";
-            this.gridColumn2.MinWidth = 24;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
-            this.gridColumn2.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 164;
+            this.tsBtnBookmarkCopyAll.Image = global::Analogy.Properties.Resources.Copy_16x16;
+            this.tsBtnBookmarkCopyAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBookmarkCopyAll.Name = "tsBtnBookmarkCopyAll";
+            this.tsBtnBookmarkCopyAll.Size = new System.Drawing.Size(202, 24);
+            this.tsBtnBookmarkCopyAll.Text = "Copy all messages in grid";
             // 
-            // gridColumn3
+            // tsBtnBookmarkClear
             // 
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn3.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn3.Caption = "Text";
-            this.gridColumn3.FieldName = "Text";
-            this.gridColumn3.MinWidth = 24;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.OptionsColumn.AllowFocus = false;
-            this.gridColumn3.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn3.OptionsColumn.ReadOnly = true;
-            this.gridColumn3.OptionsFilter.AllowFilter = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 290;
+            this.tsBtnBookmarkClear.Image = global::Analogy.Properties.Resources.Clear_16x16;
+            this.tsBtnBookmarkClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBookmarkClear.Name = "tsBtnBookmarkClear";
+            this.tsBtnBookmarkClear.Size = new System.Drawing.Size(144, 24);
+            this.tsBtnBookmarkClear.Text = "Clear Bookmarks";
             // 
-            // gridColumn4
+            // tsBtnBookmarkGoToOriginal
             // 
-            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn4.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn4.Caption = "Source";
-            this.gridColumn4.FieldName = "Source";
-            this.gridColumn4.MinWidth = 24;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.OptionsColumn.AllowFocus = false;
-            this.gridColumn4.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn4.OptionsColumn.ReadOnly = true;
-            this.gridColumn4.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 234;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn5.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn5.Caption = "Level";
-            this.gridColumn5.FieldName = "Level";
-            this.gridColumn5.MinWidth = 24;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsColumn.AllowFocus = false;
-            this.gridColumn5.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn5.OptionsColumn.ReadOnly = true;
-            this.gridColumn5.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 115;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn6.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn6.Caption = "Class";
-            this.gridColumn6.FieldName = "Class";
-            this.gridColumn6.MinWidth = 24;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.OptionsColumn.AllowFocus = false;
-            this.gridColumn6.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn6.OptionsColumn.ReadOnly = true;
-            this.gridColumn6.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 7;
-            this.gridColumn6.Width = 115;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn7.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn7.Caption = "Category";
-            this.gridColumn7.FieldName = "Category";
-            this.gridColumn7.MinWidth = 24;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.OptionsColumn.AllowFocus = false;
-            this.gridColumn7.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn7.OptionsColumn.ReadOnly = true;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 8;
-            this.gridColumn7.Width = 115;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn8.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn8.Caption = "User";
-            this.gridColumn8.FieldName = "User";
-            this.gridColumn8.MinWidth = 24;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.OptionsColumn.AllowFocus = false;
-            this.gridColumn8.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn8.OptionsColumn.ReadOnly = true;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 9;
-            this.gridColumn8.Width = 115;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn9.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn9.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn9.Caption = "Module";
-            this.gridColumn9.FieldName = "Module";
-            this.gridColumn9.MinWidth = 24;
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.OptionsColumn.AllowFocus = false;
-            this.gridColumn9.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn9.OptionsColumn.ReadOnly = true;
-            this.gridColumn9.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 10;
-            this.gridColumn9.Width = 115;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn10.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn10.Caption = "Audit";
-            this.gridColumn10.FieldName = "Audit";
-            this.gridColumn10.MinWidth = 24;
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsColumn.AllowFocus = false;
-            this.gridColumn10.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn10.OptionsColumn.ReadOnly = true;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 115;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn11.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn11.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn11.Caption = "Object";
-            this.gridColumn11.MinWidth = 24;
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.OptionsColumn.AllowEdit = false;
-            this.gridColumn11.OptionsColumn.AllowFocus = false;
-            this.gridColumn11.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn11.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn11.OptionsColumn.ReadOnly = true;
-            this.gridColumn11.OptionsColumn.ShowCaption = false;
-            this.gridColumn11.OptionsColumn.ShowInCustomizationForm = false;
-            this.gridColumn11.Width = 87;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn12.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn12.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn12.Caption = "ProcessID";
-            this.gridColumn12.FieldName = "ProcessID";
-            this.gridColumn12.MinWidth = 24;
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.OptionsColumn.AllowFocus = false;
-            this.gridColumn12.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn12.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn12.OptionsColumn.ReadOnly = true;
-            this.gridColumn12.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 4;
-            this.gridColumn12.Width = 115;
+            this.tsBtnBookmarkGoToOriginal.Image = global::Analogy.Properties.Resources.Stop_32x32;
+            this.tsBtnBookmarkGoToOriginal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBookmarkGoToOriginal.Name = "tsBtnBookmarkGoToOriginal";
+            this.tsBtnBookmarkGoToOriginal.Size = new System.Drawing.Size(135, 24);
+            this.tsBtnBookmarkGoToOriginal.Text = "Go To Message";
             // 
             // imageListBottom
             // 
@@ -2206,6 +2011,40 @@ namespace Analogy
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
             this.pnlBottom.TabIndex = 3;
+            // 
+            // lblTotalMessagesAlert
+            // 
+            this.lblTotalMessagesAlert.AutoSize = true;
+            this.lblTotalMessagesAlert.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.Red);
+            this.lblTotalMessagesAlert.BeforeTouchSize = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessagesAlert.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(126, 0);
+            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
+            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.TabIndex = 8;
+            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
+            this.lblTotalMessagesAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalMessages
+            // 
+            this.lblTotalMessages.AutoSize = true;
+            this.lblTotalMessages.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lblTotalMessages.BeforeTouchSize = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessages.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
+            this.lblTotalMessages.Name = "lblTotalMessages";
+            this.lblTotalMessages.Size = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.TabIndex = 7;
+            this.lblTotalMessages.Text = "Total Messages";
+            this.lblTotalMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancel
             // 
@@ -2832,68 +2671,22 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblPageNumber
+            // tbMessageInfo
             // 
-            this.lblPageNumber.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.lblPageNumber.BeforeTouchSize = new System.Drawing.Size(103, 26);
-            this.lblPageNumber.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
-            | System.Windows.Forms.Border3DSide.Right) 
-            | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblPageNumber.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblPageNumber.Location = new System.Drawing.Point(238, 0);
-            this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(103, 26);
-            this.lblPageNumber.TabIndex = 6;
-            this.lblPageNumber.Text = "Page 1 / 1";
-            this.lblPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalMessages
-            // 
-            this.lblTotalMessages.AutoSize = true;
-            this.lblTotalMessages.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.lblTotalMessages.BeforeTouchSize = new System.Drawing.Size(126, 21);
-            this.lblTotalMessages.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
-            | System.Windows.Forms.Border3DSide.Right) 
-            | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessages.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
-            this.lblTotalMessages.Name = "lblTotalMessages";
-            this.lblTotalMessages.Size = new System.Drawing.Size(126, 21);
-            this.lblTotalMessages.TabIndex = 7;
-            this.lblTotalMessages.Text = "Total Messages";
-            this.lblTotalMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalMessagesAlert
-            // 
-            this.lblTotalMessagesAlert.AutoSize = true;
-            this.lblTotalMessagesAlert.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.Red);
-            this.lblTotalMessagesAlert.BeforeTouchSize = new System.Drawing.Size(145, 21);
-            this.lblTotalMessagesAlert.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
-            | System.Windows.Forms.Border3DSide.Right) 
-            | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessagesAlert.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(126, 0);
-            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
-            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(145, 21);
-            this.lblTotalMessagesAlert.TabIndex = 8;
-            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
-            this.lblTotalMessagesAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbHighlights
-            // 
-            this.cbHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbHighlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHighlights.Location = new System.Drawing.Point(200, 0);
-            this.cbHighlights.Margin = new System.Windows.Forms.Padding(4);
-            this.cbHighlights.Name = "cbHighlights";
-            this.cbHighlights.Size = new System.Drawing.Size(1330, 26);
-            this.cbHighlights.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHighlights.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHighlights.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbHighlights.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHighlights.TabIndex = 44;
+            this.tbMessageInfo.BackColor = System.Drawing.Color.White;
+            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tbMessageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.tbMessageInfo.Location = new System.Drawing.Point(0, 27);
+            this.tbMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbMessageInfo.Multiline = true;
+            this.tbMessageInfo.Name = "tbMessageInfo";
+            this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbMessageInfo.Size = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.TabIndex = 14;
+            this.tbMessageInfo.ThemeName = "";
             // 
             // UCLogs
             // 
@@ -2913,8 +2706,9 @@ namespace Analogy
             this.cmsMessageOperation.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).EndInit();
             this.pnlButtonsHighlight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.pnlTopFiltering.ResumeLayout(false);
             this.spltFilteringBoth.Panel1.ResumeLayout(false);
             this.spltFilteringBoth.Panel2.ResumeLayout(false);
@@ -2960,10 +2754,13 @@ namespace Analogy
             this.tcBottom.ResumeLayout(false);
             this.xtpMessageInfo.ResumeLayout(false);
             this.xtpMessageInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtContent.Properties)).EndInit();
+            this.tsMessageInfo.ResumeLayout(false);
+            this.tsMessageInfo.PerformLayout();
             this.xtpBookmarks.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBookmarkedMessages)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewBookmarkedMessages)).EndInit();
+            this.xtpBookmarks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).EndInit();
+            this.tsBookmark.ResumeLayout(false);
+            this.tsBookmark.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtpMain.ResumeLayout(false);
@@ -2987,7 +2784,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3009,20 +2806,6 @@ namespace Analogy
         private System.Windows.Forms.Timer tmrNewData;
         private System.Windows.Forms.PictureBox pboxInfo;
         private System.Windows.Forms.PictureBox pboxInfoExclude;
-        private DevExpress.XtraGrid.GridControl gridControlBookmarkedMessages;
-        private GridView gridViewBookmarkedMessages;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private System.Windows.Forms.ImageList imageListBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmark;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddCommentToMessage;
@@ -3080,15 +2863,9 @@ namespace Analogy
         private DevExpress.XtraBars.StandaloneBarDockControl bdcMessageBottom;
         private DevExpress.XtraBars.BarButtonItem bBtnExpand;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.Bar barMessage;
         private DevExpress.XtraBars.BarButtonItem bBtnButtomExpand;
         private DevExpress.XtraBars.BarButtonItem bBtnCopyButtom;
         private DevExpress.XtraBars.BarToggleSwitchItem btSwitchExpandButtomMessage;
-        private DevExpress.XtraBars.StandaloneBarDockControl bdcBookmarks;
-        private DevExpress.XtraBars.Bar barBookmark;
-        private DevExpress.XtraBars.BarButtonItem bBtnopyBookmarked;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem bBtnGoToMessage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayout;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkPersist;
@@ -3113,7 +2890,6 @@ namespace Analogy
         private SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
-        private DevExpress.XtraBars.BarButtonItem bBtnCopyAllBookmarks;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerMain;
         private SfButton sbtnPageFirst;
         private SfButton sBtnPageNext;
@@ -3137,7 +2913,6 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bbtnSaveViewAgnostic;
         private DevExpress.XtraBars.BarSubItem barSubItemSaveEntireLog;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSaveEntireInAnalogy;
-        private DevExpress.XtraEditors.MemoEdit rtxtContent;
         private DevExpress.XtraEditors.TextEdit txtbGroupByCharsLimit;
         private DevExpress.XtraEditors.SpinEdit nudGroupBychars;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
@@ -3185,5 +2960,14 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.GradientLabel lblTotalMessagesAlert;
         private Syncfusion.Windows.Forms.Tools.GradientLabel lblTotalMessages;
         private Syncfusion.WinForms.ListView.SfComboBox cbHighlights;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx tsMessageInfo;
+        private System.Windows.Forms.ToolStripButton tsBtnMessageInfoCopy;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx tsBookmark;
+        private System.Windows.Forms.ToolStripButton tsBtnBookmarkCopySingle;
+        private System.Windows.Forms.ToolStripButton tsBtnBookmarkCopyAll;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridBookmarks;
+        private System.Windows.Forms.ToolStripButton tsBtnBookmarkClear;
+        private System.Windows.Forms.ToolStripButton tsBtnBookmarkGoToOriginal;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt tbMessageInfo;
     }
 }
