@@ -2,12 +2,13 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 using Analogy.Interfaces.Factories;
-using DevExpress.XtraEditors;
+using Syncfusion.Windows.Forms;
 
 namespace Analogy
 {
-    partial class AboutDataSourceBox : XtraForm
+    partial class AboutDataSourceBox : MetroForm
     {
         private readonly IAnalogyFactory _factory;
         private readonly Assembly _factoryAssembly;

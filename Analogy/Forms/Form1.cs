@@ -12,11 +12,10 @@ using Analogy.Managers;
 using Analogy.Properties;
 using Analogy.Tools;
 using Analogy.Types;
-using RibbonForm = Syncfusion.Windows.Forms.Tools.RibbonForm;
 
 namespace Analogy
 {
-    public partial class Form1 : RibbonForm
+    public partial class Form1 : Syncfusion.Windows.Forms.Tools.RibbonForm
     {
         private string filePoolingTitle = "File Pooling";
         private string offlineTitle = "Offline log";

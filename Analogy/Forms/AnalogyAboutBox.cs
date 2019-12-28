@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
-using DevExpress.XtraEditors;
+using Syncfusion.Windows.Forms;
 
 namespace Analogy
 {
-    partial class AnalogyAboutBox : XtraForm
+    partial class AnalogyAboutBox : MetroForm
     {
         private string githubAnalogyNLog = "https://github.com/Analogy-LogViewer/Analogy.LogViewer.NLog";
         private string githubAnalogyRSSParser = "https://github.com/Analogy-LogViewer/Analogy.LogViewer.RSSReader";
