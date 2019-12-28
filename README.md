@@ -1,5 +1,5 @@
 # Analogy.LogViewer.Syncfusion
-Analogy Log Viewer Application (using Syncfusion UI Library). This is Work In Progress
+Analogy Log Viewer Application (using Syncfusion UI Library). This is Work In Progress. Current working version is using DevExpress UI library at the following repo: https://github.com/philips-software/logviewer
 
 Analogy Log Viewer is multi purpose Log Viewer for Windows Operating systems (with built-in NLog Parser and others).
 
