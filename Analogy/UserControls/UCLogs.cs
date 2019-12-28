@@ -26,6 +26,7 @@ using Analogy.Types;
 using DevExpress.Data.Filtering;
 using Syncfusion.WinForms.DataGrid.Interactivity;
 using Syncfusion.WinForms.DataGrid.Serialization;
+using Syncfusion.WinForms.DataPager;
 using static System.Enum;
 using Message = System.Windows.Forms.Message;
 
@@ -125,19 +126,27 @@ namespace Analogy
             PagingManager = new PagingManager(this);
             lockSlim = PagingManager.lockSlim;
             _messageData = PagingManager.CurrentPage();
+            //SfDataPager sfDataPager1 = new SfDataPager();
+            //sfDataPager1.DataSource = _messageData.AsEnumerable();
+            //sfDataPager1.PageSize = 1000;
             sfDataGridMain.DataSource = _messageData;
-            sfDataGridMain.RowValidating += SfDataGridMain_RowValidating;
         }
 
         private void SetupControlEvents()
         {
+            cbHighlights.TextBox.KeyUp += async (s, e) =>
+            {
+                chkbHighlight.Checked = !string.IsNullOrEmpty(cbHighlights.TextBox.Text);
+                HighlightRows.Clear();
+                await FilterHasChanged(); //todo-refresh noly style
+            };
             //include combobox
             //cbInclude. txtbInclude.SelectAll();
             cbInclude.TextBox.TextChanged += async (s, e) =>
              {
                  if (OldTextInclude.Equals(cbInclude.Text)) return;
                  OldTextInclude = cbInclude.Text;
-                 txtbHighlight.Text = cbInclude.Text;
+                 cbHighlights.TextBox.Text = cbInclude.Text;
                  if (string.IsNullOrEmpty(cbInclude.Text))
                  {
                      chkbIncludeText.Checked = false;
@@ -287,11 +296,15 @@ namespace Analogy
             btnTextExclude.Click += (s, e) => cbExclude.TextBox.Text = "";
             btnSources.Click += (s, e) => cbSource.TextBox.Text = "";
             btnModules.Click += (s, e) => cbModule.TextBox.Text = "";
+            btnCancel.Click += (s, e) =>
+            {
+                cancellationTokenSource.Cancel(false);
+                Interlocked.Exchange(ref fileLoadingCount, 0);
+                cancellationTokenSource = new CancellationTokenSource();
+                btnCancel.Visible = false;
+            };
         }
-        private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
-        {
-
-        }
+        
 
         private static AnalogyLogMessage GetMessageFromRow(DataRow row) => row[9] as AnalogyLogMessage;
 
@@ -542,7 +555,7 @@ namespace Analogy
                 }
 
                 string text = view.GetRowCellDisplayText(e.RowHandle, view.Columns["Text"]);
-                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, txtbHighlight.Text, PreDefinedQueryType.Contains))
+                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, cbHighlights.TextBox.Text, PreDefinedQueryType.Contains))
                 {
                     e.Appearance.BackColor = Settings.ColorSettings.GetHighlightColor();
                 }
@@ -1213,7 +1226,7 @@ namespace Analogy
             CancellationToken token = cancellationTokenSource.Token;
             if (clearLogBeforeLoading)
                 ClearLogs(false);
-            sBtnCancel.Visible = true;
+            btnCancel.Visible = true;
             progressBar1.Value = 0;
             progressBar1.Maximum = fileNames.Count;
             progressBar1.Style = fileNames.Count > 1 ? ProgressBarStyle.Continuous : ProgressBarStyle.Marquee;
@@ -1240,7 +1253,7 @@ namespace Analogy
                 }
             }
 
-            sBtnCancel.Visible = false;
+            btnCancel.Visible = false;
         }
 
         private void ClearLogs(bool raiseEvent)
@@ -1435,13 +1448,6 @@ namespace Analogy
 
         private async void chkbHighlight_CheckedChanged(object sender, EventArgs e)
         {
-            await FilterHasChanged();
-        }
-
-        private async void txtbHighlight_KeyUp(object sender, KeyEventArgs e)
-        {
-            chkbHighlight.Checked = !string.IsNullOrEmpty(txtbHighlight.Text);
-            HighlightRows.Clear();
             await FilterHasChanged();
         }
 
@@ -1910,7 +1916,7 @@ namespace Analogy
             Interlocked.Exchange(ref fileLoadingCount, 0);
 
             cancellationTokenSource = new CancellationTokenSource();
-            sBtnCancel.Visible = false;
+            btnCancel.Visible = false;
         }
 
         private void tsmiCopyMessages_Click(object sender, EventArgs e)
@@ -2354,7 +2360,7 @@ namespace Analogy
                 var data = e.RowData;
                 e.Style.BackColor = Settings.ColorSettings.GetColorForLogLevel(message.Level);
                 string text = message.Text;
-                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, txtbHighlight.Text, PreDefinedQueryType.Contains))
+                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, cbHighlights.TextBox.Text, PreDefinedQueryType.Contains))
                 {
                     e.Style.BackColor = Settings.ColorSettings.GetHighlightColor();
                 }

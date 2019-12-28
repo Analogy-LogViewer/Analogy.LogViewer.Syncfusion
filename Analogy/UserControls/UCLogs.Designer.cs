@@ -80,7 +80,6 @@ namespace Analogy
             this.tsmiDecreaseFont = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtbHighlight = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barTopFiltering = new DevExpress.XtraBars.Bar();
             this.bBtnClearLog = new DevExpress.XtraBars.BarButtonItem();
@@ -127,13 +126,10 @@ namespace Analogy
             this.btSwitchExpandButtomMessage = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.sbtnMoreHighlight = new Syncfusion.WinForms.Controls.SfButton();
             this.pnlButtonsHighlight = new System.Windows.Forms.Panel();
-            this.lblPageNumber = new DevExpress.XtraEditors.LabelControl();
             this.sBtnPageNext = new Syncfusion.WinForms.Controls.SfButton();
             this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
             this.sbtnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
             this.sbtnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnUp = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDown = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.pnlTopFiltering = new System.Windows.Forms.Panel();
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
@@ -198,9 +194,7 @@ namespace Analogy
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
-            this.lblTotalMessagesAlert = new DevExpress.XtraEditors.LabelControl();
-            this.sBtnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.lblTotalMessages = new DevExpress.XtraEditors.LabelControl();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.nudGroupBychars = new DevExpress.XtraEditors.SpinEdit();
             this.txtbGroupByCharsLimit = new DevExpress.XtraEditors.TextEdit();
@@ -248,9 +242,12 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblPageNumber = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.cbHighlights = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.pnlButtonsHighlight.SuspendLayout();
             this.pnlTopFiltering.SuspendLayout();
@@ -319,6 +316,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -535,27 +533,16 @@ namespace Analogy
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtbHighlight);
+            this.panel1.Controls.Add(this.cbHighlights);
             this.panel1.Controls.Add(this.sbtnMoreHighlight);
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 401);
+            this.panel1.Location = new System.Drawing.Point(0, 408);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2124, 26);
             this.panel1.TabIndex = 4;
-            // 
-            // txtbHighlight
-            // 
-            this.txtbHighlight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbHighlight.Location = new System.Drawing.Point(200, 0);
-            this.txtbHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbHighlight.MenuManager = this.barManager1;
-            this.txtbHighlight.Name = "txtbHighlight";
-            this.txtbHighlight.Size = new System.Drawing.Size(1333, 22);
-            this.txtbHighlight.TabIndex = 23;
-            this.txtbHighlight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtbHighlight_KeyUp);
             // 
             // barManager1
             // 
@@ -1072,53 +1059,37 @@ namespace Analogy
             this.sbtnMoreHighlight.AccessibleName = "Button";
             this.sbtnMoreHighlight.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnMoreHighlight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnMoreHighlight.Location = new System.Drawing.Point(1533, 0);
+            this.sbtnMoreHighlight.Location = new System.Drawing.Point(1530, 0);
             this.sbtnMoreHighlight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnMoreHighlight.Name = "sbtnMoreHighlight";
-            this.sbtnMoreHighlight.Size = new System.Drawing.Size(71, 26);
+            this.sbtnMoreHighlight.Size = new System.Drawing.Size(83, 26);
             this.sbtnMoreHighlight.TabIndex = 43;
             this.sbtnMoreHighlight.Text = "More ...";
             this.sbtnMoreHighlight.Click += new System.EventHandler(this.sbtnMoreHighlight_Click);
             // 
             // pnlButtonsHighlight
             // 
+            this.pnlButtonsHighlight.Controls.Add(this.sbtnPageFirst);
+            this.pnlButtonsHighlight.Controls.Add(this.sbtnPagePrevious);
             this.pnlButtonsHighlight.Controls.Add(this.lblPageNumber);
             this.pnlButtonsHighlight.Controls.Add(this.sBtnPageNext);
             this.pnlButtonsHighlight.Controls.Add(this.sBtnLastPage);
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPagePrevious);
-            this.pnlButtonsHighlight.Controls.Add(this.sbtnPageFirst);
-            this.pnlButtonsHighlight.Controls.Add(this.btnUp);
-            this.pnlButtonsHighlight.Controls.Add(this.btnDown);
             this.pnlButtonsHighlight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlButtonsHighlight.Location = new System.Drawing.Point(1604, 0);
+            this.pnlButtonsHighlight.Location = new System.Drawing.Point(1613, 0);
             this.pnlButtonsHighlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlButtonsHighlight.Name = "pnlButtonsHighlight";
-            this.pnlButtonsHighlight.Size = new System.Drawing.Size(520, 26);
+            this.pnlButtonsHighlight.Size = new System.Drawing.Size(511, 26);
             this.pnlButtonsHighlight.TabIndex = 12;
-            // 
-            // lblPageNumber
-            // 
-            this.lblPageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPageNumber.Appearance.Options.UseTextOptions = true;
-            this.lblPageNumber.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblPageNumber.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPageNumber.Location = new System.Drawing.Point(232, 4);
-            this.lblPageNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(113, 18);
-            this.lblPageNumber.TabIndex = 46;
-            this.lblPageNumber.Text = "Page 1 / 1";
             // 
             // sBtnPageNext
             // 
             this.sBtnPageNext.AccessibleName = "Button";
-            this.sBtnPageNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnPageNext.Dock = System.Windows.Forms.DockStyle.Right;
             this.sBtnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnPageNext.Location = new System.Drawing.Point(355, 0);
+            this.sBtnPageNext.Location = new System.Drawing.Point(341, 0);
             this.sBtnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sBtnPageNext.Name = "sBtnPageNext";
-            this.sBtnPageNext.Size = new System.Drawing.Size(87, 25);
+            this.sBtnPageNext.Size = new System.Drawing.Size(87, 26);
             this.sBtnPageNext.TabIndex = 45;
             this.sBtnPageNext.Text = "Next Page";
             this.sBtnPageNext.Click += new System.EventHandler(this.sBtnPageNext_Click);
@@ -1126,12 +1097,12 @@ namespace Analogy
             // sBtnLastPage
             // 
             this.sBtnLastPage.AccessibleName = "Button";
-            this.sBtnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnLastPage.Dock = System.Windows.Forms.DockStyle.Right;
             this.sBtnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnLastPage.Location = new System.Drawing.Point(444, 0);
+            this.sBtnLastPage.Location = new System.Drawing.Point(428, 0);
             this.sBtnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sBtnLastPage.Name = "sBtnLastPage";
-            this.sBtnLastPage.Size = new System.Drawing.Size(73, 25);
+            this.sBtnLastPage.Size = new System.Drawing.Size(83, 26);
             this.sBtnLastPage.TabIndex = 44;
             this.sBtnLastPage.Text = "Last Page";
             this.sBtnLastPage.Click += new System.EventHandler(this.sBtnLastPage_Click);
@@ -1139,11 +1110,12 @@ namespace Analogy
             // sbtnPagePrevious
             // 
             this.sbtnPagePrevious.AccessibleName = "Button";
+            this.sbtnPagePrevious.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPagePrevious.Location = new System.Drawing.Point(138, 0);
+            this.sbtnPagePrevious.Location = new System.Drawing.Point(122, 0);
             this.sbtnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnPagePrevious.Name = "sbtnPagePrevious";
-            this.sbtnPagePrevious.Size = new System.Drawing.Size(87, 25);
+            this.sbtnPagePrevious.Size = new System.Drawing.Size(116, 26);
             this.sbtnPagePrevious.TabIndex = 43;
             this.sbtnPagePrevious.Text = "Previous Page";
             this.sbtnPagePrevious.Click += new System.EventHandler(this.sbtnPagePrevious_Click);
@@ -1151,40 +1123,15 @@ namespace Analogy
             // sbtnPageFirst
             // 
             this.sbtnPageFirst.AccessibleName = "Button";
+            this.sbtnPageFirst.Dock = System.Windows.Forms.DockStyle.Right;
             this.sbtnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sbtnPageFirst.Location = new System.Drawing.Point(61, 0);
+            this.sbtnPageFirst.Location = new System.Drawing.Point(20, 0);
             this.sbtnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnPageFirst.Name = "sbtnPageFirst";
-            this.sbtnPageFirst.Size = new System.Drawing.Size(73, 25);
+            this.sbtnPageFirst.Size = new System.Drawing.Size(102, 26);
             this.sbtnPageFirst.TabIndex = 42;
             this.sbtnPageFirst.Text = "first Page";
             this.sbtnPageFirst.Click += new System.EventHandler(this.sbtnPageFirst_Click);
-            // 
-            // btnUp
-            // 
-            this.btnUp.AccessibleName = "Button";
-            this.btnUp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnUp.Location = new System.Drawing.Point(7, 0);
-            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(21, 26);
-            this.btnUp.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            this.btnUp.TabIndex = 41;
-            this.btnUp.Visible = false;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
-            // btnDown
-            // 
-            this.btnDown.AccessibleName = "Button";
-            this.btnDown.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnDown.Location = new System.Drawing.Point(33, 0);
-            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(21, 26);
-            this.btnDown.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            this.btnDown.TabIndex = 40;
-            this.btnDown.Visible = false;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // chkbHighlight
             // 
@@ -2076,11 +2023,11 @@ namespace Analogy
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBar1.Location = new System.Drawing.Point(345, 0);
+            this.progressBar1.Location = new System.Drawing.Point(271, 0);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.MarqueeAnimationSpeed = 1;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1580, 30);
+            this.progressBar1.Size = new System.Drawing.Size(1660, 23);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             this.progressBar1.Visible = false;
@@ -2129,7 +2076,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Text = "Panel1";
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
-            this.splitContainerMain.Size = new System.Drawing.Size(2124, 637);
+            this.splitContainerMain.Size = new System.Drawing.Size(2124, 644);
             this.splitContainerMain.SplitterPosition = 204;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
@@ -2140,7 +2087,7 @@ namespace Analogy
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
             this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(2124, 248);
+            this.pnlMessages.Size = new System.Drawing.Size(2124, 255);
             this.pnlMessages.TabIndex = 7;
             // 
             // sfDataGridMain
@@ -2241,7 +2188,7 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 248);
+            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 255);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
@@ -2251,62 +2198,31 @@ namespace Analogy
             // 
             this.pnlBottom.Controls.Add(this.progressBar1);
             this.pnlBottom.Controls.Add(this.lblTotalMessagesAlert);
-            this.pnlBottom.Controls.Add(this.sBtnCancel);
             this.pnlBottom.Controls.Add(this.lblTotalMessages);
+            this.pnlBottom.Controls.Add(this.btnCancel);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 675);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 682);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(2124, 30);
+            this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
             this.pnlBottom.TabIndex = 3;
             // 
-            // lblTotalMessagesAlert
+            // btnCancel
             // 
-            this.lblTotalMessagesAlert.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblTotalMessagesAlert.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessagesAlert.Appearance.Options.UseBackColor = true;
-            this.lblTotalMessagesAlert.Appearance.Options.UseFont = true;
-            this.lblTotalMessagesAlert.Appearance.Options.UseTextOptions = true;
-            this.lblTotalMessagesAlert.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(183, 0);
-            this.lblTotalMessagesAlert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
-            this.lblTotalMessagesAlert.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(162, 23);
-            this.lblTotalMessagesAlert.TabIndex = 6;
-            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
-            this.lblTotalMessagesAlert.Visible = false;
-            // 
-            // sBtnCancel
-            // 
-            this.sBtnCancel.AccessibleName = "Button";
-            this.sBtnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sBtnCancel.Location = new System.Drawing.Point(1925, 0);
-            this.sBtnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sBtnCancel.Name = "sBtnCancel";
-            this.sBtnCancel.Size = new System.Drawing.Size(199, 30);
-            this.sBtnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.sBtnCancel.TabIndex = 5;
-            this.sBtnCancel.Text = "Cancel Processing";
-            this.sBtnCancel.Visible = false;
-            this.sBtnCancel.Click += new System.EventHandler(this.sBtnCancel_Click);
-            // 
-            // lblTotalMessages
-            // 
-            this.lblTotalMessages.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessages.Appearance.Options.UseFont = true;
-            this.lblTotalMessages.Appearance.Options.UseTextOptions = true;
-            this.lblTotalMessages.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
-            this.lblTotalMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblTotalMessages.Name = "lblTotalMessages";
-            this.lblTotalMessages.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.lblTotalMessages.Size = new System.Drawing.Size(183, 23);
-            this.lblTotalMessages.TabIndex = 0;
-            this.lblTotalMessages.Text = "Total messages: N/A";
+            this.btnCancel.AccessibleName = "Button";
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(1931, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnCancel.Size = new System.Drawing.Size(193, 23);
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel Processing";
+            this.btnCancel.Visible = false;
             // 
             // xtCounts
             // 
@@ -2916,6 +2832,69 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // lblPageNumber
+            // 
+            this.lblPageNumber.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lblPageNumber.BeforeTouchSize = new System.Drawing.Size(103, 26);
+            this.lblPageNumber.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblPageNumber.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblPageNumber.Location = new System.Drawing.Point(238, 0);
+            this.lblPageNumber.Name = "lblPageNumber";
+            this.lblPageNumber.Size = new System.Drawing.Size(103, 26);
+            this.lblPageNumber.TabIndex = 6;
+            this.lblPageNumber.Text = "Page 1 / 1";
+            this.lblPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalMessages
+            // 
+            this.lblTotalMessages.AutoSize = true;
+            this.lblTotalMessages.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lblTotalMessages.BeforeTouchSize = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessages.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
+            this.lblTotalMessages.Name = "lblTotalMessages";
+            this.lblTotalMessages.Size = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.TabIndex = 7;
+            this.lblTotalMessages.Text = "Total Messages";
+            this.lblTotalMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalMessagesAlert
+            // 
+            this.lblTotalMessagesAlert.AutoSize = true;
+            this.lblTotalMessagesAlert.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.Red);
+            this.lblTotalMessagesAlert.BeforeTouchSize = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessagesAlert.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(126, 0);
+            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
+            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.TabIndex = 8;
+            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
+            this.lblTotalMessagesAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbHighlights
+            // 
+            this.cbHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbHighlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Location = new System.Drawing.Point(200, 0);
+            this.cbHighlights.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHighlights.Name = "cbHighlights";
+            this.cbHighlights.Size = new System.Drawing.Size(1330, 26);
+            this.cbHighlights.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbHighlights.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHighlights.TabIndex = 44;
+            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2934,7 +2913,6 @@ namespace Analogy
             this.cmsMessageOperation.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.pnlButtonsHighlight.ResumeLayout(false);
             this.pnlTopFiltering.ResumeLayout(false);
@@ -3009,6 +2987,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3077,9 +3056,6 @@ namespace Analogy
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private System.Windows.Forms.Label lblGroupByCharsLimit;
-        private SfButton btnUp;
-        private SfButton btnDown;
-        private DevExpress.XtraEditors.LabelControl lblTotalMessages;
         private DevExpress.XtraTab.XtraTabControl tcBottom;
         private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
         private DevExpress.XtraTab.XtraTabPage xtpBookmarks;
@@ -3134,13 +3110,12 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bBtnRemoveBoomark;
         private DevExpress.XtraGrid.GridControl gCtrlGrouping;
         private GridView gridViewGrouping;
-        private SfButton sBtnCancel;
+        private SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
         private DevExpress.XtraBars.BarButtonItem bBtnCopyAllBookmarks;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerMain;
         private SfButton sbtnPageFirst;
-        private DevExpress.XtraEditors.LabelControl lblPageNumber;
         private SfButton sBtnPageNext;
         private SfButton sBtnLastPage;
         private SfButton sbtnPagePrevious;
@@ -3162,7 +3137,6 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bbtnSaveViewAgnostic;
         private DevExpress.XtraBars.BarSubItem barSubItemSaveEntireLog;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSaveEntireInAnalogy;
-        private DevExpress.XtraEditors.TextEdit txtbHighlight;
         private DevExpress.XtraEditors.MemoEdit rtxtContent;
         private DevExpress.XtraEditors.TextEdit txtbGroupByCharsLimit;
         private DevExpress.XtraEditors.SpinEdit nudGroupBychars;
@@ -3193,7 +3167,6 @@ namespace Analogy
         private SfButton sbtnPreDefinedFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private DevExpress.XtraEditors.LabelControl lblTotalMessagesAlert;
         private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridMain;
         public DevExpress.XtraBars.BarToggleSwitchItem btswitchRefreshLog;
         public DevExpress.XtraBars.BarToggleSwitchItem btsAutoScrollToBottom;
@@ -3208,5 +3181,9 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbWarning;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbErrorCritical;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbTrace;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lblPageNumber;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lblTotalMessagesAlert;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lblTotalMessages;
+        private Syncfusion.WinForms.ListView.SfComboBox cbHighlights;
     }
 }
