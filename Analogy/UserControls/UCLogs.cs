@@ -95,8 +95,6 @@ namespace Analogy
         private bool EnableOTA { get; } = false;//GeneralUtils.UseDebugMode("AnalogyOTA");
         private AnalogyLogMessage _currentMassage;
         private FilterCriteriaObject _filterCriteria = new FilterCriteriaObject();
-        private AutoCompleteStringCollection autoCompleteInclude = new AutoCompleteStringCollection();
-        private AutoCompleteStringCollection autoCompleteExclude = new AutoCompleteStringCollection();
         public bool OnlineMode { get; set; }
 
         // private bool FilterHasChanged { get; set; }
@@ -135,6 +133,8 @@ namespace Analogy
 
         private void SetupControlEvents()
         {
+            //include combobox
+            //cbInclude. txtbInclude.SelectAll();
             cbInclude.TextChanged += async (s, e) =>
              {
                  if (OldTextInclude.Equals(cbInclude.Text)) return;
@@ -151,6 +151,43 @@ namespace Analogy
                  await FilterHasChanged();
              };
 
+            cbInclude.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                 var added= Settings.AddNewSearchesEntryToLists(cbInclude.Text,true);
+                 if (added)
+                     cbInclude.DataSource = Settings.LastSearchesInclude;
+                }
+            };
+
+            cbExclude.TextChanged += async (s, e) =>
+            {
+                if (OldTextExclude.Equals(cbExclude.Text)) return;
+                Settings.ExcludedText = cbExclude.Text;
+                OldTextExclude = cbExclude.Text;
+                if (string.IsNullOrEmpty(cbExclude.Text))
+                {
+                    chkExclude.Checked = false;
+                    return;
+                }
+
+                chkExclude.Checked = true;
+                await FilterHasChanged();
+            };
+
+            cbExclude.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    var added = Settings.AddNewSearchesEntryToLists(cbExclude.Text, false);
+                    if (added)
+                        cbExclude.DataSource = Settings.LastSearchesExclude;
+                }
+            };
+
+
+            #region sfDataGrid Main
             sfDataGridMain.QueryRowStyle += sfDataGrid_QueryRowStyle;
             sfDataGridMain.CellClick += (s, e) =>
             {
@@ -196,7 +233,6 @@ namespace Analogy
                     OpenMessageDetails();
                 }
             };
-
             sfDataGridMain.SelectionChanged += (s, e) =>
             {
                 //int row = e.FocusedRowHandle;
@@ -209,6 +245,7 @@ namespace Analogy
                 //    OnFocusedRowChanged?.Invoke(this, (dataProvider, m));
                 //}
             };
+            #endregion
         }
         private void SfDataGridMain_RowValidating(object sender, Syncfusion.WinForms.DataGrid.Events.RowValidatingEventArgs e)
         {
@@ -283,12 +320,12 @@ namespace Analogy
             KeyEventArgs e = new KeyEventArgs(keyData);
             if (e.Control && e.KeyCode == Keys.F)
             {
-                txtbInclude.Focus();
+                cbInclude.Focus();
             }
             if (e.Shift && e.KeyCode == Keys.F)
 
             {
-                txtbExclude.Focus();
+                cbExclude.Focus();
             }
 
             if (e.Alt && e.KeyCode == Keys.E)
@@ -311,13 +348,13 @@ namespace Analogy
             if (e.Control && e.KeyCode == Keys.F)
 
             {
-                txtbInclude.Focus();
+                cbInclude.Focus();
                 return true;
             }
             if (e.Shift && e.KeyCode == Keys.F)
 
             {
-                txtbExclude.Focus();
+                cbExclude.Focus();
                 return true;
             }
 
@@ -347,13 +384,13 @@ namespace Analogy
 
             spltFilteringBoth.SplitterDistance = spltFilteringBoth.Width - 150;
             pnlFilteringLeft.Dock = DockStyle.Fill;
-            txtbInclude.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtbInclude.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtbInclude.MaskBox.AutoCompleteCustomSource = autoCompleteInclude;
-
-            txtbExclude.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtbExclude.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtbExclude.MaskBox.AutoCompleteCustomSource = autoCompleteExclude;
+            cbInclude.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbExclude.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            if (Settings.RememberLastSearches)
+            {
+                cbInclude.DataSource = Settings.LastSearchesInclude;
+                cbExclude.DataSource = Settings.LastSearchesExclude;
+            }
 
             if (File.Exists(LayoutFileNameMain))
             {
@@ -364,10 +401,8 @@ namespace Analogy
             }
             if (Settings.SaveSearchFilters)
             {
-                txtbInclude.Text = Settings.IncludeText;
-                txtbExclude.Text = Settings.ExcludedText;
-                txtbSource.Text = Settings.SourceText;
-                txtbModule.Text = Settings.ModuleText;
+                cbInclude.Text = Settings.IncludeText;
+                cbExclude.Text = Settings.ExcludedText;
             }
             btswitchRefreshLog.Checked = true;
 
@@ -581,7 +616,7 @@ namespace Analogy
             if (ef.ShowDialog(this) == DialogResult.OK)
             {
                 string exclude = ef.Exclude;
-                txtbExclude.Text = txtbExclude.Text + "|" + exclude;
+                cbExclude.Text = cbExclude.Text + "|" + exclude;
                 chkExclude.Checked = true;
                 await FilterHasChanged();
             }
@@ -596,36 +631,36 @@ namespace Analogy
         {
             await FilterHasChanged();
         }
-        private async void txtbInclude_TextChanged(object sender, EventArgs e)
-        {
-            if (OldTextInclude.Equals(txtbInclude.Text)) return;
-            OldTextInclude = txtbInclude.Text;
-            txtbHighlight.Text = txtbInclude.Text;
-            if (string.IsNullOrEmpty(txtbInclude.Text))
-            {
-                chkbIncludeText.Checked = false;
-                return;
-            }
+        //private async void txtbInclude_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (OldTextInclude.Equals(txtbInclude.Text)) return;
+        //    OldTextInclude = txtbInclude.Text;
+        //    txtbHighlight.Text = txtbInclude.Text;
+        //    if (string.IsNullOrEmpty(txtbInclude.Text))
+        //    {
+        //        chkbIncludeText.Checked = false;
+        //        return;
+        //    }
 
-            chkbHighlight.Checked = false;
-            chkbIncludeText.Checked = true;
-            await FilterHasChanged();
-        }
+        //    chkbHighlight.Checked = false;
+        //    chkbIncludeText.Checked = true;
+        //    await FilterHasChanged();
+        //}
 
-        private async void txtbExclude_TextChanged(object sender, EventArgs e)
-        {
-            if (OldTextExclude.Equals(txtbExclude.Text)) return;
-            Settings.ExcludedText = txtbExclude.Text;
-            OldTextExclude = txtbExclude.Text;
-            if (string.IsNullOrEmpty(txtbExclude.Text))
-            {
-                chkExclude.Checked = false;
-                return;
-            }
+        //private async void txtbExclude_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (OldTextExclude.Equals(txtbExclude.Text)) return;
+        //    Settings.ExcludedText = txtbExclude.Text;
+        //    OldTextExclude = txtbExclude.Text;
+        //    if (string.IsNullOrEmpty(txtbExclude.Text))
+        //    {
+        //        chkExclude.Checked = false;
+        //        return;
+        //    }
 
-            chkExclude.Checked = true;
-            await FilterHasChanged();
-        }
+        //    chkExclude.Checked = true;
+        //    await FilterHasChanged();
+        //}
 
         /// <summary>
         /// Set custom column display text
@@ -989,8 +1024,8 @@ namespace Analogy
         {
             _filterCriteria.NewerThan = chkDateNewerThan.Checked ? deNewerThanFilter.DateTime : DateTime.MinValue;
             _filterCriteria.OlderThan = chkDateOlderThan.Checked ? deOlderThanFilter.DateTime : DateTime.MaxValue;
-            _filterCriteria.TextInclude = chkbIncludeText.Checked ? txtbInclude.Text : string.Empty;
-            _filterCriteria.TextExclude = chkExclude.Checked ? txtbExclude.Text + "|" + string.Join("|", _excludeMostCommon) : string.Empty;
+            _filterCriteria.TextInclude = chkbIncludeText.Checked ? cbInclude.Text : string.Empty;
+            _filterCriteria.TextExclude = chkExclude.Checked ? cbExclude.Text + "|" + string.Join("|", _excludeMostCommon) : string.Empty;
 
 
             Settings.IncludeText = Settings.SaveSearchFilters ? _filterCriteria.TextInclude : string.Empty;
@@ -1247,16 +1282,16 @@ namespace Analogy
 
         }
 
-        private void txtbInclude_MouseEnter(object sender, EventArgs e)
-        {
-            txtbInclude.Focus();
-            txtbInclude.SelectAll();
-        }
+        //private void txtbInclude_MouseEnter(object sender, EventArgs e)
+        //{
+        //    txtbInclude.Focus();
+        //    txtbInclude.SelectAll();
+        //}
 
-        private void txtbInclude_Enter(object sender, EventArgs e)
-        {
-            txtbInclude.SelectAll();
-        }
+        //private void txtbInclude_Enter(object sender, EventArgs e)
+        //{
+        //    txtbInclude.SelectAll();
+        //}
 
         private void txtbExcludeSource_TextChanged(object sender, EventArgs e)
         {
@@ -1392,22 +1427,7 @@ namespace Analogy
                 txtbModule.Text = txtbModule.Text + ",-" + message.Module;
         }
 
-        private void txtbInclude_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                autoCompleteInclude.Add(txtbInclude.Text);
-            }
-        }
-
-        private void txtbExclude_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                autoCompleteExclude.Add(txtbExclude.Text);
-            }
-        }
-
+  
         private void tsmiTimeDiff_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
@@ -2149,12 +2169,12 @@ namespace Analogy
 
         private void sbtnTextInclude_Click(object sender, EventArgs e)
         {
-            txtbInclude.Text = "";
+            //txtbInclude.Text = "";
         }
 
         private void sbtnTextExclude_Click(object sender, EventArgs e)
         {
-            txtbExclude.Text = "";
+           // txtbExclude.Text = "";
         }
 
         private void sbtnIncludeSources_Click(object sender, EventArgs e)
@@ -2282,8 +2302,8 @@ namespace Analogy
                 ToolStripMenuItem item = new ToolStripMenuItem(filter.ToString());
                 item.Click += (s, arg) =>
                 {
-                    txtbInclude.Text = filter.IncludeText;
-                    txtbExclude.Text = filter.ExcludeText;
+                    cbInclude.Text = filter.IncludeText;
+                    cbExclude.Text = filter.ExcludeText;
                     txtbSource.Text = filter.Sources;
                     txtbModule.Text = filter.Modules;
                 };

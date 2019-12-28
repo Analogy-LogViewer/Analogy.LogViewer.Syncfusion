@@ -65,6 +65,10 @@ namespace Analogy
         public Guid LastOpenedDataProvider { get; set; }
         public bool RememberLastOpenedDataProvider { get; set; }
         public PreDefinedQueries PreDefinedQueries { get; set; }
+        public bool RememberLastSearches { get; set; }
+        public int NumberOfLastSearches { get; set; } = 10;
+        public List<string> LastSearchesInclude { get; set; }
+        public List<string> LastSearchesExclude { get; set; }
         public UserSettingsManager()
         {
             Load();
@@ -114,6 +118,10 @@ namespace Analogy
             LastOpenedDataProvider = Settings.Default.LastOpenedDataProvider;
             RememberLastOpenedDataProvider = Settings.Default.RememberLastOpenedDataProvider;
             PreDefinedQueries = ParseSettings<PreDefinedQueries>(Settings.Default.PreDefinedQueries);
+            RememberLastSearches = Settings.Default.RememberLastSearches;
+            NumberOfLastSearches = Settings.Default.NumberOfLastSearches;
+            LastSearchesInclude = ParseSettings<List<string>>(Settings.Default.LastSearchesInclude);
+            LastSearchesExclude = ParseSettings<List<string>>(Settings.Default.LastSearchesExclude);
         }
 
         private T ParseSettings<T>(string data) where T : new()
@@ -168,6 +176,10 @@ namespace Analogy
             Settings.Default.LastOpenedDataProvider = LastOpenedDataProvider;
             Settings.Default.RememberLastOpenedDataProvider = RememberLastOpenedDataProvider;
             Settings.Default.PreDefinedQueries = JsonConvert.SerializeObject(PreDefinedQueries);
+            Settings.Default.RememberLastSearches = RememberLastSearches;
+            Settings.Default.NumberOfLastSearches = NumberOfLastSearches;
+            Settings.Default.LastSearchesInclude = JsonConvert.SerializeObject(LastSearchesInclude.Take(NumberOfLastSearches).ToList());
+            Settings.Default.LastSearchesExclude = JsonConvert.SerializeObject(LastSearchesExclude.Take(NumberOfLastSearches).ToList());
             Settings.Default.Save();
 
         }
@@ -237,6 +249,23 @@ namespace Analogy
                                                factory.UserSettingFileAssociations.Any(i =>
                                                    Utils.MatchedAll(i, files)));
 
+        public bool AddNewSearchesEntryToLists(string text,bool include)
+        {
+            if (include)
+            {
+                if (LastSearchesInclude.Contains(text, StringComparison.InvariantCultureIgnoreCase))
+                    return false;
+                LastSearchesInclude.Add(text);
+                return true;
+            }
+            else
+            {
+                if (LastSearchesExclude.Contains(text, StringComparison.InvariantCultureIgnoreCase))
+                    return false;
+                LastSearchesExclude.Add(text);
+                return true;
+            }
+        }
     }
     [Serializable]
     public class LogParserSettingsContainer
@@ -351,7 +380,7 @@ namespace Analogy
         }
 
         public void AddHighlight(string text, PreDefinedQueryType type, Color color) => Highlights.Add(new PreDefineHighlight(type, text, color));
-        public void AddFilter(string includeText, string excludeText, string sources, string modules) => Filters.Add(new PreDefineFilter(includeText,excludeText,sources,modules));
+        public void AddFilter(string includeText, string excludeText, string sources, string modules) => Filters.Add(new PreDefineFilter(includeText, excludeText, sources, modules));
         public void AddAlert(string includeText, string excludeText, string sources, string modules) => Alerts.Add(new PreDefineAlert(includeText, excludeText, sources, modules));
 
         public void RemoveHighlight(PreDefineHighlight highlight)
