@@ -566,11 +566,11 @@
     <Compile Include="UserControls\XtraUCFileSystem.Designer.cs">
       <DependentUpon>XtraUCFileSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\XtraUCWindowsEventLogs.cs">
+    <Compile Include="UserControls\WindowsEventLogsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\XtraUCWindowsEventLogs.Designer.cs">
-      <DependentUpon>XtraUCWindowsEventLogs.cs</DependentUpon>
+    <Compile Include="UserControls\WindowsEventLogsUC.Designer.cs">
+      <DependentUpon>WindowsEventLogsUC.cs</DependentUpon>
     </Compile>
     <None Include="Resources\iis.jpg" />
     <None Include="Resources\rss.jpg" />
@@ -603,8 +603,8 @@
     <EmbeddedResource Include="Forms\XtraFormWindowsEventlogsManager.resx">
       <DependentUpon>XtraFormWindowsEventlogsManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\XtraUCWindowsEventLogs.resx">
-      <DependentUpon>XtraUCWindowsEventLogs.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\WindowsEventLogsUC.resx">
+      <DependentUpon>WindowsEventLogsUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\About_32x32.png" />
     <None Include="Resources\About_16x16.png" />

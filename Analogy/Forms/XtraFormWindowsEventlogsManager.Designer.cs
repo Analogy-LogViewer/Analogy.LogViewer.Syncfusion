@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormWindowsEventlogsManager));
-            this.xtraUCWindowsEventLogs1 = new Analogy.XtraUCWindowsEventLogs();
+            this._windowsEventLogsUcWindowsEventLogs1 = new Analogy.WindowsEventLogsUC();
             this.SuspendLayout();
             // 
-            // xtraUCWindowsEventLogs1
+            // _windowsEventLogsUcWindowsEventLogs1
             // 
-            this.xtraUCWindowsEventLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraUCWindowsEventLogs1.Location = new System.Drawing.Point(0, 0);
-            this.xtraUCWindowsEventLogs1.Name = "xtraUCWindowsEventLogs1";
-            this.xtraUCWindowsEventLogs1.Size = new System.Drawing.Size(739, 466);
-            this.xtraUCWindowsEventLogs1.TabIndex = 0;
+            this._windowsEventLogsUcWindowsEventLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._windowsEventLogsUcWindowsEventLogs1.Location = new System.Drawing.Point(0, 0);
+            this._windowsEventLogsUcWindowsEventLogs1.Name = "_windowsEventLogsUcWindowsEventLogs1";
+            this._windowsEventLogsUcWindowsEventLogs1.Size = new System.Drawing.Size(739, 466);
+            this._windowsEventLogsUcWindowsEventLogs1.TabIndex = 0;
             // 
             // XtraFormWindowsEventlogsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 466);
-            this.Controls.Add(this.xtraUCWindowsEventLogs1);
+            this.Controls.Add(this._windowsEventLogsUcWindowsEventLogs1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "XtraFormWindowsEventlogsManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private XtraUCWindowsEventLogs xtraUCWindowsEventLogs1;
+        private WindowsEventLogsUC _windowsEventLogsUcWindowsEventLogs1;
     }
 }

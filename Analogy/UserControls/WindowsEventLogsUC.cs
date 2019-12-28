@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DevExpress.XtraEditors;
+using System.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class XtraUCWindowsEventLogs : DevExpress.XtraEditors.XtraUserControl
+    public partial class WindowsEventLogsUC : UserControl
     {
         private UserSettingsManager Settings => UserSettingsManager.UserSettings;
-        public XtraUCWindowsEventLogs()
+        public WindowsEventLogsUC()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace Analogy
             }
             catch (Exception exception)
             {
-                XtraMessageBox.Show("Error loading all logs. Make sure you are running as administrator. Error:" + exception.Message, "Error",
+                MessageBox.Show("Error loading all logs. Make sure you are running as administrator. Error:" + exception.Message, "Error",
                     System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
 
@@ -33,7 +33,7 @@ namespace Analogy
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            List<object> selected = lstAvailable.SelectedItems.ToList();
+            List<object> selected = lstAvailable.SelectedItems.Cast<object>().ToList();
             lstSelected.Items.AddRange(selected.ToArray());
             foreach (var log in selected)
             {
@@ -45,7 +45,7 @@ namespace Analogy
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
-            List<object> selected = lstSelected.SelectedItems.ToList();
+            List<object> selected = lstSelected.SelectedItems.Cast<object>().ToList();
             lstAvailable.Items.AddRange(selected.ToArray());
             foreach (var log in selected)
             {

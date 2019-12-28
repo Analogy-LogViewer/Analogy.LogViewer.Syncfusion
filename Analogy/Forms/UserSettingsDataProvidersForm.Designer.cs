@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsDataProvidersForm));
             this.tabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageWindowsEventLogs = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraUCWindowsEventLogs1 = new Analogy.XtraUCWindowsEventLogs();
+            this._windowsEventLogsUcWindowsEventLogs1 = new Analogy.WindowsEventLogsUC();
             this.lblWindowsEventLogs = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageIIS = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -81,20 +81,20 @@
             // 
             // xtraTabPageWindowsEventLogs
             // 
-            this.xtraTabPageWindowsEventLogs.Controls.Add(this.xtraUCWindowsEventLogs1);
+            this.xtraTabPageWindowsEventLogs.Controls.Add(this._windowsEventLogsUcWindowsEventLogs1);
             this.xtraTabPageWindowsEventLogs.Controls.Add(this.lblWindowsEventLogs);
             this.xtraTabPageWindowsEventLogs.ImageOptions.Image = global::Analogy.Properties.Resources.OperatingSystem_32x32;
             this.xtraTabPageWindowsEventLogs.Name = "xtraTabPageWindowsEventLogs";
             this.xtraTabPageWindowsEventLogs.Size = new System.Drawing.Size(731, 617);
             this.xtraTabPageWindowsEventLogs.Text = "Windows Event logs";
             // 
-            // xtraUCWindowsEventLogs1
+            // _windowsEventLogsUcWindowsEventLogs1
             // 
-            this.xtraUCWindowsEventLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraUCWindowsEventLogs1.Location = new System.Drawing.Point(0, 22);
-            this.xtraUCWindowsEventLogs1.Name = "xtraUCWindowsEventLogs1";
-            this.xtraUCWindowsEventLogs1.Size = new System.Drawing.Size(731, 595);
-            this.xtraUCWindowsEventLogs1.TabIndex = 0;
+            this._windowsEventLogsUcWindowsEventLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._windowsEventLogsUcWindowsEventLogs1.Location = new System.Drawing.Point(0, 22);
+            this._windowsEventLogsUcWindowsEventLogs1.Name = "_windowsEventLogsUcWindowsEventLogs1";
+            this._windowsEventLogsUcWindowsEventLogs1.Size = new System.Drawing.Size(731, 595);
+            this._windowsEventLogsUcWindowsEventLogs1.TabIndex = 0;
             // 
             // lblWindowsEventLogs
             // 
@@ -260,7 +260,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageWindowsEventLogs;
         private DevExpress.XtraEditors.LabelControl lblWindowsEventLogs;
-        private XtraUCWindowsEventLogs xtraUCWindowsEventLogs1;
+        private WindowsEventLogsUC _windowsEventLogsUcWindowsEventLogs1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
