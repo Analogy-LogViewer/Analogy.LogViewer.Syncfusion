@@ -13,7 +13,7 @@ using DevExpress.Utils;
 namespace Analogy
 {
 
-    public partial class UserSettingsForm : XtraForm
+    public partial class UserSettingsForm : Form
     {
         private struct FactoryCheckItem
         {

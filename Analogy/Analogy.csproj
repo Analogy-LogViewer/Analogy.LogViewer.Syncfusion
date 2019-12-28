@@ -860,6 +860,8 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\MultipleMasterFilter_32x32.png" />
+    <None Include="Resources\MultipleMasterFilter_16x16.png" />
     <None Include="Resources\StackedLine_32x32.png" />
     <None Include="Resources\StackedLine_16x16.png" />
     <None Include="Resources\FlowLayout_32x32.png" />
