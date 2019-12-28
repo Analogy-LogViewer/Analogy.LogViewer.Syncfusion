@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalogyExcludeMessage));
             this.txtbMessage = new System.Windows.Forms.TextBox();
-            this.sBtnOk = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnOk = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.SuspendLayout();
             // 
             // txtbMessage
@@ -83,7 +83,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtbMessage;
-        private DevExpress.XtraEditors.SimpleButton sBtnOk;
-        private DevExpress.XtraEditors.SimpleButton sBtnCancel;
+        private Syncfusion.WinForms.Controls.SfButton sBtnOk;
+        private Syncfusion.WinForms.Controls.SfButton sBtnCancel;
     }
 }

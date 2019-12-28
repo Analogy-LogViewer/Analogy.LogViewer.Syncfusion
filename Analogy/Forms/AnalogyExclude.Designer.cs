@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalogyExclude));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.PnlBottom = new System.Windows.Forms.Panel();
-            this.sBtnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnOk = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnOk = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -145,9 +145,9 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel PnlBottom;
-        private DevExpress.XtraEditors.SimpleButton sBtnCancel;
-        private DevExpress.XtraEditors.SimpleButton sBtnOk;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private Syncfusion.WinForms.Controls.SfButton sBtnCancel;
+        private Syncfusion.WinForms.Controls.SfButton sBtnOk;
+        private Syncfusion.WinForms.Controls.SfButton simpleButton2;
         private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
     }
 }

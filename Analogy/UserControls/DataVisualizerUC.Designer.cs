@@ -35,7 +35,7 @@
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nudTextLength = new System.Windows.Forms.NumericUpDown();
-            this.sBtnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnAdd = new Syncfusion.WinForms.Controls.SfButton();
             this.chklistItems = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -252,7 +252,7 @@
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraCharts.ChartControl chartControlOnOff;
-        private DevExpress.XtraEditors.SimpleButton sBtnAdd;
+        private Syncfusion.WinForms.Controls.SfButton sBtnAdd;
         private DevExpress.XtraEditors.CheckedListBoxControl chklistItems;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;

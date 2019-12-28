@@ -358,15 +358,11 @@ namespace Analogy
 
             if (e.Alt && e.KeyCode == Keys.E)
             {
-                chkLstLogLevel.Items[1].CheckState = (chkLstLogLevel.Items[1].CheckState == CheckState.Checked)
-                    ? CheckState.Unchecked
-                    : CheckState.Checked;
+                rbErrorCritical.Checked = !rbErrorCritical.Checked;
             }
             if (e.Alt && e.KeyCode == Keys.W)
             {
-                chkLstLogLevel.Items[2].CheckState = (chkLstLogLevel.Items[2].CheckState == CheckState.Checked)
-                    ? CheckState.Unchecked
-                    : CheckState.Checked;
+                rbWarning.Checked = !rbWarning.Checked;
             }
         }
 
@@ -388,16 +384,12 @@ namespace Analogy
 
             if (e.Alt && e.KeyCode == Keys.E)
             {
-                chkLstLogLevel.Items[1].CheckState = (chkLstLogLevel.Items[1].CheckState == CheckState.Checked)
-                    ? CheckState.Unchecked
-                    : CheckState.Checked;
+                rbErrorCritical.Checked = !rbErrorCritical.Checked;
                 return true;
             }
             if (e.Alt && e.KeyCode == Keys.W)
             {
-                chkLstLogLevel.Items[2].CheckState = (chkLstLogLevel.Items[2].CheckState == CheckState.Checked)
-                    ? CheckState.Unchecked
-                    : CheckState.Checked;
+                rbWarning.Checked = !rbWarning.Checked;
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -437,7 +429,7 @@ namespace Analogy
             btswitchExpand.Checked = true;
             splitContainerMain.Collapsed = true;
             if (Settings.StartupErrorLogLevel)
-                chkLstLogLevel.Items[1].CheckState = CheckState.Checked;
+                rbErrorCritical.Checked = true;
 
             //todo:font
             //LogGrid.Appearance.Row.Font = new Font(LogGrid.Appearance.Row.Font.Name, Settings.FontSize);
@@ -1061,15 +1053,15 @@ namespace Analogy
 
 
             _filterCriteria.Levels = null;
-            if (chkLstLogLevel.Items[0].CheckState == CheckState.Checked)
+            if (rbTrace.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Trace, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
-            if (chkLstLogLevel.Items[1].CheckState == CheckState.Checked)
+            if (rbErrorCritical.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Error, AnalogyLogLevel.Critical, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
-            else if (chkLstLogLevel.Items[2].CheckState == CheckState.Checked)
+            else if (rbWarning.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Warning, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
-            else if (chkLstLogLevel.Items[3].CheckState == CheckState.Checked)
+            else if (rbDebug.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Debug, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
-            else if (chkLstLogLevel.Items[4].CheckState == CheckState.Checked)
+            else if (rbVerbose.Checked)
                 _filterCriteria.Levels = new[] { AnalogyLogLevel.Verbose, AnalogyLogLevel.Disabled, AnalogyLogLevel.Unknown };
 
 
@@ -2414,7 +2406,7 @@ namespace Analogy
 
             }
         }
-    }
+        }
 }
 
 

@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.fileSystemUC1 = new Analogy.FileSystemUC();
             this.processFilesUC1 = new Analogy.FilesOperationsUC();
-            this.sBtnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnSearch = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -134,6 +134,6 @@
         private System.Windows.Forms.TextBox txtbSearch;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton sBtnSearch;
+        private Syncfusion.WinForms.Controls.SfButton sBtnSearch;
     }
 }

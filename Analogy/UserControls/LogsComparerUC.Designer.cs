@@ -33,10 +33,10 @@
             this.rtboxLeft = new System.Windows.Forms.RichTextBox();
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
             this.lblFileLeft = new System.Windows.Forms.Label();
-            this.sBtnLeft = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnLeft = new Syncfusion.WinForms.Controls.SfButton();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
             this.lblFileRight = new System.Windows.Forms.Label();
-            this.simpleButtonRight = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonRight = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -173,8 +173,8 @@
         private System.Windows.Forms.Label lblFileLeft;
         private System.Windows.Forms.Label lblFileRight;
         private DevExpress.XtraEditors.PanelControl panelControlLeft;
-        private DevExpress.XtraEditors.SimpleButton sBtnLeft;
+        private Syncfusion.WinForms.Controls.SfButton sBtnLeft;
         private DevExpress.XtraEditors.PanelControl panelControlRight;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonRight;
+        private Syncfusion.WinForms.Controls.SfButton simpleButtonRight;
     }
 }

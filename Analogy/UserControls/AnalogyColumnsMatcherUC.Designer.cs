@@ -1,4 +1,6 @@
-﻿namespace Analogy.UserControls
+﻿using System.Windows.Forms;
+
+namespace Analogy.UserControls
 {
     partial class AnalogyColumnsMatcherUC
     {
@@ -33,8 +35,8 @@
             this.lstBAnalogyColumns = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.sBtnMoveUp = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnMoveDown = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnMoveUp = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnMoveDown = new Syncfusion.WinForms.Controls.SfButton();
             this.lstBoxItemsNlog = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.spltNlogParser)).BeginInit();
@@ -121,8 +123,8 @@
             // sBtnMoveUp
             // 
             this.sBtnMoveUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sBtnMoveUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveUp.ImageOptions.Image")));
-            this.sBtnMoveUp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.sBtnMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveUp.ImageOptions.Image")));
+            this.sBtnMoveUp.TextImageRelation = TextImageRelation.TextAboveImage;
             this.sBtnMoveUp.Location = new System.Drawing.Point(0, 0);
             this.sBtnMoveUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMoveUp.Name = "sBtnMoveUp";
@@ -134,8 +136,8 @@
             // sBtnMoveDown
             // 
             this.sBtnMoveDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sBtnMoveDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveDown.ImageOptions.Image")));
-            this.sBtnMoveDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomLeft;
+            this.sBtnMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveDown.ImageOptions.Image")));
+            this.sBtnMoveDown.TextImageRelation = TextImageRelation.TextBeforeImage;
             this.sBtnMoveDown.Location = new System.Drawing.Point(0, 0);
             this.sBtnMoveDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMoveDown.Name = "sBtnMoveDown";
@@ -185,8 +187,8 @@
         private DevExpress.XtraEditors.ListBoxControl lstBAnalogyColumns;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraEditors.SimpleButton sBtnMoveUp;
-        private DevExpress.XtraEditors.SimpleButton sBtnMoveDown;
+        private Syncfusion.WinForms.Controls.SfButton sBtnMoveUp;
+        private Syncfusion.WinForms.Controls.SfButton sBtnMoveDown;
         private DevExpress.XtraEditors.ListBoxControl lstBoxItemsNlog;
         private DevExpress.XtraEditors.LabelControl labelControl10;
     }

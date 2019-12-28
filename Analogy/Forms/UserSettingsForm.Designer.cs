@@ -1,4 +1,6 @@
-﻿namespace Analogy
+﻿using System.Windows.Forms;
+
+namespace Analogy
 {
     partial class UserSettingsForm
     {
@@ -45,10 +47,10 @@
             this.xtraTabPagePreDefined = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControlQueries = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageColorHighlight = new DevExpress.XtraTab.XtraTabPage();
-            this.sbtnDeleteHighlight = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnDeleteHighlight = new Syncfusion.WinForms.Controls.SfButton();
             this.lboxHighlightItems = new DevExpress.XtraEditors.ListBoxControl();
             this.gcHighlight = new DevExpress.XtraEditors.GroupControl();
-            this.sbtnAddHighlight = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnAddHighlight = new Syncfusion.WinForms.Controls.SfButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.cpeHighlightPreDefined = new DevExpress.XtraEditors.ColorPickEdit();
             this.teHighlightEquals = new DevExpress.XtraEditors.TextEdit();
@@ -56,9 +58,9 @@
             this.rbtnHighlightEquals = new System.Windows.Forms.RadioButton();
             this.rbtnHighlightContains = new System.Windows.Forms.RadioButton();
             this.xtraTabPageFilters = new DevExpress.XtraTab.XtraTabPage();
-            this.sbtnDeleteFilter = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnDeleteFilter = new Syncfusion.WinForms.Controls.SfButton();
             this.lboxFilters = new DevExpress.XtraEditors.ListBoxControl();
-            this.sbtnAddFilter = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnAddFilter = new Syncfusion.WinForms.Controls.SfButton();
             this.lblExplaination = new System.Windows.Forms.Label();
             this.lblModules = new System.Windows.Forms.Label();
             this.lblSources = new System.Windows.Forms.Label();
@@ -69,9 +71,9 @@
             this.txtbExcludeFilter = new DevExpress.XtraEditors.TextEdit();
             this.txtbIncludeTextFilter = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPageAlerts = new DevExpress.XtraTab.XtraTabPage();
-            this.sbtnDeleteAlerts = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnDeleteAlerts = new Syncfusion.WinForms.Controls.SfButton();
             this.lboxAlerts = new DevExpress.XtraEditors.ListBoxControl();
-            this.sbtnAddAlerts = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnAddAlerts = new Syncfusion.WinForms.Controls.SfButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,8 +84,8 @@
             this.txtbExcludeAlert = new DevExpress.XtraEditors.TextEdit();
             this.txtbIncludeTextAlert = new DevExpress.XtraEditors.TextEdit();
             this.tpLookAndFeel = new DevExpress.XtraTab.XtraTabPage();
-            this.sBtnImportColors = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnExportColors = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnImportColors = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnExportColors = new Syncfusion.WinForms.Controls.SfButton();
             this.lblHighlightColor = new DevExpress.XtraEditors.LabelControl();
             this.cpeHighlightColor = new DevExpress.XtraEditors.ColorPickEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -114,7 +116,7 @@
             this.lblOpenedFiles = new DevExpress.XtraEditors.LabelControl();
             this.lblRunningTime = new DevExpress.XtraEditors.LabelControl();
             this.lblLaunchCount = new DevExpress.XtraEditors.LabelControl();
-            this.btnClearStatistics = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClearStatistics = new Syncfusion.WinForms.Controls.SfButton();
             this.tsUserStatistics = new DevExpress.XtraEditors.ToggleSwitch();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.tswitchExtensionsStartup = new DevExpress.XtraEditors.ToggleSwitch();
@@ -136,8 +138,8 @@
             this.xtraTabPageDataProvidersOrder = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControlDataProviders = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControlDataProvidersButtons = new DevExpress.XtraEditors.SplitContainerControl();
-            this.sBtnMoveUp = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnMoveDown = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnMoveUp = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnMoveDown = new Syncfusion.WinForms.Controls.SfButton();
             this.chkLstDataProviderStatus = new System.Windows.Forms.CheckedListBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.tsRememberLastOpenedDataProvider = new DevExpress.XtraEditors.ToggleSwitch();
@@ -146,11 +148,11 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageDataProviderAssociation = new DevExpress.XtraTab.XtraTabPage();
             this.cbDataProviderAssociation = new System.Windows.Forms.ComboBox();
-            this.btnSetFileAssociation = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSetFileAssociation = new Syncfusion.WinForms.Controls.SfButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtbDataProviderAssociation = new System.Windows.Forms.TextBox();
             this.xtraTabPageDataProvidersCustom = new DevExpress.XtraTab.XtraTabPage();
-            this.btnDataProviderCustomSettings = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDataProviderCustomSettings = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.xtraTabPageFilter.SuspendLayout();
@@ -266,7 +268,7 @@
             // 
             // gcFiles
             // 
-            this.gcFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gcFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcFiles.Controls.Add(this.tsFileCaching);
             this.gcFiles.Location = new System.Drawing.Point(3, 308);
@@ -278,7 +280,7 @@
             // 
             // tsFileCaching
             // 
-            this.tsFileCaching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsFileCaching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsFileCaching.EditValue = true;
             this.tsFileCaching.Location = new System.Drawing.Point(5, 37);
@@ -292,7 +294,7 @@
             // 
             // gcFiltering
             // 
-            this.gcFiltering.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gcFiltering.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcFiltering.Controls.Add(this.tsDataTimeAscendDescend);
             this.gcFiltering.Controls.Add(this.tsHistory);
@@ -311,7 +313,7 @@
             // 
             // tsDataTimeAscendDescend
             // 
-            this.tsDataTimeAscendDescend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsDataTimeAscendDescend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsDataTimeAscendDescend.Location = new System.Drawing.Point(6, 64);
             this.tsDataTimeAscendDescend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -324,7 +326,7 @@
             // 
             // tsHistory
             // 
-            this.tsHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsHistory.Location = new System.Drawing.Point(5, 162);
             this.tsHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -381,7 +383,7 @@
             // 
             // tsErrorLevelAsDefault
             // 
-            this.tsErrorLevelAsDefault.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsErrorLevelAsDefault.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsErrorLevelAsDefault.Location = new System.Drawing.Point(5, 96);
             this.tsErrorLevelAsDefault.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -394,7 +396,7 @@
             // 
             // tsFilteringExclude
             // 
-            this.tsFilteringExclude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsFilteringExclude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsFilteringExclude.Location = new System.Drawing.Point(5, 33);
             this.tsFilteringExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -407,7 +409,7 @@
             // 
             // tsAutoComplete
             // 
-            this.tsAutoComplete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsAutoComplete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsAutoComplete.Enabled = false;
             this.tsAutoComplete.Location = new System.Drawing.Point(5, 130);
@@ -461,8 +463,8 @@
             // 
             // lboxHighlightItems
             // 
-            this.lboxHighlightItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lboxHighlightItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lboxHighlightItems.Location = new System.Drawing.Point(5, 206);
             this.lboxHighlightItems.Name = "lboxHighlightItems";
@@ -505,7 +507,7 @@
             // 
             // cpeHighlightPreDefined
             // 
-            this.cpeHighlightPreDefined.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeHighlightPreDefined.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeHighlightPreDefined.EditValue = System.Drawing.Color.Empty;
             this.cpeHighlightPreDefined.Location = new System.Drawing.Point(194, 106);
@@ -518,7 +520,7 @@
             // 
             // teHighlightEquals
             // 
-            this.teHighlightEquals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.teHighlightEquals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.teHighlightEquals.Enabled = false;
             this.teHighlightEquals.Location = new System.Drawing.Point(194, 76);
@@ -528,7 +530,7 @@
             // 
             // teHighlightContains
             // 
-            this.teHighlightContains.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.teHighlightContains.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.teHighlightContains.Location = new System.Drawing.Point(194, 43);
             this.teHighlightContains.Name = "teHighlightContains";
@@ -589,8 +591,8 @@
             // 
             // lboxFilters
             // 
-            this.lboxFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lboxFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lboxFilters.Location = new System.Drawing.Point(4, 251);
             this.lboxFilters.Name = "lboxFilters";
@@ -609,7 +611,7 @@
             // 
             // lblExplaination
             // 
-            this.lblExplaination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblExplaination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExplaination.AutoEllipsis = true;
             this.lblExplaination.Location = new System.Drawing.Point(4, 161);
@@ -656,7 +658,7 @@
             // 
             // txtbSourcesFilter
             // 
-            this.txtbSourcesFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbSourcesFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbSourcesFilter.Location = new System.Drawing.Point(200, 67);
             this.txtbSourcesFilter.Name = "txtbSourcesFilter";
@@ -665,7 +667,7 @@
             // 
             // txtbModulesFilter
             // 
-            this.txtbModulesFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbModulesFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbModulesFilter.Location = new System.Drawing.Point(200, 97);
             this.txtbModulesFilter.Name = "txtbModulesFilter";
@@ -674,7 +676,7 @@
             // 
             // txtbExcludeFilter
             // 
-            this.txtbExcludeFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbExcludeFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbExcludeFilter.Location = new System.Drawing.Point(200, 37);
             this.txtbExcludeFilter.Name = "txtbExcludeFilter";
@@ -683,7 +685,7 @@
             // 
             // txtbIncludeTextFilter
             // 
-            this.txtbIncludeTextFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbIncludeTextFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbIncludeTextFilter.Location = new System.Drawing.Point(200, 8);
             this.txtbIncludeTextFilter.Name = "txtbIncludeTextFilter";
@@ -720,8 +722,8 @@
             // 
             // lboxAlerts
             // 
-            this.lboxAlerts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lboxAlerts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lboxAlerts.Location = new System.Drawing.Point(4, 251);
             this.lboxAlerts.Name = "lboxAlerts";
@@ -740,7 +742,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoEllipsis = true;
             this.label5.Location = new System.Drawing.Point(4, 161);
@@ -787,7 +789,7 @@
             // 
             // txtbSourcesAlert
             // 
-            this.txtbSourcesAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbSourcesAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbSourcesAlert.Location = new System.Drawing.Point(200, 67);
             this.txtbSourcesAlert.Name = "txtbSourcesAlert";
@@ -796,7 +798,7 @@
             // 
             // txtbModulesAlert
             // 
-            this.txtbModulesAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbModulesAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbModulesAlert.Location = new System.Drawing.Point(200, 97);
             this.txtbModulesAlert.Name = "txtbModulesAlert";
@@ -805,7 +807,7 @@
             // 
             // txtbExcludeAlert
             // 
-            this.txtbExcludeAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbExcludeAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbExcludeAlert.Location = new System.Drawing.Point(200, 37);
             this.txtbExcludeAlert.Name = "txtbExcludeAlert";
@@ -814,7 +816,7 @@
             // 
             // txtbIncludeTextAlert
             // 
-            this.txtbIncludeTextAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbIncludeTextAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbIncludeTextAlert.Location = new System.Drawing.Point(200, 8);
             this.txtbIncludeTextAlert.Name = "txtbIncludeTextAlert";
@@ -866,7 +868,7 @@
             // 
             // cpeHighlightColor
             // 
-            this.cpeHighlightColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeHighlightColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeHighlightColor.EditValue = System.Drawing.Color.Empty;
             this.cpeHighlightColor.Location = new System.Drawing.Point(154, 417);
@@ -879,8 +881,8 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Controls.Add(this.lblLogLevelAnalogyInformation);
             this.groupControl2.Controls.Add(this.cpeLogLevelAnalogyInformation);
@@ -918,7 +920,7 @@
             // 
             // cpeLogLevelAnalogyInformation
             // 
-            this.cpeLogLevelAnalogyInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelAnalogyInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelAnalogyInformation.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelAnalogyInformation.Location = new System.Drawing.Point(140, 307);
@@ -939,7 +941,7 @@
             // 
             // cpeLogLevelCritical
             // 
-            this.cpeLogLevelCritical.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelCritical.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelCritical.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelCritical.Location = new System.Drawing.Point(140, 279);
@@ -960,7 +962,7 @@
             // 
             // cpeLogLevelError
             // 
-            this.cpeLogLevelError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelError.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelError.Location = new System.Drawing.Point(140, 251);
@@ -981,7 +983,7 @@
             // 
             // cpeLogLevelWarning
             // 
-            this.cpeLogLevelWarning.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelWarning.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelWarning.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelWarning.Location = new System.Drawing.Point(140, 223);
@@ -1002,7 +1004,7 @@
             // 
             // cpeLogLevelEvent
             // 
-            this.cpeLogLevelEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelEvent.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelEvent.Location = new System.Drawing.Point(140, 195);
@@ -1023,7 +1025,7 @@
             // 
             // cpeLogLevelDebug
             // 
-            this.cpeLogLevelDebug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelDebug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelDebug.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelDebug.Location = new System.Drawing.Point(140, 167);
@@ -1044,7 +1046,7 @@
             // 
             // cpeLogLevelVerbose
             // 
-            this.cpeLogLevelVerbose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelVerbose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelVerbose.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelVerbose.Location = new System.Drawing.Point(140, 139);
@@ -1065,7 +1067,7 @@
             // 
             // cpeLogLevelTrace
             // 
-            this.cpeLogLevelTrace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelTrace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelTrace.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelTrace.Location = new System.Drawing.Point(140, 111);
@@ -1086,7 +1088,7 @@
             // 
             // cpeLogLevelDisabled
             // 
-            this.cpeLogLevelDisabled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelDisabled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelDisabled.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelDisabled.Location = new System.Drawing.Point(140, 83);
@@ -1107,7 +1109,7 @@
             // 
             // cpeLogLevelUnknown
             // 
-            this.cpeLogLevelUnknown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cpeLogLevelUnknown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cpeLogLevelUnknown.EditValue = System.Drawing.Color.Empty;
             this.cpeLogLevelUnknown.Location = new System.Drawing.Point(140, 55);
@@ -1120,7 +1122,7 @@
             // 
             // tsStartupRibbonMinimized
             // 
-            this.tsStartupRibbonMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsStartupRibbonMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsStartupRibbonMinimized.EditValue = true;
             this.tsStartupRibbonMinimized.Location = new System.Drawing.Point(14, 6);
@@ -1134,7 +1136,7 @@
             // 
             // tsSimpleMode
             // 
-            this.tsSimpleMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsSimpleMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsSimpleMode.Enabled = false;
             this.tsSimpleMode.Location = new System.Drawing.Point(14, 41);
@@ -1159,8 +1161,8 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.lblOpenedFiles);
             this.groupControl1.Controls.Add(this.lblRunningTime);
@@ -1213,7 +1215,7 @@
             // 
             // tsUserStatistics
             // 
-            this.tsUserStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tsUserStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tsUserStatistics.Location = new System.Drawing.Point(29, 11);
             this.tsUserStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1236,7 +1238,7 @@
             // 
             // tswitchExtensionsStartup
             // 
-            this.tswitchExtensionsStartup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tswitchExtensionsStartup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tswitchExtensionsStartup.Location = new System.Drawing.Point(17, 11);
             this.tswitchExtensionsStartup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1249,8 +1251,8 @@
             // 
             // chklItems
             // 
-            this.chklItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.chklItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chklItems.CheckOnClick = true;
             this.chklItems.FormattingEnabled = true;
@@ -1389,7 +1391,7 @@
             // 
             // toggleSwitchIdleMode
             // 
-            this.toggleSwitchIdleMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.toggleSwitchIdleMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleSwitchIdleMode.Location = new System.Drawing.Point(16, 10);
             this.toggleSwitchIdleMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1464,8 +1466,8 @@
             // sBtnMoveUp
             // 
             this.sBtnMoveUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sBtnMoveUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveUp.ImageOptions.Image")));
-            this.sBtnMoveUp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.sBtnMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveUp.ImageOptions.Image")));
+            this.sBtnMoveUp.TextImageRelation = TextImageRelation.ImageAboveText;
             this.sBtnMoveUp.Location = new System.Drawing.Point(0, 0);
             this.sBtnMoveUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMoveUp.Name = "sBtnMoveUp";
@@ -1477,8 +1479,8 @@
             // sBtnMoveDown
             // 
             this.sBtnMoveDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sBtnMoveDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveDown.ImageOptions.Image")));
-            this.sBtnMoveDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomLeft;
+            this.sBtnMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("sBtnMoveDown.ImageOptions.Image")));
+            this.sBtnMoveDown.TextImageRelation = TextImageRelation.TextBeforeImage;
             this.sBtnMoveDown.Location = new System.Drawing.Point(0, 0);
             this.sBtnMoveDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMoveDown.Name = "sBtnMoveDown";
@@ -1595,7 +1597,7 @@
             // 
             // txtbDataProviderAssociation
             // 
-            this.txtbDataProviderAssociation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbDataProviderAssociation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbDataProviderAssociation.Location = new System.Drawing.Point(224, 54);
             this.txtbDataProviderAssociation.Name = "txtbDataProviderAssociation";
@@ -1739,7 +1741,7 @@
         private DevExpress.XtraEditors.LabelControl lblOpenedFiles;
         private DevExpress.XtraEditors.LabelControl lblRunningTime;
         private DevExpress.XtraEditors.LabelControl lblLaunchCount;
-        private DevExpress.XtraEditors.SimpleButton btnClearStatistics;
+        private Syncfusion.WinForms.Controls.SfButton btnClearStatistics;
         private DevExpress.XtraEditors.ToggleSwitch tsUserStatistics;
         private DevExpress.XtraEditors.GroupControl gcFiles;
         private DevExpress.XtraEditors.ToggleSwitch tsFileCaching;
@@ -1790,8 +1792,8 @@
         private DevExpress.XtraEditors.LabelControl lblHighlightColor;
         private DevExpress.XtraEditors.ColorPickEdit cpeHighlightColor;
         private DevExpress.XtraEditors.ToggleSwitch tsDataTimeAscendDescend;
-        private DevExpress.XtraEditors.SimpleButton sBtnImportColors;
-        private DevExpress.XtraEditors.SimpleButton sBtnExportColors;
+        private Syncfusion.WinForms.Controls.SfButton sBtnImportColors;
+        private Syncfusion.WinForms.Controls.SfButton sBtnExportColors;
         private DevExpress.XtraTab.XtraTabControl xtraTabControlDataProviderSettings;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageDataProvidersRealTime;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageDataProvidersOrder;
@@ -1799,12 +1801,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlDataProviders;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlDataProvidersButtons;
-        private DevExpress.XtraEditors.SimpleButton sBtnMoveUp;
-        private DevExpress.XtraEditors.SimpleButton sBtnMoveDown;
+        private Syncfusion.WinForms.Controls.SfButton sBtnMoveUp;
+        private Syncfusion.WinForms.Controls.SfButton sBtnMoveDown;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageDataProvidersCustom;
-        private DevExpress.XtraEditors.SimpleButton btnDataProviderCustomSettings;
+        private Syncfusion.WinForms.Controls.SfButton btnDataProviderCustomSettings;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageDataProviderAssociation;
-        private DevExpress.XtraEditors.SimpleButton btnSetFileAssociation;
+        private Syncfusion.WinForms.Controls.SfButton btnSetFileAssociation;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.TextBox txtbDataProviderAssociation;
         private System.Windows.Forms.ComboBox cbDataProviderAssociation;
@@ -1818,26 +1820,26 @@
         private System.Windows.Forms.RadioButton rbtnHighlightContains;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageFilters;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageAlerts;
-        private DevExpress.XtraEditors.SimpleButton sbtnDeleteHighlight;
+        private Syncfusion.WinForms.Controls.SfButton sbtnDeleteHighlight;
         private DevExpress.XtraEditors.ListBoxControl lboxHighlightItems;
-        private DevExpress.XtraEditors.SimpleButton sbtnAddHighlight;
+        private Syncfusion.WinForms.Controls.SfButton sbtnAddHighlight;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.ColorPickEdit cpeHighlightPreDefined;
         private DevExpress.XtraEditors.TextEdit txtbSourcesFilter;
         private DevExpress.XtraEditors.TextEdit txtbModulesFilter;
         private DevExpress.XtraEditors.TextEdit txtbExcludeFilter;
         private DevExpress.XtraEditors.TextEdit txtbIncludeTextFilter;
-        private DevExpress.XtraEditors.SimpleButton sbtnDeleteFilter;
+        private Syncfusion.WinForms.Controls.SfButton sbtnDeleteFilter;
         private DevExpress.XtraEditors.ListBoxControl lboxFilters;
-        private DevExpress.XtraEditors.SimpleButton sbtnAddFilter;
+        private Syncfusion.WinForms.Controls.SfButton sbtnAddFilter;
         private System.Windows.Forms.Label lblExplaination;
         private System.Windows.Forms.Label lblModules;
         private System.Windows.Forms.Label lblSources;
         private System.Windows.Forms.Label lblExcludeMessageText;
         private System.Windows.Forms.Label lblIncludeText;
-        private DevExpress.XtraEditors.SimpleButton sbtnDeleteAlerts;
+        private Syncfusion.WinForms.Controls.SfButton sbtnDeleteAlerts;
         private DevExpress.XtraEditors.ListBoxControl lboxAlerts;
-        private DevExpress.XtraEditors.SimpleButton sbtnAddAlerts;
+        private Syncfusion.WinForms.Controls.SfButton sbtnAddAlerts;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

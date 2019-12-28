@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderTreeViewUC));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtbFolder = new System.Windows.Forms.TextBox();
-            this.btnOpenFile = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOpenFile = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.xtraUCFileSystem1 = new Analogy.XtraUCFileSystem();
             this.panel2.SuspendLayout();
@@ -112,7 +112,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtbFolder;
         private System.Windows.Forms.ImageList imageList;
-        private DevExpress.XtraEditors.SimpleButton btnOpenFile;
+        private Syncfusion.WinForms.Controls.SfButton btnOpenFile;
         private XtraUCFileSystem xtraUCFileSystem1;
     }
 }

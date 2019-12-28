@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormClientServer));
-            this.sBtnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnAdd = new Syncfusion.WinForms.Controls.SfButton();
             this.lblPath = new DevExpress.XtraEditors.LabelControl();
             this.txtbPath = new System.Windows.Forms.TextBox();
-            this.sBtnTest = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnTest = new Syncfusion.WinForms.Controls.SfButton();
             this.rBtnNetwork = new System.Windows.Forms.RadioButton();
             this.rBtnLocal = new System.Windows.Forms.RadioButton();
             this.txtDisplayName = new System.Windows.Forms.TextBox();
@@ -135,10 +135,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton sBtnAdd;
+        private Syncfusion.WinForms.Controls.SfButton sBtnAdd;
         private DevExpress.XtraEditors.LabelControl lblPath;
         private System.Windows.Forms.TextBox txtbPath;
-        private DevExpress.XtraEditors.SimpleButton sBtnTest;
+        private Syncfusion.WinForms.Controls.SfButton sBtnTest;
         private System.Windows.Forms.RadioButton rBtnNetwork;
         private System.Windows.Forms.RadioButton rBtnLocal;
         private System.Windows.Forms.TextBox txtDisplayName;

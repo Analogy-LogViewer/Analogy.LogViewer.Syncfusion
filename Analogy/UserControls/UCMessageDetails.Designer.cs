@@ -47,14 +47,14 @@
             this.lbID = new System.Windows.Forms.Label();
             this.lblIndex = new System.Windows.Forms.Label();
             this.rtxtbIndex = new System.Windows.Forms.RichTextBox();
-            this.btnNext = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrev = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNext = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnPrev = new Syncfusion.WinForms.Controls.SfButton();
             this.txtbLineNumber = new System.Windows.Forms.RichTextBox();
             this.lblLineNumber = new System.Windows.Forms.Label();
             this.rtxtbDataSource = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.sBtnCopy = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnCopy = new Syncfusion.WinForms.Controls.SfButton();
+            this.simpleButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.txtID = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -257,7 +257,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.ImageOptions.Image")));
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.ImageOptions.Image")));
             this.btnNext.Location = new System.Drawing.Point(846, 7);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(24, 26);
@@ -267,7 +267,7 @@
             // btnPrev
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrev.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.ImageOptions.Image")));
+            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.ImageOptions.Image")));
             this.btnPrev.Location = new System.Drawing.Point(816, 7);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(24, 26);
@@ -320,7 +320,7 @@
             // 
             // sBtnCopy
             // 
-            this.sBtnCopy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnCopy.ImageOptions.Image")));
+            this.sBtnCopy.Image = ((System.Drawing.Image)(resources.GetObject("sBtnCopy.ImageOptions.Image")));
             this.sBtnCopy.Location = new System.Drawing.Point(195, 74);
             this.sBtnCopy.Name = "sBtnCopy";
             this.sBtnCopy.Size = new System.Drawing.Size(24, 26);
@@ -329,7 +329,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(195, 50);
             this.simpleButton1.Name = "sBtnCopy";
             this.simpleButton1.Size = new System.Drawing.Size(24, 26);
@@ -415,14 +415,14 @@
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lblIndex;
         private System.Windows.Forms.RichTextBox rtxtbIndex;
-        private DevExpress.XtraEditors.SimpleButton btnNext;
-        private DevExpress.XtraEditors.SimpleButton btnPrev;
+        private Syncfusion.WinForms.Controls.SfButton btnNext;
+        private Syncfusion.WinForms.Controls.SfButton btnPrev;
         private System.Windows.Forms.RichTextBox txtbLineNumber;
         private System.Windows.Forms.Label lblLineNumber;
         private System.Windows.Forms.RichTextBox rtxtbDataSource;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.SimpleButton sBtnCopy;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private Syncfusion.WinForms.Controls.SfButton sBtnCopy;
+        private Syncfusion.WinForms.Controls.SfButton simpleButton1;
         private System.Windows.Forms.RichTextBox txtID;
         private System.Windows.Forms.Label label5;
     }

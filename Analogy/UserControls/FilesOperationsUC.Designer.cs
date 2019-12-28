@@ -31,7 +31,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.sBtnAbort = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnAbort = new Syncfusion.WinForms.Controls.SfButton();
             this.richTextBoxFound = new System.Windows.Forms.RichTextBox();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -127,7 +127,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private DevExpress.XtraEditors.SimpleButton sBtnAbort;
+        private Syncfusion.WinForms.Controls.SfButton sBtnAbort;
         private System.Windows.Forms.RichTextBox richTextBoxFound;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }

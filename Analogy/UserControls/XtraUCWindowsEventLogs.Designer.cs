@@ -31,9 +31,9 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.lstSelected = new DevExpress.XtraEditors.ListBoxControl();
-            this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRemove = new Syncfusion.WinForms.Controls.SfButton();
             this.lstAvailable = new DevExpress.XtraEditors.ListBoxControl();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new Syncfusion.WinForms.Controls.SfButton();
             this.lblLaunchCount = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -141,9 +141,9 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.ListBoxControl lstSelected;
-        private DevExpress.XtraEditors.SimpleButton btnRemove;
+        private Syncfusion.WinForms.Controls.SfButton btnRemove;
         private DevExpress.XtraEditors.ListBoxControl lstAvailable;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private Syncfusion.WinForms.Controls.SfButton btnAdd;
         private DevExpress.XtraEditors.LabelControl lblLaunchCount;
     }
 }

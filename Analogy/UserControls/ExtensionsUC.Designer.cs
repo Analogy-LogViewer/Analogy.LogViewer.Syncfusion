@@ -36,7 +36,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblExtension = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
-            this.sBtnLoad = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnLoad = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,6 +174,6 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblExtension;
         private System.Windows.Forms.Label lblType;
-        private DevExpress.XtraEditors.SimpleButton sBtnLoad;
+        private Syncfusion.WinForms.Controls.SfButton sBtnLoad;
     }
 }

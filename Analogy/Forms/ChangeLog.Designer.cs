@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeLog));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.rtxtbChangeLog = new System.Windows.Forms.RichTextBox();
-            this.sBtnOk = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnOk = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,6 +101,6 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.RichTextBox rtxtbChangeLog;
-        private DevExpress.XtraEditors.SimpleButton sBtnOk;
+        private Syncfusion.WinForms.Controls.SfButton sBtnOk;
     }
 }

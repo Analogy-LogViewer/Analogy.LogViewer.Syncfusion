@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Views.Grid;
+using Syncfusion.WinForms.Controls;
 
 namespace Analogy
 {
@@ -41,19 +42,19 @@ namespace Analogy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLogs));
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn15 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn16 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn17 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn18 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn19 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn20 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn21 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn22 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn23 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn24 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.cmsMessageOperation = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiClearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiREmoveAllPreviousMessages = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,15 +125,15 @@ namespace Analogy
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bBtnButtomExpand = new DevExpress.XtraBars.BarButtonItem();
             this.btSwitchExpandButtomMessage = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.sbtnMoreHighlight = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnMoreHighlight = new Syncfusion.WinForms.Controls.SfButton();
             this.pnlButtonsHighlight = new System.Windows.Forms.Panel();
             this.lblPageNumber = new DevExpress.XtraEditors.LabelControl();
-            this.sBtnPageNext = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnLastPage = new DevExpress.XtraEditors.SimpleButton();
-            this.sbtnPagePrevious = new DevExpress.XtraEditors.SimpleButton();
-            this.sbtnPageFirst = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUp = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDown = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnPageNext = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnLastPage = new Syncfusion.WinForms.Controls.SfButton();
+            this.sbtnPagePrevious = new Syncfusion.WinForms.Controls.SfButton();
+            this.sbtnPageFirst = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnUp = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDown = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbHighlight = new System.Windows.Forms.CheckBox();
             this.pnlTopFiltering = new System.Windows.Forms.Panel();
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
@@ -141,29 +142,30 @@ namespace Analogy
             this.deOlderThanFilter = new DevExpress.XtraEditors.DateEdit();
             this.chkDateOlderThan = new System.Windows.Forms.CheckBox();
             this.deNewerThanFilter = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.chkDateNewerThan = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spltcProcessesModule = new System.Windows.Forms.SplitContainer();
-            this.sbtnIncludeModules = new DevExpress.XtraEditors.SimpleButton();
-            this.sbtnUndockPerProcess = new DevExpress.XtraEditors.SimpleButton();
+            this.cbModule = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.sbtnIncludeModules = new Syncfusion.WinForms.Controls.SfButton();
+            this.sbtnUndockPerProcess = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbModules = new System.Windows.Forms.CheckBox();
             this.spltcSources = new System.Windows.Forms.SplitContainer();
-            this.sbtnIncludeSources = new DevExpress.XtraEditors.SimpleButton();
+            this.cbSource = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.sbtnIncludeSources = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbSources = new System.Windows.Forms.CheckBox();
             this.pboxInfoExclude = new System.Windows.Forms.PictureBox();
             this.spltTextExclude = new System.Windows.Forms.SplitContainer();
             this.cbExclude = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.sbtnTextExclude = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnMostCommon = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnTextExclude = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnMostCommon = new Syncfusion.WinForms.Controls.SfButton();
             this.chkExclude = new System.Windows.Forms.CheckBox();
             this.spltText = new System.Windows.Forms.SplitContainer();
             this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.sbtnTextInclude = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTextInclude = new Syncfusion.WinForms.Controls.SfButton();
             this.chkbIncludeText = new System.Windows.Forms.CheckBox();
             this.pboxInfo = new System.Windows.Forms.PictureBox();
-            this.sbtnPreDefinedFilters = new DevExpress.XtraEditors.SimpleButton();
-            this.chkLstLogLevel = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.sbtnPreDefinedFilters = new Syncfusion.WinForms.Controls.SfButton();
             this.tcBottom = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMessageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.rtxtContent = new DevExpress.XtraEditors.MemoEdit();
@@ -192,13 +194,13 @@ namespace Analogy
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new DevExpress.XtraEditors.LabelControl();
-            this.sBtnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTotalMessages = new DevExpress.XtraEditors.LabelControl();
             this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.nudGroupBychars = new DevExpress.XtraEditors.SpinEdit();
             this.txtbGroupByCharsLimit = new DevExpress.XtraEditors.TextEdit();
-            this.sBtnGroup = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtnLength = new DevExpress.XtraEditors.SimpleButton();
+            this.sBtnGroup = new Syncfusion.WinForms.Controls.SfButton();
+            this.sBtnLength = new Syncfusion.WinForms.Controls.SfButton();
             this.lblGroupByCharsLimit = new System.Windows.Forms.Label();
             this.spltGroupByChars = new System.Windows.Forms.SplitContainer();
             this.gCtrlGrouping = new DevExpress.XtraGrid.GridControl();
@@ -241,8 +243,12 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbSource = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.cbModule = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.tbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbTrace = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbErrorCritical = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbWarning = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbDebug = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
+            this.rbVerbose = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).BeginInit();
@@ -265,9 +271,11 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).BeginInit();
             this.spltcProcessesModule.Panel1.SuspendLayout();
             this.spltcProcessesModule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).BeginInit();
             this.spltcSources.Panel1.SuspendLayout();
             this.spltcSources.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltTextExclude)).BeginInit();
             this.spltTextExclude.Panel1.SuspendLayout();
@@ -278,7 +286,6 @@ namespace Analogy
             this.spltText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
             this.tcBottom.SuspendLayout();
             this.xtpMessageInfo.SuspendLayout();
@@ -307,8 +314,12 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAllLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1059,7 +1070,9 @@ namespace Analogy
             // 
             // sbtnMoreHighlight
             // 
+            this.sbtnMoreHighlight.AccessibleName = "Button";
             this.sbtnMoreHighlight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sbtnMoreHighlight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sbtnMoreHighlight.Location = new System.Drawing.Point(1533, 0);
             this.sbtnMoreHighlight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnMoreHighlight.Name = "sbtnMoreHighlight";
@@ -1100,7 +1113,9 @@ namespace Analogy
             // 
             // sBtnPageNext
             // 
+            this.sBtnPageNext.AccessibleName = "Button";
             this.sBtnPageNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnPageNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnPageNext.Location = new System.Drawing.Point(355, 0);
             this.sBtnPageNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sBtnPageNext.Name = "sBtnPageNext";
@@ -1111,7 +1126,9 @@ namespace Analogy
             // 
             // sBtnLastPage
             // 
+            this.sBtnLastPage.AccessibleName = "Button";
             this.sBtnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnLastPage.Location = new System.Drawing.Point(444, 0);
             this.sBtnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sBtnLastPage.Name = "sBtnLastPage";
@@ -1122,6 +1139,8 @@ namespace Analogy
             // 
             // sbtnPagePrevious
             // 
+            this.sbtnPagePrevious.AccessibleName = "Button";
+            this.sbtnPagePrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sbtnPagePrevious.Location = new System.Drawing.Point(138, 0);
             this.sbtnPagePrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnPagePrevious.Name = "sbtnPagePrevious";
@@ -1132,6 +1151,8 @@ namespace Analogy
             // 
             // sbtnPageFirst
             // 
+            this.sbtnPageFirst.AccessibleName = "Button";
+            this.sbtnPageFirst.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sbtnPageFirst.Location = new System.Drawing.Point(61, 0);
             this.sbtnPageFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sbtnPageFirst.Name = "sbtnPageFirst";
@@ -1142,22 +1163,26 @@ namespace Analogy
             // 
             // btnUp
             // 
-            this.btnUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.ImageOptions.Image")));
+            this.btnUp.AccessibleName = "Button";
+            this.btnUp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnUp.Location = new System.Drawing.Point(7, 0);
             this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(21, 26);
+            this.btnUp.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnUp.TabIndex = 41;
             this.btnUp.Visible = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
-            this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
+            this.btnDown.AccessibleName = "Button";
+            this.btnDown.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnDown.Location = new System.Drawing.Point(33, 0);
             this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(21, 26);
+            this.btnDown.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btnDown.TabIndex = 40;
             this.btnDown.Visible = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
@@ -1198,10 +1223,15 @@ namespace Analogy
             // 
             // spltFilteringBoth.Panel2
             // 
-            this.spltFilteringBoth.Panel2.Controls.Add(this.chkLstLogLevel);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbVerbose);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbDebug);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbWarning);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbErrorCritical);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.rbTrace);
+            this.spltFilteringBoth.Panel2.Controls.Add(this.tbAllLevel);
             this.spltFilteringBoth.Panel2MinSize = 150;
             this.spltFilteringBoth.Size = new System.Drawing.Size(2124, 153);
-            this.spltFilteringBoth.SplitterDistance = 1634;
+            this.spltFilteringBoth.SplitterDistance = 1881;
             this.spltFilteringBoth.SplitterWidth = 3;
             this.spltFilteringBoth.TabIndex = 19;
             // 
@@ -1216,7 +1246,7 @@ namespace Analogy
             this.pnlFilteringLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlFilteringLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFilteringLeft.Name = "pnlFilteringLeft";
-            this.pnlFilteringLeft.Size = new System.Drawing.Size(1634, 153);
+            this.pnlFilteringLeft.Size = new System.Drawing.Size(1881, 153);
             this.pnlFilteringLeft.TabIndex = 20;
             // 
             // spltcDateFiltering
@@ -1236,7 +1266,7 @@ namespace Analogy
             this.spltcDateFiltering.Panel1.Controls.Add(this.chkDateNewerThan);
             this.spltcDateFiltering.Panel1.Controls.Add(this.pictureBox1);
             this.spltcDateFiltering.Panel2Collapsed = true;
-            this.spltcDateFiltering.Size = new System.Drawing.Size(1624, 25);
+            this.spltcDateFiltering.Size = new System.Drawing.Size(1871, 25);
             this.spltcDateFiltering.SplitterDistance = 683;
             this.spltcDateFiltering.SplitterWidth = 3;
             this.spltcDateFiltering.TabIndex = 27;
@@ -1307,14 +1337,15 @@ namespace Analogy
             // 
             // simpleButton1
             // 
+            this.simpleButton1.AccessibleName = "Button";
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(1601, 0);
+            this.simpleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.simpleButton1.Location = new System.Drawing.Point(1848, 0);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(23, 25);
+            this.simpleButton1.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.simpleButton1.TabIndex = 24;
-            this.simpleButton1.ToolTip = "Clear the text";
             // 
             // chkDateNewerThan
             // 
@@ -1354,31 +1385,49 @@ namespace Analogy
             this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnUndockPerProcess);
             this.spltcProcessesModule.Panel1.Controls.Add(this.chkbModules);
             this.spltcProcessesModule.Panel2Collapsed = true;
-            this.spltcProcessesModule.Size = new System.Drawing.Size(1624, 25);
+            this.spltcProcessesModule.Size = new System.Drawing.Size(1871, 25);
             this.spltcProcessesModule.SplitterDistance = 574;
             this.spltcProcessesModule.SplitterWidth = 3;
             this.spltcProcessesModule.TabIndex = 26;
             // 
+            // cbModule
+            // 
+            this.cbModule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Location = new System.Drawing.Point(275, 0);
+            this.cbModule.Margin = new System.Windows.Forms.Padding(4);
+            this.cbModule.Name = "cbModule";
+            this.cbModule.Size = new System.Drawing.Size(1331, 25);
+            this.cbModule.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbModule.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.TabIndex = 27;
+            // 
             // sbtnIncludeModules
             // 
+            this.sbtnIncludeModules.AccessibleName = "Button";
             this.sbtnIncludeModules.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnIncludeModules.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnIncludeModules.ImageOptions.Image")));
-            this.sbtnIncludeModules.Location = new System.Drawing.Point(1420, 0);
+            this.sbtnIncludeModules.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnIncludeModules.Location = new System.Drawing.Point(1606, 0);
             this.sbtnIncludeModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnIncludeModules.Name = "sbtnIncludeModules";
             this.sbtnIncludeModules.Size = new System.Drawing.Size(23, 25);
+            this.sbtnIncludeModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.sbtnIncludeModules.TabIndex = 24;
-            this.sbtnIncludeModules.ToolTip = "Clear the text";
             this.sbtnIncludeModules.Click += new System.EventHandler(this.sbtnIncludeModules_Click);
             // 
             // sbtnUndockPerProcess
             // 
+            this.sbtnUndockPerProcess.AccessibleName = "Button";
             this.sbtnUndockPerProcess.AutoSize = true;
             this.sbtnUndockPerProcess.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnUndockPerProcess.Location = new System.Drawing.Point(1443, 0);
+            this.sbtnUndockPerProcess.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnUndockPerProcess.Location = new System.Drawing.Point(1629, 0);
             this.sbtnUndockPerProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnUndockPerProcess.Name = "sbtnUndockPerProcess";
-            this.sbtnUndockPerProcess.Size = new System.Drawing.Size(181, 25);
+            this.sbtnUndockPerProcess.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.sbtnUndockPerProcess.Size = new System.Drawing.Size(242, 25);
             this.sbtnUndockPerProcess.TabIndex = 24;
             this.sbtnUndockPerProcess.Text = "Split view per Process/Module";
             this.sbtnUndockPerProcess.Click += new System.EventHandler(this.sbtnUndockPerProcess_Click);
@@ -1409,21 +1458,36 @@ namespace Analogy
             this.spltcSources.Panel1.Controls.Add(this.chkbSources);
             this.spltcSources.Panel1.Controls.Add(this.pboxInfoExclude);
             this.spltcSources.Panel2Collapsed = true;
-            this.spltcSources.Size = new System.Drawing.Size(1624, 25);
+            this.spltcSources.Size = new System.Drawing.Size(1871, 25);
             this.spltcSources.SplitterDistance = 683;
             this.spltcSources.SplitterWidth = 3;
             this.spltcSources.TabIndex = 25;
             // 
+            // cbSource
+            // 
+            this.cbSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Location = new System.Drawing.Point(228, 0);
+            this.cbSource.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSource.Name = "cbSource";
+            this.cbSource.Size = new System.Drawing.Size(1620, 25);
+            this.cbSource.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSource.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.TabIndex = 27;
+            // 
             // sbtnIncludeSources
             // 
+            this.sbtnIncludeSources.AccessibleName = "Button";
             this.sbtnIncludeSources.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnIncludeSources.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnIncludeSources.ImageOptions.Image")));
-            this.sbtnIncludeSources.Location = new System.Drawing.Point(1601, 0);
+            this.sbtnIncludeSources.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnIncludeSources.Location = new System.Drawing.Point(1848, 0);
             this.sbtnIncludeSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnIncludeSources.Name = "sbtnIncludeSources";
             this.sbtnIncludeSources.Size = new System.Drawing.Size(23, 25);
+            this.sbtnIncludeSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.sbtnIncludeSources.TabIndex = 24;
-            this.sbtnIncludeSources.ToolTip = "Clear the text";
             this.sbtnIncludeSources.Click += new System.EventHandler(this.sbtnIncludeSources_Click);
             // 
             // chkbSources
@@ -1463,7 +1527,7 @@ namespace Analogy
             this.spltTextExclude.Panel1.Controls.Add(this.sBtnMostCommon);
             this.spltTextExclude.Panel1.Controls.Add(this.chkExclude);
             this.spltTextExclude.Panel2Collapsed = true;
-            this.spltTextExclude.Size = new System.Drawing.Size(1624, 25);
+            this.spltTextExclude.Size = new System.Drawing.Size(1871, 25);
             this.spltTextExclude.SplitterDistance = 998;
             this.spltTextExclude.SplitterWidth = 3;
             this.spltTextExclude.TabIndex = 24;
@@ -1475,7 +1539,7 @@ namespace Analogy
             this.cbExclude.Location = new System.Drawing.Point(127, 0);
             this.cbExclude.Margin = new System.Windows.Forms.Padding(4);
             this.cbExclude.Name = "cbExclude";
-            this.cbExclude.Size = new System.Drawing.Size(1354, 25);
+            this.cbExclude.Size = new System.Drawing.Size(1601, 25);
             this.cbExclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1484,20 +1548,23 @@ namespace Analogy
             // 
             // sbtnTextExclude
             // 
+            this.sbtnTextExclude.AccessibleName = "Button";
             this.sbtnTextExclude.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnTextExclude.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnTextExclude.ImageOptions.Image")));
-            this.sbtnTextExclude.Location = new System.Drawing.Point(1481, 0);
+            this.sbtnTextExclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnTextExclude.Location = new System.Drawing.Point(1728, 0);
             this.sbtnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnTextExclude.Name = "sbtnTextExclude";
             this.sbtnTextExclude.Size = new System.Drawing.Size(23, 25);
+            this.sbtnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.sbtnTextExclude.TabIndex = 20;
-            this.sbtnTextExclude.ToolTip = "Clear the text";
             this.sbtnTextExclude.Click += new System.EventHandler(this.sbtnTextExclude_Click);
             // 
             // sBtnMostCommon
             // 
+            this.sBtnMostCommon.AccessibleName = "Button";
             this.sBtnMostCommon.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnMostCommon.Location = new System.Drawing.Point(1504, 0);
+            this.sBtnMostCommon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sBtnMostCommon.Location = new System.Drawing.Point(1751, 0);
             this.sBtnMostCommon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnMostCommon.Name = "sBtnMostCommon";
             this.sBtnMostCommon.Size = new System.Drawing.Size(120, 25);
@@ -1529,12 +1596,12 @@ namespace Analogy
             // spltText.Panel1
             // 
             this.spltText.Panel1.Controls.Add(this.cbInclude);
-            this.spltText.Panel1.Controls.Add(this.sbtnTextInclude);
+            this.spltText.Panel1.Controls.Add(this.btnTextInclude);
             this.spltText.Panel1.Controls.Add(this.chkbIncludeText);
             this.spltText.Panel1.Controls.Add(this.pboxInfo);
             this.spltText.Panel1.Controls.Add(this.sbtnPreDefinedFilters);
             this.spltText.Panel2Collapsed = true;
-            this.spltText.Size = new System.Drawing.Size(1624, 25);
+            this.spltText.Size = new System.Drawing.Size(1871, 25);
             this.spltText.SplitterDistance = 998;
             this.spltText.SplitterWidth = 3;
             this.spltText.TabIndex = 22;
@@ -1546,24 +1613,25 @@ namespace Analogy
             this.cbInclude.Location = new System.Drawing.Point(127, 0);
             this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
             this.cbInclude.Name = "cbInclude";
-            this.cbInclude.Size = new System.Drawing.Size(1451, 25);
+            this.cbInclude.Size = new System.Drawing.Size(1698, 25);
             this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInclude.TabIndex = 26;
             // 
-            // sbtnTextInclude
+            // btnTextInclude
             // 
-            this.sbtnTextInclude.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnTextInclude.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnTextInclude.ImageOptions.Image")));
-            this.sbtnTextInclude.Location = new System.Drawing.Point(1578, 0);
-            this.sbtnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sbtnTextInclude.Name = "sbtnTextInclude";
-            this.sbtnTextInclude.Size = new System.Drawing.Size(23, 25);
-            this.sbtnTextInclude.TabIndex = 20;
-            this.sbtnTextInclude.ToolTip = "Clear the text";
-            this.sbtnTextInclude.Click += new System.EventHandler(this.sbtnTextInclude_Click);
+            this.btnTextInclude.AccessibleName = "Button";
+            this.btnTextInclude.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnTextInclude.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnTextInclude.Location = new System.Drawing.Point(1825, 0);
+            this.btnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTextInclude.Name = "btnTextInclude";
+            this.btnTextInclude.Size = new System.Drawing.Size(23, 25);
+            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnTextInclude.TabIndex = 20;
+            this.btnTextInclude.Click += new System.EventHandler(this.sbtnTextInclude_Click);
             // 
             // chkbIncludeText
             // 
@@ -1592,35 +1660,16 @@ namespace Analogy
             // 
             // sbtnPreDefinedFilters
             // 
+            this.sbtnPreDefinedFilters.AccessibleName = "Button";
             this.sbtnPreDefinedFilters.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sbtnPreDefinedFilters.ImageOptions.Image = global::Analogy.Properties.Resources.SingleMasterFilter_16x16;
-            this.sbtnPreDefinedFilters.Location = new System.Drawing.Point(1601, 0);
+            this.sbtnPreDefinedFilters.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sbtnPreDefinedFilters.Location = new System.Drawing.Point(1848, 0);
             this.sbtnPreDefinedFilters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbtnPreDefinedFilters.Name = "sbtnPreDefinedFilters";
             this.sbtnPreDefinedFilters.Size = new System.Drawing.Size(23, 25);
+            this.sbtnPreDefinedFilters.Style.Image = global::Analogy.Properties.Resources.SingleMasterFilter_16x16;
             this.sbtnPreDefinedFilters.TabIndex = 21;
-            this.sbtnPreDefinedFilters.ToolTip = "Pre-defined filters";
             this.sbtnPreDefinedFilters.Click += new System.EventHandler(this.sbtnPreDefinedFilters_Click);
-            // 
-            // chkLstLogLevel
-            // 
-            this.chkLstLogLevel.CheckMode = DevExpress.XtraEditors.CheckMode.Single;
-            this.chkLstLogLevel.CheckOnClick = true;
-            this.chkLstLogLevel.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.chkLstLogLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkLstLogLevel.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Trace"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Error + Critical"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Warning"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Debug"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Verbose")});
-            this.chkLstLogLevel.Location = new System.Drawing.Point(0, 0);
-            this.chkLstLogLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkLstLogLevel.Name = "chkLstLogLevel";
-            this.chkLstLogLevel.Size = new System.Drawing.Size(487, 153);
-            this.chkLstLogLevel.TabIndex = 22;
-            this.chkLstLogLevel.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.chkLstLogLevel_ItemCheck);
-            this.chkLstLogLevel.SelectedIndexChanged += new System.EventHandler(this.chkLstLogLevel_SelectedIndexChanged);
             // 
             // tcBottom
             // 
@@ -2041,89 +2090,89 @@ namespace Analogy
             this.sfDataGridMain.AllowEditing = false;
             this.sfDataGridMain.AllowResizingColumns = true;
             this.sfDataGridMain.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.ColumnHeader;
-            gridTextColumn1.AllowDragging = true;
-            gridTextColumn1.AllowEditing = false;
-            gridTextColumn1.AllowResizing = true;
-            gridTextColumn1.HeaderText = "Data Source/File Name";
-            gridTextColumn1.MappingName = "DataProvider";
-            gridDateTimeColumn1.AllowDragging = true;
-            gridDateTimeColumn1.AllowEditing = false;
-            gridDateTimeColumn1.AllowResizing = true;
-            gridDateTimeColumn1.Format = "yyyy.MM.dd HH:mm:ss.ff";
-            gridDateTimeColumn1.HeaderText = "Date";
-            gridDateTimeColumn1.MappingName = "Date";
-            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn1.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            gridTextColumn2.AllowDragging = true;
-            gridTextColumn2.AllowEditing = false;
-            gridTextColumn2.AllowResizing = true;
-            gridTextColumn2.HeaderText = "Time Differenace";
-            gridTextColumn2.MappingName = "TimeDiff";
-            gridTextColumn2.Visible = false;
-            gridTextColumn3.AllowDragging = true;
-            gridTextColumn3.AllowEditing = false;
-            gridTextColumn3.AllowResizing = true;
-            gridTextColumn3.HeaderText = "Text";
-            gridTextColumn3.MappingName = "Text";
-            gridTextColumn4.AllowDragging = true;
-            gridTextColumn4.AllowEditing = false;
-            gridTextColumn4.AllowResizing = true;
-            gridTextColumn4.HeaderText = "Source";
-            gridTextColumn4.MappingName = "Source";
-            gridTextColumn5.AllowDragging = true;
-            gridTextColumn5.AllowEditing = false;
-            gridTextColumn5.AllowResizing = true;
-            gridTextColumn5.HeaderText = "Level";
-            gridTextColumn5.MappingName = "Level";
-            gridTextColumn6.AllowDragging = true;
-            gridTextColumn6.AllowEditing = false;
-            gridTextColumn6.AllowResizing = true;
-            gridTextColumn6.HeaderText = "Class";
-            gridTextColumn6.MappingName = "Class";
-            gridTextColumn7.AllowDragging = true;
-            gridTextColumn7.AllowEditing = false;
-            gridTextColumn7.AllowResizing = true;
-            gridTextColumn7.HeaderText = "Category";
-            gridTextColumn7.MappingName = "Category";
-            gridTextColumn8.AllowDragging = true;
-            gridTextColumn8.AllowEditing = false;
-            gridTextColumn8.AllowResizing = true;
-            gridTextColumn8.HeaderText = "User";
-            gridTextColumn8.MappingName = "User";
-            gridTextColumn9.AllowDragging = true;
-            gridTextColumn9.AllowEditing = false;
-            gridTextColumn9.AllowResizing = true;
-            gridTextColumn9.HeaderText = "Module";
-            gridTextColumn9.MappingName = "Module";
-            gridTextColumn10.AllowDragging = true;
-            gridTextColumn10.AllowEditing = false;
-            gridTextColumn10.AllowResizing = true;
-            gridTextColumn10.HeaderText = "Object";
-            gridTextColumn10.MappingName = "Object";
-            gridTextColumn10.Visible = false;
-            gridTextColumn11.AllowDragging = true;
-            gridTextColumn11.AllowEditing = false;
-            gridTextColumn11.AllowResizing = true;
-            gridTextColumn11.HeaderText = "Process ID";
-            gridTextColumn11.MappingName = "ProcessID";
-            gridTextColumn12.AllowDragging = true;
-            gridTextColumn12.AllowEditing = false;
-            gridTextColumn12.AllowResizing = true;
-            gridTextColumn12.HeaderText = "Thread id";
-            gridTextColumn12.MappingName = "ThreadID";
-            this.sfDataGridMain.Columns.Add(gridTextColumn1);
-            this.sfDataGridMain.Columns.Add(gridDateTimeColumn1);
-            this.sfDataGridMain.Columns.Add(gridTextColumn2);
-            this.sfDataGridMain.Columns.Add(gridTextColumn3);
-            this.sfDataGridMain.Columns.Add(gridTextColumn4);
-            this.sfDataGridMain.Columns.Add(gridTextColumn5);
-            this.sfDataGridMain.Columns.Add(gridTextColumn6);
-            this.sfDataGridMain.Columns.Add(gridTextColumn7);
-            this.sfDataGridMain.Columns.Add(gridTextColumn8);
-            this.sfDataGridMain.Columns.Add(gridTextColumn9);
-            this.sfDataGridMain.Columns.Add(gridTextColumn10);
-            this.sfDataGridMain.Columns.Add(gridTextColumn11);
-            this.sfDataGridMain.Columns.Add(gridTextColumn12);
+            gridTextColumn13.AllowDragging = true;
+            gridTextColumn13.AllowEditing = false;
+            gridTextColumn13.AllowResizing = true;
+            gridTextColumn13.HeaderText = "Data Source/File Name";
+            gridTextColumn13.MappingName = "DataProvider";
+            gridDateTimeColumn2.AllowDragging = true;
+            gridDateTimeColumn2.AllowEditing = false;
+            gridDateTimeColumn2.AllowResizing = true;
+            gridDateTimeColumn2.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            gridDateTimeColumn2.HeaderText = "Date";
+            gridDateTimeColumn2.MappingName = "Date";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            gridTextColumn14.AllowDragging = true;
+            gridTextColumn14.AllowEditing = false;
+            gridTextColumn14.AllowResizing = true;
+            gridTextColumn14.HeaderText = "Time Differenace";
+            gridTextColumn14.MappingName = "TimeDiff";
+            gridTextColumn14.Visible = false;
+            gridTextColumn15.AllowDragging = true;
+            gridTextColumn15.AllowEditing = false;
+            gridTextColumn15.AllowResizing = true;
+            gridTextColumn15.HeaderText = "Text";
+            gridTextColumn15.MappingName = "Text";
+            gridTextColumn16.AllowDragging = true;
+            gridTextColumn16.AllowEditing = false;
+            gridTextColumn16.AllowResizing = true;
+            gridTextColumn16.HeaderText = "Source";
+            gridTextColumn16.MappingName = "Source";
+            gridTextColumn17.AllowDragging = true;
+            gridTextColumn17.AllowEditing = false;
+            gridTextColumn17.AllowResizing = true;
+            gridTextColumn17.HeaderText = "Level";
+            gridTextColumn17.MappingName = "Level";
+            gridTextColumn18.AllowDragging = true;
+            gridTextColumn18.AllowEditing = false;
+            gridTextColumn18.AllowResizing = true;
+            gridTextColumn18.HeaderText = "Class";
+            gridTextColumn18.MappingName = "Class";
+            gridTextColumn19.AllowDragging = true;
+            gridTextColumn19.AllowEditing = false;
+            gridTextColumn19.AllowResizing = true;
+            gridTextColumn19.HeaderText = "Category";
+            gridTextColumn19.MappingName = "Category";
+            gridTextColumn20.AllowDragging = true;
+            gridTextColumn20.AllowEditing = false;
+            gridTextColumn20.AllowResizing = true;
+            gridTextColumn20.HeaderText = "User";
+            gridTextColumn20.MappingName = "User";
+            gridTextColumn21.AllowDragging = true;
+            gridTextColumn21.AllowEditing = false;
+            gridTextColumn21.AllowResizing = true;
+            gridTextColumn21.HeaderText = "Module";
+            gridTextColumn21.MappingName = "Module";
+            gridTextColumn22.AllowDragging = true;
+            gridTextColumn22.AllowEditing = false;
+            gridTextColumn22.AllowResizing = true;
+            gridTextColumn22.HeaderText = "Object";
+            gridTextColumn22.MappingName = "Object";
+            gridTextColumn22.Visible = false;
+            gridTextColumn23.AllowDragging = true;
+            gridTextColumn23.AllowEditing = false;
+            gridTextColumn23.AllowResizing = true;
+            gridTextColumn23.HeaderText = "Process ID";
+            gridTextColumn23.MappingName = "ProcessID";
+            gridTextColumn24.AllowDragging = true;
+            gridTextColumn24.AllowEditing = false;
+            gridTextColumn24.AllowResizing = true;
+            gridTextColumn24.HeaderText = "Thread id";
+            gridTextColumn24.MappingName = "ThreadID";
+            this.sfDataGridMain.Columns.Add(gridTextColumn13);
+            this.sfDataGridMain.Columns.Add(gridDateTimeColumn2);
+            this.sfDataGridMain.Columns.Add(gridTextColumn14);
+            this.sfDataGridMain.Columns.Add(gridTextColumn15);
+            this.sfDataGridMain.Columns.Add(gridTextColumn16);
+            this.sfDataGridMain.Columns.Add(gridTextColumn17);
+            this.sfDataGridMain.Columns.Add(gridTextColumn18);
+            this.sfDataGridMain.Columns.Add(gridTextColumn19);
+            this.sfDataGridMain.Columns.Add(gridTextColumn20);
+            this.sfDataGridMain.Columns.Add(gridTextColumn21);
+            this.sfDataGridMain.Columns.Add(gridTextColumn22);
+            this.sfDataGridMain.Columns.Add(gridTextColumn23);
+            this.sfDataGridMain.Columns.Add(gridTextColumn24);
             this.sfDataGridMain.ContextMenuStrip = this.cmsMessageOperation;
             this.sfDataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGridMain.Location = new System.Drawing.Point(0, 0);
@@ -2171,14 +2220,14 @@ namespace Analogy
             // 
             // sBtnCancel
             // 
-            this.sBtnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sBtnCancel.Appearance.Options.UseFont = true;
+            this.sBtnCancel.AccessibleName = "Button";
             this.sBtnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sBtnCancel.ImageOptions.Image")));
+            this.sBtnCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sBtnCancel.Location = new System.Drawing.Point(1925, 0);
             this.sBtnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnCancel.Name = "sBtnCancel";
             this.sBtnCancel.Size = new System.Drawing.Size(199, 30);
+            this.sBtnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.sBtnCancel.TabIndex = 5;
             this.sBtnCancel.Text = "Cancel Processing";
             this.sBtnCancel.Visible = false;
@@ -2252,6 +2301,8 @@ namespace Analogy
             // 
             // sBtnGroup
             // 
+            this.sBtnGroup.AccessibleName = "Button";
+            this.sBtnGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnGroup.Location = new System.Drawing.Point(860, 16);
             this.sBtnGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnGroup.Name = "sBtnGroup";
@@ -2262,6 +2313,8 @@ namespace Analogy
             // 
             // sBtnLength
             // 
+            this.sBtnLength.AccessibleName = "Button";
+            this.sBtnLength.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnLength.Location = new System.Drawing.Point(413, 16);
             this.sBtnLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnLength.Name = "sBtnLength";
@@ -2803,33 +2856,83 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cbSource
+            // tbAllLevel
             // 
-            this.cbSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSource.Location = new System.Drawing.Point(228, 0);
-            this.cbSource.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSource.Name = "cbSource";
-            this.cbSource.Size = new System.Drawing.Size(1373, 25);
-            this.cbSource.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSource.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSource.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbSource.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSource.TabIndex = 27;
+            this.tbAllLevel.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.tbAllLevel.Checked = true;
+            this.tbAllLevel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbAllLevel.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.tbAllLevel.Location = new System.Drawing.Point(0, 0);
+            this.tbAllLevel.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.tbAllLevel.Name = "tbAllLevel";
+            this.tbAllLevel.Size = new System.Drawing.Size(240, 20);
+            this.tbAllLevel.TabIndex = 23;
+            this.tbAllLevel.Text = "All";
             // 
-            // cbModule
+            // rbTrace
             // 
-            this.cbModule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbModule.Location = new System.Drawing.Point(275, 0);
-            this.cbModule.Margin = new System.Windows.Forms.Padding(4);
-            this.cbModule.Name = "cbModule";
-            this.cbModule.Size = new System.Drawing.Size(1145, 25);
-            this.cbModule.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbModule.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbModule.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbModule.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbModule.TabIndex = 27;
+            this.rbTrace.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbTrace.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbTrace.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbTrace.Location = new System.Drawing.Point(0, 20);
+            this.rbTrace.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbTrace.Name = "rbTrace";
+            this.rbTrace.Size = new System.Drawing.Size(240, 20);
+            this.rbTrace.TabIndex = 24;
+            this.rbTrace.TabStop = false;
+            this.rbTrace.Text = "Trace";
+            // 
+            // rbErrorCritical
+            // 
+            this.rbErrorCritical.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbErrorCritical.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbErrorCritical.Location = new System.Drawing.Point(0, 40);
+            this.rbErrorCritical.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbErrorCritical.Name = "rbErrorCritical";
+            this.rbErrorCritical.Size = new System.Drawing.Size(240, 20);
+            this.rbErrorCritical.TabIndex = 25;
+            this.rbErrorCritical.TabStop = false;
+            this.rbErrorCritical.Text = "Errors + Critical";
+            // 
+            // rbWarning
+            // 
+            this.rbWarning.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbWarning.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbWarning.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbWarning.Location = new System.Drawing.Point(0, 60);
+            this.rbWarning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbWarning.Name = "rbWarning";
+            this.rbWarning.Size = new System.Drawing.Size(240, 20);
+            this.rbWarning.TabIndex = 26;
+            this.rbWarning.TabStop = false;
+            this.rbWarning.Text = "Warning";
+            // 
+            // rbDebug
+            // 
+            this.rbDebug.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbDebug.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbDebug.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbDebug.Location = new System.Drawing.Point(0, 80);
+            this.rbDebug.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbDebug.Name = "rbDebug";
+            this.rbDebug.Size = new System.Drawing.Size(240, 20);
+            this.rbDebug.TabIndex = 27;
+            this.rbDebug.TabStop = false;
+            this.rbDebug.Text = "Debug";
+            // 
+            // rbVerbose
+            // 
+            this.rbVerbose.BeforeTouchSize = new System.Drawing.Size(240, 20);
+            this.rbVerbose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbVerbose.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.rbVerbose.Location = new System.Drawing.Point(0, 100);
+            this.rbVerbose.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.rbVerbose.Name = "rbVerbose";
+            this.rbVerbose.Size = new System.Drawing.Size(240, 20);
+            this.rbVerbose.TabIndex = 28;
+            this.rbVerbose.TabStop = false;
+            this.rbVerbose.Text = "Verbose";
             // 
             // UCLogs
             // 
@@ -2870,9 +2973,11 @@ namespace Analogy
             this.spltcProcessesModule.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).EndInit();
             this.spltcProcessesModule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).EndInit();
             this.spltcSources.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).EndInit();
             this.spltcSources.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).EndInit();
             this.spltTextExclude.Panel1.ResumeLayout(false);
             this.spltTextExclude.Panel1.PerformLayout();
@@ -2885,7 +2990,6 @@ namespace Analogy
             this.spltText.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
             this.tcBottom.ResumeLayout(false);
             this.xtpMessageInfo.ResumeLayout(false);
@@ -2917,8 +3021,12 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAllLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbTrace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbErrorCritical)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbDebug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbVerbose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2987,8 +3095,8 @@ namespace Analogy
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private System.Windows.Forms.Label lblGroupByCharsLimit;
-        private DevExpress.XtraEditors.SimpleButton btnUp;
-        private DevExpress.XtraEditors.SimpleButton btnDown;
+        private SfButton btnUp;
+        private SfButton btnDown;
         private DevExpress.XtraEditors.LabelControl lblTotalMessages;
         private DevExpress.XtraTab.XtraTabControl tcBottom;
         private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
@@ -3007,11 +3115,10 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bBtnClearLog;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraEditors.SimpleButton sBtnMostCommon;
-        private DevExpress.XtraEditors.CheckedListBoxControl chkLstLogLevel;
+        private SfButton sBtnMostCommon;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private DevExpress.XtraEditors.SimpleButton sBtnLength;
-        private DevExpress.XtraEditors.SimpleButton sBtnGroup;
+        private SfButton sBtnLength;
+        private SfButton sBtnGroup;
         private DevExpress.XtraBars.StandaloneBarDockControl bdcMessageBottom;
         private DevExpress.XtraBars.BarButtonItem bBtnExpand;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -3045,16 +3152,16 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bBtnRemoveBoomark;
         private DevExpress.XtraGrid.GridControl gCtrlGrouping;
         private GridView gridViewGrouping;
-        private DevExpress.XtraEditors.SimpleButton sBtnCancel;
+        private SfButton sBtnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
         private DevExpress.XtraBars.BarButtonItem bBtnCopyAllBookmarks;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerMain;
-        private DevExpress.XtraEditors.SimpleButton sbtnPageFirst;
+        private SfButton sbtnPageFirst;
         private DevExpress.XtraEditors.LabelControl lblPageNumber;
-        private DevExpress.XtraEditors.SimpleButton sBtnPageNext;
-        private DevExpress.XtraEditors.SimpleButton sBtnLastPage;
-        private DevExpress.XtraEditors.SimpleButton sbtnPagePrevious;
+        private SfButton sBtnPageNext;
+        private SfButton sBtnLastPage;
+        private SfButton sbtnPagePrevious;
         private DevExpress.XtraBars.BarSubItem bSMExports;
         private DevExpress.XtraBars.BarButtonItem bBtnExportExcel;
         private DevExpress.XtraBars.BarButtonItem bBtnExportCSV;
@@ -3080,19 +3187,19 @@ namespace Analogy
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem bBtnUndockViewPerProcess;
         private System.Windows.Forms.SplitContainer spltText;
-        private DevExpress.XtraEditors.SimpleButton sbtnTextInclude;
+        private SfButton btnTextInclude;
         private System.Windows.Forms.SplitContainer spltTextExclude;
-        private DevExpress.XtraEditors.SimpleButton sbtnTextExclude;
+        private SfButton sbtnTextExclude;
         private System.Windows.Forms.SplitContainer spltcSources;
-        private DevExpress.XtraEditors.SimpleButton sbtnIncludeSources;
+        private SfButton sbtnIncludeSources;
         private System.Windows.Forms.CheckBox chkbSources;
         private System.Windows.Forms.SplitContainer spltcProcessesModule;
         private System.Windows.Forms.CheckBox chkbModules;
-        private DevExpress.XtraEditors.SimpleButton sbtnIncludeModules;
-        private DevExpress.XtraEditors.SimpleButton sbtnUndockPerProcess;
+        private SfButton sbtnIncludeModules;
+        private SfButton sbtnUndockPerProcess;
         private System.Windows.Forms.SplitContainer spltcDateFiltering;
         private DevExpress.XtraEditors.DateEdit deNewerThanFilter;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private SfButton simpleButton1;
         private System.Windows.Forms.CheckBox chkDateNewerThan;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.DateEdit deOlderThanFilter;
@@ -3101,8 +3208,8 @@ namespace Analogy
         private System.Windows.Forms.ToolStripMenuItem tsmiDateFilterOlder;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkDateFilterNewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiBookmarkDateFilterOlder;
-        private DevExpress.XtraEditors.SimpleButton sbtnMoreHighlight;
-        private DevExpress.XtraEditors.SimpleButton sbtnPreDefinedFilters;
+        private SfButton sbtnMoreHighlight;
+        private SfButton sbtnPreDefinedFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilters;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private DevExpress.XtraEditors.LabelControl lblTotalMessagesAlert;
@@ -3114,5 +3221,11 @@ namespace Analogy
         private Syncfusion.WinForms.ListView.SfComboBox cbExclude;
         private Syncfusion.WinForms.ListView.SfComboBox cbModule;
         private Syncfusion.WinForms.ListView.SfComboBox cbSource;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv tbAllLevel;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbVerbose;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbDebug;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbWarning;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbErrorCritical;
+        private Syncfusion.Windows.Forms.Tools.RadioButtonAdv rbTrace;
     }
 }
