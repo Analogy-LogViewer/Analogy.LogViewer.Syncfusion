@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -61,7 +60,7 @@ namespace Analogy
             catch (Exception e)
             {
                 AnalogyLogManager.Instance.LogError("Error Saving file: " + e);
-                XtraMessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Messages;
@@ -113,7 +112,7 @@ namespace Analogy
                 catch (Exception e)
                 {
                     AnalogyLogManager.Instance.LogError("Error saving file: " + e);
-                    XtraMessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(e.Message, @"Error Saving file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

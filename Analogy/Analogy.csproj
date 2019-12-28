@@ -366,7 +366,7 @@
     <Compile Include="UserControls\CombineFilesUC.Designer.cs">
       <DependentUpon>CombineFilesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataTypes.cs" />
+    <Compile Include="Types\DataTypes.cs" />
     <Compile Include="EmbeddedAssembly.cs" />
     <Compile Include="Forms\ExtensionsForm.cs">
       <SubType>Form</SubType>
@@ -381,7 +381,6 @@
     <Compile Include="UserControls\ExtensionsUC.Designer.cs">
       <DependentUpon>ExtensionsUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\MemoryEntry.cs" />
     <Compile Include="Managers\FileProcessingManager.cs" />
     <Compile Include="UserControls\FileSystemUC.cs">
       <SubType>UserControl</SubType>
@@ -409,7 +408,6 @@
     </Compile>
     <Compile Include="Interfaces\IExtensionsManager.cs" />
     <Compile Include="ItemStatistics.cs" />
-    <Compile Include="LogStatistics.cs" />
     <Compile Include="UserControls\ClientServerLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -482,7 +480,7 @@
     <Compile Include="UserControls\SearchInFilesUC.Designer.cs">
       <DependentUpon>SearchInFilesUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="Properties\Settings.cs" />
     <Compile Include="Forms\ToolbarFormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -862,6 +860,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DevExpress\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Analogy.DataProviders.Extensions">

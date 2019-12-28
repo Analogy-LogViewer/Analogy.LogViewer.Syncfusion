@@ -1,6 +1,4 @@
-﻿using DevExpress.LookAndFeel;
-using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,20 +16,20 @@ namespace Analogy
         static void Main()
         {
             SyncfusionLicenseProvider.RegisterLicense("MTg1NzE0QDMxMzcyZTM0MmUzMElnQ0R2RllBVjRXOU9BMmZ5M2xKQmRXVmtya3FBbjJ1bDByUTIvL3dMdWc9");
-            WindowsFormsSettings.LoadApplicationSettings();
+
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
             Application.EnableVisualStyles();
             Settings.IncreaseNumberOfLaunches();
-            if (!string.IsNullOrEmpty(Settings.ApplicationSkinName))
-            {
-                UserLookAndFeel.Default.SkinName = Settings.ApplicationSkinName;
-            }
-            UserLookAndFeel.Default.StyleChanged += (s, e) =>
-            {
-                Settings.ApplicationSkinName = ((UserLookAndFeel)s).ActiveSkinName;
-            };
+            //if (!string.IsNullOrEmpty(Settings.ApplicationSkinName))
+            //{
+            //    UserLookAndFeel.Default.SkinName = Settings.ApplicationSkinName;
+            //}
+            //UserLookAndFeel.Default.StyleChanged += (s, e) =>
+            //{
+            //    Settings.ApplicationSkinName = ((UserLookAndFeel)s).ActiveSkinName;
+            //};
 
             LoadStartupExtensions();
             Application.Run(new Form1());

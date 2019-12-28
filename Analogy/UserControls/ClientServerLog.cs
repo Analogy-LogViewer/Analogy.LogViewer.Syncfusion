@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
+using Analogy.Types;
 using DevExpress.XtraBars;
 
 namespace Analogy
