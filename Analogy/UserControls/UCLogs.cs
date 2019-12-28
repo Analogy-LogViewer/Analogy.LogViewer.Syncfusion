@@ -24,6 +24,7 @@ using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Types;
 using DevExpress.Data.Filtering;
+using DevExpress.XtraBars.Navigation.Accessible;
 using Syncfusion.WinForms.DataGrid.Interactivity;
 using Syncfusion.WinForms.DataGrid.Serialization;
 using Syncfusion.WinForms.DataPager;
@@ -53,8 +54,6 @@ namespace Analogy
         private IExtensionsManager ExtensionManager { get; set; } = ExtensionsManager.Instance;
         private IEnumerable<IAnalogyExtension> InPlaceRegisteredExtensions { get; set; }
         private List<IAnalogyExtension> UserControlRegisteredExtensions { get; set; }
-        private List<int> HighlightRows { get; set; } = new List<int>();
-        private int SelectedHighlightRow { get; set; }
         private ToolTip Tip { get; set; }
         private List<string> _excludeMostCommon = new List<string>();
         public const string DataGridDateColumnName = "Date";
@@ -136,10 +135,19 @@ namespace Analogy
 
         private void SetupControlEvents()
         {
+            deNewerThanFilter.ValueChanged += async (s, e) =>
+            {
+                chkDateNewerThan.Checked = true;
+                await FilterHasChanged();
+            };
+            deOlderThanFilter.ValueChanged += async (s, e) =>
+            {
+                chkDateOlderThan.Checked = true;
+                await FilterHasChanged();
+            };
             cbHighlights.TextBox.KeyUp += async (s, e) =>
             {
                 chkbHighlight.Checked = !string.IsNullOrEmpty(cbHighlights.TextBox.Text);
-                HighlightRows.Clear();
                 await FilterHasChanged(); //todo-refresh noly style
             };
             //include combobox
@@ -1095,8 +1103,8 @@ namespace Analogy
 
         private void FilterResults()
         {
-            _filterCriteria.NewerThan = chkDateNewerThan.Checked ? deNewerThanFilter.DateTime : DateTime.MinValue;
-            _filterCriteria.OlderThan = chkDateOlderThan.Checked ? deOlderThanFilter.DateTime : DateTime.MaxValue;
+            _filterCriteria.NewerThan = chkDateNewerThan.Checked && deNewerThanFilter.Value.HasValue ? deNewerThanFilter.Value.Value : DateTime.MinValue;
+            _filterCriteria.OlderThan = chkDateOlderThan.Checked && deOlderThanFilter.Value.HasValue ? deOlderThanFilter.Value.Value : DateTime.MaxValue;
             _filterCriteria.TextInclude = chkbIncludeText.Checked ? cbInclude.Text : string.Empty;
             _filterCriteria.TextExclude = chkExclude.Checked ? cbExclude.Text + "|" + string.Join("|", _excludeMostCommon) : string.Empty;
 
@@ -2321,28 +2329,28 @@ namespace Analogy
         private void tsmiDateFilterNewer_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            deNewerThanFilter.DateTime = message.Date;
+            deNewerThanFilter.Value = message.Date;
             chkDateNewerThan.Checked = true;
         }
 
         private void tsmiDateFilterOlder_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            deOlderThanFilter.DateTime = message.Date;
+            deOlderThanFilter.Value = message.Date;
             chkDateOlderThan.Checked = true;
         }
 
         private void tsmiBookmarkDateFilterNewer_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            deNewerThanFilter.DateTime = message.Date;
+            deNewerThanFilter.Value = message.Date;
             chkDateNewerThan.Checked = true;
         }
 
         private void tsmiBookmarkDateFilterOlder_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
-            deOlderThanFilter.DateTime = message.Date;
+            deOlderThanFilter.Value = message.Date;
             chkDateOlderThan.Checked = true;
         }
 

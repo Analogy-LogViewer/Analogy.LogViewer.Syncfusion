@@ -143,9 +143,9 @@ namespace Analogy
             this.spltFilteringBoth = new System.Windows.Forms.SplitContainer();
             this.pnlFilteringLeft = new System.Windows.Forms.Panel();
             this.spltcDateFiltering = new System.Windows.Forms.SplitContainer();
-            this.deOlderThanFilter = new DevExpress.XtraEditors.DateEdit();
+            this.deOlderThanFilter = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.chkDateOlderThan = new System.Windows.Forms.CheckBox();
-            this.deNewerThanFilter = new DevExpress.XtraEditors.DateEdit();
+            this.deNewerThanFilter = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.chkDateNewerThan = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spltcProcessesModule = new System.Windows.Forms.SplitContainer();
@@ -177,6 +177,7 @@ namespace Analogy
             this.rbAllLevel = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.tcBottom = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMessageInfo = new DevExpress.XtraTab.XtraTabPage();
+            this.tbMessageInfo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tsMessageInfo = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsBtnMessageInfoCopy = new System.Windows.Forms.ToolStripButton();
             this.xtpBookmarks = new DevExpress.XtraTab.XtraTabPage();
@@ -245,7 +246,6 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tbMessageInfo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -260,10 +260,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.spltcDateFiltering)).BeginInit();
             this.spltcDateFiltering.Panel1.SuspendLayout();
             this.spltcDateFiltering.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).BeginInit();
             this.spltcProcessesModule.Panel1.SuspendLayout();
@@ -292,6 +288,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
             this.tcBottom.SuspendLayout();
             this.xtpMessageInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).BeginInit();
             this.tsMessageInfo.SuspendLayout();
             this.xtpBookmarks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridBookmarks)).BeginInit();
@@ -317,7 +314,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1149,36 +1145,23 @@ namespace Analogy
             // 
             // deOlderThanFilter
             // 
+            this.deOlderThanFilter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.deOlderThanFilter.DateTimeEditingMode = Syncfusion.WinForms.Input.Enums.DateTimeEditingMode.Mask;
+            this.deOlderThanFilter.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.deOlderThanFilter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deOlderThanFilter.EditValue = new System.DateTime(2019, 11, 29, 10, 2, 22, 242);
-            this.deOlderThanFilter.Location = new System.Drawing.Point(550, 0);
-            this.deOlderThanFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deOlderThanFilter.MenuManager = this.barManager1;
+            this.deOlderThanFilter.Format = "yyyy.MM.dd HH:mm:ss.ff";
+            this.deOlderThanFilter.Location = new System.Drawing.Point(579, 0);
             this.deOlderThanFilter.Name = "deOlderThanFilter";
-            this.deOlderThanFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deOlderThanFilter.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deOlderThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatString = "dd.MM.yyyy hh:mm:ss.fff";
-            this.deOlderThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.deOlderThanFilter.Properties.DisplayFormat.FormatString = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deOlderThanFilter.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deOlderThanFilter.Properties.EditFormat.FormatString = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deOlderThanFilter.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.deOlderThanFilter.Properties.Mask.EditMask = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deOlderThanFilter.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.deOlderThanFilter.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.deOlderThanFilter.Properties.EditValueChanged += new System.EventHandler(this.deOlderThanFilter_Properties_EditValueChanged);
-            this.deOlderThanFilter.Size = new System.Drawing.Size(206, 22);
-            this.deOlderThanFilter.TabIndex = 27;
-            this.deOlderThanFilter.EditValueChanged += new System.EventHandler(this.deOlderThanFilter_EditValueChanged);
+            this.deOlderThanFilter.Size = new System.Drawing.Size(235, 25);
+            this.deOlderThanFilter.TabIndex = 28;
             // 
             // chkDateOlderThan
             // 
             this.chkDateOlderThan.Dock = System.Windows.Forms.DockStyle.Left;
-            this.chkDateOlderThan.Location = new System.Drawing.Point(438, 0);
+            this.chkDateOlderThan.Location = new System.Drawing.Point(467, 0);
             this.chkDateOlderThan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDateOlderThan.Name = "chkDateOlderThan";
+            this.chkDateOlderThan.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.chkDateOlderThan.Size = new System.Drawing.Size(112, 25);
             this.chkDateOlderThan.TabIndex = 26;
             this.chkDateOlderThan.Text = "And:";
@@ -1187,29 +1170,15 @@ namespace Analogy
             // 
             // deNewerThanFilter
             // 
+            this.deNewerThanFilter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.deNewerThanFilter.DateTimeEditingMode = Syncfusion.WinForms.Input.Enums.DateTimeEditingMode.Mask;
+            this.deNewerThanFilter.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.deNewerThanFilter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deNewerThanFilter.EditValue = new System.DateTime(2019, 11, 29, 10, 2, 22, 242);
+            this.deNewerThanFilter.Format = "yyyy.MM.dd HH:mm:ss.ff";
             this.deNewerThanFilter.Location = new System.Drawing.Point(232, 0);
-            this.deNewerThanFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deNewerThanFilter.MenuManager = this.barManager1;
             this.deNewerThanFilter.Name = "deNewerThanFilter";
-            this.deNewerThanFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deNewerThanFilter.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deNewerThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatString = "dd.MM.yyyy hh:mm:ss.fff";
-            this.deNewerThanFilter.Properties.CalendarTimeProperties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.deNewerThanFilter.Properties.DisplayFormat.FormatString = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deNewerThanFilter.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deNewerThanFilter.Properties.EditFormat.FormatString = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deNewerThanFilter.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.deNewerThanFilter.Properties.Mask.EditMask = "dd.MM.yyyy HH:mm:ss.fff";
-            this.deNewerThanFilter.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.deNewerThanFilter.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.deNewerThanFilter.Properties.EditValueChanged += new System.EventHandler(this.deNewerThanFilter_Properties_EditValueChanged);
-            this.deNewerThanFilter.Size = new System.Drawing.Size(206, 22);
-            this.deNewerThanFilter.TabIndex = 25;
-            this.deNewerThanFilter.EditValueChanged += new System.EventHandler(this.deNewerThanFilter_EditValueChanged);
+            this.deNewerThanFilter.Size = new System.Drawing.Size(235, 25);
+            this.deNewerThanFilter.TabIndex = 27;
             // 
             // chkDateNewerThan
             // 
@@ -1631,6 +1600,23 @@ namespace Analogy
             this.xtpMessageInfo.Name = "xtpMessageInfo";
             this.xtpMessageInfo.Size = new System.Drawing.Size(2117, 170);
             this.xtpMessageInfo.Text = "Message Info";
+            // 
+            // tbMessageInfo
+            // 
+            this.tbMessageInfo.BackColor = System.Drawing.Color.White;
+            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tbMessageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.tbMessageInfo.Location = new System.Drawing.Point(0, 27);
+            this.tbMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbMessageInfo.Multiline = true;
+            this.tbMessageInfo.Name = "tbMessageInfo";
+            this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbMessageInfo.Size = new System.Drawing.Size(2117, 143);
+            this.tbMessageInfo.TabIndex = 14;
+            this.tbMessageInfo.ThemeName = "";
             // 
             // tsMessageInfo
             // 
@@ -2671,23 +2657,6 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tbMessageInfo
-            // 
-            this.tbMessageInfo.BackColor = System.Drawing.Color.White;
-            this.tbMessageInfo.BeforeTouchSize = new System.Drawing.Size(2117, 143);
-            this.tbMessageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbMessageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tbMessageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbMessageInfo.Location = new System.Drawing.Point(0, 27);
-            this.tbMessageInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbMessageInfo.Multiline = true;
-            this.tbMessageInfo.Name = "tbMessageInfo";
-            this.tbMessageInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMessageInfo.Size = new System.Drawing.Size(2117, 143);
-            this.tbMessageInfo.TabIndex = 14;
-            this.tbMessageInfo.ThemeName = "";
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2718,10 +2687,6 @@ namespace Analogy
             this.spltcDateFiltering.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spltcDateFiltering)).EndInit();
             this.spltcDateFiltering.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deOlderThanFilter.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deNewerThanFilter.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.spltcProcessesModule.Panel1.ResumeLayout(false);
             this.spltcProcessesModule.Panel1.PerformLayout();
@@ -2754,6 +2719,7 @@ namespace Analogy
             this.tcBottom.ResumeLayout(false);
             this.xtpMessageInfo.ResumeLayout(false);
             this.xtpMessageInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).EndInit();
             this.tsMessageInfo.ResumeLayout(false);
             this.tsMessageInfo.PerformLayout();
             this.xtpBookmarks.ResumeLayout(false);
@@ -2784,7 +2750,6 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tbMessageInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2929,10 +2894,8 @@ namespace Analogy
         private SfButton btnModules;
         private SfButton sbtnUndockPerProcess;
         private System.Windows.Forms.SplitContainer spltcDateFiltering;
-        private DevExpress.XtraEditors.DateEdit deNewerThanFilter;
         private System.Windows.Forms.CheckBox chkDateNewerThan;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.DateEdit deOlderThanFilter;
         private System.Windows.Forms.CheckBox chkDateOlderThan;
         private System.Windows.Forms.ToolStripMenuItem tsmiDateFilterNewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiDateFilterOlder;
@@ -2969,5 +2932,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBtnBookmarkClear;
         private System.Windows.Forms.ToolStripButton tsBtnBookmarkGoToOriginal;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt tbMessageInfo;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit deOlderThanFilter;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit deNewerThanFilter;
     }
 }
