@@ -34,7 +34,7 @@ using Message = System.Windows.Forms.Message;
 namespace Analogy
 {
 
-    public partial class UCLogs : XtraUserControl, ILogMessageCreatedHandler
+    public partial class UCLogs : UserControl, ILogMessageCreatedHandler
     {
         private string timeDiffColumnName = "TimeDiff";
         public bool ForceNoFileCaching { get; set; } = false;
@@ -2393,6 +2393,7 @@ namespace Analogy
 
             }
         }
+
     }
 }
 
