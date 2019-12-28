@@ -8,7 +8,9 @@ using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Managers;
 using Analogy.Types;
+using DevExpress.Data.Helpers;
 using DevExpress.Utils;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace Analogy
 {
@@ -44,7 +46,7 @@ namespace Analogy
         }
         public UserSettingsForm(string tabName) : this()
         {
-            var tab = tabControlMain.TabPages.SingleOrDefault(t => t.Name == tabName);
+            var tab = tabControlMain.TabPages.Cast<TabPage>().SingleOrDefault<TabPage>(t => t.Name == tabName);
             if (tab != null)
                 InitialSelection = tab.TabIndex;
         }
@@ -111,7 +113,9 @@ namespace Analogy
             //file associations:
             cbDataProviderAssociation.DataSource = Settings.FactoriesSettings;
             cbDataProviderAssociation.DisplayMember = "FactoryName";
-            tsRememberLastOpenedDataProvider.IsOn = Settings.RememberLastOpenedDataProvider;
+            tbRememberLastOpenedDataProvider.ToggleState = Settings.RememberLastOpenedDataProvider
+                ? ToggleButtonState.Active
+                : ToggleButtonState.Inactive;
             lboxHighlightItems.DataSource = Settings.PreDefinedQueries.Highlights;
             lboxAlerts.DataSource = Settings.PreDefinedQueries.Alerts;
             lboxFilters.DataSource = Settings.PreDefinedQueries.Filters;
@@ -143,7 +147,7 @@ namespace Analogy
                         : DataProviderFactoryStatus.Disabled;
                 }
             }
-            Settings.RememberLastOpenedDataProvider = tsRememberLastOpenedDataProvider.IsOn;
+            Settings.RememberLastOpenedDataProvider = tbRememberLastOpenedDataProvider.ToggleState==ToggleButtonState.Active;
             Settings.UpdateOrder(order);
             Settings.Save();
         }
@@ -180,7 +184,7 @@ namespace Analogy
         {
             LoadSettings();
             if (InitialSelection >= 0)
-                tabControlMain.SelectedTabPageIndex = InitialSelection;
+                tabControlMain.SelectedIndex = InitialSelection;
 
         }
 
