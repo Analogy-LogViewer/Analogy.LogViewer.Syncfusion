@@ -73,9 +73,10 @@ namespace Analogy
                 Settings.EnableFileCaching ? ToggleButtonState.Active : ToggleButtonState.Inactive;
 
             nudRecent.Value = Settings.RecentFilesCount;
-            tsUserStatistics.IsOn = Settings.EnableUserStatistics;
+            tbUserStatistics.ToggleState =
+                Settings.EnableUserStatistics ? ToggleButtonState.Active : ToggleButtonState.Inactive;
             //tsSimpleMode.IsOn = Settings.SimpleMode;
-            tswitchExtensionsStartup.IsOn = Settings.LoadExtensionsOnStartup;
+            tbExtensionsStartup.ToggleState = Settings.LoadExtensionsOnStartup ? ToggleButtonState.Active : ToggleButtonState.Inactive;
             tsStartupRibbonMinimized.IsOn = Settings.StartupRibbonMinimized;
             if (Settings.PagingEnabled)
             {
@@ -86,15 +87,15 @@ namespace Analogy
                 nudPageLength.Enabled = false;
             }
 
-            toggleSwitchIdleMode.IsOn = Settings.IdleMode;
+            tbIdleMode.ToggleState = Settings.IdleMode? ToggleButtonState.Active:ToggleButtonState.Inactive;
             nudIdleTime.Value = Settings.IdleTimeMinutes;
             var manager = ExtensionsManager.Instance;
             var extensions = manager.GetExtensions().ToList();
             foreach (var extension in extensions)
             {
 
-                chklItems.Items.Add(extension, Settings.StartupExtensions.Contains(extension.ExtensionID));
-                chklItems.DisplayMember = "DisplayName";
+                clExtensionslItems.Items.Add(extension, Settings.StartupExtensions.Contains(extension.ExtensionID));
+                clExtensionslItems.DisplayMember = "DisplayName";
 
             }
 
@@ -358,77 +359,72 @@ namespace Analogy
             sfBtnLogLevelAnalogyInformation.Click += (s, e) => SelectColor(tbLogLevelAnalogyInformation);
             sfBtnHighlightColor.Click += (s, e) => SelectColor(tbHighlightColor);
             #endregion
+
+            #region User Statistics tab
+
+            tbUserStatistics.ToggleStateChanged += (s, e) =>
+            {
+                EnableDisableUserStatistics(e.ToggleState == ToggleButtonState.Active);
+                Settings.EnableUserStatistics = e.ToggleState == ToggleButtonState.Active;
+            };
+            btnClearStatistics.Click += (s, e) =>
+            {
+                var result = MessageBox.Show(@"Clear statistics?", @"Confirmation Required", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Settings.ClearStatistics();
+                }
+            };
+
+            #endregion
+
+            #region Extensions tab
+
+            tbExtensionsStartup.ToggleStateChanged += (s, e) =>
+            {
+                Settings.LoadExtensionsOnStartup = e.ToggleState == ToggleButtonState.Active;
+                clExtensionslItems.Enabled = e.ToggleState == ToggleButtonState.Active;
+            };
+
+            clExtensionslItems.SelectedIndexChanged += (s, e) =>
+            {
+                Settings.StartupExtensions = clExtensionslItems.CheckedItems.Cast<IAnalogyExtension>()
+                    .Select(ex => ex.ExtensionID).ToList();
+            };
+
+            #endregion
+
+            nudRecent.ValueChanged += (s, e) => Settings.RecentFilesCount = (int)nudRecent.Value;
+
+            #region Resource Tab
+            tbIdleMode.ToggleStateChanged += (s, e) => Settings.IdleMode = e.ToggleState == ToggleButtonState.Active;
+            nudIdleTime.ValueChanged += (s, e) => Settings.IdleTimeMinutes = (int)nudIdleTime.Value;
+
+            #endregion
         }
 
-
-        private void nudRecent_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.RecentFilesCount = (int)nudRecent.Value;
-        }
-
-        private void tsUserStatistics_Toggled(object sender, EventArgs e)
-        {
-            EnableDisableUserStatistics(tsUserStatistics.IsOn);
-            Settings.EnableUserStatistics = tsUserStatistics.IsOn;
-
-        }
 
         private void EnableDisableUserStatistics(bool isOn)
         {
             if (isOn)
             {
-                lblLaunchCount.Text = $"Number of Analogy Launches: {Settings.AnalogyLaunches}";
-                lblRunningTime.Text = $"Running Time: {Settings.DisplayRunningTime}";
-                lblOpenedFiles.Text = $"Number Of Opened Files: {Settings.AnalogyOpenedFiles}";
+                lblLaunchCount.Text = $@"Number of Analogy Launches: {Settings.AnalogyLaunches}";
+                lblTotalTime.Text = $@"Total Time: {Settings.DisplayRunningTime}";
+                lblOpenedFiles.Text = $@"Number Of Opened Files: {Settings.AnalogyOpenedFiles}";
             }
             else
             {
-                lblLaunchCount.Text = $"Number of Analogy Launches: 0";
-                lblRunningTime.Text = $"Running Time: 0";
-                lblOpenedFiles.Text = $"Number Of Opened Files: N/A";
+                lblLaunchCount.Text = @"Number of Analogy Launches: 0";
+                lblTotalTime.Text = @"Total Time: 0";
+                lblOpenedFiles.Text = @"Number Of Opened Files: N/A";
             }
-        }
-
-        private void btnClearStatistics_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Clear statistics?", "Confirmation Required", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                Settings.ClearStatistics();
-            }
-
-        }
-
-        private void tswitchExtensionsStartup_Toggled(object sender, EventArgs e)
-        {
-            Settings.LoadExtensionsOnStartup = tswitchExtensionsStartup.IsOn;
-            chklItems.Enabled = tswitchExtensionsStartup.IsOn;
-        }
-
-        private void chklItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.StartupExtensions =
-                chklItems.CheckedItems.Cast<IAnalogyExtension>().Select(ex => ex.ExtensionID).ToList();
-
-
         }
 
         private void tsStartupRibbonMinimized_Toggled(object sender, EventArgs e)
         {
             Settings.StartupRibbonMinimized = tsStartupRibbonMinimized.IsOn;
         }
-
-        private void ToggleSwitchIdleMode_Toggled(object sender, EventArgs e)
-        {
-            Settings.IdleMode = toggleSwitchIdleMode.IsOn;
-
-        }
-
-        private void NudIdleTime_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.IdleTimeMinutes = (int)nudIdleTime.Value;
-
-        }
+        
 
         private void ChkLstItemRealTimeDataSources_SelectedIndexChanged(object sender, EventArgs e)
         {
