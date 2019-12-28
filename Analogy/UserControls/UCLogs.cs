@@ -315,6 +315,31 @@ namespace Analogy
             };
 
 
+            #region toolstrip menus
+
+            tsmiSaveFullLogDataProvider.Click += (s, e) =>
+            {
+                var messages = PagingManager.GetAllMessages();
+                SaveMessagesToLog(FileDataProvider, messages);
+            };
+            tsmiSaveFullLogAnalogy.Click += (s, e) =>
+            {
+                var messages = PagingManager.GetAllMessages();
+                SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
+            };
+
+            tsmiSaveCurrentViewDataProvider.Click += (s, e) =>
+            {
+                var messages = Messages;
+                SaveMessagesToLog(FileDataProvider, messages);
+            };
+            tsmiSaveCurrentViewDataProvider.Click += (s, e) =>
+            {
+                var messages = Messages;
+                SaveMessagesToLog(AnalogyOfflineDataProvider, messages);
+            };
+
+            #endregion
             #region Toolstrip Buttons
             tsBtnMessageInfoCopy.Click += (s, e) => Clipboard.SetText(tbMessageInfo.Text);
             tsBtnBookmarkCopySingle.Click += (s, e) =>
@@ -388,7 +413,7 @@ namespace Analogy
             //    }
             //};
 
-     }
+        }
 
         public void SetFileDataSource(IAnalogyOfflineDataProvider fileDataProvider)
         {
@@ -1729,7 +1754,8 @@ namespace Analogy
                 .GroupBy(s => s.Text.Substring(0, Math.Min(s.Text.Length, (int)nudGroupBychars.Value)))
                 .OrderByDescending(i => i.Count()).ToList();
             groupingByChars = grouped.ToDictionary(g => g.Key, g => g.ToList());
-            gCtrlGrouping.DataSource = groupingByChars.Keys;
+            //todo
+            //gCtrlGrouping.DataSource = groupingByChars.Keys;
         }
         private void bBtnCopyButtom_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1901,51 +1927,6 @@ namespace Analogy
                 tsmiBookmarkDateFilterOlder.Visible = false;
 
             }
-        }
-
-
-        private void gridViewGrouping_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var grouped = Utils.DataTableConstructor();
-            string key =
-                (string)gridViewGrouping.GetRowCellValue(e.FocusedRowHandle, gridViewGrouping.Columns.First());
-            var messages = groupingByChars[key];
-            foreach (var message in messages)
-            {
-
-                DataRow dtr = grouped.NewRow();
-
-                dtr["Date"] = message.Date;
-                dtr["Text"] = message.Text ?? "";
-                dtr["Source"] = message.Source ?? "";
-                dtr["Level"] = message.Level;
-                dtr["Class"] = message.Class;
-                dtr["Category"] = message.Category ?? "";
-                dtr["User"] = message.User ?? "";
-                dtr["Module"] = message.Module ?? "";
-                dtr["Object"] = message;
-                dtr["ProcessID"] = message.ProcessID;
-                dtr["DataProvider"] = "";
-                if (diffStartTime > DateTime.MinValue)
-                {
-                    dtr["TimeDiff"] = message.Date.Subtract(diffStartTime).ToString();
-                }
-
-                grouped.Rows.Add(dtr);
-
-            }
-
-            grouped.AcceptChanges();
-            gridControlMessageGrouping.DataSource = grouped;
-        }
-
-        private void sBtnCancel_Click(object sender, EventArgs e)
-        {
-            cancellationTokenSource.Cancel(false);
-            Interlocked.Exchange(ref fileLoadingCount, 0);
-
-            cancellationTokenSource = new CancellationTokenSource();
-            btnCancel.Visible = false;
         }
 
         private void tsmiCopyMessages_Click(object sender, EventArgs e)

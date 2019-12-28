@@ -192,11 +192,11 @@ namespace Analogy
             this.tmrNewData = new System.Windows.Forms.Timer(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMain = new DevExpress.XtraTab.XtraTabPage();
+            this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
@@ -233,11 +233,18 @@ namespace Analogy
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
             this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.toolStripCheckBox1 = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiSaveFullLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveFullLogDataProvider = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveFullLogAnalogy = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveCurrentViewDataProvider = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveCurrentViewAnalogy = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -301,7 +308,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv1.SuspendLayout();
-            this.toolStripEx2.SuspendLayout();
+            this.tsTop.SuspendLayout();
             this.tabPageAdv2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -524,7 +531,7 @@ namespace Analogy
             this.panel1.Controls.Add(this.pnlButtonsHighlight);
             this.panel1.Controls.Add(this.chkbHighlight);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 408);
+            this.panel1.Location = new System.Drawing.Point(0, 329);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2124, 26);
@@ -1235,7 +1242,7 @@ namespace Analogy
             this.btnModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModules.Name = "btnModules";
             this.btnModules.Size = new System.Drawing.Size(23, 25);
-            this.btnModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnModules.TabIndex = 24;
             // 
             // sbtnUndockPerProcess
@@ -1307,7 +1314,7 @@ namespace Analogy
             this.btnSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSources.Name = "btnSources";
             this.btnSources.Size = new System.Drawing.Size(23, 25);
-            this.btnSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnSources.TabIndex = 24;
             // 
             // chkbSources
@@ -1375,7 +1382,7 @@ namespace Analogy
             this.btnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextExclude.Name = "btnTextExclude";
             this.btnTextExclude.Size = new System.Drawing.Size(23, 25);
-            this.btnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnTextExclude.TabIndex = 20;
             // 
             // sBtnMostCommon
@@ -1448,7 +1455,7 @@ namespace Analogy
             this.btnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextInclude.Name = "btnTextInclude";
             this.btnTextInclude.Size = new System.Drawing.Size(23, 25);
-            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnTextInclude.TabIndex = 20;
             // 
             // chkbIncludeText
@@ -1839,6 +1846,13 @@ namespace Analogy
             this.xtpMain.Size = new System.Drawing.Size(2124, 56);
             this.xtpMain.Text = "Logs";
             // 
+            // xtCounts
+            // 
+            this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xtCounts.Name = "xtCounts";
+            this.xtCounts.Size = new System.Drawing.Size(2124, 56);
+            this.xtCounts.Text = "Messages Grouping";
+            // 
             // pnlBottom
             // 
             this.pnlBottom.Controls.Add(this.progressBar1);
@@ -1898,24 +1912,18 @@ namespace Analogy
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.btnCancel.Size = new System.Drawing.Size(193, 23);
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel Processing";
             this.btnCancel.Visible = false;
             // 
-            // xtCounts
-            // 
-            this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtCounts.Name = "xtCounts";
-            this.xtCounts.Size = new System.Drawing.Size(1191, 346);
-            this.xtCounts.Text = "Messages Grouping";
-            // 
             // splitContainerMain
             // 
             this.splitContainerMain.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
+            this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerMain.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerMain.Horizontal = false;
-            this.splitContainerMain.Location = new System.Drawing.Point(33, 69);
+            this.splitContainerMain.Location = new System.Drawing.Point(0, 27);
             this.splitContainerMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerMain.Name = "splitContainerMain";
             this.splitContainerMain.Panel1.Controls.Add(this.pnlMessages);
@@ -1924,7 +1932,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Text = "Panel1";
             this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
-            this.splitContainerMain.Size = new System.Drawing.Size(2124, 644);
+            this.splitContainerMain.Size = new System.Drawing.Size(2124, 565);
             this.splitContainerMain.SplitterPosition = 204;
             this.splitContainerMain.TabIndex = 21;
             this.splitContainerMain.Text = "splitContainerControl1";
@@ -1935,7 +1943,7 @@ namespace Analogy
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
             this.pnlMessages.Name = "pnlMessages";
-            this.pnlMessages.Size = new System.Drawing.Size(2124, 255);
+            this.pnlMessages.Size = new System.Drawing.Size(2124, 176);
             this.pnlMessages.TabIndex = 7;
             // 
             // sfDataGridMain
@@ -2036,7 +2044,7 @@ namespace Analogy
             this.sfDataGridMain.PreviewRowHeight = 35;
             this.sfDataGridMain.RowHeight = 20;
             this.sfDataGridMain.ShowRowHeader = true;
-            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 255);
+            this.sfDataGridMain.Size = new System.Drawing.Size(2124, 176);
             this.sfDataGridMain.TabIndex = 5;
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
@@ -2338,9 +2346,9 @@ namespace Analogy
             // 
             // tabPageAdv1
             // 
-            this.tabPageAdv1.Controls.Add(this.pnlBottom);
             this.tabPageAdv1.Controls.Add(this.splitContainerMain);
-            this.tabPageAdv1.Controls.Add(this.toolStripEx2);
+            this.tabPageAdv1.Controls.Add(this.pnlBottom);
+            this.tabPageAdv1.Controls.Add(this.tsTop);
             this.tabPageAdv1.Image = null;
             this.tabPageAdv1.ImageSize = new System.Drawing.Size(20, 20);
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 31);
@@ -2351,22 +2359,23 @@ namespace Analogy
             this.tabPageAdv1.Text = "tabPageAdv1";
             this.tabPageAdv1.ThemesEnabled = true;
             // 
-            // toolStripEx2
+            // tsTop
             // 
-            this.toolStripEx2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.toolStripEx2.Image = null;
-            this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTop.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tsTop.Image = null;
+            this.tsTop.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsTopClear,
             this.tsTopRefresh,
-            this.toolStripCheckBox1});
-            this.toolStripEx2.Location = new System.Drawing.Point(0, 0);
-            this.toolStripEx2.Name = "toolStripEx2";
-            this.toolStripEx2.ShowCaption = false;
-            this.toolStripEx2.ShowLauncher = false;
-            this.toolStripEx2.Size = new System.Drawing.Size(2124, 27);
-            this.toolStripEx2.TabIndex = 5;
-            this.toolStripEx2.ThemeName = "Default";
+            this.toolStripCheckBox1,
+            this.toolStripDropDownButton1});
+            this.tsTop.Location = new System.Drawing.Point(0, 0);
+            this.tsTop.Name = "tsTop";
+            this.tsTop.ShowCaption = false;
+            this.tsTop.ShowLauncher = false;
+            this.tsTop.Size = new System.Drawing.Size(2124, 27);
+            this.tsTop.TabIndex = 5;
+            this.tsTop.ThemeName = "Default";
             // 
             // tsTopClear
             // 
@@ -2403,10 +2412,63 @@ namespace Analogy
             this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
             this.tabPageAdv2.Name = "tabPageAdv2";
             this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(982, 223);
+            this.tabPageAdv2.Size = new System.Drawing.Size(2124, 615);
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "tabPageAdv2";
             this.tabPageAdv2.ThemesEnabled = true;
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveFullLog,
+            this.saveCurrentViewToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(103, 24);
+            this.toolStripDropDownButton1.Text = "Save Log";
+            // 
+            // tsmiSaveFullLog
+            // 
+            this.tsmiSaveFullLog.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveFullLogDataProvider,
+            this.tsmiSaveFullLogAnalogy});
+            this.tsmiSaveFullLog.Name = "tsmiSaveFullLog";
+            this.tsmiSaveFullLog.Size = new System.Drawing.Size(224, 26);
+            this.tsmiSaveFullLog.Text = "Save Entire Log";
+            // 
+            // saveCurrentViewToolStripMenuItem
+            // 
+            this.saveCurrentViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveCurrentViewDataProvider,
+            this.tsmiSaveCurrentViewAnalogy});
+            this.saveCurrentViewToolStripMenuItem.Name = "saveCurrentViewToolStripMenuItem";
+            this.saveCurrentViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveCurrentViewToolStripMenuItem.Text = "Save Current View";
+            // 
+            // tsmiSaveFullLogDataProvider
+            // 
+            this.tsmiSaveFullLogDataProvider.Name = "tsmiSaveFullLogDataProvider";
+            this.tsmiSaveFullLogDataProvider.Size = new System.Drawing.Size(572, 26);
+            this.tsmiSaveFullLogDataProvider.Text = "Save Entire Log (Data Provider Format)";
+            // 
+            // tsmiSaveFullLogAnalogy
+            // 
+            this.tsmiSaveFullLogAnalogy.Name = "tsmiSaveFullLogAnalogy";
+            this.tsmiSaveFullLogAnalogy.Size = new System.Drawing.Size(572, 26);
+            this.tsmiSaveFullLogAnalogy.Text = "Save Entire Log in Analogy Format (agnostic to specific implementation)";
+            // 
+            // tsmiSaveCurrentViewDataProvider
+            // 
+            this.tsmiSaveCurrentViewDataProvider.Name = "tsmiSaveCurrentViewDataProvider";
+            this.tsmiSaveCurrentViewDataProvider.Size = new System.Drawing.Size(589, 26);
+            this.tsmiSaveCurrentViewDataProvider.Text = "Save Current View (Data Provider Format)";
+            // 
+            // tsmiSaveCurrentViewAnalogy
+            // 
+            this.tsmiSaveCurrentViewAnalogy.Name = "tsmiSaveCurrentViewAnalogy";
+            this.tsmiSaveCurrentViewAnalogy.Size = new System.Drawing.Size(589, 26);
+            this.tsmiSaveCurrentViewAnalogy.Text = "Save Current View in Analogy Format (agnostic to specific implementation)";
             // 
             // UCLogs
             // 
@@ -2498,8 +2560,8 @@ namespace Analogy
             this.tabControlAdv1.ResumeLayout(false);
             this.tabPageAdv1.ResumeLayout(false);
             this.tabPageAdv1.PerformLayout();
-            this.toolStripEx2.ResumeLayout(false);
-            this.toolStripEx2.PerformLayout();
+            this.tsTop.ResumeLayout(false);
+            this.tsTop.PerformLayout();
             this.tabPageAdv2.ResumeLayout(false);
             this.tabPageAdv2.PerformLayout();
             this.ResumeLayout(false);
@@ -2673,10 +2735,17 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
-        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx tsTop;
         private System.Windows.Forms.ToolStripButton tsTopClear;
         private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
         private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox toolStripCheckBox1;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLogDataProvider;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveFullLogAnalogy;
+        private System.Windows.Forms.ToolStripMenuItem saveCurrentViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveCurrentViewDataProvider;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveCurrentViewAnalogy;
     }
 }
