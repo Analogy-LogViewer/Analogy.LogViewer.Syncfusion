@@ -246,6 +246,15 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsTopClear = new System.Windows.Forms.ToolStripButton();
+            this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
+            this.toolStripCheckBox1 = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -314,6 +323,11 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
+            this.toolStripEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
+            this.tabControlAdv1.SuspendLayout();
+            this.tabPageAdv1.SuspendLayout();
+            this.toolStripEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1874,6 +1888,7 @@ namespace Analogy
             // 
             // pnlMessages
             // 
+            this.pnlMessages.Controls.Add(this.tabControlAdv1);
             this.pnlMessages.Controls.Add(this.sfDataGridMain);
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
@@ -2657,6 +2672,104 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Analogy.Properties.Resources.Copy_16x16;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(67, 24);
+            this.toolStripButton1.Text = "Copy";
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.ShowCaption = false;
+            this.toolStripEx1.ShowLauncher = false;
+            this.toolStripEx1.Size = new System.Drawing.Size(2117, 27);
+            this.toolStripEx1.TabIndex = 4;
+            this.toolStripEx1.ThemeName = "Default";
+            // 
+            // tabControlAdv1
+            // 
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(765, 258);
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
+            this.tabControlAdv1.Location = new System.Drawing.Point(259, 52);
+            this.tabControlAdv1.Name = "tabControlAdv1";
+            this.tabControlAdv1.Size = new System.Drawing.Size(765, 258);
+            this.tabControlAdv1.TabIndex = 27;
+            this.tabControlAdv1.ThemesEnabled = true;
+            // 
+            // tabPageAdv1
+            // 
+            this.tabPageAdv1.Controls.Add(this.toolStripEx2);
+            this.tabPageAdv1.Image = null;
+            this.tabPageAdv1.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageAdv1.Location = new System.Drawing.Point(3, 31);
+            this.tabPageAdv1.Name = "tabPageAdv1";
+            this.tabPageAdv1.ShowCloseButton = true;
+            this.tabPageAdv1.Size = new System.Drawing.Size(758, 223);
+            this.tabPageAdv1.TabIndex = 1;
+            this.tabPageAdv1.Text = "tabPageAdv1";
+            this.tabPageAdv1.ThemesEnabled = true;
+            // 
+            // tabPageAdv2
+            // 
+            this.tabPageAdv2.Image = null;
+            this.tabPageAdv2.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
+            this.tabPageAdv2.Name = "tabPageAdv2";
+            this.tabPageAdv2.ShowCloseButton = true;
+            this.tabPageAdv2.Size = new System.Drawing.Size(535, 223);
+            this.tabPageAdv2.TabIndex = 2;
+            this.tabPageAdv2.Text = "tabPageAdv2";
+            this.tabPageAdv2.ThemesEnabled = true;
+            // 
+            // toolStripEx2
+            // 
+            this.toolStripEx2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx2.Image = null;
+            this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTopClear,
+            this.tsTopRefresh,
+            this.toolStripCheckBox1});
+            this.toolStripEx2.Location = new System.Drawing.Point(0, 0);
+            this.toolStripEx2.Name = "toolStripEx2";
+            this.toolStripEx2.ShowCaption = false;
+            this.toolStripEx2.ShowLauncher = false;
+            this.toolStripEx2.Size = new System.Drawing.Size(758, 27);
+            this.toolStripEx2.TabIndex = 5;
+            this.toolStripEx2.ThemeName = "Default";
+            // 
+            // tsTopClear
+            // 
+            this.tsTopClear.Image = global::Analogy.Properties.Resources.Delete_16x16;
+            this.tsTopClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsTopClear.Name = "tsTopClear";
+            this.tsTopClear.Size = new System.Drawing.Size(96, 24);
+            this.tsTopClear.Text = "Clear Log";
+            // 
+            // tsTopRefresh
+            // 
+            this.tsTopRefresh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsTopRefresh.Name = "tsTopRefresh";
+            this.tsTopRefresh.Size = new System.Drawing.Size(146, 24);
+            this.tsTopRefresh.Text = "Pause Refershing:";
+            // 
+            // toolStripCheckBox1
+            // 
+            this.toolStripCheckBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripCheckBox1.Name = "toolStripCheckBox1";
+            this.toolStripCheckBox1.Size = new System.Drawing.Size(179, 24);
+            this.toolStripCheckBox1.Text = "Auto scroll to last row:";
+            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2750,6 +2863,14 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
+            this.tabControlAdv1.ResumeLayout(false);
+            this.tabPageAdv1.ResumeLayout(false);
+            this.tabPageAdv1.PerformLayout();
+            this.toolStripEx2.ResumeLayout(false);
+            this.toolStripEx2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2934,5 +3055,14 @@ namespace Analogy
         private Syncfusion.Windows.Forms.Tools.TextBoxExt tbMessageInfo;
         private Syncfusion.WinForms.Input.SfDateTimeEdit deOlderThanFilter;
         private Syncfusion.WinForms.Input.SfDateTimeEdit deNewerThanFilter;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
+        private System.Windows.Forms.ToolStripButton tsTopClear;
+        private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopRefresh;
+        private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox toolStripCheckBox1;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
     }
 }
