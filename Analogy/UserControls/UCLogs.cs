@@ -1225,7 +1225,7 @@ namespace Analogy
             _bookmarkedMessages.AcceptChanges();
             splitContainerMain.Collapsed = false;
             splitContainerMain.Collapsed = false;
-            tcBottom.SelectedTabPage = xtpBookmarks;
+            tcBottom.SelectedTab = tabPageBookmarks;
             if (persists)
                 BookmarkPersistManager.Instance.AddBookmarkedMessage(message, dataprovider);
             lockSlim.ExitWriteLock();

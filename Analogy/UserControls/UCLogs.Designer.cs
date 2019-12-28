@@ -156,6 +156,9 @@ namespace Analogy
             this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.pnlMessages = new System.Windows.Forms.Panel();
             this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
+            this.tcBottom = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+            this.tabPageMessageInfo = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabPageBookmarks = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsBookmarked = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCalcDiffBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBookmarkDateFilterNewer = new System.Windows.Forms.ToolStripMenuItem();
@@ -197,9 +200,6 @@ namespace Analogy
             this.tsddbExport = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiExportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBDataVisualizer = new System.Windows.Forms.ToolStripButton();
-            this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
-            this.tabPageMessageInfo = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.tabPageBookmarks = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -247,15 +247,15 @@ namespace Analogy
             this.splitContainerMain.SuspendLayout();
             this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
+            this.tcBottom.SuspendLayout();
+            this.tabPageMessageInfo.SuspendLayout();
+            this.tabPageBookmarks.SuspendLayout();
             this.cmsBookmarked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabPageLogs.SuspendLayout();
             this.tsTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
-            this.tabControlAdv1.SuspendLayout();
-            this.tabPageMessageInfo.SuspendLayout();
-            this.tabPageBookmarks.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1411,7 +1411,7 @@ namespace Analogy
             this.splitContainerMain.Panel1.Controls.Add(this.panel1);
             this.splitContainerMain.Panel1.Controls.Add(this.pnlTopFiltering);
             this.splitContainerMain.Panel1.Text = "Panel1";
-            this.splitContainerMain.Panel2.Controls.Add(this.tabControlAdv1);
+            this.splitContainerMain.Panel2.Controls.Add(this.tcBottom);
             this.splitContainerMain.Panel2.Text = "Panel2";
             this.splitContainerMain.Size = new System.Drawing.Size(1270, 533);
             this.splitContainerMain.SplitterPosition = 204;
@@ -1530,6 +1530,45 @@ namespace Analogy
             this.sfDataGridMain.Text = "sfDataGridMain";
             this.sfDataGridMain.UsePLINQ = true;
             this.sfDataGridMain.StyleChanged += new System.EventHandler(this.sfDataGridMain_StyleChanged);
+            // 
+            // tcBottom
+            // 
+            this.tcBottom.BeforeTouchSize = new System.Drawing.Size(1270, 204);
+            this.tcBottom.Controls.Add(this.tabPageMessageInfo);
+            this.tcBottom.Controls.Add(this.tabPageBookmarks);
+            this.tcBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcBottom.Location = new System.Drawing.Point(0, 0);
+            this.tcBottom.Name = "tcBottom";
+            this.tcBottom.Size = new System.Drawing.Size(1270, 204);
+            this.tcBottom.TabIndex = 7;
+            // 
+            // tabPageMessageInfo
+            // 
+            this.tabPageMessageInfo.Controls.Add(this.tbMessageInfo);
+            this.tabPageMessageInfo.Controls.Add(this.tsMessageInfo);
+            this.tabPageMessageInfo.Image = null;
+            this.tabPageMessageInfo.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageMessageInfo.Location = new System.Drawing.Point(1, 29);
+            this.tabPageMessageInfo.Name = "tabPageMessageInfo";
+            this.tabPageMessageInfo.ShowCloseButton = true;
+            this.tabPageMessageInfo.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageMessageInfo.TabIndex = 1;
+            this.tabPageMessageInfo.Text = "Message Info";
+            this.tabPageMessageInfo.ThemesEnabled = false;
+            // 
+            // tabPageBookmarks
+            // 
+            this.tabPageBookmarks.Controls.Add(this.sfDataGridBookmarks);
+            this.tabPageBookmarks.Controls.Add(this.tsBookmark);
+            this.tabPageBookmarks.Image = null;
+            this.tabPageBookmarks.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageBookmarks.Location = new System.Drawing.Point(1, 29);
+            this.tabPageBookmarks.Name = "tabPageBookmarks";
+            this.tabPageBookmarks.ShowCloseButton = true;
+            this.tabPageBookmarks.Size = new System.Drawing.Size(1267, 173);
+            this.tabPageBookmarks.TabIndex = 2;
+            this.tabPageBookmarks.Text = "Bookmarks";
+            this.tabPageBookmarks.ThemesEnabled = false;
             // 
             // cmsBookmarked
             // 
@@ -1887,45 +1926,6 @@ namespace Analogy
             this.tsBDataVisualizer.Text = "Data Visualizer";
             this.tsBDataVisualizer.Visible = false;
             // 
-            // tabControlAdv1
-            // 
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(1270, 204);
-            this.tabControlAdv1.Controls.Add(this.tabPageMessageInfo);
-            this.tabControlAdv1.Controls.Add(this.tabPageBookmarks);
-            this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlAdv1.Location = new System.Drawing.Point(0, 0);
-            this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(1270, 204);
-            this.tabControlAdv1.TabIndex = 7;
-            // 
-            // tabPageMessageInfo
-            // 
-            this.tabPageMessageInfo.Controls.Add(this.tbMessageInfo);
-            this.tabPageMessageInfo.Controls.Add(this.tsMessageInfo);
-            this.tabPageMessageInfo.Image = null;
-            this.tabPageMessageInfo.ImageSize = new System.Drawing.Size(20, 20);
-            this.tabPageMessageInfo.Location = new System.Drawing.Point(1, 29);
-            this.tabPageMessageInfo.Name = "tabPageMessageInfo";
-            this.tabPageMessageInfo.ShowCloseButton = true;
-            this.tabPageMessageInfo.Size = new System.Drawing.Size(1267, 173);
-            this.tabPageMessageInfo.TabIndex = 1;
-            this.tabPageMessageInfo.Text = "Message Info";
-            this.tabPageMessageInfo.ThemesEnabled = false;
-            // 
-            // tabPageBookmarks
-            // 
-            this.tabPageBookmarks.Controls.Add(this.sfDataGridBookmarks);
-            this.tabPageBookmarks.Controls.Add(this.tsBookmark);
-            this.tabPageBookmarks.Image = null;
-            this.tabPageBookmarks.ImageSize = new System.Drawing.Size(20, 20);
-            this.tabPageBookmarks.Location = new System.Drawing.Point(1, 29);
-            this.tabPageBookmarks.Name = "tabPageBookmarks";
-            this.tabPageBookmarks.ShowCloseButton = true;
-            this.tabPageBookmarks.Size = new System.Drawing.Size(1267, 173);
-            this.tabPageBookmarks.TabIndex = 2;
-            this.tabPageBookmarks.Text = "Bookmarks";
-            this.tabPageBookmarks.ThemesEnabled = false;
-            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1991,6 +1991,12 @@ namespace Analogy
             this.splitContainerMain.ResumeLayout(false);
             this.pnlMessages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
+            this.tcBottom.ResumeLayout(false);
+            this.tabPageMessageInfo.ResumeLayout(false);
+            this.tabPageMessageInfo.PerformLayout();
+            this.tabPageBookmarks.ResumeLayout(false);
+            this.tabPageBookmarks.PerformLayout();
             this.cmsBookmarked.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).EndInit();
             this.tabControlMain.ResumeLayout(false);
@@ -1998,12 +2004,6 @@ namespace Analogy
             this.tabPageLogs.PerformLayout();
             this.tsTop.ResumeLayout(false);
             this.tsTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
-            this.tabControlAdv1.ResumeLayout(false);
-            this.tabPageMessageInfo.ResumeLayout(false);
-            this.tabPageMessageInfo.PerformLayout();
-            this.tabPageBookmarks.ResumeLayout(false);
-            this.tabPageBookmarks.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2139,7 +2139,7 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBDataVisualizer;
         public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopPauseRefresh;
         public Syncfusion.Windows.Forms.Tools.ToolStripCheckBox tsTopAutoScrollToLast;
-        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabControlAdv tcBottom;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageMessageInfo;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageBookmarks;
     }
