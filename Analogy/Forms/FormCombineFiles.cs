@@ -1,9 +1,9 @@
-﻿using Analogy.Interfaces;
-using DevExpress.XtraEditors;
+﻿using System.Windows.Forms;
+using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class FormCombineFiles : XtraForm
+    public partial class FormCombineFiles : Form
     {
         private IAnalogyOfflineDataProvider offlineAnalogy;
 

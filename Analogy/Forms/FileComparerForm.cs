@@ -1,8 +1,9 @@
-﻿using Analogy.Interfaces;
+﻿using System.Windows.Forms;
+using Analogy.Interfaces;
 
 namespace Analogy.Tools
 {
-    public partial class FileComparerForm : DevExpress.XtraEditors.XtraForm
+    public partial class FileComparerForm : Form
     {
         private IAnalogyOfflineDataProvider offlineAnalogy;
 

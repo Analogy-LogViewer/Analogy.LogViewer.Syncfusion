@@ -5,7 +5,7 @@ using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class DataVisualizerForm : DevExpress.XtraEditors.XtraForm
+    public partial class DataVisualizerForm : Form
     {
         public DataVisualizerForm()
         {

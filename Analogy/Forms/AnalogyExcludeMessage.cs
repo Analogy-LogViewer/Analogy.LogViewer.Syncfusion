@@ -1,11 +1,11 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 using Analogy.Interfaces;
+using Syncfusion.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class AnalogyExcludeMessage : XtraForm
+    public partial class AnalogyExcludeMessage : MetroForm
     {
         public string Exclude { get; set; }
         public AnalogyExcludeMessage()

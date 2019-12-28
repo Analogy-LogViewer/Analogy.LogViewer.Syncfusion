@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class ExtensionsForm : XtraForm
+    public partial class ExtensionsForm : Form
     {
         public ExtensionsForm()
         {

@@ -1,13 +1,11 @@
-﻿using DevExpress.XtraEditors;
-
-using System;
+﻿using System;
 using System.Drawing;
 using System.ServiceModel;
 using System.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class AnalogyOTAForm : XtraForm
+    public partial class AnalogyOTAForm : Form
     {
         private ServiceHost _mSvcHost;
         // private AnalogyReceiverServer receiver;

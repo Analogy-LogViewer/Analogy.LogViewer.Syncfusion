@@ -45,7 +45,10 @@
             // 
             // sBtnOk
             // 
+            this.sBtnOk.AccessibleName = "Button";
             this.sBtnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnOk.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnOk.Location = new System.Drawing.Point(537, 37);
             this.sBtnOk.Name = "sBtnOk";
             this.sBtnOk.Size = new System.Drawing.Size(97, 29);
@@ -55,7 +58,10 @@
             // 
             // sBtnCancel
             // 
+            this.sBtnCancel.AccessibleName = "Button";
             this.sBtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sBtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.sBtnCancel.Location = new System.Drawing.Point(640, 37);
             this.sBtnCancel.Name = "sBtnCancel";
             this.sBtnCancel.Size = new System.Drawing.Size(94, 29);

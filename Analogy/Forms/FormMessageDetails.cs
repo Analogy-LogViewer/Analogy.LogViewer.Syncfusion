@@ -1,12 +1,11 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class FormMessageDetails : XtraForm
+    public partial class FormMessageDetails : Form
     {
         public FormMessageDetails()
         {

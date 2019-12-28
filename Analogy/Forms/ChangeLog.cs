@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Analogy
 {
-    public partial class ChangeLog : XtraForm
+    public partial class ChangeLog : Form
     {
         public ChangeLog()
         {

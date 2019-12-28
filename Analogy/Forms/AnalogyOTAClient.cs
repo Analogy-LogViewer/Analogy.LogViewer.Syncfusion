@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +7,7 @@ using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class AnalogyOTAClient : XtraForm
+    public partial class AnalogyOTAClient : Form
     {
         private class CheckListItemForSending
         {

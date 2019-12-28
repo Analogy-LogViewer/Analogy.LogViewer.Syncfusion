@@ -1,13 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Syncfusion.Windows.Forms;
 
 namespace Analogy
 {
 
-    public partial class AnalogyExclude : XtraForm
+    public partial class AnalogyExclude : MetroForm
     {
         private class AnalogyCheckListItem
         {
@@ -39,7 +39,7 @@ namespace Analogy
             {
 
                 bool checkedItem = excludeMostCommon.Contains(grouping.Key);
-                checkedListBoxControl1.Items.Add(new AnalogyCheckListItem(grouping.Key, grouping.Count()), checkedItem);
+                checkedListBox1.Items.Add(new AnalogyCheckListItem(grouping.Key, grouping.Count()), checkedItem);
             }
         }
 
@@ -47,16 +47,16 @@ namespace Analogy
 
         private void btnTop10_Click(object sender, EventArgs e)
         {
-            int length = Math.Min(10, checkedListBoxControl1.Items.Count);
+            int length = Math.Min(10, checkedListBox1.Items.Count);
             for (int i = 0; i < length; i++)
             {
-                checkedListBoxControl1.SetItemCheckState(i, CheckState.Checked);
+                checkedListBox1.SetItemCheckState(i, CheckState.Checked);
             }
         }
 
         private void sBtnOk_Click(object sender, EventArgs e)
         {
-            GlobalExclusion = checkedListBoxControl1.CheckedItems.Cast<DevExpress.XtraEditors.Controls.CheckedListBoxItem>().Select(i => FilterCriteriaObject.EscapeLikeValue((i.Value as AnalogyCheckListItem)?.Text)).ToList();
+            GlobalExclusion = checkedListBox1.CheckedItems.Cast<DevExpress.XtraEditors.Controls.CheckedListBoxItem>().Select(i => FilterCriteriaObject.EscapeLikeValue((i.Value as AnalogyCheckListItem)?.Text)).ToList();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -69,9 +69,9 @@ namespace Analogy
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            foreach (int i in checkedListBoxControl1.CheckedIndices)
+            foreach (int i in checkedListBox1.CheckedIndices)
             {
-                checkedListBoxControl1.SetItemCheckState(i, CheckState.Unchecked);
+                checkedListBox1.SetItemCheckState(i, CheckState.Unchecked);
             }
         }
     }
