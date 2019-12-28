@@ -192,36 +192,19 @@ namespace Analogy
             this.tmrNewData = new System.Windows.Forms.Timer(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtpMain = new DevExpress.XtraTab.XtraTabPage();
-            this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
-            this.pnlMessages = new System.Windows.Forms.Panel();
-            this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblTotalMessagesAlert = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.lblTotalMessages = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.xtCounts = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerMain = new DevExpress.XtraEditors.SplitContainerControl();
+            this.pnlMessages = new System.Windows.Forms.Panel();
+            this.sfDataGridMain = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.nudGroupBychars = new DevExpress.XtraEditors.SpinEdit();
             this.txtbGroupByCharsLimit = new DevExpress.XtraEditors.TextEdit();
             this.sBtnGroup = new Syncfusion.WinForms.Controls.SfButton();
             this.sBtnLength = new Syncfusion.WinForms.Controls.SfButton();
             this.lblGroupByCharsLimit = new System.Windows.Forms.Label();
-            this.spltGroupByChars = new System.Windows.Forms.SplitContainer();
-            this.gCtrlGrouping = new DevExpress.XtraGrid.GridControl();
-            this.gridViewGrouping = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControlMessageGrouping = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblGroupByChars = new System.Windows.Forms.Label();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.cmsBookmarked = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -250,11 +233,11 @@ namespace Analogy
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsTopClear = new System.Windows.Forms.ToolStripButton();
             this.tsTopRefresh = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.toolStripCheckBox1 = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
+            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHighlights)).BeginInit();
@@ -305,22 +288,13 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtpMain.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.SuspendLayout();
             this.pnlMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).BeginInit();
-            this.pnlBottom.SuspendLayout();
-            this.xtCounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spltGroupByChars)).BeginInit();
-            this.spltGroupByChars.Panel1.SuspendLayout();
-            this.spltGroupByChars.Panel2.SuspendLayout();
-            this.spltGroupByChars.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gCtrlGrouping)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGrouping)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMessageGrouping)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
@@ -328,6 +302,7 @@ namespace Analogy
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv1.SuspendLayout();
             this.toolStripEx2.SuspendLayout();
+            this.tabPageAdv2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1260,7 +1235,7 @@ namespace Analogy
             this.btnModules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModules.Name = "btnModules";
             this.btnModules.Size = new System.Drawing.Size(23, 25);
-            this.btnModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnModules.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnModules.TabIndex = 24;
             // 
             // sbtnUndockPerProcess
@@ -1332,7 +1307,7 @@ namespace Analogy
             this.btnSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSources.Name = "btnSources";
             this.btnSources.Size = new System.Drawing.Size(23, 25);
-            this.btnSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnSources.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnSources.TabIndex = 24;
             // 
             // chkbSources
@@ -1400,7 +1375,7 @@ namespace Analogy
             this.btnTextExclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextExclude.Name = "btnTextExclude";
             this.btnTextExclude.Size = new System.Drawing.Size(23, 25);
-            this.btnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnTextExclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnTextExclude.TabIndex = 20;
             // 
             // sBtnMostCommon
@@ -1473,7 +1448,7 @@ namespace Analogy
             this.btnTextInclude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTextInclude.Name = "btnTextInclude";
             this.btnTextInclude.Size = new System.Drawing.Size(23, 25);
-            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnTextInclude.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnTextInclude.TabIndex = 20;
             // 
             // chkbIncludeText
@@ -1845,12 +1820,12 @@ namespace Analogy
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 20);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtpMain;
-            this.xtraTabControl1.Size = new System.Drawing.Size(2131, 739);
+            this.xtraTabControl1.Size = new System.Drawing.Size(2131, 90);
             this.xtraTabControl1.TabIndex = 7;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpMain,
@@ -1858,21 +1833,89 @@ namespace Analogy
             // 
             // xtpMain
             // 
-            this.xtpMain.Controls.Add(this.splitContainerMain);
             this.xtpMain.Controls.Add(this.bdcTopFiltering);
-            this.xtpMain.Controls.Add(this.pnlBottom);
             this.xtpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpMain.Name = "xtpMain";
-            this.xtpMain.Size = new System.Drawing.Size(2124, 705);
+            this.xtpMain.Size = new System.Drawing.Size(2124, 56);
             this.xtpMain.Text = "Logs";
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Controls.Add(this.progressBar1);
+            this.pnlBottom.Controls.Add(this.lblTotalMessagesAlert);
+            this.pnlBottom.Controls.Add(this.lblTotalMessages);
+            this.pnlBottom.Controls.Add(this.btnCancel);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 592);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
+            this.pnlBottom.TabIndex = 3;
+            // 
+            // lblTotalMessagesAlert
+            // 
+            this.lblTotalMessagesAlert.AutoSize = true;
+            this.lblTotalMessagesAlert.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.Red);
+            this.lblTotalMessagesAlert.BeforeTouchSize = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessagesAlert.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(126, 0);
+            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
+            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(145, 21);
+            this.lblTotalMessagesAlert.TabIndex = 8;
+            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
+            this.lblTotalMessagesAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalMessages
+            // 
+            this.lblTotalMessages.AutoSize = true;
+            this.lblTotalMessages.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lblTotalMessages.BeforeTouchSize = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            | System.Windows.Forms.Border3DSide.Right) 
+            | System.Windows.Forms.Border3DSide.Bottom)));
+            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTotalMessages.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
+            this.lblTotalMessages.Name = "lblTotalMessages";
+            this.lblTotalMessages.Size = new System.Drawing.Size(126, 21);
+            this.lblTotalMessages.TabIndex = 7;
+            this.lblTotalMessages.Text = "Total Messages";
+            this.lblTotalMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AccessibleName = "Button";
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(1931, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.btnCancel.Size = new System.Drawing.Size(193, 23);
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel Processing";
+            this.btnCancel.Visible = false;
+            // 
+            // xtCounts
+            // 
+            this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xtCounts.Name = "xtCounts";
+            this.xtCounts.Size = new System.Drawing.Size(1191, 346);
+            this.xtCounts.Text = "Messages Grouping";
             // 
             // splitContainerMain
             // 
             this.splitContainerMain.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
-            this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerMain.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerMain.Horizontal = false;
-            this.splitContainerMain.Location = new System.Drawing.Point(0, 38);
+            this.splitContainerMain.Location = new System.Drawing.Point(33, 69);
             this.splitContainerMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerMain.Name = "splitContainerMain";
             this.splitContainerMain.Panel1.Controls.Add(this.pnlMessages);
@@ -1888,7 +1931,6 @@ namespace Analogy
             // 
             // pnlMessages
             // 
-            this.pnlMessages.Controls.Add(this.tabControlAdv1);
             this.pnlMessages.Controls.Add(this.sfDataGridMain);
             this.pnlMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMessages.Location = new System.Drawing.Point(0, 153);
@@ -2000,84 +2042,6 @@ namespace Analogy
             this.sfDataGridMain.UsePLINQ = true;
             this.sfDataGridMain.StyleChanged += new System.EventHandler(this.sfDataGridMain_StyleChanged);
             // 
-            // pnlBottom
-            // 
-            this.pnlBottom.Controls.Add(this.progressBar1);
-            this.pnlBottom.Controls.Add(this.lblTotalMessagesAlert);
-            this.pnlBottom.Controls.Add(this.lblTotalMessages);
-            this.pnlBottom.Controls.Add(this.btnCancel);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 682);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(2124, 23);
-            this.pnlBottom.TabIndex = 3;
-            // 
-            // lblTotalMessagesAlert
-            // 
-            this.lblTotalMessagesAlert.AutoSize = true;
-            this.lblTotalMessagesAlert.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.Red);
-            this.lblTotalMessagesAlert.BeforeTouchSize = new System.Drawing.Size(145, 21);
-            this.lblTotalMessagesAlert.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
-            | System.Windows.Forms.Border3DSide.Right) 
-            | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblTotalMessagesAlert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessagesAlert.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessagesAlert.Location = new System.Drawing.Point(126, 0);
-            this.lblTotalMessagesAlert.Name = "lblTotalMessagesAlert";
-            this.lblTotalMessagesAlert.Size = new System.Drawing.Size(145, 21);
-            this.lblTotalMessagesAlert.TabIndex = 8;
-            this.lblTotalMessagesAlert.Text = "ALERTS EXISTS: !";
-            this.lblTotalMessagesAlert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalMessages
-            // 
-            this.lblTotalMessages.AutoSize = true;
-            this.lblTotalMessages.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.lblTotalMessages.BeforeTouchSize = new System.Drawing.Size(126, 21);
-            this.lblTotalMessages.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
-            | System.Windows.Forms.Border3DSide.Right) 
-            | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblTotalMessages.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalMessages.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMessages.Location = new System.Drawing.Point(0, 0);
-            this.lblTotalMessages.Name = "lblTotalMessages";
-            this.lblTotalMessages.Size = new System.Drawing.Size(126, 21);
-            this.lblTotalMessages.TabIndex = 7;
-            this.lblTotalMessages.Text = "Total Messages";
-            this.lblTotalMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AccessibleName = "Button";
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(1931, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.btnCancel.Size = new System.Drawing.Size(193, 23);
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel Processing";
-            this.btnCancel.Visible = false;
-            // 
-            // xtCounts
-            // 
-            this.xtCounts.Controls.Add(this.nudGroupBychars);
-            this.xtCounts.Controls.Add(this.txtbGroupByCharsLimit);
-            this.xtCounts.Controls.Add(this.sBtnGroup);
-            this.xtCounts.Controls.Add(this.sBtnLength);
-            this.xtCounts.Controls.Add(this.lblGroupByCharsLimit);
-            this.xtCounts.Controls.Add(this.spltGroupByChars);
-            this.xtCounts.Controls.Add(this.lblGroupByChars);
-            this.xtCounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xtCounts.Name = "xtCounts";
-            this.xtCounts.Size = new System.Drawing.Size(2124, 705);
-            this.xtCounts.Text = "Messages Grouping";
-            // 
             // nudGroupBychars
             // 
             this.nudGroupBychars.EditValue = new decimal(new int[] {
@@ -2085,7 +2049,7 @@ namespace Analogy
             0,
             0,
             0});
-            this.nudGroupBychars.Location = new System.Drawing.Point(756, 18);
+            this.nudGroupBychars.Location = new System.Drawing.Point(749, 20);
             this.nudGroupBychars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudGroupBychars.MenuManager = this.barManager1;
             this.nudGroupBychars.Name = "nudGroupBychars";
@@ -2108,7 +2072,7 @@ namespace Analogy
             // 
             // txtbGroupByCharsLimit
             // 
-            this.txtbGroupByCharsLimit.Location = new System.Drawing.Point(157, 18);
+            this.txtbGroupByCharsLimit.Location = new System.Drawing.Point(150, 20);
             this.txtbGroupByCharsLimit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbGroupByCharsLimit.MenuManager = this.barManager1;
             this.txtbGroupByCharsLimit.Name = "txtbGroupByCharsLimit";
@@ -2119,7 +2083,7 @@ namespace Analogy
             // 
             this.sBtnGroup.AccessibleName = "Button";
             this.sBtnGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnGroup.Location = new System.Drawing.Point(860, 16);
+            this.sBtnGroup.Location = new System.Drawing.Point(863, 17);
             this.sBtnGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnGroup.Name = "sBtnGroup";
             this.sBtnGroup.Size = new System.Drawing.Size(83, 25);
@@ -2131,7 +2095,7 @@ namespace Analogy
             // 
             this.sBtnLength.AccessibleName = "Button";
             this.sBtnLength.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sBtnLength.Location = new System.Drawing.Point(413, 16);
+            this.sBtnLength.Location = new System.Drawing.Point(406, 18);
             this.sBtnLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sBtnLength.Name = "sBtnLength";
             this.sBtnLength.Size = new System.Drawing.Size(83, 25);
@@ -2142,351 +2106,16 @@ namespace Analogy
             // lblGroupByCharsLimit
             // 
             this.lblGroupByCharsLimit.AutoSize = true;
-            this.lblGroupByCharsLimit.Location = new System.Drawing.Point(10, 23);
+            this.lblGroupByCharsLimit.Location = new System.Drawing.Point(3, 25);
             this.lblGroupByCharsLimit.Name = "lblGroupByCharsLimit";
             this.lblGroupByCharsLimit.Size = new System.Drawing.Size(141, 17);
             this.lblGroupByCharsLimit.TabIndex = 7;
             this.lblGroupByCharsLimit.Text = "group by text length:";
             // 
-            // spltGroupByChars
-            // 
-            this.spltGroupByChars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.spltGroupByChars.Location = new System.Drawing.Point(12, 52);
-            this.spltGroupByChars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.spltGroupByChars.Name = "spltGroupByChars";
-            this.spltGroupByChars.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // spltGroupByChars.Panel1
-            // 
-            this.spltGroupByChars.Panel1.Controls.Add(this.gCtrlGrouping);
-            // 
-            // spltGroupByChars.Panel2
-            // 
-            this.spltGroupByChars.Panel2.Controls.Add(this.gridControlMessageGrouping);
-            this.spltGroupByChars.Size = new System.Drawing.Size(16873, 5687);
-            this.spltGroupByChars.SplitterDistance = 2903;
-            this.spltGroupByChars.TabIndex = 4;
-            // 
-            // gCtrlGrouping
-            // 
-            this.gCtrlGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gCtrlGrouping.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gCtrlGrouping.Location = new System.Drawing.Point(0, 0);
-            this.gCtrlGrouping.MainView = this.gridViewGrouping;
-            this.gCtrlGrouping.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gCtrlGrouping.MenuManager = this.barManager1;
-            this.gCtrlGrouping.Name = "gCtrlGrouping";
-            this.gCtrlGrouping.Size = new System.Drawing.Size(16873, 2903);
-            this.gCtrlGrouping.TabIndex = 0;
-            this.gCtrlGrouping.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewGrouping});
-            // 
-            // gridViewGrouping
-            // 
-            this.gridViewGrouping.GridControl = this.gCtrlGrouping;
-            this.gridViewGrouping.Name = "gridViewGrouping";
-            this.gridViewGrouping.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridViewGrouping.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewGrouping.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewGrouping.OptionsView.ShowGroupPanel = false;
-            this.gridViewGrouping.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewGrouping_FocusedRowChanged);
-            // 
-            // gridControlMessageGrouping
-            // 
-            this.gridControlMessageGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlMessageGrouping.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControlMessageGrouping.Location = new System.Drawing.Point(0, 0);
-            this.gridControlMessageGrouping.MainView = this.gridView1;
-            this.gridControlMessageGrouping.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControlMessageGrouping.Name = "gridControlMessageGrouping";
-            this.gridControlMessageGrouping.Size = new System.Drawing.Size(16873, 2780);
-            this.gridControlMessageGrouping.TabIndex = 4;
-            this.gridControlMessageGrouping.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView1.Appearance.Row.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23,
-            this.gridColumn24});
-            this.gridView1.DetailHeight = 431;
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.GridControl = this.gridControlMessageGrouping;
-            this.gridView1.Images = this.imageList;
-            this.gridView1.IndicatorWidth = 24;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsCustomization.AllowGroup = false;
-            this.gridView1.OptionsFilter.AllowColumnMRUFilterList = false;
-            this.gridView1.OptionsFilter.AllowMRUFilterList = false;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.AutoCalcPreviewLineCount = true;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.pmsGridView_CustomDrawRowIndicator);
-            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.pmsGridView_RowStyle);
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn13.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn13.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn13.Caption = "Data Source";
-            this.gridColumn13.FieldName = "DataProvider";
-            this.gridColumn13.MinWidth = 24;
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsColumn.AllowFocus = false;
-            this.gridColumn13.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn13.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn13.OptionsColumn.ReadOnly = true;
-            this.gridColumn13.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
-            this.gridColumn13.Width = 175;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn14.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn14.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn14.Caption = "Date";
-            this.gridColumn14.DisplayFormat.FormatString = "yyyy.MM.dd HH:mm:ss.ff";
-            this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn14.FieldName = "Date";
-            this.gridColumn14.MinWidth = 24;
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.OptionsColumn.AllowEdit = false;
-            this.gridColumn14.OptionsColumn.AllowFocus = false;
-            this.gridColumn14.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn14.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn14.OptionsColumn.ReadOnly = true;
-            this.gridColumn14.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 164;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn15.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn15.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn15.Caption = "Text";
-            this.gridColumn15.FieldName = "Text";
-            this.gridColumn15.MinWidth = 24;
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
-            this.gridColumn15.OptionsColumn.AllowFocus = false;
-            this.gridColumn15.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn15.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn15.OptionsColumn.ReadOnly = true;
-            this.gridColumn15.OptionsFilter.AllowFilter = false;
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 2;
-            this.gridColumn15.Width = 290;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn16.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn16.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn16.Caption = "Source";
-            this.gridColumn16.FieldName = "Source";
-            this.gridColumn16.MinWidth = 24;
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.OptionsColumn.AllowFocus = false;
-            this.gridColumn16.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn16.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn16.OptionsColumn.ReadOnly = true;
-            this.gridColumn16.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 5;
-            this.gridColumn16.Width = 234;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn17.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn17.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn17.Caption = "Level";
-            this.gridColumn17.FieldName = "Level";
-            this.gridColumn17.MinWidth = 24;
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.OptionsColumn.AllowFocus = false;
-            this.gridColumn17.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn17.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn17.OptionsColumn.ReadOnly = true;
-            this.gridColumn17.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 6;
-            this.gridColumn17.Width = 115;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn18.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn18.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn18.Caption = "Class";
-            this.gridColumn18.FieldName = "Class";
-            this.gridColumn18.MinWidth = 24;
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.OptionsColumn.AllowFocus = false;
-            this.gridColumn18.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn18.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn18.OptionsColumn.ReadOnly = true;
-            this.gridColumn18.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 7;
-            this.gridColumn18.Width = 115;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn19.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn19.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn19.Caption = "Category";
-            this.gridColumn19.FieldName = "Category";
-            this.gridColumn19.MinWidth = 24;
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.OptionsColumn.AllowFocus = false;
-            this.gridColumn19.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn19.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn19.OptionsColumn.ReadOnly = true;
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 8;
-            this.gridColumn19.Width = 115;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn20.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn20.Caption = "User";
-            this.gridColumn20.FieldName = "User";
-            this.gridColumn20.MinWidth = 24;
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.OptionsColumn.AllowFocus = false;
-            this.gridColumn20.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn20.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn20.OptionsColumn.ReadOnly = true;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 9;
-            this.gridColumn20.Width = 115;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn21.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn21.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn21.Caption = "Module";
-            this.gridColumn21.FieldName = "Module";
-            this.gridColumn21.MinWidth = 24;
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.OptionsColumn.AllowFocus = false;
-            this.gridColumn21.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn21.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn21.OptionsColumn.ReadOnly = true;
-            this.gridColumn21.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 10;
-            this.gridColumn21.Width = 115;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn22.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn22.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn22.Caption = "Audit";
-            this.gridColumn22.FieldName = "Audit";
-            this.gridColumn22.MinWidth = 24;
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.OptionsColumn.AllowEdit = false;
-            this.gridColumn22.OptionsColumn.AllowFocus = false;
-            this.gridColumn22.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn22.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn22.OptionsColumn.ReadOnly = true;
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 3;
-            this.gridColumn22.Width = 115;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn23.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn23.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn23.Caption = "Object";
-            this.gridColumn23.MinWidth = 24;
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.OptionsColumn.AllowFocus = false;
-            this.gridColumn23.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn23.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn23.OptionsColumn.ReadOnly = true;
-            this.gridColumn23.OptionsColumn.ShowCaption = false;
-            this.gridColumn23.OptionsColumn.ShowInCustomizationForm = false;
-            this.gridColumn23.Width = 87;
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn24.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.gridColumn24.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridColumn24.Caption = "ProcessID";
-            this.gridColumn24.FieldName = "ProcessID";
-            this.gridColumn24.MinWidth = 24;
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.OptionsColumn.AllowEdit = false;
-            this.gridColumn24.OptionsColumn.AllowFocus = false;
-            this.gridColumn24.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn24.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn24.OptionsColumn.ReadOnly = true;
-            this.gridColumn24.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 4;
-            this.gridColumn24.Width = 115;
-            // 
             // lblGroupByChars
             // 
             this.lblGroupByChars.AutoSize = true;
-            this.lblGroupByChars.Location = new System.Drawing.Point(525, 23);
+            this.lblGroupByChars.Location = new System.Drawing.Point(518, 25);
             this.lblGroupByChars.Name = "lblGroupByChars";
             this.lblGroupByChars.Size = new System.Drawing.Size(225, 17);
             this.lblGroupByChars.TabIndex = 2;
@@ -2697,39 +2326,30 @@ namespace Analogy
             // 
             // tabControlAdv1
             // 
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(765, 258);
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(2131, 649);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
-            this.tabControlAdv1.Location = new System.Drawing.Point(259, 52);
+            this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlAdv1.Location = new System.Drawing.Point(0, 110);
             this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(765, 258);
+            this.tabControlAdv1.Size = new System.Drawing.Size(2131, 649);
             this.tabControlAdv1.TabIndex = 27;
             this.tabControlAdv1.ThemesEnabled = true;
             // 
             // tabPageAdv1
             // 
+            this.tabPageAdv1.Controls.Add(this.pnlBottom);
+            this.tabPageAdv1.Controls.Add(this.splitContainerMain);
             this.tabPageAdv1.Controls.Add(this.toolStripEx2);
             this.tabPageAdv1.Image = null;
             this.tabPageAdv1.ImageSize = new System.Drawing.Size(20, 20);
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 31);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(758, 223);
+            this.tabPageAdv1.Size = new System.Drawing.Size(2124, 615);
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "tabPageAdv1";
             this.tabPageAdv1.ThemesEnabled = true;
-            // 
-            // tabPageAdv2
-            // 
-            this.tabPageAdv2.Image = null;
-            this.tabPageAdv2.ImageSize = new System.Drawing.Size(20, 20);
-            this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
-            this.tabPageAdv2.Name = "tabPageAdv2";
-            this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(535, 223);
-            this.tabPageAdv2.TabIndex = 2;
-            this.tabPageAdv2.Text = "tabPageAdv2";
-            this.tabPageAdv2.ThemesEnabled = true;
             // 
             // toolStripEx2
             // 
@@ -2744,7 +2364,7 @@ namespace Analogy
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.ShowCaption = false;
             this.toolStripEx2.ShowLauncher = false;
-            this.toolStripEx2.Size = new System.Drawing.Size(758, 27);
+            this.toolStripEx2.Size = new System.Drawing.Size(2124, 27);
             this.toolStripEx2.TabIndex = 5;
             this.toolStripEx2.ThemeName = "Default";
             // 
@@ -2770,10 +2390,29 @@ namespace Analogy
             this.toolStripCheckBox1.Size = new System.Drawing.Size(179, 24);
             this.toolStripCheckBox1.Text = "Auto scroll to last row:";
             // 
+            // tabPageAdv2
+            // 
+            this.tabPageAdv2.Controls.Add(this.sBtnGroup);
+            this.tabPageAdv2.Controls.Add(this.nudGroupBychars);
+            this.tabPageAdv2.Controls.Add(this.lblGroupByCharsLimit);
+            this.tabPageAdv2.Controls.Add(this.txtbGroupByCharsLimit);
+            this.tabPageAdv2.Controls.Add(this.lblGroupByChars);
+            this.tabPageAdv2.Controls.Add(this.sBtnLength);
+            this.tabPageAdv2.Image = null;
+            this.tabPageAdv2.ImageSize = new System.Drawing.Size(20, 20);
+            this.tabPageAdv2.Location = new System.Drawing.Point(3, 31);
+            this.tabPageAdv2.Name = "tabPageAdv2";
+            this.tabPageAdv2.ShowCloseButton = true;
+            this.tabPageAdv2.Size = new System.Drawing.Size(982, 223);
+            this.tabPageAdv2.TabIndex = 2;
+            this.tabPageAdv2.Text = "tabPageAdv2";
+            this.tabPageAdv2.ThemesEnabled = true;
+            // 
             // UCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabControlAdv1);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -2843,24 +2482,14 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtpMain.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
+            this.pnlBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
             this.splitContainerMain.ResumeLayout(false);
             this.pnlMessages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sfDataGridMain)).EndInit();
-            this.pnlBottom.ResumeLayout(false);
-            this.pnlBottom.PerformLayout();
-            this.xtCounts.ResumeLayout(false);
-            this.xtCounts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGroupBychars.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbGroupByCharsLimit.Properties)).EndInit();
-            this.spltGroupByChars.Panel1.ResumeLayout(false);
-            this.spltGroupByChars.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spltGroupByChars)).EndInit();
-            this.spltGroupByChars.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gCtrlGrouping)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGrouping)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMessageGrouping)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
             this.toolStripEx1.ResumeLayout(false);
@@ -2871,6 +2500,8 @@ namespace Analogy
             this.tabPageAdv1.PerformLayout();
             this.toolStripEx2.ResumeLayout(false);
             this.toolStripEx2.PerformLayout();
+            this.tabPageAdv2.ResumeLayout(false);
+            this.tabPageAdv2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2909,21 +2540,6 @@ namespace Analogy
         private System.Windows.Forms.Panel pnlFilteringLeft;
         private DevExpress.XtraTab.XtraTabPage xtCounts;
         private System.Windows.Forms.Label lblGroupByChars;
-        private System.Windows.Forms.SplitContainer spltGroupByChars;
-        private DevExpress.XtraGrid.GridControl gridControlMessageGrouping;
-        private GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private System.Windows.Forms.Label lblGroupByCharsLimit;
         private DevExpress.XtraTab.XtraTabControl tcBottom;
         private DevExpress.XtraTab.XtraTabPage xtpMessageInfo;
@@ -2971,8 +2587,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveLayoutBookmark;
         private DevExpress.XtraBars.BarButtonItem bBtnRemoveBoomark;
-        private DevExpress.XtraGrid.GridControl gCtrlGrouping;
-        private GridView gridViewGrouping;
         private SfButton btnCancel;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessages;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMessagesBookmark;
