@@ -145,21 +145,20 @@ namespace Analogy
             this.chkDateNewerThan = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spltcProcessesModule = new System.Windows.Forms.SplitContainer();
-            this.txtbModule = new DevExpress.XtraEditors.TextEdit();
             this.sbtnIncludeModules = new DevExpress.XtraEditors.SimpleButton();
             this.sbtnUndockPerProcess = new DevExpress.XtraEditors.SimpleButton();
             this.chkbModules = new System.Windows.Forms.CheckBox();
             this.spltcSources = new System.Windows.Forms.SplitContainer();
-            this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.txtbSource = new DevExpress.XtraEditors.TextEdit();
             this.sbtnIncludeSources = new DevExpress.XtraEditors.SimpleButton();
             this.chkbSources = new System.Windows.Forms.CheckBox();
             this.pboxInfoExclude = new System.Windows.Forms.PictureBox();
             this.spltTextExclude = new System.Windows.Forms.SplitContainer();
+            this.cbExclude = new Syncfusion.WinForms.ListView.SfComboBox();
             this.sbtnTextExclude = new DevExpress.XtraEditors.SimpleButton();
             this.sBtnMostCommon = new DevExpress.XtraEditors.SimpleButton();
             this.chkExclude = new System.Windows.Forms.CheckBox();
             this.spltText = new System.Windows.Forms.SplitContainer();
+            this.cbInclude = new Syncfusion.WinForms.ListView.SfComboBox();
             this.sbtnTextInclude = new DevExpress.XtraEditors.SimpleButton();
             this.chkbIncludeText = new System.Windows.Forms.CheckBox();
             this.pboxInfo = new System.Windows.Forms.PictureBox();
@@ -242,7 +241,8 @@ namespace Analogy
             this.tsmiDecreaseFontBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripFilters = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbExclude = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cbSource = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cbModule = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cmsMessageOperation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbHighlight.Properties)).BeginInit();
@@ -265,19 +265,18 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).BeginInit();
             this.spltcProcessesModule.Panel1.SuspendLayout();
             this.spltcProcessesModule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbModule.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).BeginInit();
             this.spltcSources.Panel1.SuspendLayout();
             this.spltcSources.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbSource.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltTextExclude)).BeginInit();
             this.spltTextExclude.Panel1.SuspendLayout();
             this.spltTextExclude.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbExclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spltText)).BeginInit();
             this.spltText.Panel1.SuspendLayout();
             this.spltText.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).BeginInit();
@@ -308,7 +307,8 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.cmsBookmarked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbExclude)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsMessageOperation
@@ -1349,7 +1349,7 @@ namespace Analogy
             // 
             // spltcProcessesModule.Panel1
             // 
-            this.spltcProcessesModule.Panel1.Controls.Add(this.txtbModule);
+            this.spltcProcessesModule.Panel1.Controls.Add(this.cbModule);
             this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnIncludeModules);
             this.spltcProcessesModule.Panel1.Controls.Add(this.sbtnUndockPerProcess);
             this.spltcProcessesModule.Panel1.Controls.Add(this.chkbModules);
@@ -1358,17 +1358,6 @@ namespace Analogy
             this.spltcProcessesModule.SplitterDistance = 574;
             this.spltcProcessesModule.SplitterWidth = 3;
             this.spltcProcessesModule.TabIndex = 26;
-            // 
-            // txtbModule
-            // 
-            this.txtbModule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbModule.Location = new System.Drawing.Point(275, 0);
-            this.txtbModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbModule.MenuManager = this.barManager1;
-            this.txtbModule.Name = "txtbModule";
-            this.txtbModule.Size = new System.Drawing.Size(1145, 22);
-            this.txtbModule.TabIndex = 26;
-            this.txtbModule.TextChanged += new System.EventHandler(this.txtbIncludeModule_TextChanged);
             // 
             // sbtnIncludeModules
             // 
@@ -1415,7 +1404,7 @@ namespace Analogy
             // 
             // spltcSources.Panel1
             // 
-            this.spltcSources.Panel1.Controls.Add(this.txtbSource);
+            this.spltcSources.Panel1.Controls.Add(this.cbSource);
             this.spltcSources.Panel1.Controls.Add(this.sbtnIncludeSources);
             this.spltcSources.Panel1.Controls.Add(this.chkbSources);
             this.spltcSources.Panel1.Controls.Add(this.pboxInfoExclude);
@@ -1424,31 +1413,6 @@ namespace Analogy
             this.spltcSources.SplitterDistance = 683;
             this.spltcSources.SplitterWidth = 3;
             this.spltcSources.TabIndex = 25;
-            // 
-            // cbInclude
-            // 
-            this.cbInclude.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Location = new System.Drawing.Point(127, 0);
-            this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
-            this.cbInclude.Name = "cbInclude";
-            this.cbInclude.Size = new System.Drawing.Size(1451, 25);
-            this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInclude.TabIndex = 26;
-            // 
-            // txtbSource
-            // 
-            this.txtbSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbSource.Location = new System.Drawing.Point(228, 0);
-            this.txtbSource.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbSource.MenuManager = this.barManager1;
-            this.txtbSource.Name = "txtbSource";
-            this.txtbSource.Size = new System.Drawing.Size(1373, 22);
-            this.txtbSource.TabIndex = 25;
-            this.txtbSource.TextChanged += new System.EventHandler(this.txtbIncludeSource_TextChanged);
             // 
             // sbtnIncludeSources
             // 
@@ -1503,6 +1467,20 @@ namespace Analogy
             this.spltTextExclude.SplitterDistance = 998;
             this.spltTextExclude.SplitterWidth = 3;
             this.spltTextExclude.TabIndex = 24;
+            // 
+            // cbExclude
+            // 
+            this.cbExclude.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbExclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExclude.Location = new System.Drawing.Point(127, 0);
+            this.cbExclude.Margin = new System.Windows.Forms.Padding(4);
+            this.cbExclude.Name = "cbExclude";
+            this.cbExclude.Size = new System.Drawing.Size(1354, 25);
+            this.cbExclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbExclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExclude.TabIndex = 27;
             // 
             // sbtnTextExclude
             // 
@@ -1560,6 +1538,20 @@ namespace Analogy
             this.spltText.SplitterDistance = 998;
             this.spltText.SplitterWidth = 3;
             this.spltText.TabIndex = 22;
+            // 
+            // cbInclude
+            // 
+            this.cbInclude.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Location = new System.Drawing.Point(127, 0);
+            this.cbInclude.Margin = new System.Windows.Forms.Padding(4);
+            this.cbInclude.Name = "cbInclude";
+            this.cbInclude.Size = new System.Drawing.Size(1451, 25);
+            this.cbInclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbInclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInclude.TabIndex = 26;
             // 
             // sbtnTextInclude
             // 
@@ -2811,19 +2803,33 @@ namespace Analogy
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cbExclude
+            // cbSource
             // 
-            this.cbExclude.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbExclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExclude.Location = new System.Drawing.Point(127, 0);
-            this.cbExclude.Margin = new System.Windows.Forms.Padding(4);
-            this.cbExclude.Name = "cbExclude";
-            this.cbExclude.Size = new System.Drawing.Size(1354, 25);
-            this.cbExclude.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExclude.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExclude.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbExclude.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExclude.TabIndex = 27;
+            this.cbSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Location = new System.Drawing.Point(228, 0);
+            this.cbSource.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSource.Name = "cbSource";
+            this.cbSource.Size = new System.Drawing.Size(1373, 25);
+            this.cbSource.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSource.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSource.TabIndex = 27;
+            // 
+            // cbModule
+            // 
+            this.cbModule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Location = new System.Drawing.Point(275, 0);
+            this.cbModule.Margin = new System.Windows.Forms.Padding(4);
+            this.cbModule.Name = "cbModule";
+            this.cbModule.Size = new System.Drawing.Size(1145, 25);
+            this.cbModule.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbModule.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbModule.TabIndex = 27;
             // 
             // UCLogs
             // 
@@ -2864,21 +2870,20 @@ namespace Analogy
             this.spltcProcessesModule.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltcProcessesModule)).EndInit();
             this.spltcProcessesModule.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtbModule.Properties)).EndInit();
             this.spltcSources.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spltcSources)).EndInit();
             this.spltcSources.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtbSource.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfoExclude)).EndInit();
             this.spltTextExclude.Panel1.ResumeLayout(false);
             this.spltTextExclude.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltTextExclude)).EndInit();
             this.spltTextExclude.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbExclude)).EndInit();
             this.spltText.Panel1.ResumeLayout(false);
             this.spltText.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltText)).EndInit();
             this.spltText.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbInclude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkLstLogLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcBottom)).EndInit();
@@ -2912,7 +2917,8 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.cmsBookmarked.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbExclude)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbModule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3078,11 +3084,9 @@ namespace Analogy
         private System.Windows.Forms.SplitContainer spltTextExclude;
         private DevExpress.XtraEditors.SimpleButton sbtnTextExclude;
         private System.Windows.Forms.SplitContainer spltcSources;
-        private DevExpress.XtraEditors.TextEdit txtbSource;
         private DevExpress.XtraEditors.SimpleButton sbtnIncludeSources;
         private System.Windows.Forms.CheckBox chkbSources;
         private System.Windows.Forms.SplitContainer spltcProcessesModule;
-        private DevExpress.XtraEditors.TextEdit txtbModule;
         private System.Windows.Forms.CheckBox chkbModules;
         private DevExpress.XtraEditors.SimpleButton sbtnIncludeModules;
         private DevExpress.XtraEditors.SimpleButton sbtnUndockPerProcess;
@@ -3108,5 +3112,7 @@ namespace Analogy
         private Syncfusion.WinForms.ListView.SfComboBox cbInclude;
         private System.Windows.Forms.Panel pnlMessages;
         private Syncfusion.WinForms.ListView.SfComboBox cbExclude;
+        private Syncfusion.WinForms.ListView.SfComboBox cbModule;
+        private Syncfusion.WinForms.ListView.SfComboBox cbSource;
     }
 }

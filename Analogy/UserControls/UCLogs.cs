@@ -150,7 +150,6 @@ namespace Analogy
                  chkbIncludeText.Checked = true;
                  await FilterHasChanged();
              };
-
             cbInclude.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
@@ -175,7 +174,6 @@ namespace Analogy
                 chkExclude.Checked = true;
                 await FilterHasChanged();
             };
-
             cbExclude.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
@@ -186,7 +184,37 @@ namespace Analogy
                 }
             };
 
+            cbSource.TextChanged += async (s, e) =>
+            {
+                if (string.IsNullOrEmpty(cbSource.Text))
+                {
+                    chkbSources.Checked = false;
+                }
+                else
+                {
+                    if (!chkbSources.Checked)
+                        chkbSources.Checked = true;
+                }
 
+                await FilterHasChanged();
+                Settings.SourceText = cbSource.Text;
+            };
+
+            cbModule.TextChanged += async (s, e) =>
+            {
+                if (string.IsNullOrEmpty(cbModule.Text))
+                {
+                    chkbModules.Checked = false;
+                }
+                else
+                {
+                    if (!chkbModules.Checked)
+                        chkbModules.Checked = true;
+                }
+
+                await FilterHasChanged();
+                Settings.ModuleText = cbModule.Text;
+            };
             #region sfDataGrid Main
             sfDataGridMain.QueryRowStyle += sfDataGrid_QueryRowStyle;
             sfDataGridMain.CellClick += (s, e) =>
@@ -1015,7 +1043,7 @@ namespace Analogy
 
         public void FilterResults(string module)
         {
-            txtbModule.Text = module;
+            cbModule.Text = module;
             FilterResults();
         }
 
@@ -1046,9 +1074,9 @@ namespace Analogy
 
 
 
-            if (chkbSources.Checked && !string.IsNullOrEmpty(txtbSource.Text))
+            if (chkbSources.Checked && !string.IsNullOrEmpty(cbSource.Text))
             {
-                var items = txtbSource.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var items = cbSource.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 var includeItems = items.Where(i => !i.StartsWith("-"));
                 var excludeItems = items.Where(i => i.StartsWith("-") && i.Length > 1)
                     .Select(i => i.Substring(1, i.Length - 1));
@@ -1062,12 +1090,12 @@ namespace Analogy
                 _filterCriteria.ExcludedSources = null;
             }
 
-            Settings.SourceText = Settings.SaveSearchFilters ? txtbSource.Text : string.Empty;
+            Settings.SourceText = Settings.SaveSearchFilters ? cbSource.Text : string.Empty;
 
-            if (chkbModules.Checked && !string.IsNullOrEmpty(txtbModule.Text))
+            if (chkbModules.Checked && !string.IsNullOrEmpty(cbSource.Text))
             {
 
-                var items = txtbModule.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var items = cbSource.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 var includeItems = items.Where(i => !i.StartsWith("-"));
                 var excludeItems = items.Where(i => i.StartsWith("-") && i.Length > 1)
                       .Select(i => i.Substring(1, i.Length - 1));
@@ -1082,7 +1110,7 @@ namespace Analogy
                 _filterCriteria.Modules = null;
                 _filterCriteria.ExcludedModules = null;
             }
-            Settings.ModuleText = Settings.SaveSearchFilters ? txtbModule.Text : string.Empty;
+            Settings.ModuleText = Settings.SaveSearchFilters ? cbModule.Text : string.Empty;
             string filter = _filterCriteria.GetSqlExpression();
             lockSlim.EnterWriteLock();
             try
@@ -1417,14 +1445,14 @@ namespace Analogy
 
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
             if (!string.IsNullOrEmpty(message?.Source))
-                txtbSource.Text = txtbSource.Text + ",-" + message.Source;
+                cbSource.Text = cbSource.Text + ",-" + message.Source;
         }
 
         private void tsmiExcludeModule_Click(object sender, EventArgs e)
         {
             (AnalogyLogMessage message, _) = GetMessageFromSelectedRowInGrid();
             if (!string.IsNullOrEmpty(message?.Module))
-                txtbModule.Text = txtbModule.Text + ",-" + message.Module;
+                cbModule.Text = cbModule.Text + ",-" + message.Module;
         }
 
   
@@ -2179,12 +2207,12 @@ namespace Analogy
 
         private void sbtnIncludeSources_Click(object sender, EventArgs e)
         {
-            txtbSource.Text = "";
+            cbSource.Text = "";
         }
 
         private async void txtbIncludeSource_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtbSource.Text))
+            if (string.IsNullOrEmpty(cbSource.Text))
             {
                 chkbSources.Checked = false;
             }
@@ -2201,12 +2229,12 @@ namespace Analogy
 
         private void sbtnIncludeModules_Click(object sender, EventArgs e)
         {
-            txtbModule.Text = "";
+            cbModule.Text = "";
         }
 
         private async void txtbIncludeModule_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtbModule.Text))
+            if (string.IsNullOrEmpty(cbModule.Text))
             {
                 chkbModules.Checked = false;
             }
@@ -2304,8 +2332,8 @@ namespace Analogy
                 {
                     cbInclude.Text = filter.IncludeText;
                     cbExclude.Text = filter.ExcludeText;
-                    txtbSource.Text = filter.Sources;
-                    txtbModule.Text = filter.Modules;
+                    cbSource.Text = filter.Sources;
+                    cbModule.Text = filter.Modules;
                 };
                 contextMenuStripFilters.Items.Add(item);
             }
