@@ -1,15 +1,16 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Analogy.DataProviders.Extensions;
 using Analogy.Managers;
-using DevExpress.XtraTab;
+using Syncfusion.Data.Extensions;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace Analogy
 {
 
-    public partial class UserSettingsDataProvidersForm : XtraForm
+    public partial class UserSettingsDataProvidersForm : Form
     {
         private struct RealTimeCheckItem
         {
@@ -41,29 +42,28 @@ namespace Analogy
 
         public UserSettingsDataProvidersForm(string tabName) : this()
         {
-            var tab = tabControlMain.TabPages.SingleOrDefault(t => t.Name == tabName);
+       var tab = tabControlAdv1.TabPages.ToList<TabPageAdv>().FirstOrDefault(t=>t.Name==tabName);
             if (tab != null)
                 _initialSelection = tab.TabIndex;
         }
 
         private void LoadSettings()
         {
-
-             AddExternalUserControlSettings();
+            AddExternalUserControlSettings();
         }
 
         private void AddExternalUserControlSettings()
         {
             foreach (IAnalogyDataProviderSettings settings in FactoriesManager.Instance.GetProvidersSettings())
             {
-                XtraTabPage tab = new XtraTabPage();
+                TabPageAdv tab = new TabPageAdv();
                 tab.Text = settings.Title;
                 UserControl uc = settings.DataProviderSettings;
                 tab.Controls.Add(uc);
                 tab.Image = settings.Icon;
-                //ab.
+                tab.ImageSize=new Size(32,32);
                 uc.Dock = DockStyle.Fill;
-                tabControlMain.TabPages.Add(tab);
+                tabControlAdv1.TabPages.Add(tab);
             }
         }
 
@@ -72,7 +72,7 @@ namespace Analogy
             LoadSettings();
 
             if (_initialSelection >= 0)
-                tabControlMain.SelectedTabPageIndex = _initialSelection;
+                tabControlAdv1.SelectedIndex =  _initialSelection;
 
 
         }
