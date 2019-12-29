@@ -1,7 +1,5 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,7 +7,6 @@ using Analogy.Interfaces;
 using Analogy.Managers;
 using Analogy.Types;
 using Syncfusion.Windows.Forms.Tools;
-using Syncfusion.WinForms.Controls;
 
 namespace Analogy
 {
@@ -77,7 +74,6 @@ namespace Analogy
                 Settings.EnableUserStatistics ? ToggleButtonState.Active : ToggleButtonState.Inactive;
             //tsSimpleMode.IsOn = Settings.SimpleMode;
             tbExtensionsStartup.ToggleState = Settings.LoadExtensionsOnStartup ? ToggleButtonState.Active : ToggleButtonState.Inactive;
-            tsStartupRibbonMinimized.IsOn = Settings.StartupRibbonMinimized;
             if (Settings.PagingEnabled)
             {
                 nudPageLength.Value = Settings.PagingSize;
@@ -420,11 +416,7 @@ namespace Analogy
             }
         }
 
-        private void tsStartupRibbonMinimized_Toggled(object sender, EventArgs e)
-        {
-            Settings.StartupRibbonMinimized = tsStartupRibbonMinimized.IsOn;
-        }
-        
+ 
 
         private void ChkLstItemRealTimeDataSources_SelectedIndexChanged(object sender, EventArgs e)
         {
