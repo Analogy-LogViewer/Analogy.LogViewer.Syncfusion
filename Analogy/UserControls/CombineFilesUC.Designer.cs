@@ -65,6 +65,7 @@
             // 
             // fileSystemUC1
             // 
+            this.fileSystemUC1.DataProvider = null;
             this.fileSystemUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileSystemUC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.fileSystemUC1.Location = new System.Drawing.Point(0, 0);
@@ -72,10 +73,14 @@
             this.fileSystemUC1.Name = "fileSystemUC1";
             this.fileSystemUC1.Size = new System.Drawing.Size(336, 569);
             this.fileSystemUC1.TabIndex = 0;
+            this.fileSystemUC1.ZipFilesOnly = false;
             // 
             // processFilesUC1
             // 
+            this.processFilesUC1.DataProvider = null;
             this.processFilesUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processFilesUC1.DoNotAddToRecentHistory = false;
+            this.processFilesUC1.ForceNoFileCaching = false;
             this.processFilesUC1.Location = new System.Drawing.Point(0, 40);
             this.processFilesUC1.Margin = new System.Windows.Forms.Padding(6);
             this.processFilesUC1.Name = "processFilesUC1";
@@ -95,7 +100,10 @@
             // 
             // sBtnSave
             // 
+            this.sBtnSave.AccessibleName = "Button";
             this.sBtnSave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sBtnSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sBtnSave.Location = new System.Drawing.Point(506, 0);
             this.sBtnSave.Margin = new System.Windows.Forms.Padding(4);
             this.sBtnSave.Name = "sBtnSave";
@@ -106,7 +114,10 @@
             // 
             // sBtnCombined
             // 
+            this.sBtnCombined.AccessibleName = "Button";
             this.sBtnCombined.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sBtnCombined.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnCombined.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sBtnCombined.Location = new System.Drawing.Point(0, 0);
             this.sBtnCombined.Margin = new System.Windows.Forms.Padding(4);
             this.sBtnCombined.Name = "sBtnCombined";

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using Analogy.Interfaces;
-using DevExpress.XtraEditors;
 
 namespace Analogy
 {
-    public partial class CombineFilesUC : XtraUserControl
+    public partial class CombineFilesUC : UserControl
     {
         private IAnalogyOfflineDataProvider offlineAnalogy;
         public CombineFilesUC()
