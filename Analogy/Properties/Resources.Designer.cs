@@ -233,6 +233,26 @@ namespace Analogy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddNewDataSource_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("AddNewDataSource_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddNewDataSource_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("AddNewDataSource_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Analogy_icon1 {
             get {
                 object obj = ResourceManager.GetObject("Analogy_icon1", resourceCulture);
@@ -1732,6 +1752,26 @@ namespace Analogy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ReapplyFilter_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("ReapplyFilter_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReapplyFilter_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("ReapplyFilter_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RecentlyUse_16x16 {
             get {
                 object obj = ResourceManager.GetObject("RecentlyUse_16x16", resourceCulture);
@@ -1785,6 +1825,26 @@ namespace Analogy.Properties {
         internal static System.Drawing.Bitmap Record_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Record_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RefreshAllPivotTable_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("RefreshAllPivotTable_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RefreshAllPivotTable_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("RefreshAllPivotTable_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

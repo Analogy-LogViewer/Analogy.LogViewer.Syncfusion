@@ -1,6 +1,4 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
-
-namespace Analogy
+﻿namespace Analogy
 {
     partial class BookmarkLog
     {

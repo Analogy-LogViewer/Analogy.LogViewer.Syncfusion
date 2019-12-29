@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Types;
-using DevExpress.XtraBars;
 
 namespace Analogy
 {
@@ -20,6 +19,7 @@ namespace Analogy
         public ClientServerUCLog()
         {
             InitializeComponent();
+            SetupEventsHandlers();
         }
 
         public ClientServerUCLog(IAnalogyOfflineDataProvider dataProvider) : this()
@@ -27,12 +27,82 @@ namespace Analogy
             DataProvider = dataProvider;
             ucLogs1.SetFileDataSource(DataProvider);
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             ucLogs1.ProcessCmdKeyFromParent(keyData);
             return base.ProcessCmdKey(ref msg, keyData);
         }
+        public void SetupEventsHandlers()
+        {
+            tsBtnAdd.Click += (s, e) =>
+            {
+                ClientServerForm f = new ClientServerForm();
+                f.ShowDialog(this);
+                lBoxSources.DataSource = ClientServerDataSourceManager.Instance.DataSources;
+            };
 
+            tsBtnAdd.Click += (s, e) =>
+            {
+                if (lBoxSources.SelectedItem is DataSource data &&
+                    MessageBox.Show($"Are you sure you want to delete {data}?", "Confirmation Required", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ClientServerDataSourceManager.Instance.Remove(data);
+                    lBoxSources.Items.Remove(data);
+
+                }
+
+            };
+
+            tsBtnDelete.Click += (s, e) =>
+            {
+                if (lBoxFiles.SelectedItem != null)
+                {
+                    var filename = (lBoxFiles.SelectedItem as FileInfo)?.FullName;
+                    if (filename == null) return;
+                    var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        if (File.Exists(filename))
+                            try
+                            {
+                                File.Delete(filename);
+                                PopulateFiles(SelectedPath);
+                            }
+                            catch (Exception exception)
+                            {
+                                MessageBox.Show(exception.Message, @"Error deleting file", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            }
+                    }
+                }
+            };
+
+            tsBtnRefresh.Click += (s, e) =>
+            {
+                if (string.IsNullOrEmpty(SelectedPath) || !Directory.Exists(SelectedPath)) return;
+                PopulateFiles(SelectedPath);
+            };
+
+            tsBtnOpenFolder.Click += (s, e) =>
+            {
+                if (lBoxFiles.SelectedItem != null)
+                {
+                    var filename = (lBoxFiles.SelectedItem as FileInfo)?.FullName;
+                    if (filename == null || !File.Exists(filename)) return;
+                    try
+                    {
+                        Process.Start("explorer.exe", "/select, \"" + filename + "\"");
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message, @"Error Opening file location", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            };
+        }
         private void ClientServerUCLog_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
@@ -45,20 +115,19 @@ namespace Analogy
 
         private async void lBoxFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await LoadFilesAsync(lBoxFiles.SelectedItems.Cast<FileInfo>().Select(f => f.FullName).ToList(), chkbSelectionMode.Checked);
+            await LoadFilesAsync(lBoxFiles.SelectedItems.Cast<FileInfo>().Select(f => f.FullName).ToList(), checkBoxSelectionMode.Checked);
 
         }
         private void PopulateFiles(string folder)
         {
             if (!Directory.Exists(folder)) return;
             lBoxFiles.SelectedIndexChanged -= lBoxFiles_SelectedIndexChanged;
-            bool recursiveLoad = checkEditRecursiveLoad.Checked;
+            bool recursiveLoad = checkBoxRecursiveLoad.Checked;
             DirectoryInfo dirInfo = new DirectoryInfo(folder);
             var fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).OrderByDescending(f => f.LastWriteTime);
             lBoxFiles.DisplayMember = recursiveLoad ? "FullName" : "Name";
             lBoxFiles.DataSource = fileInfos;
             lBoxFiles.SelectedIndexChanged += lBoxFiles_SelectedIndexChanged;
-
         }
 
 
@@ -80,22 +149,12 @@ namespace Analogy
 
         private void bBtnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ClientServerForm f = new ClientServerForm();
-            f.ShowDialog(this);
-            lBoxSources.DataSource = ClientServerDataSourceManager.Instance.DataSources;
+
         }
 
         private void bBtnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (lBoxSources.SelectedItem is DataSource data)
-            {
-                if (XtraMessageBox.Show($"Are you sure you want to delete {data}?", "Confirmation Required", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    ClientServerDataSourceManager.Instance.Remove(data);
-                    lBoxSources.Items.Remove(data);
 
-                }
-            }
         }
 
         private void bBtnOpenFolder_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -118,31 +177,12 @@ namespace Analogy
 
         private void bBtnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (lBoxFiles.SelectedItem != null)
-            {
-                var filename = (lBoxFiles.SelectedItem as FileInfo)?.FullName;
-                if (filename == null) return;
-                var result = XtraMessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
-                {
-                    if (File.Exists(filename))
-                        try
-                        {
-                            File.Delete(filename);
-                            PopulateFiles(SelectedPath);
-                        }
-                        catch (Exception exception)
-                        {
-                            MessageBox.Show(exception.Message, @"Error deleting file", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                }
-            }
+
         }
 
         private void bBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (string.IsNullOrEmpty(SelectedPath) || !Directory.Exists(SelectedPath)) return;
-            PopulateFiles(SelectedPath);
+
         }
     }
 
