@@ -31,20 +31,14 @@
             this.rtboxRight = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.rtboxLeft = new System.Windows.Forms.RichTextBox();
-            this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
             this.lblFileLeft = new System.Windows.Forms.Label();
             this.sBtnLeft = new Syncfusion.WinForms.Controls.SfButton();
-            this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
             this.lblFileRight = new System.Windows.Forms.Label();
             this.simpleButtonRight = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).BeginInit();
-            this.panelControlLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).BeginInit();
-            this.panelControlRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtboxRight
@@ -68,12 +62,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.rtboxLeft);
-            this.splitContainer1.Panel1.Controls.Add(this.panelControlLeft);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.rtboxRight);
-            this.splitContainer1.Panel2.Controls.Add(this.panelControlRight);
             this.splitContainer1.Size = new System.Drawing.Size(504, 387);
             this.splitContainer1.SplitterDistance = 243;
             this.splitContainer1.SplitterWidth = 6;
@@ -89,17 +81,6 @@
             this.rtboxLeft.TabIndex = 0;
             this.rtboxLeft.Text = "";
             this.rtboxLeft.WordWrap = false;
-            // 
-            // panelControlLeft
-            // 
-            this.panelControlLeft.Controls.Add(this.lblFileLeft);
-            this.panelControlLeft.Controls.Add(this.sBtnLeft);
-            this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelControlLeft.Name = "panelControlLeft";
-            this.panelControlLeft.Size = new System.Drawing.Size(243, 32);
-            this.panelControlLeft.TabIndex = 3;
             // 
             // lblFileLeft
             // 
@@ -124,17 +105,6 @@
             this.sBtnLeft.TabIndex = 2;
             this.sBtnLeft.Text = "..";
             this.sBtnLeft.Click += new System.EventHandler(this.sBtnLeft_Click);
-            // 
-            // panelControlRight
-            // 
-            this.panelControlRight.Controls.Add(this.lblFileRight);
-            this.panelControlRight.Controls.Add(this.simpleButtonRight);
-            this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlRight.Location = new System.Drawing.Point(0, 0);
-            this.panelControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(255, 32);
-            this.panelControlRight.TabIndex = 4;
             // 
             // lblFileRight
             // 
@@ -172,10 +142,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).EndInit();
-            this.panelControlLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).EndInit();
-            this.panelControlRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -187,9 +153,7 @@
         private System.Windows.Forms.RichTextBox rtboxLeft;
         private System.Windows.Forms.Label lblFileLeft;
         private System.Windows.Forms.Label lblFileRight;
-        private DevExpress.XtraEditors.PanelControl panelControlLeft;
         private Syncfusion.WinForms.Controls.SfButton sBtnLeft;
-        private DevExpress.XtraEditors.PanelControl panelControlRight;
         private Syncfusion.WinForms.Controls.SfButton simpleButtonRight;
     }
 }

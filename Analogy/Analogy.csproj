@@ -287,11 +287,11 @@
     <Compile Include="Forms\AnalogyOTAClient.Designer.cs">
       <DependentUpon>AnalogyOTAClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserSettingsDataProvidersForm.cs">
       <SubType>Form</SubType>
@@ -325,12 +325,6 @@
     <Compile Include="GeneralExtensionMethods.cs" />
     <Compile Include="LogLoaders\EventViewerLogLoader.cs" />
     <Compile Include="LogLoaders\AnalogyXmlLogFile.cs" />
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AnalogyOTAForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,8 +542,8 @@
     <None Include="Resources\nlog.png" />
     <None Include="Resources\FilePooling_32x32.png" />
     <None Include="Resources\FilePooling_16x16.png" />
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSettingsDataProvidersForm.resx">
       <DependentUpon>UserSettingsDataProvidersForm.cs</DependentUpon>
@@ -746,9 +740,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AnalogyOTAClient.resx">
       <DependentUpon>AnalogyOTAClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AnalogyOTAForm.resx">
       <DependentUpon>AnalogyOTAForm.cs</DependentUpon>

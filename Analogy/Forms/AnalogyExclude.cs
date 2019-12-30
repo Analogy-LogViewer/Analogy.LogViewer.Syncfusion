@@ -56,7 +56,8 @@ namespace Analogy
 
         private void sBtnOk_Click(object sender, EventArgs e)
         {
-            GlobalExclusion = checkedListBox1.CheckedItems.Cast<DevExpress.XtraEditors.Controls.CheckedListBoxItem>().Select(i => FilterCriteriaObject.EscapeLikeValue((i.Value as AnalogyCheckListItem)?.Text)).ToList();
+            //todo check casting
+            GlobalExclusion = checkedListBox1.CheckedItems.Cast<AnalogyCheckListItem>().Select(i => FilterCriteriaObject.EscapeLikeValue(i.Text)).ToList();
             DialogResult = DialogResult.OK;
             Close();
         }

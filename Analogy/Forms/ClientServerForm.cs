@@ -67,5 +67,7 @@ namespace Analogy
 
             }
         }
+
+     
     }
 }

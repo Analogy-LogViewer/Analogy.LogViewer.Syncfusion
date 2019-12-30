@@ -1,24 +1,18 @@
-﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraTab;
-using DevExpress.XtraTab.ViewInfo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Analogy.DataSources;
+using Syncfusion.Windows.Forms.Tools;
+using System.IO;
+using System.Threading.Tasks;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.Managers;
 using Analogy.Properties;
 using Analogy.Tools;
 using Analogy.Types;
-using DevExpress.XtraEditors;
-using Newtonsoft.Json;
 
 namespace Analogy
 {
@@ -27,75 +21,105 @@ namespace Analogy
         private string filePoolingTitle = "File Pooling";
         private string offlineTitle = "Offline log";
         private string onlineTitle = "Online log";
-        private Dictionary<Guid, RibbonPage> Mapping = new Dictionary<Guid, RibbonPage>();
+        private Dictionary<Guid, ToolStripTabItem> Mapping = new Dictionary<Guid, ToolStripTabItem>();
 
-        private Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider> onlineDataSourcesMapping =
-            new Dictionary<XtraTabPage, IAnalogyRealTimeDataProvider>();
+        private Dictionary<OnlineUCLogs, IAnalogyRealTimeDataProvider> onlineDataSourcesMapping =
+            new Dictionary<OnlineUCLogs, IAnalogyRealTimeDataProvider>();
 
         private List<Task<bool>> OnlineSources = new List<Task<bool>>();
         private int offline;
         private int online;
         private int filePooling;
         private bool disableOnlineDueToFileOpen;
-        private XtraTabPage currentContextPage;
         private UserSettingsManager settings => UserSettingsManager.UserSettings;
         private bool Initialized { get; set; }
+
+        TouchStyleColorTable touch = new TouchStyleColorTable();
 
         public MainForm()
         {
             InitializeComponent();
-            AnalogyLogManager.Instance.OnNewError += (s, e) => btnErrors.Visibility = BarItemVisibility.Always;
+            AnalogyLogManager.Instance.OnNewError += (s, e) => tsslblError.Visible = true;
+            //  ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
+            touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
+            touch.ActiveToolStripTabItemBackColor = ColorTranslator.FromHtml("#f5f6f7");
+            touch.RibbonPanelBackColor = ColorTranslator.FromHtml("#f5f6f7");
+            touch.BackStageNavigationButtonBackColor = ColorTranslator.FromHtml("#1979ca");
+            touch.ToolStripBorderColor = ColorTranslator.FromHtml("#dadbdc");
+            touch.ToolstripSelectedTabItemBorder = ColorTranslator.FromHtml("#dadbdc");
+            touch.ToolstripTabItemBorder = Color.Transparent;
+            touch.ToolstripTabItemForeColor = ColorTranslator.FromHtml("#3c3c3c");
+            touch.HoverTabBackColor = ColorTranslator.FromHtml("#f5f6f7");
+            touch.BottomToolStripBackColor = ColorTranslator.FromHtml("#f5f6f7");
+            touch.ToolstripActiveTabItemForeColor = Color.Black;
+            touch.HoverTabForeColor = Color.Black;
+            touch.MinimizeButtonForeColor = Color.Black;
+            touch.MaximizeButtonForeColor = Color.Black;
+
+            ribbonControlMain.ApplyTouchStyleColorTable(touch);
+
+
+            ribbonControlMain.SelectedTab = toolStripTabItem1;
+
+            dockingManager1.EnableDocumentMode = true;
+            dockingManager1.DockTabAlignment = DockTabAlignmentStyle.Top;
+
+
         }
 
-
-        private void AnalogyMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void DockingManager1_NewDockStateEndLoad(object sender, EventArgs e)
         {
-            //todo: end onlines;
+
+            //dockingManager1.DockControl(panel1, this, DockingStyle.Bottom, 250);
+            //dockingManager1.DockControl(panel3, this, DockingStyle.Top, 250);
+            //  dockingManager1.DockControl(gradientPanel1,this,DockingStyle.Left,250);
+            //dockingManager1.DockControl(gradientPanel2, this, DockingStyle.Right, 250);
         }
-
-        private async void AnalogyMainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
+            tsslFileCaching.Text = $@"File caching is {(settings.EnableFileCaching ? "on" : "off")}";
+            SetupEventHandlers();
             string[] arguments = Environment.GetCommandLineArgs();
             disableOnlineDueToFileOpen = arguments.Length == 2;
             if (DesignMode) return;
 
-            bbiFileCaching.Caption = "File caching is " + (settings.EnableFileCaching ? "on" : "off");
-            bbtnCloseCurrentTabPage.ItemClick += (object s, ItemClickEventArgs ea) => { CloseCurrentTabPage(); };
-            bbtnCloseAllTabPage.ItemClick += (object s, ItemClickEventArgs ea) =>
-            {
-                var pages = xtcLogs.TabPages.ToList();
-                foreach (var page in pages)
-                {
-                    if (onlineDataSourcesMapping.ContainsKey(page))
-                    {
-                        onlineDataSourcesMapping[page].StopReceiving();
-                        onlineDataSourcesMapping.Remove(page);
-                    }
+            MainStatusStrip.Text = "File caching is " + (settings.EnableFileCaching ? "on" : "off");
+            //bbtnCloseCurrentTabPage.ItemClick += (object s, ItemClickEventArgs ea) => { CloseCurrentTabPage(); };
+            //bbtnCloseAllTabPage.ItemClick += (object s, ItemClickEventArgs ea) =>
+            //{
+            //    var pages = xtcLogs.TabPages.ToList();
+            //    foreach (var page in pages)
+            //    {
+            //        if (onlineDataSourcesMapping.ContainsKey(page))
+            //        {
+            //            onlineDataSourcesMapping[page].StopReceiving();
+            //            onlineDataSourcesMapping.Remove(page);
+            //        }
 
-                    xtcLogs.TabPages.Remove(page);
+            //        xtcLogs.TabPages.Remove(page);
 
-                }
-            };
-            bbtnCloseOtherTabPages.ItemClick += (object s, ItemClickEventArgs ea) =>
-            {
-                var pages = xtcLogs.TabPages.Where(p => p != currentContextPage).ToList();
-                foreach (var page in pages)
-                {
-                    if (onlineDataSourcesMapping.ContainsKey(page))
-                    {
-                        onlineDataSourcesMapping[page].StopReceiving();
-                        onlineDataSourcesMapping.Remove(page);
-                    }
+            //    }
+            //};
+            //bbtnCloseOtherTabPages.ItemClick += (object s, ItemClickEventArgs ea) =>
+            //{
+            //    var pages = xtcLogs.TabPages.Where(p => p != currentContextPage).ToList();
+            //    foreach (var page in pages)
+            //    {
+            //        if (onlineDataSourcesMapping.ContainsKey(page))
+            //        {
+            //            onlineDataSourcesMapping[page].StopReceiving();
+            //            onlineDataSourcesMapping.Remove(page);
+            //        }
 
-                    xtcLogs.TabPages.Remove(page);
+            //        xtcLogs.TabPages.Remove(page);
 
-                }
+            //    }
 
-            };
-            ribbonControlMain.Minimized = UserSettingsManager.UserSettings.StartupRibbonMinimized;
+            //};
+            ribbonControlMain.MinimizePanel = UserSettingsManager.UserSettings.StartupRibbonMinimized;
 
-
-            CreateAnalogyBuiltinDataProviders();
+            //todo
+            //CreateAnalogyBuiltinDataProviders();
             await FactoriesManager.Instance.AddExternalDataSources();
 
             CreateDataSources();
@@ -104,7 +128,7 @@ namespace Analogy
             Guid defaultPage = new Guid(UserSettingsManager.UserSettings.InitialSelectedDataProvider);
             if (Mapping.ContainsKey(defaultPage))
             {
-                ribbonControlMain.SelectedPage = Mapping[defaultPage];
+                ribbonControlMain.SelectedTab = Mapping[defaultPage];
             }
 
             if (OnlineSources.Any())
@@ -128,532 +152,108 @@ namespace Analogy
             }
             if (UserSettingsManager.UserSettings.RememberLastOpenedDataProvider && Mapping.ContainsKey(UserSettingsManager.UserSettings.LastOpenedDataProvider))
             {
-                ribbonControlMain.SelectPage(Mapping[UserSettingsManager.UserSettings.LastOpenedDataProvider]);
+                ribbonControlMain.SelectedTab = Mapping[UserSettingsManager.UserSettings.LastOpenedDataProvider];
             }
-            ribbonControlMain.SelectedPageChanging += ribbonControlMain_SelectedPageChanging;
+            ribbonControlMain.SelectedTabItemChanged += (s, arg) =>
+            {
+                if (Mapping.ContainsValue(arg.NewSelectedTab))
+                {
+                    Guid id = Mapping.Single(kv => kv.Value == arg.NewSelectedTab).Key;
+                    UserSettingsManager.UserSettings.LastOpenedDataProvider = id;
+                }
+            };
             if (AnalogyLogManager.Instance.HasErrorMessages || AnalogyLogManager.Instance.HasWarningMessages)
-                btnErrors.Visibility = BarItemVisibility.Always;
+                tsslblError.Visible = true;
+            
+
+
+            ribbonControlMain.MenuButtonText = "FILE";
+            ribbonControlMain.BackStageNavigationButtonStyle = BackStageNavigationButtonStyles.Office2013;
+            ribbonControlMain.QuickPanelAlignment = QuickPanelAlignment.Top;
+            touch.CloseButtonForeColor = Color.Black;
+            touch.RestoreButtonForeColor = Color.Black;
+            touch.BottomToolStripBackColor = ColorTranslator.FromHtml("#ffffff");
+            touch.QATDownArrowColor = Color.Black;
+            touch.ToolStripSpliterColor = ColorTranslator.FromHtml("#e2e3e4");
+            superAccelerator1.BackColor = ColorTranslator.FromHtml("#eaf0f8");
+            superAccelerator1.SetMenuButtonAccelerator(ribbonControlMain, "F");
+
         }
 
-
-
-        private void CreateAnalogyBuiltinDataProviders()
+        private void SetupEventHandlers()
         {
-            IAnalogyFactory analogy = FactoriesManager.Instance.Get(AnalogyBuiltInFactory.AnalogyGuid);
-            if (settings.GetFactorySetting(analogy.FactoryID).Status != DataProviderFactoryStatus.Disabled)
-                CreateDataSource(analogy, 0);
-            ribbonControlMain.SelectedPage = ribbonControlMain.Pages.First();
-            IAnalogyFactory eventLogDataFactory = FactoriesManager.Instance.Get(EventLogDataFactory.ID);
-            if (settings.GetFactorySetting(eventLogDataFactory.FactoryID).Status == DataProviderFactoryStatus.Disabled)
-                return;
-            //CreateEventLogsGroup
-            RibbonPage ribbonPage = new RibbonPage(eventLogDataFactory.Title);
-            EventLogDataProvider elds = eventLogDataFactory.DataProviders.Items.First() as EventLogDataProvider;
-            ribbonControlMain.Pages.Insert(2, ribbonPage);
-            RibbonPageGroup group = new RibbonPageGroup(eventLogDataFactory.DataProviders.Title);
-            ribbonPage.Groups.Add(group);
-
-
-            BarButtonItem evtxRealTime = new BarButtonItem();
-            evtxRealTime.Caption = "Real Time Windows Event Logs";
-            evtxRealTime.RibbonStyle = RibbonItemStyles.All;
-            evtxRealTime.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            evtxRealTime.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            evtxRealTime.ItemClick += (s, be) =>
+            tsslblError.Click += (s,e) => AnalogyLogManager.Instance.Show(this);
+            tmrStatusUpdates.Tick += TmrStatusUpdates_Tick;
+            tsslFileCaching.Click += (s, e) =>
             {
-                UserControl windowsEventlog = new WindowsEventLog();
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Controls.Add(windowsEventlog);
-                windowsEventlog.Dock = DockStyle.Fill;
-                page.Text = $"Windows Log";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+                settings.EnableFileCaching = !settings.EnableFileCaching;
+                tsslFileCaching.Text = $@"File caching is {(settings.EnableFileCaching ? "on" : "off")}";
             };
-            group.ItemLinks.Add(evtxRealTime);
-
-            BarButtonItem evtxFile = new BarButtonItem();
-            evtxFile.Caption = "Open Event log file (*.Evtx)";
-            evtxFile.RibbonStyle = RibbonItemStyles.All;
-            evtxFile.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            evtxFile.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            evtxFile.ItemClick += (s, be) =>
+            tsbSettingsFiltering.Click += (s, e) =>
             {
-
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Windows Event log files (*.evtx)|*.evtx";
-                openFileDialog1.Title = @"Open Files";
-                openFileDialog1.Multiselect = true;
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    OpenOfflineLogs(ribbonPage, openFileDialog1.FileNames, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(openFileDialog1.FileNames.ToList());
-                }
+                UserSettingsForm user = new UserSettingsForm(0);
+                user.ShowDialog(this);
             };
-            group.ItemLinks.Add(evtxFile);
-
-            BarButtonItem systemLog = new BarButtonItem();
-            systemLog.Caption = $"Open {Environment.MachineName} System Log file";
-            systemLog.RibbonStyle = RibbonItemStyles.All;
-            systemLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            systemLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            systemLog.ItemClick += (s, be) =>
+            tsbSettingsPreDefined.Click += (s, e) =>
             {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "System.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
+                UserSettingsForm user = new UserSettingsForm(1);
+                user.ShowDialog(this);
             };
-            group.ItemLinks.Add(systemLog);
-
-            BarButtonItem appLog = new BarButtonItem();
-            appLog.Caption = $"Open {Environment.MachineName} Application Log file";
-            appLog.RibbonStyle = RibbonItemStyles.All;
-            appLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            appLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            appLog.ItemClick += (s, be) =>
+            tsbSettingsLookAndFeel.Click += (s, e) =>
             {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "Application.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
+                UserSettingsForm user = new UserSettingsForm(2);
+                user.ShowDialog(this);
             };
-            group.ItemLinks.Add(appLog);
-
-            BarButtonItem secLog = new BarButtonItem();
-            secLog.Caption = $"Open {Environment.MachineName} Security Log file";
-            secLog.RibbonStyle = RibbonItemStyles.All;
-            secLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            secLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            secLog.ItemClick += (s, be) =>
+            tsbSettingsUserStatistics.Click += (s, e) =>
             {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "Security.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
+                UserSettingsForm user = new UserSettingsForm(3);
+                user.ShowDialog(this);
             };
-            group.ItemLinks.Add(secLog);
-            BarButtonItem btnFolder = new BarButtonItem();
-            btnFolder.Caption = $"Local Machine logs - {Environment.MachineName}";
-            btnFolder.RibbonStyle = RibbonItemStyles.All;
-            btnFolder.ImageOptions.Image = Resources.OperatingSystem_16x16;
-            btnFolder.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
-            btnFolder.ItemClick += (s, be) =>
+            tsbSettingsExtension.Click += (s, e) =>
             {
-                OfflineUCLogs offlineUC = new OfflineUCLogs(new EventLogDataProvider());
-                offlineUC.SelectedPath = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"),
-                    "System32", "Winevt", "Logs");
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(offlineUC);
-                offlineUC.Dock = DockStyle.Fill;
-                page.Text = $"Local Machine logs";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+                UserSettingsForm user = new UserSettingsForm(4);
+                user.ShowDialog(this);
             };
-            group.ItemLinks.Add(btnFolder);
-            CreateEventLogsMenu(ribbonPage);
+            tsbSettingsShortcuts.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(5);
+                user.ShowDialog(this);
+            };
+            tsbSettingsMRU.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(6);
+                user.ShowDialog(this);
+            };
+            tsbSettingsResources.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(7);
+                user.ShowDialog(this);
+            };
+            tsbSettingsDataProviders.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(8);
+                user.ShowDialog(this);
+            };
+            tsbSettingsCustomDataProviders.Click += (s, e) =>
+            {
+                UserSettingsForm user = new UserSettingsForm(9);
+                user.ShowDialog(this);
+            };
         }
 
-        private void CreateEventLogsMenu(RibbonPage ribbonPage)
+        private void TmrStatusUpdates_Tick(object sender, EventArgs e)
         {
-            EventLogDataProvider elds = new EventLogDataProvider();
-            BarButtonItem evtxRealTime = new BarButtonItem();
-            evtxRealTime.Caption = "Real Time Windows Event Logs";
-            evtxRealTime.ItemClick += (s, be) =>
+            tmrStatusUpdates.Stop();
+            tsslMemoryUsage.Text = Process.GetCurrentProcess().PrivateMemorySize64 / 1024 / 1024 + " [MB]";
+            if (settings.IdleMode)
             {
-                UserControl windowsEventlog = new WindowsEventLog();
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(windowsEventlog);
-                windowsEventlog.Dock = DockStyle.Fill;
-                page.Text = $"Windows Log";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
-            };
-            bsiWindowsEventLogs.AddItem(evtxRealTime);
-
-            BarButtonItem evtxFile = new BarButtonItem();
-            evtxFile.Caption = "Open Event log file (*.Evtx)";
-            evtxFile.ItemClick += (s, be) =>
-            {
-
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Windows Event log files (*.evtx)|*.evtx";
-                openFileDialog1.Title = @"Open Files";
-                openFileDialog1.Multiselect = true;
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    OpenOfflineLogs(ribbonPage, openFileDialog1.FileNames, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(openFileDialog1.FileNames.ToList());
-                }
-            };
-            bsiWindowsEventLogs.AddItem(evtxFile);
-
-            BarButtonItem systemLog = new BarButtonItem();
-            systemLog.Caption = $"Open {Environment.MachineName} System Log file";
-            systemLog.ItemClick += (s, be) =>
-            {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "System.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
-            };
-            bsiWindowsEventLogs.AddItem(systemLog);
-
-            BarButtonItem appLog = new BarButtonItem();
-            appLog.Caption = $"Open {Environment.MachineName} Application Log file";
-            appLog.ItemClick += (s, be) =>
-            {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "Application.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
-            };
-            bsiWindowsEventLogs.AddItem(appLog);
-
-            BarButtonItem secLog = new BarButtonItem();
-            secLog.Caption = $"Open {Environment.MachineName} Security Log file";
-            secLog.ItemClick += (s, be) =>
-            {
-                string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
-                    "Logs", "Security.evtx");
-                if (File.Exists(file))
-                {
-                    OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
-                    AddRecentWindowsEventLogFiles(new List<string>() { file });
-                }
-            };
-            bsiWindowsEventLogs.AddItem(secLog);
-            BarButtonItem btnFolder = new BarButtonItem();
-            btnFolder.Caption = $"Local Machine logs - {Environment.MachineName}";
-            btnFolder.ItemClick += (s, be) =>
-            {
-                OfflineUCLogs offlineUC = new OfflineUCLogs(new EventLogDataProvider());
-                offlineUC.SelectedPath = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"),
-                    "System32", "Winevt", "Logs");
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Controls.Add(offlineUC);
-                offlineUC.Dock = DockStyle.Fill;
-                page.Text = $"Local Machine logs";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
-            };
-            bsiWindowsEventLogs.AddItem(btnFolder);
-        }
-
-        private void OpenOfflineLogs(RibbonPage ribbonPage, string[] filenames,
-            IAnalogyOfflineDataProvider dataProvider,
-            string title = null)
-        {
-            offline++;
-            UserControl offlineUC = new OfflineUCLogs(dataProvider, filenames);
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Tag = ribbonPage;
-            page.Controls.Add(offlineUC);
-            offlineUC.Dock = DockStyle.Fill;
-            page.Text = $"{offlineTitle} #{offline}{(title == null ? "" : $" ({title})")}";
-            xtcLogs.TabPages.Add(page);
-            xtcLogs.SelectedTabPage = page;
-        }
-
-        private async Task OpenOfflineFileWithSpecificDataProvider(string[] files)
-        {
-            while (!Initialized)
-                await Task.Delay(250);
-            var supported = FactoriesManager.Instance.GetSupportedOfflineDataSources(files).ToList();
-            if (supported.Count == 1)
-            {
-                var parser = supported.First();
-                RibbonPage page = (Mapping.ContainsKey(parser.FactoryID)) ? Mapping[parser.FactoryID] : null;
-                OpenOfflineLogs(page, files, parser.DataProvider);
+                tsslIdleMessage.Text = $@"Idle mode is on. User idle: {Utils.IdleTime():hh\:mm\:ss}. Missed messages: {PagingManager.TotalMissedMessages}";
             }
             else
-            {
-                supported = FactoriesManager.Instance.GetSupportedOfflineDataSources(files).Where(itm =>
-                    !FactoriesManager.Instance.IsBuiltInFactory(itm.FactoryID)).ToList();
-                if (supported.Count == 1)
-                {
-                    var parser = supported.First();
-                    RibbonPage page = (Mapping.ContainsKey(parser.FactoryID)) ? Mapping[parser.FactoryID] : null;
-                    OpenOfflineLogs(page, files, parser.DataProvider);
-                }
-                else
-                {
-                    //try  from file association:
-                    var supportedAssociation = settings.GetFactoriesThatHasFileAssociation(files).ToList();
-                    if (supportedAssociation.Count == 1)
-                    {
-                        var factory = supportedAssociation.First();
-                        var parser = FactoriesManager.Instance
-                            .GetSupportedOfflineDataSourcesFromFactory(factory.FactoryGuid, files).ToList();
-                        RibbonPage page = (Mapping.ContainsKey(factory.FactoryGuid)) ? Mapping[factory.FactoryGuid] : null;
-                        if (parser.Count == 1)
-                            OpenOfflineLogs(page, files, parser.First());
-                        else
-                        {
-                            XtraMessageBox.Show(
-                                $@"More than one data provider detected for this file for {factory.FactoryName}." + Environment.NewLine +
-                                "Please open it directly from the data provider menu", "Unable to open file",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
+                tsslIdleMessage.Text = "Idle mode is off";
 
-                    }
-                    else
-
-                        XtraMessageBox.Show(
-                            "Zero or more than one data provider detected for this file." + Environment.NewLine +
-                            "Please open it directly from the data provider menu", "Unable to open file",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-
-            }
+            tmrStatusUpdates.Start();
         }
-
-        private void AnalogyMainForm_DragDrop(object sender, DragEventArgs e)
-        {
-            // Handle FileDrop data.
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                // Assign the file names to a string array, in 
-                // case the user has selected multiple files.
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                OpenOfflineFileWithSpecificDataProvider(files);
-            }
-        }
-
-        private void AnalogyMainForm_DragEnter(object sender, DragEventArgs e) =>
-            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
-
-        private void OpenOTALogs()
-        {
-            var OTAUC = new OTALogs();
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Controls.Add(OTAUC);
-            OTAUC.Dock = DockStyle.Fill;
-            page.Text = $"Over the air log";
-            xtcLogs.TabPages.Add(page);
-            xtcLogs.SelectedTabPage = page;
-        }
-
-        private void OpenProcessForm()
-        {
-            var p = new ProcessNameAndID();
-            p.Show(this);
-        }
-
-
-        private void btnItemOTA_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            OpenOTALogs();
-        }
-
-        private void bItemProcess_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            OpenProcessForm();
-        }
-
-        private void bbiExtensions_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var ex = new ExtensionsForm();
-            ex.ShowDialog(this);
-        }
-
-        private void xtcLogs_CloseButtonClick(object sender, EventArgs e)
-        {
-            ClosePageButtonEventArgs arg = e as ClosePageButtonEventArgs;
-            xtcLogs.TabPages.Remove(arg.Page as XtraTabPage);
-
-        }
-
-        private void AddRecentWindowsEventLogFiles(List<string> files)
-        {
-            //if (files.Any())
-            //{
-            //    foreach (string file in files)
-            //    {
-            //        if (!File.Exists(file)) continue;
-            //        BarButtonItem btn = new BarButtonItem();
-            //        btn.Caption = file;
-            //        btn.ItemClick += (s, be) =>
-            //        {
-            //            OpenOfflineLogs(new[] { be.Item.Caption });
-            //        };
-            //        bsiRecent.AddItem(btn);
-            //    }
-            //}
-        }
-
-        private void AddRecentFiles(RibbonPage ribbonPage, BarSubItem bar, IAnalogyOfflineDataProvider offlineAnalogy,
-            string title, List<string> files)
-        {
-
-            if (files.Any())
-            {
-                foreach (string file in files)
-                {
-                    if (!File.Exists(file)) continue;
-                    BarButtonItem btn = new BarButtonItem();
-                    btn.Caption = file;
-                    btn.ItemClick += (s, be) =>
-                    {
-                        OpenOfflineLogs(ribbonPage, new[] { be.Item.Caption }, offlineAnalogy, title);
-                    };
-                    bar.AddItem(btn);
-                }
-            }
-        }
-
-        private void AnalogyMainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            settings.UpdateRunningTime();
-            settings.Save();
-            BookmarkPersistManager.Instance.SaveFile();
-        }
-
-        private void bbtnItemChangeLog_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var change = new ChangeLog();
-            change.ShowDialog(this);
-        }
-
-        private void bbtnItemHelp_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            AnalogyAboutBox ab = new AnalogyAboutBox();
-            ab.ShowDialog(this);
-        }
-
-        private void bbtnItemSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm();
-            user.ShowDialog(this);
-        }
-
-        private void bbtnItemExit_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void bBtnClientServer_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-
-        private void bBtnBookmarked_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            OpenBookmarkLog();
-        }
-
-        private void OpenBookmarkLog()
-        {
-            offline++;
-            var bookmarkLog = new BookmarkLog();
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Controls.Add(bookmarkLog);
-            bookmarkLog.Dock = DockStyle.Fill;
-            page.Text = $"Analogy Bookmarked logs #{offline}";
-            xtcLogs.TabPages.Add(page);
-            xtcLogs.SelectedTabPage = page;
-        }
-
-        private void bBtnStatisticsFiltering_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(0);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnPreDefinedQueries_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(1);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnStatisticsLookAndFeel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(2);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnStatisticsUserStatistics_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(3);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnExtensionSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(4);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnCompareLogs_ItemClick(object sender, ItemClickEventArgs e)
-        {
-        }
-
-        private void bBtnWindowsEventLogs_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            //openFileDialog1.Filter = "Windows Event log files (*.evtx)|*.evtx";
-            //openFileDialog1.Title = @"Open Files";
-            //openFileDialog1.Multiselect = true;
-            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    OpenOfflineLogs(openFileDialog1.FileNames);
-            //    AddRecentFiles(openFileDialog1.FileNames.ToList());
-            //}
-
-        }
-
-        private void bBtnShortcuts_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(5);
-            user.ShowDialog(this);
-        }
-
-        private void bBtnMRUSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(6);
-            user.ShowDialog(this);
-        }
-
-
-        private void bBtnOnlineEventLogs_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserControl offlineUC = new WindowsEventLog();
-            XtraTabPage page = new XtraTabPage();
-            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            page.Controls.Add(offlineUC);
-            offlineUC.Dock = DockStyle.Fill;
-            page.Text = $"Windows Log";
-            xtcLogs.TabPages.Add(page);
-            xtcLogs.SelectedTabPage = page;
-
-        }
-
         private void CreateDataSources()
         {
             foreach (IAnalogyFactory factory in FactoriesManager.Instance.GetFactories()
@@ -669,8 +269,8 @@ namespace Analogy
         {
             if (factory.Title == null) return;
 
-            RibbonPage ribbonPage = new RibbonPage(factory.Title);
-            ribbonControlMain.Pages.Insert(position, ribbonPage);
+            ToolStripTabItem ribbonPage = new ToolStripTabItem { Text = factory.Title };
+            ribbonControlMain.Header.AddMainItem(ribbonPage);
             Mapping.Add(factory.FactoryID, ribbonPage);
 
             //todo:move logic to factory manager
@@ -684,54 +284,70 @@ namespace Analogy
             var actionFactory = factory.Actions;
             if (actionFactory?.Items != null && actionFactory.Items.Any() && !string.IsNullOrEmpty(actionFactory.Title))
             {
-                RibbonPageGroup groupActionSource = new RibbonPageGroup(actionFactory.Title);
-                groupActionSource.AllowTextClipping = false;
-                ribbonPage.Groups.Add(groupActionSource);
+                ToolStripEx groupActionSource = new ToolStripEx
+                {
+                    Text = actionFactory.Title,
+                    AllowMenuTextAlignment = true,
+                    AutoSize = true
+                };
+                ribbonPage.Panel.Controls.Add(groupActionSource);
                 foreach (IAnalogyCustomAction action in actionFactory.Items)
                 {
-                    BarButtonItem actionBtn = new BarButtonItem();
-                    actionBtn.Caption = action.Title;
-                    actionBtn.RibbonStyle = RibbonItemStyles.All;
-                    groupActionSource.ItemLinks.Add(actionBtn);
-                    actionBtn.ImageOptions.Image = Resources.PageSetup_32x32;
-                    actionBtn.ImageOptions.LargeImage = Resources.PageSetup_32x32;
-                    actionBtn.ItemClick += (sender, e) => { action.Action(); };
+                    ToolStripButton actionBtn = new ToolStripButton(action.Title, Resources.PageSetup_32x32)
+                    {
+                        DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                        TextImageRelation = TextImageRelation.ImageAboveText
+                    };
+                    groupActionSource.Items.Add(actionBtn);
+                    actionBtn.Click += (sender, e) => { action.Action(); };
                 }
             }
 
-            RibbonPageGroup groupInfoSource = new RibbonPageGroup("About");
-            groupInfoSource.Alignment = RibbonPageGroupAlignment.Far;
-            BarButtonItem aboutBtn = new BarButtonItem();
-            aboutBtn.Caption = "Data Source Information";
-            aboutBtn.RibbonStyle = RibbonItemStyles.All;
-            groupInfoSource.ItemLinks.Add(aboutBtn);
-            aboutBtn.ImageOptions.Image = Resources.About_16x16;
-            aboutBtn.ImageOptions.LargeImage = Resources.About_32x32;
-            aboutBtn.ItemClick += (sender, e) => { new AboutDataSourceBox(factory).ShowDialog(this); };
-            ribbonPage.Groups.Add(groupInfoSource);
+            ToolStripEx groupInfoSource = new ToolStripEx
+            {
+                Text = "About",
+                AutoSize = true
+            };
+            ribbonPage.Panel.Controls.Add(groupInfoSource);
+            ToolStripButton aboutBtn = new ToolStripButton("Data Source Information", Resources.About_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+
+            groupInfoSource.Items.Add(aboutBtn);
+            aboutBtn.Click += (sender, e) => { new AboutDataSourceBox(factory).ShowDialog(this); };
         }
 
-        private void CreateDataSourceRibbonGroup(IAnalogyDataProvidersFactory dataSourceFactory, RibbonPage ribbonPage)
+        private void CreateDataSourceRibbonGroup(IAnalogyDataProvidersFactory dataSourceFactory, ToolStripTabItem ribbonPage)
         {
-            RibbonPageGroup ribbonPageGroup = new RibbonPageGroup(dataSourceFactory.Title);
-            ribbonPageGroup.AllowTextClipping = false;
-            ribbonPage.Groups.Add(ribbonPageGroup);
+            ToolStripEx ribbonPageGroup = new ToolStripEx { Text = dataSourceFactory.Title, AutoSize = true };
+            ribbonPage.Panel.Controls.Add(ribbonPageGroup);
 
             AddRealTimeDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
             AddOfflineDataSource(ribbonPage, dataSourceFactory, ribbonPageGroup);
 
 
             //add bookmark
-            BarButtonItem bookmarkBtn = new BarButtonItem();
-            bookmarkBtn.Caption = "Bookmarks";
-            bookmarkBtn.RibbonStyle = RibbonItemStyles.All;
-            ribbonPageGroup.ItemLinks.Add(bookmarkBtn);
-            bookmarkBtn.ImageOptions.Image = Resources.RichEditBookmark_16x16;
-            bookmarkBtn.ImageOptions.LargeImage = Resources.RichEditBookmark_32x32;
-            bookmarkBtn.ItemClick += (sender, e) => { OpenBookmarkLog(); };
+            ToolStripButton bookmarkBtn = new ToolStripButton("Bookmarks", Resources.RichEditBookmark_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize = true,
+            };
+
+            ribbonPageGroup.Items.Add(bookmarkBtn);
+            bookmarkBtn.Click += (sender, e) => { OpenBookmarkLog(); };
         }
 
-        private void AddRealTimeDataSource(RibbonPage ribbonPage, IAnalogyDataProvidersFactory dataSourceFactory, RibbonPageGroup group)
+        private void AddToDockingManager(Control control, string title)
+        {
+            dockingManager1.SetDockLabel(control, title);
+            dockingManager1.SetCustomCaptionButtons(control, new CaptionButtonsCollection());
+            dockingManager1.DockAsDocument(control);
+
+        }
+        private void AddRealTimeDataSource(ToolStripTabItem ribbonPage, IAnalogyDataProvidersFactory dataSourceFactory, ToolStripEx group)
         {
             var realtimes = dataSourceFactory.Items.Where(f => f is IAnalogyRealTimeDataProvider)
                 .Cast<IAnalogyRealTimeDataProvider>().ToList();
@@ -742,25 +358,24 @@ namespace Analogy
             }
             else
             {
-                BarSubItem realTimeMenu = new BarSubItem();
-                group.ItemLinks.Add(realTimeMenu);
-                realTimeMenu.ImageOptions.Image = Resources.Database_off;
-                realTimeMenu.RibbonStyle = RibbonItemStyles.All;
-                realTimeMenu.Caption = "Real Time Logs";
-
+                ToolStripDropDownButton realTimeMenu =
+                    new ToolStripDropDownButton("Real Time Logs", Resources.Database_off)
+                    {
+                        DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                        TextImageRelation = TextImageRelation.ImageAboveText
+                    };
+                group.Items.Add(realTimeMenu);
 
                 foreach (var realTime in realtimes)
                 {
-
-
-                    BarButtonItem realTimeBtn = new BarButtonItem();
-                    realTimeMenu.ItemLinks.Add(realTimeBtn);
-                    realTimeBtn.ImageOptions.Image = Resources.Database_off;
-                    realTimeBtn.RibbonStyle = RibbonItemStyles.All;
-                    realTimeBtn.Caption = "Real Time Logs" + (!string.IsNullOrEmpty(realTime.OptionalTitle)
-                                              ? $" - {realTime.OptionalTitle}"
-                                              : string.Empty);
-
+                    ToolStripMenuItem realTimeBtn = new ToolStripMenuItem()
+                    {
+                        Image = Resources.Database_off,
+                        Text = "Real Time Logs" + (!string.IsNullOrEmpty(realTime.OptionalTitle)
+                                   ? $" - {realTime.OptionalTitle}"
+                                   : string.Empty)
+                    };
+                    realTimeMenu.DropDownItems.Add(realTimeBtn);
                     async Task<bool> OpenRealTime()
                     {
                         realTimeBtn.Enabled = false;
@@ -777,7 +392,7 @@ namespace Analogy
                         if (canStartReceiving) //connected
                         {
                             online++;
-                            realTimeBtn.ImageOptions.Image = Resources.Database_on;
+                            realTimeBtn.Image = Resources.Database_on;
                             var onlineUC = new OnlineUCLogs(realTime);
 
                             void OnRealTimeOnMessageReady(object sender, AnalogyLogMessageArgs e) =>
@@ -792,27 +407,26 @@ namespace Analogy
                                     $"Source {dataSourceFactory.Title} Disconnected. Reason: {e.DisconnectedReason}",
                                     AnalogyLogLevel.AnalogyInformation, AnalogyLogClass.General, dataSourceFactory.Title, "Analogy");
                                 onlineUC.AppendMessage(disconnected, Environment.MachineName);
-                                realTimeBtn.ImageOptions.Image = Resources.Database_off;
+                                realTimeBtn.Image = Resources.Database_off;
                             }
 
-                            XtraTabPage page = new XtraTabPage();
-                            page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                            page.Tag = ribbonPage;
-                            page.Controls.Add(onlineUC);
-                            ribbonControlMain.SelectedPage = ribbonPage;
+                            onlineUC.Tag = ribbonPage;
+                            ribbonControlMain.SelectedTab = ribbonPage;
                             onlineUC.Dock = DockStyle.Fill;
-                            page.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
-                            xtcLogs.TabPages.Add(page);
+                            onlineUC.Text = $"{onlineTitle} #{online} ({dataSourceFactory.Title})";
+                            AddToDockingManager(onlineUC, onlineUC.Text);
+                            //xtcLogs.TabPages.Add(page);
                             realTime.OnMessageReady += OnRealTimeOnMessageReady;
                             realTime.OnManyMessagesReady += OnRealTimeOnOnManyMessagesReady;
                             realTime.OnDisconnected += OnRealTimeDisconnected;
                             realTime.StartReceiving();
-                            onlineDataSourcesMapping.Add(page, realTime);
-                            xtcLogs.SelectedTabPage = page;
+                            onlineDataSourcesMapping.Add(onlineUC, realTime);
+                            dockingManager1.ActivateControl(onlineUC);
+                            //xtcLogs.SelectedTabPage = page;
 
-                            void OnXtcLogsOnControlRemoved(object sender, ControlEventArgs arg)
+                            void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                             {
-                                if (arg.Control == page)
+                                if (arg.Control == onlineUC)
                                 {
                                     try
                                     {
@@ -830,12 +444,12 @@ namespace Analogy
                                     }
                                     finally
                                     {
-                                        xtcLogs.ControlRemoved -= OnXtcLogsOnControlRemoved;
+                                        dockingManager1.DockVisibilityChanged -= OnXtcLogsOnControlRemoved;
                                     }
                                 }
                             }
-
-                            xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
+                            dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
+                            //xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
                             realTimeBtn.Enabled = true;
                             return true;
                         }
@@ -844,7 +458,7 @@ namespace Analogy
                         return false;
                     }
 
-                    realTimeBtn.ItemClick += async (s, be) => await OpenRealTime();
+                    realTimeBtn.Click += async (s, be) => await OpenRealTime();
                     if (settings.AutoStartDataProviders.Contains(realTime.ID)
                         && !disableOnlineDueToFileOpen)
                     {
@@ -862,12 +476,11 @@ namespace Analogy
 
                     }
 
-                    /// 
                 }
             }
         }
 
-        private void AddOfflineDataSource(RibbonPage ribbonPage, IAnalogyDataProvidersFactory factory, RibbonPageGroup group)
+        private void AddOfflineDataSource(ToolStripTabItem ribbonPage, IAnalogyDataProvidersFactory factory, ToolStripEx group)
         {
 
             var offlineProviders = factory.Items.Where(f => f is IAnalogyOfflineDataProvider)
@@ -880,10 +493,18 @@ namespace Analogy
                 string optionalText = !string.IsNullOrEmpty(offlineAnalogy.OptionalTitle)
                     ? " for" + offlineAnalogy.OptionalTitle
                     : string.Empty;
-                RibbonPageGroup groupOfflineFileTools = new RibbonPageGroup($"Tools{optionalText}");
-                groupOfflineFileTools.AllowTextClipping = false;
-                ribbonPage.Groups.Add(groupOfflineFileTools);
+                ToolStripEx groupOfflineFileTools = new ToolStripEx { Text = $"Tools{optionalText}", AutoSize = true };
                 AddSingleOfflineDataSource(ribbonPage, offlineAnalogy, factory.Title, group, groupOfflineFileTools);
+                groupOfflineFileTools.AllowMenuTextAlignment = true;
+                ribbonPage.Panel.Controls.Add(groupOfflineFileTools);
+
+                //int width = 0;
+
+                //foreach (ToolStripItem control in groupOfflineFileTools.Items)
+                //{
+                //    width += control.Size.Width;
+                //}
+                //groupOfflineFileTools.Size = new Size(width + 70, groupOfflineFileTools.Size.Height);
             }
             else
             {
@@ -892,36 +513,40 @@ namespace Analogy
 
         }
 
-        private void AddMultiplesOfflineDataSource(RibbonPage ribbonPage,
-            List<IAnalogyOfflineDataProvider> offlineProviders, string factoryTitle, RibbonPageGroup group)
+        private void AddMultiplesOfflineDataSource(ToolStripTabItem ribbonPage,
+            List<IAnalogyOfflineDataProvider> offlineProviders, string factoryTitle, ToolStripEx group)
         {
             void OpenOffline(string titleOfDataSource, IAnalogyOfflineDataProvider dataProvider, string initialFolder,
                 string[] files = null)
             {
                 offline++;
-                UserControl offlineUC = new OfflineUCLogs(dataProvider, files, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(offlineUC);
+                UserControl offlineUC = new OfflineUCLogs(dataProvider, files, initialFolder)
+                {
+                    Tag = ribbonPage
+                };
                 offlineUC.Dock = DockStyle.Fill;
-                page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+                offlineUC.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
+
+                AddToDockingManager(offlineUC, offlineUC.Text);
+                dockingManager1.ActivateControl(offlineUC);
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
             }
 
             void OpenExternalDataSource(string titleOfDataSource, IAnalogyOfflineDataProvider analogy)
             {
                 offline++;
                 var ClientServerUCLog = new ClientServerUCLog(analogy);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(ClientServerUCLog);
+
+
+                ClientServerUCLog.Tag = ribbonPage;
+                ClientServerUCLog.Controls.Add(ClientServerUCLog);
                 ClientServerUCLog.Dock = DockStyle.Fill;
-                page.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+                ClientServerUCLog.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
+                AddToDockingManager(ClientServerUCLog, ClientServerUCLog.Text);
+                dockingManager1.ActivateControl(ClientServerUCLog);
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
             }
 
             void OpenFilePooling(string titleOfDataSource, IAnalogyOfflineDataProvider dataProvider,
@@ -930,11 +555,10 @@ namespace Analogy
 
                 offline++;
                 UserControl filepoolingUC = new FilePoolingUCLogs(dataProvider, file, initialFolder);
-                XtraTabPage page = new XtraTabPage();
 
-                void OnXtcLogsOnControlRemoved(object sender, ControlEventArgs arg)
+                void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                 {
-                    if (arg.Control == page)
+                    if (arg.Control == filepoolingUC)
                     {
                         try
                         {
@@ -946,39 +570,38 @@ namespace Analogy
                         }
                         finally
                         {
-                            xtcLogs.ControlRemoved -= OnXtcLogsOnControlRemoved;
+                            dockingManager1.DockVisibilityChanged -= OnXtcLogsOnControlRemoved;
                         }
                     }
                 }
 
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                page.Tag = ribbonPage;
-                page.Controls.Add(filepoolingUC);
+                filepoolingUC.Tag = ribbonPage;
                 filepoolingUC.Dock = DockStyle.Fill;
-                page.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
-                xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
+                filepoolingUC.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
+                AddToDockingManager(filepoolingUC, filepoolingUC.Text);
+                dockingManager1.ActivateControl(filepoolingUC);
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
+                dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
             }
 
 
             //recent bar
-            BarSubItem recentBar = new BarSubItem();
-            recentBar.Caption = "Recently Used Files";
-            recentBar.ImageOptions.Image = Resources.RecentlyUse_16x16;
-            recentBar.ImageOptions.LargeImage = Resources.RecentlyUse_32x32;
-            recentBar.RibbonStyle = RibbonItemStyles.All;
-
+            var recentBar = new ToolStripDropDownButton("Recently Used Files", Resources.RecentlyUse_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
             //local folder
             if (offlineProviders.Any(i => !string.IsNullOrEmpty(i.InitialFolderFullPath) &&
                                           Directory.Exists(i.InitialFolderFullPath)))
             {
-                BarSubItem folderBar = new BarSubItem();
-                folderBar.Caption = "Open Folder";
-                folderBar.ImageOptions.Image = Resources.Open2_32x32;
-                folderBar.ImageOptions.LargeImage = Resources.Open2_32x32;
-                folderBar.RibbonStyle = RibbonItemStyles.All;
-                group.ItemLinks.Add(folderBar);
+                ToolStripDropDownButton folderBar = new ToolStripDropDownButton("Open Folder", Resources.Open2_32x32)
+                {
+                    DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                    TextImageRelation = TextImageRelation.ImageAboveText
+                };
+                group.Items.Add(folderBar);
 
                 foreach (var dataProvider in offlineProviders)
                 {
@@ -987,14 +610,14 @@ namespace Analogy
                     if (!string.IsNullOrEmpty(dataProvider.InitialFolderFullPath) &&
                         Directory.Exists(dataProvider.InitialFolderFullPath))
                     {
-                        BarButtonItem btn = new BarButtonItem { Caption = dataProvider.InitialFolderFullPath };
-                        btn.ItemClick += (s, be) =>
+                        ToolStripMenuItem btn = new ToolStripMenuItem { Text = dataProvider.InitialFolderFullPath };
+                        btn.Click += (s, be) =>
                         {
                             OpenOffline(dataProvider.OptionalTitle, dataProvider,
                                 dataProvider.InitialFolderFullPath);
                         };
 
-                        folderBar.AddItem(btn);
+                        folderBar.DropDownItems.Add(btn);
                     }
                 }
             }
@@ -1004,20 +627,19 @@ namespace Analogy
             if (offlineProviders.Any(i => !string.IsNullOrEmpty(i.FileOpenDialogFilters)))
             {
                 //add Open files entry
-                BarSubItem openFiles = new BarSubItem();
-                openFiles.Caption = "Open Files";
-                group.ItemLinks.Add(openFiles);
-                openFiles.ImageOptions.Image = Resources.Article_16x16;
-                openFiles.ImageOptions.LargeImage = Resources.Article_32x32;
-                openFiles.RibbonStyle = RibbonItemStyles.All;
-
+                var openFiles = new ToolStripDropDownButton("Open Files", Resources.Article_32x32)
+                {
+                    DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                    TextImageRelation = TextImageRelation.ImageAboveText
+                };
+                group.Items.Add(openFiles);
                 foreach (var dataProvider in offlineProviders)
                 {
 
                     if (!string.IsNullOrEmpty(dataProvider.FileOpenDialogFilters))
                     {
-                        BarButtonItem btnOpenFile = new BarButtonItem { Caption = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
-                        btnOpenFile.ItemClick += (sender, e) =>
+                        ToolStripMenuItem btnOpenFile = new ToolStripMenuItem { Text = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
+                        btnOpenFile.Click += (sender, e) =>
                         {
                             OpenFileDialog openFileDialog1 = new OpenFileDialog
                             {
@@ -1033,26 +655,24 @@ namespace Analogy
                                     openFileDialog1.FileNames.ToList());
                             }
                         };
-                        openFiles.AddItem(btnOpenFile);
+                        openFiles.DropDownItems.Add(btnOpenFile);
                     }
                 }
 
 
 
                 //add Open Pooled file entry
-                BarSubItem filePoolingBtn = new BarSubItem();
-                filePoolingBtn.Caption = "File Pooling";
-                group.ItemLinks.Add(filePoolingBtn);
-                filePoolingBtn.ImageOptions.Image = Resources.FilePooling_16x16;
-                filePoolingBtn.ImageOptions.LargeImage = Resources.FilePooling_32x32;
-                filePoolingBtn.RibbonStyle = RibbonItemStyles.All;
-
+                ToolStripDropDownButton filePoolingBtn =
+                    new ToolStripDropDownButton("File Pooling", Resources.FilePooling_32x32)
+                    {
+                        DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                        TextImageRelation = TextImageRelation.ImageAboveText
+                    };
+                group.Items.Add(filePoolingBtn);
                 foreach (var dataProvider in offlineProviders)
                 {
-
-
-                    BarButtonItem btnOpenFile = new BarButtonItem { Caption = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
-                    btnOpenFile.ItemClick += (sender, e) =>
+                    ToolStripMenuItem btnOpenFile = new ToolStripMenuItem { Text = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
+                    btnOpenFile.Click += (sender, e) =>
                     {
                         OpenFileDialog openFileDialog1 = new OpenFileDialog
                         {
@@ -1068,13 +688,13 @@ namespace Analogy
                                 new List<string> { openFileDialog1.FileName });
                         }
                     };
-                    filePoolingBtn.AddItem(btnOpenFile);
+                    filePoolingBtn.DropDownItems.Add(btnOpenFile);
                 }
             }
 
 
             //add recent
-            group.ItemLinks.Add(recentBar);
+            group.Items.Add(recentBar);
             foreach (var dataProvider in offlineProviders)
             {
                 var recents = UserSettingsManager.UserSettings.RecentFiles.Where(itm => itm.ID == dataProvider.ID)
@@ -1082,135 +702,132 @@ namespace Analogy
                 AddRecentFiles(ribbonPage, recentBar, dataProvider, dataProvider.OptionalTitle, recents);
             }
 
-            BarSubItem externalSources = new BarSubItem();
-            externalSources.Caption = "Known Locations";
-            externalSources.RibbonStyle = RibbonItemStyles.All;
-            group.ItemLinks.Add(externalSources);
-            externalSources.ImageOptions.Image = Resources.ServerMode_16x16;
-            externalSources.ImageOptions.LargeImage = Resources.ServerMode_32x32;
+            ToolStripDropDownButton externalSources = new ToolStripDropDownButton("Known Locations", Resources.ServerMode_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+
+            group.Items.Add(externalSources);
             //add client/server  button:
             foreach (var dataProvider in offlineProviders)
             {
-                BarButtonItem btnOpenLocation = new BarButtonItem { Caption = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
-                btnOpenLocation.ItemClick += (sender, e) =>
+                ToolStripMenuItem btnOpenLocation = new ToolStripMenuItem { Text = $"{factoryTitle} ({dataProvider.OptionalTitle})" };
+                btnOpenLocation.Click += (sender, e) =>
                 {
                     OpenExternalDataSource(dataProvider.OptionalTitle, dataProvider);
                 };
-                externalSources.AddItem(btnOpenLocation);
+                externalSources.DropDownItems.Add(btnOpenLocation);
             }
 
 
             //add tools
 
-            RibbonPageGroup groupOfflineFileTools = new RibbonPageGroup($"Tools for {factoryTitle}");
-            groupOfflineFileTools.AllowTextClipping = false;
-            ribbonPage.Groups.Add(groupOfflineFileTools);
+            ToolStripEx groupOfflineFileTools = new ToolStripEx()
+            {
+                Text = $"Tools for {factoryTitle}",
+                AutoSize = true
+            };
+            ribbonPage.Panel.Controls.Add(groupOfflineFileTools);
 
 
-            BarSubItem searchFiles = new BarSubItem();
-            searchFiles.Caption = "Search in Files";
-            groupOfflineFileTools.ItemLinks.Add(searchFiles);
-            searchFiles.ImageOptions.Image = Resources.Lookup_Reference_32x32;
-            searchFiles.ImageOptions.LargeImage = Resources.Lookup_Reference_32x32;
-            searchFiles.RibbonStyle = RibbonItemStyles.All;
-
+            var searchFiles = new ToolStripDropDownButton("Search in Files", Resources.Lookup_Reference_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+            groupOfflineFileTools.Items.Add(searchFiles);
             foreach (var dataProvider in offlineProviders)
             {
-                BarButtonItem btnSearchin = new BarButtonItem { Caption = $" search in: {factoryTitle} ({dataProvider.OptionalTitle})" };
-                btnSearchin.ItemClick += (sender, e) =>
+                var btnSearching = new ToolStripMenuItem { Text = $" search in: {factoryTitle} ({dataProvider.OptionalTitle})" };
+                btnSearching.Click += (sender, e) =>
                 {
                     var search = new SearchForm(dataProvider);
                     search.Show(this);
                 };
-                searchFiles.AddItem(btnSearchin);
+                searchFiles.DropDownItems.Add(btnSearching);
             }
 
 
-            BarSubItem combineFiles = new BarSubItem();
-            combineFiles.Caption = "Combine Files";
-            groupOfflineFileTools.ItemLinks.Add(combineFiles);
-            combineFiles.ImageOptions.Image = Resources.Sutotal_32x32;
-            combineFiles.ImageOptions.LargeImage = Resources.Sutotal_32x32;
-            combineFiles.RibbonStyle = RibbonItemStyles.All;
+            var combineFiles = new ToolStripDropDownButton("Combine Files", Resources.Sutotal_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+            groupOfflineFileTools.Items.Add(combineFiles);
 
             foreach (var dataProvider in offlineProviders)
             {
-                BarButtonItem btnCombine = new BarButtonItem { Caption = $"Combine files for: {factoryTitle} ({dataProvider.OptionalTitle})" };
-                btnCombine.ItemClick += (sender, e) =>
+                var btnCombine = new ToolStripMenuItem { Text = $"Combine files for: {factoryTitle} ({dataProvider.OptionalTitle})" };
+                btnCombine.Click += (sender, e) =>
                 {
                     var combined = new FormCombineFiles(dataProvider);
                     combined.Show(this);
                 };
-                combineFiles.AddItem(btnCombine);
+                combineFiles.DropDownItems.Add(btnCombine);
             }
 
 
 
-            BarSubItem compareFiles = new BarSubItem();
-            compareFiles.Caption = "Compare Files";
-            groupOfflineFileTools.ItemLinks.Add(compareFiles);
-            compareFiles.ImageOptions.Image = Resources.TwoColumns;
-            compareFiles.ImageOptions.LargeImage = Resources.TwoColumns;
-            compareFiles.RibbonStyle = RibbonItemStyles.All;
-
+            var compareFiles = new ToolStripDropDownButton("Compare Files", Resources.TwoColumns)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+            groupOfflineFileTools.Items.Add(compareFiles);
             foreach (var dataProvider in offlineProviders)
             {
-                BarButtonItem btnCombine = new BarButtonItem { Caption = $"Compare files for: {factoryTitle} ({dataProvider.OptionalTitle})" };
-                btnCombine.ItemClick += (sender, e) =>
+                var btnCombine = new ToolStripMenuItem { Text = $"Compare files for: {factoryTitle} ({dataProvider.OptionalTitle})" };
+                btnCombine.Click += (sender, e) =>
                 {
                     FileComparerForm compare = new FileComparerForm(dataProvider);
                     compare.ShowDialog(this);
                 };
-                compareFiles.AddItem(btnCombine);
+                compareFiles.DropDownItems.Add(btnCombine);
             }
         }
 
-        private void AddSingleOfflineDataSource(RibbonPage ribbonPage, IAnalogyOfflineDataProvider offlineAnalogy,
-           string title, RibbonPageGroup group, RibbonPageGroup groupOfflineFileTools)
+        private void AddSingleOfflineDataSource(ToolStripTabItem ribbonPage, IAnalogyOfflineDataProvider offlineAnalogy,
+           string title, ToolStripEx group, ToolStripEx groupOfflineFileTools)
         {
 
             void OpenOffline(string titleOfDataSource, string initialFolder, string[] files = null)
             {
                 offline++;
-                UserControl offlineUC = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+                UserControl page = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
                 page.Tag = ribbonPage;
-                page.Controls.Add(offlineUC);
-                offlineUC.Dock = DockStyle.Fill;
                 page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+                AddToDockingManager(page, page.Text);
+                dockingManager1.ActivateControl(page);
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
             }
 
             void OpenExternalDataSource(string titleOfDataSource, IAnalogyOfflineDataProvider analogy)
             {
                 offline++;
-                var ClientServerUCLog = new ClientServerUCLog(analogy);
-                XtraTabPage page = new XtraTabPage();
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+                var page = new ClientServerUCLog(analogy);
                 page.Tag = ribbonPage;
-                page.Controls.Add(ClientServerUCLog);
-                ClientServerUCLog.Dock = DockStyle.Fill;
                 page.Text = $"Client/Server logs #{offline}. {titleOfDataSource}";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
+
+                AddToDockingManager(page, page.Text);
+                dockingManager1.ActivateControl(page);
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
             }
 
             void OpenFilePooling(string titleOfDataSource, string initialFolder, string file)
             {
 
                 offline++;
-                UserControl filepoolingUC = new FilePoolingUCLogs(offlineAnalogy, file, initialFolder);
-                XtraTabPage page = new XtraTabPage();
-
-                void OnXtcLogsOnControlRemoved(object sender, ControlEventArgs arg)
+                UserControl page = new FilePoolingUCLogs(offlineAnalogy, file, initialFolder);
+                void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                 {
                     if (arg.Control == page)
                     {
                         try
                         {
-                            filepoolingUC.Dispose();
+                            page.Dispose();
                         }
                         catch (Exception e)
                         {
@@ -1218,51 +835,55 @@ namespace Analogy
                         }
                         finally
                         {
-                            xtcLogs.ControlRemoved -= OnXtcLogsOnControlRemoved;
+                            dockingManager1.DockVisibilityChanged -= OnXtcLogsOnControlRemoved;
                         }
                     }
                 }
 
-                page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
                 page.Tag = ribbonPage;
-                page.Controls.Add(filepoolingUC);
-                filepoolingUC.Dock = DockStyle.Fill;
                 page.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
-                xtcLogs.TabPages.Add(page);
-                xtcLogs.SelectedTabPage = page;
-                xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
+                AddToDockingManager(page, page.Text);
+                dockingManager1.ActivateControl(page);
+                dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
+                //xtcLogs.TabPages.Add(page);
+                //xtcLogs.SelectedTabPage = page;
+                //xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
             }
 
             //add local folder button:
             if (!string.IsNullOrEmpty(offlineAnalogy.InitialFolderFullPath) &&
                 Directory.Exists(offlineAnalogy.InitialFolderFullPath))
             {
-                BarButtonItem localfolder = new BarButtonItem();
-                localfolder.Caption = "Open Folder";
-                localfolder.RibbonStyle = RibbonItemStyles.All;
-                group.ItemLinks.Add(localfolder);
-                localfolder.ImageOptions.Image = Resources.Open2_32x32;
-                localfolder.ItemClick += (sender, e) => { OpenOffline(title, offlineAnalogy.InitialFolderFullPath); };
+                var localfolder = new ToolStripButton("Open Folder", Resources.Open2_32x32)
+                {
+                    DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                    TextImageRelation = TextImageRelation.ImageAboveText,
+                    AutoSize = true
+                };
+                group.Items.Add(localfolder);
+                localfolder.Click += (sender, e) => { OpenOffline(title, offlineAnalogy.InitialFolderFullPath); };
             }
 
             //recent bar
-            BarSubItem recentBar = new BarSubItem();
-            recentBar.Caption = "Recently Used Files";
-            recentBar.ImageOptions.Image = Resources.RecentlyUse_16x16;
-            recentBar.ImageOptions.LargeImage = Resources.RecentlyUse_32x32;
-            recentBar.RibbonStyle = RibbonItemStyles.Large | RibbonItemStyles.SmallWithText |
-                                    RibbonItemStyles.SmallWithoutText;
+            var recentBar = new ToolStripDropDownButton("Recently Used Files", Resources.RecentlyUse_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize = true
+            };
+
             //add Files open buttons
             if (!string.IsNullOrEmpty(offlineAnalogy.FileOpenDialogFilters))
             {
                 //add Open files entry
-                BarButtonItem openFiles = new BarButtonItem();
-                openFiles.Caption = "Open Files";
-                group.ItemLinks.Add(openFiles);
-                openFiles.ImageOptions.Image = Resources.Article_16x16;
-                openFiles.ImageOptions.LargeImage = Resources.Article_32x32;
-                openFiles.RibbonStyle = RibbonItemStyles.All;
-                openFiles.ItemClick += (sender, e) =>
+                var openFiles = new ToolStripButton("Open Files", Resources.Article_32x32)
+                {
+                    DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                    TextImageRelation = TextImageRelation.ImageAboveText,
+                    AutoSize = true
+                };
+                group.Items.Add(openFiles);
+                openFiles.Click += (sender, e) =>
                 {
                     OpenFileDialog openFileDialog1 = new OpenFileDialog
                     {
@@ -1279,13 +900,13 @@ namespace Analogy
                 };
 
                 //add Open Pooled file entry
-                BarButtonItem filePoolingBtn = new BarButtonItem();
-                filePoolingBtn.Caption = "File Pooling";
-                group.ItemLinks.Add(filePoolingBtn);
-                filePoolingBtn.ImageOptions.Image = Resources.FilePooling_16x16;
-                filePoolingBtn.ImageOptions.LargeImage = Resources.FilePooling_32x32;
-                filePoolingBtn.RibbonStyle = RibbonItemStyles.All;
-                filePoolingBtn.ItemClick += (sender, e) =>
+                var filePoolingBtn = new ToolStripButton("File Pooling", Resources.FilePooling_32x32)
+                {
+                    DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                    TextImageRelation = TextImageRelation.ImageAboveText
+                };
+                group.Items.Add(filePoolingBtn);
+                filePoolingBtn.Click += (sender, e) =>
                 {
                     OpenFileDialog openFileDialog1 = new OpenFileDialog
                     {
@@ -1297,61 +918,63 @@ namespace Analogy
                     {
                         OpenFilePooling(title, offlineAnalogy.InitialFolderFullPath, openFileDialog1.FileName);
                         AddRecentFiles(ribbonPage, recentBar, offlineAnalogy, title,
-                            new List<string> { openFileDialog1.FileName });
+                                                    new List<string> { openFileDialog1.FileName });
                     }
 
                 };
             }
 
             //add recent
-            group.ItemLinks.Add(recentBar);
+            group.Items.Add(recentBar);
             var recents = UserSettingsManager.UserSettings.RecentFiles.Where(itm => itm.ID == offlineAnalogy.ID)
                 .Select(itm => itm.FileName).ToList();
             AddRecentFiles(ribbonPage, recentBar, offlineAnalogy, title, recents);
 
             //add client/server  button:
-            BarButtonItem externalSources = new BarButtonItem();
-            externalSources.Caption = "Known Locations";
-            externalSources.RibbonStyle = RibbonItemStyles.All;
-            group.ItemLinks.Add(externalSources);
-            externalSources.ImageOptions.Image = Resources.ServerMode_16x16;
-            externalSources.ImageOptions.LargeImage = Resources.ServerMode_32x32;
-            externalSources.ItemClick += (sender, e) => { OpenExternalDataSource(title, offlineAnalogy); };
+            var externalSources = new ToolStripButton("Known Locations", Resources.ServerMode_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
 
+            group.Items.Add(externalSources);
+            externalSources.Click += (sender, e) => { OpenExternalDataSource(title, offlineAnalogy); };
 
             //add tools
-            BarButtonItem searchFiles = new BarButtonItem();
-            searchFiles.Caption = "Search in Files";
-            groupOfflineFileTools.ItemLinks.Add(searchFiles);
-            searchFiles.ImageOptions.Image = Resources.Lookup_Reference_32x32;
-            searchFiles.ImageOptions.LargeImage = Resources.Lookup_Reference_32x32;
-            searchFiles.RibbonStyle = RibbonItemStyles.All;
-            searchFiles.ItemClick += (sender, e) =>
+            var searchFiles = new ToolStripButton("Search in Files", Resources.Lookup_Reference_32x32)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+            groupOfflineFileTools.Items.Add(searchFiles);
+            searchFiles.Click += (sender, e) =>
             {
                 var search = new SearchForm(offlineAnalogy);
                 search.Show(this);
             };
 
-            BarButtonItem combineFiles = new BarButtonItem();
-            combineFiles.Caption = "Combine Files";
-            groupOfflineFileTools.ItemLinks.Add(combineFiles);
-            combineFiles.ImageOptions.Image = Resources.Sutotal_32x32;
-            combineFiles.ImageOptions.LargeImage = Resources.Sutotal_32x32;
-            combineFiles.RibbonStyle = RibbonItemStyles.All;
-            combineFiles.ItemClick += (sender, e) =>
+            var combineFiles = new ToolStripButton("Combine Files", Resources.Sutotal_32x32)
             {
-                var combined = new FormCombineFiles(offlineAnalogy);
-                combined.Show(this);
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
             };
 
+            groupOfflineFileTools.Items.Add(combineFiles);
+            combineFiles.Click += (sender, e) =>
+                      {
+                          var combined = new FormCombineFiles(offlineAnalogy);
+                          combined.Show(this);
+                      };
 
-            BarButtonItem compareFiles = new BarButtonItem();
-            compareFiles.Caption = "Compare Files";
-            groupOfflineFileTools.ItemLinks.Add(compareFiles);
-            compareFiles.ImageOptions.Image = Resources.TwoColumns;
-            compareFiles.ImageOptions.LargeImage = Resources.TwoColumns;
-            compareFiles.RibbonStyle = RibbonItemStyles.All;
-            compareFiles.ItemClick += (sender, e) =>
+
+            var compareFiles = new ToolStripButton("Compare Files", Resources.TwoColumns)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText
+            };
+
+            groupOfflineFileTools.Items.Add(compareFiles);
+            compareFiles.Click += (sender, e) =>
             {
                 FileComparerForm compare = new FileComparerForm(offlineAnalogy);
                 compare.ShowDialog(this);
@@ -1359,15 +982,17 @@ namespace Analogy
         }
 
 
-        private void AddSingleRealTimeDataSource(RibbonPage ribbonPage, IAnalogyRealTimeDataProvider realTime, string title,
-         RibbonPageGroup group)
+        private void AddSingleRealTimeDataSource(ToolStripTabItem ribbonPage, IAnalogyRealTimeDataProvider realTime, string title,
+            ToolStripEx group)
         {
-            BarButtonItem realTimeBtn = new BarButtonItem();
-            group.ItemLinks.Add(realTimeBtn);
-            realTimeBtn.ImageOptions.Image = Resources.Database_off;
-            realTimeBtn.RibbonStyle = RibbonItemStyles.All;
-            realTimeBtn.Caption = "Real Time Logs" + (!string.IsNullOrEmpty(realTime.OptionalTitle) ? $" - {realTime.OptionalTitle}" : string.Empty);
-
+            string text = "Real Time Logs" + (!string.IsNullOrEmpty(realTime.OptionalTitle) ? $" - {realTime.OptionalTitle}" : string.Empty);
+            var realTimeBtn = new ToolStripButton(text, Resources.Database_off)
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                TextImageRelation = TextImageRelation.ImageAboveText,
+                AutoSize = true,
+            };
+            group.Items.Add(realTimeBtn);
             async Task<bool> OpenRealTime()
             {
                 realTimeBtn.Enabled = false;
@@ -1384,7 +1009,7 @@ namespace Analogy
                 if (canStartReceiving) //connected
                 {
                     online++;
-                    realTimeBtn.ImageOptions.Image = Resources.Database_on;
+                    realTimeBtn.Image = Resources.Database_on;
                     var onlineUC = new OnlineUCLogs(realTime);
 
                     void OnRealTimeOnMessageReady(object sender, AnalogyLogMessageArgs e) =>
@@ -1399,27 +1024,27 @@ namespace Analogy
                             $"Source {title} Disconnected. Reason: {e.DisconnectedReason}",
                             AnalogyLogLevel.AnalogyInformation, AnalogyLogClass.General, title, "Analogy");
                         onlineUC.AppendMessage(disconnected, Environment.MachineName);
-                        realTimeBtn.ImageOptions.Image = Resources.Database_off;
+                        realTimeBtn.Image = Resources.Database_off;
                     }
 
-                    XtraTabPage page = new XtraTabPage();
-                    page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                    page.Tag = ribbonPage;
-                    page.Controls.Add(onlineUC);
-                    ribbonControlMain.SelectedPage = ribbonPage;
+
+                    onlineUC.Tag = ribbonPage;
+                    ribbonControlMain.SelectedTab = ribbonPage;
                     onlineUC.Dock = DockStyle.Fill;
-                    page.Text = $"{onlineTitle} #{online} ({title})";
-                    xtcLogs.TabPages.Add(page);
+                    onlineUC.Text = $"{onlineTitle} #{online} ({title})";
+
+                    AddToDockingManager(onlineUC, onlineUC.Text);
+                    dockingManager1.ActivateControl(onlineUC);
                     realTime.OnMessageReady += OnRealTimeOnMessageReady;
                     realTime.OnManyMessagesReady += OnRealTimeOnOnManyMessagesReady;
                     realTime.OnDisconnected += OnRealTimeDisconnected;
                     realTime.StartReceiving();
-                    onlineDataSourcesMapping.Add(page, realTime);
-                    xtcLogs.SelectedTabPage = page;
+                    onlineDataSourcesMapping.Add(onlineUC, realTime);
 
-                    void OnXtcLogsOnControlRemoved(object sender, ControlEventArgs arg)
+
+                    void OnXtcLogsOnControlRemoved(object sender, DockVisibilityChangedEventArgs arg)
                     {
-                        if (arg.Control == page)
+                        if (arg.Control == onlineUC)
                         {
                             try
                             {
@@ -1436,12 +1061,12 @@ namespace Analogy
                             }
                             finally
                             {
-                                xtcLogs.ControlRemoved -= OnXtcLogsOnControlRemoved;
+                                dockingManager1.DockVisibilityChanged -= OnXtcLogsOnControlRemoved;
                             }
                         }
                     }
 
-                    xtcLogs.ControlRemoved += OnXtcLogsOnControlRemoved;
+                    dockingManager1.DockVisibilityChanged += OnXtcLogsOnControlRemoved;
                     realTimeBtn.Enabled = true;
                     return true;
                 }
@@ -1450,7 +1075,7 @@ namespace Analogy
                 return false;
             }
 
-            realTimeBtn.ItemClick += async (s, be) => await OpenRealTime();
+            realTimeBtn.Click += async (s, be) => await OpenRealTime();
             if (settings.AutoStartDataProviders.Contains(realTime.ID)
             && !disableOnlineDueToFileOpen)
             {
@@ -1469,12 +1094,250 @@ namespace Analogy
             }
 
         }
-        private void xtcLogs_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
+
+        private void OpenBookmarkLog()
         {
-            if (e.Page?.Tag == null)
-                return;
-            ribbonControlMain.SelectedPage = (RibbonPage)e.Page.Tag;
+            offline++;
+            var bookmarkLog = new BookmarkLog();
+            bookmarkLog.Controls.Add(bookmarkLog);
+            bookmarkLog.Dock = DockStyle.Fill;
+            bookmarkLog.Text = $"Analogy Bookmarked logs #{offline}";
+            AddToDockingManager(bookmarkLog, bookmarkLog.Text);
+            dockingManager1.ActivateControl(bookmarkLog);
         }
+
+        private async Task OpenOfflineFileWithSpecificDataProvider(string[] files)
+        {
+            while (!Initialized)
+                await Task.Delay(250);
+            var supported = FactoriesManager.Instance.GetSupportedOfflineDataSources(files).ToList();
+            if (supported.Count == 1)
+            {
+                var parser = supported.First();
+                var page = (Mapping.ContainsKey(parser.FactoryID)) ? Mapping[parser.FactoryID] : null;
+                OpenOfflineLogs(page, files, parser.DataProvider);
+            }
+            else
+            {
+                supported = FactoriesManager.Instance.GetSupportedOfflineDataSources(files).Where(itm =>
+                    !FactoriesManager.Instance.IsBuiltInFactory(itm.FactoryID)).ToList();
+                if (supported.Count == 1)
+                {
+                    var parser = supported.First();
+                    var page = (Mapping.ContainsKey(parser.FactoryID)) ? Mapping[parser.FactoryID] : null;
+                    OpenOfflineLogs(page, files, parser.DataProvider);
+                }
+                else
+                {
+                    //try  from file association:
+                    var supportedAssociation = settings.GetFactoriesThatHasFileAssociation(files).ToList();
+                    if (supportedAssociation.Count == 1)
+                    {
+                        var factory = supportedAssociation.First();
+                        var parser = FactoriesManager.Instance
+                            .GetSupportedOfflineDataSourcesFromFactory(factory.FactoryGuid, files).ToList();
+                        var page = (Mapping.ContainsKey(factory.FactoryGuid)) ? Mapping[factory.FactoryGuid] : null;
+                        if (parser.Count == 1)
+                            OpenOfflineLogs(page, files, parser.First());
+                        else
+                        {
+                            MessageBox.Show(
+                                $@"More than one data provider detected for this file for {factory.FactoryName}." + Environment.NewLine +
+                                "Please open it directly from the data provider menu", "Unable to open file",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+
+                    }
+                    else
+
+                        MessageBox.Show(
+                            "Zero or more than one data provider detected for this file." + Environment.NewLine +
+                            "Please open it directly from the data provider menu", "Unable to open file",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                }
+
+            }
+        }
+        private void OpenOfflineLogs(ToolStripTabItem ribbonPage, string[] filenames,
+            IAnalogyOfflineDataProvider dataProvider,
+            string title = null)
+        {
+            offline++;
+            UserControl offlineUC = new OfflineUCLogs(dataProvider, filenames);
+
+
+            offlineUC.Tag = ribbonPage;
+            offlineUC.Controls.Add(offlineUC);
+            offlineUC.Dock = DockStyle.Fill;
+            offlineUC.Text = $"{offlineTitle} #{offline}{(title == null ? "" : $" ({title})")}";
+            AddToDockingManager(offlineUC, offlineUC.Text);
+            dockingManager1.ActivateControl(offlineUC);
+        }
+
+
+        private void AddRecentFiles(ToolStripTabItem ribbonPage, ToolStripDropDownButton bar, IAnalogyOfflineDataProvider offlineAnalogy,
+            string title, List<string> files)
+        {
+
+            if (files.Any())
+            {
+                foreach (string file in files)
+                {
+                    if (!File.Exists(file)) continue;
+                    var btn = new ToolStripMenuItem(file);
+                    btn.Click += (s, be) =>
+                    {
+                        OpenOfflineLogs(ribbonPage, new[] { file }, offlineAnalogy, title);
+                    };
+                    bar.DropDownItems.Add(btn);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private void CreateAnalogyBuiltinDataProviders()
+        //{
+        //    IAnalogyFactory analogy = FactoriesManager.Instance.Get(AnalogyBuiltInFactory.AnalogyGuid);
+        //    if (settings.GetFactorySetting(analogy.FactoryID).Status != DataProviderFactoryStatus.Disabled)
+        //        CreateDataSource(analogy, 0);
+        //    ribbonControlMain.SelectedPage = ribbonControlMain.Pages.First();
+        //    IAnalogyFactory eventLogDataFactory = FactoriesManager.Instance.Get(EventLogDataFactory.ID);
+        //    if (settings.GetFactorySetting(eventLogDataFactory.FactoryID).Status == DataProviderFactoryStatus.Disabled)
+        //        return;
+        //    //CreateEventLogsGroup
+        //    RibbonPage ribbonPage = new RibbonPage(eventLogDataFactory.Title);
+        //    EventLogDataProvider elds = eventLogDataFactory.DataProviders.Items.First() as EventLogDataProvider;
+        //    ribbonControlMain.Pages.Insert(2, ribbonPage);
+        //    RibbonPageGroup group = new RibbonPageGroup(eventLogDataFactory.DataProviders.Title);
+        //    ribbonPage.Groups.Add(group);
+
+
+        //    BarButtonItem evtxRealTime = new BarButtonItem();
+        //    evtxRealTime.Caption = "Real Time Windows Event Logs";
+        //    evtxRealTime.RibbonStyle = RibbonItemStyles.All;
+        //    evtxRealTime.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    evtxRealTime.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    evtxRealTime.ItemClick += (s, be) =>
+        //    {
+        //        UserControl windowsEventlog = new WindowsEventLog();
+        //        XtraTabPage page = new XtraTabPage();
+        //        page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+        //        page.Controls.Add(windowsEventlog);
+        //        windowsEventlog.Dock = DockStyle.Fill;
+        //        page.Text = $"Windows Log";
+        //        xtcLogs.TabPages.Add(page);
+        //        xtcLogs.SelectedTabPage = page;
+        //    };
+        //    group.ItemLinks.Add(evtxRealTime);
+
+        //    BarButtonItem evtxFile = new BarButtonItem();
+        //    evtxFile.Caption = "Open Event log file (*.Evtx)";
+        //    evtxFile.RibbonStyle = RibbonItemStyles.All;
+        //    evtxFile.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    evtxFile.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    evtxFile.ItemClick += (s, be) =>
+        //    {
+
+        //        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        //        openFileDialog1.Filter = "Windows Event log files (*.evtx)|*.evtx";
+        //        openFileDialog1.Title = @"Open Files";
+        //        openFileDialog1.Multiselect = true;
+        //        if (openFileDialog1.ShowDialog() == DialogResult.OK)
+        //        {
+        //            OpenOfflineLogs(ribbonPage, openFileDialog1.FileNames, elds, "Windows Event log");
+        //            AddRecentWindowsEventLogFiles(openFileDialog1.FileNames.ToList());
+        //        }
+        //    };
+        //    group.ItemLinks.Add(evtxFile);
+
+        //    BarButtonItem systemLog = new BarButtonItem();
+        //    systemLog.Caption = $"Open {Environment.MachineName} System Log file";
+        //    systemLog.RibbonStyle = RibbonItemStyles.All;
+        //    systemLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    systemLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    systemLog.ItemClick += (s, be) =>
+        //    {
+        //        string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
+        //            "Logs", "System.evtx");
+        //        if (File.Exists(file))
+        //        {
+        //            OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
+        //            AddRecentWindowsEventLogFiles(new List<string>() { file });
+        //        }
+        //    };
+        //    group.ItemLinks.Add(systemLog);
+
+        //    BarButtonItem appLog = new BarButtonItem();
+        //    appLog.Caption = $"Open {Environment.MachineName} Application Log file";
+        //    appLog.RibbonStyle = RibbonItemStyles.All;
+        //    appLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    appLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    appLog.ItemClick += (s, be) =>
+        //    {
+        //        string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
+        //            "Logs", "Application.evtx");
+        //        if (File.Exists(file))
+        //        {
+        //            OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
+        //            AddRecentWindowsEventLogFiles(new List<string>() { file });
+        //        }
+        //    };
+        //    group.ItemLinks.Add(appLog);
+
+        //    BarButtonItem secLog = new BarButtonItem();
+        //    secLog.Caption = $"Open {Environment.MachineName} Security Log file";
+        //    secLog.RibbonStyle = RibbonItemStyles.All;
+        //    secLog.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    secLog.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    secLog.ItemClick += (s, be) =>
+        //    {
+        //        string file = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"), "System32", "Winevt",
+        //            "Logs", "Security.evtx");
+        //        if (File.Exists(file))
+        //        {
+        //            OpenOfflineLogs(ribbonPage, new[] { file }, elds, "Windows Event log");
+        //            AddRecentWindowsEventLogFiles(new List<string>() { file });
+        //        }
+        //    };
+        //    group.ItemLinks.Add(secLog);
+        //    BarButtonItem btnFolder = new BarButtonItem();
+        //    btnFolder.Caption = $"Local Machine logs - {Environment.MachineName}";
+        //    btnFolder.RibbonStyle = RibbonItemStyles.All;
+        //    btnFolder.ImageOptions.Image = Resources.OperatingSystem_16x16;
+        //    btnFolder.ImageOptions.LargeImage = Resources.OperatingSystem_32x32;
+        //    btnFolder.ItemClick += (s, be) =>
+        //    {
+        //        OfflineUCLogs offlineUC = new OfflineUCLogs(new EventLogDataProvider());
+        //        offlineUC.SelectedPath = Path.Combine(Environment.ExpandEnvironmentVariables("%SystemRoot%"),
+        //            "System32", "Winevt", "Logs");
+        //        XtraTabPage page = new XtraTabPage();
+        //        page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+        //        page.Tag = ribbonPage;
+        //        page.Controls.Add(offlineUC);
+        //        offlineUC.Dock = DockStyle.Fill;
+        //        page.Text = $"Local Machine logs";
+        //        xtcLogs.TabPages.Add(page);
+        //        xtcLogs.SelectedTabPage = page;
+        //    };
+        //    group.ItemLinks.Add(btnFolder);
+        //    CreateEventLogsMenu(ribbonPage);
+        //}
+        
 
         private async void TmrAutoConnect_Tick(object sender, EventArgs e)
         {
@@ -1493,147 +1356,11 @@ namespace Analogy
             TmrAutoConnect.Enabled = true;
         }
 
-
-
-        private void XtcLogs_MouseUp(object sender, MouseEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //disable for now  until the devexpress issue is resolved
-            if (e.Button == MouseButtons.Right)
-            {
-                XtraTabControl tabCtrl = sender as XtraTabControl;
-                Point pt = MousePosition;
-                XtraTabHitInfo info = tabCtrl.CalcHitInfo(tabCtrl.PointToClient(pt));
-                if (info.HitTest == XtraTabHitTest.PageHeader)
-                {
-                    currentContextPage = info.Page;
-                    popupMenuTabPages.ShowPopup(pt);
-                }
-            }
-        }
-
-        private void TmrStatusUpdates_Tick(object sender, EventArgs e)
-        {
-            tmrStatusUpdates.Stop();
-            bsiMemoryUsage.Caption = Process.GetCurrentProcess().PrivateMemorySize64 / 1024 / 1024 + " [MB]";
-            if (settings.IdleMode)
-            {
-                bsiIdleMessage.Caption =
-                    $"Idle mode is on. User idle: {Utils.IdleTime():hh\\:mm\\:ss}. Missed messages: {PagingManager.TotalMissedMessages}";
-            }
-            else
-                bsiIdleMessage.Caption = "Idle mode is off";
-
-            tmrStatusUpdates.Start();
-        }
-
-        private void btnUserSettingsResourceUsage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(7);
-            user.ShowDialog(this);
-        }
-
-        private void btnSettingsStartupDataSources_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsForm user = new UserSettingsForm(8);
-            user.ShowDialog(this);
-        }
-
-
-        private void CloseCurrentTabPage()
-        {
-            if (currentContextPage != null)
-            {
-                if (onlineDataSourcesMapping.ContainsKey(currentContextPage))
-                {
-                    onlineDataSourcesMapping[currentContextPage].StopReceiving();
-                    onlineDataSourcesMapping.Remove(currentContextPage);
-                }
-
-                xtcLogs.TabPages.Remove(currentContextPage);
-                currentContextPage = null;
-
-
-            }
-        }
-
-        private void bbiFileCaching_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            settings.EnableFileCaching = !settings.EnableFileCaching;
-            bbiFileCaching.Caption = "File caching is " + (settings.EnableFileCaching ? "on" : "off");
-        }
-
-        private void bBtnDataProviderSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserSettingsDataProvidersForm user = new UserSettingsDataProvidersForm();
-            user.ShowDialog(this);
-        }
-
-        private void bBtnItemExportSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            {
-                saveFileDialog.Filter = "Json Settings|*.json";
-                saveFileDialog.Title = "Export settings";
-                if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-                {
-                    try
-                    {
-                        string data = JsonConvert.SerializeObject(settings);
-                        File.WriteAllText(saveFileDialog.FileName, data);
-                        XtraMessageBox.Show("settings saved", "Analogy",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception exception)
-                    {
-                        AnalogyLogManager.Instance.LogError("Error during export settings: " + e);
-                        XtraMessageBox.Show("Error exporting settings: " + exception.Message, "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
-            }
-        }
-
-        private void bBtnItemImportSettings_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
-            {
-                openFileDialog1.Filter = "Json Settings|*.json";
-                openFileDialog1.Title = @"Import Settings";
-                openFileDialog1.Multiselect = false;
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    if (XtraMessageBox.Show("Are you sure you want to override existing settings?", "Analogy",
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        string data = File.ReadAllText(openFileDialog1.FileName);
-                        UserSettingsManager newSettings = JsonConvert.DeserializeObject<UserSettingsManager>(data);
-
-                        UserSettingsManager.UserSettings = newSettings;
-                    }
-                }
-
-            }
-        }
-
-        private void btnErrors_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            AnalogyLogManager.Instance.Show(this);
-        }
-
-        private void ribbonControlMain_SelectedPageChanging(object sender, RibbonPageChangingEventArgs e)
-        {
-            if (Mapping.ContainsValue(e.Page))
-            {
-                Guid id = Mapping.Single(kv => kv.Value == e.Page).Key;
-                UserSettingsManager.UserSettings.LastOpenedDataProvider = id;
-            }
-        }
-
-        private void bbtnDebugLog_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            AnalogyLogManager.Instance.Show(this);
+            settings.UpdateRunningTime();
+            settings.Save();
+            BookmarkPersistManager.Instance.SaveFile();
         }
     }
 }
-

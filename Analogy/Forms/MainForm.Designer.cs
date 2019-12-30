@@ -1,4 +1,12 @@
-﻿namespace Analogy
+#region Copyright Syncfusion Inc. 2001-2016.
+// Copyright Syncfusion Inc. 2001-2016. All rights reserved.
+// Use of this code is subject to the terms of our license.
+// A copy of the current license can be obtained at any time by e-mailing
+// licensing@syncfusion.com. Any infringement will be prosecuted under
+// applicable laws. 
+#endregion
+using System;
+namespace Analogy
 {
     partial class MainForm
     {
@@ -29,876 +37,1026 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo1 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo2 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo3 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo4 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo5 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo6 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo7 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo8 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo9 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo10 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo11 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem5 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem6 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem7 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem toolStripGalleryItem8 = new Syncfusion.Windows.Forms.Tools.ToolStripGalleryItem();
+            Syncfusion.Windows.Forms.Tools.ToolTipInfo toolTipInfo12 = new Syncfusion.Windows.Forms.Tools.ToolTipInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            this.ribbonControlMain = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
+            this.tstitmAnalogy = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tseAnalogyBuiltInProviders = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbtnAnalogyOpenFolder = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAnalogyOpenFiles = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAnalogyRecentlyOpenFiles = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tstiSettings = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbSettingsFiltering = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsPreDefined = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsLookAndFeel = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsUserStatistics = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsExtension = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsShortcuts = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsMRU = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsResources = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsDataProviders = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettingsCustomDataProviders = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.fsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fsfToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSplitButtonEx1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.mapNetworkDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discconectNetworkDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripPanelItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripPanelItem();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.navigationPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expandToOpenFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showLibrariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripPanelItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripPanelItem();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripGallery1 = new Syncfusion.Windows.Forms.Tools.ToolStripGallery();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.TreeViewImageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.superAccelerator1 = new Syncfusion.Windows.Forms.Tools.SuperAccelerator(this);
+            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
+            this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
+            this.superToolTip1 = new Syncfusion.Windows.Forms.Tools.SuperToolTip(this);
+            this.dockingManager1 = new Syncfusion.Windows.Forms.Tools.DockingManager(this.components);
+            this.MainStatusStrip = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
+            this.tsslFileCaching = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslIdleMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslMemoryUsage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslblError = new System.Windows.Forms.ToolStripStatusLabel();
             this.TmrAutoConnect = new System.Windows.Forms.Timer(this.components);
-            this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.bbtnItemSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnItemExportSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnItemImportSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnItemExit = new DevExpress.XtraBars.BarButtonItem();
-            this.btnItemLocalLogs = new DevExpress.XtraBars.BarButtonItem();
-            this.btnItemOTA = new DevExpress.XtraBars.BarButtonItem();
-            this.bItemProcess = new DevExpress.XtraBars.BarButtonItem();
-            this.btnItemDark = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
-            this.btnItemSearch = new DevExpress.XtraBars.BarButtonItem();
-            this.btnItemCombineFiles = new DevExpress.XtraBars.BarButtonItem();
-            this.btnItemConvert = new DevExpress.XtraBars.BarButtonItem();
-            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.bsiRecent = new DevExpress.XtraBars.BarSubItem();
-            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.skinPaletteRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.bbitemHelp = new DevExpress.XtraBars.BarButtonItem();
-            this.bbsItem = new DevExpress.XtraBars.BarSubItem();
-            this.bbtnItemChangeLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnItemHelp = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
-            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
-            this.bBtnBookmarked = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnClientServer = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnStatisticsFiltering = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnPreDefinedQueries = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnStatisticsLookAndFeel = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnStatisticsUserStatistics = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnExtensionSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnCompareLogs = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnWindowsEventLogs = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnOnlineEventLogs = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiExtensions = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnShortcuts = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnMRUSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.bsiWindowsEventLogs = new DevExpress.XtraBars.BarSubItem();
-            this.barStaticItemDefaultLevel = new DevExpress.XtraBars.BarStaticItem();
-            this.bBtnOpenAnalogyLog = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnCloseCurrentTabPage = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnCloseOtherTabPages = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnCloseAllTabPage = new DevExpress.XtraBars.BarButtonItem();
-            this.bsiMemoryUsage = new DevExpress.XtraBars.BarStaticItem();
-            this.bsiIdleMessage = new DevExpress.XtraBars.BarStaticItem();
-            this.bbtnUserSettingsResourceUsage = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnSettingsStartupDataSources = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiFileCaching = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnDataProviderSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.btnErrors = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageThemes = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroupSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.xtcLogs = new DevExpress.XtraTab.XtraTabControl();
-            this.popupMenuTabPages = new DevExpress.XtraBars.PopupMenu(this.components);
             this.tmrStatusUpdates = new System.Windows.Forms.Timer(this.components);
-            this.bbtnDebugLog = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtcLogs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenuTabPages)).BeginInit();
+            this.ribbonControlMain.SuspendLayout();
+            this.tstitmAnalogy.Panel.SuspendLayout();
+            this.tseAnalogyBuiltInProviders.SuspendLayout();
+            this.tstiSettings.Panel.SuspendLayout();
+            this.toolStripEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).BeginInit();
+            this.MainStatusStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ribbonControlMain
+            // 
+            this.ribbonControlMain.ActivateOnFirstClick = true;
+            this.ribbonControlMain.AutoLayoutToolStrip = true;
+            this.ribbonControlMain.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonControlMain.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ribbonControlMain.Header.AddMainItem(tstitmAnalogy);
+            this.ribbonControlMain.Header.AddMainItem(tstiSettings);
+            this.ribbonControlMain.Location = new System.Drawing.Point(1, 0);
+            this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControlMain.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ribbonControlMain.MenuButtonText = "FILE";
+            this.ribbonControlMain.MenuButtonWidth = 56;
+            this.ribbonControlMain.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.ribbonControlMain.Name = "ribbonControlMain";
+            this.ribbonControlMain.Office2013ColorScheme = Syncfusion.Windows.Forms.Tools.Office2013ColorScheme.DarkGray;
+            this.ribbonControlMain.Office2016ColorScheme = Syncfusion.Windows.Forms.Tools.Office2016ColorScheme.DarkGray;
+            this.ribbonControlMain.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            // 
+            // ribbonControlMain.OfficeMenu
+            // 
+            this.ribbonControlMain.OfficeMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ribbonControlMain.OfficeMenu.Name = "OfficeMenu";
+            this.ribbonControlMain.OfficeMenu.ShowItemToolTips = true;
+            this.ribbonControlMain.OfficeMenu.Size = new System.Drawing.Size(12, 65);
+            this.ribbonControlMain.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ribbonControlMain.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
+            this.ribbonControlMain.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2013;
+            this.ribbonControlMain.SelectedTab = this.tstitmAnalogy;
+            this.ribbonControlMain.ShowLauncher = false;
+            this.ribbonControlMain.ShowRibbonDisplayOptionButton = false;
+            this.ribbonControlMain.Size = new System.Drawing.Size(1155, 204);
+            this.ribbonControlMain.SystemText.QuickAccessDialogDropDownName = "Start menu";
+            this.ribbonControlMain.SystemText.RenameDisplayLabelText = "&Display Name:";
+            this.ribbonControlMain.TabIndex = 0;
+            this.ribbonControlMain.Text = "Analogy";
+            this.ribbonControlMain.ThemeName = "Office2013";
+            this.ribbonControlMain.TitleColor = System.Drawing.Color.Black;
+            // 
+            // tstitmAnalogy
+            // 
+            this.tstitmAnalogy.Name = "tstitmAnalogy";
+            // 
+            // ribbonControlMain.ribbonPanel1
+            // 
+            this.tstitmAnalogy.Panel.Controls.Add(this.tseAnalogyBuiltInProviders);
+            this.tstitmAnalogy.Panel.Name = "ribbonPanel1";
+            this.tstitmAnalogy.Panel.ScrollPosition = 0;
+            this.tstitmAnalogy.Panel.TabIndex = 4;
+            this.tstitmAnalogy.Panel.Text = "Analogy Main Tab";
+            this.tstitmAnalogy.Position = 0;
+            this.tstitmAnalogy.Size = new System.Drawing.Size(144, 39);
+            this.tstitmAnalogy.Tag = "1";
+            this.tstitmAnalogy.Text = "Analogy Main Tab";
+            // 
+            // tseAnalogyBuiltInProviders
+            // 
+            this.superAccelerator1.SetCollapsedDropDownAccelerator(this.tseAnalogyBuiltInProviders, null);
+            this.tseAnalogyBuiltInProviders.Dock = System.Windows.Forms.DockStyle.None;
+            this.tseAnalogyBuiltInProviders.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.tseAnalogyBuiltInProviders.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tseAnalogyBuiltInProviders.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tseAnalogyBuiltInProviders.Image = null;
+            this.tseAnalogyBuiltInProviders.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tseAnalogyBuiltInProviders.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnAnalogyOpenFolder,
+            this.tsbtnAnalogyOpenFiles,
+            this.tsbtnAnalogyRecentlyOpenFiles});
+            this.tseAnalogyBuiltInProviders.Location = new System.Drawing.Point(0, 1);
+            this.tseAnalogyBuiltInProviders.Name = "tseAnalogyBuiltInProviders";
+            this.tseAnalogyBuiltInProviders.Office12Mode = false;
+            this.tseAnalogyBuiltInProviders.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.tseAnalogyBuiltInProviders.Size = new System.Drawing.Size(269, 124);
+            this.tseAnalogyBuiltInProviders.TabIndex = 0;
+            this.tseAnalogyBuiltInProviders.Text = "Analogy Built-in Data Provider";
+            // 
+            // tsbtnAnalogyOpenFolder
+            // 
+            this.tsbtnAnalogyOpenFolder.Image = global::Analogy.Properties.Resources.Open2_32x32;
+            this.tsbtnAnalogyOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyOpenFolder.Name = "tsbtnAnalogyOpenFolder";
+            this.tsbtnAnalogyOpenFolder.Size = new System.Drawing.Size(89, 102);
+            this.tsbtnAnalogyOpenFolder.Text = "Open Folder";
+            this.tsbtnAnalogyOpenFolder.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnAnalogyOpenFiles
+            // 
+            this.tsbtnAnalogyOpenFiles.Image = global::Analogy.Properties.Resources.Article_32x32;
+            this.tsbtnAnalogyOpenFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyOpenFiles.Name = "tsbtnAnalogyOpenFiles";
+            this.tsbtnAnalogyOpenFiles.Size = new System.Drawing.Size(77, 102);
+            this.tsbtnAnalogyOpenFiles.Text = "Open Files";
+            this.tsbtnAnalogyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnAnalogyRecentlyOpenFiles
+            // 
+            this.tsbtnAnalogyRecentlyOpenFiles.Image = global::Analogy.Properties.Resources.RecentlyUse_32x32;
+            this.tsbtnAnalogyRecentlyOpenFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAnalogyRecentlyOpenFiles.Name = "tsbtnAnalogyRecentlyOpenFiles";
+            this.tsbtnAnalogyRecentlyOpenFiles.Size = new System.Drawing.Size(94, 102);
+            this.tsbtnAnalogyRecentlyOpenFiles.Text = "Recent Files";
+            this.tsbtnAnalogyRecentlyOpenFiles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnAnalogyRecentlyOpenFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tstiSettings
+            // 
+            this.tstiSettings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tstiSettings.Name = "tstiSettings";
+            // 
+            // ribbonControlMain.ribbonPanel2
+            // 
+            this.tstiSettings.Panel.Controls.Add(this.toolStripEx1);
+            this.tstiSettings.Panel.Name = "ribbonPanel2";
+            this.tstiSettings.Panel.ScrollPosition = 0;
+            this.tstiSettings.Panel.TabIndex = 5;
+            this.tstiSettings.Panel.Text = "Settings";
+            this.tstiSettings.Position = 1;
+            this.tstiSettings.Size = new System.Drawing.Size(82, 39);
+            this.tstiSettings.Tag = "3";
+            this.tstiSettings.Text = "Settings";
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.AutoSize = false;
+            this.superAccelerator1.SetCollapsedDropDownAccelerator(this.toolStripEx1, null);
+            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbSettingsFiltering,
+            this.tsbSettingsPreDefined,
+            this.tsbSettingsLookAndFeel,
+            this.tsbSettingsUserStatistics,
+            this.tsbSettingsExtension,
+            this.tsbSettingsShortcuts,
+            this.tsbSettingsMRU,
+            this.tsbSettingsResources,
+            this.tsbSettingsDataProviders,
+            this.tsbSettingsCustomDataProviders});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.Size = new System.Drawing.Size(1001, 124);
+            this.toolStripEx1.TabIndex = 0;
+            // 
+            // tsbSettingsFiltering
+            // 
+            this.tsbSettingsFiltering.Image = global::Analogy.Properties.Resources.Filter_32x32;
+            this.tsbSettingsFiltering.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsFiltering.Name = "tsbSettingsFiltering";
+            this.tsbSettingsFiltering.Size = new System.Drawing.Size(62, 102);
+            this.tsbSettingsFiltering.Text = "Filtering";
+            this.tsbSettingsFiltering.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsFiltering.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsPreDefined
+            // 
+            this.tsbSettingsPreDefined.Image = global::Analogy.Properties.Resources.FilterByArgument_Chart_32x32;
+            this.tsbSettingsPreDefined.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsPreDefined.Name = "tsbSettingsPreDefined";
+            this.tsbSettingsPreDefined.Size = new System.Drawing.Size(137, 102);
+            this.tsbSettingsPreDefined.Text = "Pre-Defined Queries";
+            this.tsbSettingsPreDefined.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsPreDefined.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsLookAndFeel
+            // 
+            this.tsbSettingsLookAndFeel.Image = global::Analogy.Properties.Resources.Palette_32x32;
+            this.tsbSettingsLookAndFeel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsLookAndFeel.Name = "tsbSettingsLookAndFeel";
+            this.tsbSettingsLookAndFeel.Size = new System.Drawing.Size(98, 102);
+            this.tsbSettingsLookAndFeel.Text = "Look and Feel";
+            this.tsbSettingsLookAndFeel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsLookAndFeel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsUserStatistics
+            // 
+            this.tsbSettingsUserStatistics.Image = global::Analogy.Properties.Resources.Statistical_32x32;
+            this.tsbSettingsUserStatistics.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsUserStatistics.Name = "tsbSettingsUserStatistics";
+            this.tsbSettingsUserStatistics.Size = new System.Drawing.Size(98, 102);
+            this.tsbSettingsUserStatistics.Text = "User Statistics";
+            this.tsbSettingsUserStatistics.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsUserStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsExtension
+            // 
+            this.tsbSettingsExtension.Image = global::Analogy.Properties.Resources.Wizard_32x32;
+            this.tsbSettingsExtension.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsExtension.Name = "tsbSettingsExtension";
+            this.tsbSettingsExtension.Size = new System.Drawing.Size(77, 102);
+            this.tsbSettingsExtension.Text = "Extensions";
+            this.tsbSettingsExtension.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsExtension.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsShortcuts
+            // 
+            this.tsbSettingsShortcuts.Image = global::Analogy.Properties.Resources.FlowLayout_32x32;
+            this.tsbSettingsShortcuts.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsShortcuts.Name = "tsbSettingsShortcuts";
+            this.tsbSettingsShortcuts.Size = new System.Drawing.Size(71, 102);
+            this.tsbSettingsShortcuts.Text = "Shortcuts";
+            this.tsbSettingsShortcuts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsShortcuts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsMRU
+            // 
+            this.tsbSettingsMRU.Image = global::Analogy.Properties.Resources.RecentlyUse_32x32;
+            this.tsbSettingsMRU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsMRU.Name = "tsbSettingsMRU";
+            this.tsbSettingsMRU.Size = new System.Drawing.Size(44, 102);
+            this.tsbSettingsMRU.Text = "MRU";
+            this.tsbSettingsMRU.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsMRU.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsResources
+            // 
+            this.tsbSettingsResources.Image = global::Analogy.Properties.Resources.StackedLine_32x32;
+            this.tsbSettingsResources.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsResources.Name = "tsbSettingsResources";
+            this.tsbSettingsResources.Size = new System.Drawing.Size(110, 102);
+            this.tsbSettingsResources.Text = "Resource Usage";
+            this.tsbSettingsResources.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsResources.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsDataProviders
+            // 
+            this.tsbSettingsDataProviders.Image = global::Analogy.Properties.Resources.Database_on;
+            this.tsbSettingsDataProviders.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsDataProviders.Name = "tsbSettingsDataProviders";
+            this.tsbSettingsDataProviders.Size = new System.Drawing.Size(103, 102);
+            this.tsbSettingsDataProviders.Text = "Data Providers";
+            this.tsbSettingsDataProviders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsDataProviders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSettingsCustomDataProviders
+            // 
+            this.tsbSettingsCustomDataProviders.Image = global::Analogy.Properties.Resources.Analogy_Icon2;
+            this.tsbSettingsCustomDataProviders.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettingsCustomDataProviders.Name = "tsbSettingsCustomDataProviders";
+            this.tsbSettingsCustomDataProviders.Size = new System.Drawing.Size(155, 102);
+            this.tsbSettingsCustomDataProviders.Text = "Custom Data providers";
+            this.tsbSettingsCustomDataProviders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbSettingsCustomDataProviders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton1, "P");
+            this.toolStripButton1.AutoToolTip = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(80, 44);
+            this.toolStripButton1.Text = "Properties";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo1.BackColor = System.Drawing.Color.White;
+            toolTipInfo1.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo1.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Body.Text = "\r\nShow the properties of the selected item.\r\n";
+            toolTipInfo1.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo1.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo1.Header.Text = "Properties (Alt + Enter)";
+            this.superToolTip1.SetToolTip(this.toolStripButton1, toolTipInfo1);
+            // 
+            // toolStripButton2
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton2, "O");
+            this.toolStripButton2.AutoToolTip = false;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(49, 44);
+            this.toolStripButton2.Text = "Open";
+            this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo2.BackColor = System.Drawing.Color.White;
+            toolTipInfo2.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo2.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Body.Text = "\r\nOpen the selected file with default program.";
+            toolTipInfo2.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo2.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo2.Header.Text = "Open";
+            this.superToolTip1.SetToolTip(this.toolStripButton2, toolTipInfo2);
+            // 
+            // toolStripButton3
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton3, "R");
+            this.toolStripButton3.AutoToolTip = false;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(67, 44);
+            this.toolStripButton3.Text = "Rename";
+            this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo3.BackColor = System.Drawing.Color.White;
+            toolTipInfo3.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo3.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Body.Text = "\r\nRename the selected item.\r\n";
+            toolTipInfo3.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo3.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo3.Header.Text = "Rename (F2)";
+            this.superToolTip1.SetToolTip(this.toolStripButton3, toolTipInfo3);
+            // 
+            // toolStripTabItem1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripTabItem1, "C");
+            this.toolStripTabItem1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTabItem1.Name = "toolStripTabItem1";
+            // 
+            // 
+            // 
+            this.toolStripTabItem1.Panel.Name = "ribbonPanel1";
+            this.toolStripTabItem1.Panel.ScrollPosition = 0;
+            this.toolStripTabItem1.Panel.TabIndex = 2;
+            this.toolStripTabItem1.Panel.Text = "Computer";
+            this.toolStripTabItem1.Position = -1;
+            this.toolStripTabItem1.Size = new System.Drawing.Size(97, 38);
+            this.toolStripTabItem1.Tag = "1";
+            this.toolStripTabItem1.Text = "Computer";
+            // 
+            // toolStripTabItem2
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripTabItem2, "V");
+            this.toolStripTabItem2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTabItem2.Name = "toolStripTabItem2";
+            // 
+            // 
+            // 
+            this.toolStripTabItem2.Panel.Name = "ribbonPanel2";
+            this.toolStripTabItem2.Panel.ScrollPosition = 0;
+            this.toolStripTabItem2.Panel.TabIndex = 3;
+            this.toolStripTabItem2.Panel.Text = "View";
+            this.toolStripTabItem2.Position = -1;
+            this.toolStripTabItem2.Size = new System.Drawing.Size(64, 38);
+            this.toolStripTabItem2.Tag = "2";
+            this.toolStripTabItem2.Text = "View";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripDropDownButton1, "A");
+            this.toolStripDropDownButton1.AutoToolTip = false;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fsfToolStripMenuItem,
+            this.fsfToolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(71, 22);
+            this.toolStripDropDownButton1.Text = "Access \r\nMedia";
+            this.toolStripDropDownButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo4.BackColor = System.Drawing.Color.White;
+            toolTipInfo4.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo4.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Body.Text = "\r\nConnect to or disconnect from media server.\r\n";
+            toolTipInfo4.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo4.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo4.Header.Text = "Access Media\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripDropDownButton1, toolTipInfo4);
+            // 
+            // fsfToolStripMenuItem
+            // 
+            this.fsfToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem.Image")));
+            this.fsfToolStripMenuItem.Name = "fsfToolStripMenuItem";
+            this.fsfToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
+            this.fsfToolStripMenuItem.Text = "Connect to a media server";
+            // 
+            // fsfToolStripMenuItem1
+            // 
+            this.fsfToolStripMenuItem1.Enabled = false;
+            this.fsfToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("fsfToolStripMenuItem1.Image")));
+            this.fsfToolStripMenuItem1.Name = "fsfToolStripMenuItem1";
+            this.fsfToolStripMenuItem1.Size = new System.Drawing.Size(301, 26);
+            this.fsfToolStripMenuItem1.Text = "Discconect from a media server";
+            // 
+            // toolStripSplitButtonEx1
+            // 
+            this.toolStripSplitButtonEx1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripSplitButtonEx1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapNetworkDriveToolStripMenuItem,
+            this.discconectNetworkDriveToolStripMenuItem});
+            this.toolStripSplitButtonEx1.Image = global::Analogy.Properties.Resources.Map_Network_Drive;
+            this.toolStripSplitButtonEx1.Name = "toolStripSplitButtonEx1";
+            this.toolStripSplitButtonEx1.Size = new System.Drawing.Size(123, 64);
+            this.toolStripSplitButtonEx1.Text = " Map network \r\n     drive";
+            this.toolStripSplitButtonEx1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripSplitButtonEx1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // mapNetworkDriveToolStripMenuItem
+            // 
+            this.mapNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapNetworkDriveToolStripMenuItem.Image")));
+            this.mapNetworkDriveToolStripMenuItem.Name = "mapNetworkDriveToolStripMenuItem";
+            this.mapNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.mapNetworkDriveToolStripMenuItem.Text = "Map network drive";
+            // 
+            // discconectNetworkDriveToolStripMenuItem
+            // 
+            this.discconectNetworkDriveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("discconectNetworkDriveToolStripMenuItem.Image")));
+            this.discconectNetworkDriveToolStripMenuItem.Name = "discconectNetworkDriveToolStripMenuItem";
+            this.discconectNetworkDriveToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.discconectNetworkDriveToolStripMenuItem.Text = "Disconnect network drive";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(110, 64);
+            this.toolStripButton10.Text = "Add a network\r\n drive";
+            this.toolStripButton10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton4
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton4, "CP");
+            this.toolStripButton4.AutoToolTip = false;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton4.Text = "Open \r\nSettings";
+            this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo5.BackColor = System.Drawing.Color.White;
+            toolTipInfo5.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo5.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Body.Text = "\r\nChange settings and customized the functionality of your computer.\r\n";
+            toolTipInfo5.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo5.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo5.Header.Text = "Open Settings\r\n";
+            this.superToolTip1.SetToolTip(this.toolStripButton4, toolTipInfo5);
+            // 
+            // toolStripPanelItem1
+            // 
+            this.toolStripPanelItem1.CausesValidation = false;
+            this.toolStripPanelItem1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripPanelItem1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton7});
+            this.toolStripPanelItem1.Name = "toolStripPanelItem1";
+            this.toolStripPanelItem1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.toolStripPanelItem1.Size = new System.Drawing.Size(242, 91);
+            this.toolStripPanelItem1.Text = "toolStripPanelItem1";
+            this.toolStripPanelItem1.Transparent = true;
+            // 
+            // toolStripButton5
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton5, "U");
+            this.toolStripButton5.AutoToolTip = false;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(234, 24);
+            this.toolStripButton5.Text = "Uninstall or change a program";
+            toolTipInfo6.BackColor = System.Drawing.Color.White;
+            toolTipInfo6.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo6.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Body.Text = "\r\nUninstalled a program, change installed features or repair an installation.";
+            toolTipInfo6.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo6.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo6.Header.Text = "Uninstall or change a program";
+            this.superToolTip1.SetToolTip(this.toolStripButton5, toolTipInfo6);
+            // 
+            // toolStripButton6
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton6, "S");
+            this.toolStripButton6.AutoToolTip = false;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(151, 24);
+            this.toolStripButton6.Text = "System Properties";
+            toolTipInfo7.BackColor = System.Drawing.Color.White;
+            toolTipInfo7.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo7.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Body.Text = "\r\nShow information about your computer, such as processor speed or amount of inst" +
+    "alled memory.\r\n";
+            toolTipInfo7.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo7.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo7.Header.Text = "System Properties";
+            this.superToolTip1.SetToolTip(this.toolStripButton6, toolTipInfo7);
+            // 
+            // toolStripButton7
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton7, "FC");
+            this.toolStripButton7.AutoToolTip = false;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButton7.Text = "Manage";
+            toolTipInfo8.BackColor = System.Drawing.Color.White;
+            toolTipInfo8.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo8.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Body.Text = "\r\nManage storage,events, Task scheduling, services and more..";
+            toolTipInfo8.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo8.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo8.Header.Text = "Manage";
+            this.superToolTip1.SetToolTip(this.toolStripButton7, toolTipInfo8);
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripDropDownButton4, "NP");
+            this.toolStripDropDownButton4.AutoToolTip = false;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.navigationPaneToolStripMenuItem,
+            this.expandToOpenFoldersToolStripMenuItem,
+            this.showAllFoldersToolStripMenuItem,
+            this.showLibrariesToolStripMenuItem});
+            this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(100, 68);
+            this.toolStripDropDownButton4.Text = "Navigation\r\nPane";
+            this.toolStripDropDownButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripDropDownButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            toolTipInfo9.BackColor = System.Drawing.Color.White;
+            toolTipInfo9.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo9.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo9.Body.Text = "\r\nChoose what to display in the navigation pane.\r\n";
+            toolTipInfo9.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo9.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo9.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo9.Header.Text = "Navigation Pane";
+            this.superToolTip1.SetToolTip(this.toolStripDropDownButton4, toolTipInfo9);
+            // 
+            // navigationPaneToolStripMenuItem
+            // 
+            this.navigationPaneToolStripMenuItem.Checked = true;
+            this.navigationPaneToolStripMenuItem.CheckOnClick = true;
+            this.navigationPaneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.navigationPaneToolStripMenuItem.Name = "navigationPaneToolStripMenuItem";
+            this.navigationPaneToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.navigationPaneToolStripMenuItem.Text = "Navigation Pane";
+            // 
+            // expandToOpenFoldersToolStripMenuItem
+            // 
+            this.expandToOpenFoldersToolStripMenuItem.Name = "expandToOpenFoldersToolStripMenuItem";
+            this.expandToOpenFoldersToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.expandToOpenFoldersToolStripMenuItem.Text = "Expand to Open folders";
+            // 
+            // showAllFoldersToolStripMenuItem
+            // 
+            this.showAllFoldersToolStripMenuItem.Name = "showAllFoldersToolStripMenuItem";
+            this.showAllFoldersToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.showAllFoldersToolStripMenuItem.Text = "show all folders";
+            // 
+            // showLibrariesToolStripMenuItem
+            // 
+            this.showLibrariesToolStripMenuItem.Name = "showLibrariesToolStripMenuItem";
+            this.showLibrariesToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.showLibrariesToolStripMenuItem.Text = "shoow libraries";
+            // 
+            // toolStripPanelItem2
+            // 
+            this.toolStripPanelItem2.CausesValidation = false;
+            this.toolStripPanelItem2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripPanelItem2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton8,
+            this.toolStripButton9});
+            this.toolStripPanelItem2.Name = "toolStripPanelItem2";
+            this.toolStripPanelItem2.Padding = new System.Windows.Forms.Padding(8);
+            this.toolStripPanelItem2.Size = new System.Drawing.Size(139, 74);
+            this.toolStripPanelItem2.Text = "toolStripPanelItem2";
+            this.toolStripPanelItem2.Transparent = true;
+            // 
+            // toolStripButton8
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton8, "PP");
+            this.toolStripButton8.AutoToolTip = false;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Padding = new System.Windows.Forms.Padding(4);
+            this.toolStripButton8.Size = new System.Drawing.Size(129, 32);
+            this.toolStripButton8.Text = "Preview pane";
+            toolTipInfo10.BackColor = System.Drawing.Color.White;
+            toolTipInfo10.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo10.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo10.Body.Text = "\r\nShow or hide the preview pane.\r\n";
+            toolTipInfo10.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo10.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo10.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo10.Header.Text = "Preview Pane(Alt + P)";
+            this.superToolTip1.SetToolTip(this.toolStripButton8, toolTipInfo10);
+            // 
+            // toolStripButton9
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripButton9, "DP");
+            this.toolStripButton9.AutoToolTip = false;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Padding = new System.Windows.Forms.Padding(6);
+            this.toolStripButton9.Size = new System.Drawing.Size(128, 36);
+            this.toolStripButton9.Text = "Details pane";
+            toolTipInfo11.BackColor = System.Drawing.Color.White;
+            toolTipInfo11.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo11.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo11.Body.Text = "\r\nShow or hide the details pane.\r\n";
+            toolTipInfo11.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo11.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo11.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo11.Header.Text = "Details Pane (Alt + Shift + P)";
+            this.superToolTip1.SetToolTip(this.toolStripButton9, toolTipInfo11);
+            // 
+            // toolStripGallery1
+            // 
+            this.superAccelerator1.SetAccelerator(this.toolStripGallery1, "L");
+            this.toolStripGallery1.AutoSize = false;
+            this.toolStripGallery1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripGallery1.BorderStyle = Syncfusion.Windows.Forms.Tools.ToolstripGalleryBorderStyle.None;
+            this.toolStripGallery1.CaptionText = "";
+            this.toolStripGallery1.CheckOnClick = true;
+            this.toolStripGallery1.Dimensions = new System.Drawing.Size(3, 3);
+            this.toolStripGallery1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripGallery1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.toolStripGallery1.ImageList = this.imageList1;
+            this.toolStripGallery1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripGallery1.ItemBackColor = System.Drawing.Color.Empty;
+            this.toolStripGallery1.ItemImageSize = new System.Drawing.Size(10, 10);
+            this.toolStripGallery1.ItemPadding = new System.Windows.Forms.Padding(0);
+            toolStripGalleryItem1.ImageIndex = 0;
+            toolStripGalleryItem1.Text = "Extra large icons";
+            toolStripGalleryItem1.ToolTipText = "";
+            toolStripGalleryItem2.ImageIndex = 3;
+            toolStripGalleryItem2.Text = "Large icons";
+            toolStripGalleryItem2.ToolTipText = "";
+            toolStripGalleryItem3.ImageIndex = 6;
+            toolStripGalleryItem3.Text = "Medium icons";
+            toolStripGalleryItem3.ToolTipText = "";
+            toolStripGalleryItem4.ImageIndex = 1;
+            toolStripGalleryItem4.Text = "Small icons";
+            toolStripGalleryItem4.ToolTipText = "";
+            toolStripGalleryItem5.ImageIndex = 4;
+            toolStripGalleryItem5.Text = "List";
+            toolStripGalleryItem5.ToolTipText = "";
+            toolStripGalleryItem6.ImageIndex = 7;
+            toolStripGalleryItem6.Text = "Details";
+            toolStripGalleryItem6.ToolTipText = "";
+            toolStripGalleryItem7.ImageIndex = 2;
+            toolStripGalleryItem7.Text = "Tiles";
+            toolStripGalleryItem7.ToolTipText = "";
+            toolStripGalleryItem8.ImageIndex = 5;
+            toolStripGalleryItem8.Text = "Content";
+            toolStripGalleryItem8.ToolTipText = "";
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem1);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem2);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem3);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem4);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem5);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem6);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem7);
+            this.toolStripGallery1.Items.Add(toolStripGalleryItem8);
+            this.toolStripGallery1.ItemSize = new System.Drawing.Size(100, 17);
+            this.toolStripGallery1.ItemTextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolStripGallery1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 1);
+            this.toolStripGallery1.Name = "toolStripGallery1";
+            this.toolStripGallery1.ScrollerType = Syncfusion.Windows.Forms.Tools.ToolStripGalleryScrollerType.Compact;
+            this.toolStripGallery1.ShowToolTip = true;
+            this.toolStripGallery1.Size = new System.Drawing.Size(321, 64);
+            this.toolStripGallery1.Text = "toolStripGallery1";
+            this.toolStripGallery1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            toolTipInfo12.BackColor = System.Drawing.Color.White;
+            toolTipInfo12.Body.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo12.Body.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo12.Body.Text = "\r\nChange your view.\r\n";
+            toolTipInfo12.Footer.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo12.Header.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            toolTipInfo12.Header.Size = new System.Drawing.Size(20, 20);
+            toolTipInfo12.Header.Text = "More";
+            this.superToolTip1.SetToolTip(this.toolStripGallery1, toolTipInfo12);
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "pause.png");
-            this.imageList1.Images.SetKeyName(1, "play.jpg");
-            this.imageList1.Images.SetKeyName(2, "54834.png");
-            this.imageList1.Images.SetKeyName(3, "json.png");
+            this.imageList1.Images.SetKeyName(0, "Icon-3.png");
+            this.imageList1.Images.SetKeyName(1, "Icon-4.png");
+            this.imageList1.Images.SetKeyName(2, "Icon-5.png");
+            this.imageList1.Images.SetKeyName(3, "Icon-6.png");
+            this.imageList1.Images.SetKeyName(4, "Icon-7.png");
+            this.imageList1.Images.SetKeyName(5, "Icon-8.png");
+            this.imageList1.Images.SetKeyName(6, "Icon-9.png");
+            this.imageList1.Images.SetKeyName(7, "Icon-10.png");
+            // 
+            // TreeViewImageList
+            // 
+            this.TreeViewImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("TreeViewImageList.ImageStream")));
+            this.TreeViewImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.TreeViewImageList.Images.SetKeyName(0, "Icon-1.png");
+            this.TreeViewImageList.Images.SetKeyName(1, "Icon-2.png");
+            this.TreeViewImageList.Images.SetKeyName(2, "Icon-6.png");
+            this.TreeViewImageList.Images.SetKeyName(3, "Icon-7.png");
+            this.TreeViewImageList.Images.SetKeyName(4, "Icon-8.png");
+            this.TreeViewImageList.Images.SetKeyName(5, "Icon-9.png");
+            this.TreeViewImageList.Images.SetKeyName(6, "Icon-10.png");
+            this.TreeViewImageList.Images.SetKeyName(7, "Icon-13.png");
+            this.TreeViewImageList.Images.SetKeyName(8, "small desktop.png");
+            this.TreeViewImageList.Images.SetKeyName(9, "Small document.png");
+            this.TreeViewImageList.Images.SetKeyName(10, "Small download.png");
+            this.TreeViewImageList.Images.SetKeyName(11, "Small folder.png");
+            this.TreeViewImageList.Images.SetKeyName(12, "Small pictures.png");
+            this.TreeViewImageList.Images.SetKeyName(13, "Local Disk(c).png");
+            this.TreeViewImageList.Images.SetKeyName(14, "Quick Access.png");
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "__DVD RW drive.png");
+            this.imageList2.Images.SetKeyName(1, "__Local Disk(c).png");
+            this.imageList2.Images.SetKeyName(2, "__Local Disk(d).png");
+            this.imageList2.Images.SetKeyName(3, "__Desktop.png");
+            this.imageList2.Images.SetKeyName(4, "__Document.png");
+            this.imageList2.Images.SetKeyName(5, "__Download.png");
+            this.imageList2.Images.SetKeyName(6, "__Music.png");
+            this.imageList2.Images.SetKeyName(7, "__Pictures.png");
+            this.imageList2.Images.SetKeyName(8, "__Video.png");
+            // 
+            // imageList3
+            // 
+            this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
+            this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList3.Images.SetKeyName(0, "Search.png");
+            this.imageList3.Images.SetKeyName(1, "1.png");
+            this.imageList3.Images.SetKeyName(2, "2.png");
+            this.imageList3.Images.SetKeyName(3, "3.png");
+            this.imageList3.Images.SetKeyName(4, "4.png");
+            this.imageList3.Images.SetKeyName(5, "5.png");
+            this.imageList3.Images.SetKeyName(6, "6.png");
+            // 
+            // superToolTip1
+            // 
+            this.superToolTip1.MaxWidth = 200;
+            this.superToolTip1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
+            // 
+            // dockingManager1
+            // 
+            this.dockingManager1.AnimateAutoHiddenWindow = true;
+            this.dockingManager1.AutoHideTabForeColor = System.Drawing.Color.Empty;
+            this.dockingManager1.CloseTabOnMiddleClick = false;
+            this.dockingManager1.DockLayoutStream = ((System.IO.MemoryStream)(resources.GetObject("dockingManager1.DockLayoutStream")));
+            this.dockingManager1.DragProviderStyle = Syncfusion.Windows.Forms.Tools.DragProviderStyle.Office2016Colorful;
+            this.dockingManager1.HostControl = this;
+            this.dockingManager1.MetroButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dockingManager1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
+            this.dockingManager1.MetroSplitterBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(183)))));
+            this.dockingManager1.ReduceFlickeringInRtl = false;
+            this.dockingManager1.ThemeName = "Office2016Colorful";
+            this.dockingManager1.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Office2016Colorful;
+            this.dockingManager1.NewDockStateEndLoad += new System.EventHandler(this.DockingManager1_NewDockStateEndLoad);
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Close, "CloseButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Pin, "PinButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Maximize, "MaximizeButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Restore, "RestoreButton"));
+            this.dockingManager1.CaptionButtons.Add(new Syncfusion.Windows.Forms.Tools.CaptionButton(Syncfusion.Windows.Forms.Tools.CaptionButtonType.Menu, "MenuButton"));
+            // 
+            // MainStatusStrip
+            // 
+            this.MainStatusStrip.BackColor = System.Drawing.Color.White;
+            this.MainStatusStrip.BeforeTouchSize = new System.Drawing.Size(1151, 26);
+            this.MainStatusStrip.CanOverrideStyle = true;
+            this.MainStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslFileCaching,
+            this.tsslIdleMessage,
+            this.tsslMemoryUsage,
+            this.tsslblError});
+            this.MainStatusStrip.Location = new System.Drawing.Point(1, 502);
+            this.MainStatusStrip.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.MainStatusStrip.Name = "MainStatusStrip";
+            this.MainStatusStrip.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            this.MainStatusStrip.Size = new System.Drawing.Size(1151, 26);
+            this.MainStatusStrip.TabIndex = 6;
+            // 
+            // tsslFileCaching
+            // 
+            this.tsslFileCaching.IsLink = true;
+            this.tsslFileCaching.Name = "tsslFileCaching";
+            this.tsslFileCaching.Size = new System.Drawing.Size(101, 20);
+            this.tsslFileCaching.Text = "File caching is";
+            // 
+            // tsslIdleMessage
+            // 
+            this.tsslIdleMessage.Name = "tsslIdleMessage";
+            this.tsslIdleMessage.Size = new System.Drawing.Size(36, 20);
+            this.tsslIdleMessage.Text = "N/A";
+            // 
+            // tsslMemoryUsage
+            // 
+            this.tsslMemoryUsage.Name = "tsslMemoryUsage";
+            this.tsslMemoryUsage.Size = new System.Drawing.Size(36, 20);
+            this.tsslMemoryUsage.Text = "N/A";
+            // 
+            // tsslblError
+            // 
+            this.tsslblError.Image = global::Analogy.Properties.Resources.Warning_16x16;
+            this.tsslblError.Name = "tsslblError";
+            this.tsslblError.Size = new System.Drawing.Size(67, 20);
+            this.tsslblError.Text = "Errors";
+            this.tsslblError.Visible = false;
             // 
             // TmrAutoConnect
             // 
             this.TmrAutoConnect.Interval = 1000;
             this.TmrAutoConnect.Tick += new System.EventHandler(this.TmrAutoConnect_Tick);
             // 
-            // ribbonControlMain
-            // 
-            this.ribbonControlMain.AllowKeyTips = false;
-            this.ribbonControlMain.ApplicationButtonDropDownControl = this.applicationMenu1;
-            this.ribbonControlMain.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.ribbonControlMain.ExpandCollapseItem.Id = 0;
-            this.ribbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControlMain.ExpandCollapseItem,
-            this.ribbonControlMain.SearchEditItem,
-            this.btnItemLocalLogs,
-            this.btnItemOTA,
-            this.bItemProcess,
-            this.btnItemDark,
-            this.ribbonGalleryBarItem1,
-            this.ribbonGalleryBarItem2,
-            this.skinPaletteRibbonGalleryBarItem1,
-            this.btnItemSearch,
-            this.btnItemCombineFiles,
-            this.btnItemConvert,
-            this.skinRibbonGalleryBarItem1,
-            this.bsiRecent,
-            this.skinRibbonGalleryBarItem2,
-            this.skinPaletteRibbonGalleryBarItem2,
-            this.barButtonItem1,
-            this.barSubItem1,
-            this.barButtonItem2,
-            this.bbitemHelp,
-            this.bbsItem,
-            this.bbtnItemHelp,
-            this.barButtonItem3,
-            this.bbtnItemChangeLog,
-            this.bbtnItemSettings,
-            this.bbtnItemExit,
-            this.barButtonItem4,
-            this.barWorkspaceMenuItem1,
-            this.bBtnBookmarked,
-            this.bBtnClientServer,
-            this.bBtnStatisticsFiltering,
-            this.bBtnPreDefinedQueries,
-            this.bBtnStatisticsLookAndFeel,
-            this.bBtnStatisticsUserStatistics,
-            this.bBtnExtensionSettings,
-            this.bBtnCompareLogs,
-            this.bBtnWindowsEventLogs,
-            this.bBtnOnlineEventLogs,
-            this.bbiExtensions,
-            this.bBtnShortcuts,
-            this.bBtnMRUSettings,
-            this.bsiWindowsEventLogs,
-            this.barStaticItemDefaultLevel,
-            this.bBtnOpenAnalogyLog,
-            this.bbtnCloseCurrentTabPage,
-            this.bbtnCloseOtherTabPages,
-            this.bbtnCloseAllTabPage,
-            this.bsiMemoryUsage,
-            this.bsiIdleMessage,
-            this.bbtnUserSettingsResourceUsage,
-            this.bbtnSettingsStartupDataSources,
-            this.bbiFileCaching,
-            this.bBtnDataProviderSettings,
-            this.bBtnItemExportSettings,
-            this.bBtnItemImportSettings,
-            this.btnErrors,
-            this.bbtnDebugLog});
-            this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbonControlMain.MaxItemId = 74;
-            this.ribbonControlMain.Name = "ribbonControlMain";
-            this.ribbonControlMain.PageHeaderItemLinks.Add(this.bbsItem);
-            this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPageThemes,
-            this.ribbonPage4,
-            this.ribbonPage1});
-            this.ribbonControlMain.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
-            this.ribbonControlMain.ShowToolbarCustomizeItem = false;
-            this.ribbonControlMain.Size = new System.Drawing.Size(1517, 178);
-            this.ribbonControlMain.StatusBar = this.ribbonStatusBar;
-            this.ribbonControlMain.Toolbar.ShowCustomizeItem = false;
-            // 
-            // applicationMenu1
-            // 
-            this.applicationMenu1.ItemLinks.Add(this.bbtnItemSettings);
-            this.applicationMenu1.ItemLinks.Add(this.bBtnItemExportSettings);
-            this.applicationMenu1.ItemLinks.Add(this.bBtnItemImportSettings);
-            this.applicationMenu1.ItemLinks.Add(this.bbtnItemExit);
-            this.applicationMenu1.Name = "applicationMenu1";
-            this.applicationMenu1.Ribbon = this.ribbonControlMain;
-            // 
-            // bbtnItemSettings
-            // 
-            this.bbtnItemSettings.Caption = "Settings";
-            this.bbtnItemSettings.Id = 30;
-            this.bbtnItemSettings.ImageOptions.Image = global::Analogy.Properties.Resources.PageSetup_32x32;
-            this.bbtnItemSettings.Name = "bbtnItemSettings";
-            this.bbtnItemSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnItemSettings_ItemClick);
-            // 
-            // bBtnItemExportSettings
-            // 
-            this.bBtnItemExportSettings.Caption = "Export Settings";
-            this.bBtnItemExportSettings.Id = 70;
-            this.bBtnItemExportSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnItemExportSettings.ImageOptions.Image")));
-            this.bBtnItemExportSettings.Name = "bBtnItemExportSettings";
-            this.bBtnItemExportSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnItemExportSettings_ItemClick);
-            // 
-            // bBtnItemImportSettings
-            // 
-            this.bBtnItemImportSettings.Caption = "Import Settings";
-            this.bBtnItemImportSettings.Id = 71;
-            this.bBtnItemImportSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnItemImportSettings.ImageOptions.Image")));
-            this.bBtnItemImportSettings.Name = "bBtnItemImportSettings";
-            this.bBtnItemImportSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnItemImportSettings_ItemClick);
-            // 
-            // bbtnItemExit
-            // 
-            this.bbtnItemExit.Caption = "Exit";
-            this.bbtnItemExit.Id = 31;
-            this.bbtnItemExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnItemExit.ImageOptions.Image")));
-            this.bbtnItemExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnItemExit.ImageOptions.LargeImage")));
-            this.bbtnItemExit.Name = "bbtnItemExit";
-            this.bbtnItemExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnItemExit_ItemClick);
-            // 
-            // btnItemLocalLogs
-            // 
-            this.btnItemLocalLogs.Caption = "Local Logs";
-            this.btnItemLocalLogs.Id = 2;
-            this.btnItemLocalLogs.ImageOptions.Image = global::Analogy.Properties.Resources.Open2_32x32;
-            this.btnItemLocalLogs.LargeWidth = 80;
-            this.btnItemLocalLogs.Name = "btnItemLocalLogs";
-            this.btnItemLocalLogs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnItemOTA
-            // 
-            this.btnItemOTA.Caption = "Analogy";
-            this.btnItemOTA.Enabled = false;
-            this.btnItemOTA.Id = 3;
-            this.btnItemOTA.ImageOptions.Image = global::Analogy.Properties.Resources.logIcon;
-            this.btnItemOTA.Name = "btnItemOTA";
-            this.btnItemOTA.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnItemOTA.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btnItemOTA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnItemOTA_ItemClick);
-            // 
-            // bItemProcess
-            // 
-            this.bItemProcess.Caption = "Process Identifier";
-            this.bItemProcess.Id = 4;
-            this.bItemProcess.ImageOptions.Image = global::Analogy.Properties.Resources.ChartsShowLegend_16x16;
-            this.bItemProcess.ImageOptions.LargeImage = global::Analogy.Properties.Resources.ChartsShowLegend_32x32;
-            this.bItemProcess.LargeWidth = 100;
-            this.bItemProcess.Name = "bItemProcess";
-            this.bItemProcess.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bItemProcess.SmallWithTextWidth = 5;
-            this.bItemProcess.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bItemProcess_ItemClick);
-            // 
-            // btnItemDark
-            // 
-            this.btnItemDark.Caption = "Dark";
-            this.btnItemDark.Id = 6;
-            this.btnItemDark.Name = "btnItemDark";
-            // 
-            // ribbonGalleryBarItem1
-            // 
-            this.ribbonGalleryBarItem1.Caption = "InplaceGallery1";
-            // 
-            // 
-            // 
-            galleryItemGroup1.Caption = "Group2";
-            this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
-            this.ribbonGalleryBarItem1.Id = 8;
-            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
-            // 
-            // ribbonGalleryBarItem2
-            // 
-            this.ribbonGalleryBarItem2.Caption = "InplaceGallery2";
-            // 
-            // 
-            // 
-            galleryItemGroup2.Caption = "Group3";
-            this.ribbonGalleryBarItem2.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
-            this.ribbonGalleryBarItem2.Id = 9;
-            this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
-            // 
-            // skinPaletteRibbonGalleryBarItem1
-            // 
-            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
-            this.skinPaletteRibbonGalleryBarItem1.Id = 10;
-            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
-            // 
-            // btnItemSearch
-            // 
-            this.btnItemSearch.Caption = "Search In Files";
-            this.btnItemSearch.Id = 11;
-            this.btnItemSearch.ImageOptions.Image = global::Analogy.Properties.Resources.Lookup_Reference_32x32;
-            this.btnItemSearch.LargeWidth = 90;
-            this.btnItemSearch.Name = "btnItemSearch";
-            this.btnItemSearch.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnItemCombineFiles
-            // 
-            this.btnItemCombineFiles.Caption = "Combines Files";
-            this.btnItemCombineFiles.Id = 12;
-            this.btnItemCombineFiles.ImageOptions.Image = global::Analogy.Properties.Resources.Sutotal_32x32;
-            this.btnItemCombineFiles.LargeWidth = 90;
-            this.btnItemCombineFiles.Name = "btnItemCombineFiles";
-            this.btnItemCombineFiles.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnItemConvert
-            // 
-            this.btnItemConvert.Caption = "Convert Files";
-            this.btnItemConvert.Enabled = false;
-            this.btnItemConvert.Id = 13;
-            this.btnItemConvert.ImageOptions.Image = global::Analogy.Properties.Resources.ArrangeGroups_32x32;
-            this.btnItemConvert.LargeWidth = 90;
-            this.btnItemConvert.Name = "btnItemConvert";
-            this.btnItemConvert.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // skinRibbonGalleryBarItem1
-            // 
-            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
-            this.skinRibbonGalleryBarItem1.Id = 18;
-            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
-            // 
-            // bsiRecent
-            // 
-            this.bsiRecent.Caption = "Recent";
-            this.bsiRecent.Id = 19;
-            this.bsiRecent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bsiRecent.ImageOptions.Image")));
-            this.bsiRecent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bsiRecent.ImageOptions.LargeImage")));
-            this.bsiRecent.Name = "bsiRecent";
-            this.bsiRecent.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // skinRibbonGalleryBarItem2
-            // 
-            this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
-            // 
-            // 
-            // 
-            this.skinRibbonGalleryBarItem2.Gallery.ShowItemText = true;
-            this.skinRibbonGalleryBarItem2.Id = 20;
-            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
-            // 
-            // skinPaletteRibbonGalleryBarItem2
-            // 
-            this.skinPaletteRibbonGalleryBarItem2.Caption = "skinPaletteRibbonGalleryBarItem2";
-            this.skinPaletteRibbonGalleryBarItem2.Id = 21;
-            this.skinPaletteRibbonGalleryBarItem2.Name = "skinPaletteRibbonGalleryBarItem2";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "File";
-            this.barButtonItem1.Id = 22;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "barSubItem1";
-            this.barSubItem1.Id = 23;
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 24;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // bbitemHelp
-            // 
-            this.bbitemHelp.Caption = "barButtonItem3";
-            this.bbitemHelp.Id = 25;
-            this.bbitemHelp.Name = "bbitemHelp";
-            // 
-            // bbsItem
-            // 
-            this.bbsItem.Caption = "Help";
-            this.bbsItem.Id = 26;
-            this.bbsItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbsItem.ImageOptions.Image")));
-            this.bbsItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbsItem.ImageOptions.LargeImage")));
-            this.bbsItem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnItemChangeLog),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnItemHelp),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnDebugLog)});
-            this.bbsItem.Name = "bbsItem";
-            // 
-            // bbtnItemChangeLog
-            // 
-            this.bbtnItemChangeLog.Caption = "Change Log";
-            this.bbtnItemChangeLog.Id = 29;
-            this.bbtnItemChangeLog.Name = "bbtnItemChangeLog";
-            this.bbtnItemChangeLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnItemChangeLog_ItemClick);
-            // 
-            // bbtnItemHelp
-            // 
-            this.bbtnItemHelp.Caption = "About";
-            this.bbtnItemHelp.Id = 27;
-            this.bbtnItemHelp.Name = "bbtnItemHelp";
-            this.bbtnItemHelp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnItemHelp_ItemClick);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Change Log";
-            this.barButtonItem3.Id = 28;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 32;
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // barWorkspaceMenuItem1
-            // 
-            this.barWorkspaceMenuItem1.Caption = "barWorkspaceMenuItem1";
-            this.barWorkspaceMenuItem1.Id = 33;
-            this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
-            this.barWorkspaceMenuItem1.WorkspaceManager = this.workspaceManager1;
-            // 
-            // workspaceManager1
-            // 
-            this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition1;
-            // 
-            // bBtnBookmarked
-            // 
-            this.bBtnBookmarked.Caption = "Bookmarked";
-            this.bBtnBookmarked.Id = 34;
-            this.bBtnBookmarked.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnBookmarked.ImageOptions.Image")));
-            this.bBtnBookmarked.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnBookmarked.ImageOptions.LargeImage")));
-            this.bBtnBookmarked.Name = "bBtnBookmarked";
-            this.bBtnBookmarked.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnBookmarked.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnBookmarked_ItemClick);
-            // 
-            // bBtnClientServer
-            // 
-            this.bBtnClientServer.Caption = "Client/Server";
-            this.bBtnClientServer.Id = 35;
-            this.bBtnClientServer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnClientServer.ImageOptions.Image")));
-            this.bBtnClientServer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnClientServer.ImageOptions.LargeImage")));
-            this.bBtnClientServer.Name = "bBtnClientServer";
-            this.bBtnClientServer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnClientServer_ItemClick);
-            // 
-            // bBtnStatisticsFiltering
-            // 
-            this.bBtnStatisticsFiltering.Caption = "Filtering";
-            this.bBtnStatisticsFiltering.Id = 36;
-            this.bBtnStatisticsFiltering.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsFiltering.ImageOptions.Image")));
-            this.bBtnStatisticsFiltering.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsFiltering.ImageOptions.LargeImage")));
-            this.bBtnStatisticsFiltering.LargeWidth = 80;
-            this.bBtnStatisticsFiltering.Name = "bBtnStatisticsFiltering";
-            this.bBtnStatisticsFiltering.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnStatisticsFiltering.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnStatisticsFiltering_ItemClick);
-            // 
-            // bBtnPreDefinedQueries
-            // 
-            this.bBtnPreDefinedQueries.Caption = "Pre-Defined Queries";
-            this.bBtnPreDefinedQueries.Id = 37;
-            this.bBtnPreDefinedQueries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnPreDefinedQueries.ImageOptions.Image")));
-            this.bBtnPreDefinedQueries.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnPreDefinedQueries.ImageOptions.LargeImage")));
-            this.bBtnPreDefinedQueries.LargeWidth = 80;
-            this.bBtnPreDefinedQueries.Name = "bBtnPreDefinedQueries";
-            this.bBtnPreDefinedQueries.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnPreDefinedQueries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnPreDefinedQueries_ItemClick);
-            // 
-            // bBtnStatisticsLookAndFeel
-            // 
-            this.bBtnStatisticsLookAndFeel.Caption = "Look and Feel";
-            this.bBtnStatisticsLookAndFeel.Id = 38;
-            this.bBtnStatisticsLookAndFeel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsLookAndFeel.ImageOptions.Image")));
-            this.bBtnStatisticsLookAndFeel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsLookAndFeel.ImageOptions.LargeImage")));
-            this.bBtnStatisticsLookAndFeel.LargeWidth = 100;
-            this.bBtnStatisticsLookAndFeel.Name = "bBtnStatisticsLookAndFeel";
-            this.bBtnStatisticsLookAndFeel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnStatisticsLookAndFeel_ItemClick);
-            // 
-            // bBtnStatisticsUserStatistics
-            // 
-            this.bBtnStatisticsUserStatistics.Caption = "User Statistics";
-            this.bBtnStatisticsUserStatistics.Id = 39;
-            this.bBtnStatisticsUserStatistics.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsUserStatistics.ImageOptions.Image")));
-            this.bBtnStatisticsUserStatistics.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnStatisticsUserStatistics.ImageOptions.LargeImage")));
-            this.bBtnStatisticsUserStatistics.LargeWidth = 100;
-            this.bBtnStatisticsUserStatistics.Name = "bBtnStatisticsUserStatistics";
-            this.bBtnStatisticsUserStatistics.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnStatisticsUserStatistics_ItemClick);
-            // 
-            // bBtnExtensionSettings
-            // 
-            this.bBtnExtensionSettings.Caption = "Extensions setting";
-            this.bBtnExtensionSettings.Id = 40;
-            this.bBtnExtensionSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnExtensionSettings.ImageOptions.Image")));
-            this.bBtnExtensionSettings.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnExtensionSettings.ImageOptions.LargeImage")));
-            this.bBtnExtensionSettings.LargeWidth = 80;
-            this.bBtnExtensionSettings.Name = "bBtnExtensionSettings";
-            this.bBtnExtensionSettings.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnExtensionSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnExtensionSettings_ItemClick);
-            // 
-            // bBtnCompareLogs
-            // 
-            this.bBtnCompareLogs.Caption = "Compare Logs";
-            this.bBtnCompareLogs.Id = 45;
-            this.bBtnCompareLogs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnCompareLogs.ImageOptions.Image")));
-            this.bBtnCompareLogs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnCompareLogs.ImageOptions.LargeImage")));
-            this.bBtnCompareLogs.Name = "bBtnCompareLogs";
-            this.bBtnCompareLogs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnCompareLogs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnCompareLogs_ItemClick);
-            // 
-            // bBtnWindowsEventLogs
-            // 
-            this.bBtnWindowsEventLogs.ActAsDropDown = true;
-            this.bBtnWindowsEventLogs.Caption = "Windows Event Logs";
-            this.bBtnWindowsEventLogs.Id = 46;
-            this.bBtnWindowsEventLogs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnWindowsEventLogs.ImageOptions.Image")));
-            this.bBtnWindowsEventLogs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnWindowsEventLogs.ImageOptions.LargeImage")));
-            this.bBtnWindowsEventLogs.Name = "bBtnWindowsEventLogs";
-            this.bBtnWindowsEventLogs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnWindowsEventLogs_ItemClick);
-            // 
-            // bBtnOnlineEventLogs
-            // 
-            this.bBtnOnlineEventLogs.Caption = "Real Time Windows Event Logs";
-            this.bBtnOnlineEventLogs.Id = 47;
-            this.bBtnOnlineEventLogs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnOnlineEventLogs.ImageOptions.Image")));
-            this.bBtnOnlineEventLogs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnOnlineEventLogs.ImageOptions.LargeImage")));
-            this.bBtnOnlineEventLogs.Name = "bBtnOnlineEventLogs";
-            this.bBtnOnlineEventLogs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnOnlineEventLogs_ItemClick);
-            // 
-            // bbiExtensions
-            // 
-            this.bbiExtensions.Caption = "Extensions List";
-            this.bbiExtensions.Id = 48;
-            this.bbiExtensions.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiExtensions.ImageOptions.Image")));
-            this.bbiExtensions.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiExtensions.ImageOptions.LargeImage")));
-            this.bbiExtensions.LargeWidth = 140;
-            this.bbiExtensions.Name = "bbiExtensions";
-            this.bbiExtensions.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bbiExtensions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExtensions_ItemClick);
-            // 
-            // bBtnShortcuts
-            // 
-            this.bBtnShortcuts.Caption = "Shortcuts";
-            this.bBtnShortcuts.Id = 49;
-            this.bBtnShortcuts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnShortcuts.ImageOptions.Image")));
-            this.bBtnShortcuts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnShortcuts.ImageOptions.LargeImage")));
-            this.bBtnShortcuts.Name = "bBtnShortcuts";
-            this.bBtnShortcuts.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnShortcuts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnShortcuts_ItemClick);
-            // 
-            // bBtnMRUSettings
-            // 
-            this.bBtnMRUSettings.Caption = "MRU";
-            this.bBtnMRUSettings.Id = 51;
-            this.bBtnMRUSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnMRUSettings.ImageOptions.Image")));
-            this.bBtnMRUSettings.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnMRUSettings.ImageOptions.LargeImage")));
-            this.bBtnMRUSettings.LargeWidth = 80;
-            this.bBtnMRUSettings.Name = "bBtnMRUSettings";
-            this.bBtnMRUSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnMRUSettings_ItemClick);
-            // 
-            // bsiWindowsEventLogs
-            // 
-            this.bsiWindowsEventLogs.Caption = "Windows Event Logs";
-            this.bsiWindowsEventLogs.Id = 52;
-            this.bsiWindowsEventLogs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bsiWindowsEventLogs.ImageOptions.Image")));
-            this.bsiWindowsEventLogs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bsiWindowsEventLogs.ImageOptions.LargeImage")));
-            this.bsiWindowsEventLogs.Name = "bsiWindowsEventLogs";
-            this.bsiWindowsEventLogs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // barStaticItemDefaultLevel
-            // 
-            this.barStaticItemDefaultLevel.Caption = "Default Level: n/a";
-            this.barStaticItemDefaultLevel.Id = 59;
-            this.barStaticItemDefaultLevel.Name = "barStaticItemDefaultLevel";
-            // 
-            // bBtnOpenAnalogyLog
-            // 
-            this.bBtnOpenAnalogyLog.Caption = "Open Analogy Xml File";
-            this.bBtnOpenAnalogyLog.Id = 60;
-            this.bBtnOpenAnalogyLog.ImageOptions.Image = global::Analogy.Properties.Resources.logIcon;
-            this.bBtnOpenAnalogyLog.LargeWidth = 100;
-            this.bBtnOpenAnalogyLog.Name = "bBtnOpenAnalogyLog";
-            this.bBtnOpenAnalogyLog.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // bbtnCloseCurrentTabPage
-            // 
-            this.bbtnCloseCurrentTabPage.Caption = "Close this tab";
-            this.bbtnCloseCurrentTabPage.Id = 61;
-            this.bbtnCloseCurrentTabPage.Name = "bbtnCloseCurrentTabPage";
-            // 
-            // bbtnCloseOtherTabPages
-            // 
-            this.bbtnCloseOtherTabPages.Caption = "Close all other tabs";
-            this.bbtnCloseOtherTabPages.Id = 62;
-            this.bbtnCloseOtherTabPages.Name = "bbtnCloseOtherTabPages";
-            // 
-            // bbtnCloseAllTabPage
-            // 
-            this.bbtnCloseAllTabPage.Caption = "close all tabs";
-            this.bbtnCloseAllTabPage.Id = 63;
-            this.bbtnCloseAllTabPage.Name = "bbtnCloseAllTabPage";
-            // 
-            // bsiMemoryUsage
-            // 
-            this.bsiMemoryUsage.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bsiMemoryUsage.Caption = "N/A";
-            this.bsiMemoryUsage.Id = 64;
-            this.bsiMemoryUsage.Name = "bsiMemoryUsage";
-            // 
-            // bsiIdleMessage
-            // 
-            this.bsiIdleMessage.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bsiIdleMessage.Caption = "N/A";
-            this.bsiIdleMessage.Id = 65;
-            this.bsiIdleMessage.Name = "bsiIdleMessage";
-            // 
-            // bbtnUserSettingsResourceUsage
-            // 
-            this.bbtnUserSettingsResourceUsage.Caption = "Resource Usage";
-            this.bbtnUserSettingsResourceUsage.Id = 66;
-            this.bbtnUserSettingsResourceUsage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnUserSettingsResourceUsage.ImageOptions.Image")));
-            this.bbtnUserSettingsResourceUsage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnUserSettingsResourceUsage.ImageOptions.LargeImage")));
-            this.bbtnUserSettingsResourceUsage.Name = "bbtnUserSettingsResourceUsage";
-            this.bbtnUserSettingsResourceUsage.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bbtnUserSettingsResourceUsage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUserSettingsResourceUsage_ItemClick);
-            // 
-            // bbtnSettingsStartupDataSources
-            // 
-            this.bbtnSettingsStartupDataSources.Caption = "Data providers Settings ";
-            this.bbtnSettingsStartupDataSources.Id = 67;
-            this.bbtnSettingsStartupDataSources.ImageOptions.Image = global::Analogy.Properties.Resources.Analogy_Icon2;
-            this.bbtnSettingsStartupDataSources.ImageOptions.LargeImage = global::Analogy.Properties.Resources.Analogy_Icon2;
-            this.bbtnSettingsStartupDataSources.Name = "bbtnSettingsStartupDataSources";
-            this.bbtnSettingsStartupDataSources.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bbtnSettingsStartupDataSources.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSettingsStartupDataSources_ItemClick);
-            // 
-            // bbiFileCaching
-            // 
-            this.bbiFileCaching.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbiFileCaching.Caption = "File caching is";
-            this.bbiFileCaching.Id = 68;
-            this.bbiFileCaching.Name = "bbiFileCaching";
-            this.bbiFileCaching.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiFileCaching_ItemClick);
-            // 
-            // bBtnDataProviderSettings
-            // 
-            this.bBtnDataProviderSettings.Caption = "Custom Data Providers Settings";
-            this.bBtnDataProviderSettings.Id = 69;
-            this.bBtnDataProviderSettings.ImageOptions.Image = global::Analogy.Properties.Resources.Database_on;
-            this.bBtnDataProviderSettings.Name = "bBtnDataProviderSettings";
-            this.bBtnDataProviderSettings.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bBtnDataProviderSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnDataProviderSettings_ItemClick);
-            // 
-            // btnErrors
-            // 
-            this.btnErrors.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.btnErrors.Caption = "Errors";
-            this.btnErrors.Id = 72;
-            this.btnErrors.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnErrors.ImageOptions.Image")));
-            this.btnErrors.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnErrors.ImageOptions.LargeImage")));
-            this.btnErrors.Name = "btnErrors";
-            this.btnErrors.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btnErrors.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnErrors_ItemClick);
-            // 
-            // ribbonPageThemes
-            // 
-            this.ribbonPageThemes.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPageThemes.Name = "ribbonPageThemes";
-            this.ribbonPageThemes.Text = "Themes";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
-            this.ribbonPageGroup3.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem2);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Options";
-            // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup10});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Extensions";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.bbiExtensions);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Extensions Selection";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupSettings});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Settings";
-            // 
-            // ribbonPageGroupSettings
-            // 
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnStatisticsFiltering);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnPreDefinedQueries);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnStatisticsLookAndFeel);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnStatisticsUserStatistics);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnExtensionSettings);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnShortcuts);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnMRUSettings);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bbtnUserSettingsResourceUsage);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bbtnSettingsStartupDataSources);
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.bBtnDataProviderSettings);
-            this.ribbonPageGroupSettings.Name = "ribbonPageGroupSettings";
-            this.ribbonPageGroupSettings.Text = "Settings";
-            // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bbiFileCaching);
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiIdleMessage);
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiMemoryUsage);
-            this.ribbonStatusBar.ItemLinks.Add(this.btnErrors);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 522);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControlMain;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1517, 37);
-            // 
-            // xtcLogs
-            // 
-            this.xtcLogs.AllowDrop = true;
-            this.xtcLogs.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
-            this.xtcLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtcLogs.Location = new System.Drawing.Point(0, 178);
-            this.xtcLogs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.xtcLogs.Name = "xtcLogs";
-            this.xtcLogs.Size = new System.Drawing.Size(1517, 344);
-            this.xtcLogs.TabIndex = 4;
-            this.xtcLogs.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtcLogs_SelectedPageChanged);
-            this.xtcLogs.CloseButtonClick += new System.EventHandler(this.xtcLogs_CloseButtonClick);
-            this.xtcLogs.DragDrop += new System.Windows.Forms.DragEventHandler(this.AnalogyMainForm_DragDrop);
-            this.xtcLogs.DragEnter += new System.Windows.Forms.DragEventHandler(this.AnalogyMainForm_DragEnter);
-            this.xtcLogs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.XtcLogs_MouseUp);
-            // 
-            // popupMenuTabPages
-            // 
-            this.popupMenuTabPages.ItemLinks.Add(this.bbtnCloseCurrentTabPage, true);
-            this.popupMenuTabPages.ItemLinks.Add(this.bbtnCloseOtherTabPages);
-            this.popupMenuTabPages.ItemLinks.Add(this.bbtnCloseAllTabPage);
-            this.popupMenuTabPages.Name = "popupMenuTabPages";
-            this.popupMenuTabPages.Ribbon = this.ribbonControlMain;
-            // 
             // tmrStatusUpdates
             // 
             this.tmrStatusUpdates.Enabled = true;
             this.tmrStatusUpdates.Interval = 1000;
-            this.tmrStatusUpdates.Tick += new System.EventHandler(this.TmrStatusUpdates_Tick);
             // 
-            // bbtnDebugLog
+            // Form1
             // 
-            this.bbtnDebugLog.Caption = "Internal Log Messages";
-            this.bbtnDebugLog.Id = 73;
-            this.bbtnDebugLog.Name = "bbtnDebugLog";
-            this.bbtnDebugLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDebugLog_ItemClick);
-            // 
-            // MainForm
-            // 
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1517, 559);
-            this.Controls.Add(this.xtcLogs);
-            this.Controls.Add(this.ribbonStatusBar);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1153, 529);
+            this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.ribbonControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "MainForm";
-            this.Ribbon = this.ribbonControlMain;
-            this.StatusBar = this.ribbonStatusBar;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 1);
+            this.ShowApplicationIcon = false;
             this.Text = "Analogy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnalogyMainForm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AnalogyMainForm_FormClosed);
-            this.Load += new System.EventHandler(this.AnalogyMainForm_Load);
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.AnalogyMainForm_DragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.AnalogyMainForm_DragEnter);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtcLogs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenuTabPages)).EndInit();
+            this.ribbonControlMain.ResumeLayout(false);
+            this.ribbonControlMain.PerformLayout();
+            this.tstitmAnalogy.Panel.ResumeLayout(false);
+            this.tstitmAnalogy.Panel.PerformLayout();
+            this.tseAnalogyBuiltInProviders.ResumeLayout(false);
+            this.tseAnalogyBuiltInProviders.PerformLayout();
+            this.tstiSettings.Panel.ResumeLayout(false);
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockingManager1)).EndInit();
+            this.MainStatusStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private Syncfusion.Windows.Forms.Tools.RibbonControlAdv ribbonControlMain;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem1;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private Syncfusion.Windows.Forms.Tools.ToolStripPanelItem toolStripPanelItem1;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private Syncfusion.Windows.Forms.Tools.ToolStripPanelItem toolStripPanelItem2;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ImageList TreeViewImageList;
+        private System.Windows.Forms.ImageList imageList2;
+        private Syncfusion.Windows.Forms.Tools.SuperAccelerator superAccelerator1;
+        private System.Windows.Forms.ImageList imageList3;
+        private Syncfusion.Windows.Forms.BannerTextProvider bannerTextProvider1;
+        private Syncfusion.Windows.Forms.Tools.SuperToolTip superToolTip1;
+        private Syncfusion.Windows.Forms.Tools.ToolStripGallery toolStripGallery1;
+        private System.Windows.Forms.ToolStripMenuItem fsfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fsfToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonEx1;
+        private System.Windows.Forms.ToolStripMenuItem mapNetworkDriveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem discconectNetworkDriveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripMenuItem navigationPaneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expandToOpenFoldersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showAllFoldersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showLibrariesToolStripMenuItem;
+        private Syncfusion.Windows.Forms.Tools.DockingManager dockingManager1;
+        private Syncfusion.Windows.Forms.Tools.StatusStripEx MainStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel tsslMemoryUsage;
+        private System.Windows.Forms.ToolStripStatusLabel tsslblError;
+        private System.Windows.Forms.ToolStripStatusLabel tsslIdleMessage;
+        private System.Windows.Forms.ToolStripStatusLabel tsslFileCaching;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstitmAnalogy;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx tseAnalogyBuiltInProviders;
+        private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFolder;
+        private System.Windows.Forms.ToolStripButton tsbtnAnalogyOpenFiles;
+        private System.Windows.Forms.ToolStripDropDownButton tsbtnAnalogyRecentlyOpenFiles;
         private System.Windows.Forms.Timer TmrAutoConnect;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControlMain;
-        private DevExpress.XtraBars.BarButtonItem btnItemLocalLogs;
-        private DevExpress.XtraBars.BarButtonItem btnItemOTA;
-        private DevExpress.XtraBars.BarButtonItem bItemProcess;
-        private DevExpress.XtraBars.BarButtonItem btnItemDark;
-        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
-        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem2;
-        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageThemes;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem btnItemSearch;
-        private DevExpress.XtraBars.BarButtonItem btnItemCombineFiles;
-        private DevExpress.XtraBars.BarButtonItem btnItemConvert;
-        private DevExpress.XtraTab.XtraTabControl xtcLogs;
-        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
-        private DevExpress.XtraBars.BarSubItem bsiRecent;
-        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
-        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem2;
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem bbitemHelp;
-        private DevExpress.XtraBars.BarSubItem bbsItem;
-        private DevExpress.XtraBars.BarButtonItem bbtnItemChangeLog;
-        private DevExpress.XtraBars.BarButtonItem bbtnItemHelp;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem bbtnItemSettings;
-        private DevExpress.XtraBars.BarButtonItem bbtnItemExit;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem1;
-        private DevExpress.Utils.WorkspaceManager workspaceManager1;
-        private DevExpress.XtraBars.BarButtonItem bBtnBookmarked;
-        private DevExpress.XtraBars.BarButtonItem bBtnClientServer;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSettings;
-        private DevExpress.XtraBars.BarButtonItem bBtnStatisticsFiltering;
-        private DevExpress.XtraBars.BarButtonItem bBtnPreDefinedQueries;
-        private DevExpress.XtraBars.BarButtonItem bBtnStatisticsLookAndFeel;
-        private DevExpress.XtraBars.BarButtonItem bBtnStatisticsUserStatistics;
-        private DevExpress.XtraBars.BarButtonItem bBtnExtensionSettings;
-        private DevExpress.XtraBars.BarButtonItem bBtnCompareLogs;
-        private DevExpress.XtraBars.BarButtonItem bBtnWindowsEventLogs;
-        private DevExpress.XtraBars.BarButtonItem bBtnOnlineEventLogs;
-        private DevExpress.XtraBars.BarButtonItem bbiExtensions;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem bBtnShortcuts;
-        private DevExpress.XtraBars.BarButtonItem bBtnMRUSettings;
-        private DevExpress.XtraBars.BarSubItem bsiWindowsEventLogs;
-        private DevExpress.XtraBars.BarStaticItem barStaticItemDefaultLevel;
-        private DevExpress.XtraBars.BarButtonItem bBtnOpenAnalogyLog;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.PopupMenu popupMenuTabPages;
-        private DevExpress.XtraBars.BarButtonItem bbtnCloseCurrentTabPage;
-        private DevExpress.XtraBars.BarButtonItem bbtnCloseOtherTabPages;
-        private DevExpress.XtraBars.BarButtonItem bbtnCloseAllTabPage;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarStaticItem bsiMemoryUsage;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstiSettings;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton tsbSettingsFiltering;
+        private System.Windows.Forms.ToolStripButton tsbSettingsPreDefined;
+        private System.Windows.Forms.ToolStripButton tsbSettingsLookAndFeel;
+        private System.Windows.Forms.ToolStripButton tsbSettingsUserStatistics;
+        private System.Windows.Forms.ToolStripButton tsbSettingsExtension;
+        private System.Windows.Forms.ToolStripButton tsbSettingsShortcuts;
+        private System.Windows.Forms.ToolStripButton tsbSettingsMRU;
+        private System.Windows.Forms.ToolStripButton tsbSettingsResources;
+        private System.Windows.Forms.ToolStripButton tsbSettingsDataProviders;
+        private System.Windows.Forms.ToolStripButton tsbSettingsCustomDataProviders;
         private System.Windows.Forms.Timer tmrStatusUpdates;
-        private DevExpress.XtraBars.BarStaticItem bsiIdleMessage;
-        private DevExpress.XtraBars.BarButtonItem bbtnUserSettingsResourceUsage;
-        private DevExpress.XtraBars.BarButtonItem bbtnSettingsStartupDataSources;
-        private DevExpress.XtraBars.BarButtonItem bbiFileCaching;
-        private DevExpress.XtraBars.BarButtonItem bBtnDataProviderSettings;
-        private DevExpress.XtraBars.BarButtonItem bBtnItemExportSettings;
-        private DevExpress.XtraBars.BarButtonItem bBtnItemImportSettings;
-        private DevExpress.XtraBars.BarButtonItem btnErrors;
-        private DevExpress.XtraBars.BarButtonItem bbtnDebugLog;
     }
 }
