@@ -32,15 +32,12 @@ namespace Analogy
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            treeColumnAdv1 = new TreeColumnAdv();
-            treeColumnAdv2 = new TreeColumnAdv();
-            treeColumnAdv3 = new TreeColumnAdv();
-
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraUCFileSystem));
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo treeNodeAdvSubItemStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo treeColumnAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo();
+            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
+            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv2 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
+            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv3 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
             this.multiColumnTreeView1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.MultiColumnTreeView();
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).BeginInit();
             this.SuspendLayout();
@@ -73,43 +70,37 @@ namespace Analogy
             new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.StyleNamePair("Standard", treeNodeAdvStyleInfo1),
             new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.StyleNamePair("Standard - SubItem", treeNodeAdvSubItemStyleInfo1),
             new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.StyleNamePair("Standard - Column", treeColumnAdvStyleInfo1)});
-            this.multiColumnTreeView1.BeforeTouchSize = new System.Drawing.Size(396, 296);
+            this.multiColumnTreeView1.BeforeTouchSize = new System.Drawing.Size(453, 296);
             this.multiColumnTreeView1.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.multiColumnTreeView1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.multiColumnTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeColumnAdv1.AreaBackground = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
+            treeColumnAdv1.Background = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225))))));
+            treeColumnAdv1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             treeColumnAdv1.Font = new System.Drawing.Font("Verdana", 8F);
-            treeColumnAdv1.Highlighted = false;
-            treeColumnAdv1.Text = "TreeColumnAdv0";
-            treeColumnAdv1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            treeColumnAdv2.Font = new System.Drawing.Font("Verdana", 8F);
-            treeColumnAdv2.Highlighted = true;
-            treeColumnAdv2.Text = "TreeColumnAdv1";
-            treeColumnAdv2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            treeColumnAdv3.Font = new System.Drawing.Font("Verdana", 8F);
-            treeColumnAdv3.Highlighted = false;
-            treeColumnAdv3.Text = "TreeColumnAdv2";
-            treeColumnAdv3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-
-
-
             treeColumnAdv1.HelpText = "Name";
+            treeColumnAdv1.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             treeColumnAdv1.Highlighted = false;
             treeColumnAdv1.Text = "Name";
-            treeColumnAdv1.Background = new Syncfusion.Drawing.BrushInfo(SystemColors.Highlight);
-            treeColumnAdv1.AreaBackground = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.ForwardDiagonal, Color.White, Color.Snow);
-            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
-
+            treeColumnAdv1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            treeColumnAdv2.AreaBackground = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
+            treeColumnAdv2.Background = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225))))));
+            treeColumnAdv2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeColumnAdv2.Font = new System.Drawing.Font("Verdana", 8F);
             treeColumnAdv2.HelpText = "Full Path";
+            treeColumnAdv2.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             treeColumnAdv2.Highlighted = false;
             treeColumnAdv2.Text = "Full Path";
-            treeColumnAdv2.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
-            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
-
+            treeColumnAdv2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            treeColumnAdv3.AreaBackground = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
+            treeColumnAdv3.Background = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225))))));
+            treeColumnAdv3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeColumnAdv3.Font = new System.Drawing.Font("Verdana", 8F);
             treeColumnAdv3.HelpText = "Date Modified";
+            treeColumnAdv3.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             treeColumnAdv3.Highlighted = false;
             treeColumnAdv3.Text = "Date Modified";
-            treeColumnAdv3.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
-            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
+            treeColumnAdv3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.multiColumnTreeView1.Columns.AddRange(new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv[] {
             treeColumnAdv1,
             treeColumnAdv2,
@@ -118,6 +109,7 @@ namespace Analogy
             this.multiColumnTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.multiColumnTreeView1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiColumnTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.multiColumnTreeView1.FullRowSelect = true;
             // 
             // 
             // 
@@ -133,13 +125,13 @@ namespace Analogy
             this.multiColumnTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
             this.multiColumnTreeView1.LoadOnDemand = true;
             this.multiColumnTreeView1.Location = new System.Drawing.Point(0, 0);
-            this.multiColumnTreeView1.Margin = new System.Windows.Forms.Padding(4);
+            this.multiColumnTreeView1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.multiColumnTreeView1.MetroScrollBars = true;
             this.multiColumnTreeView1.Name = "multiColumnTreeView1";
             this.multiColumnTreeView1.OwnerDrawNodes = true;
             this.multiColumnTreeView1.SelectedNodeBackground = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197))))));
             this.multiColumnTreeView1.SelectedNodeForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.multiColumnTreeView1.Size = new System.Drawing.Size(396, 296);
+            this.multiColumnTreeView1.Size = new System.Drawing.Size(453, 296);
             this.multiColumnTreeView1.Style = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.MultiColumnVisualStyle.Office2016Colorful;
             this.multiColumnTreeView1.TabIndex = 5;
             this.multiColumnTreeView1.Text = "MultiColumnTreeViewDemo.csmultiColumnTreeView1";
@@ -159,18 +151,17 @@ namespace Analogy
             this.multiColumnTreeView1.ToolTipControl.Text = "toolTip";
             this.multiColumnTreeView1.TransparentControls = true;
             this.multiColumnTreeView1.VScrollPos = -13;
-
             // 
             // XtraUCFileSystem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.multiColumnTreeView1);
             this.Name = "XtraUCFileSystem";
-            this.Size = new System.Drawing.Size(396, 296);
+            this.Size = new System.Drawing.Size(453, 296);
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).EndInit();
             this.ResumeLayout(false);
-     
+
         }
 
         #endregion

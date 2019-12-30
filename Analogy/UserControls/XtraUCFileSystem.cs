@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Types;
-using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
 using TreeNodeAdv = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv;
 
@@ -28,17 +27,10 @@ namespace Analogy
             ListFolders = listFoldersToLoad;
             ListFiles = listFilesToLoad;
             InitializeComponent();
-            multiColumnTreeView1.BeforeExpand += multiColumnTreeView1_BeforeExpand;
-
-            multiColumnTreeView1.Columns.AddRange(new[] { treeColumnAdv1, treeColumnAdv2, treeColumnAdv3 });
-            multiColumnTreeView1.AutoSizeMode = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.AutoSizeMode.Fill;
+            treeColumnAdv1.BaseStyle = (multiColumnTreeView1.BaseStylePairs[2] as StyleNamePair)?.Name;
             multiColumnTreeView1.BeforeExpand += multiColumnTreeView1_BeforeExpand;
             //this.MinimumSize = this.Size;
-            treeColumnAdv1.BaseStyle = (multiColumnTreeView1.BaseStylePairs[2] as Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.StyleNamePair).Name;
-            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
-            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
-            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
-            multiColumnTreeView1.FullRowSelect = true;
+
 
         }
 
@@ -85,7 +77,7 @@ namespace Analogy
         }
 
 
-        void multiColumnTreeView1_BeforeExpand(object sender, Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeViewAdvCancelableNodeEventArgs e)
+        void multiColumnTreeView1_BeforeExpand(object sender, TreeViewAdvCancelableNodeEventArgs e)
         {
             try
             {

@@ -45,10 +45,10 @@ namespace Analogy
             this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDelete = new System.Windows.Forms.ToolStripButton();
             this.tsBtnSelecAll = new System.Windows.Forms.ToolStripButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.checkBoxSelectionMode = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.checkBoxRecursiveLoad = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.ucLogs1 = new Analogy.UCLogs();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -60,6 +60,7 @@ namespace Analogy
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bBtnOpenFolder = new DevExpress.XtraBars.BarButtonItem();
+            this.folderTreeViewUC2 = new Analogy.FolderTreeViewUC();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
             this.spltMain.Panel2.SuspendLayout();
@@ -69,9 +70,9 @@ namespace Analogy
             this.splcLeft.Panel2.SuspendLayout();
             this.splcLeft.SuspendLayout();
             this.toolStripEx2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,7 @@ namespace Analogy
             // 
             // splcLeft.Panel2
             // 
+            this.splcLeft.Panel2.Controls.Add(this.folderTreeViewUC2);
             this.splcLeft.Panel2.Controls.Add(this.toolStripEx2);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxSelectionMode);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxRecursiveLoad);
@@ -176,14 +178,6 @@ namespace Analogy
             this.tsBtnSelecAll.Size = new System.Drawing.Size(95, 24);
             this.tsBtnSelecAll.Text = "Select All";
             // 
-            // imageCollection1
-            // 
-            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "Folder_Closed.png");
-            this.imageCollection1.Images.SetKeyName(1, "Folder_Opened.png");
-            this.imageCollection1.Images.SetKeyName(2, "File.png");
-            this.imageCollection1.Images.SetKeyName(3, "Local_Disk.png");
-            // 
             // checkBoxSelectionMode
             // 
             this.checkBoxSelectionMode.BeforeTouchSize = new System.Drawing.Size(437, 19);
@@ -221,6 +215,14 @@ namespace Analogy
             this.ucLogs1.OnlineMode = false;
             this.ucLogs1.Size = new System.Drawing.Size(946, 700);
             this.ucLogs1.TabIndex = 0;
+            // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.Images.SetKeyName(0, "Folder_Closed.png");
+            this.imageCollection1.Images.SetKeyName(1, "Folder_Opened.png");
+            this.imageCollection1.Images.SetKeyName(2, "File.png");
+            this.imageCollection1.Images.SetKeyName(3, "Local_Disk.png");
             // 
             // barManager1
             // 
@@ -323,6 +325,16 @@ namespace Analogy
             this.bBtnOpenFolder.Name = "bBtnOpenFolder";
             this.bBtnOpenFolder.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // folderTreeViewUC2
+            // 
+            this.folderTreeViewUC2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.folderTreeViewUC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.folderTreeViewUC2.Location = new System.Drawing.Point(0, 65);
+            this.folderTreeViewUC2.Margin = new System.Windows.Forms.Padding(4);
+            this.folderTreeViewUC2.Name = "folderTreeViewUC2";
+            this.folderTreeViewUC2.Size = new System.Drawing.Size(437, 406);
+            this.folderTreeViewUC2.TabIndex = 16;
+            // 
             // OfflineUCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,9 +362,9 @@ namespace Analogy
             this.splcLeft.ResumeLayout(false);
             this.toolStripEx2.ResumeLayout(false);
             this.toolStripEx2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
@@ -385,5 +397,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBtnSelecAll;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxSelectionMode;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxRecursiveLoad;
+        private FolderTreeViewUC folderTreeViewUC2;
     }
 }

@@ -523,12 +523,6 @@
     <Compile Include="Forms\WindowsEventLogsForm.Designer.cs">
       <DependentUpon>WindowsEventLogsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\XtraUCDirectoryListing.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\XtraUCDirectoryListing.Designer.cs">
-      <DependentUpon>XtraUCDirectoryListing.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\XtraUCFileSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -706,10 +700,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogGridForm.resx">
       <DependentUpon>LogGridForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\XtraUCDirectoryListing.resx">
-      <DependentUpon>XtraUCDirectoryListing.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\XtraUCFileSystem.resx">
       <DependentUpon>XtraUCFileSystem.cs</DependentUpon>
