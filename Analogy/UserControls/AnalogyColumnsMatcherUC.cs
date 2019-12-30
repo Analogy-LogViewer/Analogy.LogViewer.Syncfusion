@@ -33,27 +33,12 @@ namespace Analogy.UserControls
 
         private void SBtnMoveDown_Click(object sender, EventArgs e)
         {
-            if (lstBAnalogyColumns.SelectedIndex == lstBAnalogyColumns.ItemCount - 1) return;
+            if (lstBAnalogyColumns.SelectedIndex == lstBAnalogyColumns.Items.Count - 1) return;
             var selectedIndex = lstBAnalogyColumns.SelectedIndex;
             var currentValue = lstBAnalogyColumns.Items[selectedIndex + 1];
             lstBAnalogyColumns.Items[selectedIndex + 1] = lstBAnalogyColumns.Items[selectedIndex];
             lstBAnalogyColumns.Items[selectedIndex] = currentValue;
             lstBAnalogyColumns.SelectedIndex = lstBAnalogyColumns.SelectedIndex + 1;
-        }
-
-        private void lstBAnalogyColumns_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-                if (lstBAnalogyColumns.SelectedIndex > lstBoxItemsNlog.ItemCount - 1) return;
-                lstBoxItemsNlog.SelectedIndex = lstBAnalogyColumns.SelectedIndex;
-            
-
-        }
-
-        public void SetColumns(string[] columns)
-        {
-            lstBoxItemsNlog.Items.Clear();
-            lstBoxItemsNlog.Items.AddRange(columns);
         }
 
         public void LoadMapping(ILogParserSettings parser)
@@ -71,8 +56,8 @@ namespace Analogy.UserControls
         private Dictionary<int, AnalogyLogMessagePropertyName> GetMapping()
         {
             Dictionary<int, AnalogyLogMessagePropertyName> maps =
-                new Dictionary<int, AnalogyLogMessagePropertyName>(lstBAnalogyColumns.ItemCount);
-            for (int i = 0; i < lstBAnalogyColumns.ItemCount; i++)
+                new Dictionary<int, AnalogyLogMessagePropertyName>(lstBAnalogyColumns.Items.Count);
+            for (int i = 0; i < lstBAnalogyColumns.Items.Count; i++)
             {
                 if (lstBAnalogyColumns.Items[i].ToString()
                     .Contains("ignore", StringComparison.InvariantCultureIgnoreCase)) continue;
@@ -81,6 +66,19 @@ namespace Analogy.UserControls
             }
 
             return maps;
+        }
+
+        private void lstBAnalogyColumns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (lstBAnalogyColumns.SelectedIndex > lstBoxItems.Items.Count - 1) return;
+            lstBAnalogyColumns.SelectedIndex = lstBAnalogyColumns.SelectedIndex;
+
+        }
+
+        private void AnalogyColumnsMatcherUC_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

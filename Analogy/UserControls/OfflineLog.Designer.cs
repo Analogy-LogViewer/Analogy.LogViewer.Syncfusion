@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
-
+﻿
 namespace Analogy
 {
     partial class OfflineUCLogs
@@ -48,18 +47,10 @@ namespace Analogy
             this.checkBoxSelectionMode = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.checkBoxRecursiveLoad = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.ucLogs1 = new Analogy.UCLogs();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.tsPrimary = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.bBtnOpenFolder = new DevExpress.XtraBars.BarButtonItem();
             this.treeList1 = new Analogy.XtraUCFileSystem();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
@@ -72,8 +63,6 @@ namespace Analogy
             this.toolStripEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,59 +205,6 @@ namespace Analogy
             this.ucLogs1.Size = new System.Drawing.Size(946, 700);
             this.ucLogs1.TabIndex = 0;
             // 
-            // imageCollection1
-            // 
-            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "Folder_Closed.png");
-            this.imageCollection1.Images.SetKeyName(1, "Folder_Opened.png");
-            this.imageCollection1.Images.SetKeyName(2, "File.png");
-            this.imageCollection1.Images.SetKeyName(3, "Local_Disk.png");
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.MaxItemId = 4;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1387, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
-            // 
             // imageList
             // 
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
@@ -305,26 +241,6 @@ namespace Analogy
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 46);
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Custom 4";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar2.FloatLocation = new System.Drawing.Point(346, 374);
-            this.bar2.OptionsBar.AllowQuickCustomization = false;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Custom 4";
-            // 
-            // bBtnOpenFolder
-            // 
-            this.bBtnOpenFolder.Caption = "Open";
-            this.bBtnOpenFolder.Id = 2;
-            this.bBtnOpenFolder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnOpenFolder.ImageOptions.Image")));
-            this.bBtnOpenFolder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnOpenFolder.ImageOptions.LargeImage")));
-            this.bBtnOpenFolder.Name = "bBtnOpenFolder";
-            this.bBtnOpenFolder.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // treeList1
             // 
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -339,10 +255,6 @@ namespace Analogy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.spltMain);
             this.Controls.Add(this.tsPrimary);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OfflineUCLogs";
             this.Size = new System.Drawing.Size(1387, 700);
@@ -362,8 +274,6 @@ namespace Analogy
             this.toolStripEx2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
             this.ResumeLayout(false);
@@ -379,14 +289,6 @@ namespace Analogy
         private System.Windows.Forms.SplitContainer splcLeft;
         private System.Windows.Forms.ImageList imageListBottom;
         private UCLogs ucLogs1;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem bBtnOpenFolder;
-        private DevExpress.Utils.ImageCollection imageCollection1;
         private FolderTreeViewUC folderTreeViewUC1;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
         private System.Windows.Forms.ToolStripButton tsBtnOpenFolder;
