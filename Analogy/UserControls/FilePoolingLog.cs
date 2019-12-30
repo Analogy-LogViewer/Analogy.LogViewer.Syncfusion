@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Managers;
 using Analogy.Types;
-using Message = System.Windows.Forms.Message;
 
 namespace Analogy
 {
@@ -20,9 +19,10 @@ namespace Analogy
         private string FileName { get; set; }
         public bool Enable { get; set; } = true;
         private FilePoolingManager PoolingManager { get; }
-        public FilePoolingUCLogs(IAnalogyOfflineDataProvider offlineDataProvider, string fileName,string initialFolder)
+        public FilePoolingUCLogs(IAnalogyOfflineDataProvider offlineDataProvider, string fileName, string initialFolder)
         {
             InitializeComponent();
+            SetupEventsHandlers();
             FileName = fileName;
             ucLogs1.OnlineMode = false;
             PoolingManager = new FilePoolingManager(FileName, offlineDataProvider);
@@ -32,19 +32,6 @@ namespace Analogy
                 AppendMessages(data.messages, data.dataSource);
                 OnNewMessages(data.messages);
             };
-            this.Disposed += FilePoolingUCLogs_Disposed;
-
-        }
-
-        private void FilePoolingUCLogs_Disposed(object sender, EventArgs e)
-        {
-            PoolingManager.StopMonitoring();
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            ucLogs1.ProcessCmdKeyFromParent(keyData);
-            return base.ProcessCmdKey(ref msg, keyData);
         }
         private async void OnlineUCLogs_Load(object sender, EventArgs e)
         {
@@ -53,7 +40,26 @@ namespace Analogy
             spltMain.Panel1Collapsed = true;
             await PoolingManager.Init();
         }
+        private void SetupEventsHandlers()
+        {
+            Disposed += (s, e) => PoolingManager.StopMonitoring();
+            btnClear.Click += (s, e) => listBoxClearHistory.Items.Clear();
+            btnHide.Click += (s, e) =>
+            {
+                if (IsDisposed) return;
+                showHistory = false;
+                spltMain.Panel1Collapsed = true;
+            };
+        }
 
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            ucLogs1.ProcessCmdKeyFromParent(keyData);
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+ 
         private void UcLogs1_OnHistoryCleared(object sender, AnalogyClearedHistoryEventArgs e)
         {
             Interlocked.Increment(ref clearHistoryCounter);
@@ -81,7 +87,7 @@ namespace Analogy
                 listBoxClearHistory.SelectedIndex = -1;
                 listBoxClearHistory.SelectedIndexChanged += ListBoxClearHistoryIndexChanged;
             }));
-            
+
         }
         private void AnalogyUCLogs_DragEnter(object sender, DragEventArgs e) =>
             e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
@@ -100,25 +106,13 @@ namespace Analogy
 
                 string interned = string.Intern(dataSource);
                 ucLogs1.AppendMessages(messages, interned);
-                
+
             }
         }
 
         public async Task LoadFilesAsync(List<string> fileNames, bool clearLogBeforeLoading)
         {
             await ucLogs1.LoadFilesAsync(fileNames, clearLogBeforeLoading);
-        }
-
-        private void bbtnClear_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            listBoxClearHistory.Items.Clear();
-        }
-
-        private void bbtnHide_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (IsDisposed) return;
-            showHistory = false;
-            spltMain.Panel1Collapsed = true;
         }
 
         private void ListBoxClearHistoryIndexChanged(object sender, EventArgs e)
