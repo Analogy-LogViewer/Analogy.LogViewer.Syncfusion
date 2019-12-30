@@ -35,7 +35,8 @@ namespace Analogy
             {
                 if (treeList1.Selection.Any())
                 {
-                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    //todo:fix
+                    var filename = (string)treeList1.Selection.First().GetValue("");
                     if (filename == null || !File.Exists(filename)) return;
                     var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
@@ -57,7 +58,8 @@ namespace Analogy
             {
                 if (treeList1.Selection.Any())
                 {
-                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    //todo:fix
+                    var filename = (string)treeList1.Selection.First().GetValue("");
                     if (filename == null || !File.Exists(filename)) return;
                     Process.Start("explorer.exe", "/select, \"" + filename + "\"");
                 }
@@ -167,7 +169,8 @@ namespace Analogy
         
         private async void TreeList1_SelectionChanged(object sender, EventArgs e)
         {
-            List<string> files = treeList1.Selection.Select(node => (string)node.GetValue(colFullPath)).ToList();
+            //todo:fix
+            List<string> files = treeList1.Selection.Select(node => (string)node.GetValue("")).ToList();
             await LoadFilesAsync(files, checkBoxSelectionMode.Checked);
         }
     }

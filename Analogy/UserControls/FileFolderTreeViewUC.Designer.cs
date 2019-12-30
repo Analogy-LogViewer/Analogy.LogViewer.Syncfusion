@@ -4,7 +4,7 @@ using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
 
 namespace Analogy
 {
-    partial class XtraUCFileSystem
+    partial class FileFolderTreeViewUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace Analogy
             treeColumnAdv2 = new TreeColumnAdv();
             treeColumnAdv3 = new TreeColumnAdv();
 
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraUCFileSystem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileFolderTreeViewUC));
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo treeNodeAdvSubItemStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo treeColumnAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo();
@@ -161,12 +161,12 @@ namespace Analogy
             this.multiColumnTreeView1.VScrollPos = -13;
 
             // 
-            // XtraUCFileSystem
+            // FileFolderTreeViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.multiColumnTreeView1);
-            this.Name = "XtraUCFileSystem";
+            this.Name = "FileFolderTreeViewUC";
             this.Size = new System.Drawing.Size(396, 296);
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).EndInit();
             this.ResumeLayout(false);

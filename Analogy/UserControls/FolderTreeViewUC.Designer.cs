@@ -34,7 +34,7 @@
             this.txtbFolder = new System.Windows.Forms.TextBox();
             this.btnOpenFile = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.xtraUCFileSystem1 = new Analogy.XtraUCFileSystem();
+            this._fileFolderTreeViewUcFileSystem1 = new Analogy.FileFolderTreeViewUC();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,20 +85,20 @@
             this.imageList.Images.SetKeyName(4, "Error_32x32.png");
             this.imageList.Images.SetKeyName(5, "Warning_32x32.png");
             // 
-            // xtraUCFileSystem1
+            // _fileFolderTreeViewUcFileSystem1
             // 
-            this.xtraUCFileSystem1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraUCFileSystem1.Location = new System.Drawing.Point(0, 23);
-            this.xtraUCFileSystem1.Margin = new System.Windows.Forms.Padding(2);
-            this.xtraUCFileSystem1.Name = "xtraUCFileSystem1";
-            this.xtraUCFileSystem1.Size = new System.Drawing.Size(444, 288);
-            this.xtraUCFileSystem1.TabIndex = 6;
+            this._fileFolderTreeViewUcFileSystem1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._fileFolderTreeViewUcFileSystem1.Location = new System.Drawing.Point(0, 23);
+            this._fileFolderTreeViewUcFileSystem1.Margin = new System.Windows.Forms.Padding(2);
+            this._fileFolderTreeViewUcFileSystem1.Name = "_fileFolderTreeViewUcFileSystem1";
+            this._fileFolderTreeViewUcFileSystem1.Size = new System.Drawing.Size(444, 288);
+            this._fileFolderTreeViewUcFileSystem1.TabIndex = 6;
             // 
             // FolderTreeViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.xtraUCFileSystem1);
+            this.Controls.Add(this._fileFolderTreeViewUcFileSystem1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.Name = "FolderTreeViewUC";
@@ -116,6 +116,6 @@
         private System.Windows.Forms.TextBox txtbFolder;
         private System.Windows.Forms.ImageList imageList;
         private Syncfusion.WinForms.Controls.SfButton btnOpenFile;
-        private XtraUCFileSystem xtraUCFileSystem1;
+        private FileFolderTreeViewUC _fileFolderTreeViewUcFileSystem1;
     }
 }

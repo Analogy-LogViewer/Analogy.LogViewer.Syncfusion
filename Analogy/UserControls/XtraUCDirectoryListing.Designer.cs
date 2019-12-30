@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraUCFileSystem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileFolderTreeViewUC));
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -112,12 +112,12 @@
             this.colType.Visible = true;
             this.colType.VisibleIndex = 3;
             // 
-            // XtraUCFileSystem
+            // FileFolderTreeViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.treeList1);
-            this.Name = "XtraUCFileSystem";
+            this.Name = "FileFolderTreeViewUC";
             this.Size = new System.Drawing.Size(396, 296);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();

@@ -15,8 +15,8 @@ namespace Analogy
         public FolderTreeViewUC()
         {
             InitializeComponent();
-            xtraUCFileSystem1.SetListing(true, false);
-            xtraUCFileSystem1.FolderChanged += (s, e) => FolderChanged?.Invoke(this, new FolderSelectionEventArgs(e.SelectedFolderPath));
+            _fileFolderTreeViewUcFileSystem1.SetListing(true, false);
+            _fileFolderTreeViewUcFileSystem1.FolderChanged += (s, e) => FolderChanged?.Invoke(this, new FolderSelectionEventArgs(e.SelectedFolderPath));
         }
 
         private async void txtbFolder_KeyUp(object sender, KeyEventArgs e)
@@ -34,7 +34,7 @@ namespace Analogy
         {
             if (Directory.Exists(folderText))
             {
-                xtraUCFileSystem1.SetPath(folderText, dataProvider);
+                _fileFolderTreeViewUcFileSystem1.SetPath(folderText, dataProvider);
                 txtbFolder.Text = folderText;
                 FolderChanged?.Invoke(this, new FolderSelectionEventArgs(folderText));
             }
@@ -91,7 +91,7 @@ namespace Analogy
             if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
             SelectedPath = folder;
             txtbFolder.Text = folder;
-            xtraUCFileSystem1.SetPath(folder, dataProvider);
+            _fileFolderTreeViewUcFileSystem1.SetPath(folder, dataProvider);
         }
     }
 

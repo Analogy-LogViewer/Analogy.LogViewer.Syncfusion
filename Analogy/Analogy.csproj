@@ -529,11 +529,11 @@
     <Compile Include="UserControls\XtraUCDirectoryListing.Designer.cs">
       <DependentUpon>XtraUCDirectoryListing.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\XtraUCFileSystem.cs">
+    <Compile Include="UserControls\FileFolderTreeViewUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\XtraUCFileSystem.Designer.cs">
-      <DependentUpon>XtraUCFileSystem.cs</DependentUpon>
+    <Compile Include="UserControls\FileFolderTreeViewUC.Designer.cs">
+      <DependentUpon>FileFolderTreeViewUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WindowsEventLogsUC.cs">
       <SubType>UserControl</SubType>
@@ -711,8 +711,8 @@
       <DependentUpon>XtraUCDirectoryListing.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\XtraUCFileSystem.resx">
-      <DependentUpon>XtraUCFileSystem.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\FileFolderTreeViewUC.resx">
+      <DependentUpon>FileFolderTreeViewUC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Resources\Info_16x16.png" />

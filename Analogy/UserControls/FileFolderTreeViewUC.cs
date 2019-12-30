@@ -11,7 +11,7 @@ using TreeNodeAdv = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeA
 
 namespace Analogy
 {
-    public partial class XtraUCFileSystem : UserControl
+    public partial class FileFolderTreeViewUC : UserControl
     {
         public event EventHandler<FolderSelectionEventArgs> FolderChanged;
         private string startupDrive;
@@ -19,11 +19,11 @@ namespace Analogy
         private bool ListFiles;
         private IAnalogyOfflineDataProvider DataProvider { get; set; }
 
-        public XtraUCFileSystem() : this(false, false)
+        public FileFolderTreeViewUC() : this(false, false)
         {
 
         }
-        public XtraUCFileSystem(bool listFoldersToLoad, bool listFilesToLoad)
+        public FileFolderTreeViewUC(bool listFoldersToLoad, bool listFilesToLoad)
         {
             ListFolders = listFoldersToLoad;
             ListFiles = listFilesToLoad;
