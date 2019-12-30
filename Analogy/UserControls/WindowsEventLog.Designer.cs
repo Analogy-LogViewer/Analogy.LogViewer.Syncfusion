@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
-
+﻿
 namespace Analogy
 {
     partial class WindowsEventLog
@@ -42,12 +41,6 @@ namespace Analogy
             this.lBoxSources = new System.Windows.Forms.ListBox();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnManageList = new System.Windows.Forms.ToolStripButton();
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ucLogs1 = new Analogy.UCLogs();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
@@ -61,7 +54,6 @@ namespace Analogy
             this.splcLeft.Panel1.SuspendLayout();
             this.splcLeft.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +87,6 @@ namespace Analogy
             // 
             this.splcLeft.Panel1.Controls.Add(this.lBoxSources);
             this.splcLeft.Panel1.Controls.Add(this.toolStripEx1);
-            this.splcLeft.Panel1.Controls.Add(this.standaloneBarDockControl1);
             this.splcLeft.Panel2Collapsed = true;
             this.splcLeft.Size = new System.Drawing.Size(376, 700);
             this.splcLeft.SplitterDistance = 191;
@@ -133,64 +124,6 @@ namespace Analogy
             this.btnManageList.Name = "btnManageList";
             this.btnManageList.Size = new System.Drawing.Size(113, 24);
             this.btnManageList.Text = "Manage List";
-            // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.AutoSize = true;
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.standaloneBarDockControl1.Manager = this.barManager1;
-            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(376, 0);
-            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.DockControls.Add(this.standaloneBarDockControl1);
-            this.barManager1.Form = this;
-            this.barManager1.MaxItemId = 5;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1387, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
             // 
             // ucLogs1
             // 
@@ -246,10 +179,6 @@ namespace Analogy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.spltMain);
             this.Controls.Add(this.tsPrimary);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WindowsEventLog";
             this.Size = new System.Drawing.Size(1387, 700);
@@ -264,7 +193,6 @@ namespace Analogy
             this.splcLeft.ResumeLayout(false);
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
             this.ResumeLayout(false);
@@ -280,12 +208,6 @@ namespace Analogy
         private System.Windows.Forms.SplitContainer splcLeft;
         private System.Windows.Forms.ImageList imageListBottom;
         private UCLogs ucLogs1;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private System.Windows.Forms.ListBox lBoxSources;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private System.Windows.Forms.ToolStripButton btnManageList;

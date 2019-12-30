@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -99,7 +98,7 @@ namespace Analogy
             catch (Exception e)
             {
                 string m = "Error Opening log. Please make sure you are running as Administrator." + Environment.NewLine + "Error:" + e.Message;
-                XtraMessageBox.Show(m, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(m, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AnalogyLogMessage l = new AnalogyLogMessage(m, AnalogyLogLevel.Error, AnalogyLogClass.General, "Analogy", "None");
                 ucLogs1.AppendMessage(l, Environment.MachineName);
                 AnalogyLogManager.Instance.LogErrorMessage(l);
