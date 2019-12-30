@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Types;
-using DevExpress.XtraBars;
-using Message = System.Windows.Forms.Message;
 
 namespace Analogy
 {
@@ -22,10 +20,22 @@ namespace Analogy
         public OnlineUCLogs(IAnalogyRealTimeDataProvider realTime)
         {
             InitializeComponent();
+            SetupEventsHandlers();
             ucLogs1.OnlineMode = true;
-
             ucLogs1.SetFileDataSource(realTime.FileOperationsHandler);
         }
+
+        private void SetupEventsHandlers()
+        {
+            btnClear.Click += (s, e) => listBoxClearHistory.Items.Clear();
+            btnHide.Click += (s, e) =>
+            {
+                if (IsDisposed) return;
+                showHistory = false;
+                spltMain.Panel1Collapsed = true;
+            };
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             ucLogs1.ProcessCmdKeyFromParent(keyData);
@@ -57,11 +67,8 @@ namespace Analogy
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             await LoadFilesAsync(files.ToList(), true);
+            }
 
-        }
-
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AppendMessage(AnalogyLogMessage message, string dataSource)
         {
             if (Enable && !IsDisposed)
@@ -71,7 +78,6 @@ namespace Analogy
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AppendMessages(List<AnalogyLogMessage> messages, string dataSource)
         {
             if (Enable && !IsDisposed)
@@ -85,19 +91,7 @@ namespace Analogy
         {
             await ucLogs1.LoadFilesAsync(fileNames, clearLogBeforeLoading);
         }
-
-        private void bbtnClear_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            listBoxClearHistory.Items.Clear();
-        }
-
-        private void bbtnHide_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (IsDisposed) return;
-            showHistory = false;
-            spltMain.Panel1Collapsed = true;
-        }
-
+        
         private void ListBoxClearHistoryIndexChanged(object sender, EventArgs e)
         {
             if (listBoxClearHistory.SelectedItem == null) return;

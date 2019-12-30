@@ -498,12 +498,6 @@
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\UserSettingsManager.cs" />
-    <Compile Include="UserControls\UtilityUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UtilityUC.Designer.cs">
-      <DependentUpon>UtilityUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="UserControls\WindowsEventLog.cs">
       <SubType>UserControl</SubType>
@@ -704,9 +698,6 @@
     <EmbeddedResource Include="Forms\UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UtilityUC.resx">
-      <DependentUpon>UtilityUC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\WindowsEventLog.resx">
       <DependentUpon>WindowsEventLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -860,6 +851,8 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\List_32x32.png" />
+    <None Include="Resources\List_16x16.png" />
     <None Include="Resources\DifferentOddEvenPages_32x32.png" />
     <None Include="Resources\DifferentOddEvenPages_16x16.png" />
     <None Include="Resources\RefreshAllPivotTable_32x32.png" />

@@ -1,6 +1,4 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
-
-namespace Analogy
+﻿namespace Analogy
 {
     partial class OnlineUCLogs
     {
@@ -33,24 +31,17 @@ namespace Analogy
             this.tsPrimary = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.spltMain = new System.Windows.Forms.SplitContainer();
-            this.listBoxClearHistory = new DevExpress.XtraEditors.ListBoxControl();
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bbtnClear = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnHide = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ucLogs1 = new Analogy.UCLogs();
+            this.listBoxClearHistory = new System.Windows.Forms.ListBox();
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnClear = new System.Windows.Forms.ToolStripButton();
+            this.btnHide = new System.Windows.Forms.ToolStripButton();
             this.tsPrimary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
             this.spltMain.Panel2.SuspendLayout();
             this.spltMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxClearHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            this.toolStripEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList
@@ -99,7 +90,7 @@ namespace Analogy
             // spltMain.Panel1
             // 
             this.spltMain.Panel1.Controls.Add(this.listBoxClearHistory);
-            this.spltMain.Panel1.Controls.Add(this.standaloneBarDockControl1);
+            this.spltMain.Panel1.Controls.Add(this.toolStripEx1);
             // 
             // spltMain.Panel2
             // 
@@ -108,113 +99,11 @@ namespace Analogy
             this.spltMain.SplitterDistance = 202;
             this.spltMain.TabIndex = 7;
             // 
-            // listBoxClearHistory
-            // 
-            this.listBoxClearHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxClearHistory.Location = new System.Drawing.Point(0, 37);
-            this.listBoxClearHistory.Name = "listBoxClearHistory";
-            this.listBoxClearHistory.Size = new System.Drawing.Size(202, 663);
-            this.listBoxClearHistory.TabIndex = 1;
-            // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.AutoSize = true;
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.standaloneBarDockControl1.Manager = this.barManager1;
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(202, 37);
-            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
-            // 
-            // barManager1
-            // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.DockControls.Add(this.standaloneBarDockControl1);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbtnClear,
-            this.bbtnHide});
-            this.barManager1.MaxItemId = 2;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Opertions";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar1.FloatLocation = new System.Drawing.Point(119, 161);
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnClear),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbtnHide)});
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
-            this.bar1.Text = "Tools";
-            // 
-            // bbtnClear
-            // 
-            this.bbtnClear.Caption = "Clear";
-            this.bbtnClear.Hint = "clear History";
-            this.bbtnClear.Id = 0;
-            this.bbtnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnClear.ImageOptions.Image")));
-            this.bbtnClear.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnClear.ImageOptions.LargeImage")));
-            this.bbtnClear.Name = "bbtnClear";
-            this.bbtnClear.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbtnClear.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnClear_ItemClick);
-            // 
-            // bbtnHide
-            // 
-            this.bbtnHide.Caption = "Hide";
-            this.bbtnHide.Hint = "collapse window";
-            this.bbtnHide.Id = 1;
-            this.bbtnHide.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnHide.ImageOptions.Image")));
-            this.bbtnHide.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbtnHide.ImageOptions.LargeImage")));
-            this.bbtnHide.Name = "bbtnHide";
-            this.bbtnHide.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbtnHide.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnHide_ItemClick);
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1387, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1387, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
-            // 
             // ucLogs1
             // 
             this.ucLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucLogs1.DoNotAddToRecentHistory = false;
+            this.ucLogs1.ForceNoFileCaching = false;
             this.ucLogs1.Location = new System.Drawing.Point(0, 0);
             this.ucLogs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucLogs1.Name = "ucLogs1";
@@ -222,16 +111,54 @@ namespace Analogy
             this.ucLogs1.Size = new System.Drawing.Size(1181, 700);
             this.ucLogs1.TabIndex = 0;
             // 
+            // listBoxClearHistory
+            // 
+            this.listBoxClearHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxClearHistory.FormattingEnabled = true;
+            this.listBoxClearHistory.ItemHeight = 16;
+            this.listBoxClearHistory.Location = new System.Drawing.Point(0, 27);
+            this.listBoxClearHistory.Name = "listBoxClearHistory";
+            this.listBoxClearHistory.Size = new System.Drawing.Size(202, 673);
+            this.listBoxClearHistory.TabIndex = 7;
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnClear,
+            this.btnHide});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStripEx1.Size = new System.Drawing.Size(202, 27);
+            this.toolStripEx1.TabIndex = 8;
+            this.toolStripEx1.Text = "toolStripEx1";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Image = global::Analogy.Properties.Resources.Clear_32x32;
+            this.btnClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(67, 24);
+            this.btnClear.Text = "Clear";
+            // 
+            // btnHide
+            // 
+            this.btnHide.Image = global::Analogy.Properties.Resources.Prev_32x32;
+            this.btnHide.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(65, 24);
+            this.btnHide.Text = "Hide";
+            // 
             // OnlineUCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.spltMain);
             this.Controls.Add(this.tsPrimary);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OnlineUCLogs";
             this.Size = new System.Drawing.Size(1387, 700);
@@ -245,10 +172,9 @@ namespace Analogy
             this.spltMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).EndInit();
             this.spltMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxClearHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -259,15 +185,9 @@ namespace Analogy
         private System.Windows.Forms.ImageList imageListBottom;
         private UCLogs ucLogs1;
         private System.Windows.Forms.SplitContainer spltMain;
-        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarButtonItem bbtnClear;
-        private DevExpress.XtraBars.BarButtonItem bbtnHide;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.ListBoxControl listBoxClearHistory;
+        private System.Windows.Forms.ListBox listBoxClearHistory;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton btnClear;
+        private System.Windows.Forms.ToolStripButton btnHide;
     }
 }

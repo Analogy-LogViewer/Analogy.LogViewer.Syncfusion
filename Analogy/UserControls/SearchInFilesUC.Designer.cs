@@ -30,9 +30,9 @@
         {
             this.txtbSearch = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.fileSystemUC1 = new Analogy.FileSystemUC();
             this.processFilesUC1 = new Analogy.FilesOperationsUC();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.sBtnSearch = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -43,7 +43,7 @@
             // 
             // txtbSearch
             // 
-            this.txtbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbSearch.Location = new System.Drawing.Point(3, 5);
             this.txtbSearch.Name = "txtbSearch";
@@ -68,6 +68,30 @@
             this.splitContainer1.SplitterDistance = 372;
             this.splitContainer1.TabIndex = 4;
             // 
+            // fileSystemUC1
+            // 
+            this.fileSystemUC1.DataProvider = null;
+            this.fileSystemUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileSystemUC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.fileSystemUC1.Location = new System.Drawing.Point(0, 0);
+            this.fileSystemUC1.Margin = new System.Windows.Forms.Padding(4);
+            this.fileSystemUC1.Name = "fileSystemUC1";
+            this.fileSystemUC1.Size = new System.Drawing.Size(372, 393);
+            this.fileSystemUC1.TabIndex = 0;
+            this.fileSystemUC1.ZipFilesOnly = false;
+            // 
+            // processFilesUC1
+            // 
+            this.processFilesUC1.DataProvider = null;
+            this.processFilesUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processFilesUC1.DoNotAddToRecentHistory = false;
+            this.processFilesUC1.ForceNoFileCaching = false;
+            this.processFilesUC1.Location = new System.Drawing.Point(0, 41);
+            this.processFilesUC1.Margin = new System.Windows.Forms.Padding(4);
+            this.processFilesUC1.Name = "processFilesUC1";
+            this.processFilesUC1.Size = new System.Drawing.Size(742, 352);
+            this.processFilesUC1.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.sBtnSearch);
@@ -78,29 +102,12 @@
             this.panel1.Size = new System.Drawing.Size(742, 41);
             this.panel1.TabIndex = 0;
             // 
-            // fileSystemUC1
-            // 
-            this.fileSystemUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileSystemUC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.fileSystemUC1.Location = new System.Drawing.Point(0, 0);
-            this.fileSystemUC1.Margin = new System.Windows.Forms.Padding(4);
-            this.fileSystemUC1.Name = "fileSystemUC1";
-            this.fileSystemUC1.Size = new System.Drawing.Size(372, 393);
-            this.fileSystemUC1.TabIndex = 0;
-            // 
-            // processFilesUC1
-            // 
-            this.processFilesUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processFilesUC1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.processFilesUC1.Location = new System.Drawing.Point(0, 41);
-            this.processFilesUC1.Margin = new System.Windows.Forms.Padding(4);
-            this.processFilesUC1.Name = "processFilesUC1";
-            this.processFilesUC1.Size = new System.Drawing.Size(742, 352);
-            this.processFilesUC1.TabIndex = 1;
-            // 
             // sBtnSearch
             // 
+            this.sBtnSearch.AccessibleName = "Button";
             this.sBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sBtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnSearch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sBtnSearch.Location = new System.Drawing.Point(661, 0);
             this.sBtnSearch.Name = "sBtnSearch";
             this.sBtnSearch.Size = new System.Drawing.Size(81, 41);

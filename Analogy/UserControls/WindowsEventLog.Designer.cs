@@ -39,13 +39,11 @@ namespace Analogy
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowsEventLog));
             this.spltMain = new System.Windows.Forms.SplitContainer();
             this.splcLeft = new System.Windows.Forms.SplitContainer();
-            this.lBoxSources = new DevExpress.XtraEditors.ListBoxControl();
+            this.lBoxSources = new System.Windows.Forms.ListBox();
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnManageList = new System.Windows.Forms.ToolStripButton();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bBtnManage = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnRemove = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -62,7 +60,7 @@ namespace Analogy
             ((System.ComponentModel.ISupportInitialize)(this.splcLeft)).BeginInit();
             this.splcLeft.Panel1.SuspendLayout();
             this.splcLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lBoxSources)).BeginInit();
+            this.toolStripEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +79,7 @@ namespace Analogy
             // spltMain.Panel2
             // 
             this.spltMain.Panel2.Controls.Add(this.ucLogs1);
-            this.spltMain.Size = new System.Drawing.Size(1387, 676);
+            this.spltMain.Size = new System.Drawing.Size(1387, 700);
             this.spltMain.SplitterDistance = 376;
             this.spltMain.TabIndex = 5;
             // 
@@ -96,21 +94,45 @@ namespace Analogy
             // splcLeft.Panel1
             // 
             this.splcLeft.Panel1.Controls.Add(this.lBoxSources);
+            this.splcLeft.Panel1.Controls.Add(this.toolStripEx1);
             this.splcLeft.Panel1.Controls.Add(this.standaloneBarDockControl1);
             this.splcLeft.Panel2Collapsed = true;
-            this.splcLeft.Size = new System.Drawing.Size(376, 676);
+            this.splcLeft.Size = new System.Drawing.Size(376, 700);
             this.splcLeft.SplitterDistance = 191;
             this.splcLeft.TabIndex = 4;
             // 
             // lBoxSources
             // 
             this.lBoxSources.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lBoxSources.Location = new System.Drawing.Point(0, 37);
-            this.lBoxSources.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lBoxSources.FormattingEnabled = true;
+            this.lBoxSources.ItemHeight = 16;
+            this.lBoxSources.Location = new System.Drawing.Point(0, 27);
             this.lBoxSources.Name = "lBoxSources";
-            this.lBoxSources.Size = new System.Drawing.Size(376, 639);
-            this.lBoxSources.TabIndex = 1;
-            this.lBoxSources.SelectedIndexChanged += new System.EventHandler(this.lBoxSources_SelectedIndexChanged);
+            this.lBoxSources.Size = new System.Drawing.Size(376, 673);
+            this.lBoxSources.TabIndex = 7;
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnManageList});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStripEx1.Size = new System.Drawing.Size(376, 27);
+            this.toolStripEx1.TabIndex = 8;
+            this.toolStripEx1.Text = "toolStripEx1";
+            // 
+            // btnManageList
+            // 
+            this.btnManageList.Image = global::Analogy.Properties.Resources.List_32x32;
+            this.btnManageList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnManageList.Name = "btnManageList";
+            this.btnManageList.Size = new System.Drawing.Size(113, 24);
+            this.btnManageList.Text = "Manage List";
             // 
             // standaloneBarDockControl1
             // 
@@ -121,75 +143,18 @@ namespace Analogy
             this.standaloneBarDockControl1.Manager = this.barManager1;
             this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(376, 37);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(376, 0);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.DockControls.Add(this.standaloneBarDockControl1);
             this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bBtnManage,
-            this.bBtnRemove});
             this.barManager1.MaxItemId = 5;
-            this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "ExcludedSources";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar1.FloatLocation = new System.Drawing.Point(87, 205);
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnManage),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnRemove)});
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
-            this.bar1.Text = "ExcludedSources";
-            // 
-            // bBtnManage
-            // 
-            this.bBtnManage.Caption = "Manage list";
-            this.bBtnManage.Id = 0;
-            this.bBtnManage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnAdd.ImageOptions.Image")));
-            this.bBtnManage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnAdd.ImageOptions.LargeImage")));
-            this.bBtnManage.Name = "bBtnManage";
-            this.bBtnManage.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnManage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnAdd_ItemClick);
-            // 
-            // bBtnRemove
-            // 
-            this.bBtnRemove.Caption = "Remove";
-            this.bBtnRemove.Enabled = false;
-            this.bBtnRemove.Id = 1;
-            this.bBtnRemove.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnRemove.ImageOptions.Image")));
-            this.bBtnRemove.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnRemove.ImageOptions.LargeImage")));
-            this.bBtnRemove.Name = "bBtnRemove";
-            this.bBtnRemove.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnRemove.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bBtnRemove.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnRemove_ItemClick);
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            this.bar3.Visible = false;
             // 
             // barDockControlTop
             // 
@@ -204,10 +169,10 @@ namespace Analogy
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 676);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1387, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1387, 0);
             // 
             // barDockControlLeft
             // 
@@ -216,7 +181,7 @@ namespace Analogy
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 676);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
             // 
             // barDockControlRight
             // 
@@ -225,16 +190,18 @@ namespace Analogy
             this.barDockControlRight.Location = new System.Drawing.Point(1387, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 676);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
             // 
             // ucLogs1
             // 
             this.ucLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucLogs1.DoNotAddToRecentHistory = false;
+            this.ucLogs1.ForceNoFileCaching = false;
             this.ucLogs1.Location = new System.Drawing.Point(0, 0);
             this.ucLogs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucLogs1.Name = "ucLogs1";
             this.ucLogs1.OnlineMode = false;
-            this.ucLogs1.Size = new System.Drawing.Size(1007, 676);
+            this.ucLogs1.Size = new System.Drawing.Size(1007, 700);
             this.ucLogs1.TabIndex = 0;
             // 
             // imageList
@@ -295,7 +262,8 @@ namespace Analogy
             this.splcLeft.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splcLeft)).EndInit();
             this.splcLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lBoxSources)).EndInit();
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
@@ -313,15 +281,13 @@ namespace Analogy
         private System.Windows.Forms.ImageList imageListBottom;
         private UCLogs ucLogs1;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
-        private DevExpress.XtraBars.BarButtonItem bBtnManage;
-        private DevExpress.XtraBars.BarButtonItem bBtnRemove;
-        private DevExpress.XtraEditors.ListBoxControl lBoxSources;
+        private System.Windows.Forms.ListBox lBoxSources;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton btnManageList;
     }
 }

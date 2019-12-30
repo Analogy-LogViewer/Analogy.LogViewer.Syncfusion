@@ -45,20 +45,15 @@ namespace Analogy
             this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDelete = new System.Windows.Forms.ToolStripButton();
             this.tsBtnSelecAll = new System.Windows.Forms.ToolStripButton();
-            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colChanged = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colSize = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colFullPath = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.checkBoxSelectionMode = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.checkBoxRecursiveLoad = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.ucLogs1 = new Analogy.UCLogs();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.checkBoxSelectionMode = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.checkBoxRecursiveLoad = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.ucLogs1 = new Analogy.UCLogs();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.tsPrimary = new System.Windows.Forms.ToolStrip();
@@ -74,11 +69,10 @@ namespace Analogy
             this.splcLeft.Panel2.SuspendLayout();
             this.splcLeft.SuspendLayout();
             this.toolStripEx2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +109,6 @@ namespace Analogy
             // splcLeft.Panel2
             // 
             this.splcLeft.Panel2.Controls.Add(this.toolStripEx2);
-            this.splcLeft.Panel2.Controls.Add(this.treeList1);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxSelectionMode);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxRecursiveLoad);
             this.splcLeft.Size = new System.Drawing.Size(437, 700);
@@ -183,81 +176,6 @@ namespace Analogy
             this.tsBtnSelecAll.Size = new System.Drawing.Size(95, 24);
             this.tsBtnSelecAll.Text = "Select All";
             // 
-            // treeList1
-            // 
-            this.treeList1.Appearance.FocusedRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.treeList1.Appearance.FocusedRow.Options.UseFont = true;
-            this.treeList1.Appearance.SelectedRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.treeList1.Appearance.SelectedRow.Options.UseFont = true;
-            this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.colName,
-            this.colChanged,
-            this.colSize,
-            this.colFullPath});
-            this.treeList1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeList1.FixedLineWidth = 3;
-            this.treeList1.Location = new System.Drawing.Point(28, 113);
-            this.treeList1.Margin = new System.Windows.Forms.Padding(4);
-            this.treeList1.MinWidth = 27;
-            this.treeList1.Name = "treeList1";
-            this.treeList1.OptionsBehavior.Editable = false;
-            this.treeList1.OptionsFind.AlwaysVisible = true;
-            this.treeList1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.treeList1.OptionsSelection.MultiSelect = true;
-            this.treeList1.OptionsSelection.UseIndicatorForSelection = true;
-            this.treeList1.OptionsView.AutoWidth = false;
-            this.treeList1.OptionsView.BestFitMode = DevExpress.XtraTreeList.TreeListBestFitMode.Fast;
-            this.treeList1.OptionsView.BestFitNodes = DevExpress.XtraTreeList.TreeListBestFitNodes.All;
-            this.treeList1.OptionsView.EnableAppearanceEvenRow = true;
-            this.treeList1.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFullFocus;
-            this.treeList1.OptionsView.ShowIndicator = false;
-            this.treeList1.Size = new System.Drawing.Size(392, 401);
-            this.treeList1.StateImageList = this.imageCollection1;
-            this.treeList1.TabIndex = 8;
-            this.treeList1.TreeLevelWidth = 24;
-            this.treeList1.SelectionChanged += new System.EventHandler(this.TreeList1_SelectionChanged);
-            // 
-            // colName
-            // 
-            this.colName.Caption = "Name";
-            this.colName.FieldName = "Name";
-            this.colName.MinWidth = 44;
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            this.colName.Width = 140;
-            // 
-            // colChanged
-            // 
-            this.colChanged.Caption = "Last changed";
-            this.colChanged.FieldName = "colChanged";
-            this.colChanged.MinWidth = 140;
-            this.colChanged.Name = "colChanged";
-            this.colChanged.OptionsColumn.AllowEdit = false;
-            this.colChanged.Visible = true;
-            this.colChanged.VisibleIndex = 1;
-            this.colChanged.Width = 141;
-            // 
-            // colSize
-            // 
-            this.colSize.Caption = "Size(Bytes)";
-            this.colSize.FieldName = "Size";
-            this.colSize.MinWidth = 27;
-            this.colSize.Name = "colSize";
-            this.colSize.Visible = true;
-            this.colSize.VisibleIndex = 2;
-            this.colSize.Width = 117;
-            // 
-            // colFullPath
-            // 
-            this.colFullPath.Caption = "Path";
-            this.colFullPath.FieldName = "Path";
-            this.colFullPath.MinWidth = 27;
-            this.colFullPath.Name = "colFullPath";
-            this.colFullPath.Visible = true;
-            this.colFullPath.VisibleIndex = 3;
-            this.colFullPath.Width = 116;
-            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
@@ -265,6 +183,44 @@ namespace Analogy
             this.imageCollection1.Images.SetKeyName(1, "Folder_Opened.png");
             this.imageCollection1.Images.SetKeyName(2, "File.png");
             this.imageCollection1.Images.SetKeyName(3, "Local_Disk.png");
+            // 
+            // checkBoxSelectionMode
+            // 
+            this.checkBoxSelectionMode.BeforeTouchSize = new System.Drawing.Size(437, 19);
+            this.checkBoxSelectionMode.Checked = true;
+            this.checkBoxSelectionMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSelectionMode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxSelectionMode.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.checkBoxSelectionMode.Location = new System.Drawing.Point(0, 19);
+            this.checkBoxSelectionMode.Name = "checkBoxSelectionMode";
+            this.checkBoxSelectionMode.Size = new System.Drawing.Size(437, 19);
+            this.checkBoxSelectionMode.TabIndex = 15;
+            this.checkBoxSelectionMode.Text = "Clear log between selection";
+            // 
+            // checkBoxRecursiveLoad
+            // 
+            this.checkBoxRecursiveLoad.BeforeTouchSize = new System.Drawing.Size(437, 19);
+            this.checkBoxRecursiveLoad.Checked = true;
+            this.checkBoxRecursiveLoad.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRecursiveLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxRecursiveLoad.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.checkBoxRecursiveLoad.Location = new System.Drawing.Point(0, 0);
+            this.checkBoxRecursiveLoad.Name = "checkBoxRecursiveLoad";
+            this.checkBoxRecursiveLoad.Size = new System.Drawing.Size(437, 19);
+            this.checkBoxRecursiveLoad.TabIndex = 14;
+            this.checkBoxRecursiveLoad.Text = "Load Recursive Files";
+            // 
+            // ucLogs1
+            // 
+            this.ucLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucLogs1.DoNotAddToRecentHistory = false;
+            this.ucLogs1.ForceNoFileCaching = false;
+            this.ucLogs1.Location = new System.Drawing.Point(0, 0);
+            this.ucLogs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucLogs1.Name = "ucLogs1";
+            this.ucLogs1.OnlineMode = false;
+            this.ucLogs1.Size = new System.Drawing.Size(946, 700);
+            this.ucLogs1.TabIndex = 0;
             // 
             // barManager1
             // 
@@ -310,44 +266,6 @@ namespace Analogy
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
-            // 
-            // checkBoxSelectionMode
-            // 
-            this.checkBoxSelectionMode.BeforeTouchSize = new System.Drawing.Size(437, 19);
-            this.checkBoxSelectionMode.Checked = true;
-            this.checkBoxSelectionMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSelectionMode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxSelectionMode.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.checkBoxSelectionMode.Location = new System.Drawing.Point(0, 19);
-            this.checkBoxSelectionMode.Name = "checkBoxSelectionMode";
-            this.checkBoxSelectionMode.Size = new System.Drawing.Size(437, 19);
-            this.checkBoxSelectionMode.TabIndex = 15;
-            this.checkBoxSelectionMode.Text = "Clear log between selection";
-            // 
-            // checkBoxRecursiveLoad
-            // 
-            this.checkBoxRecursiveLoad.BeforeTouchSize = new System.Drawing.Size(437, 19);
-            this.checkBoxRecursiveLoad.Checked = true;
-            this.checkBoxRecursiveLoad.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRecursiveLoad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxRecursiveLoad.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
-            this.checkBoxRecursiveLoad.Location = new System.Drawing.Point(0, 0);
-            this.checkBoxRecursiveLoad.Name = "checkBoxRecursiveLoad";
-            this.checkBoxRecursiveLoad.Size = new System.Drawing.Size(437, 19);
-            this.checkBoxRecursiveLoad.TabIndex = 14;
-            this.checkBoxRecursiveLoad.Text = "Load Recursive Files";
-            // 
-            // ucLogs1
-            // 
-            this.ucLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucLogs1.DoNotAddToRecentHistory = false;
-            this.ucLogs1.ForceNoFileCaching = false;
-            this.ucLogs1.Location = new System.Drawing.Point(0, 0);
-            this.ucLogs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ucLogs1.Name = "ucLogs1";
-            this.ucLogs1.OnlineMode = false;
-            this.ucLogs1.Size = new System.Drawing.Size(946, 700);
-            this.ucLogs1.TabIndex = 0;
             // 
             // imageList
             // 
@@ -432,11 +350,10 @@ namespace Analogy
             this.splcLeft.ResumeLayout(false);
             this.toolStripEx2.ResumeLayout(false);
             this.toolStripEx2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
             this.ResumeLayout(false);
@@ -461,11 +378,6 @@ namespace Analogy
         private DevExpress.XtraBars.BarButtonItem bBtnOpenFolder;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private FolderTreeViewUC folderTreeViewUC1;
-        private DevExpress.XtraTreeList.TreeList treeList1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colChanged;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colSize;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colFullPath;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
         private System.Windows.Forms.ToolStripButton tsBtnOpenFolder;
         private System.Windows.Forms.ToolStripButton tsBtnRefresh;

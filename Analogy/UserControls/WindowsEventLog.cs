@@ -18,6 +18,27 @@ namespace Analogy
         public WindowsEventLog()
         {
             InitializeComponent();
+            lBoxSources.SelectedIndexChanged += (s, e) =>
+            {
+                Counter item = lBoxSources.SelectedItem as Counter;
+                if (item == null) return;
+                string module = item.Name == "All" ? string.Empty : item.Name;
+                ucLogs1.FilterResults(module);
+            };
+            lBoxSources.SelectedValueChanged += (s, e) =>
+            {
+                if (lBoxSources.SelectedItem is DataSource data)
+                {
+                    SelectedPath = data.Path;
+                }
+            };
+
+            btnManageList.Click += (s, e) =>
+            {
+                WindowsEventLogsForm f = new WindowsEventLogsForm();
+                f.ShowDialog(this);
+                SetupLogs();
+            };
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -85,39 +106,6 @@ namespace Analogy
             }
         }
 
-
-        private void lBoxSources_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (lBoxSources.SelectedItem is DataSource data)
-            {
-                SelectedPath = data.Path;
-
-            }
-        }
-
-
-
-        private void bBtnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            WindowsEventLogsForm f = new WindowsEventLogsForm();
-            f.ShowDialog(this);
-            SetupLogs();
-        }
-
-        private void bBtnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (lBoxSources.SelectedItem is DataSource data)
-            {
-                if (XtraMessageBox.Show($"Are you sure you want to delete {data}?", "Confirmation Required",
-                        MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    ClientServerDataSourceManager.Instance.Remove(data);
-                    lBoxSources.Items.Remove(data);
-
-                }
-            }
-        }
-
         private class Counter
         {
             public string Name { get; }
@@ -136,13 +124,6 @@ namespace Analogy
             }
         }
 
-        private void lBoxSources_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Counter item = lBoxSources.SelectedItem as Counter;
-            if (item == null) return;
-            string module = item.Name == "All" ? string.Empty : item.Name;
-            ucLogs1.FilterResults(module);
-        }
     }
 }
 

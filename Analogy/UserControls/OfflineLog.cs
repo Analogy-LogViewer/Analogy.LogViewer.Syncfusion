@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
-using DevExpress.XtraBars;
 
 namespace Analogy
 {
@@ -31,6 +30,7 @@ namespace Analogy
 
         private void SetupEventsHandlers()
         {
+            treeList1.SelectionChanged += TreeList1_SelectionChanged;
             tsBtnDelete.Click += (s, e) =>
             {
                 if (treeList1.Selection.Any())
@@ -164,11 +164,7 @@ namespace Analogy
             ucLogs1.OnFocusedRowChanged += UcLogs1_OnFocusedRowChanged;
 
         }
-
-    
-      
         
-
         private async void TreeList1_SelectionChanged(object sender, EventArgs e)
         {
             List<string> files = treeList1.Selection.Select(node => (string)node.GetValue(colFullPath)).ToList();
