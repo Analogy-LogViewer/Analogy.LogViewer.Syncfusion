@@ -1,4 +1,8 @@
-﻿namespace Analogy
+﻿using System.Drawing;
+using System.Windows.Forms;
+using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
+
+namespace Analogy
 {
     partial class XtraUCFileSystem
     {
@@ -29,13 +33,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            treeColumnAdv1 = new TreeColumnAdv();
+            treeColumnAdv2 = new TreeColumnAdv();
+            treeColumnAdv3 = new TreeColumnAdv();
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraUCFileSystem));
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo treeNodeAdvSubItemStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdvSubItemStyleInfo();
             Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo treeColumnAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdvStyleInfo();
-            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
-            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv2 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
-            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv3 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
             this.multiColumnTreeView1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.MultiColumnTreeView();
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +89,27 @@
             treeColumnAdv3.Highlighted = false;
             treeColumnAdv3.Text = "TreeColumnAdv2";
             treeColumnAdv3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+
+
+
+            treeColumnAdv1.HelpText = "Name";
+            treeColumnAdv1.Highlighted = false;
+            treeColumnAdv1.Text = "Name";
+            treeColumnAdv1.Background = new Syncfusion.Drawing.BrushInfo(SystemColors.Highlight);
+            treeColumnAdv1.AreaBackground = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.ForwardDiagonal, Color.White, Color.Snow);
+            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
+
+            treeColumnAdv2.HelpText = "Full Path";
+            treeColumnAdv2.Highlighted = false;
+            treeColumnAdv2.Text = "Full Path";
+            treeColumnAdv2.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
+
+            treeColumnAdv3.HelpText = "Date Modified";
+            treeColumnAdv3.Highlighted = false;
+            treeColumnAdv3.Text = "Date Modified";
+            treeColumnAdv3.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
             this.multiColumnTreeView1.Columns.AddRange(new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv[] {
             treeColumnAdv1,
             treeColumnAdv2,
@@ -133,6 +159,7 @@
             this.multiColumnTreeView1.ToolTipControl.Text = "toolTip";
             this.multiColumnTreeView1.TransparentControls = true;
             this.multiColumnTreeView1.VScrollPos = -13;
+
             // 
             // XtraUCFileSystem
             // 
@@ -143,7 +170,7 @@
             this.Size = new System.Drawing.Size(396, 296);
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).EndInit();
             this.ResumeLayout(false);
-
+     
         }
 
         #endregion
