@@ -7,6 +7,8 @@ using System.Linq;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Types;
+using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
 
 namespace Analogy
 {
@@ -27,83 +29,48 @@ namespace Analogy
             ListFolders = listFoldersToLoad;
             ListFiles = listFilesToLoad;
             InitializeComponent();
-            if (DesignMode) return;
-            treeList1.DataSource = new object();
+            Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv root = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv();
+            DriveInfo drive = new DriveInfo(Environment.SystemDirectory);
+            root.Text = drive.ToString();
+            multiColumnTreeView1.Nodes.AddRange(new[] {root});
 
+            treeColumnAdv1 = new TreeColumnAdv();
+            treeColumnAdv2 = new TreeColumnAdv();
+            treeColumnAdv3 = new TreeColumnAdv();
+
+            treeColumnAdv1.HelpText = "Name";
+            treeColumnAdv1.Highlighted = false;
+            treeColumnAdv1.Text = "Name";
+            treeColumnAdv1.Background = new Syncfusion.Drawing.BrushInfo(SystemColors.Highlight);
+            treeColumnAdv1.AreaBackground = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.ForwardDiagonal, Color.White, Color.Snow);
+            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
+
+            treeColumnAdv2.HelpText = "Full Path";
+            treeColumnAdv2.Highlighted = false;
+            treeColumnAdv2.Text = "Full Path";
+            treeColumnAdv2.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
+
+            treeColumnAdv3.HelpText = "Date Modified";
+            treeColumnAdv3.Highlighted = false;
+            treeColumnAdv3.Text = "Date Modified";
+            treeColumnAdv3.Background = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
+
+            multiColumnTreeView1.Columns.AddRange(new[]{
+                treeColumnAdv1,treeColumnAdv2,treeColumnAdv3});
+            multiColumnTreeView1.AutoSizeMode = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.AutoSizeMode.Fill;
+            Load += MultiColumnTreeViewDemo_Load;
+            multiColumnTreeView1.BeforeExpand += multiColumnTreeView1_BeforeExpand;
+            //this.MinimumSize = this.Size;
+            treeColumnAdv1.BaseStyle = (multiColumnTreeView1.BaseStylePairs[2] as Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.StyleNamePair).Name;
+            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
+            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
+            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
+            multiColumnTreeView1.FullRowSelect = true;
+           
         }
-
-
-        private void treeList1_CustomDrawNodeCell(object sender, CustomDrawNodeCellEventArgs e)
-        {
-            if (e.Column == colSize)
-            {
-                if (e.Node.GetDisplayText("Type") == "File")
-                {
-                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-                    e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Italic);
-                    Int64 size = Convert.ToInt64(e.Node.GetValue("Size"));
-                    if (size >= 1024)
-                        e.CellText = string.Format("{0:### ### ###} KB", size / 1024);
-                    else e.CellText = string.Format("{0} Bytes", size);
-                }
-                else e.CellText = String.Format("<{0}>", e.Node.GetDisplayText("Type"));
-            }
-
-            if (e.Column == colName)
-            {
-                if (e.Node.GetDisplayText("Type") == "File")
-                {
-                    e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
-                }
-            }
-        }
-
-        private void treeList1_GetStateImage(object sender, GetStateImageEventArgs e)
-        {
-            if (e.Node.GetDisplayText("Type") == "Folder")
-                e.NodeImageIndex = e.Node.Expanded ? 1 : 0;
-            else if (e.Node.GetDisplayText("Type") == "File") e.NodeImageIndex = 2;
-            else e.NodeImageIndex = 3;
-
-        }
-
-        private void treeList1_VirtualTreeGetCellValue(object sender, VirtualTreeGetCellValueInfo e)
-        {
-            DirectoryInfo di = new DirectoryInfo((string)e.Node);
-            if (e.Column == colName)
-            {
-                e.CellData = di.Name;
-                return;
-            }
-
-            if (e.Column == colType)
-            {
-                if (IsDrive((string)e.Node)) e.CellData = "Drive";
-                else if (!IsFile(di))
-                    e.CellData = "Folder";
-                else
-                    e.CellData = "File";
-                if (e.Column == colFullPath)
-                {
-                    e.CellData = (string)e.Node;
-                }
-                return;
-            }
-
-            if (e.Column == colSize)
-            {
-                if (IsFile(di))
-                {
-                    e.CellData = new FileInfo((string)e.Node).Length;
-                }
-                else e.CellData = null;
-                return;
-            }
-
-            if (e.Column == colFullPath)
-                e.CellData = (string)e.Node;
-        }
-
+        
         bool IsFile(DirectoryInfo info)
         {
             try
@@ -199,6 +166,64 @@ namespace Analogy
                 treeList1.OptionsSelection.MultiSelect = true;
                 treeList1.OptionsSelection.MultiSelectMode = TreeListMultiSelectMode.CellSelect;
             }
+        }
+
+
+        void MultiColumnTreeViewDemo_Load(object sender, EventArgs e)
+        {
+            multiColumnTreeView1.Nodes[0].Expanded = true;
+            multiColumnTreeView1.SelectedNode = multiColumnTreeView1.Nodes[0];
+            multiColumnTreeView1.Focus();
+        }
+
+        void multiColumnTreeView1_BeforeExpand(object sender, Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeViewAdvCancelableNodeEventArgs e)
+        {
+            try
+            {
+                //Checking whether the Node has been  expanded atleast once
+                if (e.Node.ExpandedOnce) return;
+
+                DirectoryInfo dir = null;
+                DirectoryInfo[] subDir = null;
+                if (multiColumnTreeView1.Nodes[0].Nodes.Count == 0) //Root directory
+                {
+                    DriveInfo drive = new DriveInfo(e.Node.Text);
+                    dir = drive.RootDirectory;
+
+                    subDir = dir.GetDirectories();
+                }
+
+                else
+                {
+                    //Get the Path of the node and AddSeparatorAtEnd Property set to true
+                    string path = e.Node.GetPath("\\");
+
+                    dir = new DirectoryInfo(path);
+                    subDir = dir.GetDirectories();
+                }
+
+                if (subDir != null)
+                {
+                    foreach (DirectoryInfo dirinfo in subDir)
+                    {
+                        TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
+                        TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
+
+                        subitem1.Text = dirinfo.FullName;
+                        subitem1.HelpText = subitem1.Text;
+
+                        subitem2.Text = dirinfo.LastWriteTime.ToString();
+                        subitem2.HelpText = subitem2.Text;
+
+                        Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv node = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv(dirinfo.Name);
+
+                        node.SubItems.AddRange(new[]{
+                            subitem1,subitem2});
+                        e.Node.Nodes.Add(node);
+                    }
+                }
+            }
+            catch { }
         }
     }
 }
