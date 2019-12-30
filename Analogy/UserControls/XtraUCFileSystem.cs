@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,6 +13,8 @@ namespace Analogy
 {
     public partial class XtraUCFileSystem : UserControl
     {
+        //todo
+        public event EventHandler<EventArgs> SelectionChanged;
         public event EventHandler<FolderSelectionEventArgs> FolderChanged;
         private string startupDrive;
         private bool ListFolders;
@@ -69,13 +72,12 @@ namespace Analogy
         }
 
 
-        public void SetListing(bool listFolders, bool listFiles)
+        public void IsFolderMode(bool listFolders, bool listFiles)
         {
             ListFolders = listFolders;
             ListFiles = listFiles;
 
         }
-
 
         void multiColumnTreeView1_BeforeExpand(object sender, TreeViewAdvCancelableNodeEventArgs e)
         {
@@ -124,6 +126,37 @@ namespace Analogy
 
             }
             catch { }
+        }
+
+        public void SortLastChanged(SortOrder order)
+        {
+            //todo
+        }
+
+        public List<string> GetSelection()
+        {
+            //todo:
+            return new List<string>();
+        }
+
+        public void SelectAll()
+        {
+            //todo:
+        }
+
+        public void HighlightFile(string dataFile)
+        {
+            //todo
+        }
+        public void Clear()
+        {
+            //todo
+            
+        }
+
+        public void Add(string name, DateTime lastWriteTime, long length, string fullName)
+        {
+            //
         }
     }
 }

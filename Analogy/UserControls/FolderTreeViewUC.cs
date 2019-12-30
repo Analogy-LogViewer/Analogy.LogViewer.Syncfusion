@@ -15,7 +15,7 @@ namespace Analogy
         public FolderTreeViewUC()
         {
             InitializeComponent();
-            xtraUCFileSystem1.SetListing(true, false);
+            xtraUCFileSystem1.IsFolderMode(true, false);
             xtraUCFileSystem1.FolderChanged += (s, e) => FolderChanged?.Invoke(this, new FolderSelectionEventArgs(e.SelectedFolderPath));
         }
 
@@ -73,7 +73,7 @@ namespace Analogy
             }
         }
 
-        private async void btnOpenFile_Click(object sender, EventArgs e)
+        private async void btnOpenFolder_Click(object sender, EventArgs e)
         {
             var folderBrowserDialog1 = new FolderBrowserDialog();
             folderBrowserDialog1.SelectedPath = SelectedPath;

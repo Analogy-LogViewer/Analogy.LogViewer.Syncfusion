@@ -60,7 +60,7 @@ namespace Analogy
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bBtnOpenFolder = new DevExpress.XtraBars.BarButtonItem();
-            this.folderTreeViewUC2 = new Analogy.FolderTreeViewUC();
+            this.treeList1 = new Analogy.XtraUCFileSystem();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
             this.spltMain.Panel2.SuspendLayout();
@@ -109,7 +109,7 @@ namespace Analogy
             // 
             // splcLeft.Panel2
             // 
-            this.splcLeft.Panel2.Controls.Add(this.folderTreeViewUC2);
+            this.splcLeft.Panel2.Controls.Add(this.treeList1);
             this.splcLeft.Panel2.Controls.Add(this.toolStripEx2);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxSelectionMode);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxRecursiveLoad);
@@ -325,15 +325,13 @@ namespace Analogy
             this.bBtnOpenFolder.Name = "bBtnOpenFolder";
             this.bBtnOpenFolder.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // folderTreeViewUC2
+            // treeList1
             // 
-            this.folderTreeViewUC2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.folderTreeViewUC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.folderTreeViewUC2.Location = new System.Drawing.Point(0, 65);
-            this.folderTreeViewUC2.Margin = new System.Windows.Forms.Padding(4);
-            this.folderTreeViewUC2.Name = "folderTreeViewUC2";
-            this.folderTreeViewUC2.Size = new System.Drawing.Size(437, 406);
-            this.folderTreeViewUC2.TabIndex = 16;
+            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList1.Location = new System.Drawing.Point(0, 65);
+            this.treeList1.Name = "treeList1";
+            this.treeList1.Size = new System.Drawing.Size(437, 406);
+            this.treeList1.TabIndex = 16;
             // 
             // OfflineUCLogs
             // 
@@ -397,6 +395,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBtnSelecAll;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxSelectionMode;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxRecursiveLoad;
-        private FolderTreeViewUC folderTreeViewUC2;
+        private XtraUCFileSystem treeList1;
     }
 }

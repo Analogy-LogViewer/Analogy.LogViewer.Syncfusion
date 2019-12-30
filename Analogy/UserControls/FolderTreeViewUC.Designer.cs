@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderTreeViewUC));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtbFolder = new System.Windows.Forms.TextBox();
-            this.btnOpenFile = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnOpenFolder = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.xtraUCFileSystem1 = new Analogy.XtraUCFileSystem();
             this.panel2.SuspendLayout();
@@ -41,7 +41,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.txtbFolder);
-            this.panel2.Controls.Add(this.btnOpenFile);
+            this.panel2.Controls.Add(this.btnOpenFolder);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -60,19 +60,19 @@
             this.txtbFolder.TabIndex = 12;
             this.txtbFolder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtbFolder_KeyUp);
             // 
-            // btnOpenFile
+            // btnOpenFolder
             // 
-            this.btnOpenFile.AccessibleName = "Button";
-            this.btnOpenFile.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenFile.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenFile.Location = new System.Drawing.Point(418, 0);
-            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(26, 23);
-            this.btnOpenFile.TabIndex = 13;
-            this.btnOpenFile.Text = "...";
-            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            this.btnOpenFolder.AccessibleName = "Button";
+            this.btnOpenFolder.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenFolder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenFolder.Location = new System.Drawing.Point(418, 0);
+            this.btnOpenFolder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(26, 23);
+            this.btnOpenFolder.TabIndex = 13;
+            this.btnOpenFolder.Text = "...";
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
             // imageList
             // 
@@ -115,7 +115,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtbFolder;
         private System.Windows.Forms.ImageList imageList;
-        private Syncfusion.WinForms.Controls.SfButton btnOpenFile;
+        private Syncfusion.WinForms.Controls.SfButton btnOpenFolder;
         private XtraUCFileSystem xtraUCFileSystem1;
     }
 }
