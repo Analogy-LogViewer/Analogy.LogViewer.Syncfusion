@@ -576,7 +576,6 @@ namespace Analogy
                 }
 
                 filepoolingUC.Tag = ribbonPage;
-                filepoolingUC.Controls.Add(filepoolingUC);
                 filepoolingUC.Dock = DockStyle.Fill;
                 filepoolingUC.Text = $"{filePoolingTitle} #{filePooling} ({titleOfDataSource})";
                 AddToDockingManager(filepoolingUC, filepoolingUC.Text);

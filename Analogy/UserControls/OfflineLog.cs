@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
+using DevExpress.XtraTreeList;
 
 namespace Analogy
 {
@@ -16,6 +17,7 @@ namespace Analogy
         private List<string> extrenalFiles = new List<string>();
         public string SelectedPath { get; set; }
         private IAnalogyOfflineDataProvider DataProvider { get; }
+        TreeList treeList1 = new TreeList();
         //private List<string> TreeListFileNodes { get; set; }
         public OfflineUCLogs(string initSelectedPath)
         {
@@ -35,7 +37,8 @@ namespace Analogy
             {
                 if (treeList1.Selection.Any())
                 {
-                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    //todo:fix
+                    var filename = (string)treeList1.Selection.First().GetValue("");
                     if (filename == null || !File.Exists(filename)) return;
                     var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
@@ -57,7 +60,8 @@ namespace Analogy
             {
                 if (treeList1.Selection.Any())
                 {
-                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    //todo:fix
+                    var filename = (string)treeList1.Selection.First().GetValue("");
                     if (filename == null || !File.Exists(filename)) return;
                     Process.Start("explorer.exe", "/select, \"" + filename + "\"");
                 }
@@ -117,7 +121,7 @@ namespace Analogy
                 treeList1.Selection.Add(t);
                 treeList1.SelectionChanged += TreeList1_SelectionChanged;
             }
-            }
+        }
 
         private async void FolderTreeViewUC1_FolderChanged(object sender, Types.FolderSelectionEventArgs e)
         {
@@ -153,7 +157,7 @@ namespace Analogy
 
             treeList1.BestFitColumns();
             treeList1.ClearSelection();
-          
+
             treeList1.SelectionChanged += TreeList1_SelectionChanged;
         }
 
@@ -164,10 +168,11 @@ namespace Analogy
             ucLogs1.OnFocusedRowChanged += UcLogs1_OnFocusedRowChanged;
 
         }
-        
+
         private async void TreeList1_SelectionChanged(object sender, EventArgs e)
         {
-            List<string> files = treeList1.Selection.Select(node => (string)node.GetValue(colFullPath)).ToList();
+            //todo:fix
+            List<string> files = treeList1.Selection.Select(node => (string)node.GetValue("")).ToList();
             await LoadFilesAsync(files, checkBoxSelectionMode.Checked);
         }
     }
