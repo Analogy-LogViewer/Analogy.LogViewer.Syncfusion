@@ -32,13 +32,22 @@ namespace Analogy
         {
             InitializeComponent();
             tvFolderUC.FolderChanged += TvFolderUC_FolderChanged;
+            btnOpen.Click += (s, e) =>
+            {
+                if (lBoxFiles.SelectedItem != null)
+                {
+                    var filename = (lBoxFiles.SelectedItem as FileInfo)?.FullName;
+                    if (filename == null || !File.Exists(filename)) return;
+                    Process.Start("explorer.exe", "/select, \"" + filename + "\"");
+                }
+            };
         }
 
         private void TvFolderUC_FolderChanged(object sender, FolderSelectionEventArgs e)
         {
             lBoxFiles.SelectedIndexChanged -= lBoxFiles_SelectedIndexChanged;
             DirectoryInfo dirInfo = new DirectoryInfo(e.SelectedFolderPath);
-            bool recursive = checkEditRecursiveLoad.Checked;
+            bool recursive = checkBoxRecursiveLoad.Checked;
             List<FileInfo> fileInfos = (ZipFilesOnly ? dirInfo.GetFiles("*.zip").ToList() : DataProvider.GetSupportedFiles(dirInfo, recursive)).OrderByDescending(f => f.LastWriteTime).ToList();
             lBoxFiles.DisplayMember = recursive ? "FullName" : "Name";
             lBoxFiles.DataSource = fileInfos;
@@ -59,15 +68,6 @@ namespace Analogy
         public List<string> GetSelectedFileNames() =>
             lBoxFiles.SelectedItems.Cast<FileInfo>().Select(f => f.FullName).ToList();
 
-        private void bBtnOpen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (lBoxFiles.SelectedItem != null)
-            {
-                var filename = (lBoxFiles.SelectedItem as FileInfo)?.FullName;
-                if (filename == null || !File.Exists(filename)) return;
-                Process.Start("explorer.exe", "/select, \"" + filename + "\"");
-            }
-        }
     }
 
 }

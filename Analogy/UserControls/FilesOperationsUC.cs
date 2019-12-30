@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -11,7 +10,7 @@ using Analogy.Interfaces;
 
 namespace Analogy
 {
-    public partial class FilesOperationsUC : XtraUserControl, ILogMessageCreatedHandler
+    public partial class FilesOperationsUC : UserControl, ILogMessageCreatedHandler
     {
         public bool ForceNoFileCaching { get; set; } = false;
         public bool DoNotAddToRecentHistory { get; set; } = false;
@@ -87,7 +86,7 @@ namespace Analogy
         {
             DataProvider = dataProvider;
             Aborted = false;
-            sBtnAbort.Enabled = true;
+            btnAbort.Enabled = true;
             int processed = 0;
             foreach (string filename in FileNames)
             {
@@ -118,7 +117,7 @@ namespace Analogy
         {
             DataProvider = dataProvider;
             Aborted = false;
-            sBtnAbort.Enabled = true;
+            btnAbort.Enabled = true;
             int processed = 0;
             foreach (string filename in FileNames)
             {
@@ -179,50 +178,9 @@ namespace Analogy
         private void sBtnAbort_Click(object sender, EventArgs e)
         {
             Aborted = true;
-            sBtnAbort.Enabled = false;
+            btnAbort.Enabled = false;
         }
 
-        public void CollapsePanel(bool top)
-        {
-
-            splitContainerControl1.PanelVisibility = top ? SplitPanelVisibility.Panel1 : SplitPanelVisibility.Panel2;
-
-        }
-
-        private void etlParser_Progress(int progress, int total, string fileName, bool convertSource)
-        {
-            if (progressBar1.InvokeRequired)
-            {
-                BeginInvoke(new MethodInvoker(() => etlParser_Progress(progress, total, fileName, convertSource)));
-            }
-            else
-            {
-                progressBar1.Minimum = 0;
-                progressBar1.Maximum = total;
-                progressBar1.Value = progress;
-
-                richTextBox1.Text += fileName + "\r\n";
-            }
-            if (convertSource && total == progress)
-            {
-                richTextBox1.Text += string.Format("\r\nSystem Completed Conversion of {0} ETL files\r\n", total);
-                richTextBox1.Text += string.Format("\r\nDeleting Temporary Folder (used for bugrep extraction):\r\n{0}", sourcePath);
-                if (Directory.Exists(sourcePath))
-                {
-                    string path = string.Empty;
-                    if (sourcePath.Contains("\\BugNode\\"))
-                        path = sourcePath.Substring(0, sourcePath.IndexOf("\\BugNode\\"));
-                    else if (sourcePath.Contains("\\BugRep\\"))
-                        path = sourcePath.Substring(0, sourcePath.IndexOf("\\BugRep\\"));
-                    if (path != string.Empty)
-                        Directory.Delete(path, true);
-                }
-                richTextBox1.Text += "\r\nTemporary Folder Deleted Successfully";
-                richTextBox1.Text += "\r\n\r\n\r\nCONVERSION COMPLETED!\r\n\r\n";
-            }
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
-        }
     }
 }
 
