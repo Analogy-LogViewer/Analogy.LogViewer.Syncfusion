@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Analogy.Interfaces;
 
 namespace Analogy.DataProviders
@@ -11,6 +8,11 @@ namespace Analogy.DataProviders
     {
         public static IEnumerable<AnalogyChangeLog> GetChangeLog()
         {
+            yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress user controls with standard user controls(Issue #16)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
+            yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress forms with Syncfusion/Windows forms (Issue #14)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
+            yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress ToolStrips with Syncfusion ToolStrips (Issue #12)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30)); yield return new AnalogyChangeLog("Syncfusion - Upgrade .net framework to 4.8 from 4.7.2 (Issue #15)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
+            yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress Buttons with Syncfusion Buttons(Issue #11)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
+            yield return new AnalogyChangeLog("Syncfusion - Convert Folders/Files User Control (Issue #3)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
             yield return new AnalogyChangeLog("Syncfusion - Upgrade .net framework to 4.8 from 4.7.2 (Issue #15)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
             yield return new AnalogyChangeLog("Syncfusion - Convert User Settings Form (Issue #4)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 29));
             yield return new AnalogyChangeLog("Syncfusion - Replace Devexpress about forms with Syncfusion (Issue #13)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 28));

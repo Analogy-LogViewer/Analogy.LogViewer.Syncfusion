@@ -15,14 +15,8 @@ using System.Windows.Forms;
 using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Types;
-using DevExpress.Data.Filtering;
-using DevExpress.XtraBars.Navigation.Accessible;
 using Syncfusion.Windows.Forms.Tools.Enums;
-using Syncfusion.WinForms.DataGrid.Interactivity;
 using Syncfusion.WinForms.DataGrid.Serialization;
-using Syncfusion.WinForms.DataPager;
-using static System.Enum;
-using Message = System.Windows.Forms.Message;
 
 namespace Analogy
 {

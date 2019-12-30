@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Windows.Forms;
 using Analogy.Interfaces.Factories;
 using Syncfusion.Windows.Forms;
 
