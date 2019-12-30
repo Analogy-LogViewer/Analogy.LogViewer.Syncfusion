@@ -860,6 +860,8 @@
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
     <Content Include="Icons\Analogy_Icon2_16x16.ico" />
+    <None Include="Resources\DifferentOddEvenPages_32x32.png" />
+    <None Include="Resources\DifferentOddEvenPages_16x16.png" />
     <None Include="Resources\RefreshAllPivotTable_32x32.png" />
     <None Include="Resources\RefreshAllPivotTable_16x16.png" />
     <None Include="Resources\ReapplyFilter_32x32.png" />

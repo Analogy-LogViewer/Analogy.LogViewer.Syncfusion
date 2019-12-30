@@ -40,25 +40,24 @@ namespace Analogy
             this.spltMain = new System.Windows.Forms.SplitContainer();
             this.splcLeft = new System.Windows.Forms.SplitContainer();
             this.folderTreeViewUC1 = new Analogy.FolderTreeViewUC();
+            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsBtnOpenFolder = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnSelecAll = new System.Windows.Forms.ToolStripButton();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colChanged = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colSize = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colFullPath = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bBtnOpen = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bBtnSelectAll = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.chkbSelectionMode = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditRecursiveLoad = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxSelectionMode = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.checkBoxRecursiveLoad = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.ucLogs1 = new Analogy.UCLogs();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
@@ -74,11 +73,12 @@ namespace Analogy
             this.splcLeft.Panel1.SuspendLayout();
             this.splcLeft.Panel2.SuspendLayout();
             this.splcLeft.SuspendLayout();
+            this.toolStripEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkbSelectionMode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditRecursiveLoad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).BeginInit();
             this.tsPrimary.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +97,7 @@ namespace Analogy
             // 
             this.spltMain.Panel2.Controls.Add(this.ucLogs1);
             this.spltMain.Size = new System.Drawing.Size(1387, 700);
-            this.spltMain.SplitterDistance = 392;
+            this.spltMain.SplitterDistance = 437;
             this.spltMain.TabIndex = 5;
             // 
             // splcLeft
@@ -114,11 +114,11 @@ namespace Analogy
             // 
             // splcLeft.Panel2
             // 
+            this.splcLeft.Panel2.Controls.Add(this.toolStripEx2);
             this.splcLeft.Panel2.Controls.Add(this.treeList1);
-            this.splcLeft.Panel2.Controls.Add(this.standaloneBarDockControl1);
-            this.splcLeft.Panel2.Controls.Add(this.chkbSelectionMode);
-            this.splcLeft.Panel2.Controls.Add(this.checkEditRecursiveLoad);
-            this.splcLeft.Size = new System.Drawing.Size(392, 700);
+            this.splcLeft.Panel2.Controls.Add(this.checkBoxSelectionMode);
+            this.splcLeft.Panel2.Controls.Add(this.checkBoxRecursiveLoad);
+            this.splcLeft.Size = new System.Drawing.Size(437, 700);
             this.splcLeft.SplitterDistance = 225;
             this.splcLeft.TabIndex = 4;
             // 
@@ -129,8 +129,59 @@ namespace Analogy
             this.folderTreeViewUC1.Location = new System.Drawing.Point(0, 0);
             this.folderTreeViewUC1.Margin = new System.Windows.Forms.Padding(4);
             this.folderTreeViewUC1.Name = "folderTreeViewUC1";
-            this.folderTreeViewUC1.Size = new System.Drawing.Size(392, 225);
+            this.folderTreeViewUC1.Size = new System.Drawing.Size(437, 225);
             this.folderTreeViewUC1.TabIndex = 0;
+            // 
+            // toolStripEx2
+            // 
+            this.toolStripEx2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx2.Image = null;
+            this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnOpenFolder,
+            this.tsBtnRefresh,
+            this.tsBtnDelete,
+            this.tsBtnSelecAll});
+            this.toolStripEx2.Location = new System.Drawing.Point(0, 38);
+            this.toolStripEx2.Name = "toolStripEx2";
+            this.toolStripEx2.Office12Mode = false;
+            this.toolStripEx2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStripEx2.Size = new System.Drawing.Size(437, 27);
+            this.toolStripEx2.TabIndex = 13;
+            this.toolStripEx2.Text = "toolStripEx2";
+            // 
+            // tsBtnOpenFolder
+            // 
+            this.tsBtnOpenFolder.Image = global::Analogy.Properties.Resources.Open2_32x32;
+            this.tsBtnOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnOpenFolder.Name = "tsBtnOpenFolder";
+            this.tsBtnOpenFolder.Size = new System.Drawing.Size(115, 24);
+            this.tsBtnOpenFolder.Text = "Open Folder";
+            // 
+            // tsBtnRefresh
+            // 
+            this.tsBtnRefresh.Image = global::Analogy.Properties.Resources.RefreshAllPivotTable_32x32;
+            this.tsBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRefresh.Name = "tsBtnRefresh";
+            this.tsBtnRefresh.Size = new System.Drawing.Size(82, 24);
+            this.tsBtnRefresh.Text = "Refresh";
+            // 
+            // tsBtnDelete
+            // 
+            this.tsBtnDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnDelete.Image = global::Analogy.Properties.Resources.DeleteList_32x32;
+            this.tsBtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDelete.Name = "tsBtnDelete";
+            this.tsBtnDelete.Size = new System.Drawing.Size(77, 24);
+            this.tsBtnDelete.Text = "Delete";
+            // 
+            // tsBtnSelecAll
+            // 
+            this.tsBtnSelecAll.Image = global::Analogy.Properties.Resources.DifferentOddEvenPages_32x32;
+            this.tsBtnSelecAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnSelecAll.Name = "tsBtnSelecAll";
+            this.tsBtnSelecAll.Size = new System.Drawing.Size(95, 24);
+            this.tsBtnSelecAll.Text = "Select All";
             // 
             // treeList1
             // 
@@ -144,9 +195,8 @@ namespace Analogy
             this.colSize,
             this.colFullPath});
             this.treeList1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeList1.FixedLineWidth = 3;
-            this.treeList1.Location = new System.Drawing.Point(0, 70);
+            this.treeList1.Location = new System.Drawing.Point(28, 113);
             this.treeList1.Margin = new System.Windows.Forms.Padding(4);
             this.treeList1.MinWidth = 27;
             this.treeList1.Name = "treeList1";
@@ -216,91 +266,14 @@ namespace Analogy
             this.imageCollection1.Images.SetKeyName(2, "File.png");
             this.imageCollection1.Images.SetKeyName(3, "Local_Disk.png");
             // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 40);
-            this.standaloneBarDockControl1.Manager = this.barManager1;
-            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(392, 30);
-            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
-            // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.DockControls.Add(this.standaloneBarDockControl1);
             this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bBtnOpen,
-            this.bBtnRefresh,
-            this.bBtnDelete,
-            this.bBtnSelectAll});
             this.barManager1.MaxItemId = 4;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Custom 2";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar1.FloatLocation = new System.Drawing.Point(98, 376);
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnOpen),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnRefresh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnDelete),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bBtnSelectAll)});
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
-            this.bar1.Text = "Custom 2";
-            // 
-            // bBtnOpen
-            // 
-            this.bBtnOpen.Caption = "Open";
-            this.bBtnOpen.Id = 0;
-            this.bBtnOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnOpen.ImageOptions.Image")));
-            this.bBtnOpen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnOpen.ImageOptions.LargeImage")));
-            this.bBtnOpen.Name = "bBtnOpen";
-            this.bBtnOpen.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnOpen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnOpen_ItemClick);
-            // 
-            // bBtnRefresh
-            // 
-            this.bBtnRefresh.Caption = "Refresh";
-            this.bBtnRefresh.Id = 1;
-            this.bBtnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnRefresh.ImageOptions.Image")));
-            this.bBtnRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnRefresh.ImageOptions.LargeImage")));
-            this.bBtnRefresh.Name = "bBtnRefresh";
-            this.bBtnRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnRefresh_ItemClick);
-            // 
-            // bBtnDelete
-            // 
-            this.bBtnDelete.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bBtnDelete.Caption = "Delete";
-            this.bBtnDelete.Id = 2;
-            this.bBtnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnDelete.ImageOptions.Image")));
-            this.bBtnDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnDelete.ImageOptions.LargeImage")));
-            this.bBtnDelete.Name = "bBtnDelete";
-            this.bBtnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnDelete_ItemClick);
-            // 
-            // bBtnSelectAll
-            // 
-            this.bBtnSelectAll.Caption = "Select All";
-            this.bBtnSelectAll.Id = 3;
-            this.bBtnSelectAll.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bBtnSelectAll.ImageOptions.Image")));
-            this.bBtnSelectAll.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bBtnSelectAll.ImageOptions.LargeImage")));
-            this.bBtnSelectAll.Name = "bBtnSelectAll";
-            this.bBtnSelectAll.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bBtnSelectAll.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bBtnSelectAll_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -338,31 +311,31 @@ namespace Analogy
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
             // 
-            // chkbSelectionMode
+            // checkBoxSelectionMode
             // 
-            this.chkbSelectionMode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkbSelectionMode.EditValue = true;
-            this.chkbSelectionMode.Location = new System.Drawing.Point(0, 20);
-            this.chkbSelectionMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkbSelectionMode.Name = "chkbSelectionMode";
-            this.chkbSelectionMode.Properties.Caption = "Clear log between selection";
-            this.chkbSelectionMode.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("chkbSelectionMode.Properties.ImageOptions.ImageChecked")));
-            this.chkbSelectionMode.Properties.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("chkbSelectionMode.Properties.ImageOptions.ImageUnchecked")));
-            this.chkbSelectionMode.Size = new System.Drawing.Size(392, 20);
-            this.chkbSelectionMode.TabIndex = 6;
+            this.checkBoxSelectionMode.BeforeTouchSize = new System.Drawing.Size(437, 19);
+            this.checkBoxSelectionMode.Checked = true;
+            this.checkBoxSelectionMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSelectionMode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxSelectionMode.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.checkBoxSelectionMode.Location = new System.Drawing.Point(0, 19);
+            this.checkBoxSelectionMode.Name = "checkBoxSelectionMode";
+            this.checkBoxSelectionMode.Size = new System.Drawing.Size(437, 19);
+            this.checkBoxSelectionMode.TabIndex = 15;
+            this.checkBoxSelectionMode.Text = "Clear log between selection";
             // 
-            // checkEditRecursiveLoad
+            // checkBoxRecursiveLoad
             // 
-            this.checkEditRecursiveLoad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkEditRecursiveLoad.EditValue = true;
-            this.checkEditRecursiveLoad.Location = new System.Drawing.Point(0, 0);
-            this.checkEditRecursiveLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkEditRecursiveLoad.Name = "checkEditRecursiveLoad";
-            this.checkEditRecursiveLoad.Properties.Caption = "Load Recursive Files";
-            this.checkEditRecursiveLoad.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("checkEditRecursiveLoad.Properties.ImageOptions.ImageChecked")));
-            this.checkEditRecursiveLoad.Properties.ImageOptions.ImageUnchecked = ((System.Drawing.Image)(resources.GetObject("checkEditRecursiveLoad.Properties.ImageOptions.ImageUnchecked")));
-            this.checkEditRecursiveLoad.Size = new System.Drawing.Size(392, 20);
-            this.checkEditRecursiveLoad.TabIndex = 7;
+            this.checkBoxRecursiveLoad.BeforeTouchSize = new System.Drawing.Size(437, 19);
+            this.checkBoxRecursiveLoad.Checked = true;
+            this.checkBoxRecursiveLoad.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRecursiveLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxRecursiveLoad.ImageCheckBoxSize = new System.Drawing.Size(16, 16);
+            this.checkBoxRecursiveLoad.Location = new System.Drawing.Point(0, 0);
+            this.checkBoxRecursiveLoad.Name = "checkBoxRecursiveLoad";
+            this.checkBoxRecursiveLoad.Size = new System.Drawing.Size(437, 19);
+            this.checkBoxRecursiveLoad.TabIndex = 14;
+            this.checkBoxRecursiveLoad.Text = "Load Recursive Files";
             // 
             // ucLogs1
             // 
@@ -373,7 +346,7 @@ namespace Analogy
             this.ucLogs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucLogs1.Name = "ucLogs1";
             this.ucLogs1.OnlineMode = false;
-            this.ucLogs1.Size = new System.Drawing.Size(991, 700);
+            this.ucLogs1.Size = new System.Drawing.Size(946, 700);
             this.ucLogs1.TabIndex = 0;
             // 
             // imageList
@@ -454,13 +427,16 @@ namespace Analogy
             this.spltMain.ResumeLayout(false);
             this.splcLeft.Panel1.ResumeLayout(false);
             this.splcLeft.Panel2.ResumeLayout(false);
+            this.splcLeft.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splcLeft)).EndInit();
             this.splcLeft.ResumeLayout(false);
+            this.toolStripEx2.ResumeLayout(false);
+            this.toolStripEx2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkbSelectionMode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditRecursiveLoad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSelectionMode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxRecursiveLoad)).EndInit();
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
             this.ResumeLayout(false);
@@ -476,27 +452,26 @@ namespace Analogy
         private System.Windows.Forms.SplitContainer splcLeft;
         private System.Windows.Forms.ImageList imageListBottom;
         private UCLogs ucLogs1;
-        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.CheckEdit chkbSelectionMode;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem bBtnOpen;
         private DevExpress.XtraBars.BarButtonItem bBtnOpenFolder;
-        private DevExpress.XtraBars.BarButtonItem bBtnRefresh;
-        private DevExpress.XtraBars.BarButtonItem bBtnDelete;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private FolderTreeViewUC folderTreeViewUC1;
-        private DevExpress.XtraBars.BarButtonItem bBtnSelectAll;
-        private DevExpress.XtraEditors.CheckEdit checkEditRecursiveLoad;
         private DevExpress.XtraTreeList.TreeList treeList1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colChanged;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSize;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colFullPath;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
+        private System.Windows.Forms.ToolStripButton tsBtnOpenFolder;
+        private System.Windows.Forms.ToolStripButton tsBtnRefresh;
+        private System.Windows.Forms.ToolStripButton tsBtnDelete;
+        private System.Windows.Forms.ToolStripButton tsBtnSelecAll;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxSelectionMode;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxRecursiveLoad;
     }
 }

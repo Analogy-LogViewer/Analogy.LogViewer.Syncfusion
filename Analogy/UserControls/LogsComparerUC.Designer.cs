@@ -50,9 +50,10 @@
             // rtboxRight
             // 
             this.rtboxRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtboxRight.Location = new System.Drawing.Point(0, 26);
+            this.rtboxRight.Location = new System.Drawing.Point(0, 32);
+            this.rtboxRight.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.rtboxRight.Name = "rtboxRight";
-            this.rtboxRight.Size = new System.Drawing.Size(420, 453);
+            this.rtboxRight.Size = new System.Drawing.Size(255, 355);
             this.rtboxRight.TabIndex = 3;
             this.rtboxRight.Text = "";
             this.rtboxRight.WordWrap = false;
@@ -61,6 +62,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -72,16 +74,18 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.rtboxRight);
             this.splitContainer1.Panel2.Controls.Add(this.panelControlRight);
-            this.splitContainer1.Size = new System.Drawing.Size(821, 479);
-            this.splitContainer1.SplitterDistance = 397;
+            this.splitContainer1.Size = new System.Drawing.Size(504, 387);
+            this.splitContainer1.SplitterDistance = 243;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
             // rtboxLeft
             // 
             this.rtboxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtboxLeft.Location = new System.Drawing.Point(0, 26);
+            this.rtboxLeft.Location = new System.Drawing.Point(0, 32);
+            this.rtboxLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtboxLeft.Name = "rtboxLeft";
-            this.rtboxLeft.Size = new System.Drawing.Size(397, 453);
+            this.rtboxLeft.Size = new System.Drawing.Size(243, 355);
             this.rtboxLeft.TabIndex = 0;
             this.rtboxLeft.Text = "";
             this.rtboxLeft.WordWrap = false;
@@ -92,8 +96,9 @@
             this.panelControlLeft.Controls.Add(this.sBtnLeft);
             this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControlLeft.Name = "panelControlLeft";
-            this.panelControlLeft.Size = new System.Drawing.Size(397, 26);
+            this.panelControlLeft.Size = new System.Drawing.Size(243, 32);
             this.panelControlLeft.TabIndex = 3;
             // 
             // lblFileLeft
@@ -103,15 +108,19 @@
             this.lblFileLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFileLeft.Location = new System.Drawing.Point(2, 2);
             this.lblFileLeft.Name = "lblFileLeft";
-            this.lblFileLeft.Size = new System.Drawing.Size(336, 22);
+            this.lblFileLeft.Size = new System.Drawing.Size(164, 28);
             this.lblFileLeft.TabIndex = 1;
             // 
             // sBtnLeft
             // 
+            this.sBtnLeft.AccessibleName = "Button";
             this.sBtnLeft.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sBtnLeft.Location = new System.Drawing.Point(338, 2);
+            this.sBtnLeft.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sBtnLeft.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sBtnLeft.Location = new System.Drawing.Point(166, 2);
+            this.sBtnLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sBtnLeft.Name = "sBtnLeft";
-            this.sBtnLeft.Size = new System.Drawing.Size(57, 22);
+            this.sBtnLeft.Size = new System.Drawing.Size(75, 28);
             this.sBtnLeft.TabIndex = 2;
             this.sBtnLeft.Text = "..";
             this.sBtnLeft.Click += new System.EventHandler(this.sBtnLeft_Click);
@@ -122,8 +131,9 @@
             this.panelControlRight.Controls.Add(this.simpleButtonRight);
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlRight.Location = new System.Drawing.Point(0, 0);
+            this.panelControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(420, 26);
+            this.panelControlRight.Size = new System.Drawing.Size(255, 32);
             this.panelControlRight.TabIndex = 4;
             // 
             // lblFileRight
@@ -133,26 +143,31 @@
             this.lblFileRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFileRight.Location = new System.Drawing.Point(2, 2);
             this.lblFileRight.Name = "lblFileRight";
-            this.lblFileRight.Size = new System.Drawing.Size(359, 22);
+            this.lblFileRight.Size = new System.Drawing.Size(176, 28);
             this.lblFileRight.TabIndex = 2;
             // 
             // simpleButtonRight
             // 
+            this.simpleButtonRight.AccessibleName = "Button";
             this.simpleButtonRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButtonRight.Location = new System.Drawing.Point(361, 2);
+            this.simpleButtonRight.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.simpleButtonRight.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButtonRight.Location = new System.Drawing.Point(178, 2);
+            this.simpleButtonRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButtonRight.Name = "simpleButtonRight";
-            this.simpleButtonRight.Size = new System.Drawing.Size(57, 22);
+            this.simpleButtonRight.Size = new System.Drawing.Size(75, 28);
             this.simpleButtonRight.TabIndex = 3;
             this.simpleButtonRight.Text = "..";
             this.simpleButtonRight.Click += new System.EventHandler(this.simpleButtonRight_Click);
             // 
             // LogsComparerUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LogsComparerUC";
-            this.Size = new System.Drawing.Size(821, 479);
+            this.Size = new System.Drawing.Size(504, 387);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

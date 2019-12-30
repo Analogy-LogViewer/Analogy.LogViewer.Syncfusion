@@ -8,7 +8,7 @@ using Analogy.Interfaces;
 
 namespace Analogy.Tools
 {
-    public partial class LogsComparerUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class LogsComparerUC : UserControl
     {
         private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private FileComparerProcessor LeftFile;

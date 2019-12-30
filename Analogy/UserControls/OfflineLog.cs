@@ -25,6 +25,45 @@ namespace Analogy
             InitializeComponent();
             treeList1.Columns["colChanged"].SortOrder = SortOrder.Descending;
             treeList1.Appearance.HideSelectionRow.Assign(treeList1.ViewInfo.PaintAppearance.FocusedRow);
+
+            SetupEventsHandlers();
+        }
+
+        private void SetupEventsHandlers()
+        {
+            tsBtnDelete.Click += (s, e) =>
+            {
+                if (treeList1.Selection.Any())
+                {
+                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    if (filename == null || !File.Exists(filename)) return;
+                    var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        if (File.Exists(filename))
+                            try
+                            {
+                                File.Delete(filename);
+                                PopulateFiles(SelectedPath);
+                            }
+                            catch (Exception exception)
+                            {
+                                MessageBox.Show(exception.Message, @"Error deleting file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                    }
+                }
+            };
+            tsBtnOpenFolder.Click += (s, e) =>
+            {
+                if (treeList1.Selection.Any())
+                {
+                    var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
+                    if (filename == null || !File.Exists(filename)) return;
+                    Process.Start("explorer.exe", "/select, \"" + filename + "\"");
+                }
+            };
+            tsBtnRefresh.Click += (s, e) => { PopulateFiles(SelectedPath); };
+            tsBtnSelecAll.Click += (s, e) => { treeList1.SelectAll(); };
         }
 
         public OfflineUCLogs(IAnalogyOfflineDataProvider dataProvider, string[] fileNames = null, string initialSelectedPath = null) : this(initialSelectedPath)
@@ -67,8 +106,6 @@ namespace Analogy
 
         private void UcLogs1_OnFocusedRowChanged(object sender, (string file, AnalogyLogMessage e) data)
         {
-
-
             var t = treeList1.Nodes.FirstOrDefault(n => data.file.Contains(n["Path"].ToString(), StringComparison.InvariantCultureIgnoreCase));
             if (t != null && treeList1.FocusedNode != t)
             {
@@ -80,11 +117,7 @@ namespace Analogy
                 treeList1.Selection.Add(t);
                 treeList1.SelectionChanged += TreeList1_SelectionChanged;
             }
-
-
-
-
-        }
+            }
 
         private async void FolderTreeViewUC1_FolderChanged(object sender, Types.FolderSelectionEventArgs e)
         {
@@ -99,7 +132,7 @@ namespace Analogy
         private async void AnalogyUCLogs_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            await LoadFilesAsync(files.ToList(), chkbSelectionMode.Checked);
+            await LoadFilesAsync(files.ToList(), checkBoxSelectionMode.Checked);
         }
 
         private void PopulateFiles(string folder)
@@ -107,7 +140,7 @@ namespace Analogy
             if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
             SelectedPath = folder;
             treeList1.SelectionChanged -= TreeList1_SelectionChanged;
-            bool recursiveLoad = checkEditRecursiveLoad.Checked;
+            bool recursiveLoad = checkBoxRecursiveLoad.Checked;
             DirectoryInfo dirInfo = new DirectoryInfo(folder);
             List<FileInfo> fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).ToList();
             treeList1.Nodes.Clear();
@@ -132,54 +165,14 @@ namespace Analogy
 
         }
 
-        private void bBtnOpen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (treeList1.Selection.Any())
-            {
-                var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
-                if (filename == null || !File.Exists(filename)) return;
-                Process.Start("explorer.exe", "/select, \"" + filename + "\"");
-            }
-        }
-
-        private void bBtnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (treeList1.Selection.Any())
-            {
-                var filename = (string)treeList1.Selection.First().GetValue(colFullPath);
-                if (filename == null || !File.Exists(filename)) return;
-                var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
-                {
-                    if (File.Exists(filename))
-                        try
-                        {
-                            File.Delete(filename);
-                            PopulateFiles(SelectedPath);
-                        }
-                        catch (Exception exception)
-                        {
-                            MessageBox.Show(exception.Message, @"Error deleting file", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                }
-            }
-
-        }
-
-        private void bBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            PopulateFiles(SelectedPath);
-        }
-
-        private void bBtnSelectAll_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            treeList1.SelectAll();
-        }
+    
+      
+        
 
         private async void TreeList1_SelectionChanged(object sender, EventArgs e)
         {
             List<string> files = treeList1.Selection.Select(node => (string)node.GetValue(colFullPath)).ToList();
-            await LoadFilesAsync(files, chkbSelectionMode.Checked);
+            await LoadFilesAsync(files, checkBoxSelectionMode.Checked);
         }
     }
 

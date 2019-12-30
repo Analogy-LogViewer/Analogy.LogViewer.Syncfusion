@@ -62,7 +62,10 @@
             // 
             // btnOpenFile
             // 
+            this.btnOpenFile.AccessibleName = "Button";
             this.btnOpenFile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenFile.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenFile.Location = new System.Drawing.Point(418, 0);
             this.btnOpenFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpenFile.Name = "btnOpenFile";
