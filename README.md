@@ -1,5 +1,11 @@
-# Analogy.LogViewer.Syncfusion
+# Analogy (using Syncfusion Winforms UI Library)
 Analogy Log Viewer Application (using Syncfusion UI Library). This is Work In Progress. Current working version is using DevExpress UI library at the following repo: https://github.com/philips-software/logviewer
+
+current status:
+- [x] Convert Data Grid Control for messages
+- [x] Covert all User Controls (Ribbons, ToolStrips, Windows Forms etc)
+- [x] REmove any reference to DevExpress assemblies
+- [ ] Fix small related UI bugs post conversion to Syncfusion version
 
 Analogy Log Viewer is multi purpose Log Viewer for Windows Operating systems (with built-in NLog Parser and others).
 
