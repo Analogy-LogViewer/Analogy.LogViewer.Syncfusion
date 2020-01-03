@@ -11,7 +11,7 @@
     <SccProvider>SAK</SccProvider>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>Analogy_logo1.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Analogy_logo1.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>Analogy</AssemblyName>
@@ -384,7 +384,6 @@
       <DependentUpon>FormMessageDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IExtensionsManager.cs" />
-    <Compile Include="ItemStatistics.cs" />
     <Compile Include="UserControls\ClientServerLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -825,8 +824,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Analogy_icon1_16x16.ico" />
-    <Content Include="Analogy_logo1.ico" />
+    <Content Include="Resources\Analogy_icon1_16x16.ico" />
+    <Content Include="Resources\Analogy_logo1.ico" />
     <Content Include="Icons\Analogy_icon1.ico" />
     <Content Include="Icons\Analogy_icon1_16x16.ico" />
     <Content Include="Icons\Analogy_Icon2.ico" />
