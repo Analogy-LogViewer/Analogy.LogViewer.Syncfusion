@@ -315,6 +315,12 @@
     <Compile Include="UserControls\AnalogyColumnsMatcherUC.Designer.cs">
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DirectoryListing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DirectoryListing.Designer.cs">
+      <DependentUpon>DirectoryListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FilePoolingLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -549,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AnalogyColumnsMatcherUC.resx">
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DirectoryListing.resx">
+      <DependentUpon>DirectoryListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FilePoolingLog.resx">
       <DependentUpon>FilePoolingLog.cs</DependentUpon>
