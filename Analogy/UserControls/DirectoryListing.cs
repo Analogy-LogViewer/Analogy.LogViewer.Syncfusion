@@ -1,16 +1,22 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using Analogy.Interfaces;
+using Analogy.Types;
 using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
 using Syncfusion.Drawing;
 using Syncfusion.WinForms.Controls;
 using TreeNodeAdv = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv;
 
-namespace MultiColumnTreeViewDemo
+namespace Analogy
 {
     public partial class DirectoryListing : UserControl
     {
+        public bool ShowFolders { get; set; }
+        public event EventHandler<EventArgs> SelectionChanged;
+        public event EventHandler<FolderSelectionEventArgs> FolderChanged;
         TreeColumnAdv treeColumnAdv1;
         TreeColumnAdv treeColumnAdv2;
         TreeColumnAdv treeColumnAdv3;
@@ -60,6 +66,9 @@ namespace MultiColumnTreeViewDemo
             treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
             multiColumnTreeView1.FullRowSelect = true;
         }
+
+        
+
 
         void MultiColumnTreeViewDemo_Load(object sender, EventArgs e)
         {
@@ -116,6 +125,42 @@ namespace MultiColumnTreeViewDemo
                 }
             }
             catch { }
+        }
+
+        public List<string> GetSelection()
+        {
+            //todo
+            return new List<string>();
+        }
+
+        public void SelectAll()
+        {
+            //todo
+        }
+
+        public void SortLastChanged(SortOrder sortOrder)
+        {
+            //todo
+        }
+
+        public void Clear()
+        {
+            //todo
+        }
+
+        public void HighlightFile(string file)
+        {
+            //todo
+        }
+
+        public void Add(string fileName, DateTime fileLastWriteTime, long fileLength, string fileFullName)
+        {
+            //todo
+        }
+
+        public void SetPath(string folderPath, IAnalogyOfflineDataProvider dataProvider)
+        {
+         //todo
         }
     }
 }

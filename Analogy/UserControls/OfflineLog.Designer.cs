@@ -1,5 +1,4 @@
-﻿
-namespace Analogy
+﻿namespace Analogy
 {
     partial class OfflineUCLogs
     {
@@ -51,7 +50,7 @@ namespace Analogy
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.tsPrimary = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.treeList1 = new Analogy.XtraUCFileSystem();
+            this.treeList1 = new DirectoryListing();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
             this.spltMain.Panel2.SuspendLayout();
@@ -297,6 +296,6 @@ namespace Analogy
         private System.Windows.Forms.ToolStripButton tsBtnSelecAll;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxSelectionMode;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxRecursiveLoad;
-        private XtraUCFileSystem treeList1;
+        private DirectoryListing treeList1;
     }
 }

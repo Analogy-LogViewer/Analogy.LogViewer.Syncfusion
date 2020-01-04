@@ -15,7 +15,7 @@ namespace Analogy
         public FolderTreeViewUC()
         {
             InitializeComponent();
-            xtraUCFileSystem1.IsFolderMode(true, false);
+            xtraUCFileSystem1.ShowFolders = true;
             xtraUCFileSystem1.FolderChanged += (s, e) => FolderChanged?.Invoke(this, new FolderSelectionEventArgs(e.SelectedFolderPath));
         }
 

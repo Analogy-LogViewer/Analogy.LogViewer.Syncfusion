@@ -1,4 +1,5 @@
-﻿namespace Analogy
+﻿
+namespace Analogy
 {
     partial class FolderTreeViewUC
     {
@@ -34,7 +35,7 @@
             this.txtbFolder = new System.Windows.Forms.TextBox();
             this.btnOpenFolder = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.xtraUCFileSystem1 = new Analogy.XtraUCFileSystem();
+            this.xtraUCFileSystem1 = new DirectoryListing();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,6 +117,6 @@
         private System.Windows.Forms.TextBox txtbFolder;
         private System.Windows.Forms.ImageList imageList;
         private Syncfusion.WinForms.Controls.SfButton btnOpenFolder;
-        private XtraUCFileSystem xtraUCFileSystem1;
+        private DirectoryListing xtraUCFileSystem1;
     }
 }
