@@ -27,7 +27,7 @@ namespace Analogy
 
         private void SetupEventsHandlers()
         {
-            treeList1.SelectionChanged += TreeList1_SelectionChanged;
+            treeList1.FilesSelectionChanged += TreeList1_SelectionChanged;
             tsBtnDelete.Click += (s, e) =>
             {
                 if (treeList1.GetSelection().Any())
@@ -129,7 +129,7 @@ namespace Analogy
         {
             if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
             SelectedPath = folder;
-            treeList1.SelectionChanged -= TreeList1_SelectionChanged;
+            treeList1.FilesSelectionChanged -= TreeList1_SelectionChanged;
             bool recursiveLoad = checkBoxRecursiveLoad.Checked;
             DirectoryInfo dirInfo = new DirectoryInfo(folder);
             List<FileInfo> fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).ToList();
@@ -143,7 +143,7 @@ namespace Analogy
 
           
 
-            treeList1.SelectionChanged += TreeList1_SelectionChanged;
+            treeList1.FilesSelectionChanged += TreeList1_SelectionChanged;
         }
 
         private async Task LoadFilesAsync(List<string> fileNames, bool clearLog)

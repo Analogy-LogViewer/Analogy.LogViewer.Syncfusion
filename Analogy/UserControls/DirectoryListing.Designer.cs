@@ -1,3 +1,7 @@
+using System.Drawing;
+using System.Windows.Forms;
+using Syncfusion.Drawing;
+using Syncfusion.WinForms.Controls;
 
 namespace Analogy
 {
@@ -72,9 +76,6 @@ namespace Analogy
             this.multiColumnTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.multiColumnTreeView1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiColumnTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            // 
-            // 
-            // 
             this.multiColumnTreeView1.HelpTextControl.BaseThemeName = null;
             this.multiColumnTreeView1.HelpTextControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.multiColumnTreeView1.HelpTextControl.Location = new System.Drawing.Point(0, 0);
@@ -100,9 +101,6 @@ namespace Analogy
             this.multiColumnTreeView1.ThemeName = "Office2016Colorful";
             this.multiColumnTreeView1.ThemeStyle.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.multiColumnTreeView1.ThemeStyle.TreeNodeAdvStyle.CheckBoxTickThickness = 0;
-            // 
-            // 
-            // 
             this.multiColumnTreeView1.ToolTipControl.BackColor = System.Drawing.SystemColors.Info;
             this.multiColumnTreeView1.ToolTipControl.BaseThemeName = null;
             this.multiColumnTreeView1.ToolTipControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -113,14 +111,44 @@ namespace Analogy
             this.multiColumnTreeView1.ToolTipControl.Text = "toolTip";
             this.multiColumnTreeView1.TransparentControls = true;
             this.multiColumnTreeView1.VScrollPos = -13;
+
+
+            treeColumnAdv1 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
+            treeColumnAdv2 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
+            treeColumnAdv3 = new Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv();
+
+            treeColumnAdv1.HelpText = "Name";
+            treeColumnAdv1.Highlighted = false;
+            treeColumnAdv1.Text = "Name";
+            treeColumnAdv1.Background = new BrushInfo(SystemColors.Highlight);
+            treeColumnAdv1.AreaBackground = new BrushInfo(GradientStyle.ForwardDiagonal, Color.White, Color.Snow);
+            treeColumnAdv1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            treeColumnAdv2.HelpText = "Full Path";
+            treeColumnAdv2.Highlighted = false;
+            treeColumnAdv2.Text = "Full Path";
+            treeColumnAdv2.Background = new BrushInfo(GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            treeColumnAdv3.HelpText = "Date Modified";
+            treeColumnAdv3.Highlighted = false;
+            treeColumnAdv3.Text = "Date Modified";
+            treeColumnAdv3.Background = new BrushInfo(GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
+            treeColumnAdv3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            multiColumnTreeView1.AutoSizeMode = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.AutoSizeMode.Fill;
+
+            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
+            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
+            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
             // 
-            // Form2
+            // DirectoryListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.multiColumnTreeView1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form2";
+            this.Name = "DirectoryListing";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(541, 332);
             ((System.ComponentModel.ISupportInitialize)(this.multiColumnTreeView1)).EndInit();
@@ -130,5 +158,8 @@ namespace Analogy
 
         #endregion
         private Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.MultiColumnTreeView multiColumnTreeView1;
+       private Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv1;
+       private Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv2;
+       private Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeColumnAdv treeColumnAdv3;
     }
 }

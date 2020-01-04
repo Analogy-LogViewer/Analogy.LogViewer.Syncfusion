@@ -35,8 +35,11 @@ namespace Analogy
             this.txtbFolder = new System.Windows.Forms.TextBox();
             this.btnOpenFolder = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.xtraUCFileSystem1 = new Analogy.DirectoryListing();
+            this.toolStripTop = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsBtnRootDrive = new System.Windows.Forms.ToolStripButton();
+            this.directoryListing = new Analogy.DirectoryListing();
             this.panel2.SuspendLayout();
+            this.toolStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -86,22 +89,49 @@ namespace Analogy
             this.imageList.Images.SetKeyName(4, "Error_32x32.png");
             this.imageList.Images.SetKeyName(5, "Warning_32x32.png");
             // 
-            // xtraUCFileSystem1
+            // toolStripTop
             // 
-            this.xtraUCFileSystem1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraUCFileSystem1.Location = new System.Drawing.Point(0, 23);
-            this.xtraUCFileSystem1.Margin = new System.Windows.Forms.Padding(2);
-            this.xtraUCFileSystem1.Name = "xtraUCFileSystem1";
-            this.xtraUCFileSystem1.Padding = new System.Windows.Forms.Padding(10);
-            this.xtraUCFileSystem1.ShowFolders = false;
-            this.xtraUCFileSystem1.Size = new System.Drawing.Size(444, 288);
-            this.xtraUCFileSystem1.TabIndex = 6;
+            this.toolStripTop.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripTop.Image = null;
+            this.toolStripTop.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnRootDrive});
+            this.toolStripTop.Location = new System.Drawing.Point(0, 23);
+            this.toolStripTop.Name = "toolStripTop";
+            this.toolStripTop.Office12Mode = false;
+            this.toolStripTop.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStripTop.ShowCaption = false;
+            this.toolStripTop.ShowLauncher = false;
+            this.toolStripTop.Size = new System.Drawing.Size(444, 27);
+            this.toolStripTop.TabIndex = 7;
+            this.toolStripTop.Text = "toolStripEx1";
+            // 
+            // tsBtnRootDrive
+            // 
+            this.tsBtnRootDrive.Image = global::Analogy.Properties.Resources.ServerMode_32x32;
+            this.tsBtnRootDrive.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRootDrive.Name = "tsBtnRootDrive";
+            this.tsBtnRootDrive.Size = new System.Drawing.Size(104, 24);
+            this.tsBtnRootDrive.Text = "Root Drive";
+            // 
+            // directoryListing
+            // 
+            this.directoryListing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.directoryListing.Location = new System.Drawing.Point(0, 50);
+            this.directoryListing.Margin = new System.Windows.Forms.Padding(2);
+            this.directoryListing.Name = "directoryListing";
+            this.directoryListing.Padding = new System.Windows.Forms.Padding(10);
+            this.directoryListing.ShowFiles = true;
+            this.directoryListing.ShowFolders = false;
+            this.directoryListing.Size = new System.Drawing.Size(444, 261);
+            this.directoryListing.TabIndex = 6;
             // 
             // FolderTreeViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.xtraUCFileSystem1);
+            this.Controls.Add(this.directoryListing);
+            this.Controls.Add(this.toolStripTop);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.Name = "FolderTreeViewUC";
@@ -109,7 +139,10 @@ namespace Analogy
             this.Load += new System.EventHandler(this.FolderTreeViewUC_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.toolStripTop.ResumeLayout(false);
+            this.toolStripTop.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,6 +152,8 @@ namespace Analogy
         private System.Windows.Forms.TextBox txtbFolder;
         private System.Windows.Forms.ImageList imageList;
         private Syncfusion.WinForms.Controls.SfButton btnOpenFolder;
-        private DirectoryListing xtraUCFileSystem1;
+        private DirectoryListing directoryListing;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripTop;
+        private System.Windows.Forms.ToolStripButton tsBtnRootDrive;
     }
 }

@@ -15,10 +15,20 @@ namespace Analogy
         public FolderTreeViewUC()
         {
             InitializeComponent();
-            xtraUCFileSystem1.ShowFolders = true;
-            xtraUCFileSystem1.FolderChanged += (s, e) => FolderChanged?.Invoke(this, new FolderSelectionEventArgs(e.SelectedFolderPath));
+            SetupEventsHandlers();
+            directoryListing.ShowFolders = true;
+            directoryListing.ShowFiles = false;
         }
 
+        private void SetupEventsHandlers()
+        {
+            directoryListing.FolderChanged += (s, e) => FolderChanged?.Invoke(this, e);
+            tsBtnRootDrive.Click += (s, e) =>
+            {
+                if (!string.IsNullOrEmpty(txtbFolder.Text) && Directory.Exists(txtbFolder.Text))
+                    directoryListing.SetPath(Path.GetPathRoot(txtbFolder.Text), DataProvider);
+            };
+        }
         private async void txtbFolder_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -34,7 +44,7 @@ namespace Analogy
         {
             if (Directory.Exists(folderText))
             {
-                xtraUCFileSystem1.SetPath(folderText, dataProvider);
+                directoryListing.SetPath(folderText, dataProvider);
                 txtbFolder.Text = folderText;
                 FolderChanged?.Invoke(this, new FolderSelectionEventArgs(folderText));
             }
@@ -91,7 +101,7 @@ namespace Analogy
             if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
             SelectedPath = folder;
             txtbFolder.Text = folder;
-            xtraUCFileSystem1.SetPath(folder, dataProvider);
+            directoryListing.SetPath(folder, dataProvider);
         }
     }
 

@@ -1,81 +1,59 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 using Analogy.Interfaces;
 using Analogy.Types;
+using Syncfusion.Data.Extensions;
 using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
-using Syncfusion.Drawing;
-using Syncfusion.WinForms.Controls;
-using TreeNodeAdv = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.TreeNodeAdv;
+
 
 namespace Analogy
 {
     public partial class DirectoryListing : UserControl
     {
         public bool ShowFolders { get; set; }
-        public event EventHandler<EventArgs> SelectionChanged;
+        public bool ShowFiles { get; set; }
+        public event EventHandler<SelectionEventArgs> FilesSelectionChanged;
         public event EventHandler<FolderSelectionEventArgs> FolderChanged;
-        TreeColumnAdv treeColumnAdv1;
-        TreeColumnAdv treeColumnAdv2;
-        TreeColumnAdv treeColumnAdv3;
-
+        private string FolderRoot { get; set; }
+        private IAnalogyOfflineDataProvider DataProvider { get; set; }
         public DirectoryListing()
         {
             InitializeComponent();
-
-            TreeNodeAdv root = new TreeNodeAdv();
-            DriveInfo drive = new DriveInfo(Environment.SystemDirectory);
-            root.Text = drive.ToString();
-            multiColumnTreeView1.Nodes.AddRange(new[] {
-            root});
-
-            treeColumnAdv1 = new TreeColumnAdv();
-            treeColumnAdv2 = new TreeColumnAdv();
-            treeColumnAdv3 = new TreeColumnAdv();
-
-            treeColumnAdv1.HelpText = "Name";
-            treeColumnAdv1.Highlighted = false;
-            treeColumnAdv1.Text = "Name";
-            treeColumnAdv1.Background = new BrushInfo(SystemColors.Highlight);
-            treeColumnAdv1.AreaBackground = new BrushInfo(GradientStyle.ForwardDiagonal, Color.White, Color.Snow);
-            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
-
-            treeColumnAdv2.HelpText = "Full Path";
-            treeColumnAdv2.Highlighted = false;
-            treeColumnAdv2.Text = "Full Path";
-            treeColumnAdv2.Background = new BrushInfo(GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
-            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
-
-            treeColumnAdv3.HelpText = "Date Modified";
-            treeColumnAdv3.Highlighted = false;
-            treeColumnAdv3.Text = "Date Modified";
-            treeColumnAdv3.Background = new BrushInfo(GradientStyle.Vertical, SystemColors.Highlight, SystemColors.Highlight);
-            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
-
-            multiColumnTreeView1.Columns.AddRange(new[]{
-                treeColumnAdv1,treeColumnAdv2,treeColumnAdv3});
-            multiColumnTreeView1.AutoSizeMode = Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.AutoSizeMode.Fill;
-            Load += new EventHandler(MultiColumnTreeViewDemo_Load);
-            multiColumnTreeView1.BeforeExpand += new TreeViewAdvCancelableNodeEventHandler(multiColumnTreeView1_BeforeExpand);
-            //this.MinimumSize = this.Size;
+            SetupEventsHandlers();
+            multiColumnTreeView1.Columns.AddRange(new[] { treeColumnAdv1, treeColumnAdv2, treeColumnAdv3 });
             treeColumnAdv1.BaseStyle = (multiColumnTreeView1.BaseStylePairs[2] as StyleNamePair).Name;
-            treeColumnAdv1.BorderStyle = BorderStyle.FixedSingle;
-            treeColumnAdv2.BorderStyle = BorderStyle.FixedSingle;
-            treeColumnAdv3.BorderStyle = BorderStyle.FixedSingle;
             multiColumnTreeView1.FullRowSelect = true;
         }
 
 
-
-
-        void MultiColumnTreeViewDemo_Load(object sender, EventArgs e)
+        private void SetupEventsHandlers()
         {
-            multiColumnTreeView1.Nodes[0].Expanded = true;
-            multiColumnTreeView1.SelectedNode = multiColumnTreeView1.Nodes[0];
-            multiColumnTreeView1.Focus();
+            multiColumnTreeView1.BeforeExpand += multiColumnTreeView1_BeforeExpand;
+            multiColumnTreeView1.AfterSelect += (s, e) =>
+            {
+                var items = multiColumnTreeView1.SelectedNodes.Cast<TreeNodeAdv>().ToList();
+                if (items.Any())
+                {
+                    if (ShowFolders)
+                    {
+                        var folder = items.First();
+                        FolderChanged?.Invoke(this, new FolderSelectionEventArgs(folder.SubItems[folder.SubItems .Count- 1].Text));
+
+                    }
+                    else
+                    {
+                        var files = items.Select(i => i.SubItems[i.SubItems.Count-1].Text).ToList<string>();
+                        FilesSelectionChanged?.Invoke(this,new SelectionEventArgs(files));
+                    }
+                }
+
+            };
         }
+
 
         void multiColumnTreeView1_BeforeExpand(object sender, TreeViewAdvCancelableNodeEventArgs e)
         {
@@ -88,16 +66,15 @@ namespace Analogy
                 DirectoryInfo[] subDir;
                 if (multiColumnTreeView1.Nodes[0].Nodes.Count == 0) //Root directory
                 {
-                    DriveInfo drive = new DriveInfo(e.Node.Text);
-                    dir = drive.RootDirectory;
 
+                    dir = new DirectoryInfo(FolderRoot);
                     subDir = dir.GetDirectories();
                 }
 
                 else
                 {
                     //Get the Path of the node and AddSeparatorAtEnd Property set to true
-                    string path = e.Node.GetPath("\\");
+                    string path = e.Node[1].Text;
 
                     dir = new DirectoryInfo(path);
                     subDir = dir.GetDirectories();
@@ -107,7 +84,6 @@ namespace Analogy
                 {
                     TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
                     TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
-
                     subitem1.Text = dirinfo.FullName;
                     subitem1.HelpText = subitem1.Text;
 
@@ -115,9 +91,7 @@ namespace Analogy
                     subitem2.HelpText = subitem2.Text;
 
                     TreeNodeAdv node = new TreeNodeAdv(dirinfo.Name);
-
-                    node.SubItems.AddRange(new[]{
-                            subitem1,subitem2});
+                    node.SubItems.AddRange(new[]{subitem1,subitem2});
                     e.Node.Nodes.Add(node);
                 }
             }
@@ -157,7 +131,24 @@ namespace Analogy
 
         public void SetPath(string folderPath, IAnalogyOfflineDataProvider dataProvider)
         {
-            //todo
+            FolderRoot = folderPath;
+            DataProvider = dataProvider;
+            var dir = new DirectoryInfo(folderPath);
+            TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
+            TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
+            subitem1.Text = dir.FullName;
+            subitem1.HelpText = subitem1.Text;
+
+            subitem2.Text = dir.LastWriteTime.ToString();
+            subitem2.HelpText = subitem2.Text;
+            TreeNodeAdv node = new TreeNodeAdv(dir.Name);
+            node.SubItems.AddRange(new[] { subitem1, subitem2 });
+
+            multiColumnTreeView1.Nodes.Clear();
+            multiColumnTreeView1.Nodes.Add(node);
+            multiColumnTreeView1.Nodes[0].Expanded = true;
+            multiColumnTreeView1.SelectedNode = multiColumnTreeView1.Nodes[0];
+            multiColumnTreeView1.Focus();
         }
     }
 }
