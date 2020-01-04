@@ -35,7 +35,7 @@ namespace Analogy
             this.txtbFolder = new System.Windows.Forms.TextBox();
             this.btnOpenFolder = new Syncfusion.WinForms.Controls.SfButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.xtraUCFileSystem1 = new DirectoryListing();
+            this.xtraUCFileSystem1 = new Analogy.DirectoryListing();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,8 @@ namespace Analogy
             this.xtraUCFileSystem1.Location = new System.Drawing.Point(0, 23);
             this.xtraUCFileSystem1.Margin = new System.Windows.Forms.Padding(2);
             this.xtraUCFileSystem1.Name = "xtraUCFileSystem1";
+            this.xtraUCFileSystem1.Padding = new System.Windows.Forms.Padding(10);
+            this.xtraUCFileSystem1.ShowFolders = false;
             this.xtraUCFileSystem1.Size = new System.Drawing.Size(444, 288);
             this.xtraUCFileSystem1.TabIndex = 6;
             // 

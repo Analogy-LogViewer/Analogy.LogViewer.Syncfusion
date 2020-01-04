@@ -67,7 +67,7 @@ namespace Analogy
             multiColumnTreeView1.FullRowSelect = true;
         }
 
-        
+
 
 
         void MultiColumnTreeViewDemo_Load(object sender, EventArgs e)
@@ -103,25 +103,22 @@ namespace Analogy
                     subDir = dir.GetDirectories();
                 }
 
-                if (subDir != null)
+                foreach (DirectoryInfo dirinfo in subDir)
                 {
-                    foreach (DirectoryInfo dirinfo in subDir)
-                    {
-                        TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
-                        TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
+                    TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
+                    TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
 
-                        subitem1.Text = dirinfo.FullName;
-                        subitem1.HelpText = subitem1.Text;
+                    subitem1.Text = dirinfo.FullName;
+                    subitem1.HelpText = subitem1.Text;
 
-                        subitem2.Text = dirinfo.LastWriteTime.ToString();
-                        subitem2.HelpText = subitem2.Text;
+                    subitem2.Text = dirinfo.LastWriteTime.ToString();
+                    subitem2.HelpText = subitem2.Text;
 
-                        TreeNodeAdv node = new TreeNodeAdv(dirinfo.Name);
+                    TreeNodeAdv node = new TreeNodeAdv(dirinfo.Name);
 
-                        node.SubItems.AddRange(new[]{
+                    node.SubItems.AddRange(new[]{
                             subitem1,subitem2});
-                        e.Node.Nodes.Add(node);
-                    }
+                    e.Node.Nodes.Add(node);
                 }
             }
             catch { }
@@ -160,7 +157,7 @@ namespace Analogy
 
         public void SetPath(string folderPath, IAnalogyOfflineDataProvider dataProvider)
         {
-         //todo
+            //todo
         }
     }
 }
