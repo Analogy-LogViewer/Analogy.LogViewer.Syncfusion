@@ -8,7 +8,7 @@ namespace Analogy.DataProviders
     {
         public static IEnumerable<AnalogyChangeLog> GetChangeLog()
         {
-            yield return new AnalogyChangeLog("Move to SDK-Style projects and package references. (Issue #19)", AnalogChangeLogType.Improvement, "Lior Banai", new DateTime(2020, 01, 11));
+            yield return new AnalogyChangeLog("Move to SDK-Style projects and package references. (issue #19)", AnalogChangeLogType.Improvement, "Lior Banai", new DateTime(2020, 01, 11));
             yield return new AnalogyChangeLog("Add Source Link To Analogy (Issue #17)", AnalogChangeLogType.Improvement, "Lior Banai", new DateTime(2020, 01, 11));
             yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress user controls with standard user controls (Issue #16)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
             yield return new AnalogyChangeLog("Syncfusion - Replace all DevExpress forms with Syncfusion/Windows forms (Issue #14)", AnalogChangeLogType.None, "Lior Banai", new DateTime(2019, 12, 30));
