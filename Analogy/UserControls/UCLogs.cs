@@ -122,6 +122,7 @@ namespace Analogy
 
         private void SetupControlEvents()
         {
+            #region Filters/search controls
             deNewerThanFilter.ValueChanged += async (s, e) =>
             {
                 chkDateNewerThan.Checked = true;
@@ -219,8 +220,47 @@ namespace Analogy
                 await FilterHasChanged();
                 Settings.ModuleText = cbModule.Text;
             };
+
+            btnTextInclude.Click += (s, e) => cbInclude.TextBox.Text = "";
+            btnTextExclude.Click += (s, e) => cbExclude.TextBox.Text = "";
+            btnSources.Click += (s, e) => cbSource.TextBox.Text = "";
+            btnModules.Click += (s, e) => cbModule.TextBox.Text = "";
+            btnCancel.Click += (s, e) =>
+            {
+                cancellationTokenSource.Cancel(false);
+                Interlocked.Exchange(ref fileLoadingCount, 0);
+                cancellationTokenSource = new CancellationTokenSource();
+                btnCancel.Visible = false;
+            };
+
+            #endregion
+
             #region sfDataGrid Main
-            sfDataGridMain.QueryRowStyle += sfDataGrid_QueryRowStyle;
+
+            sfDataGridMain.CurrentCellActivating += (s, e) => { };
+          //  sfDataGridMain.View.Records.CollectionChanged += (s, e) => { };
+            sfDataGridMain.SelectionChanging += (s, e) => { };
+            sfDataGridMain.QueryRowStyle += (s, e) =>
+            {
+                if (e.RowIndex >= 0 && (e.RowData is DataRowView drv) && drv.Row.ItemArray[9] is AnalogyLogMessage message)
+                {
+                    var data = e.RowData;
+                    e.Style.BackColor = Settings.ColorSettings.GetColorForLogLevel(message.Level);
+                    string text = message.Text;
+                    if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, cbHighlights.TextBox.Text, PreDefinedQueryType.Contains))
+                    {
+                        e.Style.BackColor = Settings.ColorSettings.GetHighlightColor();
+                    }
+
+                    foreach (PreDefineHighlight preDefineHighlight in Settings.PreDefinedQueries.Highlights)
+                    {
+                        if (FilterCriteriaObject.Match(text, preDefineHighlight.Text, preDefineHighlight.PreDefinedQueryType))
+                        {
+                            e.Style.BackColor = preDefineHighlight.Color;
+                        }
+                    }
+                }
+            };
             sfDataGridMain.CellClick += (s, e) =>
             {
                 if (tsTopAutoScrollToLast.Checked)
@@ -296,19 +336,6 @@ namespace Analogy
             rbTrace.CheckChanged += async (s, e) => { await FilterHasChanged(); };
             #endregion
 
-            btnTextInclude.Click += (s, e) => cbInclude.TextBox.Text = "";
-            btnTextExclude.Click += (s, e) => cbExclude.TextBox.Text = "";
-            btnSources.Click += (s, e) => cbSource.TextBox.Text = "";
-            btnModules.Click += (s, e) => cbModule.TextBox.Text = "";
-            btnCancel.Click += (s, e) =>
-            {
-                cancellationTokenSource.Cancel(false);
-                Interlocked.Exchange(ref fileLoadingCount, 0);
-                cancellationTokenSource = new CancellationTokenSource();
-                btnCancel.Visible = false;
-            };
-
-
             #region toolstrip menus
 
             tsmiSaveFullLogDataProvider.Click += (s, e) =>
@@ -349,6 +376,7 @@ namespace Analogy
 
 
             #endregion
+
             #region Toolstrip Buttons
 
             tsBookmark.Click += (s, e) =>
@@ -1858,29 +1886,7 @@ namespace Analogy
 
             contextMenuStripFilters.Show(sbtnPreDefinedFilters.PointToScreen(sbtnPreDefinedFilters.Location));
         }
-
-        private void sfDataGrid_QueryRowStyle(object sender, Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventArgs e)
-        {
-
-            if (e.RowIndex >= 0 && (e.RowData is DataRowView drv) && drv.Row.ItemArray[9] is AnalogyLogMessage message)
-            {
-                var data = e.RowData;
-                e.Style.BackColor = Settings.ColorSettings.GetColorForLogLevel(message.Level);
-                string text = message.Text;
-                if (chkbHighlight.Checked && FilterCriteriaObject.Match(text, cbHighlights.TextBox.Text, PreDefinedQueryType.Contains))
-                {
-                    e.Style.BackColor = Settings.ColorSettings.GetHighlightColor();
-                }
-
-                foreach (PreDefineHighlight preDefineHighlight in Settings.PreDefinedQueries.Highlights)
-                {
-                    if (FilterCriteriaObject.Match(text, preDefineHighlight.Text, preDefineHighlight.PreDefinedQueryType))
-                    {
-                        e.Style.BackColor = preDefineHighlight.Color;
-                    }
-                }
-            }
-        }
+        
         private SerializationOptions Serialization()
         {
             SerializationOptions serializationOptions = new SerializationOptions

@@ -1305,7 +1305,7 @@
             this.tsBtnBookmarkGoToOriginal.Image = global::Analogy.Properties.Resources.Stop_32x32;
             this.tsBtnBookmarkGoToOriginal.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBookmarkGoToOriginal.Name = "tsBtnBookmarkGoToOriginal";
-            this.tsBtnBookmarkGoToOriginal.Size = new System.Drawing.Size(135, 24);
+            this.tsBtnBookmarkGoToOriginal.Size = new System.Drawing.Size(134, 24);
             this.tsBtnBookmarkGoToOriginal.Text = "Go To Message";
             // 
             // imageListBottom
@@ -1799,6 +1799,8 @@
             this.tsTop.LauncherStyle = Syncfusion.Windows.Forms.Tools.LauncherStyle.Office12;
             this.tsTop.Location = new System.Drawing.Point(0, 0);
             this.tsTop.Name = "tsTop";
+            this.tsTop.Office12Mode = false;
+            this.tsTop.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.tsTop.ShowCaption = false;
             this.tsTop.ShowLauncher = false;
             this.tsTop.Size = new System.Drawing.Size(1270, 27);
@@ -1817,7 +1819,7 @@
             // 
             this.tsTopPauseRefresh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tsTopPauseRefresh.Name = "tsTopPauseRefresh";
-            this.tsTopPauseRefresh.Size = new System.Drawing.Size(146, 24);
+            this.tsTopPauseRefresh.Size = new System.Drawing.Size(145, 24);
             this.tsTopPauseRefresh.Text = "Pause Refreshing:";
             // 
             // tsTopAutoScrollToLast
@@ -1894,13 +1896,13 @@
             // tsmiUndockView
             // 
             this.tsmiUndockView.Name = "tsmiUndockView";
-            this.tsmiUndockView.Size = new System.Drawing.Size(313, 26);
+            this.tsmiUndockView.Size = new System.Drawing.Size(312, 26);
             this.tsmiUndockView.Text = "Undock View (No filtering)";
             // 
             // tsmiUndockPerModule
             // 
             this.tsmiUndockPerModule.Name = "tsmiUndockPerModule";
-            this.tsmiUndockPerModule.Size = new System.Drawing.Size(313, 26);
+            this.tsmiUndockPerModule.Size = new System.Drawing.Size(312, 26);
             this.tsmiUndockPerModule.Text = "Undock View Per Process/Module";
             // 
             // tsbScreenshot
@@ -1908,7 +1910,7 @@
             this.tsbScreenshot.Image = global::Analogy.Properties.Resources.Icon_6;
             this.tsbScreenshot.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbScreenshot.Name = "tsbScreenshot";
-            this.tsbScreenshot.Size = new System.Drawing.Size(140, 24);
+            this.tsbScreenshot.Size = new System.Drawing.Size(138, 24);
             this.tsbScreenshot.Text = "Take Screenshot";
             // 
             // tsddbExport
@@ -1925,7 +1927,7 @@
             // 
             this.tsmiExportExcel.Image = global::Analogy.Properties.Resources.ExportToXLS_16x16;
             this.tsmiExportExcel.Name = "tsmiExportExcel";
-            this.tsmiExportExcel.Size = new System.Drawing.Size(194, 26);
+            this.tsmiExportExcel.Size = new System.Drawing.Size(193, 26);
             this.tsmiExportExcel.Text = "Export To Excel";
             // 
             // tsBDataVisualizer
