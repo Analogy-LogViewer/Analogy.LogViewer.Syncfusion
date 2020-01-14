@@ -237,9 +237,17 @@ namespace Analogy
 
             #region sfDataGrid Main
 
-            sfDataGridMain.CurrentCellActivating += (s, e) => { };
-          //  sfDataGridMain.View.Records.CollectionChanged += (s, e) => { };
-            sfDataGridMain.SelectionChanging += (s, e) => { };
+          //  sfDataGridMain.CurrentCellActivating += (s, e) =>
+          //  {
+          //      if (Syncfusion.WinForms.DataGrid.DataGridIndexResolver.IsAddNewRowIndex(sfDataGridMain,sfDataGridMain.CurrentCell.RowIndex) && sfDataGridMain.View.IsAddingNew && e.DataRow.RowIndex == Syncfusion.WinForms.DataGrid.DataGridIndexResolver.GetAddNewRowIndex(sfDataGridMain) + 1)
+          //      {
+          //          // To cancel the current cell moving to the start row index after adding the new row.   
+          //          e.Cancel = true;
+          //      }
+          //  };
+          ////  sfDataGridMain.View.Records.CollectionChanged += (s, e) => { };
+          //  sfDataGridMain.SelectionChanging += (s, e) => { };
+
             sfDataGridMain.QueryRowStyle += (s, e) =>
             {
                 if (e.RowIndex >= 0 && (e.RowData is DataRowView drv) && drv.Row.ItemArray[9] is AnalogyLogMessage message)
