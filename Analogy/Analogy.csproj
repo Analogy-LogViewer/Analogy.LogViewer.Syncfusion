@@ -225,6 +225,9 @@
     <Compile Update="UserControls\AnalogyColumnsMatcherUC.Designer.cs">
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </Compile>
+    <Compile Update="UserControls\DirectoryListing - Copy.Designer.cs">
+      <DependentUpon>DirectoryListing.cs</DependentUpon>
+    </Compile>
     <Compile Update="UserControls\DirectoryListing.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -436,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="UserControls\AnalogyColumnsMatcherUC.resx">
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UserControls\DirectoryListing - Copy.resx">
+      <DependentUpon>DirectoryListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="UserControls\DirectoryListing.resx">
       <DependentUpon>DirectoryListing.cs</DependentUpon>

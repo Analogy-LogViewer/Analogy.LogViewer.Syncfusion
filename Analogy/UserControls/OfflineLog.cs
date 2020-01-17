@@ -22,11 +22,14 @@ namespace Analogy
             //TreeListFileNodes = new List<string>();
             SelectedPath = initSelectedPath;
             InitializeComponent();
+            treeList1.ShowFiles = true;
             SetupEventsHandlers();
         }
 
         private void SetupEventsHandlers()
         {
+            folderTreeViewUC1.FolderChanged += (s,e)=>
+                {treeList1.SetPath(e.SelectedFolderPath, DataProvider);};
             treeList1.FilesSelectionChanged += TreeList1_SelectionChanged;
             tsBtnDelete.Click += (s, e) =>
             {
@@ -63,6 +66,11 @@ namespace Analogy
             };
             tsBtnRefresh.Click += (s, e) => { PopulateFiles(SelectedPath); };
             tsBtnSelecAll.Click += (s, e) => { treeList1.SelectAll(); };
+        }
+
+        private void FolderTreeViewUC1_FolderChanged1(object sender, Types.FolderSelectionEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public OfflineUCLogs(IAnalogyOfflineDataProvider dataProvider, string[] fileNames = null, string initialSelectedPath = null) : this(initialSelectedPath)

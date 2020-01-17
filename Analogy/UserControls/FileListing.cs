@@ -12,7 +12,7 @@ using Syncfusion.Windows.Forms.Tools.MultiColumnTreeView;
 
 namespace Analogy
 {
-    public partial class DirectoryListing : UserControl
+    public partial class FileListing : UserControl
     {
         public bool ShowFolders { get; set; }
         public bool ShowFiles { get; set; }
@@ -20,7 +20,7 @@ namespace Analogy
         public event EventHandler<FolderSelectionEventArgs> FolderChanged;
         private string FolderRoot { get; set; }
         private IAnalogyOfflineDataProvider DataProvider { get; set; }
-        public DirectoryListing()
+        public FileListing()
         {
             InitializeComponent();
             SetupEventsHandlers();
