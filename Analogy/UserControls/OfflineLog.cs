@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
+using Analogy.Types;
 
 namespace Analogy
 {
@@ -27,8 +28,8 @@ namespace Analogy
 
         private void SetupEventsHandlers()
         {
-            folderTreeViewUC1.FolderChanged += (s,e)=>
-                {fileListing.SetPath(e.SelectedFolderPath, DataProvider);};
+            folderTreeViewUC1.FolderChanged += (s, e) =>
+                { fileListing.SetPath(e.SelectedFolderPath, DataProvider); };
             fileListing.FilesSelectionChanged += TreeList1_SelectionChanged;
             tsBtnDelete.Click += (s, e) =>
             {
@@ -134,23 +135,20 @@ namespace Analogy
 
         private void PopulateFiles(string folder)
         {
-            if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
-            SelectedPath = folder;
-            fileListing.FilesSelectionChanged -= TreeList1_SelectionChanged;
-            bool recursiveLoad = checkBoxRecursiveLoad.Checked;
-            DirectoryInfo dirInfo = new DirectoryInfo(folder);
-            List<FileInfo> fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).ToList();
-            fileListing.Clear();
-            // TreeListFileNodes.Clear();
-            foreach (FileInfo fi in fileInfos)
-            {
-                fileListing.Add(fi.Name, fi.LastWriteTime, fi.Length, fi.FullName);
-                // TreeListFileNodes.Add(fi.FullName);
-            }
-
-          
-
-            fileListing.FilesSelectionChanged += TreeList1_SelectionChanged;
+            fileListing.SetPath(folder,DataProvider);
+            //if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
+            //SelectedPath = folder;
+            //fileListing.FilesSelectionChanged -= TreeList1_SelectionChanged;
+            //bool recursiveLoad = checkBoxRecursiveLoad.Checked;
+            //DirectoryInfo dirInfo = new DirectoryInfo(folder);
+            //List<FileInfo> fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).ToList();
+            //fileListing.Clear();
+            //// TreeListFileNodes.Clear();
+            //foreach (FileInfo fi in fileInfos)
+            //{
+            //    fileListing.Add(fi.Name, fi.LastWriteTime, fi.Length, fi.FullName);
+            //}
+            //fileListing.FilesSelectionChanged += TreeList1_SelectionChanged;
         }
 
         private async Task LoadFilesAsync(List<string> fileNames, bool clearLog)
@@ -161,11 +159,9 @@ namespace Analogy
 
         }
 
-        private async void TreeList1_SelectionChanged(object sender, EventArgs e)
+        private async void TreeList1_SelectionChanged(object sender, SelectionEventArgs e)
         {
-            //todo:fix
-            List<string> files = fileListing.GetSelection();
-            await LoadFilesAsync(files, checkBoxSelectionMode.Checked);
+            await LoadFilesAsync(e.SelectedFileNames, checkBoxSelectionMode.Checked);
         }
     }
 
