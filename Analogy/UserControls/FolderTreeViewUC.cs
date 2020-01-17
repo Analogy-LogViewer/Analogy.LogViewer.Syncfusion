@@ -16,8 +16,6 @@ namespace Analogy
         {
             InitializeComponent();
             SetupEventsHandlers();
-            directoryListing.ShowFolders = true;
-            directoryListing.ShowFiles = false;
         }
 
         private void SetupEventsHandlers()

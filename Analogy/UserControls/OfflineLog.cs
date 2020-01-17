@@ -22,21 +22,20 @@ namespace Analogy
             //TreeListFileNodes = new List<string>();
             SelectedPath = initSelectedPath;
             InitializeComponent();
-            treeList1.ShowFiles = true;
             SetupEventsHandlers();
         }
 
         private void SetupEventsHandlers()
         {
             folderTreeViewUC1.FolderChanged += (s,e)=>
-                {treeList1.SetPath(e.SelectedFolderPath, DataProvider);};
-            treeList1.FilesSelectionChanged += TreeList1_SelectionChanged;
+                {fileListing.SetPath(e.SelectedFolderPath, DataProvider);};
+            fileListing.FilesSelectionChanged += TreeList1_SelectionChanged;
             tsBtnDelete.Click += (s, e) =>
             {
-                if (treeList1.GetSelection().Any())
+                if (fileListing.GetSelection().Any())
                 {
                     //todo:fix
-                    var filename = treeList1.GetSelection().First();
+                    var filename = fileListing.GetSelection().First();
                     if (filename == null || !File.Exists(filename)) return;
                     var result = MessageBox.Show($"Are you sure you want to delete {filename}?", "Delete confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
@@ -56,16 +55,16 @@ namespace Analogy
             };
             tsBtnOpenFolder.Click += (s, e) =>
             {
-                if (treeList1.GetSelection().Any())
+                if (fileListing.GetSelection().Any())
                 {
                     //todo:fix
-                    var filename = treeList1.GetSelection().First();
+                    var filename = fileListing.GetSelection().First();
                     if (filename == null || !File.Exists(filename)) return;
                     Process.Start("explorer.exe", "/select, \"" + filename + "\"");
                 }
             };
             tsBtnRefresh.Click += (s, e) => { PopulateFiles(SelectedPath); };
-            tsBtnSelecAll.Click += (s, e) => { treeList1.SelectAll(); };
+            tsBtnSelecAll.Click += (s, e) => { fileListing.SelectAll(); };
         }
 
         private void FolderTreeViewUC1_FolderChanged1(object sender, Types.FolderSelectionEventArgs e)
@@ -91,7 +90,7 @@ namespace Analogy
         private async void OfflineUCLogs_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-            treeList1.SortLastChanged(SortOrder.Descending);
+            fileListing.SortLastChanged(SortOrder.Descending);
             folderTreeViewUC1.FolderChanged += FolderTreeViewUC1_FolderChanged;
             spltMain.Panel1Collapsed = false;
             ucLogs1.tsTopPauseRefresh.Visible = false;
@@ -114,7 +113,7 @@ namespace Analogy
 
         private void UcLogs1_OnFocusedRowChanged(object sender, (string file, AnalogyLogMessage e) data)
         {
-            treeList1.HighlightFile(data.file);
+            fileListing.HighlightFile(data.file);
         }
 
         private async void FolderTreeViewUC1_FolderChanged(object sender, Types.FolderSelectionEventArgs e)
@@ -137,21 +136,21 @@ namespace Analogy
         {
             if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder)) return;
             SelectedPath = folder;
-            treeList1.FilesSelectionChanged -= TreeList1_SelectionChanged;
+            fileListing.FilesSelectionChanged -= TreeList1_SelectionChanged;
             bool recursiveLoad = checkBoxRecursiveLoad.Checked;
             DirectoryInfo dirInfo = new DirectoryInfo(folder);
             List<FileInfo> fileInfos = DataProvider.GetSupportedFiles(dirInfo, recursiveLoad).ToList();
-            treeList1.Clear();
+            fileListing.Clear();
             // TreeListFileNodes.Clear();
             foreach (FileInfo fi in fileInfos)
             {
-                treeList1.Add(fi.Name, fi.LastWriteTime, fi.Length, fi.FullName);
+                fileListing.Add(fi.Name, fi.LastWriteTime, fi.Length, fi.FullName);
                 // TreeListFileNodes.Add(fi.FullName);
             }
 
           
 
-            treeList1.FilesSelectionChanged += TreeList1_SelectionChanged;
+            fileListing.FilesSelectionChanged += TreeList1_SelectionChanged;
         }
 
         private async Task LoadFilesAsync(List<string> fileNames, bool clearLog)
@@ -165,7 +164,7 @@ namespace Analogy
         private async void TreeList1_SelectionChanged(object sender, EventArgs e)
         {
             //todo:fix
-            List<string> files = treeList1.GetSelection();
+            List<string> files = fileListing.GetSelection();
             await LoadFilesAsync(files, checkBoxSelectionMode.Checked);
         }
     }

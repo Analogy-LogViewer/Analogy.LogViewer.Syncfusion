@@ -121,8 +121,6 @@ namespace Analogy
             this.directoryListing.Margin = new System.Windows.Forms.Padding(2);
             this.directoryListing.Name = "directoryListing";
             this.directoryListing.Padding = new System.Windows.Forms.Padding(10);
-            this.directoryListing.ShowFiles = true;
-            this.directoryListing.ShowFolders = false;
             this.directoryListing.Size = new System.Drawing.Size(444, 261);
             this.directoryListing.TabIndex = 6;
             // 

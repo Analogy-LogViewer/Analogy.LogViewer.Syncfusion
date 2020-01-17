@@ -14,10 +14,7 @@ namespace Analogy
 {
     public partial class FileListing : UserControl
     {
-        public bool ShowFolders { get; set; }
-        public bool ShowFiles { get; set; }
         public event EventHandler<SelectionEventArgs> FilesSelectionChanged;
-        public event EventHandler<FolderSelectionEventArgs> FolderChanged;
         private string FolderRoot { get; set; }
         private IAnalogyOfflineDataProvider DataProvider { get; set; }
         public FileListing()
@@ -32,102 +29,53 @@ namespace Analogy
 
         private void SetupEventsHandlers()
         {
-            multiColumnTreeView1.BeforeExpand += multiColumnTreeView1_BeforeExpand;
             multiColumnTreeView1.AfterSelect += (s, e) =>
             {
                 var items = multiColumnTreeView1.SelectedNodes.Cast<TreeNodeAdv>().ToList();
                 if (items.Any())
                 {
-                    if (ShowFolders)
-                    {
-                        var folder = items.First();
-                        FolderChanged?.Invoke(this, new FolderSelectionEventArgs(folder.SubItems[folder.SubItems.Count - 2].Text));
-
-                    }
-                    else
-                    {
-                        var files = items.Select(i => i.SubItems[i.SubItems.Count - 2].Text).ToList<string>();
-                        FilesSelectionChanged?.Invoke(this, new SelectionEventArgs(files));
-                    }
+                    var files = items.Select(i => i.SubItems[i.SubItems.Count - 2].Text).ToList<string>();
+                    FilesSelectionChanged?.Invoke(this, new SelectionEventArgs(files));
                 }
 
             };
         }
 
 
-        void multiColumnTreeView1_BeforeExpand(object sender, TreeViewAdvCancelableNodeEventArgs e)
-        {
-            if (ShowFolders)
-                LoadFolders(sender, e);
-            if (ShowFiles)
-                LoadFiles(sender, e);
-        }
-        private void LoadFiles(object sender, TreeViewAdvCancelableNodeEventArgs e)
+        void LoadFiles()
         {
             try
             {
                 DirectoryInfo di = new DirectoryInfo(FolderRoot);
                 var files = DataProvider.GetSupportedFiles(di, false);
-
-                foreach (FileInfo fi in files)
+                if (files.Any())
                 {
-                    TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
-                    TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
-                    subitem1.Text = fi.FullName;
-                    subitem1.HelpText = subitem1.Text;
+                    List<TreeNodeAdv> nodes = new List<TreeNodeAdv>();
+                    foreach (FileInfo fi in files)
+                    {
+                        TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
+                        TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
+                        subitem1.Text = fi.FullName;
+                        subitem1.HelpText = subitem1.Text;
 
-                    subitem2.Text = fi.LastWriteTime.ToString();
-                    subitem2.HelpText = subitem2.Text;
+                        subitem2.Text = fi.LastWriteTime.ToString();
+                        subitem2.HelpText = subitem2.Text;
 
-                    TreeNodeAdv node = new TreeNodeAdv(fi.Name);
-                    node.SubItems.AddRange(new[] { subitem1, subitem2 });
-                    e.Node.Nodes.Add(node);
+                        TreeNodeAdv node = new TreeNodeAdv(fi.Name);
+                        node.SubItems.AddRange(new[] { subitem1, subitem2 });
+                        nodes.Add(node);
+                    }
+
+                    multiColumnTreeView1.Nodes.Clear();
+                    multiColumnTreeView1.Nodes.AddRange(nodes);
+                    multiColumnTreeView1.Nodes[0].Expanded = true;
+                    multiColumnTreeView1.SelectedNode = multiColumnTreeView1.Nodes[0];
+                    multiColumnTreeView1.Focus();
                 }
             }
             catch { }
         }
-        private void LoadFolders(object sender, TreeViewAdvCancelableNodeEventArgs e)
-        {
-            try
-            {
-                //Checking whether the Node has been  expanded atleast once
-                if (e.Node.ExpandedOnce) return;
 
-                DirectoryInfo dir;
-                DirectoryInfo[] subDir;
-                if (multiColumnTreeView1.Nodes[0].Nodes.Count == 0) //Root directory
-                {
-
-                    dir = new DirectoryInfo(FolderRoot);
-                    subDir = dir.GetDirectories();
-                }
-
-                else
-                {
-                    //Get the Path of the node and AddSeparatorAtEnd Property set to true
-                    string path = e.Node[1].Text;
-
-                    dir = new DirectoryInfo(path);
-                    subDir = dir.GetDirectories();
-                }
-
-                foreach (DirectoryInfo dirinfo in subDir)
-                {
-                    TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
-                    TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
-                    subitem1.Text = dirinfo.FullName;
-                    subitem1.HelpText = subitem1.Text;
-
-                    subitem2.Text = dirinfo.LastWriteTime.ToString();
-                    subitem2.HelpText = subitem2.Text;
-
-                    TreeNodeAdv node = new TreeNodeAdv(dirinfo.Name);
-                    node.SubItems.AddRange(new[] { subitem1, subitem2 });
-                    e.Node.Nodes.Add(node);
-                }
-            }
-            catch { }
-        }
         public List<string> GetSelection()
         {
             //todo
@@ -163,24 +111,7 @@ namespace Analogy
         {
             FolderRoot = folderPath;
             DataProvider = dataProvider;
-
-            var dir = new DirectoryInfo(folderPath);
-            TreeNodeAdvSubItem subitem1 = new TreeNodeAdvSubItem();
-            TreeNodeAdvSubItem subitem2 = new TreeNodeAdvSubItem();
-            subitem1.Text = dir.FullName;
-            subitem1.HelpText = subitem1.Text;
-            subitem2.Text = dir.LastWriteTime.ToString();
-            subitem2.HelpText = subitem2.Text;
-            TreeNodeAdv node = new TreeNodeAdv(dir.Name);
-            node.SubItems.AddRange(new[] { subitem1, subitem2 });
-            multiColumnTreeView1.Nodes.Clear();
-            multiColumnTreeView1.Nodes.Add(node);
-            multiColumnTreeView1.Nodes[0].Expanded = true;
-            node.Visible = ShowFolders;
-            multiColumnTreeView1.SelectedNode = multiColumnTreeView1.Nodes[0];
-            multiColumnTreeView1.Focus();
-
-
+            LoadFiles();
         }
     }
 }

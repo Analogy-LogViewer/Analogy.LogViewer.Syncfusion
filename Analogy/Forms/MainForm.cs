@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Syncfusion.Windows.Forms.Tools;
 using System.IO;
 using System.Threading.Tasks;
+using Analogy.DataSources;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.Managers;
@@ -119,8 +120,7 @@ namespace Analogy
             //};
             ribbonControlMain.MinimizePanel = UserSettingsManager.UserSettings.StartupRibbonMinimized;
 
-            //todo
-            //CreateAnalogyBuiltinDataProviders();
+   
             await FactoriesManager.Instance.AddExternalDataSources();
 
             CreateDataSources();
@@ -183,7 +183,30 @@ namespace Analogy
 
         private void SetupEventHandlers()
         {
-            tsslblError.Click += (s,e) => AnalogyLogManager.Instance.Show(this);
+            IAnalogyFactory analogy = FactoriesManager.Instance.Get(AnalogyBuiltInFactory.AnalogyGuid);
+            var offlineAnalogy = analogy.DataProviders.Items.Where(f => f is IAnalogyOfflineDataProvider)
+                .Cast<IAnalogyOfflineDataProvider>().First();
+            //if (settings.GetFactorySetting(analogy.FactoryID).Status != DataProviderFactoryStatus.Disabled)
+
+            tsbtnAnalogyOpenFolder.Click += (sender, e) => { OpenOffline(tstitmAnalogy, offlineAnalogy, offlineAnalogy.OptionalTitle, offlineAnalogy.InitialFolderFullPath); };
+            tsbtnAnalogyOpenFiles.Click += (sender, e) =>
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog
+                {
+                    Filter = offlineAnalogy.FileOpenDialogFilters,
+                    Title = @"Open Files",
+                    Multiselect = true
+                };
+                if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
+                {
+                    OpenOffline(tstitmAnalogy, offlineAnalogy, offlineAnalogy.OptionalTitle, offlineAnalogy.InitialFolderFullPath,
+                        openFileDialog1.FileNames);
+                    AddRecentFiles(tstitmAnalogy, tsbtnAnalogyRecentlyOpenFiles, offlineAnalogy, offlineAnalogy.OptionalTitle,
+                        openFileDialog1.FileNames.ToList());
+                }
+            };
+
+
             tmrStatusUpdates.Tick += TmrStatusUpdates_Tick;
             tsslFileCaching.Click += (s, e) =>
             {
@@ -788,22 +811,18 @@ namespace Analogy
             }
         }
 
+       private void OpenOffline(ToolStripTabItem ribbonPage, IAnalogyOfflineDataProvider offlineAnalogy,string titleOfDataSource, string initialFolder, string[] files = null)
+        {
+            offline++;
+            UserControl page = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
+            page.Tag = ribbonPage;
+            page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
+            AddToDockingManager(page, page.Text);
+            dockingManager1.ActivateControl(page);
+        }
         private void AddSingleOfflineDataSource(ToolStripTabItem ribbonPage, IAnalogyOfflineDataProvider offlineAnalogy,
            string title, ToolStripEx group, ToolStripEx groupOfflineFileTools)
         {
-
-            void OpenOffline(string titleOfDataSource, string initialFolder, string[] files = null)
-            {
-                offline++;
-                UserControl page = new OfflineUCLogs(offlineAnalogy, files, initialFolder);
-                page.Tag = ribbonPage;
-                page.Text = $"{offlineTitle} #{offline} ({titleOfDataSource})";
-                AddToDockingManager(page, page.Text);
-                dockingManager1.ActivateControl(page);
-                //xtcLogs.TabPages.Add(page);
-                //xtcLogs.SelectedTabPage = page;
-            }
-
             void OpenExternalDataSource(string titleOfDataSource, IAnalogyOfflineDataProvider analogy)
             {
                 offline++;
@@ -816,7 +835,6 @@ namespace Analogy
                 //xtcLogs.TabPages.Add(page);
                 //xtcLogs.SelectedTabPage = page;
             }
-
             void OpenFilePooling(string titleOfDataSource, string initialFolder, string file)
             {
 
@@ -862,7 +880,7 @@ namespace Analogy
                     AutoSize = true
                 };
                 group.Items.Add(localfolder);
-                localfolder.Click += (sender, e) => { OpenOffline(title, offlineAnalogy.InitialFolderFullPath); };
+                localfolder.Click += (sender, e) => { OpenOffline(ribbonPage,offlineAnalogy,title, offlineAnalogy.InitialFolderFullPath); };
             }
 
             //recent bar
@@ -894,7 +912,7 @@ namespace Analogy
                     };
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        OpenOffline(title, offlineAnalogy.InitialFolderFullPath, openFileDialog1.FileNames);
+                        OpenOffline( ribbonPage,offlineAnalogy, title, offlineAnalogy.InitialFolderFullPath, openFileDialog1.FileNames);
                         AddRecentFiles(ribbonPage, recentBar, offlineAnalogy, title,
                             openFileDialog1.FileNames.ToList());
                     }

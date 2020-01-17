@@ -38,6 +38,7 @@
             this.spltMain = new System.Windows.Forms.SplitContainer();
             this.splcLeft = new System.Windows.Forms.SplitContainer();
             this.folderTreeViewUC1 = new Analogy.FolderTreeViewUC();
+            this.fileListing = new Analogy.FileListing();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tsBtnOpenFolder = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRefresh = new System.Windows.Forms.ToolStripButton();
@@ -50,7 +51,6 @@
             this.imageListBottom = new System.Windows.Forms.ImageList(this.components);
             this.tsPrimary = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.treeList1 = new DirectoryListing();
             ((System.ComponentModel.ISupportInitialize)(this.spltMain)).BeginInit();
             this.spltMain.Panel1.SuspendLayout();
             this.spltMain.Panel2.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             // splcLeft.Panel2
             // 
-            this.splcLeft.Panel2.Controls.Add(this.treeList1);
+            this.splcLeft.Panel2.Controls.Add(this.fileListing);
             this.splcLeft.Panel2.Controls.Add(this.toolStripEx2);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxSelectionMode);
             this.splcLeft.Panel2.Controls.Add(this.checkBoxRecursiveLoad);
@@ -114,6 +114,16 @@
             this.folderTreeViewUC1.Name = "folderTreeViewUC1";
             this.folderTreeViewUC1.Size = new System.Drawing.Size(437, 225);
             this.folderTreeViewUC1.TabIndex = 0;
+            // 
+            // fileListing
+            // 
+            this.fileListing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileListing.Location = new System.Drawing.Point(0, 65);
+            this.fileListing.Margin = new System.Windows.Forms.Padding(4);
+            this.fileListing.Name = "fileListing";
+            this.fileListing.Padding = new System.Windows.Forms.Padding(10);
+            this.fileListing.Size = new System.Drawing.Size(437, 406);
+            this.fileListing.TabIndex = 16;
             // 
             // toolStripEx2
             // 
@@ -240,14 +250,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 46);
             // 
-            // treeList1
-            // 
-            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeList1.Location = new System.Drawing.Point(0, 65);
-            this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(437, 406);
-            this.treeList1.TabIndex = 16;
-            // 
             // OfflineUCLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,7 +278,6 @@
             this.tsPrimary.ResumeLayout(false);
             this.tsPrimary.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -296,6 +297,6 @@
         private System.Windows.Forms.ToolStripButton tsBtnSelecAll;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxSelectionMode;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxRecursiveLoad;
-        private DirectoryListing treeList1;
+        private FileListing fileListing;
     }
 }
