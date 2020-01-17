@@ -39,7 +39,8 @@ namespace Analogy
         public MainForm()
         {
             InitializeComponent();
-            AnalogyLogManager.Instance.OnNewError += (s, e) => tsslblError.Visible = true;
+            AnalogyLogManager.Instance.OnNewError += (s, e) => BeginInvoke(new MethodInvoker(() => { tsslblError.Visible = true; }));
+                
             //  ribbonControlAdv1.RibbonStyle = RibbonStyle.Office2013;
             touch.HeaderColor = Color.White;//ColorTranslator.FromHtml("#f5f6f7");
             touch.ActiveToolStripTabItemBackColor = ColorTranslator.FromHtml("#f5f6f7");
