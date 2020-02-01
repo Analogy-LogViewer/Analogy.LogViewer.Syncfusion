@@ -100,7 +100,6 @@ namespace Analogy
         public UCLogs()
         {
             InitializeComponent();
-            SetupControlEvents();
             filterTokenSource = new CancellationTokenSource();
             filterToken = filterTokenSource.Token;
             fileProcessor = new FileProcessor(this);
@@ -118,6 +117,7 @@ namespace Analogy
             sfDataGridMain.DataSource = _messageData;
             _bookmarkedMessages = Utils.DataTableConstructor();
             sfDataGridBookmarks.DataSource = _bookmarkedMessages;
+            SetupControlEvents();
         }
 
         private void SetupControlEvents()
@@ -237,16 +237,26 @@ namespace Analogy
 
             #region sfDataGrid Main
 
-          //  sfDataGridMain.CurrentCellActivating += (s, e) =>
-          //  {
-          //      if (Syncfusion.WinForms.DataGrid.DataGridIndexResolver.IsAddNewRowIndex(sfDataGridMain,sfDataGridMain.CurrentCell.RowIndex) && sfDataGridMain.View.IsAddingNew && e.DataRow.RowIndex == Syncfusion.WinForms.DataGrid.DataGridIndexResolver.GetAddNewRowIndex(sfDataGridMain) + 1)
-          //      {
-          //          // To cancel the current cell moving to the start row index after adding the new row.   
-          //          e.Cancel = true;
-          //      }
-          //  };
-          ////  sfDataGridMain.View.Records.CollectionChanged += (s, e) => { };
-          //  sfDataGridMain.SelectionChanging += (s, e) => { };
+            //sfDataGridMain.CurrentCellActivating += (s, e) =>
+            //{
+            //    if (Syncfusion.WinForms.DataGrid.DataGridIndexResolver.IsAddNewRowIndex(sfDataGridMain, sfDataGridMain.CurrentCell.RowIndex) && sfDataGridMain.View.IsAddingNew && e.DataRow.RowIndex == Syncfusion.WinForms.DataGrid.DataGridIndexResolver.GetAddNewRowIndex(sfDataGridMain) + 1)
+            //    {
+            //        // To cancel the current cell moving to the start row index after adding the new row.   
+            //        e.Cancel = true;
+            //    }
+            //};
+            // sfDataGridMain.View.Records.CollectionChanged += (s, e) =>
+            // {
+
+            //     if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            //     {
+            //         // To scroll the grid to the newly added row position.  
+            //         var scrollValue = sfDataGridMain.TableControl.ScrollRows.Distances.GetCumulatedDistanceAt(e.NewStartingIndex);
+            //         sfDataGridMain.TableControl.ScrollRows.ScrollInView(e.NewStartingIndex);
+            //         sfDataGridMain.TableControl.VerticalScroll.Value = (int)scrollValue;
+            //     }
+            // };
+            //sfDataGridMain.SelectionChanging += (s, e) => { };
 
             sfDataGridMain.QueryRowStyle += (s, e) =>
             {
