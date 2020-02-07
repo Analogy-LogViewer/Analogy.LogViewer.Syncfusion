@@ -1,4 +1,4 @@
-# Analogy (using Syncfusion Winforms UI Library)
+# Analogy (using Syncfusion Winforms UI Library) [![Gitter](https://badges.gitter.im/Analogy-LogViewer/community.svg)](https://gitter.im/Analogy-LogViewer/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Analogy Log Viewer Application (using Syncfusion UI Library). This is Work In Progress. The other version is using DevExpress (V19.1.8) in the other repo: https://github.com/Analogy-LogViewer/Analogy.LogViewer
 
 current status:
