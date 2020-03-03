@@ -57,8 +57,7 @@ namespace Analogy.DataSources
         public IEnumerable<string> SupportFormats { get; } = new[] { "*.log", "*.json" };
         public string InitialFolderFullPath { get; } = Environment.CurrentDirectory;
         public string OptionalTitle { get; } = "Analogy Built-In Offline Readers";
-        public Image OptionalOpenFolderImage { get; }
-        public Image OptionalOpenFilesImage { get; }
+        public bool DisableFilePoolingOption { get; } = false;
 
         public Task InitializeDataProviderAsync(IAnalogyLogger logger)
         {
@@ -131,6 +130,7 @@ namespace Analogy.DataSources
 
 
         public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
+        
 
         public static List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
